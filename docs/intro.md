@@ -1,10 +1,9 @@
 ---
 sidebar_position: 1
-id: intro
 slug: /
 ---
 
-# 👋 Introduction
+# Intro
 
 What is Lava?
 
