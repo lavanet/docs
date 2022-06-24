@@ -4,7 +4,7 @@ id: intro
 slug: /
 ---
 
-# 👋 Introduction
+# Intro
 
 What is Lava?
 
