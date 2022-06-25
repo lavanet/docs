@@ -1,5 +1,6 @@
 ---
 sidebar_position: 1
+title: Providers
 ---
 # What it means to be a provider
 A Provider servicing APIs will register in the Lava Network as one, specifying which networks being relayed, and in what geolocations. 
