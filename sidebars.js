@@ -6,10 +6,10 @@ const sidebars = {
     'intro',
     {
       type: 'category', 
-      label: "Access Web3 APIs ⚡️",
+      label: 'Access Web3 APIs ⚡️',
       collapsible: false,
       link: {
-        type: "generated-index"
+        type: 'generated-index'
       },
       items: [
         {
@@ -20,11 +20,11 @@ const sidebars = {
     },
     {
       type: 'category', 
-      label: "Power-up Lava 🌋",
+      label: 'Power-up Lava 🌋',
       collapsible: false,
       link: {
-        type: "doc",
-        id: "power-lava-intro"
+        type: 'doc',
+        id: 'power-lava-intro'
       },
       items: [
         {
@@ -33,7 +33,7 @@ const sidebars = {
         },        
       ]
     },
-    "faq",
+    'faq',
     {
       type: 'link',
       label: 'Contribution',
