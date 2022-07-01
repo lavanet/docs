@@ -28,21 +28,17 @@ A minimum stake of _ LAVA is required.
 
 As the network grows, bandwidth, CPU, and memory requirements rise. Large hard drives are recommended for storing years of blockchain history, as well as significant RAM to process the increasing amount of transactions.
 
-Also, running on testnet and mainnet feature differ requirements.
+Also, running on testnet and mainnet will feature differ requirements.
 
 **Minimal**:
 
 | Node Type     | RAM                   | Storage       | CPU
 | -----------   | --------------------- | -----------   | ---
-| Full          | 1GB                   | 25GB          | 1.4 GHz
+| Full          | 1GB                   | 25GB SSD         | 1.4 GHz
 
-\* SSD disks are preferable for applications with high transaction throughput
 
 **Recommended**:
 
 | Node Type     | RAM                   | Storage       | CPU
 | -----------   | --------------------- | -----------   | ---
 | Full          | 2GB                   | 100GB SSD          | x64 2.0 GHz 2v CPU
-
-\* Storage size for validators will depend on level of pruning.
-
