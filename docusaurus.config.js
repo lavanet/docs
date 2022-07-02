@@ -49,6 +49,16 @@ const config = {
         },
         items: [
           {
+            label: 'Access Web3 APIs ⚡️',
+            position: 'left',
+            to: 'gateway-access',
+          },
+          {
+            label: 'Power-up Lava 🌋',
+            position: 'left',
+            to: 'power-lava',
+          },
+          {
             href: 'https://github.com/lavanet/docs',
             label: 'GitHub',
             position: 'right',
