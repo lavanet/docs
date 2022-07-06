@@ -1652,6 +1652,25 @@
   resolved "https://registry.yarnpkg.com/@mdx-js/util/-/util-1.6.22.tgz#219dfd89ae5b97a8801f015323ffa4b62f45718b"
   integrity sha512-H1rQc1ZOHANWBvPcW+JpGwr+juXSxM8Q8YCkm3GhZd8REu1fHR3z99CErO1p9pkcfcxZnMdIZdIsXkOHY0NilA==
 
+"@ndhoule/each@^2.0.1":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@ndhoule/each/-/each-2.0.1.tgz#bbed372a603e0713a3193c706a73ddebc5b426a9"
+  integrity sha512-wHuJw6x+rF6Q9Skgra++KccjBozCr9ymtna0FhxmV/8xT/hZ2ExGYR8SV8prg8x4AH/7mzDYErNGIVHuzHeybw==
+  dependencies:
+    "@ndhoule/keys" "^2.0.0"
+
+"@ndhoule/keys@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@ndhoule/keys/-/keys-2.0.0.tgz#3d64ae677c65a261747bf3a457c62eb292a4e0ce"
+  integrity sha512-vtCqKBC1Av6dsBA8xpAO+cgk051nfaI+PnmTZep2Px0vYrDvpUmLxv7z40COlWH5yCpu3gzNhepk+02yiQiZNw==
+
+"@ndhoule/map@^2.0.1":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@ndhoule/map/-/map-2.0.1.tgz#f5ca0a47424ea67f46e2a6d499b9e9bc886aefa8"
+  integrity sha512-WOEf2An9mL4DVY6NHgaRmFC82pZGrmzW4I0hpPPdczDP4Gp5+Q1Nny77x3w0qzENA8+cbgd9+Lx2ClSTLvkB0g==
+  dependencies:
+    "@ndhoule/each" "^2.0.1"
+
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
   resolved "https://registry.yarnpkg.com/@nodelib/fs.scandir/-/fs.scandir-2.1.5.tgz#7619c2eb21b25483f6d167548b4cfd5a7488c3d5"
@@ -1677,6 +1696,13 @@
   version "1.0.0-next.21"
   resolved "https://registry.yarnpkg.com/@polka/url/-/url-1.0.0-next.21.tgz#5de5a2385a35309427f6011992b544514d559aa1"
   integrity sha512-a5Sab1C4/icpTZVzZc5Ghpz88yQtGOyNqYXcZgOssB2uuAr+wF/MvN6bgtW32q7HHrvBki+BsZ0OuNv6EV3K9g==
+
+"@segment/snippet@^4.13.2":
+  version "4.15.3"
+  resolved "https://registry.yarnpkg.com/@segment/snippet/-/snippet-4.15.3.tgz#ac829ec4570b249f559756293f4736e434885de7"
+  integrity sha512-75kVTYaQGYMkwVjJvCLLOlzxV8jCDxvKG68U88joo/rBx95SIXETcjUmIXF6A7SFRCgz83B+zrZbo+JYsmHkig==
+  dependencies:
+    "@ndhoule/map" "^2.0.1"
 
 "@sideway/address@^4.1.3":
   version "4.1.4"
@@ -3343,6 +3369,13 @@ dns-packet@^5.2.2:
   integrity sha512-spBwIj0TK0Ey3666GwIdWVfUpLyubpU53BTCu8iPn4r4oXd9O14Hjg3EHw3ts2oed77/SeckunUYCyRlSngqHw==
   dependencies:
     "@leichtgewicht/ip-codec" "^2.0.1"
+
+docusaurus-plugin-segment@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/docusaurus-plugin-segment/-/docusaurus-plugin-segment-1.0.4.tgz#4b405c47b424d87abbc4bc23a7983146111a2bf1"
+  integrity sha512-kJT0wvhlursmjHNrrQDs7Ce6vAB+yjflr8P6T0s6LE87BPA2+KQ8ifyNb4PwSdX91OJ5bBYyb4V0T8EI8MtGWQ==
+  dependencies:
+    "@segment/snippet" "^4.13.2"
 
 dom-converter@^0.2.0:
   version "0.2.0"
