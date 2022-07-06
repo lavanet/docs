@@ -1,3 +1,6 @@
+---
+slug: /power-lava
+---
 # Power-up the Lava Network
 Lava Network, an L1 PoS blockchain, is powered by its participants. 
 
