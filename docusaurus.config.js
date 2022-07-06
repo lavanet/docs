@@ -36,6 +36,40 @@ const config = {
         },
       }),
     ],
+    [
+      'redocusaurus',
+      /** @type {import('redocusaurus').PresetEntry} */
+      {
+        debug: Boolean(process.env.DEBUG || process.env.CI),
+        specs: [
+          {
+            id: 'lava-api',
+            spec: 'lava-api/openapi.yml',
+            route: 'lava-api'
+          }
+        ],
+        theme: {
+          /**
+           * Highlight color for docs
+           */
+          primaryColor: '#1890ff',
+          /**
+           * Options to pass to redoc
+           * @see https://github.com/redocly/redoc#redoc-options-object
+           */
+          options: { disableSearch: true },
+          /**
+           * Options to pass to override RedocThemeObject
+           * @see https://github.com/Redocly/redoc#redoc-theme-object
+           */
+          theme: {
+            scrollYOffset: 100,
+            sideNavStyle: "id-only"
+            // nativeScrollbars: false
+          },
+        },
+      },
+    ]
   ],
 
   themeConfig:
