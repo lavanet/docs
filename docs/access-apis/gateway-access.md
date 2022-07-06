@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-id: gateway-access
+slug: /gateway-access
 ---
 
 # Quick access
