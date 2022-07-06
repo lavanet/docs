@@ -2,4 +2,5 @@
 sidebar_position: 2
 ---
 
-# Validators
+# Connect to a node
+
