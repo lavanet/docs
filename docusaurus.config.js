@@ -40,7 +40,7 @@ const config = {
 
   plugins: [
     [
-      "@docusaurus-plugin-segment",
+      "docusaurus-plugin-segment",
       {
         apiKey: "DQPhWiY1Diy8ywBu7fXgqLyii8HR3cXD"
       }
