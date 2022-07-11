@@ -1,8 +1,7 @@
 ---
 sidebar_position: 1
-title: Providers
 ---
-# Being a Provider
+# Be a Provider
 
 :::info Coming Soon 🚧
 :::

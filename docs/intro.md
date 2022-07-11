@@ -1,12 +1,6 @@
 ---
 sidebar_position: 1
 slug: /
+title: Intro to Lava
 ---
-
-# Intro
-
-What is Lava?
-
-## Getting Started
-
 
