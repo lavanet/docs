@@ -3,7 +3,7 @@ sidebar_position: 2
 slug: /D-access
 title: D-access
 ---
-# d-access
+# D-access
 Like DeFi brought the "D" to CeFi, Lava is bringing the "D" to Access.
 
 :::info Coming Soon 🚧
