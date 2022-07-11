@@ -79,7 +79,13 @@ const config = {
         apiKey: "DQPhWiY1Diy8ywBu7fXgqLyii8HR3cXD"
       }
     ],
-    "docusaurus-plugin-hotjar"
+    "docusaurus-plugin-hotjar",
+    [
+      'docusaurus-plugin-sentry',
+      {
+        DSN: 'c23168b385ea47c5a85154271dc2ed8e',
+      },
+    ],
   ],
 
   themeConfig:
