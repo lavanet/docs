@@ -3663,6 +3663,11 @@ dns-packet@^5.2.2:
   dependencies:
     "@leichtgewicht/ip-codec" "^2.0.1"
 
+docusaurus-plugin-hotjar@^0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/docusaurus-plugin-hotjar/-/docusaurus-plugin-hotjar-0.0.2.tgz#cd79d4c446ff57872041abeedae811946581e020"
+  integrity sha512-Jsdxa6k4YQm4SBiY5mv9h/6sKUrQs6lC6mRoPUfjiPVtnhURE3d0dj4Vnrpy/tRVSAbywAqA0F/PGn5RKHtVaw==
+
 docusaurus-plugin-redoc@1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/docusaurus-plugin-redoc/-/docusaurus-plugin-redoc-1.2.1.tgz#3b2c8b2c79d961299b7f7b9a529543ab27b8f043"

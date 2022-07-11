@@ -78,15 +78,15 @@ const config = {
       {
         apiKey: "DQPhWiY1Diy8ywBu7fXgqLyii8HR3cXD"
       }
-    ]
+    ],
+    "docusaurus-plugin-hotjar"
   ],
 
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       colorMode: {
-        defaultMode: 'dark',
-        respectPrefersColorScheme: true
+        defaultMode: 'dark'
       },
       navbar: {
         title: 'Lava Docs',
@@ -119,6 +119,9 @@ const config = {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
+      },
+      hotjar: {
+        applicationId: 3059536
       },
     }),
 };
