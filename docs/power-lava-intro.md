@@ -1,9 +1,18 @@
 ---
 slug: /power-lava
 ---
+
+import RoadmapItem from '@site/src/components/RoadmapItem';
+
 # Power-up the Lava Network
-Lava Network, an L1 PoS blockchain, is powered by its participants. 
+Lava Network is powered by its participants. 
 
 Participants joining the network help reinforce data reliability and high quality of service. Lava's incentive framework prioritizes API providers that excel and allows anyone to stake (same as other PoS chains). Lava achieves fair rewards, privacy and censorship resistance for users by distributing consensus.
 
 Everything is on-chain, transparent.
+
+**🌋 Ready to get the lava flowing?**
+
+[<RoadmapItem icon="🧑‍⚖️" title="Power as a Validator" description="Validate blocks, secure the network, earn rewards"/>](/validator-intro.md)
+
+[<RoadmapItem icon="💁" title="Power as a Provider" description="Service chain access, grow the network, earn rewards"/>](/provider-intro.md)

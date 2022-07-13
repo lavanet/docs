@@ -1,6 +1,18 @@
 ---
 sidebar_position: 1
 slug: /gateway-access
+title: Gateway Access
 ---
 
-# Quick access
+# Access Web3 APIs
+
+Hop on to our [gateway](https://gateway.lavanet.xyz/login) and access one of these chains now:
+1. Ethereum Mainnet
+2. Osmosis
+
+:::tip Missing a chain?
+Lava is built to scale fast to many new chains, and the team is constantly working on that.
+
+Please help us prioritizing by telling us what you would like to use, at our Discord.
+:::
+

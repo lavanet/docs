@@ -1,10 +1,9 @@
 ---
 sidebar_position: 2
-id: direct-access
+slug: /node-build-source
 ---
 
-# Fully decentralized access
+# Build source
 
 :::info Coming Soon 🚧
 :::
-
