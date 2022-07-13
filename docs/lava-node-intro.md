@@ -23,3 +23,42 @@ This section will help you setup a node to access the Lava blockchain.
 - Use option [2.Build](/lava-node/node-build-source.md)
 :::
 
+## Requirements
+
+### Hardware
+
+As the network grows, bandwidth, CPU, and memory requirements rise. Large hard drives are recommended for storing years of blockchain history, as well as significant RAM to process the increasing amount of transactions.
+
+Also, running on testnet and mainnet will feature differ requirements.
+
+**Recommended testnet**:
+
+| Node Type     | RAM                   | Storage       | CPU
+| -----------   | --------------------- | -----------   | ---
+| Full          | 8GB                   | 100GB SSD          | x64 2.0 GHz 4v CPU
+
+### Operating system
+- For using the installer - you need to run **`Ubuntu` - `20`** or newer.
+- sudo permissions on your machine (e.g. can run `sudo hostname`)
+
+:::info
+Need to run a different OS? Let us know in Discord.
+:::
+
+### Network configurations
+- Outbound - allow all traffic
+- Inbound - open the following ports:
+    - 1317 - REST
+    - 26657 - TENDERMINT_RPC
+    - 26656 - Cosmos
+    - *Provider specific ports*:
+        - 2221 - provider port
+        - 22231 - provider port
+        - 2241 - provider port
+
+## Deployment options
+- VPS instance (on any cloud provider) - recommended ⭐️
+- Shared compute instance (e.g. AWS EC2 instance)
+- Your personal station - less recommended
+
+* Please note that Docker containers are not available yet

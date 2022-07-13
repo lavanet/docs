@@ -4,56 +4,34 @@ sidebar_position: 1
 
 # Starting a Validator
 Want to run a validator? This section will help you through it, step by step.
-For additional help see the [FAQ Section](/validator/validator-faq.md)
+For additional help see the [FAQ Section](../faq.md)
 
-:::info prerequisite
+:::warning prerequisite
 Before continuing with this section, you'll have to [set up a node](/lava-node-intro.md) and make sure it's synced to latest block.
 :::
 
-## Start your Validator
-
-Once you have a full node running and the required uLAVA, start you validator by running the following command:
-
-
-TODO !!!!!!!!
+### 1. Create account
+If you don't have an account already, you can use this script to create one for you:
 
 ```bash
-lavad tx staking create-validator \
-  --amount=1000000ulava \
-  --pubkey=$(lavad tendermint show-validator) \
-  --moniker="choose a moniker" \
-  --chain-id=<chain_id> \
-  --commission-rate="0.10" \
-  --commission-max-rate="0.20" \
-  --commission-max-change-rate="0.01" \
-  --min-self-delegation="1000000" \
-  --gas="auto" \
-  --gas-prices="0.0025ulava" \
-  --from=<key_name>
+curl -s --location --request GET 'https://get.lavanet.xyz/pnet0_run_validator' \ 
+  --header 'Authorization: Basic OHRmem1Ta2VuSE1CajhwcDpSRXBhYWZmS2I3TTNQNlBt' > 01_run_validator.sh && \
+  chmod +x 01_run_validator.sh && \
+  ./01_run_validator.sh production create_account
 ```
 
-### View your Validator details
-Viewing your validator is possible with the command:
+### 2. Fund account
+Script finished? Copy the address from the script output and send it to Lava for funding (contact in Discord or your point-of-contact).
+
+(Example address: `lava@1xtlgz4nugxducwscc7zm2lkumagluf6jj8m599`)
+
+### 3. Stake & start validating
+
+Got your airdrop? **Wait** for our confirmation that your account is funded, then run:
+
 ```bash
-lavad query staking validator <account>
+curl -s --location --request GET 'https://get.lavanet.xyz/pnet0_run_validator' \
+  --header 'Authorization: Basic OHRmem1Ta2VuSE1CajhwcDpSRXBhYWZmS2I3TTNQNlBt' > 01_run_validator.sh && \
+  chmod +x 01_run_validator.sh && \
+  ./01_run_validator.sh production stake_validator
 ```
-
-TODO: EDIT?
-
-## Confirm the Validator is running
-Look for your validator address using:
-```bash
-lavad tendermint show-address
-```
-
-### With the CLI
-You should see if your validator has joined the network validators by running the following command and receiving a result:
-```bash
-lavad query tendermint-validator-set | grep "$(lavad tendermint show-address)"
-```
-
-### With Lava Scan
-You can visit [Lava Scan](/) and search for your validator address you got above.
-
-## Advanced configurations
-You can find more advanced information about running a node or a validator on the [Tendermint Core documentation](https://docs.tendermint.com/v0.35/nodes/).
