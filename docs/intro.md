@@ -30,14 +30,14 @@ Welcome testers! Thank you for joining the private testnet.
 
 ### Navigating the Lava - quick links
 
-- Lava docs ←You’re here
-- Lava Scan (Block explorer)
-- Gateway - Quick access APIs
-- D-access - Fully decentralized Access COMING SOON
+- [Docs](https://docs.lavanet.xyz) ←You’re here
+- [Scan](https://scan.lavanet.xyz) - Block explorer
+- [Gateway](https://gateway.lavanet.xyz) - Quick access APIs
+- D-access - Fully decentralized Access - COMING SOON
 
 ### Community & open-source
 
-- Twitter
+- [Twitter](https://twitter.com/lavanetxyz)
 - Discord (currently Invite only)
 - Github (currently Invite only)
 
