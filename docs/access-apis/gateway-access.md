@@ -13,6 +13,5 @@ Hop on to our [gateway](https://gateway.lavanet.xyz/login) and access one of the
 :::tip Missing a chain?
 Lava is built to scale fast to many new chains, and the team is constantly working on that.
 
-Please help us prioritizing by telling us what you would like to use, at our Discord.
+Please help us prioritize by telling us what you need. Hop on to our Discord.
 :::
-
