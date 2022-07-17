@@ -1,0 +1,68 @@
+---
+sidebar_position: 1
+id: wallet
+---
+
+# Lava Wallet
+
+
+:::danger experimental 
+Adding Lava to Keplr wallet is experimental
+:::
+
+<p>
+
+export function add(){
+window.keplr.experimentalSuggestChain({
+    chainId: "lava-testnet-1",
+    chainName: "Lava Testnet 1",
+    rpc: "http://44.205.140.46:26657",
+    rest: "http://44.205.140.46:1317",
+    bip44: {
+        coinType: 118,
+    },
+    bech32Config: {
+        bech32PrefixAccAddr: "lava",
+        bech32PrefixAccPub: "lava" + "pub",
+        bech32PrefixValAddr: "lava" + "valoper",
+        bech32PrefixValPub: "lava" + "valoperpub",
+        bech32PrefixConsAddr: "lava" + "valcons",
+        bech32PrefixConsPub: "lava" + "valconspub",
+    },
+    currencies: [ 
+        { 
+            coinDenom: "LAVA", 
+            coinMinimalDenom: "uLAVA", 
+            coinDecimals: 6, 
+            coinGeckoId: "lava", 
+        }, 
+    ],
+    feeCurrencies: [
+        {
+            coinDenom: "LAVA",
+            coinMinimalDenom: "uLAVA",
+            coinDecimals: 6,
+            coinGeckoId: "lava",
+        },
+    ],
+    stakeCurrency: {
+        coinDenom: "LAVA",
+        coinMinimalDenom: "uLAVA",
+        coinDecimals: 6,
+        coinGeckoId: "lava",
+    },
+    coinType: 118,
+    gasPriceStep: {
+        low: 0.01,
+        average: 0.025,
+        high: 0.03,
+    },
+});
+}
+
+</p>
+
+
+<p>
+<button onClick={() => add()}>ADD LAVA</button>
+</p>

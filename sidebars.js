@@ -76,6 +76,7 @@ const sidebars = {
         },        
       ]
     },
+    'wallet',
     'faq',
     {
       type: 'link',
