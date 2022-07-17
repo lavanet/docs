@@ -1,8 +1,8 @@
 ---
 sidebar_position: 2
-title: Intro & Requirements
+title: Validator intro & requirements
 ---
-# Validator Introduction
+# Validator introduction
 Lava blockchain uses Proof-of-stake (PoS) as the consensus mechanism, based on [Tendermint](https://tendermint.com/). Validators participate in the network by verifying new blocks to earn rewards.
 
 LAVA holders are incentivized to stake their tokens to secure Lava, while receiving a reward in return. 
