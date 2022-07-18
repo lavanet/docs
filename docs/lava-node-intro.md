@@ -6,7 +6,9 @@ This section will help you setup a node to access the Lava blockchain.
 2. [Build source](/lava-node/node-build-source.md) (common for code contributors)
 3. [Connect remote](/lava-node/node-connect-remote.md) (misc usages)
 
-## How to choose?
+<details>
+
+<summary>Not sure how to choose?</summary>
 
 :::note Powering Lava? 🌋
 - Want to [be a validator](/validator-intro.md)? Use option [1. Installer](/lava-node/node-use-installer.md)
@@ -23,7 +25,16 @@ This section will help you setup a node to access the Lava blockchain.
 - Use option [2.Build](/lava-node/node-build-source.md)
 :::
 
+</details>
+
 ## Requirements
+
+### Deployment options
+- VPS instance (on any cloud provider) - recommended ⭐️
+- Shared compute instance (e.g. AWS EC2 instance)
+- Your personal station - less recommended
+
+_ Please note that **Docker** containers are not available yet. _
 
 ### Hardware
 
@@ -31,11 +42,15 @@ As the network grows, bandwidth, CPU, and memory requirements rise. Large hard d
 
 Also, running on testnet and mainnet will feature differ requirements.
 
-**Recommended testnet**:
+**Recommended testnet**
 
 | Node Type     | RAM                   | Storage       | CPU
 | -----------   | --------------------- | -----------   | ---
-| Full          | 8GB                   | 100GB SSD          | x64 2.0 GHz 4v CPU
+| Full          | 8GB                   | 100GB SSD          | x64 2.0 GHz 4v CPU 
+
+#### AWS settings
+- Minimum size - `c4.xlarge`
+- Select GP2 drive
 
 ### Operating system
 - For using the installer - you need to run **`Ubuntu` - `20`** or newer.
@@ -51,14 +66,7 @@ Need to run a different OS? Let us know in Discord.
     - 1317 - REST
     - 26657 - TENDERMINT_RPC
     - 26656 - Cosmos
-    - *Provider specific ports*:
-        - 2221 - provider port
+    - *Running as a Provider? Add these specific ports*:
+        - 22221 - provider port
         - 22231 - provider port
-        - 2241 - provider port
-
-## Deployment options
-- VPS instance (on any cloud provider) - recommended ⭐️
-- Shared compute instance (e.g. AWS EC2 instance)
-- Your personal station - less recommended
-
-* Please note that Docker containers are not available yet
+        - 22241 - provider port
