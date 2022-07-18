@@ -7,7 +7,7 @@ Want to run a validator? This section will help you through it, step by step.
 For additional help see the [FAQ Section](../faq.md)
 
 :::warning prerequisite
-Before continuing with this section, you'll have to [set up a node](/lava-node-intro.md) and make sure it's synced to latest block.
+Before continuing with this section, you'll have to [set up a node](/lava-node-intro.md).
 :::
 
 ### 1. Create account

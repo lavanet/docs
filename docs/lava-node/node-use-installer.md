@@ -17,7 +17,7 @@ SSH into your node, and run the following:
 
 ### Prepare 
 ```bash
-apt update && apt install sudo curl coreutils -y
+sudo apt update && apt install sudo curl coreutils -y
 ```
 
 ## Install
