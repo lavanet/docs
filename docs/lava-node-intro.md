@@ -48,9 +48,15 @@ Also, running on testnet and mainnet will feature differ requirements.
 | -----------   | --------------------- | -----------   | ---
 | Full          | 8GB                   | 100GB SSD          | x64 2.0 GHz 4v CPU 
 
-#### AWS settings
+<details>
+<summary>Running on AWS?</summary>
+
+Settings:
+
 - Minimum size - `c4.xlarge`
 - Select GP2 drive
+
+</details>
 
 ### Operating system
 - For using the installer - you need to run **`Ubuntu` - `20`** or newer.
