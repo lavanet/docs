@@ -62,7 +62,7 @@ Lava’s network is a Web3 APIs marketplace that acts as a settlement layer with
 We are building the most reliable, and censorship-resistant network, which ensures high network performance and secure blockchain access. Lava and its community are building a network that can compete with centralized solutions all while retaining the core values of Web3:
 
 
-1. **Quality of Service -** Consumers monitor and rate providers based on response time, availability and freshness. When asking for rewards, providers are required to attach their QoS score, and are rewarded accordingly.
+1. **Quality of Service -** Consumers monitor and rate providers based on response time, availability and freshness. When asking for rewards, providers are required to attach their QoS score and are rewarded accordingly.
 
 2. **Data Reliability -** Providers are subject to fraud and fault detection checks, whereby the network uses statistical inference and verifiably random selections to compare the responses of multiple providers. If a conflict is detected, the network uses an honest majority of providers to attain who was wrong, penalizing the offender.
 
