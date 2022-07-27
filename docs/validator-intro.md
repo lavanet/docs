@@ -5,8 +5,8 @@ title: Be a Validator
 # Validator introduction
 Lava blockchain uses Proof-of-stake (PoS) as the consensus mechanism, based on [Tendermint](https://tendermint.com/). Validators participate in the network by verifying new blocks to earn rewards.
 
-LAVA holders are incentivized to stake their tokens to secure Lava, while receiving a reward in return.
-Validators earn LAVA from creation of new blocks and from the transaction fees, and on the other hand - slashing may occur to punish bad actors, all facilitated by Tendermint's consensus protocol. 
+LAVA holders are incentivized to stake their tokens to secure Lava while receiving a reward in return.
+Validators earn LAVA from the creation of new blocks and from the transaction fees, and on the other hand - slashing may occur to punish bad actors, all facilitated by Tendermint's consensus protocol. 
 
 _Note_: Delegating LAVA to validators is not yet supported
 ## Starting a Validator - steps
@@ -14,7 +14,7 @@ This section will help you start as a validator, step by step.
 For additional help see the [FAQ Section](faq.md)
 
 ### 1. Setup a node
-Running as validator requires a Lava Node running, with state synced. 
+Running as a validator requires a Lava Node running, with state synced. 
 Please refer to **[set up a node](/lava-node-intro.md)** section.
 
 ### 2. Create account
