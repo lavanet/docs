@@ -14,7 +14,7 @@ _ Please note that **Docker** containers are not available yet. _
 
 As the network grows, bandwidth, CPU, and memory requirements rise. Large hard drives are recommended for storing years of blockchain history, as well as significant RAM to process the increasing amount of transactions.
 
-Also, running on testnet and mainnet will feature differ requirements.
+Also, running on testnet and mainnet will feature different requirements.
 
 **Recommended testnet**
 
@@ -27,8 +27,8 @@ Also, running on testnet and mainnet will feature differ requirements.
 
 Settings:
 
-- Minimum size - `c4.xlarge`
-- Select GP2 drive
+- Minimum `Instance Type` - **`c4.xlarge`**
+- `Configure storage` - **`GP2 drive`**
 
 </details>
 
