@@ -98,7 +98,7 @@ const config = {
         title: 'Lava Docs',
         logo: {
           alt: 'Lava Docs Logo',
-          src: 'img/volcano_emoji.png',
+          src: 'img/lava_logo.svg',
         },
         items: [
           {

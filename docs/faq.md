@@ -19,7 +19,7 @@ Troubleshooting:
     1. This process might take some time based on your internet connection, compute capabilities and the height of the latest block on the network
     2. Please allow 5-20 minutes for this procedure to catch up with the latest block in the network
 3. curl or unzip commands are not found
-    1. `apt update && apt install curl unzip -y`
+    1. `sudo apt update && sudo apt install curl unzip -y`
 4. sudo command not found
     1. `apt install sudo -y`
 5. When running `stake_validator` you get the error
