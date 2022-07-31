@@ -31,13 +31,13 @@ Here is a sample out of `cookbook/spec_add_ethereum.json`:
 
 `"title"` and `"description"` are self explanatory and below them `"specs"` define the chains that will be added.
 
-`"chainid"`:  a unique id for this chain.
+`"chainid"`:  a unique id for this chain. immutable. this will be used in transacton and query references
 
-`"name"`: full name of the chain
+`"name"`: full name of the chain, can be changed to best describe the specification with changes of the target
 
 `"enabled"`: enable\disable this chain
 
-`"reliability_threshold"`: you can set this to a default value of 268435455(0x0FFFFFFF). This determins how often free data reliability messages are sent, the higher it is the more messages are sent. the default value above means 1/16 - 1 out of 16 mesages is a data rel message. 
+`"reliability_threshold"`: when adding a new spec, you can set this to a default value of 268435455(0x0FFFFFFF). This determins how often free data reliability messages are sent, the higher it is the more messages are sent. the default value above means 1/16 - 1 out of 16 mesages is a data rel message. 
 
 ```
 0x0FFFFFFF - means 1 data rel message for every ~16 messages 
@@ -54,7 +54,7 @@ The hashes of final blocks will be used as a basis of comparison between provide
 
 `"average_block_time"`: The average time in miliseconds it takes for a new block to be added to the chain. Used for QoS.
 
-`"allowed_block_lag_for_qos_sync"`: how many blocks behind the latest block a relayer is allowed to be before the relayers QoS score starts to be affected; basically how out of sync a relayer is allowed to be.
+`"allowed_block_lag_for_qos_sync"`: how many blocks behind the latest block a provider is allowed to be before the providers QoS score starts to be affected; basically how out of sync a provider is allowed to be.
 
 `"deposit"`: How much lava to deposit to have a proposal spec admitted (see cosmos gov module proposal for more details ).
 
@@ -111,7 +111,7 @@ here is a single api endpoint in an etherium node that fetches the number of the
 }
 ```
 
-`"name"`: name of this endpoint or a url path if its a rest endpoint
+`"name"`: name of this method or a url path if its a rest endpoint, must strictly match the api to be used against the node
 
 `"category"`: defines some categorical params about this endpoint
 
@@ -120,12 +120,12 @@ here is a single api endpoint in an etherium node that fetches the number of the
  - `"subscription"`: does this api open a continuous stream of info from the provider to the consumer 
  - `"stateful"`: for apis that need to be sent to the same provider you will set the same stateful value and not zero
 
-- `"compute_units"`: the CU for this api (should be copied from the chain api docs)
+- `"compute_units"`: the cost CU for this api (initial values could be copied from the chain api docs)
 - `"enabled"`: enable\disable this endpoint
 - `"apiInterfaces"`: arr of interfaces for this enpoint
-    - `"interface"`: type of interface: `["jsonrpc"|"tendermint"|"rest"]`,
+    - `"interface"`: type of interface: `["jsonrpc"|"tendermintrpc"|"rest"]`,
     - `"type"`: `["get"|"post"]`,
-    - `"extra_compute_units"`: 
+    - `"extra_compute_units"`: will be implemented in the future 0 is okat for now
 
 ## Parsing 
 Since each chain returns data in a different format 
