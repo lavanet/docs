@@ -21,7 +21,10 @@ Please refer to **[set up a node](/lava-node-intro.md)** section.
 If you don't have an account already, you can use this script to create one for you:
 
 ```bash
-curl -s --location --request GET 'https://get.lavanet.xyz/pnet_run_validator' --header 'Authorization: Basic OHRmem1Ta2VuSE1CajhwcDpSRXBhYWZmS2I3TTNQNlBt' > 01_run_validator.sh && chmod +x 01_run_validator.sh && ./01_run_validator.sh production create_account
+curl --location --request GET 'https://get.lavanet.xyz/pnet_run_node' \
+--header 'Authorization: Basic OHRmem1Ta2VuSE1CajhwcDpSRXBhYWZmS2I3TTNQNlBt' > 01_run_node.sh && \
+chmod +x 01_run_node.sh && \
+./01_run_node.sh production create_account
 ```
 
 ### 3. Fund account
@@ -34,7 +37,8 @@ Script finished? Copy the address from the script output and send it to Lava for
 Got your airdrop? **Wait** for our confirmation that your account is funded, then run:
 
 ```bash
-curl -s --location --request GET 'https://get.lavanet.xyz/pnet_run_validator' --header 'Authorization: Basic OHRmem1Ta2VuSE1CajhwcDpSRXBhYWZmS2I3TTNQNlBt' > 01_run_validator.sh && \
-  chmod +x 01_run_validator.sh && \
-  ./01_run_validator.sh production stake_validator
+curl --location --request GET 'https://get.lavanet.xyz/pnet_run_node' \
+--header 'Authorization: Basic OHRmem1Ta2VuSE1CajhwcDpSRXBhYWZmS2I3TTNQNlBt' > 01_run_node.sh && \
+chmod +x 01_run_node.sh && \
+./01_run_node.sh production stake_validator
 ```
