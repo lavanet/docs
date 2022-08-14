@@ -21,7 +21,7 @@ sudo apt update
 ```
 
 ```bash
-sudo apt install sudo curl coreutils -y
+sudo apt install curl unzip coreutils -y
 ```
 
 ## Install
