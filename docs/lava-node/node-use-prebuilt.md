@@ -10,8 +10,14 @@ slug: /node-use-prebuilt
 WIP
 :::
 
-Download the latest version from the release page:
+Download the latest version from the release page,
+
+amd64:
 ```
 curl -s --user-agent "$s3_creds_user" --referer "$s3_creds_pass" "$binary_url" >$temp_dir/lavad
 
 ```
+
+arm64:
+
+Other architectures? Let us know in Discord.
