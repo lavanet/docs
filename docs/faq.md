@@ -8,6 +8,13 @@ sidebar_position: 1
 This section is the same as the #FAQ channel in Discord. If you need further help hop on to our support channels there.
 :::
 
+
+## Dictionary
+
+#### Keyring
+The keyring holds the private/public keypairs used to interact with a node. For instance, a validator key needs to be set up before running the blockchain node, so that blocks can be correctly signed. The private key can be stored in different locations, called "backends", such as a file or the operating system's own key storage. ([learn more here](https://docs.cosmos.network/master/run-node/keyring.html))
+
+
 ## Nodes, Validators and Providers
 ### I have problems running the install scripts {#install-troubleshooting}
 
@@ -27,3 +34,4 @@ Troubleshooting:
     account lava@XYZ not found: key not found
     ```
     1. Make sure your account is funded from Lava side before you try to stake as a validator
+

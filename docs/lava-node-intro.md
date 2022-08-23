@@ -1,7 +1,34 @@
 # Run a Node
-This section will help you prepare a server and set up your Lava node.
+This section will help you prepare a server & set up your Lava node.
 
-## Step 1 - Prepare a server
+First, make sure you read the hardware requirements below.
+
+**Then, select your option for installing `lavad`:**
+1. [Use prebuilt](./lava-node/node-use-prebuilt.md) - **common for most users** ⭐️
+2. [Build source](./lava-node/node-build-source.md) - common for code contributors
+
+<details>
+
+<summary>Not sure how to choose?</summary>
+
+:::note Powering Lava? 🌋
+- Want to [be a validator](/validator-intro.md)? Use option [1. prebuilt](./lava-node/node-use-prebuilt.md)
+- Want to [be a provider](/provider-intro.md)? Use option [1. prebuilt](./lava-node/node-use-prebuilt.md)
+:::
+
+
+:::note Accessing Web3 APIs? ⚡️
+- Need access fast? No need for a node, just use the [gateway](/access-apis/gateway-access.md).
+- Want full D-access (Decentralized access)? [coming soon](/access-apis/d-access.md).
+:::
+
+:::note Open Source contributor?
+- Use option [2.Source](/lava-node/node-build-source.md)
+:::
+
+</details>
+
+## Node requirements
 
 ### Deployment options
 - VPS instance (on any cloud provider) - recommended ⭐️
@@ -16,7 +43,7 @@ As the network grows, bandwidth, CPU, and memory requirements rise. Large hard d
 
 Also, running on testnet and mainnet will feature different requirements.
 
-**Recommended testnet**
+**Recommended for Testnet**
 
 | Node Type     | RAM                   | Storage       | CPU
 | -----------   | --------------------- | -----------   | ---
@@ -33,7 +60,7 @@ Settings:
 </details>
 
 ### Operating system
-- For using the installer - you need to run **`Ubuntu` - `20`** or newer.
+- For using the prebuilt - you need to run **`Ubuntu` - `20`** or newer.
 - sudo permissions on your machine (e.g. can run `sudo hostname`)
 
 :::info
@@ -51,30 +78,5 @@ Need to run a different OS? Let us know in Discord.
         - 22231 - provider port
         - 22241 - provider port
 
-## Step 2 - Install
+## Step 2 - Choose a setup & join the network
 
-**There are 3 options to install a node:**
-1. [Use installer](/lava-node/node-use-installer.md) - **common for most users** ⭐️
-2. [Build source](/lava-node/node-build-source.md) - common for code contributors
-3. [Connect remote](/lava-node/node-connect-remote.md) - misc usages
-
-<details>
-
-<summary>Not sure how to choose?</summary>
-
-:::note Powering Lava? 🌋
-- Want to [be a validator](/validator-intro.md)? Use option [1. Installer](/lava-node/node-use-installer.md)
-- Want to [be a provider](/provider-intro.md)? Use option [1. Installer](/lava-node/node-use-installer.md) or [3. Remote](/lava-node/node-connect-remote.md)
-:::
-
-
-:::note Accessing Web3 APIs? ⚡️
-- Need access fast? No need for a node, just use the [gateway](/access-apis/gateway-access.md).
-- Want full D-access (Decentralized access)? [coming soon](/access-apis/d-access.md).
-:::
-
-:::note Open Source contributor?
-- Use option [2.Build](/lava-node/node-build-source.md)
-:::
-
-</details>
