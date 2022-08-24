@@ -1,6 +1,6 @@
 ---
 sidebar_position: 2
-slug: /join-testnet-test
+slug: /join-testnet
 ---
 
 import RoadmapItem from '@site/src/components/RoadmapItem';
@@ -10,7 +10,7 @@ import RoadmapItem from '@site/src/components/RoadmapItem';
 ## Init lavad with testnet
 Prepare config data to be used by `lavad`:
 
-Set env variables:
+Download config file:
 ```
 s3_creds_user="JzMh9LhdcifyMeCF"
 s3_creds_pass="PY7RfcGyh6L8QHCN"
