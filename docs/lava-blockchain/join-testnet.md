@@ -1,6 +1,6 @@
 ---
 sidebar_position: 2
-slug: /join-testnet
+slug: /join-testnet-test
 ---
 
 import RoadmapItem from '@site/src/components/RoadmapItem';
