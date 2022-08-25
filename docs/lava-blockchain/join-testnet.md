@@ -19,6 +19,7 @@ Want to use our automatic scripts to join the testnet and then run a validator?
 
 1. Verify [hardware requirements](reqs) are met
 2. Install package dependencies
+    - Note: You may need to run as `sudo`
     - Required packages installation
         
         ```bash
@@ -209,17 +210,22 @@ Want to use our automatic scripts to join the testnet and then run a validator?
 
 ### B. Run test commands
 
-- Download the network genesis file
+- Wait for the node to finish catching up
     
     ```bash
-    # To can check the latest block height
-    lavad status | jq .SyncInfo.latest_block_height
     # To check if the node is still catching up with the network
-    # true - the node is still catching up with the network
-    # false - the node is synced with the network state
+    #  true - the node is still catching up with the network
+    #  false - the node is synced with the network state
     lavad status | jq .SyncInfo.catching_up
     ```
+
+- You can check what's the latest block height on [Lava scan](https://scan.lavanet.xyz) and then compare to yours:
     
+    ```bash
+    # You can check the latest block height
+    lavad status | jq .SyncInfo.latest_block_height
+    ```
+
 
 ## Setup Cosmovisor
 
@@ -233,6 +239,6 @@ You are now running a Node in the Lava network 🎉🥳!
 Congrats, happy to have you here 😻 Celebrate it with us on Discord.
 
 When you're ready, start putting the node to use **as a validator**:
-[<RoadmapItem icon="🧑‍⚖️" title="Power as a Validator" description="Validate blocks, secure the network, earn rewards"/>](/validator.md#stake)
+[<RoadmapItem icon="🧑‍⚖️" title="Power as a Validator" description="Validate blocks, secure the network, earn rewards"/>](validator#account)
 
 :::

@@ -67,11 +67,19 @@ chmod +x 01_run_node.sh && \
 ./01_run_node.sh production create_account
 ```
 
-Script finished? 
-A. Copy the address from the script output and use the [faucets](./lava-blockchain/faucet.mdx) to receive LAVA.
-B. Save securely the seed phrase that was created
+Script finished? Write down the details you'll need later:
 
-(Example address: `lava@1xtlgz4nugxducwscc7zm2lkumagluf6jj8m599`)
+:::caution Pencils out 📝
+Keep the newly created account info:
+1. SECRET mnemonic phrase 🚨🤫🚨🤫🚨
+2. Your public address, starts with `lava@`
+3. Your validator pubkey
+
+♻ Save those details as we make sure to automatically airdrop you with LAVA test tokens as soon as we restart the testnet.
+
+:::
+
+
 
 ### 3. Stake & start validating
 
@@ -88,14 +96,14 @@ chmod +x 01_run_node.sh && \
 ### 1. Install node (`lavad`) & Join network {#lavad}
 Running as a validator requires a Lava Node running, Please refer to [our guide for joining **Testnet**](testnet) for details.
 
-### 2. Prepare an account & Fund it
+### 2. Prepare an account & Fund it {#account}
 Lava account and wallets are standard Cosmos. Learn more in [Account & Wallet section](wallet).
 
 Now that you decided you want to turn your node into a validator, you will first need to add a wallet to your keyring ([FAQ: what is a keyring](faq#keyring)).
 
 While you can add an existing wallet through your seed phrase, we will create a new wallet in this example (replace $KEY_NAME with a name of your choosing):
 
-```
+```bash
 lavad keys add $KEY_NAME
 ```
 
@@ -105,24 +113,34 @@ Ensure you write down the mnemonic as you can not recover the wallet without it.
 
 To ensure your wallet was saved to your keyring, look for the WALLET_NAME is in your keys list:
 
-```
+```bash
 lavad keys list
 ```
 
 The last thing needed before initializing the validator is to obtain your **validator public** key which was created when you first initialized your node. To obtain your validator pubkey:
 
-```
+```bash
 lavad tendermint show-validator
 ```
 
+:::caution Pencils out 📝
+Keep the newly created account info:
+1. SECRET mnemonic phrase 🚨🤫🚨🤫🚨
+2. Your public address, starts with `lava@`
+3. Your validator pubkey
+
+♻ Save those details as we make sure to automatically airdrop you with LAVA test tokens as soon as we restart the testnet.
+
+:::
+
 Now you can receive test LAVA tokens using our [faucets](./lava-blockchain/faucet.mdx).
 
-### 3. Stake & start validating {#create-validator}
+### 3. Stake & start validating {#stake}
 
 Once your account is funded, run this to stake and start validating.
 
-Note to set `$STAKE_AMOUNT` and `$KEY_NAME`:
-```
+Note to set `$STAKE_AMOUNT` (currently `50000000ulava`) and `$KEY_NAME`:
+```bash
 lavad tx staking create-validator \
     --amount="$STAKE_AMOUNT" \
     --pubkey=$(lavad tendermint show-validator --home "$HOME/.lava/") \
@@ -134,5 +152,6 @@ lavad tx staking create-validator \
     --gas="auto" \
     --gas-adjustment "1.5" \
     --gas-prices="0.0025ulava" \
+    --home="$HOME/.lava/" \
     --from=$KEY_NAME
 ```
