@@ -21,9 +21,9 @@ Welcome testers! Thank you for joining the private testnet.
 
 ### Start by powering Lava 🌋
 
-[<RoadmapItem icon="🧑‍⚖️" title="Power as a Validator" description="Validate blocks, secure the network, earn rewards"/>](/validator-intro.md)
+[<RoadmapItem icon="🧑‍⚖️" title="Power as a Validator" description="Validate blocks, secure the network, earn rewards"/>](validator)
 
-[<RoadmapItem icon="💁" title="Power as a Provider" description="Service chain access, grow the network, earn rewards"/>](/provider-intro.md)
+[<RoadmapItem icon="💁" title="Power as a Provider" description="Service chain access, grow the network, earn rewards"/>](provider)
 
 ### Accessing Web3 APIs ⚡️
 [<RoadmapItem icon="🧑‍💻" title="Access Web3 APIs" description="Start using Web3 APIs, seamlessly onboarding Lava's network"/>](/access-apis/gateway-access.md)

@@ -6,5 +6,70 @@ slug: /wallet
 
 Lava uses Cosmos bank & account modules and enables you to use any standard Cosmos wallet.
 
+:::info WIP 🚧
+
+Documentation for account management is coming soon 👀
+:::
+
 ## Keplr integration
 
+:::warning experimental 
+Adding Lava to Keplr wallet is experimental
+:::
+
+<p>
+
+export function add(){
+window.keplr.experimentalSuggestChain({
+    chainId: "lava",
+    chainName: "Lava Testnet",
+    rpc: "https://public-rpc.lavanet.xyz/rpc",
+    rest: "https://public-rpc.lavanet.xyz/rest",
+    bip44: {
+        coinType: 118,
+    },
+    bech32Config: {
+        bech32PrefixAccAddr: "lava",
+        bech32PrefixAccPub: "lava" + "pub",
+        bech32PrefixValAddr: "lava" + "valoper",
+        bech32PrefixValPub: "lava" + "valoperpub",
+        bech32PrefixConsAddr: "lava" + "valcons",
+        bech32PrefixConsPub: "lava" + "valconspub",
+    },
+    currencies: [ 
+        { 
+            coinDenom: "LAVA", 
+            coinMinimalDenom: "uLAVA", 
+            coinDecimals: 6, 
+            coinGeckoId: "lava", 
+        }, 
+    ],
+    feeCurrencies: [
+        {
+            coinDenom: "LAVA",
+            coinMinimalDenom: "uLAVA",
+            coinDecimals: 6,
+            coinGeckoId: "lava",
+        },
+    ],
+    stakeCurrency: {
+        coinDenom: "LAVA",
+        coinMinimalDenom: "uLAVA",
+        coinDecimals: 6,
+        coinGeckoId: "lava",
+    },
+    coinType: 118,
+    gasPriceStep: {
+        low: 0.01,
+        average: 0.025,
+        high: 0.03,
+    },
+});
+}
+
+</p>
+
+
+<p>
+<button onClick={() => add()}>CLICK HERE TO ADD LAVA TO KEPLR</button>
+</p>
