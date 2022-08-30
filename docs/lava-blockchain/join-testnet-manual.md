@@ -1,9 +1,9 @@
 ---
 sidebar_position: 2
 slug: /testnet-manual
-title: Setup - manual
+title: Setup - Manual
 ---
-
+# Join testnet - Manual setup
 ## Prerequisites
 
 1. Verify [hardware requirements](reqs) are met

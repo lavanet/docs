@@ -27,6 +27,21 @@ const sidebars = {
         id: 'power-lava-intro'
       },
       items: [
+        'lava-blockchain/hardware-requirements',
+        {
+          type: 'category', 
+          label: 'Join testnet',
+          collapsible: true,
+          collapsed: true,
+          link: {
+            type: 'doc',
+            id: 'lava-blockchain/join-testnet'
+          },
+          items: [
+            'lava-blockchain/join-testnet-auto',
+            'lava-blockchain/join-testnet-manual'
+          ]
+        },
         {
           type: 'category', 
           label: 'Be a Validator',
@@ -43,7 +58,9 @@ const sidebars = {
             },        
           ]
         },    
-        'provider'
+        'provider',
+        'lava-blockchain/faucet',
+        'lava-blockchain/account-wallet',
       ]
     },
     {
@@ -56,22 +73,6 @@ const sidebars = {
         title: 'Lava Blockchain'
       },
       items: [
-        'lava-blockchain/hardware-requirements',
-        {
-          type: 'category', 
-          label: 'Join Testnet',
-          collapsible: true,
-          collapsed: true,
-          link: {
-            type: 'doc',
-            id: 'lava-blockchain/join-testnet'
-          },
-          items: [
-            'lava-blockchain/join-testnet-manual',        
-          ]
-        },
-        'lava-blockchain/faucet',
-        'lava-blockchain/account-wallet'
       ]
     },
     'faq',

@@ -4,6 +4,7 @@ title: Setup - Automatic
 slug: /validator-auto
 ---
 
+# Run Validator - Automatic setup
 ### 1. Install node (`lavad`) & Join network
 
 **Prepare**

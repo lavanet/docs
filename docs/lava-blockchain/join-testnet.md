@@ -1,17 +1,14 @@
 ---
 sidebar_position: 2
 slug: /testnet
-title: Join Testnet
+title: Join testnet
 ---
 
 import RoadmapItem from '@site/src/components/RoadmapItem';
 
-# Join Testnet
+# Join testnet
 
-The next page will cover how to join Lava's testnet, manually, step by step. When you're done here, you can continue to start your validator.
+The next pages will cover how to join Lava's testnet, manually or automatically. When you're done, you can continue to start your validator.
 
-:::tip
-
-Want to use our automatic scripts to join the testnet and then run a validator?
-[<RoadmapItem icon="🤖" title="Automatic scripts" description="Join the network and start validating, automatically"/>](validator-auto)
-:::
+[<RoadmapItem icon="🤖" title="Automatic scripts" description="Join the testnet automatically"/>](testnet-auto)
+[<RoadmapItem icon="🛠" title="Manual steps" description="Join the network, step by step"/>](testnet-manual)
