@@ -88,7 +88,11 @@ title: Setup - Manual
 
 ## 2. Join the Lava Testnet
 
-### A. Set up Cosmovisor
+:::info
+The following sections will describe how to install Cosmovisor for automating the upgrades process. If you choose to not take this path, please [refer to the manual upgrade page](testnet-upgrade-manual) for completing the sync to testnet to its latest block. 
+:::
+
+### A. Set up Cosmovisor {#cosmovisor}
 
 - Set up cosmovisor to ensure any future upgrades happen flawlessly. To install Cosmovisor:
     

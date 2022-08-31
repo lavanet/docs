@@ -4,10 +4,10 @@ slug: /testnet-upgrade-manual
 title: Upgrades
 ---
 # Testnet upgrades
-Lava blockchain upgrades requires you to update `lavad`. This guide covers the manual steps for doing so.
+Lava blockchain upgrades requires you to update `lavad`. This guide covers the manual steps for doing so, assuming you do not use Cosmovisor.
 
-:::tip
-There's a way to orchestrate automatic updates when possible, [read about CosmoVisor here](testnet-manual#cosmovisor) to set it up
+:::caution Already using Cosmovisor?
+If you are [using Cosmovisor](testnet-manual#cosmovisor), no need to run the steps below ✅
 :::
 
 ### How to know there's an upgrade?
