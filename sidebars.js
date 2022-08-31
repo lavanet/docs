@@ -39,7 +39,8 @@ const sidebars = {
           },
           items: [
             'lava-blockchain/join-testnet-auto',
-            'lava-blockchain/join-testnet-manual'
+            'lava-blockchain/join-testnet-manual',
+            'lava-blockchain/testnet-upgrade-manual'
           ]
         },
         {

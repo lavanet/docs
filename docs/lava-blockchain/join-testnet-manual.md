@@ -216,7 +216,7 @@ title: Setup - Manual
     ```
 
 
-## Setup Cosmovisor
+## Setup Cosmovisor {#cosmovisor}
 
 Coming soon.
 
