@@ -3,6 +3,8 @@ sidebar_position: 2
 slug: /testnet-manual
 title: Setup - Manual
 ---
+import RoadmapItem from '@site/src/components/RoadmapItem';
+
 # Join testnet - Manual setup
 ## Prerequisites
 
@@ -183,7 +185,7 @@ The following sections will describe how to install Cosmovisor for automating th
     ```
     
 
-## Done 🌋
+## Welcome to Lava Testnet 🌋
 
 :::tip Joined Testnet? Be a validator!
 You are now running a Node in the Lava network 🎉🥳! 

@@ -3,6 +3,9 @@ sidebar_position: 2
 slug: /testnet-upgrade-manual   
 title: Upgrades
 ---
+
+import RoadmapItem from '@site/src/components/RoadmapItem';
+
 # Testnet upgrades
 Lava blockchain upgrades requires you to update `lavad`. This guide covers the manual steps for doing so, assuming you do not use Cosmovisor.
 
@@ -93,3 +96,15 @@ lavad status | jq .SyncInfo.catching_up
 # Check the lavad process logs
 tail -f $lavad_log_path
 ```
+
+## Welcome to Lava Testnet 🌋
+
+:::tip Joined Testnet? Be a validator!
+You are now running a Node in the Lava network 🎉🥳! 
+
+Congrats, happy to have you here 😻 Celebrate it with us on Discord.
+
+When you're ready, start putting the node to use **as a validator**:
+[<RoadmapItem icon="🧑‍⚖️" title="Power as a Validator" description="Validate blocks, secure the network, earn rewards"/>](validator#account)
+
+:::

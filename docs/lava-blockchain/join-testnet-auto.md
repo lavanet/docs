@@ -4,6 +4,8 @@ slug: /testnet-auto
 title: Setup - Automatic
 ---
 
+import RoadmapItem from '@site/src/components/RoadmapItem';
+
 # Join testnet - Automatic setup
 
 ### 1. Install node (`lavad`) & Join network
@@ -34,7 +36,7 @@ curl -s --location --request GET 'https://get.lavanet.xyz/pnet_join_network' --h
 🛟 Problems? Head over to our [FAQ's section](./faq#i-have-problems-running-the-install-scripts)
 
 
-## Done 🌋
+## Welcome to Lava Testnet 🌋
 
 :::tip Joined Testnet? Be a validator!
 You are now running a Node in the Lava network 🎉🥳! 
