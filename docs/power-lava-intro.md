@@ -13,3 +13,11 @@ Everything is on-chain and transparent.
 
 
 **🌋 Ready to get the lava flowing? continue by joining the network on the following pages**
+
+```mermaid
+graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+```
