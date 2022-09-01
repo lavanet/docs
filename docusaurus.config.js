@@ -4,8 +4,12 @@
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
-/** @type {import('@docusaurus/types').Config} */
-const config = {
+async function createConfig() {
+  const mdxMermaid = await import('mdx-mermaid')
+
+
+// /** @type {import('@docusaurus/types').Config} */
+return {
   title: 'Lava Docs',
   tagline: 'Decentralizing Web3 Infra',
   url: 'https://docs.lavanet.xyz',
@@ -28,6 +32,7 @@ const config = {
         docs: {
           routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
+          remarkPlugins: [mdxMermaid.default],
           editUrl:
             'https://github.com/lavanet/docs/tree/master/',
         },
@@ -142,5 +147,6 @@ const config = {
       },
     }),
 };
+}
 
-module.exports = config;
+module.exports = createConfig;
