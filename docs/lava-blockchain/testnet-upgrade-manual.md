@@ -24,7 +24,7 @@ This situation requires a different binary (`lavad`) to work with, the process i
 
 1. You have joined the network using the genesis binary
 2. The node has started to sync
-3. An error of a needed upgrade ← You are here
+3. **An error of a needed upgrade** 👈 You are here
 4. Manually upgrade the node to work with the new binary
 5. Node continues to sync with the new binary
 
@@ -43,36 +43,31 @@ Below, you can find tracking of the required upgrade for block height
 
 ```bash
 # Upgrade configurations
-required_upgrade_name="CHANGE_ME" # e.g. "v2"
-upgrade_binary_url="https://lava-pnet0-setup.s3.amazonaws.com/production/cosmovisor-upgrades/$required_upgrade_name/lavad"
 temp_folder=$(mktemp -d)
+required_upgrade_name="v2" # e.g. "v2"
+upgrade_binary_url="https://github.com/K433QLtr6RA9ExEq/GHFkqmTzpdNLDd6T/raw/main/production/cosmovisor-upgrades/upgrades/$required_upgrade_name/bin/lavad"
+
 # Lavad configurations
 lavad_home_folder="$HOME/.lava"
 lavad_log_path="/var/log/lava-logs/lavad.log"
-seed_node="4ad8e40126f5d645786e56b1ce3b69a3bcd09811@176.34.235.208:26656"
-# S3 access configurations
-s3_creds_user="JzMh9LhdcifyMeCF"
-s3_creds_pass="PY7RfcGyh6L8QHCN"
+seed_node="4ad8e40126f5d645786e56b1ce3b69a3bcd09811@prod-pnet-seed-node.lavanet.xyz:26656"
 ```
 
 2. Kill all current lavad processes
 
 ```bash
+source ~/.profile
 # Make sure that all lava processes are stopped
 killall lavad
 # If using lavad as a service, run
 sudo service lavad stop
 ```
 
-3. Download the binary from S3 and replace the current lavad
+3. Download the binary and replace the current `lavad`
 
 ```bash
 # Download the binary and replace it with the current one
-curl \
---progress-bar \
---user-agent "$s3_creds_user" \
---referer "$s3_creds_pass" \
-"$upgrade_binary_url" > $temp_folder/lavad
+wget "$upgrade_binary_url" -q -O $temp_folder/lavad
 
 # Replace the current lava binary with the upgraded binary
 sudo cp $temp_folder/lavad $(which lavad)
@@ -85,6 +80,9 @@ sudo cp $temp_folder/lavad $(which lavad)
 lavad start \
 --home=$lavad_home_folder \
 --p2p.seeds $seed_node >> $lavad_log_path 2>&1 &
+
+# If running Lava as a service, run
+sudo service lavad start
 ```
 
 5. Verify the node continues to sync from the latest block height
