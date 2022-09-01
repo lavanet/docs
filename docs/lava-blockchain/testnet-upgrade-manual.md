@@ -76,7 +76,15 @@ wget "$upgrade_binary_url" -q -O $temp_folder/lavad
 sudo cp $temp_folder/lavad $(which lavad)
 ```
 
-4. Run the lava node
+4. Allow logs permissions
+```bash
+sudo chmod -R 744 /var/log/lava-logs
+# Add writing permissions for the current user for the logs folder
+current_user=$(whoami)
+sudo chown $current_user: /var/log/lava-logs
+```
+
+5. Run the lava node
 
 ```bash
 # Run the lava binary as a background process
@@ -88,7 +96,7 @@ lavad start \
 sudo service lavad start
 ```
 
-5. Verify the node continues to sync from the latest block height
+6. Verify the node continues to sync from the latest block height
 
 ```bash
 # Check if the node is currently in the process of catching up
