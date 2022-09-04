@@ -32,7 +32,7 @@ curl -s --location --request GET 'https://get.lavanet.xyz/pnet_join_network' --h
 
 🛟 Problems? Head over to our [FAQ's section](./faq#i-have-problems-running-the-install-scripts)
 
-### 2. Prepare an account & Fund it
+### 2. Prepare an account & Fund it {#account}
 If you don't have an account already, you can use this script to create one for you:
 
 ```bash

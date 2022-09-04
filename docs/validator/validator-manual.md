@@ -23,7 +23,7 @@ lavad keys add $KEY_NAME
 Ensure you write down the mnemonic as you can not recover the wallet without it. 
 :::
 
-To ensure your wallet was saved to your keyring, look for the WALLET_NAME is in your keys list:
+To ensure your wallet was saved to your keyring, look for the KEY_NAME is in your keys list:
 
 ```bash
 lavad keys list
