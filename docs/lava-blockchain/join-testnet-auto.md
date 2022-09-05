@@ -16,7 +16,7 @@ sudo apt update
 ``` 
 
 ```bash
-sudo apt install curl unzip coreutils -y
+sudo apt install curl jq unzip coreutils -y
 ```
 
 **Install and join the network**

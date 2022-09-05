@@ -11,12 +11,15 @@ Running as a validator requires a Lava Node running, Please refer to [our guide 
 ### 2. Prepare an account & Fund it {#account}
 Lava account and wallets are standard Cosmos. Learn more in [Account & Wallet section](wallet).
 
+Note: if your 
+
 Now that you decided you want to turn your node into a validator, you will first need to add a wallet to your keyring ([FAQ: what is a keyring](faq#keyring)).
 
-While you can add an existing wallet through your seed phrase, we will create a new wallet in this example (replace $KEY_NAME with a name of your choosing):
+While you can add an existing wallet through your seed phrase, we will create a new wallet in this example (replace $account_name with a name of your choosing):
 
 ```bash
-lavad keys add $KEY_NAME
+account_name="your_account_name_here"
+lavad keys add $account_name
 ```
 
 :::danger
@@ -51,10 +54,31 @@ Now you can receive test LAVA tokens using our [faucets](faucet).
 
 Once your account is funded, run this to stake and start validating.
 
-Note to set `$STAKE_AMOUNT` (currently `50000000ulava`) and `$KEY_NAME`:
+1. Verify that your node has finished synching and it is caught up with the network
+
+```bash
+lava status | jq .SyncInfo.catching_up
+# Wait until you see the output: "false"
+```
+
+2. Verify that your account has funds in it in order to perform staking
+
+```bash
+# Make sure you can see your account name in the keys list
+lavad keys list
+
+# Make sure you see your account has Lava tokens in it
+YOUR_ADDRESS=$(lavad keys show -a $account_name)
+lavad query \
+bank balances \
+$YOUR_ADDRESS \
+--denom ulava
+```
+
+3. Stake validator
 ```bash
 lavad tx staking create-validator \
-    --amount="$STAKE_AMOUNT" \
+    --amount="50000000ulava" \
     --pubkey=$(lavad tendermint show-validator --home "$HOME/.lava/") \
     --chain-id=lava \
     --commission-rate="0.10" \
@@ -65,5 +89,18 @@ lavad tx staking create-validator \
     --gas-adjustment "1.5" \
     --gas-prices="0.0025ulava" \
     --home="$HOME/.lava/" \
-    --from=$KEY_NAME
+    --from=$account_name
+```
+
+4. Verify validator setup
+
+```bash
+# Check that the validator node is registered and staked
+validator_pubkey=$(lavad tendermint show-validator | jq .key | tr -d '"')
+
+lavad q staking validators | grep $validator_pubkey
+
+# Check the voting power of your validator node
+lavad status | jq .ValidatorInfo.VotingPower | tr -d '"'
+# Output should be > 0
 ```

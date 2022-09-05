@@ -25,22 +25,22 @@ If you don't have an account already, you can use this script to create one for 
 ```bash
 curl \
 --location \
---request GET 'https://get.lavanet.xyz/pnet_run_node' \
+--request GET 'https://get.lavanet.xyz/pnet_validator_cosmovisor' \
 --header 'Authorization: Basic OHRmem1Ta2VuSE1CajhwcDpSRXBhYWZmS2I3TTNQNlBt' > validator_setup.sh && \
 chmod +x validator_setup.sh
 
 # Run the setup
 ./validator_setup.sh -h
 # Example - Create an account
-# ./validator_setup.sh -e production -a create_account -u my_account
+# ./validator_setup.sh -e production -a create_account -u my_user
 ```
 
-Get your account funded:
+Get your account funded through the faucet:
 ```bash
 # Replace the address with your account address
-curl \
--X POST \
--d '{"address": "lava@16rtwryjdfkulpels227kv7j0kh9exnf0mj3570"}' http://44.205.140.46:5555
+curl -X POST \
+-d '{"address": "lava@12h75m99wsgnxnc7d5qpwl6rq268c7jvccxdeqw", "coins": ["60000000ulava"]}' http://44.205.140.46:5555
+# Expected success output: '{}'
 ```
 
 Script finished? Write down the details you'll need later:
@@ -64,7 +64,7 @@ Keep the newly created account info:
 ./validator_setup.sh -h
 
 # Example - Run the validator setup
-# ./validator_setup.sh -e production -a run_validator -u my_account
+# ./validator_setup.sh -e production -a run_validator -u my_user
 ```
 
 Expect to see the voting power of your node to be > 0, this will be visible in the output of the script
