@@ -23,14 +23,16 @@ sudo apt install curl unzip coreutils -y
 
 Running the script will:
 
-1. Install `lavad`
+1. Install `lavad` (using Cosmovisor)
 2. Join the testnet
 3. Sync to latest block
 
 ```bash
-curl -s --location --request GET 'https://get.lavanet.xyz/pnet_join_network' --header 'Authorization: Basic OHRmem1Ta2VuSE1CajhwcDpSRXBhYWZmS2I3TTNQNlBt' > 00_join_network.sh && \
-    chmod +x 00_join_network.sh && \
-    ./00_join_network.sh production
+curl -s --location \
+--request GET 'https://get.lavanet.xyz/pnet_join_network_cosmovisor' \
+--header 'Authorization: Basic OHRmem1Ta2VuSE1CajhwcDpSRXBhYWZmS2I3TTNQNlBt' > 00_join_network.sh && \
+chmod +x 00_join_network.sh && \
+./00_join_network.sh
 ```
 
 🛟 Problems? Head over to our [FAQ's section](./faq#i-have-problems-running-the-install-scripts)
