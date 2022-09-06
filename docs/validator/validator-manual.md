@@ -11,22 +11,21 @@ Running as a validator requires a Lava Node running, Please refer to [our guide 
 ### 2. Prepare an account & Fund it {#account}
 Lava account and wallets are standard Cosmos. Learn more in [Account & Wallet section](wallet).
 
-Note: if your 
-
 Now that you decided you want to turn your node into a validator, you will first need to add a wallet to your keyring ([FAQ: what is a keyring](faq#keyring)).
 
-While you can add an existing wallet through your seed phrase, we will create a new wallet in this example (replace $account_name with a name of your choosing):
+While you may use your seed phrase to import an existing wallet, we'll make a new one in this scenario.
+replace $ACCOUNT_NAME with a name of your choosing:
 
 ```bash
-account_name="your_account_name_here"
-lavad keys add $account_name
+ACCOUNT_NAME="name_here"
+lavad keys add $ACCOUNT_NAME
 ```
 
 :::danger
 Ensure you write down the mnemonic as you can not recover the wallet without it. 
 :::
 
-To ensure your wallet was saved to your keyring, look for the KEY_NAME is in your keys list:
+To ensure your wallet was saved to your keyring, look for the `KEY_NAME` is in your keys list:
 
 ```bash
 lavad keys list
@@ -48,7 +47,15 @@ Keep the newly created account info:
 
 :::
 
-Now you can receive test LAVA tokens using our [faucets](faucet).
+#### Faucet
+
+Get your account funded through the faucet:
+```bash
+# Replace the address with your account address
+curl -X POST \
+-d '{"address": "lava@12h75m99wsgnxnc7d5qpwl6rq268c7jvccxdeqw", "coins": ["60000000ulava"]}' http://44.205.140.46:5555
+# Expected success output: '{}'
+```
 
 ### 3. Stake & start validating {#stake}
 
@@ -68,11 +75,11 @@ lava status | jq .SyncInfo.catching_up
 lavad keys list
 
 # Make sure you see your account has Lava tokens in it
-YOUR_ADDRESS=$(lavad keys show -a $account_name)
+YOUR_ADDRESS=$(lavad keys show -a $ACCOUNT_NAME)
 lavad query \
-bank balances \
-$YOUR_ADDRESS \
---denom ulava
+    bank balances \
+    $YOUR_ADDRESS \
+    --denom ulava
 ```
 
 3. Stake validator
@@ -89,7 +96,7 @@ lavad tx staking create-validator \
     --gas-adjustment "1.5" \
     --gas-prices="0.0025ulava" \
     --home="$HOME/.lava/" \
-    --from=$account_name
+    --from=$ACCOUNT_NAME
 ```
 
 4. Verify validator setup

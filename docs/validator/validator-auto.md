@@ -4,20 +4,40 @@ title: Setup - Automatic
 slug: /validator-auto
 ---
 
-# Run Validator - Automatic setup
+This section will help you onboard Lava network with the "automatic scripts" flow: from installing a node and joining the network, to handling an account, funds and start validating (and earning rewards)
 
-Script assumptions:
-- The node was installed using Cosmovisor
-- Lava config folder is $HOME/.lava/
-- Cosmovisor home folder is $HOME/.lava/cosmovisor
-
+:::note Already joined the network just not validating yet?
+If you already installed a node and joined the network with the automatic script as outlined in "[Join Testnet - Setup automatic](testnet-auto)" , you should skip step #1 and [go to step 2](#account).
+:::
 
 ### 1. Install node (`lavad`) & Join network
 
-Running as a validator requires a Lava Node running, with state synced. Please refer to [set up a node](https://docs.lavanet.xyz/lava-node-intro) section.
+**Prepare**
+```bash
+sudo apt update
+``` 
+
+```bash
+sudo apt install curl jq unzip coreutils -y
+```
+
+**Install and join the network**
+
+Running the script will:
+
+1. Install `lavad` (using Cosmovisor)
+2. Join the testnet
+3. Sync to latest block
+
+```bash
+curl -s --location \
+--request GET 'https://get.lavanet.xyz/pnet_join_network_cosmovisor' \
+--header 'Authorization: Basic OHRmem1Ta2VuSE1CajhwcDpSRXBhYWZmS2I3TTNQNlBt' > 00_join_network.sh && \
+chmod +x 00_join_network.sh && \
+./00_join_network.sh
+```
 
 🛟 Problems? Head over to our [FAQ's section](./faq#i-have-problems-running-the-install-scripts)
-
 
 ### 2. Prepare an account & Fund it {#account}
 If you don't have an account already, you can use this script to create one for you:
@@ -35,14 +55,6 @@ chmod +x validator_setup.sh
 # ./validator_setup.sh -e production -a create_account -u my_user
 ```
 
-Get your account funded through the faucet:
-```bash
-# Replace the address with your account address
-curl -X POST \
--d '{"address": "lava@12h75m99wsgnxnc7d5qpwl6rq268c7jvccxdeqw", "coins": ["60000000ulava"]}' http://44.205.140.46:5555
-# Expected success output: '{}'
-```
-
 Script finished? Write down the details you'll need later:
 
 :::caution Pencils out 📝
@@ -52,10 +64,17 @@ Keep the newly created account info:
 3. Your validator pubkey
 
 ♻ Save those details as we make sure to automatically airdrop you with LAVA test tokens as soon as we restart the testnet.
-
 :::
 
+#### Faucet
 
+Get your account funded through the faucet:
+```bash
+# Replace the address with your account address
+curl -X POST \
+-d '{"address": "lava@12h75m99wsgnxnc7d5qpwl6rq268c7jvccxdeqw", "coins": ["60000000ulava"]}' http://44.205.140.46:5555
+# Expected success output: '{}'
+```
 
 ### 3. Stake & start validating
 
