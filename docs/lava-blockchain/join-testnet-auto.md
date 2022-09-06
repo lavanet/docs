@@ -8,8 +8,9 @@ import RoadmapItem from '@site/src/components/RoadmapItem';
 
 # Join testnet - Automatic setup
 
-### 0. Prerequisites
-Verify [hardware requirements](reqs) are met
+This section will help you onboard Lava network with the "automatic scripts" flow: installing a node and joining the network.
+
+Before starting, verify [hardware requirements](reqs) are met.
 
 ### 1. Install node (`lavad`) & Join network
 

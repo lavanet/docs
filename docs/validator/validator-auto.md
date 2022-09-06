@@ -4,7 +4,9 @@ title: Setup - Automatic
 slug: /validator-auto
 ---
 
-This section will help you onboard Lava network with the "automatic scripts" flow: from installing a node and joining the network, to handling an account, funds and start validating (and earning rewards)
+This section will help you onboard Lava network with the "automatic scripts" flow: from installing a node and joining the network, to handling an account, funds and start validating (and earning rewards).
+
+Before starting, verify [hardware requirements](reqs) are met.
 
 :::note Already joined the network just not validating yet?
 If you already installed a node and joined the network with the automatic script as outlined in "[Join Testnet - Setup automatic](testnet-auto)" , you should skip step #1 and [go to step 2](#account).
