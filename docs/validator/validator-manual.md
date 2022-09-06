@@ -13,17 +13,19 @@ Lava account and wallets are standard Cosmos. Learn more in [Account & Wallet se
 
 Now that you decided you want to turn your node into a validator, you will first need to add a wallet to your keyring ([FAQ: what is a keyring](faq#keyring)).
 
-While you can add an existing wallet through your seed phrase, we will create a new wallet in this example (replace $KEY_NAME with a name of your choosing):
+While you may use your seed phrase to import an existing wallet, we'll make a new one in this scenario.
+replace $ACCOUNT_NAME with a name of your choosing:
 
 ```bash
-lavad keys add $KEY_NAME
+ACCOUNT_NAME="name_here"
+lavad keys add $ACCOUNT_NAME
 ```
 
 :::danger
 Ensure you write down the mnemonic as you can not recover the wallet without it. 
 :::
 
-To ensure your wallet was saved to your keyring, look for the KEY_NAME is in your keys list:
+To ensure your wallet was saved to your keyring, look for the `KEY_NAME` is in your keys list:
 
 ```bash
 lavad keys list
@@ -45,16 +47,45 @@ Keep the newly created account info:
 
 :::
 
-Now you can receive test LAVA tokens using our [faucets](faucet).
+#### Faucet
+
+Get your account funded through the faucet:
+```bash
+# Replace the address with your account address
+curl -X POST \
+-d '{"address": "lava@12h75m99wsgnxnc7d5qpwl6rq268c7jvccxdeqw", "coins": ["60000000ulava"]}' http://44.205.140.46:5555
+# Expected success output: '{}'
+```
 
 ### 3. Stake & start validating {#stake}
 
 Once your account is funded, run this to stake and start validating.
 
-Note to set `$STAKE_AMOUNT` (currently `50000000ulava`) and `$KEY_NAME`:
+1. Verify that your node has finished synching and it is caught up with the network
+
+```bash
+lava status | jq .SyncInfo.catching_up
+# Wait until you see the output: "false"
+```
+
+2. Verify that your account has funds in it in order to perform staking
+
+```bash
+# Make sure you can see your account name in the keys list
+lavad keys list
+
+# Make sure you see your account has Lava tokens in it
+YOUR_ADDRESS=$(lavad keys show -a $ACCOUNT_NAME)
+lavad query \
+    bank balances \
+    $YOUR_ADDRESS \
+    --denom ulava
+```
+
+3. Stake validator
 ```bash
 lavad tx staking create-validator \
-    --amount="$STAKE_AMOUNT" \
+    --amount="50000000ulava" \
     --pubkey=$(lavad tendermint show-validator --home "$HOME/.lava/") \
     --chain-id=lava \
     --commission-rate="0.10" \
@@ -65,5 +96,18 @@ lavad tx staking create-validator \
     --gas-adjustment "1.5" \
     --gas-prices="0.0025ulava" \
     --home="$HOME/.lava/" \
-    --from=$KEY_NAME
+    --from=$ACCOUNT_NAME
+```
+
+4. Verify validator setup
+
+```bash
+# Check that the validator node is registered and staked
+validator_pubkey=$(lavad tendermint show-validator | jq .key | tr -d '"')
+
+lavad q staking validators | grep $validator_pubkey
+
+# Check the voting power of your validator node
+lavad status | jq .ValidatorInfo.VotingPower | tr -d '"'
+# Output should be > 0
 ```
