@@ -8,6 +8,9 @@ import RoadmapItem from '@site/src/components/RoadmapItem';
 
 # Join testnet - Automatic setup
 
+### 0. Prerequisites
+Verify [hardware requirements](reqs) are met
+
 ### 1. Install node (`lavad`) & Join network
 
 **Prepare**
