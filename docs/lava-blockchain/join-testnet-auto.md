@@ -40,6 +40,19 @@ chmod +x 00_join_network.sh && \
 ./00_join_network.sh
 ```
 
+## 2. Verify setup
+
+### Make sure `cosmovisor` is running
+
+- Check the state of the cosmovisor service
+    
+    ```bash
+    sudo systemctl status cosmovisor
+    # To view the service logs
+    sudo journalctl -u cosmovisor -f
+    ```
+
+
 🛟 Problems? Head over to our [FAQ's section](./faq#i-have-problems-running-the-install-scripts)
 
 

@@ -6,6 +6,9 @@ title: Option C - Manual
 import RoadmapItem from '@site/src/components/RoadmapItem';
 
 # Join testnet - Manual setup
+
+Note: please note that this is a fully manual installation,  which will start your node using the genesis binary, not using Cosmovisor, which means the network upgrades will need to be done manually (refer to #3-upgrades)
+
 ## Prerequisites
 
 1. Verify [hardware requirements](reqs) are met
@@ -15,7 +18,7 @@ import RoadmapItem from '@site/src/components/RoadmapItem';
         
         ```bash
         ### Packages installations
-        sudo apt update # in case of permissions error, try running with sudo
+        sudo apt update # In case of permissions error, try running with sudo
         sudo apt install -y unzip logrotate git jq sed wget curl coreutils systemd
         # Create the temp dir for the installation
         temp_folder=$(mktemp -d) && cd $temp_folder
@@ -46,6 +49,7 @@ import RoadmapItem from '@site/src/components/RoadmapItem';
         If not, then, export GOPATH=$HOME/go
         
         3. PATH should include $HOME/go/bin
+        To verify PATH, run "echo $PATH"
         ```
         
 
@@ -80,7 +84,7 @@ import RoadmapItem from '@site/src/components/RoadmapItem';
 
 ### Set the genesis file
 
-- Set the genesis file in the configuration folder
+- Set the genesis JSON file in the configuration folder
     
     ```bash
     # Copy the genesis.json file to the Lava config folder
@@ -89,18 +93,60 @@ import RoadmapItem from '@site/src/components/RoadmapItem';
 
 ## 2. Join the Lava Testnet
 
-### Run genesis node
+### Copy the genesis binary
 
-@DVIR 
+- Set the lavad binary location and copy the genesis binary to it
 
-The manual should contain the following info:
-```
-# Lavad configurations
-lavad_home_folder="$HOME/.lava"
-seed_node="4ad8e40126f5d645786e56b1ce3b69a3bcd09811@prod-pnet-seed-node.lavanet.xyz:26656"
-# Start the chain 
-lavad start --home=$lavad_home_folder --p2p.seeds $seed_node
-```
+    ```bash
+    # Set and create the lavad binary path
+    lavad_binary_path="$HOME/go/bin/"
+    mkdir -p $lavad_binary_path
+    # Copy the genesis binary to the lava path
+    cp cosmovisor-upgrades/genesis/bin/lavad $lavad_binary_path/lavad
+    # Lavad should now be accessible from PATH, to verify, try running
+    # In case it is not accessible, make sure $lavad_binary_path is part of PATH (you can refer to the "Go installation" section)
+    lavad --help # Make sure you can see the lavad binary help printed out
+    ```
+
+### Start running the node using the genesis binary
+
+- Create a systemd service to run the Lava node
+
+    ```bash
+    # Create systemd unit file with logrotate
+    echo "[Unit]
+    Description=Lava Node
+    After=network-online.target
+    [Service]
+    User=$USER
+    ExecStart=$(which lavad) start --home=$lavad_home_folder --p2p.seeds $seed_node
+    Restart=always
+    RestartSec=3
+    LimitNOFILE=infinity
+    LimitNPROC=infinity
+    [Install]
+    WantedBy=multi-user.target" >lavad.service
+    sudo mv lavad.service /lib/systemd/system/lavad.service
+    ```
+
+- Configure the lavad service to run on boot, and start it
+
+    ```bash
+    # Enable the lavad service so that it will start automatically when the system boots
+    sudo systemctl daemon-reload
+    sudo systemctl enable lavad.service
+    sudo systemctl restart systemd-journald
+    sudo systemctl start lavad
+    ```
+
+- Check the state of the lavad service
+    
+    ```bash
+    sudo systemctl status lavad
+    # To view the service logs
+    sudo journalctl -u lavad -f
+    ```
+
 
 ## 3. Upgrades
 Lava blockchain upgrades requires you to update `lavad`. This guide covers the manual steps for doing so, assuming you do not use Cosmovisor.
@@ -139,22 +185,15 @@ Below, you can find tracking of the required upgrade for block height
 
 ```bash
 # Upgrade configurations
-temp_folder=$(mktemp -d)
+temp_folder=$(mktemp -d) && cd $temp_folder
 required_upgrade_name="v2" # e.g. "v2"
 upgrade_binary_url="https://github.com/K433QLtr6RA9ExEq/GHFkqmTzpdNLDd6T/raw/main/production/cosmovisor-upgrades/upgrades/$required_upgrade_name/bin/lavad"
-
-# Lavad configurations
-lavad_home_folder="$HOME/.lava"
-lavad_log_path="/var/log/lava-logs/lavad.log"
-seed_node="4ad8e40126f5d645786e56b1ce3b69a3bcd09811@prod-pnet-seed-node.lavanet.xyz:26656"
 ```
 
 2. Kill all current lavad processes
 
 ```bash
 source ~/.profile
-# Make sure that all lava processes are stopped
-killall lavad
 # If using lavad as a service, run
 sudo service lavad stop
 ```
@@ -169,33 +208,20 @@ wget "$upgrade_binary_url" -q -O $temp_folder/lavad
 sudo cp $temp_folder/lavad $(which lavad)
 ```
 
-4. Allow logs permissions
-```bash
-sudo chmod -R 744 /var/log/lava-logs
-# Add writing permissions for the current user for the logs folder
-current_user=$(whoami)
-sudo chown $current_user: /var/log/lava-logs
-```
-
-5. Run the lava node
+4. Run the lava node
 
 ```bash
-# Run the lava binary as a background process
-lavad start \
---home=$lavad_home_folder \
---p2p.seeds $seed_node >> $lavad_log_path 2>&1 &
-
-# If running Lava as a service, run
+# Re-start the stopped lavad service
 sudo service lavad start
 ```
 
-6. Verify the node continues to sync from the latest block height
+5. Verify the node continues to sync from the latest block height
 
 ```bash
 # Check if the node is currently in the process of catching up
 lavad status | jq .SyncInfo.catching_up
 # Check the lavad process logs
-tail -f $lavad_log_path
+sudo journalctl -u lavad -f
 ```
     
 
