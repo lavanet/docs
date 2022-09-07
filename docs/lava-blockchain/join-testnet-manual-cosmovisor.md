@@ -126,6 +126,7 @@ The following sections will describe how to install Cosmovisor for automating th
     cp genesis_json/genesis.json $lava_config_folder/genesis.json
     ```
 
+    Please note that `cosmovisor` will throw an error, this is ok:
     ```bash
     # Please note that cosmovisor will throw an error, this is ok:
     # lstat /home/ubuntu/.lava/cosmovisor/current/upgrade-info.json: no such file or directory
@@ -171,11 +172,11 @@ The following sections will describe how to install Cosmovisor for automating th
     ```
     
 
-## 3. Verify `cosmovisor` setup
+## 3. Verify
 
-### Make sure `cosmovisor` is running
+### Verify `cosmovisor` setup
 
-- Check the state of the cosmovisor service
+Make sure `cosmovisor` is running by checking the state of the cosmovisor service:
     
 ```bash
 sudo systemctl status cosmovisor
@@ -183,14 +184,13 @@ sudo systemctl status cosmovisor
 sudo journalctl -u cosmovisor -f
 ```
 
-## 4. Verify node status and visit logs
+### Verify node status
+
+Note the location of `lavad` now exists under `cosmovisor` path:
 
 ```bash
 # Check if the node is currently in the process of catching up
-lavad status | jq .SyncInfo.catching_up
-
-# Check the lavad process logs
-sudo journalctl -u lavad -f
+$HOME/.lava/cosmovisor/current/bin/lavad status | jq
 ```
 
 ## Welcome to Lava Testnet 🌋
