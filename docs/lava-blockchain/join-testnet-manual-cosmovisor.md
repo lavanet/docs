@@ -39,14 +39,14 @@ import RoadmapItem from '@site/src/components/RoadmapItem';
         
     - Installation verifications
         
-        ```
-        1. You can verify the installed go version by running: "go version"
         
-        2. The command "go env GOPATH" should include $HOME/go
-        If not, then, export GOPATH=$HOME/go
+        1. You can verify the installed go version by running: `go version`
         
-        3. PATH should include $HOME/go/bin
-        ```
+        2. The command `go env GOPATH` should include `$HOME/go`
+        If not, then, `export GOPATH=$HOME/go`
+        
+        3. PATH should include `$HOME/go/bin`
+        To verify PATH, run `echo $PATH`
         
 
 ## 1. Set up a local node
