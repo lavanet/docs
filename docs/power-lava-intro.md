@@ -12,8 +12,4 @@ Participants joining the network help reinforce data reliability and high qualit
 Everything is on-chain and transparent.
 
 
-**🌋 Ready to get the lava flowing?**
-
-[<RoadmapItem icon="🧑‍⚖️" title="Power as a Validator" description="Validate blocks, secure the network, earn rewards"/>](/validator-intro.md)
-
-[<RoadmapItem icon="💁" title="Power as a Provider" description="Service chain access, grow the network, earn rewards"/>](/provider-intro.md)
+**🌋 Ready to get the lava flowing? continue by joining the network on the following pages**
