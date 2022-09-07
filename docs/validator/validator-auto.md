@@ -1,6 +1,6 @@
 ---
 sidebar_position: 2
-title: Setup - Automatic
+title: Option A - Automatic
 slug: /validator-auto
 ---
 

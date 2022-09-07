@@ -51,7 +51,7 @@ import RoadmapItem from '@site/src/components/RoadmapItem';
 
 ## 1. Set up a local node
 
-### A. Download app configurations
+### Download app configurations
 
 - Download setup configuration
     
@@ -78,7 +78,7 @@ import RoadmapItem from '@site/src/components/RoadmapItem';
     ```
     
 
-### B. Set the genesis file
+### Set the genesis file
 
 - Set the genesis file in the configuration folder
     
@@ -92,7 +92,7 @@ import RoadmapItem from '@site/src/components/RoadmapItem';
 The following sections will describe how to install Cosmovisor for automating the upgrades process.
 
 
-### A. Set up Cosmovisor {#cosmovisor}
+### Set up Cosmovisor {#cosmovisor}
 
 - Set up cosmovisor to ensure any future upgrades happen flawlessly. To install Cosmovisor:
     
@@ -159,7 +159,7 @@ The following sections will describe how to install Cosmovisor for automating th
     sudo mv cosmovisor.service /lib/systemd/system/cosmovisor.service
     ```
     
-### B. Enable and start the Cosmovisor service
+### Enable and start the Cosmovisor service
     
     ```bash
     # Enable the cosmovisor service so that it will start automatically when the system boots
@@ -172,7 +172,7 @@ The following sections will describe how to install Cosmovisor for automating th
 
 ## 3. Verify setup
 
-### A. Make sure the `cosmovisor` service is running
+### Make sure `cosmovisor` is running
 
 - Check the state of the cosmovisor service
     

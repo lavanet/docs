@@ -6,9 +6,10 @@ title: Option A - Automatic (Cosmovisor)
 
 import RoadmapItem from '@site/src/components/RoadmapItem';
 
-# Join testnet - Automatic setup
+# Join testnet - Automatic setup with Cosmovisor
 
-This section will help you onboard Lava network with the "automatic scripts" flow: installing a node and joining the network.
+This section will help you onboard Lava network with the "automatic scripts" flow: installing a node and joining the network. 
+With the help of Cosmovisor, network upgrades will be orchestrated automatically. 
 
 Before starting, verify [hardware requirements](reqs) are met.
 
