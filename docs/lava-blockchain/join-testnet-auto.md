@@ -1,7 +1,7 @@
 ---
 sidebar_position: 2
 slug: /testnet-auto
-title: Setup - Automatic
+title: Option A - Automatic (Cosmovisor)
 ---
 
 import RoadmapItem from '@site/src/components/RoadmapItem';
