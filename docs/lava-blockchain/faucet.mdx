@@ -4,10 +4,14 @@ title: Faucet
 slug: /faucet
 ---
 
-
-:::info WEN FAUCET 
-
-LAVA Faucets are coming soon and will be referenced here.
-
-In the meantime please ask for tokens in Discord or from your point of contact 🙏
+:::info WIP
+Faucet's UI will be soon
 :::
+
+## API
+Use the faucet API, Note to replace the address (`lava@...`) with your account address:
+```bash
+curl -X POST \
+-d '{"address": "lava@ABCD", "coins": ["60000000ulava"]}' http://44.205.140.46:5555
+```
+Expected success output: `{}`
