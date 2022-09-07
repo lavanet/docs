@@ -7,7 +7,9 @@ import RoadmapItem from '@site/src/components/RoadmapItem';
 
 # Join testnet - Manual setup
 
-Note: please note that this is a fully manual installation,  which will start your node using the genesis binary, not using Cosmovisor, which means the network upgrades will need to be done manually (refer to #3-upgrades)
+This page will walk you through the manual installation of the node and joining the network.
+
+Note that it does **not** include the "Cosmovisor" tool, hence once you install the first genesis binary, you will need to incrementally upgrade your node, as described in [upgrades](#upgrades).
 
 ## Prerequisites
 
@@ -42,15 +44,14 @@ Note: please note that this is a fully manual installation,  which will start yo
         
     - Installation verifications
         
-        ```
-        1. You can verify the installed go version by running: "go version"
         
-        2. The command "go env GOPATH" should include $HOME/go
-        If not, then, export GOPATH=$HOME/go
+        1. You can verify the installed go version by running: `go version`
         
-        3. PATH should include $HOME/go/bin
-        To verify PATH, run "echo $PATH"
-        ```
+        2. The command `go env GOPATH` should include `$HOME/go`
+        If not, then, `export GOPATH=$HOME/go`
+        
+        3. PATH should include `$HOME/go/bin`
+        To verify PATH, run `echo $PATH`
         
 
 ## 1. Set up a local node
@@ -148,7 +149,7 @@ Note: please note that this is a fully manual installation,  which will start yo
     ```
 
 
-## 3. Upgrades
+## 3. Upgrades {#upgrades}
 Lava blockchain upgrades requires you to update `lavad`. This guide covers the manual steps for doing so, assuming you do not use Cosmovisor.
 
 
@@ -223,7 +224,7 @@ lavad status | jq .SyncInfo.catching_up
 # Check the lavad process logs
 sudo journalctl -u lavad -f
 ```
-    
+
 
 ## Welcome to Lava Testnet 🌋
 

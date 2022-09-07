@@ -171,18 +171,27 @@ The following sections will describe how to install Cosmovisor for automating th
     ```
     
 
-## 3. Verify setup
+## 3. Verify `cosmovisor` setup
 
 ### Make sure `cosmovisor` is running
 
 - Check the state of the cosmovisor service
     
-    ```bash
-    sudo systemctl status cosmovisor
-    # To view the service logs
-    sudo journalctl -u cosmovisor -f
-    ```
-    
+```bash
+sudo systemctl status cosmovisor
+# To view the service logs
+sudo journalctl -u cosmovisor -f
+```
+
+## 4. Verify node status and visit logs
+
+```bash
+# Check if the node is currently in the process of catching up
+lavad status | jq .SyncInfo.catching_up
+
+# Check the lavad process logs
+sudo journalctl -u lavad -f
+```
 
 ## Welcome to Lava Testnet 🌋
 
