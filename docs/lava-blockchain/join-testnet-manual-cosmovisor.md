@@ -161,13 +161,14 @@ The following sections will describe how to install Cosmovisor for automating th
     
 ### Enable and start the Cosmovisor service
     
+- Configure the Cosmovisor service to run on boot, and start it
     ```bash
     # Enable the cosmovisor service so that it will start automatically when the system boots
     sudo systemctl daemon-reload
     sudo systemctl enable cosmovisor.service
     sudo systemctl restart systemd-journald
     sudo systemctl start cosmovisor
-     ```
+    ```
     
 
 ## 3. Verify setup
