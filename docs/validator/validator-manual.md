@@ -17,8 +17,9 @@ While you may use your seed phrase to import an existing wallet, we'll make a ne
 replace $ACCOUNT_NAME with a name of your choosing:
 
 ```bash
+current_lavad_binary="$HOME/.lava/cosmovisor/current/bin/lavad"
 ACCOUNT_NAME="name_here"
-lavad keys add $ACCOUNT_NAME
+$current_lavad_binary keys add $ACCOUNT_NAME
 ```
 
 :::danger
@@ -28,13 +29,13 @@ Ensure you write down the mnemonic as you can not recover the wallet without it.
 To ensure your wallet was saved to your keyring, look for the `KEY_NAME` is in your keys list:
 
 ```bash
-lavad keys list
+$current_lavad_binary keys list
 ```
 
 The last thing needed before initializing the validator is to obtain your **validator public** key which was created when you first initialized your node. To obtain your validator pubkey:
 
 ```bash
-lavad tendermint show-validator
+$current_lavad_binary tendermint show-validator
 ```
 
 :::caution Pencils out 📝
@@ -64,7 +65,7 @@ Once your account is funded, run this to stake and start validating.
 1. Verify that your node has finished synching and it is caught up with the network
 
 ```bash
-lavad status | jq .SyncInfo.catching_up
+$current_lavad_binary status | jq .SyncInfo.catching_up
 # Wait until you see the output: "false"
 ```
 
@@ -72,11 +73,11 @@ lavad status | jq .SyncInfo.catching_up
 
 ```bash
 # Make sure you can see your account name in the keys list
-lavad keys list
+$current_lavad_binary keys list
 
 # Make sure you see your account has Lava tokens in it
-YOUR_ADDRESS=$(lavad keys show -a $ACCOUNT_NAME)
-lavad query \
+YOUR_ADDRESS=$($current_lavad_binary keys show -a $ACCOUNT_NAME)
+$current_lavad_binary query \
     bank balances \
     $YOUR_ADDRESS \
     --denom ulava
@@ -84,9 +85,9 @@ lavad query \
 
 3. Stake validator
 ```bash
-lavad tx staking create-validator \
+$current_lavad_binary tx staking create-validator \
     --amount="50000000ulava" \
-    --pubkey=$(lavad tendermint show-validator --home "$HOME/.lava/") \
+    --pubkey=$($current_lavad_binary tendermint show-validator --home "$HOME/.lava/") \
     --chain-id=lava \
     --commission-rate="0.10" \
     --commission-max-rate="0.20" \
@@ -102,12 +103,14 @@ lavad tx staking create-validator \
 4. Verify validator setup
 
 ```bash
+block_time=30
 # Check that the validator node is registered and staked
-validator_pubkey=$(lavad tendermint show-validator | jq .key | tr -d '"')
+validator_pubkey=$($current_lavad_binary tendermint show-validator | jq .key | tr -d '"')
 
-lavad q staking validators | grep $validator_pubkey
+$current_lavad_binary q staking validators | grep $validator_pubkey
 
-# Check the voting power of your validator node
-lavad status | jq .ValidatorInfo.VotingPower | tr -d '"'
+# Check the voting power of your validator node - please allow 30-60 seconds for the output to be updated
+sleep $block_time
+$current_lavad_binary status | jq .ValidatorInfo.VotingPower | tr -d '"'
 # Output should be > 0
 ```

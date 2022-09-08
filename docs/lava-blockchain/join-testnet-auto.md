@@ -47,8 +47,9 @@ chmod +x 00_join_network.sh && \
 Make sure `cosmovisor` is running by checking the state of the cosmovisor service:
     
 ```bash
+# Check the service status - you should expect the service to be "Active", if you see errors connecting to peers, that is normal
 sudo systemctl status cosmovisor
-# To view the service logs
+# To view the service logs - verify that you can see the blocks height advancing
 sudo journalctl -u cosmovisor -f
 ```
 
