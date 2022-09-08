@@ -152,6 +152,15 @@ Note that it does **not** include the "Cosmovisor" tool, hence once you install 
 ## 3. Upgrades {#upgrades}
 Lava blockchain upgrades requires you to update `lavad`. This guide covers the manual steps for doing so, assuming you do not use Cosmovisor.
 
+:::info
+Currently (`2022-09-08`), Lava's network testnet chain has no upgrades (it's running with the genesis version).
+When an update will be needed, this section will have the details on the upgrade.
+:::
+
+<details>
+    <summary>
+    Example instructions when an upgrade will be needed
+    </summary>
 
 ### How to know there's an upgrade?
 
@@ -224,6 +233,8 @@ lavad status | jq .SyncInfo.catching_up
 # Check the lavad process logs
 sudo journalctl -u lavad -f
 ```
+</details>
+
 
 
 ## Welcome to Lava Testnet 🌋
