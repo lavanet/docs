@@ -64,7 +64,7 @@ Once your account is funded, run this to stake and start validating.
 1. Verify that your node has finished synching and it is caught up with the network
 
 ```bash
-lava status | jq .SyncInfo.catching_up
+lavad status | jq .SyncInfo.catching_up
 # Wait until you see the output: "false"
 ```
 
