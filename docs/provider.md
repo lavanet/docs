@@ -14,238 +14,137 @@ Learn more by reading our [litepaper](https://lavanet.xyz)
 :::
 
 ## Available APIs
-You can find the latest list of specifications ("Specs") below, or, can be queried directly from the node:
+Lava scales constantly to new chains, and able to offer their APIs via our providers.
+An API offering, for example "Ethereum Mainnet RPC" exist on-chain on the form a specification ("Spec"). These Specs, represent the interface along with metadata about it, for example supported protocols (REST API, JSON RPC...).
+Specs are handled via Lava's governance.
 
-Port - Name - Code - Protocol:
+### How to query available APIs/Chains? {#chains}
+
+Get them directly from a lava node using the CLI (If you don't have the CLI yet, you'll be able to install it in the next section).
+
+If you are running a node and connected to the testnet:
 ```
-19921 - Ethereum - ETH1, jsonrpc  
-19922 - Osmosis Mainnet - COS3, tendermintrpc  
-19923 - Osmosis Mainnet - COS3, rest  
-19924 - Fantom - FTM250, jsonrpc  
-19925 - Goerli - GTH1, jsonrpc  
-19926 - Lava mainnet - LAV1, tendermintrpc  
-19927 - Lava mainnet - LAV1, rest  
-19928 - Osmosis testnet - COS4, tendermintrpc  
-19929 - Osmosis testnet - COS4, rest  
-19930 - Celo mainnet - CELO, jsonrpc  
+lavad q spec list-Spec
 ```
-_Provider ports: 19921 - 19930_
-
-
-### 1. Set up configurations
-```bash
-rpc_node="LAVA_RPC_NODE_ADDRESS_HERE" # e.g. "https://public-rpc.lavanet.xyz:443"
-node_public_ip=$(curl -s ifconfig.me)
-
-# If you already have an account specify it below, if not specify the desired user name to be created
-# To get existing account name, run 'lavad keys list --keyring-backend test'
-account_name="USER_NAME_HERE"
+or if connecting to external node:
+```
+lavad q spec list-Spec --node https://54.144.69.182:26657
 ```
 
-### 2. Download the latest lavad binary
+For reference, here's the result as of Sep-2022:
+```
+Ethereum - ETH1, jsonrpc  
+Osmosis Mainnet - COS3, tendermintrpc  
+Osmosis Mainnet - COS3, rest  
+Fantom - FTM250, jsonrpc  
+Goerli - GTH1, jsonrpc  
+Lava mainnet - LAV1, tendermintrpc  
+Lava mainnet - LAV1, rest 
+Osmosis testnet - COS4, tendermintrpc  
+Osmosis testnet - COS4, rest  
+Celo mainnet - CELO, jsonrpc  
+```
+
+## Running a provider - steps
+Being a provider requires alignment to the Lava protocol, for that, Lava has implemented an implementation to help you run it. That implementation is built inside `lavad`. 
+
+:::info
+ Current installation of `lavad` is built only for Linux. Soon we'll allow building lavad from source.
+:::
+
+### 1. Download `lavad`
 ```bash
 binary_url="https://github.com/K433QLtr6RA9ExEq/GHFkqmTzpdNLDd6T/blob/main/production/cosmovisor-upgrades/genesis/bin/lavad?raw=true"
 wget $binary_url -O $HOME/lavad
 ```
 
-### 3. Optional - Create an account and fund it
+### 2. Prepare an account & Fund it {#account}
+Lava account and wallets are standard Cosmos. Learn more in [Account & Wallet section](wallet).
 
-:::info
-If you already have a funded account you can skip this step.
-:::
+First, you need to add a wallet to your keyring ([FAQ: what is a keyring](faq#keyring)).
+
+While you may use your seed phrase to import an existing wallet, we'll make a new one in this scenario.
+replace $ACCOUNT_NAME with a name of your choosing:
 
 ```bash
-# Create a local account
-$HOME/lavad keys add $account_name --keyring-backend test
-# Print the public key (recommended to backup)
-$HOME/lavad keys show -a $account_name --keyring-backend test
+lavad keys add $ACCOUNT_NAME
+```
 
-# Fund the account to join the network
-# Replace the "address" field with your account address
+To ensure your wallet was saved to your keyring, look for the `KEY_NAME` is in your keys list:
+
+```bash
+lavad keys list
+```
+
+:::caution Pencils out 📝
+Keep the newly created account info:
+1. SECRET mnemonic phrase 🚨🤫🚨🤫🚨
+2. Your public address, starts with `lava@`
+
+:::
+
+#### Faucet
+
+Get your account funded through the faucet:
+```bash
+# Replace the address with your account address
 curl -X POST \
 -d '{"address": "lava@12h75m99wsgnxnc7d5qpwl6rq268c7jvccxdeqw", "coins": ["60000000ulava"]}' http://44.205.140.46:5555
 # Expected success output: '{}'
 ```
 
-### 4. Verify your account has enough funds to stake a provider
+#### Verify account funded
+
+Verify that your account has funds in it in order to perform staking
 
 ```bash
-$HOME/lavad query bank balances $account_address --denom ulava
-# Expected output('amount' should be > 0):
-#amount: "10000"
-#denom: ulava
+# Make sure you can see your account name in the keys list
+lavad keys list
+
+# Make sure you see your account has Lava tokens in it
+YOUR_ADDRESS=$($lavad keys show -a $ACCOUNT_NAME)
+
+lavad query \
+    bank balances \
+    $YOUR_ADDRESS \
+    --denom ulava
 ```
+### 3. Stake a provider
+To register as a Provider, you will stake some LAVA by specifying Chain + Geolocation you wish to provide for. An Example (using friendly texts for brevity):
 
-### 5. Stake a provider
+| Chain Spec            |      Geolocation      |  LAVA stake    |
+| -------------         | :-----------:         | ----:             |
+| Ethereum Mainnet      | USA West              | 1,600             |
+| Ethereum Mainnet      | Germany               | 2,000             |
+| Ethereum Rinkby       | Germany               | 100               |
 
-<details>
-    <summary>
-    Ethereum mainnet provider staking
-    </summary>
+Each line above counts as a single service.
+To stake a single service, use this command (see $arguments description below it)
 
 ```bash
-provider_stake_amount="STAKE_AMOUNT_HERE" # Change to a stake amount of your choice, e.g. "2010ulava"
-
-$HOME/lavad tx pairing stake-provider "ETH1" \
-    $provider_stake_amount \
-    "$node_public_ip:19921,jsonrpc,1" 1 \
+lavad tx pairing stake-provider "$PROVIDER_NAME" \
+    $STAKE_AMOUNT \
+    "$SERVICED_NODE_IP:$SERVICED_NODE_PORT,$CHAIN_ID,1" 1 \
     -y \
-    --from $account_name \
+    --from $ACCOUNT_NAME \
     --gas="auto" \
     --gas-adjustment "1.5" \
     --keyring-backend $keyring_backend \
     --node $rpc_node
-# Expected output, code: 0
-# Following the last command, please wait for block_time (current=30s) before running the next command
-# in order to make sure the staking provider is added to the network
 ```
-</details>
 
-<details>
-    <summary>
-    Osmosis mainnet provider staking
-    </summary>
+Param description (and examples):
+- `PROVIDER_NAME` - ...
+- `SERVICED_NODE_IP` - IP of the node that will service the requests from the (e.g. the IP of the Ethereum node)
+- `SERVICED_NODE_PORT` - ... and the port
+- `CHAIN_ID` - The ID of the chain, see [how to query the full list](#chains). Example `COS4` or `FTM250`
 
-```bash
-provider_stake_amount="STAKE_AMOUNT_HERE" # Change to a stake amount of your choice, e.g. "2010ulava"
 
-$HOME/lavad tx pairing stake-provider "COS3" \
-    $provider_stake_amount \
-    "$node_public_ip:19922,tendermintrpc,1 $node_public_ip:19923,rest,1" 1 \
-    -y \
-    --from $account_name \
-    --gas="auto" \
-    --gas-adjustment "1.5" \
-    --keyring-backend $keyring_backend \
-    --node $rpc_node >>"$HOME/.lava_provider_remote_setup.log" 2>&1 &
-# Expected output, code: 0
-# Following the last command, please wait for block_time (current=30s) before running the next command
-# in order to make sure the staking provider is added to the network
-```
-</details>
-
-<details>
-    <summary>
-    Fantom mainnet provider staking
-    </summary>
-
-```bash
-provider_stake_amount="STAKE_AMOUNT_HERE" # Change to a stake amount of your choice, e.g. "2010ulava"
-
-$HOME/lavad tx pairing stake-provider "FTM250" \
-    $provider_stake_amount \
-    "$(curl -s ifconfig.me):19924,jsonrpc,1" 1 \
-    -y \
-    --from $lava_user_name \
-    --gas="auto" \
-    --gas-adjustment "1.5" \
-    --keyring-backend $keyring_backend
-
-# Expected output, code: 0
-# Following the last command, please wait for block_time (current=30s) before running the next command
-# in order to make sure the staking provider is added to the network
-```
-</details>
-
-<details>
-    <summary>
-    Ethereum Goerli mainnet provider staking
-    </summary>
-
-```bash
-provider_stake_amount="STAKE_AMOUNT_HERE" # Change to a stake amount of your choice, e.g. "2010ulava"
-
-$HOME/lavad tx pairing stake-provider "GTH1" \
-    $provider_stake_amount \
-    "$(curl -s ifconfig.me):19925,jsonrpc,1" 1 \
-    -y \
-    --from $lava_user_name \
-    --gas="auto" \
-    --gas-adjustment "1.5" \
-    --keyring-backend $keyring_backend
-
-# Expected output, code: 0
-# Following the last command, please wait for block_time (current=30s) before running the next command
-# in order to make sure the staking provider is added to the network
-```
-</details>
-
-<details>
-    <summary>
-    Lava mainnet provider staking
-    </summary>
-
-```bash
-provider_stake_amount="STAKE_AMOUNT_HERE" # Change to a stake amount of your choice, e.g. "2010ulava"
-
-$HOME/lavad tx pairing stake-provider "LAV1" \
-    $provider_stake_amount \
-    "$(curl -s ifconfig.me):19926,tendermintrpc,1 $(curl -s ifconfig.me):19927,rest,1" 1 \
-    -y \
-    --from $lava_user_name \
-    --gas="auto" \
-    --gas-adjustment "1.5" \
-    --keyring-backend $keyring_backend
-
-# Expected output, code: 0
-# Following the last command, please wait for block_time (current=30s) before running the next command
-# in order to make sure the staking provider is added to the network
-```
-</details>
-
-<details>
-    <summary>
-    Osmosis testnet provider staking
-    </summary>
-
-```bash
-provider_stake_amount="STAKE_AMOUNT_HERE" # Change to a stake amount of your choice, e.g. "2010ulava"
-
-$HOME/lavad tx pairing stake-provider "COS4" \
-    $provider_stake_amount \
-    "$(curl -s ifconfig.me):19928,tendermintrpc,1 $(curl -s ifconfig.me):19929,rest,1" 1 \
-    -y \
-    --from $lava_user_name \
-    --gas="auto" \
-    --gas-adjustment "1.5" \
-    --keyring-backend $keyring_backend
-
-# Expected output, code: 0
-# Following the last command, please wait for block_time (current=30s) before running the next command
-# in order to make sure the staking provider is added to the network
-```
-</details>
-
-<details>
-    <summary>
-    Celo mainnet provider staking
-    </summary>
-
-```bash
-provider_stake_amount="STAKE_AMOUNT_HERE" # Change to a stake amount of your choice, e.g. "2010ulava"
-
-$HOME/lavad tx pairing stake-provider "CELO" \
-    $provider_stake_amount \
-    "$(curl -s ifconfig.me):19930,jsonrpc,1" 1 \
-    -y \
-    --from $lava_user_name \
-    --gas="auto" \
-    --gas-adjustment "1.5" \
-    --keyring-backend $keyring_backend
-
-# Expected output, code: 0
-# Following the last command, please wait for block_time (current=30s) before running the next command
-# in order to make sure the staking provider is added to the network
-```
-</details>
-
+Notes:
+1. Expected output code: `0`
+2. Please stake provider only once per block (Block currently stands at 30s)
 
 ### 6. Run the provider processes
-
-
-
-
-
 
 ### 7. Verify the provider processes are running
 verify_provider
@@ -256,4 +155,4 @@ verify_provider
 Make sure you downloaded the binary, and it is located in the path you use to run `lavad` commands
 
 2. `account sequence mismatch`  
-Try to wait for a block_time (current=30s) and try running the command again
+Try to wait for a block_time (current=30s) and then run the command again
