@@ -4,17 +4,10 @@ slug: provider
 ---
 # Be a Provider
 
-This page covers what is a provider and the steps for starting as one.
-
-## Intro - What is a provider
-
-## Steps for joining as a provider
-
 ## Available networks to set up a provider for, including ports required to open
 
+Provider ports: 19921 - 19930  
 
-Port - Name - Code - Protocol:
-```
 19921 - Ethereum - ETH1, jsonrpc  
 19922 - Osmosis Mainnet - COS3, tendermintrpc  
 19923 - Osmosis Mainnet - COS3, rest  
@@ -25,27 +18,45 @@ Port - Name - Code - Protocol:
 19928 - Osmosis testnet - COS4, tendermintrpc  
 19929 - Osmosis testnet - COS4, rest  
 19930 - Celo mainnet - CELO, jsonrpc  
-```
-_Provider ports: 19921 - 19930_
 
 
-### 1. Set up configurations
+
+
+
+
+
+## Step 1 - Set up configurations
 ```bash
-rpc_node="LAVA_RPC_NODE_ADDRESS_HERE" # e.g. "https://public-rpc.lavanet.xyz:443"
+rpc_node="LAVA_RPC_NODE_ADDRESS_HERE" # e.g. "http://public-rpc.lavanet.xyz:80/rpc/"
 node_public_ip=$(curl -s ifconfig.me)
+keyring_backend="test"
 
 # If you already have an account specify it below, if not specify the desired user name to be created
 # To get existing account name, run 'lavad keys list --keyring-backend test'
 account_name="USER_NAME_HERE"
 ```
 
-### 2. Download the latest lavad binary
+
+
+
+
+
+
+
+## Step 2 - Download the latest lavad binary
 ```bash
 binary_url="https://github.com/K433QLtr6RA9ExEq/GHFkqmTzpdNLDd6T/blob/main/production/cosmovisor-upgrades/genesis/bin/lavad?raw=true"
 wget $binary_url -O $HOME/lavad
+chmod +x $HOME/lavad
 ```
 
-### 3. Optional - Create an account and fund it
+
+
+
+
+
+
+## Step 3 - Optional - Create an account and fund it
 
 :::info
 If you already have a funded account you can skip this step.
@@ -64,20 +75,41 @@ curl -X POST \
 # Expected success output: '{}'
 ```
 
-### 4. Verify your account has enough funds to stake a provider
+
+
+
+
+
+
+
+## Step 4 - Verify your account has enough funds to stake a provider
 
 ```bash
-$HOME/lavad query bank balances $account_address --denom ulava
+account_address=$($HOME/lavad keys show -a $account_name --keyring-backend test)
+
+$HOME/lavad query \
+bank balances \
+"$account_address" \
+--denom ulava \
+--node "$rpc_node"
+
 # Expected output('amount' should be > 0):
 #amount: "10000"
 #denom: ulava
 ```
 
-### 5. Stake a provider
+
+
+
+
+
+
+
+## Step 5 - Stake a provider
 
 <details>
     <summary>
-    Ethereum mainnet provider staking
+    Ethereum Mainnet
     </summary>
 
 ```bash
@@ -100,7 +132,7 @@ $HOME/lavad tx pairing stake-provider "ETH1" \
 
 <details>
     <summary>
-    Osmosis mainnet provider staking
+    Osmosis Mainnet
     </summary>
 
 ```bash
@@ -123,7 +155,7 @@ $HOME/lavad tx pairing stake-provider "COS3" \
 
 <details>
     <summary>
-    Fantom mainnet provider staking
+    Fantom Mainnet
     </summary>
 
 ```bash
@@ -133,7 +165,7 @@ $HOME/lavad tx pairing stake-provider "FTM250" \
     $provider_stake_amount \
     "$(curl -s ifconfig.me):19924,jsonrpc,1" 1 \
     -y \
-    --from $lava_user_name \
+    --from $account_name \
     --gas="auto" \
     --gas-adjustment "1.5" \
     --keyring-backend $keyring_backend
@@ -146,7 +178,7 @@ $HOME/lavad tx pairing stake-provider "FTM250" \
 
 <details>
     <summary>
-    Ethereum Goerli mainnet provider staking
+    Ethereum Goerli
     </summary>
 
 ```bash
@@ -156,7 +188,7 @@ $HOME/lavad tx pairing stake-provider "GTH1" \
     $provider_stake_amount \
     "$(curl -s ifconfig.me):19925,jsonrpc,1" 1 \
     -y \
-    --from $lava_user_name \
+    --from $account_name \
     --gas="auto" \
     --gas-adjustment "1.5" \
     --keyring-backend $keyring_backend
@@ -169,7 +201,7 @@ $HOME/lavad tx pairing stake-provider "GTH1" \
 
 <details>
     <summary>
-    Lava mainnet provider staking
+    Lava Mainnet
     </summary>
 
 ```bash
@@ -179,7 +211,7 @@ $HOME/lavad tx pairing stake-provider "LAV1" \
     $provider_stake_amount \
     "$(curl -s ifconfig.me):19926,tendermintrpc,1 $(curl -s ifconfig.me):19927,rest,1" 1 \
     -y \
-    --from $lava_user_name \
+    --from $account_name \
     --gas="auto" \
     --gas-adjustment "1.5" \
     --keyring-backend $keyring_backend
@@ -192,7 +224,7 @@ $HOME/lavad tx pairing stake-provider "LAV1" \
 
 <details>
     <summary>
-    Osmosis testnet provider staking
+    Osmosis Testnet
     </summary>
 
 ```bash
@@ -202,7 +234,7 @@ $HOME/lavad tx pairing stake-provider "COS4" \
     $provider_stake_amount \
     "$(curl -s ifconfig.me):19928,tendermintrpc,1 $(curl -s ifconfig.me):19929,rest,1" 1 \
     -y \
-    --from $lava_user_name \
+    --from $account_name \
     --gas="auto" \
     --gas-adjustment "1.5" \
     --keyring-backend $keyring_backend
@@ -215,7 +247,7 @@ $HOME/lavad tx pairing stake-provider "COS4" \
 
 <details>
     <summary>
-    Celo mainnet provider staking
+    Celo mainnet
     </summary>
 
 ```bash
@@ -225,7 +257,7 @@ $HOME/lavad tx pairing stake-provider "CELO" \
     $provider_stake_amount \
     "$(curl -s ifconfig.me):19930,jsonrpc,1" 1 \
     -y \
-    --from $lava_user_name \
+    --from $account_name \
     --gas="auto" \
     --gas-adjustment "1.5" \
     --keyring-backend $keyring_backend
@@ -237,14 +269,90 @@ $HOME/lavad tx pairing stake-provider "CELO" \
 </details>
 
 
-### 6. Run the provider processes
 
 
 
 
 
 
-### 7. Verify the provider processes are running
+
+
+
+## Step 6 - Run the provider processes
+
+External RPC nodes syntax, examples:  
+Websocket             - `ETH1_NODE_URL="ws://username:password@my-node.com/eth/ws/"`  
+HTTP                  - `COS3_REST_NODE_URL="https://my-node.com:12345/rest/"`  
+HTTP with basic auth  - `COS3_RPC_NODE_URL="http://username:password@my-node.com/"`  
+
+<details>
+    <summary>
+    Ethereum Mainnet
+    </summary>
+
+```bash
+ETH1_NODE_URL="ETH1_NODE_URL"
+
+$HOME/lavad server 0.0.0.0 19921 $ETH1_NODE_URL \
+    ETH1 jsonrpc \
+    --from $account_name \
+    --keyring-backend $keyring_backend \
+    --node $rpc_node
+
+# Expected output, code: 0
+# Following the last command, please wait for block_time (current=30s) before running the next command
+# in order to make sure the staking provider is added to the network
+```
+</details>
+
+
+<details>
+    <summary>
+    Osmosis Mainnet
+    </summary>
+
+```bash
+COS3_RPC_NODE_URL="COS3_RPC_NODE_URL"
+COS3_REST_NODE_URL="COS3_REST_NODE_URL"
+
+$HOME/lavad server 0.0.0.0 19922 $COS3_RPC_NODE_URL \
+    COS3 tendermintrpc \
+    --from $account_name \
+    --keyring-backend $keyring_backend \
+    --node $rpc_node >>/var/log/lava-logs/cosmos_provider_rpc.log 2>&1 &
+
+$HOME/lavad server 0.0.0.0 19923 $COS3_REST_NODE_URL \
+    COS3 rest \
+    --from $account_name \
+    --keyring-backend $keyring_backend \
+    --node $rpc_node >>/var/log/lava-logs/cosmos_provider_rest.log 2>&1 &
+
+# Expected output, code: 0
+# Following the last command, please wait for block_time (current=30s) before running the next command
+# in order to make sure the staking provider is added to the network
+```
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Step 7 - Verify the provider processes are running
 verify_provider
 
 ## FAQ
@@ -254,3 +362,19 @@ Make sure you downloaded the binary, and it is located in the path you use to ru
 
 2. `account sequence mismatch`  
 Try to wait for a block_time (current=30s) and try running the command again
+
+3. How do I remove my provider stake for a specific network?
+```bash
+# Set up the following configurations:  
+network_name="NAME_HERE"                # e.g. 'ETH1'  
+account_address="ACCOUNT_ADDRESS_HERE"  # e.g. lava@1jr098ppcqykw2j26qhuwkauzmtrth5fh7vsq39  
+rpc_node="LAVA_RPC_NODE_ADDRESS_HERE"   # e.g. "http://public-rpc.lavanet.xyz:80/rpc/"  
+
+# Run the following command:  
+$HOME/lavad tx pairing \  
+unstake-provider \  
+$network_name \  
+--from $account_address \  
+--node $rpc_node \  
+--keyring-backend test  
+```
