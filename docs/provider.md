@@ -130,14 +130,18 @@ lavad tx pairing stake-provider "$PROVIDER_NAME" \
     --gas="auto" \
     --gas-adjustment "1.5" \
     --keyring-backend $keyring_backend \
-    --node $rpc_node
+    --node $RPC_NODE
 ```
 
 Param description (and examples):
 - `PROVIDER_NAME` - ...
-- `SERVICED_NODE_IP` - IP of the node that will service the requests from the (e.g. the IP of the Ethereum node)
-- `SERVICED_NODE_PORT` - ... and the port
+- `STAKE_AMOUNT` - ...
+- `SERVICED_NODE_IP` - IP of the node that will service the requests
+- `SERVICED_NODE_PORT` - Port of the node that will service requests
 - `CHAIN_ID` - The ID of the chain, see [how to query the full list](#chains). Example `COS4` or `FTM250`
+- `ACCOUNT_NAME` - The address of the staking account
+- `KEYRING_NAME` - The keyring to use
+- `RPC_NODE` - If this `lavad` isn't synced with the network, you can use a remote node RPC address here
 
 
 Notes:
@@ -151,8 +155,22 @@ verify_provider
 
 ## FAQ
 
-1. `lavad` not found  
+### `lavad` not found  
 Make sure you downloaded the binary, and it is located in the path you use to run `lavad` commands
 
-2. `account sequence mismatch`  
+### Received error `account sequence mismatch`
 Try to wait for a block_time (current=30s) and then run the command again
+
+### How do I unstake? {#unstake}
+Run the following command:  
+```
+lavad tx pairing unstake-provider "$PROVIDER_NAME" \
+    --from $ACCOUNT_NAME \
+    --keyring-backend $keyring_backend \
+    --node $RPC_NODE
+```
+
+Param description (and examples):
+- `PROVIDER_NAME` - ...
+- `ACCOUNT_NAME` - The unstaking account, example `lava@....`
+- `RPC_NODE` - If this `lavad` isn't synced with the network, you can use a remote node RPC address here
