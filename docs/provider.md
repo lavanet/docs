@@ -7,11 +7,14 @@ slug: provider
 This page covers what is a provider and the steps for starting as one.
 
 ## Intro - What is a provider
+Providers service relay requests by staking on the network and running RPC nodes on the Relay Chains queried by Consumers (e.g. Cosmos, Ethereum, Osmosis, Polygon, etc). They earn fees in the form of LAVA from the Consumers for servicing requests.
 
-## Steps for joining as a provider
+:::info Want to learn more?
+Learn more by reading our [litepaper](https://lavanet.xyz)
+:::
 
-## Available networks to set up a provider for, including ports required to open
-
+## Available APIs
+You can find the latest list of specifications ("Specs") below, or, can be queried directly from the node:
 
 Port - Name - Code - Protocol:
 ```
