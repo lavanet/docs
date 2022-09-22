@@ -7,8 +7,14 @@ title: Gateway Access
 # Access Web3 APIs
 
 Hop on to our [gateway](https://gateway.lavanet.xyz/login) and access one of these chains now:
-1. Ethereum Mainnet
+1. Ethereum
 2. Osmosis
+3. Celo
+4. Fantom
+5. Lava ("Lava over Lava")
+6. Cosmos Hub
+7. Juno
+8. Starknet
 
 :::tip Missing a chain?
 Lava is built to scale fast to many new chains, and the team is constantly working on that.

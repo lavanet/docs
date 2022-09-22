@@ -1,9 +1,9 @@
 ---
 sidebar_position: 2
-slug: /D-access
-title: D-access
+slug: /dAccess
+title: dAccess
 ---
-# D-access
+# dAccess
 Like DeFi brought the "D" to CeFi, Lava is bringing the "D" to Access.
 
 :::info Coming Soon 🚧
