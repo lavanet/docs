@@ -123,6 +123,11 @@ const config = {
             to: 'power-lava',
           },
           {
+            href: 'https://lavanet.xyz',
+            label: 'Lava Home',
+            position: 'right',
+          },
+          {
             href: 'https://github.com/lavanet/docs',
             label: 'GitHub',
             position: 'right',
