@@ -121,7 +121,8 @@ Verify that your account has funds in it in order to perform staking
 ./lavad query \
 bank balances \
 "ACCOUNT_PUBLIC_ADDRESS" \
---denom ulava
+--denom ulava \
+--node "LAVA_RPC_NODE"
 
 # For example, checking the balance of your account, using Lava public RPC node
 # ./lavad query \
@@ -139,10 +140,11 @@ For example,
 ```bash
 ./lavad tx pairing stake-provider "NETWORK_NAME" \
 "STAKE_AMOUNT" \
-"SERVICED_NODE_IP:SERVICED_NODE_PORT,CHAIN_ID,1" 1 \
+"SERVICED_NODE_IP:SERVICED_NODE_PORT,PROTOCOL,1" 1 \
 --from "ACCOUNT_NAME" \
 --gas="auto" \
---gas-adjustment "1.5"
+--gas-adjustment "1.5" \
+--node "LAVA_RPC_NODE"
 
 # Example of staking a provider for ETH1, using an external Lava RPC node,
 # ./lavad tx pairing stake-provider "ETH1" \
@@ -161,6 +163,7 @@ Param description (and examples):
 - `SERVICED_NODE_PORT` - Port of the node that will service requests. Example `19921`
 - `PROTOCOL` - The protocol to be used, see [how to query the full list](#chains). Example `jsonrpc`, or `rest`
 - `ACCOUNT_NAME` - The account to be used for the provider staking.
+- `LAVA_RPC_NODE` - A RPC node for Lava (can be omitted if the current node has joined the Lava network).
 
 
 Notes:
@@ -179,6 +182,7 @@ HTTP with basic auth - `COS3_RPC_NODE_URL="http://username:password@my-node.com/
 ./lavad server "SERVICED_NODE_IP" "LISTEN_PORT" "NODE_URL" \
 "NETWORK_NAME" "PROTOCOL" \
 --from "ACCOUNT_NAME" \
+--node "LAVA_RPC_NODE"
 
 # For example, running an ETH1 jsonrpc provider with a remote Lava RPC node:
 # ./lavad server 0.0.0.0 2221 "wss://username:password@my_remote_node/eth/ws/" \
@@ -198,13 +202,14 @@ Param description (and examples):
 - `NETWORK_NAME` - The ID of the chain, see [how to query the full list](#chains). Example `COS4` or `FTM250`  
 - `PROTOCOL` - The protocol to be used, see [how to query the full list](#chains). Example `jsonrpc`, or `rest`  
 - `ACCOUNT_NAME` - The account to be used for the provider staking.  
+- `LAVA_RPC_NODE` - A RPC node for Lava (can be omitted if the current node has joined the Lava network).
 
 ### 7. Verify the provider processes are running
 To verify if your account is paired with the pairing providers for a specific network,
 Run the command below, and check to see if your account public address is in the command output list
 
 ```bash
-./lavad query pairing providers "NETWORK_NAME"
+./lavad query pairing providers "NETWORK_NAME" --node "LAVA_RPC_NODE"
 
 # Example, checking if your account is a paired provider for the ETH1 network
 # ./lavad query pairing providers ETH1 --node http://public-rpc.lavanet.xyz:80/rpc/
@@ -223,7 +228,8 @@ Run the following command:
 
 ```bash
 ./lavad tx pairing unstake-provider "NETWORK_NAME" \
-    --from "ACCOUNT_NAME"
+--from "ACCOUNT_NAME" \
+--node "LAVA_RPC_NODE"
 
 # For example, unstake a provider for the ETH1 network,
 # ./lavad tx pairing unstake-provider ETH1 \
