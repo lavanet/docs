@@ -50,16 +50,16 @@ lavad q spec list-Spec --node http://public-rpc.lavanet.xyz:80/rpc/
 
 For reference, here's the result as of Sep-2022:
 ```
-Ethereum - ETH1, jsonrpc  
+Ethereum Mainnet - ETH1, jsonrpc  
+Goerli - GTH1, jsonrpc  
 Osmosis Mainnet - COS3, tendermintrpc  
 Osmosis Mainnet - COS3, rest  
-Fantom - FTM250, jsonrpc  
-Goerli - GTH1, jsonrpc  
-Lava mainnet - LAV1, tendermintrpc  
-Lava mainnet - LAV1, rest 
-Osmosis testnet - COS4, tendermintrpc  
-Osmosis testnet - COS4, rest  
-Celo mainnet - CELO, jsonrpc  
+Fantom Mainnet - FTM250, jsonrpc  
+Lava Mainnet - LAV1, tendermintrpc  
+Lava Mainnet - LAV1, rest 
+Osmosis Testnet - COS4, tendermintrpc  
+Osmosis Testnet - COS4, rest  
+Celo Mainnet - CELO, jsonrpc  
 ```
 
 ## Running a provider - steps
@@ -85,7 +85,7 @@ While you may use your seed phrase to import an existing wallet, we'll make a ne
 replace `ACCOUNT_NAME` with a name of your choosing:
 
 ```bash
-./lavad keys add ACCOUNT_NAME
+./lavad keys add "ACCOUNT_NAME"
 ```
 
 To ensure your wallet was saved to your keyring, look for the `ACCOUNT_NAME` is in your keys list:
@@ -117,7 +117,7 @@ Verify that your account has funds in it in order to perform staking
 
 ```bash
 # Verify your account has Lava tokens (replace the address with your account address)
-# Please note that if your node has not joined the network and you would like to use an external Lava RPC, use the `--node` flag
+
 ./lavad query \
 bank balances \
 "ACCOUNT_PUBLIC_ADDRESS" \
@@ -131,10 +131,15 @@ bank balances \
 #     --denom ulava \
 #     --node http://public-rpc.lavanet.xyz:80/rpc/
 ```
+
+Param description (and examples):
+- `ACCOUNT_PUBLIC_ADDRESS` - The public address of your account. Example `lava@12h75m99wsgnxnc7d5qpwl6rq268c7jvccxdeqw`
+- `LAVA_RPC_NODE` - A RPC node for Lava (can be omitted if the current node has joined the Lava network). Example `http://public-rpc.lavanet.xyz:80/rpc/`
+
 ### 3. Stake a provider
 To stake a single service, use this command:
 
-`lavad tx pairing stake-provider [chain-id] [amount] [endpoint endpoint ...] [geolocation] [flags]`
+`lavad tx pairing stake-provider [chain-id] [amount] [endpoint endpoint ...] [geolocation] [flags]`  
 For example,  
 
 ```bash
@@ -159,11 +164,11 @@ For example,
 Param description (and examples):
 - `NETWORK_NAME` - The ID of the chain, see [how to query the full list](#chains). Example `COS4` or `FTM250`
 - `STAKE_AMOUNT` - The amount you are willing to stake for being a provider for the specific network. Example `2010ulava`
-- `SERVICED_NODE_IP` - IP of the node that will service the requests. Example `0.0.0.0`
+- `SERVICED_NODE_IP` - IP of the node that will service the requests. Example `51.92.133.253` (to find your public IP, run `curl ifconfig.me`)  
 - `SERVICED_NODE_PORT` - Port of the node that will service requests. Example `19921`
 - `PROTOCOL` - The protocol to be used, see [how to query the full list](#chains). Example `jsonrpc`, or `rest`
-- `ACCOUNT_NAME` - The account to be used for the provider staking.
-- `LAVA_RPC_NODE` - A RPC node for Lava (can be omitted if the current node has joined the Lava network).
+- `ACCOUNT_NAME` - The account to be used for the provider staking. Example `my_account`
+- `LAVA_RPC_NODE` - A RPC node for Lava (can be omitted if the current node has joined the Lava network). Example `http://public-rpc.lavanet.xyz:80/rpc/`
 
 
 Notes:
@@ -178,8 +183,12 @@ Websocket secured - `ETH1_NODE_URL="wss://username:password@my-node.com/eth/ws/"
 HTTP - `COS3_REST_NODE_URL="https://my-node.com:12345/rest/"`  
 HTTP with basic auth - `COS3_RPC_NODE_URL="http://username:password@my-node.com/"`  
 
+:::info
+ Please note that the previous `stake-provider` might take up to a few minutes to take effect.
+:::
+
 ```bash
-./lavad server "SERVICED_NODE_IP" "LISTEN_PORT" "NODE_URL" \
+./lavad server "LISTEN_IP" "LISTEN_PORT" "NODE_URL" \
 "NETWORK_NAME" "PROTOCOL" \
 --from "ACCOUNT_NAME" \
 --node "LAVA_RPC_NODE"
@@ -196,13 +205,13 @@ HTTP with basic auth - `COS3_RPC_NODE_URL="http://username:password@my-node.com/
 ```
 
 Param description (and examples):  
-- `SERVICED_NODE_IP` - IP of the node that will service the requests. Example `0.0.0.0`  
+- `LISTEN_IP` - IP of the node that will listen for service requests. Example `0.0.0.0`  
 - `LISTEN_PORT` - Port of the node that will service requests. Example `19921`  
 - `NODE_URL` - The URL of an external (or internal) node that you will be fetching on-chain data from.  
 - `NETWORK_NAME` - The ID of the chain, see [how to query the full list](#chains). Example `COS4` or `FTM250`  
 - `PROTOCOL` - The protocol to be used, see [how to query the full list](#chains). Example `jsonrpc`, or `rest`  
 - `ACCOUNT_NAME` - The account to be used for the provider staking.  
-- `LAVA_RPC_NODE` - A RPC node for Lava (can be omitted if the current node has joined the Lava network).
+- `LAVA_RPC_NODE` - A RPC node for Lava (can be omitted if the current node has joined the Lava network). Example `http://public-rpc.lavanet.xyz:80/rpc/`
 
 ### 7. Verify the provider processes are running
 To verify if your account is paired with the pairing providers for a specific network,
@@ -214,6 +223,11 @@ Run the command below, and check to see if your account public address is in the
 # Example, checking if your account is a paired provider for the ETH1 network
 # ./lavad query pairing providers ETH1 --node http://public-rpc.lavanet.xyz:80/rpc/
 ```
+
+Param description (and examples):  
+- `NETWORK_NAME` - The ID of the chain, see [how to query the full list](#chains). Example `COS4` or `FTM250`  
+- `LAVA_RPC_NODE` - A RPC node for Lava (can be omitted if the current node has joined the Lava network). Example `http://public-rpc.lavanet.xyz:80/rpc/`
+
 
 ## FAQ
 
@@ -244,3 +258,10 @@ Error: post failed: Post "http://localhost:26657": dial tcp 127.0.0.1:26657: con
 ```
 It is likely that your node is not running, or has not joined the network, you can either join the network,
 or run the command with the `--node` flag to use an external Lava RPC node
+
+### Received error `sentry init failure to initialize error="provider stake verification mismatch`
+In case you got the following error:  
+```
+ERR sentry init failure to initialize error="provider stake verification mismatch -- &map[ChainID:NETWORK_NAME spec name:NETWORK_FULL_NAME]" ChainID=CHAIN_ID apiInterface=PROTOCOL
+```
+It is likely that the stake-provider command was not taken into effect yet, if running the `lavad server` option, please wait a few minutes and try running the command again.
