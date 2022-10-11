@@ -233,7 +233,7 @@ HTTP with basic auth - `COS3_RPC_NODE_URL="http://username:password@my-node.com/
 --node "{LAVA_RPC_NODE}"
 
 # Example: running an ETH1 jsonrpc provider with a remote Lava RPC node,
-# ./lavad server 0.0.0.0 2221 "wss://username:password@my_remote_node/eth/ws/" \
+# ./lavad server 0.0.0.0 19921 "wss://username:password@my_remote_node/eth/ws/" \
 # ETH1 jsonrpc \
 # --from my_account_name \
 # --keyring-backend "test" \
@@ -322,7 +322,7 @@ It is likely that the stake-provider command was not taken into effect yet, if r
 In this case we recommend you consider the following options:  
 1. Run the process as a background task, using the `&` sign at the end of the command, for example  
 ```bash
-./lavad server 0.0.0.0 2221 "wss://username:password@my_remote_node/eth/ws/" \
+./lavad server 0.0.0.0 19921 "wss://username:password@my_remote_node/eth/ws/" \
 ETH1 jsonrpc \
 --from my_account_name \
 --keyring-backend "{KEYRING_BACKEND}" \
