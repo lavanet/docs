@@ -48,19 +48,29 @@ or if connecting to external node:
 lavad q spec list-Spec --node http://public-rpc.lavanet.xyz:80/rpc/
 ```
 
-For reference, here's the result as of Sep-2022:
-```
-Ethereum Mainnet - ETH1, jsonrpc  
-Goerli - GTH1, jsonrpc  
-Osmosis Mainnet - COS3, tendermintrpc  
-Osmosis Mainnet - COS3, rest  
-Fantom Mainnet - FTM250, jsonrpc  
-Lava Mainnet - LAV1, tendermintrpc  
-Lava Mainnet - LAV1, rest 
-Osmosis Testnet - COS4, tendermintrpc  
-Osmosis Testnet - COS4, rest  
-Celo Mainnet - CELO, jsonrpc  
-```
+For reference, here are the results as of November-2022:
+
+| index     | name                   |
+|-----------|------------------------|
+| ALFAJORES | Celo Alfajores Testnet |
+| APT1      | Aptos Mainnet          |
+| ARB1      | Arbitrum mainnet       |
+| ARBN      | Arbitrum Nova testnet  |
+| CELO      | Celo Mainnet           |
+| COS3      | osmosis mainnet        |
+| COS4      | osmosis testnet        |
+| COS5      | cosmos hub             |
+| COS5T     | cosmos hub testnet     |
+| ETH1      | Ethereum Mainnet       |
+| FTM250    | Fantom Mainnet         |
+| FTM4002   | Fantom Testnet         |
+| GTH1      | Goerli Testnet         |
+| JUN1      | juno mainnet           |
+| JUNT1     | juno testnet           |
+| LAV1      | lava mainnet           |
+| POLYGON1  | Poligon Mainnet        |
+| STRK      | StarkNet mainnet       |
+
 
 ## Running a provider - steps
 Being a provider requires alignment to the Lava protocol, for that, Lava has implemented an implementation to help you run it. That implementation is built inside `lavad`. 
