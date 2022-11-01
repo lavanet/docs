@@ -73,10 +73,10 @@ For reference, here are the results as of November-2022:
 
 
 ## Running a provider - steps
-Being a provider requires alignment to the Lava protocol, for that, Lava has implemented an implementation to help you run it. That implementation is built inside `lavad`. 
+`lavad` contains the implementation for running a provider process. 
 
 :::info
- Current installation of `lavad` is built only for Linux. Soon we'll allow building lavad from source.
+ Current installation of `lavad` is built only for Linux. Soon we'll allow building `lavad` from source.
 :::
 
 ### 1. Download `lavad`
@@ -143,7 +143,7 @@ Get your account funded through the faucet, please allow up to a minute for the 
 ```bash
 # Replace the address with your account address
 curl -X POST \
--d '{"address": "lava@12h75m99wsgnxnc7d5qpwl6rq268c7jvccxdeqw", "coins": ["60000000ulava"]}' http://lava-faucet.lavanet.xyz:5555
+-d '{"address": "lava@12h75m99wsgnxnc7d5qpwl6rq268c7jvccxdeqw", "coins": ["10000000ulava"]}' http://lava-faucet.lavanet.xyz:5555
 
 # Expected output:
 # '{}'
