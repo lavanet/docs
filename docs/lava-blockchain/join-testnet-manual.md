@@ -130,6 +130,21 @@ Note that it does **not** include the "Cosmovisor" tool, hence once you install 
     sudo mv lavad.service /lib/systemd/system/lavad.service
     ```
 
+### Download the latest Lava data snapshot
+
+- Download and unzip the latest snapshot
+    ```bash
+    temp_folder=$(mktemp -d) && cd $temp_folder
+    wget https://lava-snapshots.s3.amazonaws.com/latest/latest.zip
+    unzip latest.zip
+    ```
+
+- Copy the snapshot to you local data dir
+    ```bash
+    mkdir -p ~/.lava/data/
+    cp -r data/* ~/.lava/data/
+    ```
+
 - Configure the lavad service to run on boot, and start it
 
     ```bash
