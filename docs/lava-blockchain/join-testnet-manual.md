@@ -130,7 +130,7 @@ Note that it does **not** include the "Cosmovisor" tool, hence once you install 
     sudo mv lavad.service /lib/systemd/system/lavad.service
     ```
 
-### Download the latest Lava data snapshot
+### Download the latest Lava data snapshot {#snapshots}
 
 - Download and unzip the latest snapshot
     ```bash
