@@ -167,16 +167,6 @@ Note that it does **not** include the "Cosmovisor" tool, hence once you install 
 ## 3. Upgrades {#upgrades}
 Lava blockchain upgrades requires you to update `lavad`. This guide covers the manual steps for doing so, assuming you do not use Cosmovisor.
 
-:::info
-Currently (`2022-09-08`), Lava's network testnet chain has no upgrades (it's running with the genesis version).
-When an update will be needed, this section will have the details on the upgrade.
-:::
-
-<details>
-    <summary>
-    Example instructions when an upgrade will be needed
-    </summary>
-
 ### How to know there's an upgrade?
 
 Once you have joined the Lava testnet, and your node has started syncing, you may have noticed an error message such as:
@@ -199,10 +189,10 @@ This situation requires a different binary (`lavad`) to work with, the process i
 
 Below, you can find tracking of the required upgrade for block height
 
-| Upgrade name | Block height |
-| --- | --- |
-| v2 | 31293 |
-| v3 | TBD |
+| Upgrade name | Block height | Binary URL
+| --- | --- | ---- |
+| v0.0.1 --> 0.0.4 | History |
+| v0.0.5 | 27085 | https://github.com/K433QLtr6RA9ExEq/GHFkqmTzpdNLDd6T/tree/main/production/cosmovisor-upgrades/upgrades/v0.0.5/bin
 
 ### Steps for upgrading your node
 
@@ -211,7 +201,7 @@ Below, you can find tracking of the required upgrade for block height
 ```bash
 # Upgrade configurations
 temp_folder=$(mktemp -d) && cd $temp_folder
-required_upgrade_name="v2" # e.g. "v2"
+required_upgrade_name="v0.0.5" # CHANGE THIS
 upgrade_binary_url="https://github.com/K433QLtr6RA9ExEq/GHFkqmTzpdNLDd6T/raw/main/production/cosmovisor-upgrades/upgrades/$required_upgrade_name/bin/lavad"
 ```
 
@@ -248,9 +238,6 @@ lavad status | jq .SyncInfo.catching_up
 # Check the lavad process logs
 sudo journalctl -u lavad -f
 ```
-</details>
-
-
 
 ## Welcome to Lava Testnet 🌋
 
