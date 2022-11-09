@@ -192,7 +192,7 @@ Below, you can find tracking of the required upgrade for block height
 | Upgrade name | Block height | Binary URL
 | --- | --- | ---- |
 | v0.0.1 --> 0.0.4 | History |
-| v0.0.5 | 27085 | https://github.com/K433QLtr6RA9ExEq/GHFkqmTzpdNLDd6T/tree/main/production/cosmovisor-upgrades/upgrades/v0.0.5/bin
+| v0.0.5 | 27085 | https://github.com/K433QLtr6RA9ExEq/GHFkqmTzpdNLDd6T/tree/main/production/cosmovisor-upgrades/upgrades/v0.0.5/bin/lavad
 
 ### Steps for upgrading your node
 
