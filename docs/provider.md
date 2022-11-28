@@ -84,7 +84,10 @@ For reference, here are the results as of November-2022:
 binary_url="https://github.com/K433QLtr6RA9ExEq/GHFkqmTzpdNLDd6T/blob/main/production/cosmovisor-upgrades/genesis/bin/lavad?raw=true"
 wget $binary_url -O lavad
 chmod +x lavad
+# copy lavad to /usr/local/bin
+cp ./lavad /usr/local/bin/lavad
 ```
+* Note: in case you already have an existing lavad installation, you can refer your current lavad binary by running `$HOME/.lava/cosmovisor/current/bin/lavad`
 
 ### 2. Prepare an account & Fund it {#account}
 Lava account and wallets are standard Cosmos. Learn more in [Account & Wallet section](wallet).
@@ -95,12 +98,12 @@ While you may use your seed phrase to import an existing wallet, we'll make a ne
 replace `ACCOUNT_NAME` with a name of your choosing:
 
 ```bash
-./lavad keys add \
+lavad keys add \
 "{ACCOUNT_NAME}" \
 --keyring-backend "{KEYRING_BACKEND}"
 
 # Example:
-# ./lavad keys add \
+# lavad keys add \
 # "my_account_name" \
 # --keyring-backend "test"
 
@@ -116,11 +119,11 @@ Param description (and examples):
 To ensure your wallet was saved to your keyring, look for the `{ACCOUNT_NAME}` is in your keys list:
 
 ```bash
-./lavad keys list \
+lavad keys list \
 --keyring-backend "{KEYRING_BACKEND}"
 
 # Example:
-# ./lavad keys list \
+# lavad keys list \
 # --keyring-backend "test"
 
 # Expected output:
@@ -156,14 +159,14 @@ Verify that your account has funds in it in order to perform staking
 ```bash
 # Verify your account has Lava tokens (replace the address with your account address)
 
-./lavad query \
+lavad query \
 bank balances \
 "{ACCOUNT_PUBLIC_ADDRESS}" \
 --denom ulava \
 --node "{LAVA_RPC_NODE}"
 
 # Example: checking the balance of your account, using Lava public RPC node
-# ./lavad query \
+# lavad query \
 #     bank balances \
 #     lava@12h75m99wsgnxnc7d5qpwl6rq268c7jvccxdeqw \
 #     --denom ulava \
@@ -185,7 +188,7 @@ To stake a single service, use this command:
 For example,  
 
 ```bash
-./lavad tx pairing stake-provider "{NETWORK_NAME}" \
+lavad tx pairing stake-provider "{NETWORK_NAME}" \
 "{STAKE_AMOUNT}" \
 "{SERVICED_NODE_IP}:{SERVICED_NODE_PORT},{PROTOCOL},1" 1 \
 --from "{ACCOUNT_NAME}" \
@@ -195,7 +198,7 @@ For example,
 --node "{LAVA_RPC_NODE}"
 
 # Example: staking a provider for ETH1, using an external Lava RPC node,
-# ./lavad tx pairing stake-provider "ETH1" \
+# lavad tx pairing stake-provider "ETH1" \
 #     2010ulava \
 #     "$(curl -s ifconfig.me):19921,jsonrpc,1" 1 \
 #     --from my_account_name \
@@ -236,14 +239,40 @@ HTTP with basic auth - `COS3_RPC_NODE_URL="http://username:password@my-node.com/
 :::
 
 ```bash
-./lavad server "{LISTEN_IP}" "{LISTEN_PORT}" "{NODE_URL}" \
-"{NETWORK_NAME}" "{PROTOCOL}" \
---from "{ACCOUNT_NAME}" \
---keyring-backend "{KEYRING_BACKEND}" \
---node "{LAVA_RPC_NODE}"
+# Create a service unit file
+LISTEN_IP=LISTEN_IP
+LISTEN_PORT=LISTEN_PORT
+NODE_URL=NODE_URL
+NETWORK_NAME=NETWORK_NAME
+PROTOCOL=PROTOCOL
+ACCOUNT_NAME=ACCOUNT_NAME
+KEYRING_BACKEND=KEYRING_BACKEND
+LAVA_RPC_NODE=LAVA_RPC_NODE
+
+echo "[Unit]
+Description=Provider daemon
+After=network-online.target
+[Service]
+ExecStart=lavad server $LISTEN_IP $LISTEN_PORT $NODE_URL $NETWORK_NAME $PROTOCOL --from $ACCOUNT_NAME --keyring-backend $KEYRING_BACKEND --node $LAVA_RPC_NODE
+User=$USER
+Restart=always
+RestartSec=180
+LimitNOFILE=infinity
+LimitNPROC=infinity
+StandardOutput=append:/var/log/lava-provider.log
+[Install]
+WantedBy=multi-user.target" > lava-provider-$NETWORK_NAME.service
+sudo mv lava-provider-$NETWORK_NAME.service /lib/systemd/system/
+
+# Start the service
+systemctl start lava-provider-$NETWORK_NAME
+# Verify the status of the service
+systemctl status lava-provider-$NETWORK_NAME
+# Check the service logs
+journalctl -u lava-provider-$NETWORK_NAME -f
 
 # Example: running an ETH1 jsonrpc provider with a remote Lava RPC node,
-# ./lavad server 0.0.0.0 19921 "wss://username:password@my_remote_node/eth/ws/" \
+# lavad server 0.0.0.0 19921 "wss://username:password@my_remote_node/eth/ws/" \
 # ETH1 jsonrpc \
 # --from my_account_name \
 # --keyring-backend "test" \
@@ -268,12 +297,12 @@ To verify if your account is paired with the pairing providers for a specific ne
 Run the command below, and check to see if your account public address is in the command output list
 
 ```bash
-./lavad query pairing providers \
+lavad query pairing providers \
 "{NETWORK_NAME}" \
 --node "{LAVA_RPC_NODE}"
 
 # Example: checking if your account is a paired provider for the ETH1 network,
-# ./lavad query pairing providers \
+# lavad query pairing providers \
 # ETH1 \
 # --node http://public-rpc.lavanet.xyz:80/rpc/
 
@@ -289,7 +318,7 @@ Param description (and examples):
 ## FAQ
 
 ### `lavad` not found  
-Make sure you downloaded the binary, and it is located in the path you use to run `lavad` commands
+Make sure you downloaded the binary, and it is located in the path you use to run `lavad` commands, or you have it under /usr/local/bin or under PATH
 
 ### Received error `account sequence mismatch`
 Try to wait for a block_time (current=30s) and then run the command again
@@ -298,13 +327,13 @@ Try to wait for a block_time (current=30s) and then run the command again
 Run the following command:  
 
 ```bash
-./lavad tx pairing unstake-provider "{NETWORK_NAME}" \
+lavad tx pairing unstake-provider "{NETWORK_NAME}" \
 --from "{ACCOUNT_NAME}" \
 --keyring-backend "{KEYRING_BACKEND}" \
 --node "{LAVA_RPC_NODE}"
 
 # For example, unstake a provider for the ETH1 network,
-# ./lavad tx pairing unstake-provider ETH1 \
+# lavad tx pairing unstake-provider ETH1 \
 # --from my_account_name \
 # --keyring-backend "test" \
 # --node http://public-rpc.lavanet.xyz:80/rpc/
@@ -327,15 +356,3 @@ In case you got the following error:
 ERR sentry init failure to initialize error="provider stake verification mismatch -- &map[ChainID:NETWORK_NAME spec name:NETWORK_FULL_NAME]" ChainID=CHAIN_ID apiInterface=PROTOCOL
 ```
 It is likely that the stake-provider command was not taken into effect yet, if running the `lavad server` option, please wait a few minutes and try running the command again.
-
-### The provider process is running, but I would like to run in in background
-In this case we recommend you consider the following options:  
-1. Run the process as a background task, using the `&` sign at the end of the command, for example  
-```bash
-./lavad server 0.0.0.0 19921 "wss://username:password@my_remote_node/eth/ws/" \
-ETH1 jsonrpc \
---from my_account_name \
---keyring-backend "{KEYRING_BACKEND}" \
---node http://public-rpc.lavanet.xyz:80/rpc/ &
-```
-2. Using `screen` or `tmux` to run the process in a detached session
