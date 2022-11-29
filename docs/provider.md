@@ -261,15 +261,15 @@ LimitNOFILE=infinity
 LimitNPROC=infinity
 StandardOutput=append:/var/log/lava-provider.log
 [Install]
-WantedBy=multi-user.target" > lava-provider-$NETWORK_NAME.service
-sudo mv lava-provider-$NETWORK_NAME.service /lib/systemd/system/
+WantedBy=multi-user.target" > lava-provider-$NETWORK_NAME-$PROTOCOL.service
+sudo mv lava-provider-$NETWORK_NAME-$PROTOCOL.service /lib/systemd/system/
 
 # Start the service
-systemctl start lava-provider-$NETWORK_NAME
+systemctl start lava-provider-$NETWORK_NAME-$PROTOCOL
 # Verify the status of the service
-systemctl status lava-provider-$NETWORK_NAME
+systemctl status lava-provider-$NETWORK_NAME-$PROTOCOL
 # Check the service logs
-journalctl -u lava-provider-$NETWORK_NAME -f
+journalctl -u lava-provider-$NETWORK_NAME-$PROTOCOL -f
 
 # Example: running an ETH1 jsonrpc provider with a remote Lava RPC node,
 # lavad server 0.0.0.0 19921 "wss://username:password@my_remote_node/eth/ws/" \
