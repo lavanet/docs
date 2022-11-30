@@ -259,7 +259,6 @@ Restart=always
 RestartSec=180
 LimitNOFILE=infinity
 LimitNPROC=infinity
-StandardOutput=append:/var/log/lava-provider.log
 [Install]
 WantedBy=multi-user.target" > lava-provider-$NETWORK_NAME-$PROTOCOL.service
 sudo mv lava-provider-$NETWORK_NAME-$PROTOCOL.service /lib/systemd/system/
