@@ -85,7 +85,7 @@ binary_url="https://github.com/K433QLtr6RA9ExEq/GHFkqmTzpdNLDd6T/blob/main/produ
 wget $binary_url -O lavad
 chmod +x lavad
 # copy lavad to /usr/local/bin
-cp ./lavad /usr/local/bin/lavad
+sudo cp ./lavad /usr/local/bin/lavad
 ```
 * Note: in case you already have an existing lavad installation, you can refer your current lavad binary by running `$HOME/.lava/cosmovisor/current/bin/lavad`
 
