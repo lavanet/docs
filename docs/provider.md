@@ -142,15 +142,7 @@ Keep the newly created account info:
 
 #### Faucet
 
-Get your account funded through the faucet, please allow up to a minute for the query to respond:
-```bash
-# Replace the address with your account address
-curl -X POST \
--d '{"address": "lava@12h75m99wsgnxnc7d5qpwl6rq268c7jvccxdeqw", "coins": ["10000000ulava"]}' http://lava-faucet.lavanet.xyz:5555
-
-# Expected output:
-# '{}'
-```
+Get your account funded through [the faucet](faucet)
 
 #### Verify your account is funded
 
@@ -226,7 +218,7 @@ Notes:
 1. Expected output code: `0`
 2. Please stake provider only once per block (Block currently stands at 30s)
 
-### 6. Run the provider processes
+### 4. Run the provider processes
 Now once you have an account that is funded, and you account has provider staking for a network, you can run the provider processes per network.  
 In order to specify the NODE_URL you will be fetching the chain data from, you can use the syntax below,  
 Websocket - `ETH1_NODE_URL="ws://username:password@my-node.com/eth/ws/"`  
@@ -292,7 +284,7 @@ Param description (and examples):
 - `KEYRING_BACKEND` - A keyring-backend of your choosing, for more information ([FAQ: what is a keyring](faq#keyring)). Example `test`
 - `LAVA_RPC_NODE` - A RPC node for Lava (can be omitted if the current node has joined the Lava network). Example `http://public-rpc.lavanet.xyz:80/rpc/`
 
-### 7. Verify your account is in the pairing providers list
+### 5. Verify your account is in the pairing providers list
 To verify if your account is paired with the pairing providers for a specific network,
 Run the command below, and check to see if your account public address is in the command output list
 
