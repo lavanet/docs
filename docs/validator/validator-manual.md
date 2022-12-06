@@ -1,6 +1,6 @@
 ---
 sidebar_position: 2
-title: Option B - Manual
+title: Setup
 slug: /validator-manual
 ---
 

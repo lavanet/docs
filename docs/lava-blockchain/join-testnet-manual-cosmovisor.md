@@ -1,7 +1,7 @@
 ---
 sidebar_position: 2
 slug: /testnet-manual-cosmovisor
-title: Option B - Manual (Cosmovisor)
+title: Option A - With Cosmovisor
 ---
 import RoadmapItem from '@site/src/components/RoadmapItem';
 
