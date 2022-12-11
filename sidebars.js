@@ -55,7 +55,19 @@ const sidebars = {
             'validator/validator-manual',
           ]
         },    
-        'provider',
+        {
+          type: 'category', 
+          label: 'Be a Provider',
+          collapsible: true,
+          collapsed: true,
+          link: {
+            type: 'doc',
+            id: 'provider'
+          },
+          items: [
+            'provider/provider-setup',
+          ]
+        },    
         'lava-blockchain/faucet',
         'lava-blockchain/account-wallet',
       ]
@@ -75,8 +87,8 @@ const sidebars = {
     'faq',
     {
       type: 'link',
-      label: 'Contribution',
-      href: 'https://github.com/lavanet/docs/blob/master/CONTRIBUTING.md',
+      label: 'Contribute to Docs',
+      href: 'https://github.com/lavanet/docs',
     },
   ],
 };

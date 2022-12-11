@@ -15,35 +15,33 @@ Lava is here to fix it.
 Access Lava, Access Web3.
 
 :::danger Testnet is up and running!
-Welcome testers! Thank you for joining the private testnet. 
+Welcome testers! Thank you for joining the testnet
 :::
 ## Getting started 🌋⚡️
 
-### Start by powering Lava 🌋
+### Access Web3 APIs ⚡️
+[<RoadmapItem icon="🧑‍💻" title="Access Web3 APIs" description="Start using Web3 APIs, seamlessly onboarding Lava's network"/>](/access-apis/gateway-access.md)
+
+### Power up Lava 🌋
 
 [<RoadmapItem icon="🧑‍⚖️" title="Power as a Validator" description="Validate blocks, secure the network, earn rewards"/>](validator)
 
 [<RoadmapItem icon="💁" title="Power as a Provider" description="Service chain access, grow the network, earn rewards"/>](provider)
 
-### Accessing Web3 APIs ⚡️
-[<RoadmapItem icon="🧑‍💻" title="Access Web3 APIs" description="Start using Web3 APIs, seamlessly onboarding Lava's network"/>](/access-apis/gateway-access.md)
 
 ### Navigating the Lava - quick links
 
 - [Docs](https://docs.lavanet.xyz) ←You’re here
-- [Scan](https://scan.lavanet.xyz) - Block explorer
+- [Lava Info](https://info.lavanet.xyz)
+- [Block explorer - BigDipper](https://bd.lavanet.xyz)
 - [Gateway](https://gateway.lavanet.xyz) - Quick access APIs
-- D-access - Fully decentralized Access - COMING SOON
+- [Lava SDK for dAccess](https://github.com/lavanet/lava-sdk)
 
 ### Community & open-source
 
 - [Twitter](https://twitter.com/lavanetxyz)
-- Discord (currently Invite only)
-- Github (currently Invite only)
-
-:::info
-Not sure where to start? no worries, keep on reading 🙂!
-:::
+- [Discord](https://discord.gg/5VcqgwMmkA)
+- [GitHub](https://github.com/lavanet)
 
 ## What is Lava?
 
