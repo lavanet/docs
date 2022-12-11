@@ -20,11 +20,7 @@ Validators earn LAVA from the creation of new blocks and the transaction fees, a
 _Note_: This does not cover Delegating LAVA to validators
 
 
-:::tip Start a validator - Auto _or_ Manual?
+:::tip Start a validators
 
-[<RoadmapItem icon="🤖" title="Automatic scripts" description="If you want to get started first, and later on dive into specific subjects, that will work as well. The scripts are available as source code as well"/>](validator-auto)
-
-[<RoadmapItem icon="🛠" title="Manual steps" description="If you are already familiar with running validators, or love to orchestrate your own setup, this is the path for you"/>](validator-manual)
+[<RoadmapItem icon="🛠" title="Setup steps" description="Step by step guide on getting started"/>](validator-manual)
 :::
-
-

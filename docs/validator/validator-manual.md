@@ -84,10 +84,15 @@ $current_lavad_binary query \
 ```
 
 3. Stake validator
+
+Here's an example with Values which starts with a stake of `50000000ulava`.
+Replace `<<moniker_node>>` With a human readable name you choose for your validator.
+
 ```bash
 $current_lavad_binary tx staking create-validator \
     --amount="50000000ulava" \
     --pubkey=$($current_lavad_binary tendermint show-validator --home "$HOME/.lava/") \
+    --moniker="<<moniker_node>>" \
     --chain-id=lava \
     --commission-rate="0.10" \
     --commission-max-rate="0.20" \
