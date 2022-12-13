@@ -195,6 +195,7 @@ Below, you can find tracking of the required upgrade for block height
 | v0.0.5 | 27085 | https://github.com/K433QLtr6RA9ExEq/GHFkqmTzpdNLDd6T/tree/main/production/cosmovisor-upgrades/upgrades/v0.0.5/bin/lavad
 | v0.0.5-hotfix | 39620 | https://github.com/K433QLtr6RA9ExEq/GHFkqmTzpdNLDd6T/raw/main/production/cosmovisor-upgrades/upgrades/v0.0.5-hotfix/bin/lavad
 | v0.1.0 | 46910 | https://github.com/K433QLtr6RA9ExEq/GHFkqmTzpdNLDd6T/raw/main/production/cosmovisor-upgrades/upgrades/v0.1.0/bin/lavad
+| v0.2.0 | 124213 | https://lava-binary-upgrades.s3.amazonaws.com/production/v0.2.0/lavad
 
 ### Steps for upgrading your node
 
