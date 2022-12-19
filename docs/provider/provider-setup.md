@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-slug: provider-setup
+slug: /provider-setup
 title: Setup
 ---
 

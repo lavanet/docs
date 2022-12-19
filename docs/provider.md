@@ -54,4 +54,4 @@ lavad q spec list-Spec --node http://public-rpc.lavanet.xyz:80/rpc/
 ## Next step: Setup a Provider
 
 When you're ready, join **as a provider**:
-[<RoadmapItem icon="🧑‍⚖️" title="Power as a Provider" description="Provide node data, earn rewards"/>](provider/provider-setup)
+[<RoadmapItem icon="🧑‍⚖️" title="Power as a Provider" description="Provide node data, earn rewards"/>](/provider-setup)
