@@ -138,7 +138,7 @@ lavad tx pairing stake-provider "{NETWORK_NAME}" \
 ```
 
 Param description (and examples):
-- `NETWORK_NAME` - The ID of the chain, see [how to query the full list](#chains). Example `COS4` or `FTM250`
+- `NETWORK_NAME` - The ID of the serviced chain, see [how to query the full list](#chains). Example `COS4` or `FTM250`
 - `STAKE_AMOUNT` - The amount you are willing to stake for being a provider for the specific network. Example `2010ulava`
 - `SERVICED_NODE_IP` - External IP of the node that will service the requests. Example `51.92.133.253` (to find your public IP, run `curl ifconfig.me`)  
 - `SERVICED_NODE_PORT` - Port of the node that will service requests. Example `19921`
