@@ -107,7 +107,7 @@ The following sections will describe how to install Cosmovisor for automating th
     # Set the environment variables
     echo "# Setup Cosmovisor" >> ~/.profile
     echo "export DAEMON_NAME=lavad" >> ~/.profile
-    echo "export CHAIN_ID=lava" >> ~/.profile
+    echo "export CHAIN_ID=lava-testnet-1" >> ~/.profile
     echo "export DAEMON_HOME=$HOME/.lava" >> ~/.profile
     echo "export DAEMON_ALLOW_DOWNLOAD_BINARIES=true" >> ~/.profile
     echo "export DAEMON_LOG_BUFFER_SIZE=512" >> ~/.profile
