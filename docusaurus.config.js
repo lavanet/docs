@@ -145,6 +145,14 @@ const config = {
       hotjar: {
         applicationId: 3059536
       },
+      announcementBar: {
+        id: 'no_token',
+        content:
+          'Lava testnet is live. Mainnet tokens not yet available. <B>Beware of scams.</B> Need help? <a target="_blank" href="https://discord.gg/5VcqgwMmkA">Join our Discord.</a>',
+        backgroundColor: '#AA0000',
+        textColor: '#FFFFFF',
+        isCloseable: true,
+      },
     }),
 };
 
