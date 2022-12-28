@@ -100,7 +100,7 @@ $current_lavad_binary tx staking create-validator \
     --min-self-delegation="10000" \
     --gas="auto" \
     --gas-adjustment "1.5" \
-    --gas-prices="0.0025ulava" \
+    --gas-prices="0.05ulava" \
     --home="$HOME/.lava/" \
     --from=$ACCOUNT_NAME
 ```
