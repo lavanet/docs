@@ -162,19 +162,9 @@ The following sections will describe how to install Cosmovisor for automating th
     sudo mv cosmovisor.service /lib/systemd/system/cosmovisor.service
     ```
 
-### Download the latest Lava data snapshot {#snapshots}
+### Download the latest Lava data snapshot (_optional_) {#snapshots}
 
-- Download and unzip the latest snapshot
-    ```bash
-    temp_folder=$(mktemp -d) && cd $temp_folder
-    wget https://lava-snapshots.s3.amazonaws.com/latest/latest.zip
-    unzip latest.zip
-    ```
-
-- Copy the snapshot to you local data dir
-    ```bash
-    cp -r data/* ~/.lava/data/
-    ```
+_Coming soon_
 
 ### Enable and start the Cosmovisor service
     
