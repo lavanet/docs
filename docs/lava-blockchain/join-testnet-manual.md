@@ -182,8 +182,9 @@ Versions are tracked in [Lava git](https://github.com/lavanet/lava) (build from 
 
 | Version name | Block height
 | --- | ---
-| 0.4.0 | 838 |
-| 0.4.1 | TBA |
+| v0.3.0 | genesis |
+| v0.4.0 | 838 |
+| v0.4.1 | TBA |
 
 ### Steps for upgrading your node
 
