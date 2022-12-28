@@ -14,14 +14,16 @@ Current installation of `lavad` is built only for Linux.
 :::
 
 ### 1. Download `lavad`
+
+* Note: in case you already have an existing lavad installation, you can refer your current lavad binary by running `$HOME/.lava/cosmovisor/current/bin/lavad`
+
 ```bash
-binary_url="https://github.com/K433QLtr6RA9ExEq/GHFkqmTzpdNLDd6T/blob/main/production/cosmovisor-upgrades/genesis/bin/lavad?raw=true"
+binary_url="https://lava-binary-upgrades.s3.amazonaws.com/testnet/v0.4.1/lavad"
 wget $binary_url -O lavad
 chmod +x lavad
 # copy lavad to /usr/local/bin
 sudo cp ./lavad /usr/local/bin/lavad
 ```
-* Note: in case you already have an existing lavad installation, you can refer your current lavad binary by running `$HOME/.lava/cosmovisor/current/bin/lavad`
 
 ### 2. Prepare an account & Fund it {#account}
 Lava account and wallets are standard Cosmos. Learn more in [Account & Wallet section](wallet).
@@ -96,7 +98,7 @@ bank balances \
 #     bank balances \
 #     lava@12h75m99wsgnxnc7d5qpwl6rq268c7jvccxdeqw \
 #     --denom ulava \
-#     --node http://public-rpc.lavanet.xyz:80/rpc/
+#     --node https://public-rpc.lavanet.xyz:443/rpc/
 
 # Expected output:
 # amount: "XXX" # Amount should be > 1
@@ -119,19 +121,21 @@ lavad tx pairing stake-provider "{NETWORK_NAME}" \
 "{SERVICED_NODE_IP}:{SERVICED_NODE_PORT},{PROTOCOL},1" 1 \
 --from "{ACCOUNT_NAME}" \
 --keyring-backend "{KEYRING_BACKEND}" \
+--chain-id "{CHAIN_ID}" \
 --gas="auto" \
 --gas-adjustment "1.5" \
 --node "{LAVA_RPC_NODE}"
 
 # Example: staking a provider for ETH1, using an external Lava RPC node,
 # lavad tx pairing stake-provider "ETH1" \
-#     2010ulava \
+#     500000000000ulava \
 #     "$(curl -s ifconfig.me):19921,jsonrpc,1" 1 \
 #     --from my_account_name \
 #     --gas="auto" \
 #     --gas-adjustment "1.5" \
+#     --chain-id "lava-testnet-1" \
 #     --keyring-backend "test" \
-#     --node http://public-rpc.lavanet.xyz:80/rpc/
+#     --node https://public-rpc.lavanet.xyz:443/rpc/
 
 # Expected output:
 # code: 0
@@ -145,6 +149,7 @@ Param description (and examples):
 - `PROTOCOL` - The protocol to be used, see [how to query the full list](#chains). Example `jsonrpc`, or `rest`
 - `ACCOUNT_NAME` - The account to be used for the provider staking. Example `my_account`
 - `KEYRING_BACKEND` - A keyring-backend of your choosing, for more information ([FAQ: what is a keyring](faq#keyring)). Example `test`
+- `CHAIN_ID` - The chain_id of the network. Example `lava-testnet-1`
 - `LAVA_RPC_NODE` - A RPC node for Lava (can be omitted if the current node has joined the Lava network). Example `http://public-rpc.lavanet.xyz:80/rpc/`
 
 
@@ -173,13 +178,14 @@ NETWORK_NAME=NETWORK_NAME
 PROTOCOL=PROTOCOL
 ACCOUNT_NAME=ACCOUNT_NAME
 KEYRING_BACKEND=KEYRING_BACKEND
+CHAIN_ID=CHAIN_ID
 LAVA_RPC_NODE=LAVA_RPC_NODE
 
 echo "[Unit]
 Description=Provider daemon
 After=network-online.target
 [Service]
-ExecStart=lavad server $LISTEN_IP $LISTEN_PORT $NODE_URL $NETWORK_NAME $PROTOCOL --from $ACCOUNT_NAME --keyring-backend $KEYRING_BACKEND --node $LAVA_RPC_NODE
+ExecStart=lavad server $LISTEN_IP $LISTEN_PORT $NODE_URL $NETWORK_NAME $PROTOCOL --from $ACCOUNT_NAME --keyring-backend $KEYRING_BACKEND --chain-id $CHAIN_ID --node $LAVA_RPC_NODE 
 User=$USER
 Restart=always
 RestartSec=180
@@ -201,7 +207,8 @@ journalctl -u lava-provider-$NETWORK_NAME-$PROTOCOL -f
 # ETH1 jsonrpc \
 # --from my_account_name \
 # --keyring-backend "test" \
-# --node http://public-rpc.lavanet.xyz:80/rpc/
+# --chain-id "lava-testnet-1" \
+# --node https://public-rpc.lavanet.xyz:443/rpc/
 
 # Expected output:
 # INF Server listening Address=[::]:LISTEN_PORT
@@ -215,6 +222,7 @@ Param description (and examples):
 - `PROTOCOL` - The protocol to be used, see [how to query the full list](#chains). Example `jsonrpc`, or `rest`  
 - `ACCOUNT_NAME` - The account to be used for the provider staking.  
 - `KEYRING_BACKEND` - A keyring-backend of your choosing, for more information ([FAQ: what is a keyring](faq#keyring)). Example `test`
+- `CHAIN_ID` - The chain_id of the network. Example `lava-testnet-1`
 - `LAVA_RPC_NODE` - A RPC node for Lava (can be omitted if the current node has joined the Lava network). Example `http://public-rpc.lavanet.xyz:80/rpc/`
 
 ### 5. Verify your account is in the pairing providers list
@@ -229,7 +237,7 @@ lavad query pairing providers \
 # Example: checking if your account is a paired provider for the ETH1 network,
 # lavad query pairing providers \
 # ETH1 \
-# --node http://public-rpc.lavanet.xyz:80/rpc/
+# --node https://public-rpc.lavanet.xyz:443/rpc/
 
 # Expected output:
 # INF Server listening Address=[::]:LISTEN_PORT
@@ -255,13 +263,15 @@ Run the following command:
 lavad tx pairing unstake-provider "{NETWORK_NAME}" \
 --from "{ACCOUNT_NAME}" \
 --keyring-backend "{KEYRING_BACKEND}" \
+--chain-id "{CHAIN_ID}" \
 --node "{LAVA_RPC_NODE}"
 
 # For example, unstake a provider for the ETH1 network,
 # lavad tx pairing unstake-provider ETH1 \
 # --from my_account_name \
 # --keyring-backend "test" \
-# --node http://public-rpc.lavanet.xyz:80/rpc/
+# --chain-id "lava-testnet-1" \
+# --node https://public-rpc.lavanet.xyz:443/rpc/
 
 # Expected output:
 # INF Server listening Address=[::]:LISTEN_PORT
