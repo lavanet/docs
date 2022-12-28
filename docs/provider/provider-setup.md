@@ -10,7 +10,7 @@ title: Setup
 `lavad` contains the implementation for running a provider process. 
 
 :::info
- Current installation of `lavad` is built only for Linux. Soon we'll allow building `lavad` from source.
+Current installation of `lavad` is built only for Linux.
 :::
 
 ### 1. Download `lavad`

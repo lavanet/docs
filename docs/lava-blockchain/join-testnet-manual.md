@@ -130,20 +130,11 @@ Note that it does **not** include the "Cosmovisor" tool, hence once you install 
     sudo mv lavad.service /lib/systemd/system/lavad.service
     ```
 
-### Download the latest Lava data snapshot {#snapshots}
+### Download the latest Lava data snapshot (_optional_) {#snapshots} 
 
-- Download and unzip the latest snapshot
-    ```bash
-    temp_folder=$(mktemp -d) && cd $temp_folder
-    wget https://lava-snapshots.s3.amazonaws.com/latest/latest.zip
-    unzip latest.zip
-    ```
+_Coming soon_
 
-- Copy the snapshot to you local data dir
-    ```bash
-    mkdir -p ~/.lava/data/
-    cp -r data/* ~/.lava/data/
-    ```
+### Service start and validation
 
 - Configure the lavad service to run on boot, and start it
 
@@ -162,7 +153,6 @@ Note that it does **not** include the "Cosmovisor" tool, hence once you install 
     # To view the service logs
     sudo journalctl -u lavad -f
     ```
-
 
 ## 3. Upgrades {#upgrades}
 Lava blockchain upgrades requires you to update `lavad`. This guide covers the manual steps for doing so, assuming you do not use Cosmovisor.
@@ -187,15 +177,13 @@ This situation requires a different binary (`lavad`) to work with, the process i
 
 ### Upgrades list history
 
-Below, you can find tracking of the required upgrade for block height
+Below, you can find tracking of the required upgrade for block height. 
+Versions are tracked in [Lava git](https://github.com/lavanet/lava) (build from source or use the release page). 
 
-| Upgrade name | Block height | Binary URL
-| --- | --- | ---- |
-| v0.0.1 --> 0.0.4 | History |
-| v0.0.5 | 27085 | https://github.com/K433QLtr6RA9ExEq/GHFkqmTzpdNLDd6T/tree/main/production/cosmovisor-upgrades/upgrades/v0.0.5/bin/lavad
-| v0.0.5-hotfix | 39620 | https://github.com/K433QLtr6RA9ExEq/GHFkqmTzpdNLDd6T/raw/main/production/cosmovisor-upgrades/upgrades/v0.0.5-hotfix/bin/lavad
-| v0.1.0 | 46910 | https://github.com/K433QLtr6RA9ExEq/GHFkqmTzpdNLDd6T/raw/main/production/cosmovisor-upgrades/upgrades/v0.1.0/bin/lavad
-| v0.2.0 | 124213 | https://lava-binary-upgrades.s3.amazonaws.com/production/v0.2.0/lavad
+| Version name | Block height
+| --- | ---
+| 0.4.0 | 838 |
+| 0.4.1 | TBA |
 
 ### Steps for upgrading your node
 
