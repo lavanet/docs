@@ -105,7 +105,7 @@ $current_lavad_binary tx staking create-validator \
     --from=$ACCOUNT_NAME
 ```
 
-Once you have finished running the command above, if you see "code: 0" in the output, the command was successful
+Once you have finished running the command above, if you see `code: 0` in the output, the command was successful
 
 4. Verify validator setup
 
