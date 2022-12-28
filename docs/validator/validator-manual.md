@@ -54,7 +54,7 @@ Get your account funded through the faucet:
 ```bash
 # Replace the address with your account address
 curl -X POST \
--d '{"address": "lava@17dal6exst53uh6ca8gq6dgg3k0ktl7j9fdqwpv", "coins": ["60000000ulava"]}' https://faucet-api.lavanet-zarak.xyz/faucet/
+-d '{"address": "lava@17dal6exst53uh6ca8gq6dgg3k0ktl7j9fdqwpv", "coins": ["60000000ulava"]}' https://faucet-api.lavanet.xyz/faucet/
 # Expected success output: '{}'
 ```
 
