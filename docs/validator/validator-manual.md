@@ -54,7 +54,7 @@ Get your account funded through the faucet:
 ```bash
 # Replace the address with your account address
 curl -X POST \
--d '{"address": "lava@12h75m99wsgnxnc7d5qpwl6rq268c7jvccxdeqw", "coins": ["60000000ulava"]}' http://44.205.140.46:5555
+-d '{"address": "lava@17dal6exst53uh6ca8gq6dgg3k0ktl7j9fdqwpv", "coins": ["60000000ulava"]}' https://faucet-api.lavanet-zarak.xyz/faucet/
 # Expected success output: '{}'
 ```
 
@@ -105,10 +105,12 @@ $current_lavad_binary tx staking create-validator \
     --from=$ACCOUNT_NAME
 ```
 
+Once you have finished running the command above, if you see "code: 0" in the output, the command was successful
+
 4. Verify validator setup
 
 ```bash
-block_time=30
+block_time=60
 # Check that the validator node is registered and staked
 validator_pubkey=$($current_lavad_binary tendermint show-validator | jq .key | tr -d '"')
 
