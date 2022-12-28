@@ -60,7 +60,7 @@ import RoadmapItem from '@site/src/components/RoadmapItem';
     ```bash
     # Download the installation setup configuration
     git clone https://github.com/K433QLtr6RA9ExEq/GHFkqmTzpdNLDd6T.git
-    cd GHFkqmTzpdNLDd6T/production
+    cd GHFkqmTzpdNLDd6T/testnet-1
     # Read the configuration from the file
     # Note: you can take a look at the config file and verify configurations
     source setup_config/setup_config.sh
@@ -100,6 +100,9 @@ The following sections will describe how to install Cosmovisor for automating th
     go install github.com/cosmos/cosmos-sdk/cosmovisor/cmd/cosmovisor@v1.0.0
     # Create the Cosmovisor folder and copy config files to it
     mkdir -p $lavad_home_folder/cosmovisor
+    # Download the latest cosmovisor-upgrades from S3
+    wget https://lava-binary-upgrades.s3.amazonaws.com/testnet/cosmovisor-upgrades/cosmovisor-upgrades.zip
+    unzip cosmovisor-upgrades.zip
     cp -r cosmovisor-upgrades/* $lavad_home_folder/cosmovisor
     ```
 
@@ -120,7 +123,7 @@ The following sections will describe how to install Cosmovisor for automating th
     # Initialize the chain
     $lavad_home_folder/cosmovisor/genesis/bin/lavad init \
     my-node \
-    --chain-id lava \
+    --chain-id lava-testnet-1 \
     --home $lavad_home_folder \
     --overwrite
     cp genesis_json/genesis.json $lava_config_folder/genesis.json
