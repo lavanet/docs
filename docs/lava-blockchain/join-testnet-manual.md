@@ -65,7 +65,7 @@ Note that it does **not** include the "Cosmovisor" tool, hence once you install 
     ```bash
     # Download the installation setup configuration
     git clone https://github.com/K433QLtr6RA9ExEq/GHFkqmTzpdNLDd6T.git
-    cd GHFkqmTzpdNLDd6T/production
+    cd GHFkqmTzpdNLDd6T/testnet-1
     # Read the configuration from the file
     # Note: you can take a look at the config file and verify configurations
     source setup_config/setup_config.sh
@@ -102,8 +102,9 @@ Note that it does **not** include the "Cosmovisor" tool, hence once you install 
     # Set and create the lavad binary path
     lavad_binary_path="$HOME/go/bin/"
     mkdir -p $lavad_binary_path
-    # Copy the genesis binary to the lava path
-    cp cosmovisor-upgrades/genesis/bin/lavad $lavad_binary_path/lavad
+    # Download the genesis binary to the lava path
+    wget https://lava-binary-upgrades.s3.amazonaws.com/staging/v0.3.0/lavad
+    chmod +x lavad
     # Lavad should now be accessible from PATH, to verify, try running
     # In case it is not accessible, make sure $lavad_binary_path is part of PATH (you can refer to the "Go installation" section)
     lavad --help # Make sure you can see the lavad binary help printed out
@@ -122,7 +123,7 @@ Note that it does **not** include the "Cosmovisor" tool, hence once you install 
     User=$USER
     ExecStart=$(which lavad) start --home=$lavad_home_folder --p2p.seeds $seed_node
     Restart=always
-    RestartSec=3
+    RestartSec=180
     LimitNOFILE=infinity
     LimitNPROC=infinity
     [Install]
@@ -193,8 +194,8 @@ Versions are tracked in [Lava git](https://github.com/lavanet/lava) (build from 
 ```bash
 # Upgrade configurations
 temp_folder=$(mktemp -d) && cd $temp_folder
-required_upgrade_name="v0.0.5" # CHANGE THIS
-upgrade_binary_url="https://github.com/K433QLtr6RA9ExEq/GHFkqmTzpdNLDd6T/raw/main/production/cosmovisor-upgrades/upgrades/$required_upgrade_name/bin/lavad"
+required_upgrade_name="v0.4.0" # CHANGE THIS
+upgrade_binary_url="https://lava-binary-upgrades.s3.amazonaws.com/testnet/$required_upgrade_name/lavad"
 ```
 
 2. Kill all current lavad processes
@@ -202,7 +203,7 @@ upgrade_binary_url="https://github.com/K433QLtr6RA9ExEq/GHFkqmTzpdNLDd6T/raw/mai
 ```bash
 source ~/.profile
 # If using lavad as a service, run
-sudo service lavad stop
+sudo systemctl stop lavad
 ```
 
 3. Download the binary and replace the current `lavad`
@@ -210,6 +211,7 @@ sudo service lavad stop
 ```bash
 # Download the binary and replace it with the current one
 wget "$upgrade_binary_url" -q -O $temp_folder/lavad
+chmod +x $temp_folder/lavad
 
 # Replace the current lava binary with the upgraded binary
 sudo cp $temp_folder/lavad $(which lavad)
@@ -219,7 +221,7 @@ sudo cp $temp_folder/lavad $(which lavad)
 
 ```bash
 # Re-start the stopped lavad service
-sudo service lavad start
+sudo systemctl start lavad
 ```
 
 5. Verify the node continues to sync from the latest block height
