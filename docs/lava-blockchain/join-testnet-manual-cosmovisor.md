@@ -162,7 +162,7 @@ The following sections will describe how to install Cosmovisor for automating th
     sudo mv cosmovisor.service /lib/systemd/system/cosmovisor.service
     ```
 
-### Download the latest Lava data snapshot {#snapshots}
+### Download the latest Lava data snapshot (_optional_) {#snapshots}
 
 _Coming soon_
 

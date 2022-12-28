@@ -130,9 +130,29 @@ Note that it does **not** include the "Cosmovisor" tool, hence once you install 
     sudo mv lavad.service /lib/systemd/system/lavad.service
     ```
 
-### Download the latest Lava data snapshot {#snapshots}
+### Download the latest Lava data snapshot (_optional_) {#snapshots} 
 
 _Coming soon_
+
+### Service start and validation
+
+- Configure the lavad service to run on boot, and start it
+
+    ```bash
+    # Enable the lavad service so that it will start automatically when the system boots
+    sudo systemctl daemon-reload
+    sudo systemctl enable lavad.service
+    sudo systemctl restart systemd-journald
+    sudo systemctl start lavad
+    ```
+
+- Check the state of the lavad service
+    
+    ```bash
+    sudo systemctl status lavad
+    # To view the service logs
+    sudo journalctl -u lavad -f
+    ```
 
 ## 3. Upgrades {#upgrades}
 Lava blockchain upgrades requires you to update `lavad`. This guide covers the manual steps for doing so, assuming you do not use Cosmovisor.
