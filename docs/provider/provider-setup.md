@@ -107,7 +107,7 @@ bank balances \
 
 Param description (and examples):
 - `ACCOUNT_PUBLIC_ADDRESS` - The public address of your account. Example `lava@12h75m99wsgnxnc7d5qpwl6rq268c7jvccxdeqw`
-- `LAVA_RPC_NODE` - A RPC node for Lava (can be omitted if the current node has joined the Lava network). Example `http://public-rpc.lavanet.xyz:80/rpc/`
+- `LAVA_RPC_NODE` - A RPC node for Lava (can be omitted if the current node has joined the Lava network). Example `https://public-rpc.lavanet.xyz:443/rpc/`
 
 ### 3. Stake a provider
 To stake a single service, use this command:
@@ -150,7 +150,7 @@ Param description (and examples):
 - `ACCOUNT_NAME` - The account to be used for the provider staking. Example `my_account`
 - `KEYRING_BACKEND` - A keyring-backend of your choosing, for more information ([FAQ: what is a keyring](faq#keyring)). Example `test`
 - `CHAIN_ID` - The chain_id of the network. Example `lava-testnet-1`
-- `LAVA_RPC_NODE` - A RPC node for Lava (can be omitted if the current node has joined the Lava network). Example `http://public-rpc.lavanet.xyz:80/rpc/`
+- `LAVA_RPC_NODE` - A RPC node for Lava (can be omitted if the current node has joined the Lava network). Example `https://public-rpc.lavanet.xyz:443/rpc/`
 
 
 Notes:
@@ -223,7 +223,7 @@ Param description (and examples):
 - `ACCOUNT_NAME` - The account to be used for the provider staking.  
 - `KEYRING_BACKEND` - A keyring-backend of your choosing, for more information ([FAQ: what is a keyring](faq#keyring)). Example `test`
 - `CHAIN_ID` - The chain_id of the network. Example `lava-testnet-1`
-- `LAVA_RPC_NODE` - A RPC node for Lava (can be omitted if the current node has joined the Lava network). Example `http://public-rpc.lavanet.xyz:80/rpc/`
+- `LAVA_RPC_NODE` - A RPC node for Lava (can be omitted if the current node has joined the Lava network). Example `https://public-rpc.lavanet.xyz:443/rpc/`
 
 ### 5. Verify your account is in the pairing providers list
 To verify if your account is paired with the pairing providers for a specific network,
@@ -245,7 +245,7 @@ lavad query pairing providers \
 
 Param description (and examples):  
 - `NETWORK_NAME` - The ID of the chain, see [how to query the full list](provider#chains). Example `COS4` or `FTM250`  
-- `LAVA_RPC_NODE` - A RPC node for Lava (can be omitted if the current node has joined the Lava network). Example `http://public-rpc.lavanet.xyz:80/rpc/`
+- `LAVA_RPC_NODE` - A RPC node for Lava (can be omitted if the current node has joined the Lava network). Example `https://public-rpc.lavanet.xyz:443/rpc/`
 
 
 ## FAQ
