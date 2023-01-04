@@ -22,5 +22,5 @@ _Note_: This does not cover Delegating LAVA to validators
 
 :::tip Start a validators
 
-[<RoadmapItem icon="🛠" title="Setup steps" description="Step by step guide on getting started"/>](validator-manual)
+[<RoadmapItem icon="🛠" title="Setup steps" description="Step by step guide on getting started"/>](/validator-manual)
 :::
