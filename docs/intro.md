@@ -24,9 +24,9 @@ Welcome testers! Thank you for joining the testnet
 
 ### Power up Lava 🌋
 
-[<RoadmapItem icon="🧑‍⚖️" title="Power as a Validator" description="Validate blocks, secure the network, earn rewards"/>](validator)
+[<RoadmapItem icon="🧑‍⚖️" title="Power as a Validator" description="Validate blocks, secure the network, earn rewards"/>](/validator)
 
-[<RoadmapItem icon="💁" title="Power as a Provider" description="Service chain access, grow the network, earn rewards"/>](provider)
+[<RoadmapItem icon="💁" title="Power as a Provider" description="Service chain access, grow the network, earn rewards"/>](/provider)
 
 
 ### Navigating the Lava - quick links
