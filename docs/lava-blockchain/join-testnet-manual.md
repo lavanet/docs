@@ -102,6 +102,7 @@ Note that it does **not** include the "Cosmovisor" tool, hence once you install 
     # Set and create the lavad binary path
     lavad_binary_path="$HOME/go/bin/"
     mkdir -p $lavad_binary_path
+    cd $lavad_binary_path
     # Download the genesis binary to the lava path
     wget https://lava-binary-upgrades.s3.amazonaws.com/testnet/v0.3.0/lavad
     chmod +x lavad
