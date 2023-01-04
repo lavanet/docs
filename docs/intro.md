@@ -32,7 +32,6 @@ Welcome testers! Thank you for joining the testnet
 ### Navigating the Lava - quick links
 
 - [Docs](https://docs.lavanet.xyz) ←You’re here
-- [Lava Info](https://info.lavanet.xyz)
 - [Block explorer - BigDipper](https://bd.lavanet.xyz)
 - [Gateway](https://gateway.lavanet.xyz) - Quick access APIs
 - Lava SDK for dAccess - _COMING SOON_
