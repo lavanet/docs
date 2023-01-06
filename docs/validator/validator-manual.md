@@ -17,7 +17,12 @@ While you may use your seed phrase to import an existing wallet, we'll make a ne
 replace $ACCOUNT_NAME with a name of your choosing:
 
 ```bash
+//with cosmovizor
 current_lavad_binary="$HOME/.lava/cosmovisor/current/bin/lavad"
+//without cosmovizor
+current_lavad_binary="$HOME/go/bin/lavad"
+//or both
+current_lavad_binary=$(which lavad)
 ACCOUNT_NAME="name_here"
 $current_lavad_binary keys add $ACCOUNT_NAME
 ```
