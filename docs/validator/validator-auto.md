@@ -70,13 +70,7 @@ Keep the newly created account info:
 
 #### Faucet
 
-Get your account funded through the faucet:
-```bash
-# Replace the address with your account address
-curl -X POST \
--d '{"address": "lava@12h75m99wsgnxnc7d5qpwl6rq268c7jvccxdeqw", "coins": ["60000000ulava"]}' http://44.205.140.46:5555
-# Expected success output: '{}'
-```
+Get your account funded through [the faucet](faucet)
 
 ### 3. Stake & start validating
 
