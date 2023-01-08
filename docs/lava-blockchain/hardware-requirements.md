@@ -44,10 +44,10 @@ Need to run a different OS? Let us know in Discord.
 ## Network configurations
 - Outbound - allow all traffic
 - Inbound - open the following ports:
-    - 1317 - REST
-    - 26657 - TENDERMINT_RPC
-    - 26656 - Cosmos
-    - *Running as a Provider? Add these specific ports*:
+    - 1317 - REST (TCP)
+    - 26657 - TENDERMINT_RPC (TCP)
+    - 26656 - Cosmos (TCP)
+    - *Running as a Provider? Add these specific ports* (TCP):
         - 22221 - provider port
         - 22231 - provider port
         - 22241 - provider port
