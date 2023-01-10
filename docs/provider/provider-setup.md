@@ -151,7 +151,7 @@ Param description (and examples):
 - `KEYRING_BACKEND` - A keyring-backend of your choosing, for more information ([FAQ: what is a keyring](faq#keyring)). Example `test`
 - `CHAIN_ID` - The chain_id of the network. Example `lava-testnet-1`
 - `LAVA_RPC_NODE` - A RPC node for Lava (can be omitted if the current node has joined the Lava network). Example `https://public-rpc.lavanet.xyz:443/rpc/`
-
+- `GEOLOCATION` - Indicates the continent where the process is located. Example 1 for US, 2 for EU, or 3 for both
 
 Notes:
 1. Expected output code: `0`
@@ -180,12 +180,13 @@ ACCOUNT_NAME=ACCOUNT_NAME
 KEYRING_BACKEND=KEYRING_BACKEND
 CHAIN_ID=CHAIN_ID
 LAVA_RPC_NODE=LAVA_RPC_NODE
+GEOLOCATION=1/2/3
 
 echo "[Unit]
 Description=Provider daemon
 After=network-online.target
 [Service]
-ExecStart=lavad server $LISTEN_IP $LISTEN_PORT $NODE_URL $NETWORK_NAME $PROTOCOL --from $ACCOUNT_NAME --keyring-backend $KEYRING_BACKEND --chain-id $CHAIN_ID --node $LAVA_RPC_NODE 
+ExecStart=lavad server $LISTEN_IP $LISTEN_PORT $NODE_URL $NETWORK_NAME $PROTOCOL --from $ACCOUNT_NAME --keyring-backend $KEYRING_BACKEND --chain-id $CHAIN_ID --node $LAVA_RPC_NODE --geolocation $GEOLOCATION
 User=$USER
 Restart=always
 RestartSec=180
@@ -209,6 +210,7 @@ journalctl -u lava-provider-$NETWORK_NAME-$PROTOCOL -f
 # --keyring-backend "test" \
 # --chain-id "lava-testnet-1" \
 # --node https://public-rpc.lavanet.xyz:443/rpc/
+# --geolocation 1
 
 # Expected output:
 # INF Server listening Address=[::]:LISTEN_PORT
