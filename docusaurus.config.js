@@ -80,12 +80,6 @@ const config = {
       }
     ],
     "docusaurus-plugin-hotjar",
-    [
-      'docusaurus-plugin-sentry',
-      {
-        DSN: 'c23168b385ea47c5a85154271dc2ed8e',
-      },
-    ],
     async function myPlugin(context, options) {
       return {
         name: "docusaurus-tailwindcss",
