@@ -151,7 +151,7 @@ Param description (and examples):
 - `KEYRING_BACKEND` - A keyring-backend of your choosing, for more information ([FAQ: what is a keyring](faq#keyring)). Example `test`
 - `CHAIN_ID` - The chain_id of the network. Example `lava-testnet-1`
 - `LAVA_RPC_NODE` - A RPC node for Lava (can be omitted if the current node has joined the Lava network). Example `https://public-rpc.lavanet.xyz:443/rpc/`
-- `GEOLOCATION` - Indicates the continent where the process is located. Example 1 for US, 2 for EU, or 3 for both
+- `GEOLOCATION` - Indicates the geographical location where the process is located. Example `1` for US, `2` for EU, or `3` for both
 
 Notes:
 1. Expected output code: `0`
