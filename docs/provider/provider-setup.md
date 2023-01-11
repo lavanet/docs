@@ -151,7 +151,7 @@ Param description (and examples):
 - `KEYRING_BACKEND` - A keyring-backend of your choosing, for more information ([FAQ: what is a keyring](faq#keyring)). Example `test`
 - `CHAIN_ID` - The chain_id of the network. Example `lava-testnet-1`
 - `LAVA_RPC_NODE` - A RPC node for Lava (can be omitted if the current node has joined the Lava network). Example `https://public-rpc.lavanet.xyz:443/rpc/`
-- `GEOLOCATION` - Indicates the geographical location where the process is located. Example `1` for US, `2` for EU, or `3` for both
+- `GEOLOCATION` - Indicates the geographical location where the process is located. Example `1` for US or `2` for EU
 
 Notes:
 1. Expected output code: `0`
@@ -180,7 +180,7 @@ ACCOUNT_NAME=ACCOUNT_NAME
 KEYRING_BACKEND=KEYRING_BACKEND
 CHAIN_ID=CHAIN_ID
 LAVA_RPC_NODE=LAVA_RPC_NODE
-GEOLOCATION=1/2/3
+GEOLOCATION=GEOLOCATION
 
 echo "[Unit]
 Description=Provider daemon
