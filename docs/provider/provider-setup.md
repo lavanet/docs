@@ -18,7 +18,7 @@ Current installation of `lavad` is built only for Linux.
 * Note: in case you already have an existing lavad installation, you can refer your current lavad binary by running `$HOME/.lava/cosmovisor/current/bin/lavad`
 
 ```bash
-binary_url="https://lava-binary-upgrades.s3.amazonaws.com/testnet/v0.4.1/lavad"
+binary_url="https://lava-binary-upgrades.s3.amazonaws.com/testnet/v0.4.3/lavad"
 wget $binary_url -O lavad
 chmod +x lavad
 # copy lavad to /usr/local/bin
@@ -151,7 +151,7 @@ Param description (and examples):
 - `KEYRING_BACKEND` - A keyring-backend of your choosing, for more information ([FAQ: what is a keyring](faq#keyring)). Example `test`
 - `CHAIN_ID` - The chain_id of the network. Example `lava-testnet-1`
 - `LAVA_RPC_NODE` - A RPC node for Lava (can be omitted if the current node has joined the Lava network). Example `https://public-rpc.lavanet.xyz:443/rpc/`
-
+- `GEOLOCATION` - Indicates the geographical location where the process is located. Example `1` for US or `2` for EU
 
 Notes:
 1. Expected output code: `0`
@@ -180,12 +180,13 @@ ACCOUNT_NAME=ACCOUNT_NAME
 KEYRING_BACKEND=KEYRING_BACKEND
 CHAIN_ID=CHAIN_ID
 LAVA_RPC_NODE=LAVA_RPC_NODE
+GEOLOCATION=GEOLOCATION
 
 echo "[Unit]
 Description=Provider daemon
 After=network-online.target
 [Service]
-ExecStart=lavad server $LISTEN_IP $LISTEN_PORT $NODE_URL $NETWORK_NAME $PROTOCOL --from $ACCOUNT_NAME --keyring-backend $KEYRING_BACKEND --chain-id $CHAIN_ID --node $LAVA_RPC_NODE 
+ExecStart=lavad server $LISTEN_IP $LISTEN_PORT $NODE_URL $NETWORK_NAME $PROTOCOL --from $ACCOUNT_NAME --keyring-backend $KEYRING_BACKEND --chain-id $CHAIN_ID --node $LAVA_RPC_NODE --geolocation $GEOLOCATION
 User=$USER
 Restart=always
 RestartSec=180
@@ -209,6 +210,7 @@ journalctl -u lava-provider-$NETWORK_NAME-$PROTOCOL -f
 # --keyring-backend "test" \
 # --chain-id "lava-testnet-1" \
 # --node https://public-rpc.lavanet.xyz:443/rpc/
+# --geolocation 1
 
 # Expected output:
 # INF Server listening Address=[::]:LISTEN_PORT
