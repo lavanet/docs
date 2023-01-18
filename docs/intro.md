@@ -11,8 +11,7 @@ import RoadmapItem from '@site/src/components/RoadmapItem';
 Web3 is only as strong as its weakest link.
 Today, due to complexities and lack of incentives to run your own node, apps rely on centralized services 🤷
 
-Lava is here to fix it. 
-Access Lava, Access Web3.
+Lava is here to fix it. Access Lava, Access Web3.
 
 :::danger Testnet is up and running!
 Welcome testers! Thank you for joining the testnet
