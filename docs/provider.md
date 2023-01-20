@@ -48,7 +48,7 @@ lavad q spec list-spec
 ```
 or if connecting to external node:
 ```
-lavad q spec list-Spec --node http://public-rpc.lavanet.xyz:80/rpc/
+lavad q spec list-spec --node https://public-rpc.lavanet.xyz:443/rpc/
 ```
 
 ## Next step: Setup a Provider
