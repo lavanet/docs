@@ -59,8 +59,8 @@ import RoadmapItem from '@site/src/components/RoadmapItem';
     
     ```bash
     # Download the installation setup configuration
-    git clone https://github.com/K433QLtr6RA9ExEq/GHFkqmTzpdNLDd6T.git
-    cd GHFkqmTzpdNLDd6T/testnet-1
+    git clone https://github.com/lavanet/lava-config.git
+    cd lava-config/testnet-1
     # Read the configuration from the file
     # Note: you can take a look at the config file and verify configurations
     source setup_config/setup_config.sh
