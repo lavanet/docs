@@ -5,7 +5,7 @@ The source is generated to [Lava Docs website](https://docs.lavanet.xyz/), but c
 ## Deployment
 [![Netlify Status](https://api.netlify.com/api/v1/badges/58c0a448-7af0-48d3-8e29-86fc4a6f4868/deploy-status)](https://app.netlify.com/sites/sage-swan-13ac7b/deploys)
 
-`master` branch is automatically deployed to docs site, and other branches and pull requests leverage Netlify deploy.
+`main` branch is automatically deployed to docs site, and other branches and pull requests leverage Netlify deploy.
 
 ## Community & Contribution 😻
 We welcome contributors with love, please read the [contribution](CONTRIBUTING.md) guide to help you get started.
