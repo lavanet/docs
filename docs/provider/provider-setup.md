@@ -118,7 +118,7 @@ For example,
 ```bash
 lavad tx pairing stake-provider "{NETWORK_NAME}" \
 "{STAKE_AMOUNT}" \
-"{SERVICED_NODE_IP}:{SERVICED_NODE_PORT},{PROTOCOL},1" 1 \
+"{LISTEN_IP}:{LISTEN_PORT},{PROTOCOL},1" 1 \
 --from "{ACCOUNT_NAME}" \
 --keyring-backend "{KEYRING_BACKEND}" \
 --chain-id "{CHAIN_ID}" \
@@ -144,8 +144,8 @@ lavad tx pairing stake-provider "{NETWORK_NAME}" \
 Param description (and examples):
 - `NETWORK_NAME` - The ID of the serviced chain, see [how to query the full list](provider#chains). Example `COS4` or `FTM250`
 - `STAKE_AMOUNT` - The amount you are willing to stake for being a provider for the specific network. Example `2010ulava`
-- `SERVICED_NODE_IP` - External IP of the node that will service the requests. Example `51.92.133.253` (to find your public IP, run `curl ifconfig.me`)  
-- `SERVICED_NODE_PORT` - Port of the node that will service requests. Example `19921`
+- `LISTEN_IP` - External IP of the node that will service the requests. Example `51.92.133.253` (to find your public IP, run `curl ifconfig.me`)  
+- `LISTEN_PORT` - Port of the node that will service requests. Example `19921`
 - `PROTOCOL` - The protocol to be used, see [how to query the full list](provider#chains). Example `jsonrpc`, or `rest`
 - `ACCOUNT_NAME` - The account to be used for the provider staking. Example `my_account`
 - `KEYRING_BACKEND` - A keyring-backend of your choosing, for more information ([FAQ: what is a keyring](faq#keyring)). Example `test`
