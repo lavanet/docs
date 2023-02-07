@@ -1,0 +1,356 @@
+#disable-monitoring-lock: true
+alerting:
+    slack:
+      webhook-url: "https://hooks.slack.com/services/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"
+      default-alert:
+        enabled: true
+        description: "hosted node failed"
+        send-on-resolved: true
+        failure-threshold: 6
+        success-threshold: 2
+    opsgenie:
+      api-key: "399a9d04-8749-4707-8def-2457ac6ed5c4"
+      default-alert:
+        enabled: true
+        description: "hosted node failed"
+        send-on-resolved: true
+        failure-threshold: 6
+        success-threshold: 2
+
+endpoints:
+  - name: ETH_RPC_HTTP
+    alerts:
+      - type: slack
+      - type: opsgenie
+    group: ethereum
+    url: https://kololo8ex9:ifififkwqlspAFJIjfdMCsdmasdgAKoakdFOAKSFOakfaSEFkbntb311esad@prod-pnet-ethmainnet-1.lavapro.xyz/eth/
+    interval: 60s
+    method: POST
+    headers:
+      "Content-Type": "application/json"
+    body: |
+      {"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id":1}
+    conditions:
+      - "[STATUS] == 200"
+      - "[BODY].id == 1"
+      - "[BODY].result == blockNum(6,eth,https://rpc.ankr.com/eth)"
+
+  - name: GTH_RPC_HTTP
+    alerts:
+      - type: slack
+      - type: opsgenie
+    group: ethereum
+    url: https://volvero151i20:s5ASFV3qr59vw6sad4AFb535Aa2d17As@prod-pnet-goerli-1.lavapro.xyz/eth/
+    interval: 60s
+    method: POST
+    headers:
+      "Content-Type": "application/json"
+    body: |
+      {"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id":1}
+    conditions:
+      - "[STATUS] == 200"
+      - "[BODY].id == 1"
+      - "[BODY].result == blockNum(6,eth,https://ethereum-goerli-rpc.allthatnode.com)"
+
+  - name: FTM_RPC_HTTP
+    alerts:
+      - type: slack
+      - type: opsgenie
+    group: fantom
+    url: https://blueturkey321:Q5Q5k646YYiPRHmt2AzCzU847VGrbJo8@prod-pnet-fantomnode-1.lavapro.xyz/ftm/http
+    interval: 60s
+    method: POST
+    headers:
+      "Content-Type": "application/json"
+    body: |
+      {"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id":1}
+    conditions:
+      - "[STATUS] == 200"
+      - "[BODY].id == 1"
+      - "[BODY].result == blockNum(6,eth,https://rpc.ankr.com/fantom/)"
+
+  - name: FTM_TEST_RPC_HTTP
+    alerts:
+      - type: slack
+      - type: opsgnie
+    group: fantom
+    url: https://blueturkey321:Q5Q5k646YYiPRHmt2AzCzU847VGrbJo8@prod-pnet-fantomnode-1.lavapro.xyz/ftm-testnet/http
+    interval: 60s
+    method: POST
+    headers:
+      "Content-Type": "application/json"
+    body: |
+      {"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id":1}
+    conditions:
+      - "[STATUS] == 200"
+      - "[BODY].id == 1"
+      - "[BODY].result == blockNum(6,eth,https://rpc.ankr.com/fantom_testnet/)"
+
+  - name: CELO_HTTP
+    alerts:
+      - type: slack
+      - type: opsgnie
+    group: celo
+    url: https://chopchipmeep1189:KSIw9C8Mc0euMGPNlZb60zKfiMXBBWoQ@prod-pnet-celo-1.lavapro.xyz/celo/http
+    interval: 60s
+    method: POST
+    headers:
+      "Content-Type": "application/json"
+    body: |
+      {"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id":1}
+    conditions:
+      - "[STATUS] == 200"
+      - "[BODY].id == 1"
+      - "[BODY].result == blockNum(6,eth,https://forno.celo.org)"
+
+  - name: CELO_ALFAJORES_HTTP
+    alerts:
+      - type: slack
+      - type: opsgnie
+    group: celo
+    url: https://chopchipmeep1189:KSIw9C8Mc0euMGPNlZb60zKfiMXBBWoQ@prod-pnet-celo-1.lavapro.xyz/celo-alfajores/http
+    interval: 60s
+    method: POST
+    headers:
+      "Content-Type": "application/json"
+    body: |
+      {"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id":1}
+    conditions:
+      - "[STATUS] == 200"
+      - "[BODY].id == 1"
+      - "[BODY].result == blockNum(6,eth,https://alfajores-forno.celo-testnet.org)"
+
+  - name: CELO_BAKLAVA_HTTP
+    alerts:
+      - type: slack
+      - type: opsgnie
+    group: celo
+    url: https://chopchipmeep1189:KSIw9C8Mc0euMGPNlZb60zKfiMXBBWoQ@prod-pnet-celo-1.lavapro.xyz/celo-baklava/http
+    interval: 60s
+    method: POST
+    headers:
+      "Content-Type": "application/json"
+    body: |
+      {"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id":1}
+    conditions:
+      - "[STATUS] == 200"
+      - "[BODY].id == 1"
+      - "[BODY].result == blockNum(6,eth,https://baklava-forno.celo-testnet.org)"
+
+  - name: OSMO_REST
+    alerts:
+      - type: slack
+      - type: opsgnie
+    group: osmosis
+    url: https://bekotopopo2:99al9YwXTnvJohMW39ZBqVH5AWnWBDV8@prod-pnet-osmosisnode-1.lavapro.xyz/mainnet/rest/blocks/latest
+    interval: 60s
+    method: GET
+    conditions:
+      - "[STATUS] == 200"
+      - "[BODY].block.header.height == blockNum(6,cosmos,https://lcd.osmosis.zone/blocks/latest)"
+
+  - name: OSMO_TEST_REST
+    alerts:
+      - type: slack
+      - type: opsgnie
+    group: osmosis
+    url: https://bekotopopo2:99al9YwXTnvJohMW39ZBqVH5AWnWBDV8@prod-pnet-osmosisnode-1.lavapro.xyz/testnet/rest/blocks/latest
+    interval: 60s
+    method: GET
+    conditions:
+      - "[STATUS] == 200"
+      - "[BODY].block.header.height == blockNum(6,cosmos,https://lcd-test.osmosis.zone/blocks/latest)"
+
+  - name: JUNO_RPC
+    alerts:
+      - type: slack
+      - type: opsgnie
+    group: juno
+    url: https://dmrcnggpzyts:p1g4pv07092mdrv72hnz44496idxwg363rm724ki@juno-node-1.lavapro.xyz/mainnet/rest/blocks/latest
+    interval: 60s
+    method: GET
+    conditions:
+      - "[STATUS] == 200"
+      - "[BODY].block.header.height == blockNum(6,cosmos,https://juno-api.polkachu.com//blocks/latest)"
+
+  - name: JUNO_TEST_RPC
+    alerts:
+      - type: slack
+      - type: opsgnie
+    group: juno
+    url: https://dmrcnggpzyts:p1g4pv07092mdrv72hnz44496idxwg363rm724ki@juno-node-1.lavapro.xyz/testnet/rest/blocks/latest
+    interval: 60s
+    method: GET
+    conditions:
+      - "[STATUS] == 200"
+      - "[BODY].block.header.height == blockNum(6,cosmos,https://juno-testnet-api.polkachu.com//blocks/latest)"
+
+  - name: SECRET_NODE_1
+    alerts:
+      - type: slack
+      - type: opsgnie
+    group: secret-network
+    url: https://QVAbQEyFFkrRKGznhDFeMHUwrBxziK:yZgYHJiYahuDsHFwttEjfb2M7qr4Go@prod-shade-secret-node-1.lavapro.xyz/rest/blocks/latest
+    interval: 60s
+    method: GET
+    conditions:
+      - "[STATUS] == 200"
+      - "[BODY].block.header.height == blockNum(200,cosmos,https://secret-4.api.trivium.network:1317/blocks/latest)"
+
+
+  - name: SECRET_NODE_2
+    alerts:
+      - type: slack
+      - type: opsgnie
+    group: secret-network
+    url: https://mnfgTXEjxvvbRyLwGdxnFKoBmcbDmP:6ub8J79J9jnNGpXKoErP6VjAivUF2i@prod-shade-secret-node-2.lavapro.xyz/rest/blocks/latest
+    interval: 60s
+    method: GET
+    conditions:
+      - "[STATUS] == 200"
+      - "[BODY].block.header.height == blockNum(200,cosmos,https://secret-4.api.trivium.network:1317/blocks/latest)"
+
+  - name: SECRET_LB
+    alerts:
+      - type: slack
+      - type: opsgnie
+    group: secret-network
+    url: https://prod-shade-secret.lavapro.xyz/rest/blocks/latest
+    interval: 60s
+    method: GET
+    conditions:
+      - "[STATUS] == 200"
+      - "[BODY].block.header.height == blockNum(200,cosmos,https://secret-4.api.trivium.network:1317/blocks/latest)"
+
+
+  - name: EVMOS_RPC
+    alerts:
+      - type: slack
+      - type: opsgnie
+    group: evmos
+    url: https://hxpj3iwa0hkq:iyu0i6b7ww67mhzrd8dejcrc982drad5xm80lon5@evmos-node-1.lavapro.xyz/mainnet/rest/cosmos/base/tendermint/v1beta1/blocks/latest
+    interval: 60s
+    method: GET
+    conditions:
+      - "[STATUS] == 200"
+      - "[BODY].block.header.height == blockNum(600,cosmos,https://rest.bd.evmos.org:1317/cosmos/base/tendermint/v1beta1/blocks/latest)"
+
+  - name: EVMOS_TEST_RPC
+    alerts:
+      - type: slack
+      - type: opsgenie
+    group: evmos
+    url: https://hxpj3iwa0hkq:iyu0i6b7ww67mhzrd8dejcrc982drad5xm80lon5@evmos-node-1.lavapro.xyz/testnet/rest/cosmos/base/tendermint/v1beta1/blocks/latest
+    interval: 60s
+    method: GET
+    conditions:
+      - "[STATUS] == 200"
+      - "[BODY].block.header.height == blockNum(600,cosmos,https://rest.bd.evmos.dev:1317/cosmos/base/tendermint/v1beta1/blocks/latest)"
+
+  - name: GAIA_RPC
+    alerts:
+      - type: slack
+      - type: opsgenie
+    group: cosmos-hub
+    url: https://cv8sxghsd5ny:coqiqzgzaam34gq9lf17gt0vysxug8r3me6jkx1o@gaia-node-1.lavapro.xyz/mainnet/rest/cosmos/base/tendermint/v1beta1/blocks/latest
+    interval: 60s
+    method: GET
+    conditions:
+      - "[STATUS] == 200"
+      - "[BODY].block.header.height == blockNum(6,cosmos,https://cosmos-mainnet-rpc.allthatnode.com:1317/cosmos/base/tendermint/v1beta1/blocks/latest)"
+
+  - name: GAIA_TEST_REST
+    alerts:
+      - type: slack
+      - type: opsgenie
+    group: cosmos-hub
+    url: https://cv8sxghsd5ny:coqiqzgzaam34gq9lf17gt0vysxug8r3me6jkx1o@gaia-node-1.lavapro.xyz/testnet/rest/cosmos/base/tendermint/v1beta1/blocks/latest
+    interval: 60s
+    method: GET
+    conditions:
+      - "[STATUS] == 200"
+      - "[BODY].block.header.height == blockNum(6,cosmos,https://cosmos-testnet-rpc.allthatnode.com:1317/cosmos/base/tendermint/v1beta1/blocks/latest)"
+
+  - name: STARKNET_RPC
+    alerts:
+      - type: slack
+      - type: opsgenie
+    group: starknet
+    url: https://ql8ff96eng9upas:op9arp8oc1uatuvvc6fv11r6c5hvh6wg7hm5h33p@starknet-node-1.lavapro.xyz/mainnet/
+    interval: 60s
+    method: POST
+    headers:
+      "Content-Type": "application/json"
+    body: |
+      {"jsonrpc": "2.0","method": "starknet_blockNumber","params": [],"id": 0}
+    conditions:
+      - "[STATUS] == 200"
+      - "[BODY].id == 0"
+      - "[BODY].result == blockNum(24,starknet,https://alpha-mainnet.starknet.io/feeder_gateway/get_block)"
+
+  - name: STARKNET_TEST_RPC
+    alerts:
+      - type: slack
+      - type: opsgenie
+    group: starknet
+    url: https://ql8ff96eng9upas:op9arp8oc1uatuvvc6fv11r6c5hvh6wg7hm5h33p@starknet-node-1.lavapro.xyz/testnet/
+    interval: 60s
+    method: POST
+    headers:
+      "Content-Type": "application/json"
+    body: |
+      {"jsonrpc": "2.0","method": "starknet_blockNumber","params": [],"id": 0}
+    conditions:
+      - "[STATUS] == 200"
+      - "[BODY].id == 0"
+      - "[BODY].result == blockNum(6,starknet,https://alpha4.starknet.io/feeder_gateway/get_block)"
+
+  - name: SEI - REST
+    alerts:
+      - type: slack
+      - type: opsgenie
+    group: sei
+    url: https://polvis:beTfZWHcQgSnxaqvkTVSAjE5mk9akwFyykK7mSXN@prod-sei-node-1.lavapro.xyz/rest/cosmos/base/tendermint/v1beta1/blocks/latest
+    interval: 60s
+    method: GET
+    conditions:
+      - "[CERTIFICATE_EXPIRATION] > 48h"
+      - "[STATUS] == 200"
+      - "[BODY].block.header.height == blockNum(6,cosmos,https://sei-testnet-rpc.allthatnode.com:1317/blocks/latest)"
+
+  - name: SEI - RPC
+    alerts:
+      - type: slack
+      - type: opsgenie
+    group: sei
+    url: https://polvis:beTfZWHcQgSnxaqvkTVSAjE5mk9akwFyykK7mSXN@prod-sei-node-1.lavapro.xyz/rpc/status
+    interval: 60s
+    method: GET
+    conditions:
+      - "[CERTIFICATE_EXPIRATION] > 48h"
+      - "[STATUS] == 200"
+      - "[BODY].result.sync_info.latest_block_height == blockNum(6,cosmos,https://sei-testnet-rpc.allthatnode.com:1317/blocks/latest)"
+
+  - name: Lava BD
+    alerts:
+      - type: slack
+      - type: opsgenie
+    group: bd
+    url: https://bd-graphql.lavanet.xyz/v1/graphql
+    interval: 10s
+    method: POST
+    graphql: true
+    headers:
+      "Content-Type": "application/json"
+    body: |
+      {
+        "query": "query latest($limit: Int = 1, $offset: Int=0) { 
+          blocks: block(limit: $limit, offset: $offset, order_by: {height: desc}) { 
+            height 
+          } 
+        }"
+      }
+    conditions:
+      - "[CERTIFICATE_EXPIRATION] > 48h"
+      - "[STATUS] == 200"
+      - "[BODY].data.blocks[0].height == blockNum(6,cosmos,https://public-rpc.lavanet.xyz/rest/cosmos/base/tendermint/v1beta1/blocks/latest)"
