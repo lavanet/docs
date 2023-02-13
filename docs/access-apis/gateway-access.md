@@ -1,10 +1,8 @@
 ---
-sidebar_position: 1
 slug: /gateway-access
 title: Gateway Access
 ---
-
-# Access Web3 APIs
+# Lava Gateway
 
 Hop on to our [gateway](https://gateway.lavanet.xyz/login) and access one of these chains now:
 

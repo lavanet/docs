@@ -34,7 +34,6 @@ Welcome testers! Thank you for joining the testnet
 - [Docs](https://docs.lavanet.xyz) ←You’re here
 - [Block explorer - BigDipper](https://bd.lavanet.xyz)
 - [Gateway](https://gateway.lavanet.xyz) - Quick access APIs
-- Lava SDK for dAccess - _COMING SOON_
 
 ### Community & open-source
 
