@@ -7,7 +7,8 @@ title: Access SDK
 
 🌋 **Decentralized access to any Web3 API, from anywhere, the Lava way 😉**
 
-:::tip open-source expected during Q1 2023
+:::caution COMING SOON! ⏰
+open-source expected during Q1 2023
 :::
 
 JavaScript/TypeScript SDK reference implementation designed for developers looking for access through the Lava Network.
