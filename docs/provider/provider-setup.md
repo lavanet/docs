@@ -4,7 +4,7 @@ slug: /provider-setup
 title: Setup
 ---
 
-# Setup Provider
+# Setup Provider 
 
 ## Running a provider - steps
 `lavad` contains the implementation for running a provider process. 
