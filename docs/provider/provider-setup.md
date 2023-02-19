@@ -4,7 +4,7 @@ slug: /provider-setup
 title: Setup
 ---
 
-# Setup Provider 
+# Setup Provider
 
 ## Running a provider - steps
 `lavad` contains the implementation for running a provider process. 
@@ -181,12 +181,13 @@ KEYRING_BACKEND=KEYRING_BACKEND
 CHAIN_ID=CHAIN_ID
 LAVA_RPC_NODE=LAVA_RPC_NODE
 GEOLOCATION=GEOLOCATION
+TENDERMINT_HTTP_ENDPOINT=TENDERMINT_HTTP_ENDPOINT
 
 echo "[Unit]
 Description=Provider daemon
 After=network-online.target
 [Service]
-ExecStart=lavad server $LISTEN_IP $LISTEN_PORT $NODE_URL $NETWORK_NAME $PROTOCOL --from $ACCOUNT_NAME --keyring-backend $KEYRING_BACKEND --chain-id $CHAIN_ID --node $LAVA_RPC_NODE --geolocation $GEOLOCATION
+ExecStart=lavad server $LISTEN_IP $LISTEN_PORT $NODE_URL $NETWORK_NAME $PROTOCOL --from $ACCOUNT_NAME --keyring-backend $KEYRING_BACKEND --chain-id $CHAIN_ID --node $LAVA_RPC_NODE --geolocation $GEOLOCATION --tendermint-http-endpoint $TENDERMINT_HTTP_ENDPOINT
 User=$USER
 Restart=always
 RestartSec=180
