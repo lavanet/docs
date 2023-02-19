@@ -1,25 +1,13 @@
 ---
-sidebar_position: 1
 slug: /gateway-access
 title: Gateway Access
 ---
-
-# Access Web3 APIs
+# Lava Gateway
 
 Hop on to our [gateway](https://gateway.lavanet.xyz/login) and access one of these chains now:
 
-| Chain  | Type | Website |
-|------------|---------------|---------|
-| Ethereum   | EVM           | [https://ethereum.org/](https://ethereum.org/) |
-| Osmosis    | Cosmos        | [https://osmosis.org/](https://osmosis.org/) |
-| Celo       | EVM           | [https://celo.org/](https://celo.org/) |
-| Fantom     | EVM           | [https://fantom.foundation/](https://fantom.foundation/) |
-| Lava       | Cosmos        | [https://lavanet.xyz/](https://lavanet.xyz/) |
-| Cosmos Hub | Cosmos        | [https://cosmos.network/](https://cosmos.network/) |
-| Juno       | Cosmos        | [https://junonetwork.io/](https://junonetwork.io/) |
-| Starknet   |            | [https://starkware.co/](https://starkware.co/) |
-| Arbitrum   | EVM           | [https://arbitrum.io/](https://arbitrum.io/) |
-| Polygon (coming soon) | EVM | [https://polygon.finance/](https://polygon.finance/) |
+![Gateway Chains](/img/2023_02_13_gateway_chains.png)
+
 
 
 :::tip Missing a chain?
