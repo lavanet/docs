@@ -9,7 +9,8 @@ const sidebars = {
       label: 'Access Web3 APIs ⚡️',
       collapsible: false,
       link: {
-        type: 'generated-index'
+        type: 'doc',
+        id: 'access-intro'
       },
       items: [
         'access-apis/access-sdk',
