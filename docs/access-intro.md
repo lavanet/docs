@@ -17,7 +17,6 @@ Lava offers:
 No matter which offering you choose, you still get the same high speed, accountable RPC providers served from our P2P network.
 
 --
-
 ## Use-Cases
 
 This page can help clarify which of Lava’s offerings is most suitable according to your specific use-case. Depending on the type of project you plan to build, you may get a better user experience out of one or a combination of our offerings, respectively. The table below is provided to help you make your decision.
