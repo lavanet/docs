@@ -1,8 +1,8 @@
 ---
 slug: /gateway-getting-started
-title: Getting Started with Lava Gateway
+title: Getting Started with Lava Gateway 🔥
 ---
-# Getting Started with Lava Gateway 🚀
+# Getting Started with Lava Gateway 🔥
 
 Getting started with our Lava gateway is simple! You can access our Lava gateway at any time: gateway.lavanet.xyz. You are only a few clicks away from fast, available, and accountable RPC.
 
