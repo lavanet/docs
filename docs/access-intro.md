@@ -4,15 +4,19 @@ slug: /access-intro
 
 # Access Web3 APIs ⚡️
 
-Lava offers several attractive entry ways to our P2P RPC network. Unfortunately, it can be confusing to new developers on which one to select! 
+Lava offers several attractive entry ways to our peer-to-peer RPC network. Unfortunately, it can be confusing to new developers on which one to select! 
+
+
 
 Lava offers:
 
-- [a Hosted Gateway (web UI)](https://docs.lavanet.xyz/gateway-access)
-- [an SDK (TypeScript library)](https://docs.lavanet.xyz/access-sdk) — FORTHCOMING!
-- [a Server Kit (binary)](https://docs.lavanet.xyz/access-server-kit)
+- **[a Hosted Gateway (web UI)](https://gateway.lavanet.xyz)**
+- **an SDK (TypeScript library)** — *FORTHCOMING!*
+- **[a Server Kit (binary)](https://github.com/lavanet/lava)**
 
----
+No matter which offering you choose, you still get the same high speed, accountable RPC providers served from our P2P network.
+
+--
 
 ## Use-Cases
 
