@@ -1,20 +1,24 @@
 ---
 slug: /gateway-getting-started
-title: Getting Started with our Gateway
+title: Getting Started with Lava Gateway
 ---
-# Getting Started with our Gateway 🚀
+# Getting Started with Lava Gateway 🚀
 
 Getting started with our Lava gateway is simple! You can access our Lava gateway at any time: gateway.lavanet.xyz. You are only a few clicks away from fast, available, and accountable RPC.
 
 ## Video Demonstration (4m)
 
-![https://www.loom.com/share/9b6c809b473a4e8cac9cc390665df4bd](https://www.loom.com/share/9b6c809b473a4e8cac9cc390665df4bd)
+<iframe width="100%" height="480" src="https://www.loom.com/embed/9b6c809b473a4e8cac9cc390665df4bd" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
 
 ## Guide (~5m)
 
 ### Create an Account
 
 If you’re stumped about how to get started — don’t worry at all! It’s as simple as putting in your credentials or creating an account at [gateway.lavanet.xyz/](https://gateway.lavanet.xyz/) . 
+
+![CreateAccountScreenshot](/img/tutorial/gateway/Screenshot_from_2023-02-21_14-12-58.png)
 
 ### Create a Project
 
