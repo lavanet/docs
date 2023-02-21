@@ -11,7 +11,6 @@ Getting started with our Lava gateway is simple! You can access our Lava gateway
 <iframe width="100%" height="480" src="https://www.loom.com/embed/9b6c809b473a4e8cac9cc390665df4bd" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
-
 ## Guide (~5m)
 
 ### Create an Account
