@@ -9,12 +9,26 @@ const sidebars = {
       label: 'Access Web3 APIs ⚡️',
       collapsible: false,
       link: {
-        type: 'generated-index'
+        type: 'doc',
+        id: 'access-intro'
       },
       items: [
         'access-apis/access-sdk',
         'access-apis/access-server-kit',
-        `access-apis/gateway-access`
+        {
+          type: 'category', 
+          label: 'Gateway Access',
+          collapsible: true,
+          collapsed: true,
+          link: {
+            type: 'doc',
+            id: 'access-apis/gateway-access'
+          },
+          items: [
+            `access-apis/gateway-getting-started`
+          ]
+        },    
+
       ]
     },
     {
@@ -83,6 +97,8 @@ const sidebars = {
       items: [
       ]
     },
+    `tutorials`,
+    `access-apis/gateway-getting-started`,
     'faq',
     {
       type: 'link',

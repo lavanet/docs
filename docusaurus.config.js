@@ -34,6 +34,10 @@ const config = {
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
+        gtag: {
+          trackingID: 'G-4G2GHTV35E',
+          anonymizeIP: true,
+        },
       }),
     ],
     [
@@ -109,7 +113,7 @@ const config = {
           {
             label: 'Access Web3 APIs ⚡️',
             position: 'left',
-            to: 'gateway-access',
+            to: 'access-intro',
           },
           {
             label: 'Power-up Lava 🌋',
