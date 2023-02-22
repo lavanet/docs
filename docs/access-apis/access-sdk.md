@@ -1,9 +1,9 @@
 ---
 slug: /access-sdk
-title: Access SDK
+title: SDK
 ---
 
-# Lava Access SDK
+# Lava SDK
 
 🌋 **Decentralized access to any Web3 API, from anywhere, the Lava way 😉**
 
