@@ -8,16 +8,19 @@ title: Gateway
 
 The Lava Gateway uses our Server Kit to provide a hosted point of access for developers looking for access through the Lava Network. This allows users to manage and configure Web3 API Access through an intuitive web interface directly from the browser. 
 
-Hop on to our [gateway](https://gateway.lavanet.xyz/login) and access one of these chains now:
-
-![Gateway Chains](/img/2023_02_13_gateway_chains.png)
-
-
 ### Features
 
 1. Easy and intuitive interface for API access
 2. Organize access by project
 3. Example calls for each supported chain
+---
+
+Hop on to our [gateway](https://gateway.lavanet.xyz/login) and access one of these chains now:
+
+![Gateway Chains](/img/2023_02_13_gateway_chains.png)
+
+
+
 
 
 :::tip Missing a chain?
