@@ -6,7 +6,7 @@ title: Gateway
 
 🌋 **Easy, self-serve access to any Web3 API, straight from the web browser, the Lava way 😉**
 
-The Lava Gateway uses our Server Kit to provide a hosted point of access for developers looking for access through the Lava Network. This allows users to manage and configure Web3 API Access through an intuitive web interface directly from the browser. 
+The Lava Gateway uses our Server Kit to provide a hosted point of access for developers looking for RPC through the Lava Network. This allows users to manage and configure Web3 API Access through an intuitive web interface directly from the browser. While the Lava Server Kit and SDK give greater control and permissionlessness, the Lava Gateway provides the same access to our underlying network with additional niceties such as project management tools and user accounts. This means anyone, regardless of technical acumen, can easily access blockchain data and APIs. 
 
 ### Features
 
