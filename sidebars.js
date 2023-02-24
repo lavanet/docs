@@ -13,8 +13,6 @@ const sidebars = {
         id: 'access-intro'
       },
       items: [
-        'access-apis/access-sdk',
-        'access-apis/access-server-kit',
         {
           type: 'category', 
           label: 'Gateway Access',
@@ -28,7 +26,8 @@ const sidebars = {
             `access-apis/gateway-getting-started`
           ]
         },    
-
+        'access-apis/access-sdk',
+        'access-apis/access-server-kit',
       ]
     },
     {
