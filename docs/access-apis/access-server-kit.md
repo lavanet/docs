@@ -6,7 +6,7 @@ title: Server Kit
 
 :::note 
 🧪
-The Lava Server Kit (formerly RPCConsumer)is currently in an experimental phase. There may be major and breaking changes during this phase. If you are looking for simple RPC access, consider using the Gateway or SDK instead. If you're looking to tinker, source code is available on our [Github repository](https://github.com/lavanet/lava/tree/main/protocol/rpcconsumer)). 
+The Lava Server Kit (referenced in code as `RPCConsumer`) is currently in an experimental phase. There may be major and breaking changes during this phase. If you are looking for simple RPC access, consider using the Gateway or SDK instead. If you're looking to tinker, source code is available on our [Github repository](https://github.com/lavanet/lava/tree/main/protocol/rpcconsumer)). 
 :::
 
 🌋 **Enterprise-grade self-hosted and secure gateway access to Web3 APIs, the Lava way 😉**
