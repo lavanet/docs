@@ -2,7 +2,7 @@
 slug: /access-intro
 ---
 
-# Access Web3 APIs ⚡️
+# Web3 APIs ⚡️
 
 Lava offers several attractive entry ways to our peer-to-peer RPC network. Unfortunately, it can be confusing to new developers on which one to select! 
 
@@ -11,8 +11,8 @@ Lava offers several attractive entry ways to our peer-to-peer RPC network. Unfor
 Lava offers:
 
 - **[a Hosted Gateway (web UI)](https://gateway.lavanet.xyz)**
-- **an SDK (TypeScript library)** — *FORTHCOMING!*
-- **[a Server Kit (binary)](https://github.com/lavanet/lava)**
+- **an SDK (TypeScript library)** — *COMING SOON*
+- **[a Server Kit (binary)](https://github.com/lavanet/lava/tree/main/protocol/rpcconsumer)**
 
 No matter which offering you choose, you still get the same high speed, accountable RPC providers served from our P2P network.
 
@@ -27,6 +27,6 @@ Which Lava entry way should you use? Easy! Tell us what you’re trying to build
 
 | App Type      |  Intention     | Recommended Interface |
 |--------------|-----------|------------|
-| Front-End | building a dApp, smart contract, or NFT project | Lava Gateway, Lava SDK |
-| Back-End  | creating microservices, clients, daemons, or tooling | Lava SDK  or Server Kit|
-Gateway / Portal | self-hosting a centralized point for high throughput Lava P2P network access | Server Kit
+| Front-End | building a dApp, smart contract, or NFT project | [Lava Gateway](docs/access-apis/gateway-access.md), [Lava SDK](docs/access-apis/access-sdk.md) |
+| Back-End  | creating microservices, clients, daemons, or tooling | [Lava SDK](docs/access-apis/access-sdk.md)  or [Server Kit](docs/access-apis/access-server-kit.md)|
+Gateway / Portal | self-hosting a centralized point for high throughput Lava P2P network access | [Server Kit](docs/access-apis/access-server-kit.md)

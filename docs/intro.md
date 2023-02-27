@@ -20,7 +20,7 @@ Welcome testers! Thank you for joining the testnet
 ## Getting started 🌋⚡️
 
 ### Access Web3 APIs ⚡️
-[<RoadmapItem icon="🧑‍💻" title="Access Web3 APIs" description="Start using Web3 APIs, seamlessly onboarding Lava's network"/>](/access-apis/gateway-access.md)
+[<RoadmapItem icon="🧑‍💻" title="Access Web3 APIs" description="Start using Web3 APIs, seamlessly onboarding Lava's network"/>](/access-intro.md)
 
 ### Power up Lava 🌋
 
