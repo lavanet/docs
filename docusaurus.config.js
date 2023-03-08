@@ -151,6 +151,7 @@ const config = {
         textColor: '#FFFFFF',
         isCloseable: true,
       },
+      image: 'img/logo_with_text_bg_transparent.png'
     }),
 };
 
