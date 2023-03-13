@@ -26,9 +26,9 @@ sudo cp ./lavad /usr/local/bin/lavad
 ```
 
 ### 2. Prepare an account & Fund it {#account}
-Lava account and wallets are standard Cosmos. Learn more in [Account & Wallet section](wallet).
+Lava account and wallets are standard Cosmos. Learn more in [Account & Wallet section](https://github.com/lavanet/docs/blob/main/docs/lava-blockchain/account-wallet.mdx).
 
-First, you need to add a wallet to your keyring ([FAQ: what is a keyring](faq#keyring)).
+First, you need to add a wallet to your keyring ([FAQ: what is a keyring](https://github.com/lavanet/docs/blob/main/docs/faq.md#keyring)).
 
 While you may use your seed phrase to import an existing wallet, we'll make a new one in this scenario.
 replace `ACCOUNT_NAME` with a name of your choosing:
@@ -49,7 +49,7 @@ lavad keys add \
 
 Param description (and examples):
 - `ACCOUNT_NAME` - The account to be used for the provider staking. Example `my_account`
-- `KEYRING_BACKEND` - A keyring-backend of your choosing, for more information ([FAQ: what is a keyring](faq#keyring)). Example `test`
+- `KEYRING_BACKEND` - A keyring-backend of your choosing, for more information ([FAQ: what is a keyring](https://github.com/lavanet/docs/blob/main/docs/faq.md#keyring)). Example `test`
 
 
 To ensure your wallet was saved to your keyring, look for the `{ACCOUNT_NAME}` is in your keys list:
@@ -67,7 +67,7 @@ lavad keys list \
 ```
 
 Param description (and examples):
-- `KEYRING_BACKEND` - A keyring-backend of your choosing, for more information ([FAQ: what is a keyring](faq#keyring)). Example `test`
+- `KEYRING_BACKEND` - A keyring-backend of your choosing, for more information ([FAQ: what is a keyring](https://github.com/lavanet/docs/blob/main/docs/faq.md#keyring)). Example `test`
 
 :::caution Pencils out 📝
 Keep the newly created account info:
@@ -78,7 +78,7 @@ Keep the newly created account info:
 
 #### Faucet
 
-Get your account funded through [the faucet](faucet)
+Get your account funded through [the faucet](https://github.com/lavanet/docs/blob/main/docs/lava-blockchain/faucet.mdx)
 
 #### Verify your account is funded
 
@@ -148,7 +148,7 @@ Param description (and examples):
 - `SERVICED_NODE_PORT` - Port of the node that will service requests. Example `19921`
 - `PROTOCOL` - The protocol to be used, see [how to query the full list](provider#chains). Example `jsonrpc`, or `rest`
 - `ACCOUNT_NAME` - The account to be used for the provider staking. Example `my_account`
-- `KEYRING_BACKEND` - A keyring-backend of your choosing, for more information ([FAQ: what is a keyring](faq#keyring)). Example `test`
+- `KEYRING_BACKEND` - A keyring-backend of your choosing, for more information ([FAQ: what is a keyring](https://github.com/lavanet/docs/blob/main/docs/faq.md#keyring)). Example `test`
 - `CHAIN_ID` - The chain_id of the network. Example `lava-testnet-1`
 - `LAVA_RPC_NODE` - A RPC node for Lava (can be omitted if the current node has joined the Lava network). Example `https://public-rpc.lavanet.xyz:443/rpc/`
 - `GEOLOCATION` - Indicates the geographical location where the process is located. Example `1` for US or `2` for EU
@@ -223,7 +223,7 @@ Param description (and examples):
 - `NETWORK_NAME` - The ID of the chain, see [how to query the full list](provider#chains). Example `COS4` or `FTM250`  
 - `PROTOCOL` - The protocol to be used, see [how to query the full list](provider#chains). Example `jsonrpc`, or `rest`  
 - `ACCOUNT_NAME` - The account to be used for the provider staking.  
-- `KEYRING_BACKEND` - A keyring-backend of your choosing, for more information ([FAQ: what is a keyring](faq#keyring)). Example `test`
+- `KEYRING_BACKEND` - A keyring-backend of your choosing, for more information ([FAQ: what is a keyring](https://github.com/lavanet/docs/blob/main/docs/faq.md#keyring)). Example `test`
 - `CHAIN_ID` - The chain_id of the network. Example `lava-testnet-1`
 - `LAVA_RPC_NODE` - A RPC node for Lava (can be omitted if the current node has joined the Lava network). Example `https://public-rpc.lavanet.xyz:443/rpc/`
 
