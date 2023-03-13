@@ -18,7 +18,7 @@ Current installation of `lavad` is built only for Linux.
 * Note: in case you already have an existing lavad installation, you can refer your current lavad binary by running `$HOME/.lava/cosmovisor/current/bin/lavad`
 
 ```bash
-binary_url="https://lava-binary-upgrades.s3.amazonaws.com/testnet/v0.4.3/lavad"
+binary_url="https://lava-binary-upgrades.s3.amazonaws.com/testnet/v0.7.0/lavad"
 wget $binary_url -O lavad
 chmod +x lavad
 # copy lavad to /usr/local/bin

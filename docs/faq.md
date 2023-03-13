@@ -35,3 +35,18 @@ Troubleshooting:
     ```
     1. Make sure your account is funded from Lava side before you try to stake as a validator
 
+## Providers
+### How can I update/edit my provider information?
+To update your provider information on chain, send the `provider-stake` transaction with the updated information and an additional stake of minimum 1 ulava.
+
+### I get `ERR_stake_provider_endpoints: invalid provider endpoints` error when trying to stake as a provider
+In your stake-provider transaction you need to specify all required provider endpoints based on the chain you are staking on. For example to provide for cosmos chains you need both tendermint-rpc and rest as follows: `"IP:port,tendermintrpc,1 IP:port,rest,1"`.
+
+### Is there an unboding period for providers?
+Yes, it's currently configured to 21 days.
+
+### How can I see my current provider state (incl. unbonding)?
+You can use the following query: `lavad q pairing providers <CHAIN_ID>`
+
+### When running my provider process `lavad server` I get the following error `provider endpoint mismatch`
+This error means that you have used different geolocations when using  the `provider-stake` transaction and when running `lavad server`, please ensure they match and the problem should be resolved.

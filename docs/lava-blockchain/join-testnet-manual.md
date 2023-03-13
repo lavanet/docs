@@ -64,8 +64,8 @@ Note that it does **not** include the "Cosmovisor" tool, hence once you install 
     
     ```bash
     # Download the installation setup configuration
-    git clone https://github.com/K433QLtr6RA9ExEq/GHFkqmTzpdNLDd6T.git
-    cd GHFkqmTzpdNLDd6T/testnet-1
+    git clone https://github.com/lavanet/lava-config.git
+    cd lava-config/testnet-1
     # Read the configuration from the file
     # Note: you can take a look at the config file and verify configurations
     source setup_config/setup_config.sh
@@ -103,9 +103,10 @@ Note that it does **not** include the "Cosmovisor" tool, hence once you install 
     lavad_binary_path="$HOME/go/bin/"
     mkdir -p $lavad_binary_path
     # Download the genesis binary to the lava path
-    wget https://lava-binary-upgrades.s3.amazonaws.com/testnet/v0.4.3/lavad
+    wget https://lava-binary-upgrades.s3.amazonaws.com/testnet/v0.3.0/lavad
     chmod +x lavad
     # Lavad should now be accessible from PATH, to verify, try running
+    cp lavad /usr/local/bin
     # In case it is not accessible, make sure $lavad_binary_path is part of PATH (you can refer to the "Go installation" section)
     lavad --help # Make sure you can see the lavad binary help printed out
     ```
@@ -186,6 +187,10 @@ Versions are tracked in [Lava git](https://github.com/lavanet/lava) (build from 
 | v0.3.0 | genesis |
 | v0.4.0 | 838 |
 | v0.4.3 | 22300 |
+| v0.4.4 | 41735 |
+| v0.5.2 | 63760 |
+| v0.6.0 ("RC3") | 82570 |
+| v0.7.0 | 102800 |
 
 ### Steps for upgrading your node
 
