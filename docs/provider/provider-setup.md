@@ -142,11 +142,11 @@ lavad tx pairing stake-provider "{NETWORK_NAME}" \
 ```
 
 Param description (and examples):
-- `NETWORK_NAME` - The ID of the serviced chain, see [how to query the full list](https://github.com/toolfun/docs/edit/main/docs/provider/provider-setup.md#how-to-query-available-apischains). Example `COS4` or `FTM250`
+- `NETWORK_NAME` - The ID of the serviced chain, see [how to query the full list](https://github.com/toolfun/docs/blob/main/docs/provider.md#available-apis). Example `COS4` or `FTM250`
 - `STAKE_AMOUNT` - The amount you are willing to stake for being a provider for the specific network. Example `2010ulava`
 - `SERVICED_NODE_IP` - External IP of the node that will service the requests. Example `51.92.133.253` (to find your public IP, run `curl ifconfig.me`)  
 - `SERVICED_NODE_PORT` - Port of the node that will service requests. Example `19921`
-- `PROTOCOL` - The protocol to be used, see [how to query the full list](https://github.com/toolfun/docs/edit/main/docs/provider/provider-setup.md#how-to-query-available-apischains). Example `jsonrpc`, or `rest`
+- `PROTOCOL` - The protocol to be used, see [how to query the full list](https://github.com/toolfun/docs/blob/main/docs/provider.md#available-apis). Example `jsonrpc`, or `rest`
 - `ACCOUNT_NAME` - The account to be used for the provider staking. Example `my_account`
 - `KEYRING_BACKEND` - A keyring-backend of your choosing, for more information ([FAQ: what is a keyring](https://github.com/lavanet/docs/blob/main/docs/faq.md#keyring)). Example `test`
 - `CHAIN_ID` - The chain_id of the network. Example `lava-testnet-1`
@@ -220,8 +220,8 @@ Param description (and examples):
 - `LISTEN_IP` - IP of the node that will listen for service requests. Example `0.0.0.0`  
 - `LISTEN_PORT` - Port of the node that will service requests. Example `19921`  
 - `NODE_URL` - The URL of an external (or internal) node that you will be fetching on-chain data from.  
-- `NETWORK_NAME` - The ID of the chain, see [how to query the full list](https://github.com/toolfun/docs/edit/main/docs/provider/provider-setup.md#how-to-query-available-apischains). Example `COS4` or `FTM250`  
-- `PROTOCOL` - The protocol to be used, see [how to query the full list](https://github.com/toolfun/docs/edit/main/docs/provider/provider-setup.md#how-to-query-available-apischains). Example `jsonrpc`, or `rest`  
+- `NETWORK_NAME` - The ID of the chain, see [how to query the full list](https://github.com/toolfun/docs/blob/main/docs/provider.md#available-apis). Example `COS4` or `FTM250`  
+- `PROTOCOL` - The protocol to be used, see [how to query the full list](https://github.com/toolfun/docs/blob/main/docs/provider.md#available-apis). Example `jsonrpc`, or `rest`  
 - `ACCOUNT_NAME` - The account to be used for the provider staking.  
 - `KEYRING_BACKEND` - A keyring-backend of your choosing, for more information ([FAQ: what is a keyring](https://github.com/lavanet/docs/blob/main/docs/faq.md#keyring)). Example `test`
 - `CHAIN_ID` - The chain_id of the network. Example `lava-testnet-1`
@@ -246,7 +246,7 @@ lavad query pairing providers \
 ```
 
 Param description (and examples):  
-- `NETWORK_NAME` - The ID of the chain, see [how to query the full list](https://github.com/toolfun/docs/edit/main/docs/provider/provider-setup.md#how-to-query-available-apischains). Example `COS4` or `FTM250`  
+- `NETWORK_NAME` - The ID of the chain, see [how to query the full list](https://github.com/toolfun/docs/blob/main/docs/provider.md#available-apis). Example `COS4` or `FTM250`  
 - `LAVA_RPC_NODE` - A RPC node for Lava (can be omitted if the current node has joined the Lava network). Example `https://public-rpc.lavanet.xyz:443/rpc/`
 
 
@@ -293,14 +293,3 @@ In case you got the following error:
 ERR sentry init failure to initialize error="provider stake verification mismatch -- &map[ChainID:NETWORK_NAME spec name:NETWORK_FULL_NAME]" ChainID=CHAIN_ID apiInterface=PROTOCOL
 ```
 It is likely that the stake-provider command was not taken into effect yet, if running the `lavad server` option, please wait a few minutes and try running the command again.
-
-### How to query available APIs/Chains?
-Get them directly from a lava node using the CLI.    
-If you are running a node and connected to the testnet:    
-```
-lavad q spec list-spec
-```
-or if connecting to external node:
-```
-lavad q spec list-spec --node https://public-rpc.lavanet.xyz:443/rpc/
-```
