@@ -1,25 +1,26 @@
 ---
-sidebar_position: 1
 slug: /gateway-access
-title: Gateway Access
+title: Gateway
 ---
+# Lava Gateway
 
-# Access Web3 APIs
+🌋 **Easy, self-serve access to any Web3 API, straight from the web browser, the Lava way 😉**
+
+The **Lava Gateway** is a simplified web interface that gives developers instant access to blockchain data. The Gateway uses our Server Kit to provide a hosted point of access for developers looking for RPC through the Lava Network. This allows users to manage and configure Web3 APIs through an intuitive controls directly from the browser. While the Lava Server Kit and SDK give greater control and permissionlessness, the Lava Gateway provides the same access to our underlying network with additional niceties such as project management tools and user accounts. This means anyone, regardless of technical acumen, can easily use Lava.
+
+### Features
+
+1. Easy and intuitive interface for API access
+2. Organize access by project
+3. Example calls for each supported chain
+---
 
 Hop on to our [gateway](https://gateway.lavanet.xyz/login) and access one of these chains now:
 
-| Chain  | Type | Website |
-|------------|---------------|---------|
-| Ethereum   | EVM           | [https://ethereum.org/](https://ethereum.org/) |
-| Osmosis    | Cosmos        | [https://osmosis.org/](https://osmosis.org/) |
-| Celo       | EVM           | [https://celo.org/](https://celo.org/) |
-| Fantom     | EVM           | [https://fantom.foundation/](https://fantom.foundation/) |
-| Lava       | Cosmos        | [https://lavanet.xyz/](https://lavanet.xyz/) |
-| Cosmos Hub | Cosmos        | [https://cosmos.network/](https://cosmos.network/) |
-| Juno       | Cosmos        | [https://junonetwork.io/](https://junonetwork.io/) |
-| Starknet   |            | [https://starkware.co/](https://starkware.co/) |
-| Arbitrum   | EVM           | [https://arbitrum.io/](https://arbitrum.io/) |
-| Polygon (coming soon) | EVM | [https://polygon.finance/](https://polygon.finance/) |
+![Gateway Chains](/img/supportedchains.png)
+
+
+
 
 
 :::tip Missing a chain?

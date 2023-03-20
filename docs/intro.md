@@ -20,7 +20,7 @@ Welcome testers! Thank you for joining the testnet
 ## Getting started 🌋⚡️
 
 ### Access Web3 APIs ⚡️
-[<RoadmapItem icon="🧑‍💻" title="Access Web3 APIs" description="Start using Web3 APIs, seamlessly onboarding Lava's network"/>](/access-apis/gateway-access.md)
+[<RoadmapItem icon="🧑‍💻" title="Access Web3 APIs" description="Start using Web3 APIs, seamlessly onboarding Lava's network"/>](/access-intro.md)
 
 ### Power up Lava 🌋
 
@@ -34,7 +34,6 @@ Welcome testers! Thank you for joining the testnet
 - [Docs](https://docs.lavanet.xyz) ←You’re here
 - [Block explorer - BigDipper](https://bd.lavanet.xyz)
 - [Gateway](https://gateway.lavanet.xyz) - Quick access APIs
-- Lava SDK for dAccess - _COMING SOON_
 
 ### Community & open-source
 
