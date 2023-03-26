@@ -12,6 +12,12 @@ Welcome to the Lava network's provider introduction. In this page, you'll learn 
 
 Providers are the backbone of the Lava network, servicing relay requests by staking on the network and operating RPC nodes on Relay Chains queried by Consumers (e.g., Cosmos, Ethereum, Osmosis, Polygon, etc.). In return, they earn fees in the form of LAVA tokens from the Consumers for servicing these requests.
 
+```mermaid
+graph LR
+  A[Consumers] --> |Public Listen Address, gRPC| B[RPC Provider]
+  B --> |Private Address| C[Relayed Nodes]
+```
+
 ### **Becoming a Provider**
 
 To join the Lava network as a provider, follow these steps:
