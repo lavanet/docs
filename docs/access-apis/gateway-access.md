@@ -17,7 +17,7 @@ The **Lava Gateway** is a simplified web interface that gives developers instant
 
 Hop on to our [gateway](https://gateway.lavanet.xyz/login) and access one of these chains now:
 
-![Gateway Chains](/img/2023_02_13_gateway_chains.png)
+![Gateway Chains](/img/supportedchains.png)
 
 
 
