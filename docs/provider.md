@@ -17,7 +17,7 @@ Providers are the backbone of the Lava network, servicing relay requests by stak
 To join the Lava network as a provider, follow these steps:
 
 1. Ensure your Relay Chain RPC Nodes are operational and meet the required specifications.
-2. Stake LAVA and run Lava’s lightweight Provider process, as detailed in our **[Provider Setup](https://chat.openai.com/provider-setup)** guide.
+2. Stake LAVA and run Lava’s lightweight Provider process, as detailed in our **[Provider Setup](docs/provider/provider-setup.md)** guide.
 
 :::info Want to learn more?
 Learn more by reading our [litepaper](https://lavanet.xyz)
