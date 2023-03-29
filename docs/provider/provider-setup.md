@@ -4,234 +4,90 @@ slug: /provider-setup
 title: Setup
 ---
 
-# Setup Provider
+# Provider Setup
 
-## Running a provider - steps
-`lavad` contains the implementation for running a provider process. 
+This guide is designed to help node runners and DevOps professionals configure a multi-chain network provider, which supports various blockchain networks and their respective API interfaces. We'll walk you through the necessary steps to create a configuration file that covers multiple chains and API interfaces, and provide a brief background on providers and the stake command.
 
-:::info
-Current installation of `lavad` is built only for Linux.
-:::
+## **Overview**
 
-### 1. Download `lavad`
+A multi-chain network provider allows you to manage and interact with multiple blockchain networks using a single entry point. By supporting various API interfaces, the provider can accommodate the specific needs and preferences of different blockchain networks.
 
-* Note: in case you already have an existing lavad installation, you can refer your current lavad binary by running `$HOME/.lava/cosmovisor/current/bin/lavad`
+In this guide, we'll create a configuration file that includes multiple chains (Ethereum Mainnet and Osmosis Mainnet) and their respective API interfaces (JSON-RPC, REST, gRPC, and Tendermint RPC). We'll also cover the stake command for providers, which allows you to stake a specific service.
+
+## **Prerequisites**
+
+1. Go 1.18 or higher
+2. `lavad` installed (build or install at [https://github.com/lavanet/lava](https://github.com/lavanet/lava))
+3. Account with enough LAVA for staking (learn about [creating Accounts](docs/lava-blockchain/account-wallet.mdx))
+4. Know which chains you want to provide ([how to query the latest list](provider#chains))
+
+## Step 1: Stake as Provider
+
+Before you can run a multi-chain network provider, you need to stake a provider. To stake a single service, use the following command:
 
 ```bash
-binary_url="https://lava-binary-upgrades.s3.amazonaws.com/testnet/v0.7.0/lavad"
-wget $binary_url -O lavad
-chmod +x lavad
-# copy lavad to /usr/local/bin
-sudo cp ./lavad /usr/local/bin/lavad
+lavad tx pairing stake-provider [chain-id] [amount] [endpoint endpoint ...] [geolocation] [flags]
 ```
 
-### 2. Prepare an account & Fund it {#account}
-Lava account and wallets are standard Cosmos. Learn more in [Account & Wallet section](wallet).
+*Check the output for the status of the staking operation. A successful operation will have a code **`0`**.*
 
-First, you need to add a wallet to your keyring ([FAQ: what is a keyring](faq#keyring)).
+#### Parameters Description
 
-While you may use your seed phrase to import an existing wallet, we'll make a new one in this scenario.
-replace `ACCOUNT_NAME` with a name of your choosing:
+- **`chain-id`** - The ID of the serviced chain (e.g., **`COS4`** or **`FTM250`**).
+- **`amount`** - Stake amount for the specific chain (e.g., **`2010ulava`**).
+- **`endpoint`** - Provider host listener, composed of `provider-host:provider-port,interface,geolocation`
+- **`geolocation`** - Indicates the geographical location where the process is located (e.g., **`1`** for US or **`2`** for EU).
+
+#### Flags Details
+
+- **`--from`** - The account to be used for the provider staking (e.g., **`my_account`**).
+- `--moniker` - Provider’s public name
+- **`--keyring-backend`** - A keyring-backend of your choosing (e.g., **`test`**).
+- **`--chain-id`** - The chain_id of the network (e.g., **`lava-testnet-1`**).
+- **`--gas`** - The gas limit for the transaction (e.g., **`"auto"`**).
+- **`--gas-adjustment`** - The gas adjustment factor (e.g., **`"1.5"`**).
+- **`--node`** - A RPC node for Lava (e.g., **`https://public-rpc.lavanet.xyz:443/rpc/`**).
+
+### Stake Examples
+
+#### Ethereum Mainnet in US
+Ethereum and other EVMs usually have only `jsonrpc` interface:
 
 ```bash
-lavad keys add \
-"{ACCOUNT_NAME}" \
---keyring-backend "{KEYRING_BACKEND}"
-
-# Example:
-# lavad keys add \
-# "my_account_name" \
-# --keyring-backend "test"
-
-# Expected output:
-# Your new account details, along with the name, public account address and your mnemonic phrase
+lavad tx pairing stake-provider "ETH1" \
+    "500000000000ulava" \
+    "provider-host.com:1337,jsonrpc,1" 1 \
+    --from "my_account_name" \
+    --moniker=%%your-moniker%% \
+    --keyring-backend "test" \
+    --chain-id "lava-testnet-1" \
+    --gas="auto" \
+    --gas-adjustment "1.5" \
+    --node "https://public-rpc.lavanet.xyz:443/rpc/"
 ```
 
-Param description (and examples):
-- `ACCOUNT_NAME` - The account to be used for the provider staking. Example `my_account`
-- `KEYRING_BACKEND` - A keyring-backend of your choosing, for more information ([FAQ: what is a keyring](faq#keyring)). Example `test`
-
-
-To ensure your wallet was saved to your keyring, look for the `{ACCOUNT_NAME}` is in your keys list:
+#### Cosmos Hub Testnet in US
+Cosmos's usually have `rest`, `tendermintrpc` & `grpc` interface, all mandatory:
 
 ```bash
-lavad keys list \
---keyring-backend "{KEYRING_BACKEND}"
-
-# Example:
-# lavad keys list \
-# --keyring-backend "test"
-
-# Expected output:
-# Your new account details, along with the name, public account address and your mnemonic phrase
+lavad tx pairing stake-provider "COS5T" \
+    "500000000000ulava" \
+    "provider-host.com:1986,tendermint,1 provider-host.com:1986,rest,1 provider-host.com:1986,grpc,1" 1 \
+    --from "my_account_name" \
+    --moniker=%%your-moniker%% \
+    --keyring-backend "test" \
+    --chain-id "lava-testnet-1" \
+    --gas="auto" \
+    --gas-adjustment "1.5" \
+    --node "https://public-rpc.lavanet.xyz:443/rpc/"
 ```
 
-Param description (and examples):
-- `KEYRING_BACKEND` - A keyring-backend of your choosing, for more information ([FAQ: what is a keyring](faq#keyring)). Example `test`
+## Step 2: Verify stake
 
-:::caution Pencils out 📝
-Keep the newly created account info:
-1. SECRET mnemonic phrase 🚨🤫🚨🤫🚨
-2. Your public address, starts with `lava@`
+To ensure that your account is successfully staked with the providers for a specific network, execute the following command. Make sure to check if your account's public address is present in the list generated by the command output:
 
-:::
-
-#### Faucet
-
-Get your account funded through [the faucet](faucet)
-
-#### Verify your account is funded
-
-Verify that your account has funds in it in order to perform staking
-
-```bash
-# Verify your account has Lava tokens (replace the address with your account address)
-
-lavad query \
-bank balances \
-"{ACCOUNT_PUBLIC_ADDRESS}" \
---denom ulava \
---node "{LAVA_RPC_NODE}"
-
-# Example: checking the balance of your account, using Lava public RPC node
-# lavad query \
-#     bank balances \
-#     lava@12h75m99wsgnxnc7d5qpwl6rq268c7jvccxdeqw \
-#     --denom ulava \
-#     --node https://public-rpc.lavanet.xyz:443/rpc/
-
-# Expected output:
-# amount: "XXX" # Amount should be > 1
-# denom: ulava
 ```
-
-Param description (and examples):
-- `ACCOUNT_PUBLIC_ADDRESS` - The public address of your account. Example `lava@12h75m99wsgnxnc7d5qpwl6rq268c7jvccxdeqw`
-- `LAVA_RPC_NODE` - A RPC node for Lava (can be omitted if the current node has joined the Lava network). Example `https://public-rpc.lavanet.xyz:443/rpc/`
-
-### 3. Stake a provider
-To stake a single service, use this command:
-
-`lavad tx pairing stake-provider [chain-id] [amount] [endpoint endpoint ...] [geolocation] [flags]`  
-For example,  
-
-```bash
-lavad tx pairing stake-provider "{NETWORK_NAME}" \
-"{STAKE_AMOUNT}" \
-"{SERVICED_NODE_IP}:{SERVICED_NODE_PORT},{PROTOCOL},1" 1 \
---from "{ACCOUNT_NAME}" \
---keyring-backend "{KEYRING_BACKEND}" \
---chain-id "{CHAIN_ID}" \
---gas="auto" \
---gas-adjustment "1.5" \
---node "{LAVA_RPC_NODE}"
-
-# Example: staking a provider for ETH1, using an external Lava RPC node,
-# lavad tx pairing stake-provider "ETH1" \
-#     500000000000ulava \
-#     "$(curl -s ifconfig.me):19921,jsonrpc,1" 1 \
-#     --from my_account_name \
-#     --gas="auto" \
-#     --gas-adjustment "1.5" \
-#     --chain-id "lava-testnet-1" \
-#     --keyring-backend "test" \
-#     --node https://public-rpc.lavanet.xyz:443/rpc/
-
-# Expected output:
-# code: 0
-```
-
-Param description (and examples):
-- `NETWORK_NAME` - The ID of the serviced chain, see [how to query the full list](provider#chains). Example `COS4` or `FTM250`
-- `STAKE_AMOUNT` - The amount you are willing to stake for being a provider for the specific network. Example `2010ulava`
-- `SERVICED_NODE_IP` - External IP of the node that will service the requests. Example `51.92.133.253` (to find your public IP, run `curl ifconfig.me`)  
-- `SERVICED_NODE_PORT` - Port of the node that will service requests. Example `19921`
-- `PROTOCOL` - The protocol to be used, see [how to query the full list](provider#chains). Example `jsonrpc`, or `rest`
-- `ACCOUNT_NAME` - The account to be used for the provider staking. Example `my_account`
-- `KEYRING_BACKEND` - A keyring-backend of your choosing, for more information ([FAQ: what is a keyring](faq#keyring)). Example `test`
-- `CHAIN_ID` - The chain_id of the network. Example `lava-testnet-1`
-- `LAVA_RPC_NODE` - A RPC node for Lava (can be omitted if the current node has joined the Lava network). Example `https://public-rpc.lavanet.xyz:443/rpc/`
-- `GEOLOCATION` - Indicates the geographical location where the process is located. Example `1` for US or `2` for EU
-
-Notes:
-1. Expected output code: `0`
-2. Please stake provider only once per block (Block currently stands at 30s)
-
-### 4. Run the provider processes
-Now once you have an account that is funded, and you account has provider staking for a network, you can run the provider processes per network.  
-In order to specify the NODE_URL you will be fetching the chain data from, you can use the syntax below,  
-Websocket - `ETH1_NODE_URL="ws://username:password@my-node.com/eth/ws/"`  
-Websocket secured - `ETH1_NODE_URL="wss://username:password@my-node.com/eth/ws/"`  
-HTTP - `COS3_REST_NODE_URL="https://my-node.com:12345/rest/"`  
-HTTP with basic auth - `COS3_RPC_NODE_URL="http://username:password@my-node.com/"`  
-
-:::info
- Please note that the previous `stake-provider` might take up to a few minutes to take effect.
-:::
-
-```bash
-# Create a service unit file
-LISTEN_IP=LISTEN_IP
-LISTEN_PORT=LISTEN_PORT
-NODE_URL=NODE_URL
-NETWORK_NAME=NETWORK_NAME
-PROTOCOL=PROTOCOL
-ACCOUNT_NAME=ACCOUNT_NAME
-KEYRING_BACKEND=KEYRING_BACKEND
-CHAIN_ID=CHAIN_ID
-LAVA_RPC_NODE=LAVA_RPC_NODE
-GEOLOCATION=GEOLOCATION
-
-echo "[Unit]
-Description=Provider daemon
-After=network-online.target
-[Service]
-ExecStart=lavad server $LISTEN_IP $LISTEN_PORT $NODE_URL $NETWORK_NAME $PROTOCOL --from $ACCOUNT_NAME --keyring-backend $KEYRING_BACKEND --chain-id $CHAIN_ID --node $LAVA_RPC_NODE --geolocation $GEOLOCATION
-User=$USER
-Restart=always
-RestartSec=180
-LimitNOFILE=infinity
-LimitNPROC=infinity
-[Install]
-WantedBy=multi-user.target" > lava-provider-$NETWORK_NAME-$PROTOCOL.service
-sudo mv lava-provider-$NETWORK_NAME-$PROTOCOL.service /lib/systemd/system/
-
-# Start the service
-systemctl start lava-provider-$NETWORK_NAME-$PROTOCOL
-# Verify the status of the service
-systemctl status lava-provider-$NETWORK_NAME-$PROTOCOL
-# Check the service logs
-journalctl -u lava-provider-$NETWORK_NAME-$PROTOCOL -f
-
-# Example: running an ETH1 jsonrpc provider with a remote Lava RPC node,
-# lavad server 0.0.0.0 19921 "wss://username:password@my_remote_node/eth/ws/" \
-# ETH1 jsonrpc \
-# --from my_account_name \
-# --keyring-backend "test" \
-# --chain-id "lava-testnet-1" \
-# --node https://public-rpc.lavanet.xyz:443/rpc/
-# --geolocation 1
-
-# Expected output:
-# INF Server listening Address=[::]:LISTEN_PORT
-```
-
-Param description (and examples):  
-- `LISTEN_IP` - IP of the node that will listen for service requests. Example `0.0.0.0`  
-- `LISTEN_PORT` - Port of the node that will service requests. Example `19921`  
-- `NODE_URL` - The URL of an external (or internal) node that you will be fetching on-chain data from.  
-- `NETWORK_NAME` - The ID of the chain, see [how to query the full list](provider#chains). Example `COS4` or `FTM250`  
-- `PROTOCOL` - The protocol to be used, see [how to query the full list](provider#chains). Example `jsonrpc`, or `rest`  
-- `ACCOUNT_NAME` - The account to be used for the provider staking.  
-- `KEYRING_BACKEND` - A keyring-backend of your choosing, for more information ([FAQ: what is a keyring](faq#keyring)). Example `test`
-- `CHAIN_ID` - The chain_id of the network. Example `lava-testnet-1`
-- `LAVA_RPC_NODE` - A RPC node for Lava (can be omitted if the current node has joined the Lava network). Example `https://public-rpc.lavanet.xyz:443/rpc/`
-
-### 5. Verify your account is in the pairing providers list
-To verify if your account is paired with the pairing providers for a specific network,
-Run the command below, and check to see if your account public address is in the command output list
-
-```bash
+bashCopy code
 lavad query pairing providers \
 "{NETWORK_NAME}" \
 --node "{LAVA_RPC_NODE}"
@@ -245,51 +101,178 @@ lavad query pairing providers \
 # INF Server listening Address=[::]:LISTEN_PORT
 ```
 
-Param description (and examples):  
-- `NETWORK_NAME` - The ID of the chain, see [how to query the full list](provider#chains). Example `COS4` or `FTM250`  
-- `LAVA_RPC_NODE` - A RPC node for Lava (can be omitted if the current node has joined the Lava network). Example `https://public-rpc.lavanet.xyz:443/rpc/`
+#### Parameter Descriptions (with examples):
 
+- **`NETWORK_NAME`** - The ID of the chain. Examples: **`COS4`** or **`FTM250`**
+- **`LAVA_RPC_NODE`** - An RPC node for Lava. This can be omitted if the current node has already joined the Lava network. Example: **`https://public-rpc.lavanet.xyz:443/rpc/`**
+
+## Step 3: Run RPCProvider process
+
+**`rpcprovider`** is a command line tool for setting up an RPC server that listens for requests from Lava protocol RPC consumers, forwards them to a configured node, and responds with the reply. The configuration can be provided via a YAML configuration file or as command line arguments.
+
+**`rpcprovider`** is part of `lavad` and can run using the following syntax:
+
+```markdown
+lavad rpcprovider [config-file] || { {listen-ip:listen-port spec-chain-id api-interface node-url} ... }
+```
+
+### Configuration
+
+You can either provide a single configuration file (YAML) or specify one or more endpoint configurations as command line arguments.
+
+The default configuration file is named **`rpcprovider_conf.yml`**. If a single argument is provided, it is assumed to be the name of the configuration file (without the extension).
+
+If no arguments are provided, the default configuration file is used. All configuration files should be located in the default node home directory (e.g., **`app.DefaultNodeHome/config`**) or the local running directory.
+
+### Command Flags
+
+**`rpcprovider`** accepts the following flags:
+
+- **`--geolocation`** (required): Geolocation to run from (e.g., **`1`**)
+- **`--from`** (required): Account name to use (e.g., **`alice`**)
+- **`--chain-id`**: Network chain ID (default: **`app.Name`**)
+- **`--pprof-address`**: pprof server address, used for code profiling (default: **`""`**)
+- **`--cache`**: Address for a cache server to improve performance (default: **`""`**)
+- **`--parallel-connections`**: Number of parallel connections (default: **`chainproxy.NumberOfParallelConnections`**)
+
+### Configuration Examples
+
+Here are some example usages of **`rpcprovider`**:
+
+```markdown
+# Using a custom configuration file and flags
+lavad rpcprovider my_config_file --geolocation 1 --from alice
+
+# Providing endpoint configurations as command line arguments
+lavad rpcprovider 127.0.0.1:3333 COS3 tendermintrpc https://www.node-path.com:80 127.0.0.1:3334 COS3 rest https://www.node-path.com:1317 --geolocation 1 --from alice
+```
+
+#### Example: Multiple API Interfaces with Same Listen Address (ETH1 and COS3)
+
+In this example, the provider supports all the API interfaces for the Ethereum Mainnet (ETH1) and Osmosis Mainnet (COS3) networks. The listen address for all ETH1 interfaces and all COS3 interfaces is the same. Remember to replace the **`listen-ip:listen-port`**and **`node-url`**
+ with the appropriate values for your setup.
+
+```yaml
+endpoints:
+  - listen: "listen-ip1:listen-port1"
+    chainID: "ETH1"
+    apiInterface: "jsonrpc"
+    nodeURL: "https://ethereum-mainnet-jsonrpc.example.com"
+  - listen: "listen-ip2:listen-port2"
+    chainID: "COS3"
+    apiInterface: "rest"
+    nodeURL: "https://osmosis-mainnet-rest.example.com"
+  - listen: "listen-ip2:listen-port2"
+    chainID: "COS3"
+    apiInterface: "grpc"
+    nodeURL: "https://osmosis-mainnet-grpc.example.com"
+  - listen: "listen-ip2:listen-port2"
+    chainID: "COS3"
+    apiInterface: "tendermintrpc"
+    nodeURL: "https://osmosis-mainnet-tendermintrpc.example.com"
+```
+
+## Step 4: Check Provider liveliness
+
+To ensure your provider is up and running, you can use the provided script to check the liveliness of your provider by either its moniker or address. This script will help you confirm that the gRPC calls to your provider are working correctly.
+
+#### Usage
+
+1. Install the **`grpcurl`** command-line tool, if not already installed:
+    
+    ```
+    go install github.com/fullstorydev/grpcurl/cmd/grpcurl@latest
+    ```
+    
+2. Download the **[python script](/static/gists/provider_liveliness_check.py)**.
+3. Run the script using one of the following options:
+    - To check by moniker:
+        
+        ```bash
+        python provider_liveliness.py --chain_id {CHAIN_ID} --moniker {MONIKER}
+        ```
+        
+    - To check by address:
+        
+        ```bash
+        python provider_liveliness.py --chain_id {CHAIN_ID} --address {ADDRESS}
+        ```
+        
+    
+    Replace **`{CHAIN_ID}`** with the chain ID (e.g., **`COS4`** or **`FTM250`**), **`{MONIKER}`** with your provider's moniker, and **`{ADDRESS}`** with your provider's address.
+    
+
+#### Output
+
+The script will output the status of each endpoint, indicating whether it's accessible (**`OK`**) or not (**`ERROR`**), along with any error details.
+
+For example:
+
+```bash
+192.0.2.1:12345: OK
+192.0.2.2:12345: ERROR - some error details
+```
+
+Use this script periodically to ensure your provider remains operational and to troubleshoot any connectivity issues.
+
+## Step 5: Provider Info and more features
+
+You can track your Provider rewards and transactions via [https://info.lavanet.xyz/providers](https://info.lavanet.xyz/providers) 
+
+And review the Providers Features page for more capabilities. 
 
 ## FAQ
 
-### `lavad` not found  
-Make sure you downloaded the binary, and it is located in the path you use to run `lavad` commands, or you have it under /usr/local/bin or under PATH
+#### `lavad` not found
 
-### Received error `account sequence mismatch`
+Make sure you downloaded/built the binary, and it is located in the path you use to run `lavad` commands, or you have it under /usr/local/bin or under PATH
+
+#### Received error `account sequence mismatch`
+
 Try to wait for a block_time (current=30s) and then run the command again
 
-### How do I unstake? {#unstake}
-Run the following command:  
+#### How do I unstake? {#unstake}
 
-```bash
-lavad tx pairing unstake-provider "{NETWORK_NAME}" \
---from "{ACCOUNT_NAME}" \
---keyring-backend "{KEYRING_BACKEND}" \
---chain-id "{CHAIN_ID}" \
+Run the following command:
+
+```
+lavad tx pairing unstake-provider "{NETWORK_NAME}" \\
+--from "{ACCOUNT_NAME}" \\
+--keyring-backend "{KEYRING_BACKEND}" \\
+--chain-id "{CHAIN_ID}" \\
 --node "{LAVA_RPC_NODE}"
 
 # For example, unstake a provider for the ETH1 network,
-# lavad tx pairing unstake-provider ETH1 \
-# --from my_account_name \
-# --keyring-backend "test" \
-# --chain-id "lava-testnet-1" \
-# --node https://public-rpc.lavanet.xyz:443/rpc/
+# lavad tx pairing unstake-provider ETH1 \\
+# --from my_account_name \\
+# --keyring-backend "test" \\
+# --chain-id "lava-testnet-1" \\
+# --node <https://public-rpc.lavanet.xyz:443/rpc/>
 
 # Expected output:
 # INF Server listening Address=[::]:LISTEN_PORT
+
 ```
 
-### Received error `dial tcp 127.0.0.1:26657: connect: connection refused`
-In case you got the following error:  
+#### Received error `dial tcp 127.0.0.1:26657: connect: connection refused`
+
+In case you got the following error:
+
 ```
-Error: post failed: Post "http://localhost:26657": dial tcp 127.0.0.1:26657: connect: connection refused
+Error: post failed: Post "<http://localhost:26657>": dial tcp 127.0.0.1:26657: connect: connection refused
+
 ```
+
 It is likely that your node is not running, or has not joined the network, you can either join the network,
 or run the command with the `--node` flag to use an external Lava RPC node
 
-### Received error `sentry init failure to initialize error="provider stake verification mismatch`
-In case you got the following error:  
+#### Received error `sentry init failure to initialize error="provider stake verification mismatch`
+
+In case you got the following error:
+
 ```
 ERR sentry init failure to initialize error="provider stake verification mismatch -- &map[ChainID:NETWORK_NAME spec name:NETWORK_FULL_NAME]" ChainID=CHAIN_ID apiInterface=PROTOCOL
+
 ```
+
 It is likely that the stake-provider command was not taken into effect yet, if running the `lavad server` option, please wait a few minutes and try running the command again.
