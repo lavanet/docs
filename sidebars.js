@@ -78,6 +78,7 @@ const sidebars = {
           },
           items: [
             'provider/provider-setup',
+            'provider/provider-features'
           ]
         },    
         'lava-blockchain/faucet',
