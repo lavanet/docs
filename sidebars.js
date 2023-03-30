@@ -82,7 +82,8 @@ const sidebars = {
           ]
         },    
         'lava-blockchain/account-wallet',
-        'lava-blockchain/faucet'
+        'lava-blockchain/faucet',
+        'lava-blockchain/subscriptions'
       ]
     },
     {

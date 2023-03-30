@@ -7,6 +7,10 @@ title: Subscription Plans
 
 Lava network offers various subscription plans for consumers to access its services. In this section, we will provide an overview of subscriptions, along with instructions for basic usage through transactions (TX) and queries.
 
+:::warning
+Subscription features are in Alpha and should be used only for testing purposes
+:::
+
 ### Overview
 
 A subscription in Lava allows consumers to access services for a specified time period based on the chosen plan (e.g., 1, 3, 6, or 12 months). Plans advertise per-month cost and per-month Compute Unit (CU) allowance. Subscriptions enable consumers to select a plan and duration in months, creating a seamless, predictable experience. If a subscription for the same plan already exists, the subscription is extended by the designated period, allowing for flexibility in extending service access. The maximum duration for a subscription is 12 months, with a total maximum duration of 13 months.
@@ -17,7 +21,7 @@ Lava network offers optional yearly discount rates for plans, which are applied 
 
 Consumers can create projects under their subscriptions, which can have different policies and usage keys. Lava network uses a flexible system for its plans via governance, allowing the network to react to market dynamics and maintain a competitive edge.
 
-:::info Testnet is up and running!
+:::info
 📖 Using the CLI? Add this flag to access a remote node:
 ```
 --node https://public-rpc.lavanet.xyz:443
@@ -30,11 +34,7 @@ To create an account, please refer to [accounts & wallets](/docs/lava-blockchain
 
 ### List Existing Plans
 
-To view the list of available plans, you can use either the REST API or the CLI:
-
-**REST API:** [https://public-rpc.lavanet.xyz/rest/lavanet/lava/plan/list](https://public-rpc.lavanet.xyz/rest/lavanet/lava/plan/list) 
-
-**CLI:**
+To view the list of available plans using the CLI:
 
 ```bash
 lavad q plan list
