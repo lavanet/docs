@@ -78,10 +78,12 @@ const sidebars = {
           },
           items: [
             'provider/provider-setup',
+            'provider/provider-features'
           ]
         },    
-        'lava-blockchain/faucet',
         'lava-blockchain/account-wallet',
+        'lava-blockchain/faucet',
+        'lava-blockchain/subscriptions'
       ]
     },
     {
