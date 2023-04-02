@@ -140,34 +140,77 @@ Here are some example usages of **`rpcprovider`**:
 
 ```bash
 # Using a custom configuration file and flags
-lavad rpcprovider my_config_file --geolocation 1 --from alice
+lavad rpcprovider path_to_my_config_file --geolocation 1 --from alice
 
 # Providing endpoint configurations as command line arguments
 lavad rpcprovider provider-host.com:1986 ETH1 jsonrpc https://localhost/eth/my_node_1 --geolocation 1 --from alice
 ```
 
-#### Example: Multiple API Interfaces with Same Listen Address (ETH1 and COS3)
+### Example: Multiple API Interfaces with Same Listen Address (ETH1 and COS3)
 
 In this example, the provider supports all the API interfaces for the Ethereum Mainnet (ETH1) and Osmosis Mainnet (COS3) networks. The listen address for all ETH1 interfaces and all COS3 interfaces is the same.
 
 ```yaml
 endpoints:
-  - listen: "provider-host.com:1986"
-    chainID: "ETH1"
-    apiInterface: "jsonrpc"
-    nodeURL: "https://localhost/eth/my_node_1"
-  - listen: "provider-host.com:420"
-    chainID: "COS3"
-    apiInterface: "rest"
-    nodeURL: "https://localhost/osmosis/mainnet/my_node_1/rest"
-  - listen: "provider-host.com:420"
-    chainID: "COS3"
-    apiInterface: "grpc"
-    nodeURL: "https://localhost/osmosis/mainnet/my_node_1/grpc"
-  - listen: "provider-host.com:420"
-    chainID: "COS3"
-    apiInterface: "tendermintrpc"
-    nodeURL: "https://localhost/osmosis/mainnet/my_node_1/tendermint"
+  - api-interface: jsonrpc
+    chain-id: ETH1
+    network-address: 127.0.0.1:2221
+    node-urls:
+      - url: wss://eth-rpc/ws
+    - api-interface: tendermintrpc
+      chain-id: COS3
+      network-address: 127.0.0.1:2221
+      node-urls:
+        - url: ws://127.0.0.1:26657/websocket
+        - url: http://127.0.0.1:26657
+    - api-interface: grpc
+      chain-id: LAV1
+      network-address: 127.0.0.1:2221
+      node-urls: 
+        - url: 127.0.0.1:9090
+    - api-interface: rest
+      chain-id: LAV1
+      network-address: 127.0.0.1:2221
+      node-urls: 
+        - url: http://127.0.0.1:1317
+```
+
+### Another Example with Server Authentication
+
+In this example COS3 tendermint urls have authentication
+
+```yaml
+endpoints:
+    - api-interface: jsonrpc
+    chain-id: ETH1
+    network-address: 127.0.0.1:2221
+    node-urls:
+      - url: wss://eth-rpc/ws
+    - api-interface: tendermintrpc
+      chain-id: COS3
+      network-address: 127.0.0.1:2221
+      node-urls:
+      - url: ws://127.0.0.1:26657/websocket
+          auth-config:
+            auth-query: auth=xyz
+            auth-headers:
+              AUTH-X-HEADER: xyz
+        - url: http://127.0.0.1:26657
+          auth-config:
+            auth-query: auth=xxyyzz
+            auth-headers:
+              AUTH-X-HEADER-2: xxyyzz
+    - api-interface: grpc
+      chain-id: LAV1
+      network-address: 127.0.0.1:2221
+      node-urls: 
+        - url: 127.0.0.1:9090
+    - api-interface: rest
+      chain-id: LAV1
+      network-address: 127.0.0.1:2221
+      node-urls: 
+        - url: http://127.0.0.1:1317
+  
 ```
 
 ## Step 4: Check Provider liveliness
