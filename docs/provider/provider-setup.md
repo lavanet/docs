@@ -175,43 +175,68 @@ endpoints:
         - url: http://127.0.0.1:1317
 ```
 
-### Another Example with Server Authentication
+### Another Example using Server Authentication
 
-In this example COS3 tendermint urls have authentication
+In this example COS3 tendermint urls are using client authentication
+
+
+#### Example 1, auth-headers
+
+If you want to add the authentication using the http headers
 
 ```yaml
 endpoints:
-    - api-interface: jsonrpc
-    chain-id: ETH1
-    network-address: 127.0.0.1:2221
-    node-urls:
-      - url: wss://eth-rpc/ws
     - api-interface: tendermintrpc
       chain-id: COS3
       network-address: 127.0.0.1:2221
       node-urls:
       - url: ws://127.0.0.1:26657/websocket
           auth-config:
-            auth-query: auth=xyz
             auth-headers:
-              AUTH-X-HEADER: xyz
-        - url: http://127.0.0.1:26657
+              WANTED_HEADER_NAME_1: xyz
+      - url: http://127.0.0.1:26657
+        auth-config:
+          auth-headers:
+            WANTED_HEADER_NAME_2: xxyyzz
+```
+
+#### Example 2, auth-query 
+
+If you want to add the authentication using query parameters
+
+```yaml
+endpoints:
+    - api-interface: tendermintrpc
+      chain-id: COS3
+      network-address: 127.0.0.1:2221
+      node-urls:
+      - url: ws://127.0.0.1:26657/websocket
           auth-config:
             auth-query: auth=xxyyzz
-            auth-headers:
-              AUTH-X-HEADER-2: xxyyzz
-    - api-interface: grpc
-      chain-id: LAV1
-      network-address: 127.0.0.1:2221
-      node-urls: 
-        - url: 127.0.0.1:9090
-    - api-interface: rest
-      chain-id: LAV1
-      network-address: 127.0.0.1:2221
-      node-urls: 
-        - url: http://127.0.0.1:1317
-  
+      - url: http://127.0.0.1:26657
+        auth-config:
+          auth-query: auth=xyz
 ```
+
+### Load Balance based on IP 
+
+If you want to IP load balance / throttle this is also supported by adding "ip-forwarding: true" 
+The Ip will be added to the following header: "X-Forwarded-For"
+
+```yaml
+endpoints:
+    - api-interface: jsonrpc
+      chain-id: ETH1
+      network-address: 127.0.0.1:2221
+      node-urls: 
+      - url: ws://your_node_url/
+        auth-config:
+          auth-query: auth=xyz
+        ip-forwarding: true
+```
+
+
+
 
 ## Step 4: Check Provider liveliness
 
