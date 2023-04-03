@@ -36,7 +36,18 @@ $current_lavad_binary query \
     --denom ulava
 ```
 
-3. Stake validator
+3. Back up your validator's consensus key
+
+   A validator participates in the consensus by sending a message signed by
+   a consensus key which is automatically generated when you first run a node.
+   You must create a backup of this consensus key in case that you migrate your
+   validator to another server or accidentally lose access to your validator.
+
+   A consensus key is stored as a json file in
+   `$lavad_home_folder/config/priv_validator_key.json` by default, or a custom
+   path specified in the parameter `priv_validator_key_file` of config.toml.
+
+4. Stake validator
 
 Here's an example with Values which starts with a stake of `50000000ulava`.
 Replace `<<moniker_node>>` With a human readable name you choose for your validator.
@@ -60,7 +71,7 @@ $current_lavad_binary tx staking create-validator \
 
 Once you have finished running the command above, if you see `code: 0` in the output, the command was successful
 
-4. Verify validator setup
+5. Verify validator setup
 
 ```bash
 block_time=60
