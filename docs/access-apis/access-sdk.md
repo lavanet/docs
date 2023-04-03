@@ -6,7 +6,7 @@ title: SDK
 # Lava SDK
 
 :::caution COMING SOON! ⏰
-open-source expected during Q1 2023
+open-source expected during Q2 2023
 :::
 
 🌋 **Programmatic, decentralized access to any Web3 API, from anywhere, the Lava way 😉**
