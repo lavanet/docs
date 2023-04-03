@@ -97,6 +97,12 @@ const config = {
     },
   ],
 
+  markdown: {
+    mermaid: true,
+  },
+
+  themes: ['@docusaurus/theme-mermaid'],
+
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
@@ -151,6 +157,7 @@ const config = {
         textColor: '#FFFFFF',
         isCloseable: true,
       },
+      image: 'img/logo_with_text_bg_transparent.png'
     }),
 };
 
