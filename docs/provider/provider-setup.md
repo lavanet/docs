@@ -157,22 +157,22 @@ endpoints:
     network-address: 127.0.0.1:2221
     node-urls:
       - url: wss://eth-rpc/ws
-    - api-interface: tendermintrpc
-      chain-id: COS3
-      network-address: 127.0.0.1:2221
-      node-urls:
-        - url: ws://127.0.0.1:26657/websocket
-        - url: http://127.0.0.1:26657
-    - api-interface: grpc
-      chain-id: LAV1
-      network-address: 127.0.0.1:2221
-      node-urls: 
-        - url: 127.0.0.1:9090
-    - api-interface: rest
-      chain-id: LAV1
-      network-address: 127.0.0.1:2221
-      node-urls: 
-        - url: http://127.0.0.1:1317
+  - api-interface: tendermintrpc
+    chain-id: COS3
+    network-address: 127.0.0.1:2221
+    node-urls:
+      - url: ws://127.0.0.1:26657/websocket
+      - url: http://127.0.0.1:26657
+  - api-interface: grpc
+    chain-id: LAV1
+    network-address: 127.0.0.1:2221
+    node-urls: 
+      - url: 127.0.0.1:9090
+  - api-interface: rest
+    chain-id: LAV1
+    network-address: 127.0.0.1:2221
+    node-urls: 
+      - url: http://127.0.0.1:1317
 ```
 
 ### Another Example using Server Authentication
@@ -186,18 +186,18 @@ If you want to add the authentication using the http headers
 
 ```yaml
 endpoints:
-    - api-interface: tendermintrpc
-      chain-id: COS3
-      network-address: 127.0.0.1:2221
-      node-urls:
+  - api-interface: tendermintrpc
+    chain-id: COS3
+    network-address: 127.0.0.1:2221
+    node-urls:
       - url: ws://127.0.0.1:26657/websocket
-          auth-config:
-            auth-headers:
-              WANTED_HEADER_NAME_1: xyz
+        auth-config:
+        auth-headers:
+          WANTED_HEADER_NAME_1: xyz
       - url: http://127.0.0.1:26657
         auth-config:
-          auth-headers:
-            WANTED_HEADER_NAME_2: xxyyzz
+        auth-headers:
+          WANTED_HEADER_NAME_2: xxyyzz
 ```
 
 #### Example 2, auth-query 
@@ -210,11 +210,11 @@ endpoints:
       chain-id: COS3
       network-address: 127.0.0.1:2221
       node-urls:
-      - url: ws://127.0.0.1:26657/websocket
+        - url: ws://127.0.0.1:26657/websocket
           auth-config:
-            auth-query: auth=xxyyzz
-      - url: http://127.0.0.1:26657
-        auth-config:
+          auth-query: auth=xxyyzz
+        - url: http://127.0.0.1:26657
+          auth-config:
           auth-query: auth=xyz
 ```
 
@@ -229,10 +229,10 @@ endpoints:
       chain-id: ETH1
       network-address: 127.0.0.1:2221
       node-urls: 
-      - url: ws://your_node_url/
-        auth-config:
+        - url: ws://your_node_url/
+          auth-config:
           auth-query: auth=xyz
-        ip-forwarding: true
+          ip-forwarding: true
 ```
 
 
