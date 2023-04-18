@@ -44,7 +44,7 @@ Providers need to stake separately for each supported spec. For example, if you 
 
 Lava's protocol expands its support to new RPCs by adding Specifications ("specs") via governance. Each spec describes the schema needed for the RPC and aligns the different actors on the provided interface.
 
-### Querying Available APIs and Chains
+### Querying Available APIs and Chains {#chains}
 
 To obtain a list of available APIs and chains, [query all chain specs](https://public-rpc.lavanet.xyz/rest/lavanet/lava/spec/show_all_chains) or use the following CLI commands for detailed list:
 
