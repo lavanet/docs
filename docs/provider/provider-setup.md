@@ -255,7 +255,7 @@ To ensure your provider is up and running, you can use the provided script to ch
     - To check by moniker:
         
         ```bash
-        python provider_liveliness.py --chain_id {CHAIN_ID} --provider-moniker {MONIKER}
+        python provider_liveliness.py --chain_id {CHAIN_ID} --moniker {MONIKER}
         ```
         
     - To check by address:
