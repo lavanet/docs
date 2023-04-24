@@ -6,7 +6,7 @@ title: Setup
 
 # Provider Setup
 
-This guide is designed to help node runners and DevOps professionals configure a multi-chain network provider, which supports various blockchain networks and their respective API interfaces. We'll walk you through the necessary steps to create a configuration file that covers multiple chains and API interfaces, and provide a brief background on providers and the stake command.
+After you have read the [Provider intro](/provider), This guide is designed to help node runners and DevOps professionals configure a multi-chain network provider, which supports various blockchain networks and their respective API interfaces. We'll walk you through the necessary steps to create a configuration file that covers multiple chains and API interfaces, and provide a brief background on providers and the stake command.
 
 ## **Overview**
 
@@ -55,7 +55,7 @@ Ethereum and other EVMs usually have only `jsonrpc` interface:
 
 ```bash
 lavad tx pairing stake-provider "ETH1" \
-    "500000000000ulava" \
+    "50000000000ulava" \
     "provider-host.com:1337,jsonrpc,1" 1 \
     --from "my_account_name" \
     --provider-moniker "your-moniker" \
@@ -71,7 +71,7 @@ Cosmos's usually have `rest`, `tendermintrpc` & `grpc` interface, all mandatory:
 
 ```bash
 lavad tx pairing stake-provider "COS5T" \
-    "500000000000ulava" \
+    "50000000000ulava" \
     "provider-host.com:1986,tendermint,1 provider-host.com:1986,rest,1 provider-host.com:1986,grpc,1" 1 \
     --from "my_account_name" \
     --provider-moniker "your-moniker" \
@@ -116,6 +116,9 @@ lavad rpcprovider [config-file] || { {listen-host:listen-port spec-chain-id api-
 ```
 
 ### Configuration
+:::info 
+For advanced configuration such as **authentication**, header **forwarding**, see [Provider Features](/provider-features)
+:::
 
 You can either provide a single configuration file (YAML) or specify one or more endpoint configurations as command line arguments.
 
@@ -174,69 +177,6 @@ endpoints:
     node-urls: 
       - url: http://127.0.0.1:1317
 ```
-
-### Another Example using Server Authentication
-
-In this example COS3 tendermint urls are using client authentication
-
-
-#### Example 1, auth-headers
-
-If you want to add the authentication using the http headers
-
-```yaml
-endpoints:
-  - api-interface: tendermintrpc
-    chain-id: COS3
-    network-address: 127.0.0.1:2221
-    node-urls:
-      - url: ws://127.0.0.1:26657/websocket
-        auth-config:
-        auth-headers:
-          WANTED_HEADER_NAME_1: xyz
-      - url: http://127.0.0.1:26657
-        auth-config:
-        auth-headers:
-          WANTED_HEADER_NAME_2: xxyyzz
-```
-
-#### Example 2, auth-query 
-
-If you want to add the authentication using query parameters
-
-```yaml
-endpoints:
-    - api-interface: tendermintrpc
-      chain-id: COS3
-      network-address: 127.0.0.1:2221
-      node-urls:
-        - url: ws://127.0.0.1:26657/websocket
-          auth-config:
-          auth-query: auth=xxyyzz
-        - url: http://127.0.0.1:26657
-          auth-config:
-          auth-query: auth=xyz
-```
-
-### Load Balance based on IP 
-
-If you want to IP load balance / throttle this is also supported by adding "ip-forwarding: true" 
-The Ip will be added to the following header: "X-Forwarded-For"
-
-```yaml
-endpoints:
-    - api-interface: jsonrpc
-      chain-id: ETH1
-      network-address: 127.0.0.1:2221
-      node-urls: 
-        - url: ws://your_node_url/
-          auth-config:
-          auth-query: auth=xyz
-          ip-forwarding: true
-```
-
-
-
 
 ## Step 4: Check Provider liveliness
 
