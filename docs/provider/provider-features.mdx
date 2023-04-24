@@ -39,11 +39,11 @@ The **`freeze`** command requires the **`--from`** flag to specify the provider 
 The **`unfreeze`** command also requires the **`--from`** flag to specify the provider address.
 
 ## Advanced Auth configuration {#config-auth}
-In this example, COS3 tendermint URLs are using client authentication
+In this example, COS3 tendermint URLs are using client authentication, assuming the node URL is capable of processing this authentication.
 
 #### RPCProvider Config Example 1, auth-headers
 
-If you want to add the authentication using the http headers:
+If you want to add authentication using http headers:
 
 ```yaml
 endpoints:
@@ -53,17 +53,17 @@ endpoints:
     node-urls:
       - url: ws://127.0.0.1:26657/websocket
         auth-config:
-        auth-headers:
-          WANTED_HEADER_NAME_1: xyz
+          auth-headers:
+            WANTED_HEADER_NAME_1: xyz
       - url: http://127.0.0.1:26657
         auth-config:
-        auth-headers:
-          WANTED_HEADER_NAME_2: xxyyzz
+          auth-headers:
+            Authorization: 'Bearer xxyyzz'
 ```
 
 #### RPCProvider Config Example 2, auth-query 
 
-If you want to add the authentication using query parameters:
+If you want to add authentication using query parameters:
 
 ```yaml
 endpoints:
@@ -73,10 +73,10 @@ endpoints:
       node-urls:
         - url: ws://127.0.0.1:26657/websocket
           auth-config:
-          auth-query: auth=xxyyzz
+            auth-query: auth=xxyyzz
         - url: http://127.0.0.1:26657
           auth-config:
-          auth-query: auth=xyz
+            auth-query: auth=xyz
 ```
 
 ## `ip-forwarding` configuration {#config-ip-forwarding}
@@ -92,6 +92,6 @@ endpoints:
       node-urls: 
         - url: ws://your_node_url/
           auth-config:
-          auth-query: auth=xyz
+            auth-query: auth=xyz
           ip-forwarding: true
 ```

@@ -72,7 +72,7 @@ Cosmos's usually have `rest`, `tendermintrpc` & `grpc` interface, all mandatory:
 ```bash
 lavad tx pairing stake-provider "COS5T" \
     "50000000000ulava" \
-    "provider-host.com:1986,tendermint,1 provider-host.com:1986,rest,1 provider-host.com:1986,grpc,1" 1 \
+    "provider-host.com:1986,tendermintrpc,1 provider-host.com:1986,rest,1 provider-host.com:1986,grpc,1" 1 \
     --from "my_account_name" \
     --provider-moniker "your-moniker" \
     --keyring-backend "test" \
