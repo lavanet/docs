@@ -41,7 +41,7 @@ lavad tx pairing stake-provider [chain-id] [amount] [endpoint endpoint ...] [geo
 #### Flags Details
 
 - **`--from`** - The account to be used for the provider staking (e.g., **`my_account`**).
-- `--moniker` - Provider’s public name
+- **`--provider-moniker`** - Provider’s public name
 - **`--keyring-backend`** - A keyring-backend of your choosing (e.g., **`test`**).
 - **`--chain-id`** - The chain_id of the network (e.g., **`lava-testnet-1`**).
 - **`--gas`** - The gas limit for the transaction (e.g., **`"auto"`**).
@@ -58,7 +58,7 @@ lavad tx pairing stake-provider "ETH1" \
     "500000000000ulava" \
     "provider-host.com:1337,jsonrpc,1" 1 \
     --from "my_account_name" \
-    --moniker=%%your-moniker%% \
+    --provider-moniker "your-moniker" \
     --keyring-backend "test" \
     --chain-id "lava-testnet-1" \
     --gas="auto" \
@@ -74,7 +74,7 @@ lavad tx pairing stake-provider "COS5T" \
     "500000000000ulava" \
     "provider-host.com:1986,tendermint,1 provider-host.com:1986,rest,1 provider-host.com:1986,grpc,1" 1 \
     --from "my_account_name" \
-    --moniker=%%your-moniker%% \
+    --provider-moniker "your-moniker" \
     --keyring-backend "test" \
     --chain-id "lava-testnet-1" \
     --gas="auto" \
