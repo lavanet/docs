@@ -119,7 +119,7 @@ lavad rpcprovider [config-file] || { {listen-host:listen-port spec-chain-id api-
 
 You can either provide a single configuration file (YAML) or specify one or more endpoint configurations as command line arguments.
 
-The default configuration file is named **`rpcprovider_conf.yml`**. If a single argument is provided, it is assumed to be the name of the configuration file (without the extension).
+The default configuration file is named **`rpcprovider.yml`**. If a single argument is provided, it is assumed to be the name of the configuration file (without the extension).
 
 If no arguments are provided, the default configuration file is used. All configuration files should be located in the default node home directory (e.g., **`app.DefaultNodeHome/config`**) or the local running directory.
 
@@ -164,12 +164,12 @@ endpoints:
       - url: ws://127.0.0.1:26657/websocket
       - url: http://127.0.0.1:26657
   - api-interface: grpc
-    chain-id: LAV1
+    chain-id: COS3
     network-address: 127.0.0.1:2221
     node-urls: 
       - url: 127.0.0.1:9090
   - api-interface: rest
-    chain-id: LAV1
+    chain-id: COS3
     network-address: 127.0.0.1:2221
     node-urls: 
       - url: http://127.0.0.1:1317
