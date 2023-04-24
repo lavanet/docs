@@ -9,48 +9,7 @@ slug: /validator-manual
 Running as a validator requires a Lava Node running, Please refer to [our guide for joining **Testnet**](testnet) for details.
 
 ### 2. Prepare an account & Fund it {#account}
-Lava account and wallets are standard Cosmos. Learn more in [Account & Wallet section](wallet).
-
-Now that you decided you want to turn your node into a validator, you will first need to add a wallet to your keyring ([FAQ: what is a keyring](faq#keyring)).
-
-While you may use your seed phrase to import an existing wallet, we'll make a new one in this scenario.
-replace $ACCOUNT_NAME with a name of your choosing:
-
-```bash
-current_lavad_binary="$HOME/.lava/cosmovisor/current/bin/lavad"
-ACCOUNT_NAME="name_here"
-$current_lavad_binary keys add $ACCOUNT_NAME
-```
-
-:::danger
-Ensure you write down the mnemonic as you can not recover the wallet without it. 
-:::
-
-To ensure your wallet was saved to your keyring, look for the `KEY_NAME` is in your keys list:
-
-```bash
-$current_lavad_binary keys list
-```
-
-The last thing needed before initializing the validator is to obtain your **validator public** key which was created when you first initialized your node. To obtain your validator pubkey:
-
-```bash
-$current_lavad_binary tendermint show-validator
-```
-
-:::caution Pencils out 📝
-Keep the newly created account info:
-1. SECRET mnemonic phrase 🚨🤫🚨🤫🚨
-2. Your public address, starts with `lava@`
-3. Your validator pubkey
-
-♻ Save those details as we make sure to automatically airdrop you with LAVA test tokens as soon as we restart the testnet.
-
-:::
-
-#### Faucet
-
-Get your account funded through [the faucet](faucet)
+If you don't have an account (wallet) on Lava yet, Refer to [creating new accounts](wallet#account) and the [faucet](faucet). 
 
 ### 3. Stake & start validating {#stake}
 
@@ -77,7 +36,18 @@ $current_lavad_binary query \
     --denom ulava
 ```
 
-3. Stake validator
+3. Back up your validator's consensus key
+
+   A validator participates in the consensus by sending a message signed by
+   a consensus key which is automatically generated when you first run a node.
+   You must create a backup of this consensus key in case that you migrate your
+   validator to another server or accidentally lose access to your validator.
+
+   A consensus key is stored as a json file in
+   `$lavad_home_folder/config/priv_validator_key.json` by default, or a custom
+   path specified in the parameter `priv_validator_key_file` of config.toml.
+
+4. Stake validator
 
 Here's an example with Values which starts with a stake of `50000000ulava`.
 Replace `<<moniker_node>>` With a human readable name you choose for your validator.
@@ -101,7 +71,7 @@ $current_lavad_binary tx staking create-validator \
 
 Once you have finished running the command above, if you see `code: 0` in the output, the command was successful
 
-4. Verify validator setup
+5. Verify validator setup
 
 ```bash
 block_time=60
