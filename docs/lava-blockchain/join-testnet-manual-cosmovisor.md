@@ -203,7 +203,7 @@ Note the location of `lavad` now exists under `cosmovisor` path:
 
 ```bash
 # Check if the node is currently in the process of catching up
-$HOME/.lava/cosmovisor/current/bin/lavad status | jq
+$HOME/.lava/cosmovisor/current/bin/lavad status | jq .SyncInfo.catching_up
 ```
 
 ## Welcome to Lava Testnet 🌋
