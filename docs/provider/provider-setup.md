@@ -219,9 +219,20 @@ For example:
 192.0.2.2:12345: ERROR - some error details
 ```
 
-If your provider is frozen you will see the following error **`Provider frozen ❄️`**.
-
 Use this script periodically to ensure your provider remains operational and to troubleshoot any connectivity issues.
+
+A frozen provider will receive the following output: 
+```bash
+Provider frozen ❄️
+```
+Please refer to [https://docs.lavanet.xyz/provider-features#freeze](https://docs.lavanet.xyz/provider-features#freeze) for more information about freeze/unfreeze funcionality.
+
+If you receive the following message:
+```bash
+Provider not found
+```
+Your provider might have been jailed for being unaccessible. If that is the case, once the unstaking period is over (24 hours) your tokens will be available again for you to try again.
+
 
 ## Step 5: Provider Info and more features
 
