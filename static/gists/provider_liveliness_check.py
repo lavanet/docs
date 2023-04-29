@@ -9,19 +9,23 @@ def get_chains(rpc_url):
     return response.json()['chainInfoList']
 
 def get_providers(rpc_url, chain_id):
-    response = requests.get(f"{rpc_url}/lavanet/lava/pairing/providers/{urlquote(chain_id)}")
+    response = requests.get(f"{rpc_url}/lavanet/lava/pairing/providers/{urlquote(chain_id)}?showFrozen=True")
     return response.json()['stakeEntry']
 
 def check_provider(rpc_url, chain_id, moniker=None, address=None):
     providers = get_providers(rpc_url, chain_id)
     if moniker:
-        provider = next((p for p in providers if p['moniker'] == moniker), None)
+        provider = next((p for p in providers if moniker.lower() in p['moniker'].lower()), None)
     elif address:
         provider = next((p for p in providers if p['address'] == address), None)
     else:
         raise ValueError("Either moniker or address must be provided")
 
     if provider:
+        if provider['stake_applied_block'] == '9223372036854775807':
+            print("Provider frozen ❄️")
+            print("More info: https://docs.lavanet.xyz/provider-features#freeze")
+            return
         for endpoint in provider['endpoints']:
             ret = subprocess.run(
                 f"grpcurl -max-time 1 -plaintext {endpoint['iPPORT']} list",
