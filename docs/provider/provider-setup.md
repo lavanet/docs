@@ -219,6 +219,8 @@ For example:
 192.0.2.2:12345: ERROR - some error details
 ```
 
+If your provider is frozen you will see the following error **`Provider frozen ❄️`**.
+
 Use this script periodically to ensure your provider remains operational and to troubleshoot any connectivity issues.
 
 ## Step 5: Provider Info and more features
