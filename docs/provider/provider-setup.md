@@ -28,7 +28,7 @@ In this guide, we'll create a configuration file that includes multiple chains (
 1. Go 1.20.5 or higher
 2. `lavad` installed (build or install at [https://github.com/lavanet/lava](https://github.com/lavanet/lava))
 3. Account with enough LAVA for staking (learn about [creating Accounts](docs/lava-blockchain/account-wallet.mdx))
-4. Know which chains you want to provide ([how to query the latest list](provider#chains))
+4. Know which chains you want to provide ([how to query the latest list](https://docs.lavanet.xyz/provider/#chains))
 
 ## Step 1: Setup TLS
 As part of good security practice, Lava protocol communicates with end-to-end encryption between providers and consumers of RPC. This requires some additional configuration steps on a provider, namely, the setup of TLS certification with a certification authority.
