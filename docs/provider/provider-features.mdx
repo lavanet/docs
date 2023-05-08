@@ -79,6 +79,53 @@ endpoints:
             auth-query: auth=xyz
 ```
 
+#### RPCProvider auth-config for gRPC TLS 
+
+If you want to add TLS authentication to your grpc endpoint you have 3 options:
+
+## 1. dynamic certificate
+
+```yaml
+endpoints:
+    - api-interface: grpc
+      chain-id: LAV1
+      network-address: 127.0.0.1:2221
+      node-urls:
+        - url: 127.0.0.1:9090
+          auth-config:
+            use-tls: true 
+```
+
+## 2. provide a certificate and a key: 
+
+```yaml
+endpoints:
+    - api-interface: grpc
+      chain-id: LAV1
+      network-address: 127.0.0.1:2221
+      node-urls:
+        - url: 127.0.0.1:9090
+          auth-config:
+            use-tls: true
+            key-pem: /home/user/key.pem
+            cert-pem: /home/user/cert.pem
+```
+
+## 3. provide a root certificate:
+
+```yaml
+endpoints:
+    - api-interface: grpc
+      chain-id: LAV1
+      network-address: 127.0.0.1:2221
+      node-urls:
+        - url: 127.0.0.1:9090
+          auth-config:
+            use-tls: true
+            cacert-pem: /home/user/cert.pem 
+```
+
+
 ## `ip-forwarding` configuration {#config-ip-forwarding}
 
 If you want to IP load balance / throttle this is also supported by adding "ip-forwarding: true" 
