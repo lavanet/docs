@@ -135,7 +135,7 @@ endpoints:
           // highlight-end
 ```
 
-### `ip-forwarding` configuration {#config-ip-forwarding}
+## `ip-forwarding` configuration {#config-ip-forwarding}
 
 If you want to IP load balance / throttle this is also supported by adding "ip-forwarding: true" 
 The IP will be added to the following header: `X-Forwarded-For`
@@ -147,8 +147,6 @@ endpoints:
       network-address: 127.0.0.1:2221
       node-urls: 
         - url: ws://your_node_url/
-          auth-config:
-            auth-query: auth=xyz
           // highlight-start
           ip-forwarding: true
           // highlight-end
