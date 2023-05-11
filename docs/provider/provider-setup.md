@@ -117,7 +117,7 @@ lavad query pairing account-info \
 - **`LAVA_RPC_NODE`** - An RPC node for Lava. This can be omitted if the current node has already joined the Lava network. Example: **`https://public-rpc.lavanet.xyz:443/rpc/`**
 
 
-another useful command to check all providers for a specific chain:
+Another useful command to check all providers for a specific chain:
 ```bash
 lavad query pairing providers \
 "{NETWORK_NAME}" \
