@@ -239,7 +239,7 @@ lavad test rpcprovider --from {WALLET}
 # ARB1 jsonrpc,ARBN jsonrpc,AVAX jsonrpc,CANTO jsonrpc,CANTO tendermintrpc,CANTO rest,COS3 grpc,COS4 rest,COS4 grpc,COS4 tendermintrpc,COS5 grpc,JUN1 grpc,POLYGON1 jsonrpc,SOLANA jsonrpc
 
 ```
-OR
+Or:
 ```bash
 lavad test rpcprovider --from {WALLET} --endpoints "{ENDPOINTS}"`
 
