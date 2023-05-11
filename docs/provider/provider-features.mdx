@@ -41,9 +41,9 @@ The **`unfreeze`** command also requires the **`--from`** flag to specify the pr
 ## Advanced Auth configuration {#config-auth}
 In this example, COS3 tendermint URLs are using client authentication, assuming the node URL is capable of processing this authentication.
 
-#### RPCProvider Config Example 1, auth-headers
+### Auth using HTTP headers {#auth-headers}
 
-If you want to add authentication using http headers:
+The following RPCProvider Config Example demonstrated authentication using the "auth-headers" option:
 
 ```yaml
 endpoints:
@@ -57,13 +57,15 @@ endpoints:
             WANTED_HEADER_NAME_1: xyz
       - url: http://127.0.0.1:26657
         auth-config:
+        // highlight-start
           auth-headers:strings.Join(goodChains, "; ")
             Authorization: 'Bearer xxyyzz'
+        // highlight-end
 ```
 
-#### RPCProvider Config Example 2, auth-query 
+### Auth using Query Params {#auth-query}
 
-If you want to add authentication using query parameters:
+The following RPCProvider Config Example demonstrated authentication using the "auth-query" option:
 
 ```yaml
 endpoints:
@@ -72,11 +74,65 @@ endpoints:
       network-address: 127.0.0.1:2221
       node-urls:
         - url: ws://127.0.0.1:26657/websocket
+          // highlight-start
           auth-config:
             auth-query: auth=xxyyzz
+          // highlight-end
         - url: http://127.0.0.1:26657
           auth-config:
             auth-query: auth=xyz
+```
+
+### gRPC TLS configuration {#grpc-tls}
+
+If you want to add TLS authentication to your gRPC endpoint you have 3 options:
+
+#### 1. Dynamic certificate
+
+```yaml
+endpoints:
+    - api-interface: grpc
+      chain-id: LAV1
+      network-address: 127.0.0.1:2221
+      node-urls:
+        - url: 127.0.0.1:9090
+          // highlight-start
+          auth-config:
+            use-tls: true 
+          // highlight-end
+```
+
+#### 2. Provide a certificate and a key: 
+
+```yaml
+endpoints:
+    - api-interface: grpc
+      chain-id: LAV1
+      network-address: 127.0.0.1:2221
+      node-urls:
+        - url: 127.0.0.1:9090
+          // highlight-start
+          auth-config:
+            use-tls: true
+            key-pem: /home/user/key.pem
+            cert-pem: /home/user/cert.pem
+          // highlight-end
+```
+
+#### 3. Provide a root certificate:
+
+```yaml
+endpoints:
+    - api-interface: grpc
+      chain-id: LAV1
+      network-address: 127.0.0.1:2221
+      node-urls:
+        - url: 127.0.0.1:9090
+          // highlight-start
+          auth-config:
+            use-tls: true
+            cacert-pem: /home/user/cert.pem 
+          // highlight-end
 ```
 
 ## `ip-forwarding` configuration {#config-ip-forwarding}
@@ -91,9 +147,9 @@ endpoints:
       network-address: 127.0.0.1:2221
       node-urls: 
         - url: ws://your_node_url/
-          auth-config:
-            auth-query: auth=xyz
+          // highlight-start
           ip-forwarding: true
+          // highlight-end
 ```
 
 ## `node-timeout` configuration {#config-node-timeout}
@@ -108,5 +164,7 @@ endpoints:
       network-address: 127.0.0.1:2221
       node-urls: 
         - url: ws://your_node_url/
+          // highlight-start
           timeout: 1s
+          // highlight-end
 ```

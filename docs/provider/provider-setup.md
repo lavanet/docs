@@ -225,7 +225,7 @@ endpoints:
 
 ## Step 4: Check Provider liveliness
 To ensure the provider is up and running correctly `lavad` provides a command to setup the necessary clients and verify all parameters are well defined.
-this command is used to test the entire flow for a provider is working including stake and access, but with some additional arguments can be used prior to staking, as long as the rpcprovider process is up and running.
+This command is used to test the entire flow for a provider is working including stake and access, but with some additional arguments can be used prior to staking, as long as the rpcprovider process is up and running.
 
 ### Usage
 
