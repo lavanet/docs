@@ -58,7 +58,7 @@ endpoints:
       - url: http://127.0.0.1:26657
         auth-config:
         // highlight-start
-          auth-headers:
+          auth-headers:strings.Join(goodChains, "; ")
             Authorization: 'Bearer xxyyzz'
         // highlight-end
 ```
@@ -149,5 +149,22 @@ endpoints:
         - url: ws://your_node_url/
           // highlight-start
           ip-forwarding: true
+          // highlight-end
+```
+
+## `node-timeout` configuration {#config-node-timeout}
+
+If your node is too far from the rpcprovider or responds too slowly, and you still want your provider process to start (note this will provide inferior QoS for consumers) without troubleshooting,
+you can overwrite the timeouts with custom values using a flag in the node-urls configuration
+
+```yaml
+endpoints:
+    - api-interface: jsonrpc
+      chain-id: ETH1
+      network-address: 127.0.0.1:2221
+      node-urls: 
+        - url: ws://your_node_url/
+          // highlight-start
+          timeout: 1s
           // highlight-end
 ```
