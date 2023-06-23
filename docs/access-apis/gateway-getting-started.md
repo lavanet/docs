@@ -6,11 +6,15 @@ title: Getting Started with Lava Gateway 🔥
 
 Getting started with our Lava gateway is simple! You can access our Lava gateway at any time: gateway.lavanet.xyz. You are only a few clicks away from fast, available, and accountable RPC.
 
-## Video Demonstration (~7m)
+## 🎥 Video Demonstration (~7m) 
 
 <video width="100%" height="100%" controls><source src="/img/tutorial/gateway/gateway_getting_started.mp4" type="video/mp4"></source></video>
 
-## Guide (~5m)
+<br /> <br />
+<hr />
+<br />
+
+## 📝 Written Guide (~5m)
 
 ### Create an Account
 
