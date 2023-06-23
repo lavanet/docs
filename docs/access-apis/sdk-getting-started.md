@@ -4,7 +4,7 @@ title: Getting Started with Lava SDK 🔥
 ---
 :::caution
 
-During our Testnet, there are a few prerequisites necessary to use the SDK. Before Getting Started be sure you have completed the [Prerequisites!](/sdk-prerequisites.md)
+During our Testnet, there are a few prerequisites necessary to use the SDK. Before Getting Started be sure you have completed the [Prerequisites!](/sdk-prerequisites)
 
 :::
 

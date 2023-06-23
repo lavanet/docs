@@ -57,4 +57,4 @@ Now, you’re ready to go! Install lava-sdk using `npm install` command in the d
 
 ![SDKGatewayCode](/img/tutorial/sdk/SDKGWCode.png)
 
-Continue onto our [Getting Started with the SDK guide](docs/access-apis/sdk-getting-started.md) if you’re interested in building out an example or if you want to learn more about using our SDK!
+Continue onto our [Getting Started with the SDK guide](/sdk-getting-started) if you’re interested in building out an example or if you want to learn more about using our SDK!
