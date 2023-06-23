@@ -15,9 +15,9 @@ const sidebars = {
       items: [
         {
           type: 'category', 
-          label: 'Gateway Access',
+          label: 'Gateway',
           collapsible: true,
-          collapsed: true,
+          collapsed: false,
           link: {
             type: 'doc',
             id: 'access-apis/gateway-access'
@@ -25,8 +25,21 @@ const sidebars = {
           items: [
             `access-apis/gateway-getting-started`
           ]
-        },    
-        'access-apis/access-sdk',
+        }, 
+        {
+          type: 'category', 
+          label: 'SDK',
+          collapsible: true,
+          collapsed: false,
+          link: {
+            type: 'doc',
+            id: 'access-apis/access-sdk'
+          },
+          items: [
+            'access-apis/sdk-prerequisites',
+            `access-apis/sdk-getting-started`
+          ]
+        },
         'access-apis/access-server-kit',
       ]
     },
@@ -99,7 +112,6 @@ const sidebars = {
       ]
     },
     `tutorials`,
-    `access-apis/gateway-getting-started`,
     'faq',
     {
       type: 'link',
