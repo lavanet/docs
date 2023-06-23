@@ -10,15 +10,15 @@ During our Testnet, there are a few prerequisites necessary to use the SDK. Befo
 
 
 
-# 🎥 Video Demonstration (~9 minutes)
+## 🎥 Video Demonstration (~9m)
 
-<video width="100%" height="100%" controls><source src="/img/tutorial/sdk/SDKGettingStarted.mp4" type="video/mp4"></source></video>
+<video width="100%" height="100%" controls><source src="/img/tutorial/sdk/sdk_getting_startedv2.mp4" type="video/mp4"></source></video>
 
 <br /> <br />
 <hr />
-<br /> <br />
+<br />
 
-# 📝 Written Guide (~5 minutes)
+## 📝 Written Guide (~5m)
 
 ### 1. Set up a new Node.JS project using Node Package Manager 
 To get started, we’ll want to create a backend application. Currently, LavaSDK is not safe to use in the browser in production grade applications. Doing so may expose a user’s private keys. So we'll opt for a simple node application.
