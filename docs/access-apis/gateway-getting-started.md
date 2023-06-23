@@ -37,7 +37,7 @@ After filling in the Project Name and desired API access - your RPC node endpoin
 
 ### Set your Security Controls
 
-Of course, safety first! Once I have access to the endpoints, it would be wise to secure them. I can select Settings at the top of the Project Management screen and enable a Secret Key or JWT Tokens to limit who can access my endpoints. This will ensure that they are not wrongly accessed or hit too many times. It should be noted that, because these endpoints are available for free, they are rate-limited.
+Of course, safety first! Once you have access to the endpoints, it would be wise to secure them. You can select Settings at the top of the Project Management screen and enable a Secret Key or JWT Tokens to limit who can access your endpoints. This will ensure that they are not wrongly accessed or hit too many times. It should be noted that, because these endpoints are available for free, they are rate-limited.
 
 ![SecurityControlsScreenshot](/img/tutorial/gateway/security_controls_screenshot.png)
 
