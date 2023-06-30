@@ -26,7 +26,7 @@ npm init -y
 ### 2. Install the SDK using yarn or NPM
 
 ```bash
-npm i @lavaent/lava-sdk
+npm i @lavanet/lava-sdk
 ```
 
 or
