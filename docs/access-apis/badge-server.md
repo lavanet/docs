@@ -1,5 +1,5 @@
 ---
-slug: /badge-server
+slug: /badge-server-hidden
 title: Badge Server
 ---
 # Badge Server
