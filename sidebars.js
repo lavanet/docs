@@ -101,6 +101,24 @@ const sidebars = {
     },
     {
       type: 'category', 
+      label: 'Chains ⛓️',
+      collapsible: true,
+      collapsed: true,
+      items: [
+        {
+          type: 'category',
+          label: 'Junø',
+          collapsible: true,
+          collapsed: true,
+          items: [
+            'chains/juno-chain/juno-dev',
+            'chains/juno-chain/juno-node'            
+          ]
+        }
+      ]
+    },
+    {
+      type: 'category', 
       label: 'Lava Network',
       collapsible: true,
       collapsed: false,
