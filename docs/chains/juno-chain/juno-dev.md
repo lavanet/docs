@@ -11,7 +11,7 @@ title: Getting Juno RPC
 
 <video width="100%" height="100%" controls><source src="/img/chains/junovideodemo.mp4" type="video/mp4"></source></video>
 
-To learn more about using the Lava Gateway visit the [Getting Started guide](/gateway-getting-started)
+To learn more about using the Lava Gateway visit the [Getting Started guide](https://docs.lavanet.xyz/gateway-getting-started?utm_source=getting-juno-rpc&utm_medium=docs&utm_campaign=juno-pre-grant)
 
 <hr />
 <br />
@@ -44,4 +44,4 @@ async function useJunoTestnet() {
   })();
 ```
 
-To learn more about our SDK visit the [Getting Started guide](/sdk-getting-started)
+To learn more about our SDK visit the [Getting Started guide](https://docs.lavanet.xyz/sdk-getting-started?utm_source=getting-juno-rpc&utm_medium=docs&utm_campaign=juno-pre-grant)
