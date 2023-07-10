@@ -37,10 +37,11 @@ const sidebars = {
           },
           items: [
             'access-apis/sdk-prerequisites',
-            `access-apis/sdk-getting-started`
+            `access-apis/sdk-getting-started`,
+            'access-apis/badge-server-temp'
           ]
         },
-        'access-apis/access-server-kit',
+        'access-apis/access-server-kit'
       ]
     },
     {
