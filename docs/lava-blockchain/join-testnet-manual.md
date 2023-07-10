@@ -200,6 +200,7 @@ Versions are tracked in [Lava git](https://github.com/lavanet/lava) (build from 
 | v0.13.1 | 247630 |
 | v0.14.0 | 254645 |
 | v0.15.1 | 266490 |
+| v0.16.0 | 286030 |
 
 ### Steps for upgrading your node
 
