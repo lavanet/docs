@@ -3,7 +3,7 @@ slug: /filecoin-dev
 title: Getting Filecoin RPC
 ---
 
-# Getting Evmos RPC
+# Getting Filecoin RPC
 
 ## [SDK](https://github.com/lavanet/lava-sdk)
 
@@ -23,7 +23,7 @@ async function useFilecoinMainnet() {
 
   const filecoinMainnet = await new LavaSDK({
     privateKey: privKey,
-    chainID: 'EVMOS',
+    chainID: 'FVM',
   });
 
   const filecoinBlockResponse =  await filecoinMainnet.sendRelay({
