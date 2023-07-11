@@ -7,6 +7,12 @@ title: Getting Filecoin RPC
 
 ## [SDK](https://github.com/lavanet/lava-sdk)
 
+:::caution 
+
+There are currently [prerequisites](/sdk-prerequisites)  to using LavaSDK in its Alpha.
+Please be sure to complete all prerequisites before using code snippets.
+
+:::
 
 ```jsx
 // Install lavaSDK with the following command:
