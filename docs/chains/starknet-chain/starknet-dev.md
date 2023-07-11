@@ -31,7 +31,6 @@ async function useStarknet() {
     params: [],
   });
 
-  });
 
   console.log(starknetBlockResponse);
 }

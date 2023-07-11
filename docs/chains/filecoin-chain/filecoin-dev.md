@@ -31,8 +31,6 @@ async function useFilecoinMainnet() {
     params: [],
   });
 
-  });
-
   console.log(filecoinBlockResponse);
 }
 

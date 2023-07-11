@@ -31,8 +31,6 @@ async function useEvmosMainnet() {
     url: "/node_info",
   });
 
-  });
-
   console.log(evmosBlockResponse);
 }
 
