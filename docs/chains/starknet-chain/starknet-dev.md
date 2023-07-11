@@ -14,6 +14,8 @@ Please be sure to complete all prerequisites before using code snippets.
 
 :::
 
+### Input
+
 ```jsx
 // Install lavaSDK with the following command:
 // npm i @lavanet/lava-sdk
@@ -22,7 +24,7 @@ const { LavaSDK } = require("@lavanet/lava-sdk")
 async function useStarknet() {
 
   const starknet = await new LavaSDK({
-    privateKey: privKey,
+    privateKey: process.env.PRIVATE_KEY,
     chainID: 'STRK',
   });
 
@@ -36,17 +38,20 @@ async function useStarknet() {
 }
 
 (async () => {
-    await useStarknetMainnet();
+    await useStarknet();
   })();
 ```
+### Output
 
-To learn more about our SDK visit the [Getting Started guide](https://docs.lavanet.xyz/sdk-getting-started?utm_source=getting-juno-rpc&utm_medium=docs&utm_campaign=juno-pre-grant)
+<iframe width="100%" src="/img/chains/starknet_call.webm" frameborder="0" allow="autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+To learn more about our SDK visit the [Getting Started guide](/sdk-getting-started)
 
 <hr />
 
 ## [Gateway](https://gateway.lavanet.xyz)
 
-To learn more about using the Lava Gateway visit the [Getting Started guide](https://docs.lavanet.xyz/gateway-getting-started?utm_source=getting-juno-rpc&utm_medium=docs&utm_campaign=juno-pre-grant)
+To learn more about using the Lava Gateway visit the [Getting Started guide](/gateway-getting-started)
 
 <hr />
 <br />

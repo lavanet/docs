@@ -14,6 +14,8 @@ Please be sure to complete all prerequisites before using code snippets.
 
 :::
 
+### Input
+
 ```jsx
 // Install lavaSDK with the following command:
 // npm i @lavanet/lava-sdk
@@ -22,7 +24,7 @@ const { LavaSDK } = require("@lavanet/lava-sdk")
 async function useJunoTestnet() {
 
     const junoTestnet = await new LavaSDK({
-      privateKey: privKey,
+      privateKey: process.env.PRIVATE_KEY,
       chainID: 'JUNT1',
     });
 
@@ -38,6 +40,9 @@ async function useJunoTestnet() {
     await useJunoTestnet();
   })();
 ```
+### Output
+
+<iframe width="100%" src="/img/chains/juno_call.webm" frameborder="0" allow="autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 To learn more about our SDK visit the [Getting Started guide](https://docs.lavanet.xyz/sdk-getting-started?utm_source=getting-juno-rpc&utm_medium=docs&utm_campaign=juno-pre-grant)
 
