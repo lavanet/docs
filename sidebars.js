@@ -115,6 +115,51 @@ const sidebars = {
             'chains/juno-chain/juno-dev',
             'chains/juno-chain/juno-node'            
           ]
+        },
+        {
+          type: 'category',
+          label: 'Starknet',
+          collapsible: true,
+          collapsed: true,
+          items: [
+            'chains/starknet-chain/starknet-dev'          
+          ]
+        },
+        {
+          type: 'category',
+          label: 'Filecoin',
+          collapsible: true,
+          collapsed: true,
+          items: [
+            'chains/filecoin-chain/filecoin-dev'            
+          ]
+        },
+        {
+          type: 'category',
+          label: 'Evmos',
+          collapsible: true,
+          collapsed: true,
+          items: [
+            'chains/evmos-chain/evmos-dev',        
+          ]
+        },
+        {
+          type: 'category',
+          label: 'Celo',
+          collapsible: true,
+          collapsed: true,
+          items: [
+            'chains/celo-chain/celo-dev',     
+          ]
+        },
+        {
+          type: 'category',
+          label: 'Avalanche',
+          collapsible: true,
+          collapsed: true,
+          items: [
+            'chains/avalanche-chain/avalanche-dev'       
+          ]
         }
       ]
     },
