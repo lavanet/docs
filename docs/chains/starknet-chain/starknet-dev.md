@@ -9,8 +9,8 @@ title: Getting Starknet RPC
 
 :::caution 
 
-There are currently [prerequisites](https://docs.lavanet.xyz/sdk-prerequisites?utm_source=getting-starknet-rpc&utm_medium=docs&utm_campaign=sdk-alpha-launch)  to using LavaSDK in its Alpha.
-Please be sure to complete all prerequisites before using code snippets.
+There are currently [prerequisites](https://docs.lavanet.xyz/sdk-prerequisites?utm_source=getting-starknet-rpc&utm_medium=docs&utm_campaign=sdk-alpha-launch)  to using LavaSDK in its Alpha on the backend.
+Please be sure to complete all prerequisites before using code snippets in backend use.
 
 :::
 

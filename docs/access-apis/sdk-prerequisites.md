@@ -1,7 +1,17 @@
 ---
 slug: /sdk-prerequisites
-title: Prerequisites - Alpha
+title: Backend Use
 ---
+
+# SDK Prerequisites for Backend Use
+
+:::tip
+
+If you are planning to use Lava for frontend development, you simply need to visit our [Gateway](https://gateway.lavanet.xyz/) to get started!
+ Read more about how badges make keyless frontend development safe [here](/badge-server).
+
+:::
+
 
 ## 1. Register for the Lava Gateway
 

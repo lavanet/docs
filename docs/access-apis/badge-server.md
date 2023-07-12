@@ -1,10 +1,12 @@
 ---
 slug: /badge-server-hidden
-title: Badge Server
+title: Badge Server - FrontEnd
 ---
 # Badge Server
 
-Using Lava SDK on the Frontend without special provisions is inherently unsafe. Private keys from any user can be leaked through the browser. Right now, Lava uses a Badge Server to solve these limitations. The default Badge Server is hosted by Lava for ease of use and onboarding purposes. However, users who are interested in accomplishing the highest levels of decentralization are encouraged to run their own. 
+Using Lava SDK on the Frontend without special provisions is inherently unsafe. Private keys from any user can be leaked through the browser. Right now, Lava uses a Badge Server to solve these limitations. The default Badge Server is hosted by Lava for ease of use and onboarding purposes.
+
+You can access it right from the [Lava Gateway!](https://gateway.lavanet.xyz/) However, users who are interested in accomplishing the highest levels of decentralization are encouraged to run their own badge server. 
 
 ## Badges
 
