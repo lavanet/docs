@@ -9,7 +9,7 @@ title: Getting Starknet RPC
 
 :::caution 
 
-There are currently [prerequisites](/sdk-prerequisites)  to using LavaSDK in its Alpha.
+There are currently [prerequisites](https://docs.lavanet.xyz/sdk-prerequisites?utm_source=getting-starknet-rpc&utm_medium=docs&utm_campaign=sdk-alpha-launch)  to using LavaSDK in its Alpha.
 Please be sure to complete all prerequisites before using code snippets.
 
 :::
@@ -45,7 +45,7 @@ async function useStarknet() {
 
 <iframe width="100%" src="/img/chains/starknet_call.webm" frameborder="0" allow="autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-To learn more about our SDK visit the [Getting Started guide](/sdk-getting-started)
+To learn more about our SDK visit the [Getting Started guide](https://docs.lavanet.xyz/sdk-getting-started?utm_source=getting-starknet-rpc&utm_medium=docs&utm_campaign=sdk-alpha-launch)
 
 <hr />
 

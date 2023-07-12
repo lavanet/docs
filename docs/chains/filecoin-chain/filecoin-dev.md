@@ -9,7 +9,7 @@ title: Getting Filecoin RPC
 
 :::caution 
 
-There are currently [prerequisites](/sdk-prerequisites)  to using LavaSDK in its Alpha.
+There are currently [prerequisites](https://docs.lavanet.xyz/sdk-prerequisites?utm_source=getting-filecoin-rpc&utm_medium=docs&utm_campaign=sdk-alpha-launch) to using LavaSDK in its Alpha.
 Please be sure to complete all prerequisites before using code snippets.
 
 :::
@@ -45,7 +45,7 @@ async function useFilecoinMainnet() {
 
 <iframe width="100%" src="/img/chains/filecoin_call.webm" frameborder="0" allow="autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-To learn more about our SDK visit the [Getting Started guide](/sdk-getting-started)
+To learn more about our SDK visit the [Getting Started guide](https://docs.lavanet.xyz/sdk-getting-started?utm_source=getting-filecoin-rpc&utm_medium=docs&utm_campaign=sdk-alpha-launch)
 
 <hr />
 
