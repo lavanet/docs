@@ -158,7 +158,8 @@ const sidebars = {
           collapsible: true,
           collapsed: true,
           items: [
-            'chains/avalanche-chain/avalanche-dev'       
+            'chains/avalanche-chain/avalanche-dev',
+            'chains/avalanche-chain/avalanche-node'       
           ]
         }
       ]
