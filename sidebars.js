@@ -149,7 +149,8 @@ const sidebars = {
           collapsible: true,
           collapsed: true,
           items: [
-            'chains/celo-chain/celo-dev',     
+            'chains/celo-chain/celo-dev',
+            'chains/celo-chain/celo-node'     
           ]
         },
         {

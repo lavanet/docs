@@ -7,7 +7,7 @@ title: Running an Celo RPC Node
 
 ## Install Celo Docker Image 🚀
 
-Celo's node is built from a Docker image pulled using Docker CLI. This software is necessary to run a Celo RPC node. Before you start, be sure to install [Docker](https://www.docker.com/get-started).
+Celo's node is built from a Docker image pulled using Docker CLI. This software is necessary to run a Celo RPC node. Before you start, be sure to install [Docker](https://www.docker.com/get-started). Once you have docker installed, input the following into the terminal:
 
 ```bash
 export CELO_IMAGE=us.gcr.io/celo-org/geth:mainnet
@@ -35,8 +35,8 @@ You're now ready to serve RPC!
 
 ## Apply to our Provider Incubation Program 📋
 
-In our current state of Testnet, there is an additional stage to pass through before you can become a provider on the Lava Network. Please fill out the [application form](https://lavanet.typeform.com/to/ORi3A13v?utm_source=becoming-a-lava-provider-for-avalanche&utm_medium=docs&utm_campaign=avalanche-pre-grant) for our Provider Incubation Program. Feel free to drop a line in our [Discord](https://discord.gg/UxujNZbW) once you’ve completed this step!
+In our current state of Testnet, there is an additional stage to pass through before you can become a provider on the Lava Network. Please fill out the [application form](https://lavanet.typeform.com/to/ORi3A13v?utm_source=becoming-a-lava-provider-for-celo&utm_medium=docs&utm_campaign=celo-pre-grant) for our Provider Incubation Program. Feel free to drop a line in our [Discord](https://discord.gg/UxujNZbW) once you’ve completed this step!
 
 ## Setup your Provider on Lava Network 🌋
 
-Once you’ve been accepted - to set up your provider on the Lava Network, you can refer to the [provider setup documentation](https://docs.lavanet.xyz/provider-setup?utm_source=running-a-avalanche-rpc-node&utm_medium=docs&utm_campaign=avalanche-pre-grant) available elsewhere in our docs. This should provide you with the necessary information to configure and operate your provider node.
+Once you’ve been accepted - to set up your provider on the Lava Network, you can refer to the [provider setup documentation](https://docs.lavanet.xyz/provider-setup?utm_source=running-a-celo-rpc-node&utm_medium=docs&utm_campaign=celo-pre-grant) available elsewhere in our docs. This should provide you with the necessary information to configure and operate your provider node.
