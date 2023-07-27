@@ -162,6 +162,16 @@ const sidebars = {
             'chains/avalanche-chain/avalanche-dev',
             'chains/avalanche-chain/avalanche-node'       
           ]
+        },
+        {
+          type: 'category',
+          label: 'Solana',
+          collapsible: true,
+          collapsed: true,
+          items: [
+            'chains/solana-chain/solana-dev',
+            'chains/solana-chain/solana-node'       
+          ]
         }
       ]
     },
