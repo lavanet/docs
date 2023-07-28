@@ -1,5 +1,5 @@
 ---
-slug: /badge-server
+slug: /sdk-frontend
 title: Frontend Use
 ---
 # Using Badge Server for Frontend Development

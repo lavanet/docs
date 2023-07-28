@@ -36,8 +36,8 @@ const sidebars = {
             id: 'access-apis/access-sdk'
           },
           items: [
-            'access-apis/sdk-prerequisites',
-            'access-apis/badge-server-temp',
+            'access-apis/sdk-frontend',
+            'access-apis/sdk-backend',
             `access-apis/sdk-getting-started`
           ]
         },
