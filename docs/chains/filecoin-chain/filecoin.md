@@ -1,62 +1,24 @@
 ---
-slug: /filecoin-dev
-title: Getting Filecoin RPC
+slug: /filecoin
+title: Filecoin x Lava
 ---
 
-# Getting Filecoin RPC
+import RoadmapItem from '@site/src/components/RoadmapItem'
 
-## [SDK](https://github.com/lavanet/lava-sdk)
+![Filecoin Logo](/img/chains/filecoin_logo.svg)
 
-:::caution 
+[<RoadmapItem icon="⛏️" title="Get RPC" description="Get access to Lava's Web3 APIs and start building on the network with ease"/>](/filecoin-dev)
 
-There are currently [prerequisites](https://docs.lavanet.xyz/sdk-prerequisites?utm_source=getting-filecoin-rpc&utm_medium=docs&utm_campaign=sdk-alpha-launch) to using LavaSDK on the backend in its Alpha.
-Please be sure to complete all prerequisites before using code snippets in the backend.
-
-:::
-
-### Input
-
-```jsx
-// Install lavaSDK with the following command:
-// npm i @lavanet/lava-sdk
-const { LavaSDK } = require("@lavanet/lava-sdk")
-
-async function useFilecoinMainnet() {
-
-  const filecoinMainnet = await new LavaSDK({
-    privateKey: process.env.PRIVATE_KEY,
-    chainID: 'FVM',
-  });
-
-  const filecoinBlockResponse =  await filecoinMainnet.sendRelay({
-    method: "eth_blockNumber",
-    params: [],
-  });
-
-  console.log(filecoinBlockResponse);
-}
-
-(async () => {
-    await useFilecoinMainnet();
-  })();
-```
-
-### Output
-
-<iframe width="100%" src="/img/chains/filecoin_call.webm" frameborder="0" allow="autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-To learn more about our SDK visit the [Getting Started guide](https://docs.lavanet.xyz/sdk-getting-started?utm_source=getting-filecoin-rpc&utm_medium=docs&utm_campaign=sdk-alpha-launch)
-
-<hr />
-
-## [Gateway](https://gateway.lavanet.xyz)
-
-To learn more about using the Lava Gateway visit the [Getting Started guide](/gateway-getting-started)
+[<RoadmapItem icon="🚀" title="Run an RPC Node" description="Become a part of Lava's network by running your own RPC node and accessing Web3 APIs seamlessly"/>](/filecoin-node)
 
 <hr />
 <br />
 
-## Supported APIs
+<center>
+
+## ⚙️ Supported APIs ⚙️
+
+</center>
 
 ### Specification 📑
 
