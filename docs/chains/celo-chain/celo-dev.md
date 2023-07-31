@@ -96,30 +96,3 @@ To learn more about using the Lava Gateway visit the [Getting Started guide](/ga
 <hr />
 <br />
 
-## Supported APIs
-
-### Specification 📑
-
-https://raw.githubusercontent.com/lavanet/lava/main/cookbook/specs/spec_add_avalanche.json
-
-
-### Protocols 🔗
-
-| Platform  |  jsonrpc | tendermintrpc | uri/http | websocket/http 
-| --------- | -------- | ------------- | ---------|---------------
-| Gateway   | ✅       |               |          | ✅
-| SDK       | ✅       |               |          | 
-
-
-### Methods 🛠️
-<details>
-<summary> List </summary>
-
-- eth_chainId
-
-</details>
-
-
-
-
-
