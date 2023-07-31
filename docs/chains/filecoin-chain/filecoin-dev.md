@@ -9,8 +9,7 @@ title: Getting Filecoin RPC
 
 :::caution 
 
-There are currently [prerequisites](https://docs.lavanet.xyz/sdk-prerequisites?utm_source=getting-filecoin-rpc&utm_medium=docs&utm_campaign=sdk-alpha-launch) to using LavaSDK on the backend in its Alpha.
-Please be sure to complete all prerequisites before using code snippets in the backend.
+Lava SDK is currently in Alpha. Please observe the documentation on both [frontend](https://docs.lavanet.xyz/sdk-frontend?utm_source=getting-filecoin-rpc&utm_medium=docs&utm_campaign=sdk-alpha) and [backend](https://docs.lavanet.xyz/sdk-backend?utm_source=getting-filecoin-rpc&utm_medium=docs&utm_campaign=sdk-alpha) use before getting started.
 
 :::
 

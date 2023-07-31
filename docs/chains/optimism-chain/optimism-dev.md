@@ -9,8 +9,7 @@ title: Getting Optimism RPC
 
 :::caution 
 
-There are currently [prerequisites](https://docs.lavanet.xyz/sdk-prerequisites?utm_source=getting-avalanche-rpc&utm_medium=docs&utm_campaign=sdk-alpha-launch)  to using LavaSDK on the backend in its Alpha.
-Please be sure to complete all prerequisites before using code snippets in backend use.
+Lava SDK is currently in Alpha. Please observe the documentation on both [frontend](https://docs.lavanet.xyz/sdk-frontend?utm_source=getting-optimism-rpc&utm_medium=docs&utm_campaign=sdk-alpha) and [backend](https://docs.lavanet.xyz/sdk-backend?utm_source=getting-optimism-rpc&utm_medium=docs&utm_campaign=sdk-alpha) use before getting started.
 
 :::
 
@@ -21,30 +20,30 @@ Please be sure to complete all prerequisites before using code snippets in backe
 // npm i @lavanet/lava-sdk
 const { LavaSDK } = require("@lavanet/lava-sdk")
 
-async function useAvalancheMainnet() {
+async function useoptimismMainnet() {
 
-  const avalancheMainnet = await new LavaSDK({
+  const optimismMainnet = await new LavaSDK({
     privateKey: process.env.PRIVATE_KEY,
     chainID: 'AVAX',
   });
 
-  const avalancheBlockResponse =  await avalancheMainnet.sendRelay({
+  const optimismBlockResponse =  await optimismMainnet.sendRelay({
     method: "eth_blockNumber",
     params: [],
   });
 
-  console.log(avalancheBlockResponse);
+  console.log(optimismBlockResponse);
 }
 
 (async () => {
-    await useAvalancheMainnet();
+    await useoptimismMainnet();
   })();
 ```
 ### Output
 
-<iframe width="100%" src="/img/chains/avalanche_call.webm" frameborder="0" allow="autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="100%" src="/img/chains/optimism_call.webm" frameborder="0" allow="autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-To learn more about our SDK visit the [Getting Started guide](https://docs.lavanet.xyz/sdk-getting-started?utm_source=getting-avalanche-rpc&utm_medium=docs&utm_campaign=sdk-alpha-launch)
+To learn more about our SDK visit the [Getting Started guide](https://docs.lavanet.xyz/sdk-getting-started?utm_source=getting-optimism-rpc&utm_medium=docs&utm_campaign=sdk-alpha-launch)
 
 <hr />
 
