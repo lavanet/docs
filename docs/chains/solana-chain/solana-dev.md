@@ -105,18 +105,13 @@ To learn more about using the Lava Gateway visit the [Getting Started guide](htt
 
 ## Supported APIs 
 
-:::tip
-
-For a full list of supported
 https://raw.githubusercontent.com/lavanet/lava/main/cookbook/specs/spec_add_solana.json
 
-:::
 
-| Platform  |  JSONRPC/HTTP | TENDERMINT/HTTP | URI/HTTP | WEBSOCKET/HTTP 
-| --------- | ------------- | --------------- | ---------|---------------
-| SDK       | ✅            |                 |          | ✅
-| Gateway   | ✅            |                 |          | ✅
-
+| Platform  |  jsonrpc/http | jsonrpc/wss 
+| --------- | ------------- | -----------
+| Gateway   | ✅            | ✅
+| SDK       | ✅            | 
 
 <details>
 <summary> All Methods</summary>
