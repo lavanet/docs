@@ -5,7 +5,7 @@ title: Running an Evmos RPC Node
 
 # Running an Evmos RPC Node
 
-## Requirements
+## Requirements 📄 
 
 - 8 core CPU 
 - 64gb of RAM
@@ -13,7 +13,7 @@ title: Running an Evmos RPC Node
 - jq 1.6+
 - ports 8545/8546 open & exposed
 
-## Install Evmos CLI
+## Install Evmos CLI 🚀
 
 This software is necessary to run a Juno RPC node.
 

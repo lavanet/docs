@@ -3,6 +3,7 @@ slug: /optimism-node
 title: Running an Optimism RPC Node
 ---
 
+## Requirements
 
 Running a node on Optimism is best accomplished through Docker, however, if you want to take the steps to build manually, you can consult the guide available here:
 https://community.optimism.io/docs/developers/build/run-a-node/#non-docker-configuration
