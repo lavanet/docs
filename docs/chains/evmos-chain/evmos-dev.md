@@ -54,5 +54,3 @@ To learn more about using the Lava Gateway visit the [Getting Started guide](/ga
 
 <hr />
 <br />
-
-
