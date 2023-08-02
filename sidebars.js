@@ -137,7 +137,7 @@ const sidebars = {
           type: 'category', 
           label: 'Gateway',
           collapsible: true,
-          collapsed: false,
+          collapsed: true,
           link: {
             type: 'doc',
             id: 'access-apis/gateway-access'
@@ -150,7 +150,7 @@ const sidebars = {
           type: 'category', 
           label: 'SDK',
           collapsible: true,
-          collapsed: false,
+          collapsed: true,
           link: {
             type: 'doc',
             id: 'access-apis/access-sdk'
