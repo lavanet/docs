@@ -5,6 +5,24 @@ title: Running a Juno RPC Node
 
 # Running a Juno RPC Node
 
+## Requirements 📄 
+
+Before continuing please observe that your system meets the minimum requirements:
+
+
+### Software
+```
+gcc git jq chrony build-essential make
+go version 1.19.2+
+```
+
+### Hardware
+```
+4 Cores Modern CPU
+32 GB RAM
+1 TB storage (SSD or VME)
+```
+
 ## Install Junod 🚀
 
 Follow the instructions provided in the Juno Network documentation (https://docs.junonetwork.io/validators/getting-setup) to install the Junod software. This software is necessary to run a Juno RPC node.
