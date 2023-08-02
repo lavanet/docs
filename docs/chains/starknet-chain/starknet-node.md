@@ -5,31 +5,24 @@ title: Running a Starknet RPC Node
 
 # Running a Starknet RPC Node
 
-## Requirements
+## Requirements 📄
 
 ### Minimum Requirements
 
     CPU: 2+ cores
-
     RAM: 4 GB
-
     Disk: 600 GB
-
     Connection Speed: 8 mbps/sec
 
 ### Recommended Specifications
 
     CPU: 4+ cores
-
     RAM: 16 GB+
-
     Disk 2 TB
-
     Connection Speed: 25+ mbps/sec
 
 
-
-## 1. Install the Starknet L1 Package
+##  Install the Starknet L1 Package 📦 
 
 Docker abstracts the ETH L1 Node needs, but behind the scenes Starknet requires Lighthouse and Besu. Lighthouse handles consensus and Besu handles execution. Both of them can be installed with the following command:
 
@@ -63,7 +56,7 @@ curl --location --request POST 'http://localhost:8545' \
 
 Compare your numbers with Starknet's Testnet_1 before proceeding.
 
-## 2. Install the Starknet L2 Package
+## Install the Starknet L2 Package 📦 
 
 `Cd` into the starknet-stack project root and start the L2 execution client with this command:
 
@@ -87,23 +80,26 @@ curl --location --request POST 'http://localhost:9545' \
 
 Inspect your output! Once `current_block_num` and `highest_block_num` are the same, you've accomplished sync.
 
-## Run the Indexer
+## Run the Indexer  🏃
 
 ```bash
 /indexer/indexer.sh
 ```
 
-## Do a Test Transaction
+## Do a Test Transaction 💸 
 
 As part of the Starknet documentation, it is recommended that you perform a test transaction to verify all the levels of Starknet are working and valid.
 
 ```bash
 https://book.starknet.io/chapter_4/node.html#layer_4_transport_layer
 ```
-## 3. Apply to our Provider Incubation Program 📋
 
-In our current state of Testnet, there is an additional stage to pass through before you can become a provider on the Lava Network. Please fill out the [application form](https://lavanet.typeform.com/to/ORi3A13v?utm_source=becoming-a-lava-provider-for-celo&utm_medium=docs&utm_campaign=celo-pre-grant) for our Provider Incubation Program. Feel free to drop a line in our [Discord](https://discord.gg/UxujNZbW) once you’ve completed this step!
+That's it ! You're ready to serve RPC!
 
-## 4. Setup your Provider on Lava Network 🌋
+## Apply to our Provider Incubation Program 📋
 
-Once you’ve been accepted - to set up your provider on the Lava Network, you can refer to the [provider setup documentation](https://docs.lavanet.xyz/provider-setup?utm_source=running-a-celo-rpc-node&utm_medium=docs&utm_campaign=celo-pre-grant) available elsewhere in our docs. This should provide you with the necessary information to configure and operate your provider node.
+In our current state of Testnet, there is an additional stage to pass through before you can become a provider on the Lava Network. Please fill out the [application form](https://lavanet.typeform.com/to/ORi3A13v?utm_source=becoming-a-lava-provider-for-starknet&utm_medium=docs&utm_campaign=starknet-pre-grant) for our Provider Incubation Program. Feel free to drop a line in our [Discord](https://discord.gg/UxujNZbW) once you’ve completed this step!
+
+## Setup your Provider on Lava Network 🌋
+
+Once you’ve been accepted - to set up your provider on the Lava Network, you can refer to the [provider setup documentation](https://docs.lavanet.xyz/provider-setup?utm_source=running-a-starknet-rpc-node&utm_medium=docs&utm_campaign=starknet-pre-grant) available elsewhere in our docs. This should provide you with the necessary information to configure and operate your provider node.

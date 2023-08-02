@@ -6,7 +6,7 @@ title: Getting Starknet RPC
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Getting Starknet RPC
+# Getting Starknet RPC 
 
 ## [SDK](https://github.com/lavanet/lava-sdk)
 
@@ -16,7 +16,7 @@ Lava SDK is currently in Alpha. Please observe the documentation on both [fronte
 
 :::
 
-### Input
+### Input 📥
 
 
 <Tabs>
@@ -31,7 +31,7 @@ const { LavaSDK } = require("@lavanet/lava-sdk")
 async function useStarknet() {
 
   const starknet = await new LavaSDK({
-    privateKey: process.env.PRIVATE_KEY,
+    privateKey: process.env.PRIVATE_KEY,  //hide your private key in an environmental variable
     chainID: 'STRK',
   });
 
@@ -85,7 +85,7 @@ async function useStarknet() {
 
 </Tabs>
 
-### Output
+### Output 📤
 
 <iframe width="100%" src="/img/chains/starknet_call.webm" frameborder="0" allow="autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
