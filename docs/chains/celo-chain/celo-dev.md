@@ -29,7 +29,7 @@ const { LavaSDK } = require("@lavanet/lava-sdk")
 async function useCeloMainnet() {
 
   const celoMainnet = await new LavaSDK({
-    privateKey: process.env.PRIVATE_KEY,
+    privateKey: process.env.PRIVATE_KEY, //hide your private key in an environmental variable
     chainID: 'CELO',
   });
 
