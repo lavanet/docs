@@ -17,7 +17,7 @@ Lava SDK is currently in Alpha. Please observe the documentation on both [fronte
 
 :::
 
-### Input
+### Input 📥
 
 <Tabs>
 
@@ -31,7 +31,7 @@ const { LavaSDK } = require("@lavanet/lava-sdk")
 async function useSolanaMainnet() {
 
     const solanaMainnet = await new LavaSDK({
-      privateKey: process.env.PRIVATE_KEY,
+      privateKey: process.env.PRIVATE_KEY, //hide your private key in an environmental variable
       chainID: 'SOLANA',
     });
 
@@ -86,7 +86,7 @@ async function useSolanaMainnet() {
 </Tabs>
 
 
-### Output
+### Output 📤
 
 <iframe width="100%" src="/img/chains/solana_call.webm" frameborder="0" allow="autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
