@@ -1,5 +1,5 @@
 ---
-slug: /sdk-prerequisites
+slug: /sdk-backend
 title: Backend Use
 ---
 
@@ -8,7 +8,7 @@ title: Backend Use
 :::tip
 
 If you are planning to use Lava for frontend development, you simply need to visit our [Gateway](https://gateway.lavanet.xyz/?utm_source=lava-sdk-docs&utm_medium=docs&utm_campaign=sdk-alpha-launch) to get started!
- Read more about how badges make keyless frontend development safe [here](/badge-server).
+ Read more about how badges make keyless frontend development safe [here](/sdk-frontend).
 
 :::
 
@@ -28,7 +28,8 @@ The first step to using the Lava SDK is to register for the Lava Gateway. You wi
 
 ## 2. Create a Lava Address
 
-You will need a Lava address in order to successfully use the SDK. A private-key, public-key pair can be generated using our [lavad](https://github.com/lavanet/lava) binary. For more information on how to create a lava address consult the [documentation](https://docs.lavanet.xyz/wallet#account).
+You will need a Lava address in order to successfully use the SDK.
+ A private-key, public-key pair can be generated using our [lavad](https://github.com/lavanet/lava) binary. For more information on how to create a lava address consult the [documentation](https://docs.lavanet.xyz/wallet#account).
 
 If you already have lavad installed - you can easily generate a lava address by finding the directory of your `lavad` and entering the following command: `lavad keys add <keyname>`
 
