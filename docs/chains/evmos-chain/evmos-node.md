@@ -7,11 +7,13 @@ title: Running an Evmos RPC Node
 
 ## Requirements 📄 
 
+```
 - 8 core CPU 
 - 64gb of RAM
 - go 1.20+
 - jq 1.6+
 - ports 8545/8546 open & exposed
+```
 
 ## Install Evmos CLI 🚀
 
