@@ -3,6 +3,9 @@ slug: /filecoin-dev
 title: Getting Filecoin RPC
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # Getting Filecoin RPC
 
 ## [SDK](https://github.com/lavanet/lava-sdk)
@@ -13,7 +16,10 @@ Lava SDK is currently in Alpha. Please observe the documentation on both [fronte
 
 :::
 
-### Input
+### Input 📥
+
+<Tabs>
+<TabItem value="backend" label="BackEnd">
 
 ```jsx
 // Install lavaSDK with the following command:
@@ -23,7 +29,7 @@ const { LavaSDK } = require("@lavanet/lava-sdk")
 async function useFilecoinMainnet() {
 
   const filecoinMainnet = await new LavaSDK({
-    privateKey: process.env.PRIVATE_KEY,
+    privateKey: process.env.PRIVATE_KEY, //hide your private key in an environmental variable
     chainID: 'FVM',
   });
 
@@ -40,7 +46,40 @@ async function useFilecoinMainnet() {
   })();
 ```
 
-### Output
+</TabItem>
+<TabItem value="frontend" label="FrontEnd">
+
+```jsx
+// Install lavaSDK with the following command:
+// npm i @lavanet/lava-sdk
+const { LavaSDK } = require("@lavanet/lava-sdk")
+
+async function useFilecoinMainnet() {
+
+  const filecoinMainnet = await new LavaSDK({
+    badge: {
+      badgeServerAddress: "https://badges.lavanet.xyz", // Or your own Badge-Server URL 
+      projectId: "enter_your_project_id_here" 
+    },    
+    chainID: 'FVM',
+  });
+
+  const filecoinBlockResponse =  await filecoinMainnet.sendRelay({
+    method: "eth_blockNumber",
+    params: [],
+  });
+
+  console.log(filecoinBlockResponse);
+}
+
+(async () => {
+    await useFilecoinMainnet();
+  })();
+```
+</TabItem>
+</Tabs>
+
+### Output 📤
 
 <iframe width="100%" src="/img/chains/filecoin_call.webm" frameborder="0" allow="autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -54,119 +93,3 @@ To learn more about using the Lava Gateway visit the [Getting Started guide](/ga
 
 <hr />
 <br />
-
-## Supported APIs
-
-### Specification 📑
-
-https://raw.githubusercontent.com/lavanet/lava/main/cookbook/specs/spec_add_fvm.json
-
-
-### Protocols 🔗
-
-| Platform  |  jsonrpc/http | jsonrpc/wss 
-| --------- | -------- | ------------- |
-| Gateway   | ✅       |   ✅         
-| SDK       | ✅       | 
-
-
-### Methods 🛠️
-<details>
-<summary> List </summary>
-
-- Filecoin.ChainGetBlock
-- Filecoin.ChainGetBlockMessages
-- Filecoin.ChainGetGenesis
-- Filecoin.ChainGetMessage
-- Filecoin.ChainGetNode
-- Filecoin.ChainGetParentMessages
-- Filecoin.ChainGetParentReceipts
-- Filecoin.ChainGetPath
-- Filecoin.ChainGetTipSet
-- Filecoin.ChainGetTipSetAfterHeight
-- Filecoin.ChainGetTipSetByHeight
-- Filecoin.ChainHasObj
-- Filecoin.ChainHead
-- Filecoin.ChainNotify
-- Filecoin.ChainReadObj
-- Filecoin.ClientQueryAsk
-- Filecoin.GasEstimateFeeCap
-- Filecoin.GasEstimateGasLimit
-- Filecoin.GasEstimateGasPremium
-- Filecoin.MpoolGetNonce
-- Filecoin.MpoolPending
-- Filecoin.MpoolPush
-- Filecoin.StateAccountKey
-- Filecoin.StateAllMinerFaults
-- Filecoin.StateCall
-- Filecoin.StateChangedActors
-- Filecoin.StateCompute
-- Filecoin.StateDealProviderCollateralBounds
-- Filecoin.StateDecodeParams
-- Filecoin.StateGetActor
-- Filecoin.StateGetReceipt
-- Filecoin.StateListActors
-- Filecoin.StateListMessages
-- Filecoin.StateListMiners
-- Filecoin.StateLookupID
-- Filecoin.StateMarketBalance
-- Filecoin.StateMarketDeals
-- Filecoin.StateMarketParticipants
-- Filecoin.StateMarketStorageDeal
-- Filecoin.StateMinerActiveSectors
-- Filecoin.StateMinerAvailableBalance
-- Filecoin.StateMinerDeadlines
-- Filecoin.StateMinerFaults
-- Filecoin.StateMinerInfo
-- Filecoin.StateMinerInitialPledgeCollateral
-- Filecoin.StateMinerPartitions
-- Filecoin.StateMinerPower
-- Filecoin.StateMinerPreCommitDepositForPower
-- Filecoin.StateMinerProvingDeadline
-- Filecoin.StateMinerRecoveries
-- Filecoin.StateMinerSectorAllocated
-- Filecoin.StateMinerSectorCount
-- Filecoin.StateMinerSectors
-- Filecoin.StateNetworkName
-- Filecoin.StateNetworkVersion
-- Filecoin.StateReadState
-- Filecoin.StateReplay
-- Filecoin.StateSearchMsg
-- Filecoin.StateSearchMsgLimited
-- Filecoin.StateSectorExpiration
-- Filecoin.StateSectorGetInfo
-- Filecoin.StateSectorPartition
-- Filecoin.StateSectorPreCommitInfo
-- Filecoin.StateVMCirculatingSupplyInternal
-- Filecoin.StateVerifiedClientStatus
-- Filecoin.StateVerifiedRegistryRootKey
-- Filecoin.StateVerifierStatus
-- Filecoin.SyncState
-- Filecoin.WalletBalance
-- Filecoin.WalletValidateAddress
-- Filecoin.WalletVerify
-- Filecoin.EthAccounts
-- Filecoin.EthBlockNumber
-- Filecoin.EthCall
-- Filecoin.EthChainId
-- Filecoin.EthEstimateGas
-- Filecoin.EthFeeHistory
-- Filecoin.EthGasPrice
-- Filecoin.EthGetBalance
-- Filecoin.EthGetBlockByHash
-- Filecoin.EthGetBlockByNumber
-- Filecoin.EthGetBlockTransactionCountByHash
-- Filecoin.EthGetBlockTransactionCountByNumber
-- Filecoin.EthGetCode
-- Filecoin.EthGetFilterChanges
-- Filecoin.EthGetFilterLogs
-- Filecoin.EthGetLogs
-- Filecoin.EthGetMessageCidByTransactionHash
-- Filecoin.EthGetStorageAt
-- Filecoin.EthGetTransactionByHash
-- Filecoin.EthGetTransactionCount
-- Filecoin.EthGetTransactionHashByCid
-- Filecoin.EthGetTransactionReceipt
-- Filecoin.EthMaxPriorityFeePerGas
-
-</details>
