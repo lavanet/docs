@@ -11,7 +11,7 @@ Upgrade to Go version v1.20.5 (https://go.dev/dl/go1.20.5.linux-amd64.tar.gz)
 ### Backup keys (WARNING) - this is not a mandatory step but it's recommeneded to be on the safe side
 * Backup the private validator key file under ~/.lava/config (priv_validator_key.json)
 * Backup the node key under ~/.lava/config (node_key.json)
-* Backup account keys using the following command:
+* Backup account keys using the following commands:
 
 ```bash
 ACCOUNT_NAME=?
