@@ -45,7 +45,7 @@ mv cosmovisor-upgrades cosmovisor
 
 ### 6. Update node configuration files:
 
-Check the following variables are aligned as follows:
+Check the following variables are set as follows:
 
 ### config.toml:
 timeout_commit = "30s"
