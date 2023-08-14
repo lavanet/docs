@@ -29,8 +29,7 @@ lavad tendermint unsafe-reset-all
 
 ### 4. New Genesis
 
-Download the new genesis file and locate it under ~/.lava/config - 
-Link: https://github.com/lavanet/lava-config/blob/main/testnet-2/genesis_json/genesis.json
+Download the new genesis file under `~/.lava/config`. The file can be downloaded from https://github.com/lavanet/lava-config/blob/main/testnet-2/genesis_json/genesis.json
 
 
 ### 5. Download and locate the new binary version:
