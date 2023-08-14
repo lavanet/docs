@@ -66,7 +66,7 @@ broadcast-mode = "sync"
 sudo systemctl start cosmovisor
 ```
 
-### 8. Start the node and make sure that blocks are advancing
+### 8. Check the logs to make sure the blocks are advancing
 
 ```bash
 sudo journalctl -u cosmovisor -f
