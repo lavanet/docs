@@ -176,7 +176,7 @@ The above examples use ports `2223` and `2224`, respectively. You can choose any
 You will need to refresh the Nginx server:
 
 ```bash
-sudo systemctl nginx restart
+sudo systemctl restart nginx
 ```
 <br />
 
