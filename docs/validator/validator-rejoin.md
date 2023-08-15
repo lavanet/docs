@@ -78,6 +78,7 @@ timeout_prevote = "1s" <br/>
 timeout_prevote_delta = "500ms" <br/>
 timeout_propose_delta = "500ms" <br/>
 skip_timeout_commit = false
+seed_node="3a445bfdbe2d0c8ee82461633aa3af31bc2b4dc0@testnet2-seed-node.lavanet.xyz:26656,e593c7a9ca61f5616119d6beb5bd8ef5dd28d62d@testnet2-seed-node2.lavanet.xyz:26656"
 </details>
 
 <details> <summary> 🗎 client.toml </summary> 
