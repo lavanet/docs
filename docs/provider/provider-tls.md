@@ -164,7 +164,7 @@ server {
 
 :::tip
 
-The above examples use ports `2223` and `2224`, respectively. You can choose any port that works for your purposes. 
+The above examples use ports `2223` and `2224`, respectively. You can choose any port that works for your purposes. Ve aware that some ports on your OS may be used for internal communication and should be avoided. 
 
 :::
 
