@@ -101,7 +101,7 @@ The following sections will describe how to install Cosmovisor for automating th
     # Create the Cosmovisor folder and copy config files to it
     mkdir -p $lavad_home_folder/cosmovisor
     # Download the latest cosmovisor-upgrades from S3
-    wget https://lava-binary-upgrades.s3.amazonaws.com/testnet/cosmovisor-upgrades/cosmovisor-upgrades.zip
+    wget https://lava-binary-upgrades.s3.amazonaws.com/testnet-2/cosmovisor-upgrades/cosmovisor-upgrades.zip
     unzip cosmovisor-upgrades.zip
     cp -r cosmovisor-upgrades/* $lavad_home_folder/cosmovisor
     ```
