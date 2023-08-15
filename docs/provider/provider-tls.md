@@ -68,8 +68,6 @@ sudo apt update
 sudo apt install certbot net-tools nginx python3-certbot-nginx -y
 ```
 
-This guide uses `nginx` to handle routing to different provider processes, but you can also use Caddy, Envoy or your preferred solution.
-
 <br />
 
 ### 📮 Generate Certificate 
