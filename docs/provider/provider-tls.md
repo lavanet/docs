@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 # Provider TLS Setup Guide
 
 :::caution
-All providers on `lava-testnet-2` must use a domain name and TLS. You must have a domain name to continue. If you have not already, please take a moment to purchase one! You can find cheap top-level domains [here](https://www.namecheap.com/) or [here](https://tld-list.com/).
+All providers on `lava-testnet-2` must use a domain name and TLS (1.3). You must have a domain name to continue. If you have not already, please take a moment to purchase one! You can find cheap top-level domains [here](https://www.namecheap.com/) or [here](https://tld-list.com/).
 :::
 
 ## 📋 Prerequisites
@@ -164,7 +164,7 @@ server {
 
 :::tip
 
-The above examples use ports `2223` and `2224`, respectively. You can choose any port that works for your purposes. Ve aware that some ports on your OS may be used for internal communication and should be avoided. 
+The above examples use ports `2223` and `2224`, respectively. You can choose any port that works for your purposes. Be aware that some ports on your OS may be used for internal communication and should be avoided. 
 
 :::
 
