@@ -57,12 +57,14 @@ Alternatively, you can create one `A-Record` that captures traffic to all sub-do
 </details>
 <br />
 
-### 📂 Update and Install Required Packages 
+### 📂 Install Required Dependencies
 
-On the server which you would like to turn into a provider, run updates and install the following packages:
+We will guide you on setting up and configuring Nginx to use a TLS certificate and handle connections to different provider processes. It is also possible to use alternative solutions for these two tasks, such as Caddy, Envoy or your preferred solution.
+
+Run the following commands to install the required packages:
 
 ```bash
-sudo apt-get update
+sudo apt update
 sudo apt install certbot net-tools nginx python3-certbot-nginx -y
 ```
 
