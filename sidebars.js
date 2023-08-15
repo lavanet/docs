@@ -199,6 +199,7 @@ const sidebars = {
           },
           items: [
             'validator/validator-manual',
+            'validator/validator-rejoin'
           ]
         },    
         {
@@ -212,7 +213,8 @@ const sidebars = {
           },
           items: [
             'provider/provider-setup',
-            'provider/provider-features'
+            'provider/provider-features',
+            'provider/provider-tls'
           ]
         },    
         'lava-blockchain/account-wallet',
