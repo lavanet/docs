@@ -30,7 +30,7 @@ Note that it does **not** include the "Cosmovisor" tool, hence once you install 
         
         ```bash
         ### Configurations
-        go_package_url="https://go.dev/dl/go1.18.linux-amd64.tar.gz"
+        go_package_url="https://go.dev/dl/go1.20.5.linux-amd64.tar.gz"
         go_package_file_name=${go_package_url##*\/}
         # Download GO
         wget -q $go_package_url
@@ -65,7 +65,7 @@ Note that it does **not** include the "Cosmovisor" tool, hence once you install 
     ```bash
     # Download the installation setup configuration
     git clone https://github.com/lavanet/lava-config.git
-    cd lava-config/testnet-1
+    cd lava-config/testnet-2
     # Read the configuration from the file
     # Note: you can take a look at the config file and verify configurations
     source setup_config/setup_config.sh
@@ -103,7 +103,7 @@ Note that it does **not** include the "Cosmovisor" tool, hence once you install 
     lavad_binary_path="$HOME/go/bin/"
     mkdir -p $lavad_binary_path
     # Download the genesis binary to the lava path
-    wget https://lava-binary-upgrades.s3.amazonaws.com/testnet/v0.3.0/lavad
+    wget https://lava-binary-upgrades.s3.amazonaws.com/testnet-2/genesis/lavad
     chmod +x lavad
     # Lavad should now be accessible from PATH, to verify, try running
     cp lavad /usr/local/bin
@@ -201,6 +201,7 @@ Versions are tracked in [Lava git](https://github.com/lavanet/lava) (build from 
 | v0.14.0 | 254645 |
 | v0.15.1 | 266490 |
 | v0.16.0 | 286030 |
+| v0.21.0 | ?????? | <- testnet-2 fork
 
 ### Steps for upgrading your node
 
@@ -210,7 +211,7 @@ Versions are tracked in [Lava git](https://github.com/lavanet/lava) (build from 
 # Upgrade configurations
 temp_folder=$(mktemp -d) && cd $temp_folder
 required_upgrade_name="v0.4.0" # CHANGE THIS
-upgrade_binary_url="https://lava-binary-upgrades.s3.amazonaws.com/testnet/$required_upgrade_name/lavad"
+upgrade_binary_url="https://lava-binary-upgrades.s3.amazonaws.com/testnet-2/$required_upgrade_name/lavad"
 ```
 
 2. Kill all current lavad processes

@@ -25,7 +25,7 @@ import RoadmapItem from '@site/src/components/RoadmapItem';
         
         ```bash
         ### Configurations
-        go_package_url="https://go.dev/dl/go1.18.linux-amd64.tar.gz"
+        go_package_url="https://go.dev/dl/go1.20.5.linux-amd64.tar.gz"
         go_package_file_name=${go_package_url##*\/}
         # Download GO
         wget -q $go_package_url
@@ -60,7 +60,7 @@ import RoadmapItem from '@site/src/components/RoadmapItem';
     ```bash
     # Download the installation setup configuration
     git clone https://github.com/lavanet/lava-config.git
-    cd lava-config/testnet-1
+    cd lava-config/testnet-2
     # Read the configuration from the file
     # Note: you can take a look at the config file and verify configurations
     source setup_config/setup_config.sh
@@ -101,7 +101,7 @@ The following sections will describe how to install Cosmovisor for automating th
     # Create the Cosmovisor folder and copy config files to it
     mkdir -p $lavad_home_folder/cosmovisor
     # Download the latest cosmovisor-upgrades from S3
-    wget https://lava-binary-upgrades.s3.amazonaws.com/testnet/cosmovisor-upgrades/cosmovisor-upgrades.zip
+    wget https://lava-binary-upgrades.s3.amazonaws.com/testnet-2/cosmovisor-upgrades/cosmovisor-upgrades.zip
     unzip cosmovisor-upgrades.zip
     cp -r cosmovisor-upgrades/* $lavad_home_folder/cosmovisor
     ```
@@ -110,7 +110,7 @@ The following sections will describe how to install Cosmovisor for automating th
     # Set the environment variables
     echo "# Setup Cosmovisor" >> ~/.profile
     echo "export DAEMON_NAME=lavad" >> ~/.profile
-    echo "export CHAIN_ID=lava-testnet-1" >> ~/.profile
+    echo "export CHAIN_ID=lava-testnet-2" >> ~/.profile
     echo "export DAEMON_HOME=$HOME/.lava" >> ~/.profile
     echo "export DAEMON_ALLOW_DOWNLOAD_BINARIES=true" >> ~/.profile
     echo "export DAEMON_LOG_BUFFER_SIZE=512" >> ~/.profile
@@ -123,7 +123,7 @@ The following sections will describe how to install Cosmovisor for automating th
     # Initialize the chain
     $lavad_home_folder/cosmovisor/genesis/bin/lavad init \
     my-node \
-    --chain-id lava-testnet-1 \
+    --chain-id lava-testnet-2 \
     --home $lavad_home_folder \
     --overwrite
     cp genesis_json/genesis.json $lava_config_folder/genesis.json
