@@ -7,7 +7,7 @@ title: Hardware requirements
 ## Deployment options
 - VPS instance (on any cloud provider) - recommended ⭐️
 - Shared compute instance (e.g. AWS EC2 instance)
-- Your personal station - less recommended
+- Your personal station
 
 **Docker** container are available at [Lava's repository on GitHub](https://github.com/lavanet/lava/tree/main/docker)
 
@@ -21,7 +21,8 @@ Also, running on testnet and mainnet will feature different requirements.
 
 | Node Type     | RAM                   | Storage       | CPU
 | -----------   | --------------------- | -----------   | ---
-| Full          | 8GB                   | 100GB SSD          | x64 2.0 GHz 4v CPU 
+| Full (Minimum)| 8GB                   | 100GB SSD          | x64 2.0 GHz 4v CPU 
+| Full (Recommended)| 16GB              | 512GB SSD     | x64 2.0 GHz 4v CPU 
 
 <details>
 <summary>Running on AWS?</summary>

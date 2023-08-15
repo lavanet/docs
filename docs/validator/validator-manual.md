@@ -57,7 +57,7 @@ $current_lavad_binary tx staking create-validator \
     --amount="50000000ulava" \
     --pubkey=$($current_lavad_binary tendermint show-validator --home "$HOME/.lava/") \
     --moniker="<<moniker_node>>" \
-    --chain-id=lava-testnet-1 \
+    --chain-id=lava-testnet-2 \
     --commission-rate="0.10" \
     --commission-max-rate="0.20" \
     --commission-max-change-rate="0.01" \
