@@ -170,16 +170,6 @@ The above examples use ports `2223` and `2224`, respectively. You can choose any
 
 <br />
 
-
-### ♻️ Restart Nginx
-
-You will need to refresh the Nginx server:
-
-```bash
-sudo systemctl restart nginx
-```
-<br />
-
 ### 🧪 Test Nginx Configuration
 
 Now, ensure that your `nginx` setup is working! ✅
@@ -196,7 +186,14 @@ nginx: configuration file /etc/nginx/nginx.conf test is successful
 
 <br />
 
-The syntax on your files must be precise. Misplaced or invisible characters or inconsistent indentation can cause errors.
+### ♻️ Restart Nginx
+
+You will need to refresh the Nginx server:
+
+```bash
+sudo systemctl restart nginx
+```
+<br />
 
 ### ⚙️ Create the Provider Configuration
 
@@ -287,10 +284,15 @@ screen -S lava-provider
 lavad rpcprovider lava-provider.yml --from your_key_name_here --geolocation 1 --chain-id lava-testnet-2 --log_level debug
 ```
 
-`--from` should be followed by the key name of your funded account that you will use to stake your provider
-`--log_level debug` gives us verbose output so we can diagnose any issues that may arise
-`--chain-id` may or may not be necessary, depending upon your setup, but we can default to `--lava-testnet-2`
-`--node` may or may not be necessary
+Some notes:
+* `--from` should be followed by the key name of your funded account that you will use to stake your provider
+* `--log_level debug` gives us verbose output so we can diagnose any issues that may arise
+* `--chain-id` may or may not be necessary, depending upon your setup, but we can default to `--lava-testnet-2`
+* `--node` may or may not be necessary
+
+:::caution
+The syntax on your `.yml` files must be precise. Misplaced or invisible characters or inconsistent indentation can cause errors.
+:::
 
 <br />
 
