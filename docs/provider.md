@@ -50,10 +50,10 @@ Lava's protocol expands its support to new RPCs by adding Specifications ("specs
 
 ### Querying Available APIs and Chains {#chains}
 
-To obtain a list of available APIs and chains, [query all chain specs](https://public-rpc.lavanet.xyz/rest/lavanet/lava/spec/show_all_chains) or use the following CLI commands for detailed list:
+To obtain a list of available APIs and chains, [query all chain specs](https://https://public-rpc-testnet2.lavanet.xyz/rest/lavanet/lava/spec/show_all_chains) or use the following CLI commands for detailed list:
 
 ```bash
-lavad q spec list-spec --node https://public-rpc.lavanet.xyz:443/rpc/
+lavad q spec list-spec --node https://public-rpc-testnet2.lavanet.xyz:443/rpc/
 ```
 
 ## Next step: Setup a Provider
