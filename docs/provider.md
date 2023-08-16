@@ -40,7 +40,7 @@ When staking as a provider, there are four main parameters used in the transacti
 1. **Stake**: The amount of LAVA to stake for the service.
 2. **Geolocation**: The location of the provider's nodes.
 3. **ChainID**: The identifier of the target blockchain network, such as Cosmos Mainnet, Ethereum Ropsten, etc.
-4. **Endpoints**: A list of endpoints, each defining an address, geolocation and an API interface such as REST, JSON-RPC, etc.
+4. **Endpoints**: A list of endpoints, each defining an address and geolocation
 
 Providers need to stake separately for each supported spec. For example, if you support both Cosmos and Ethereum, you will need two separate stakes. Once your request is verified and included in the chain state, you'll be included in the Pairing List starting from the next Epoch and can begin servicing consumer requests through your nodes.
 

@@ -50,7 +50,7 @@ lavad tx pairing stake-provider [chain-id] [amount] [endpoint endpoint ...] [geo
 
 - **`chain-id`** - The ID of the serviced chain (e.g., **`COS4`** or **`FTM250`**).
 - **`amount`** - Stake amount for the specific chain (e.g., **`2010ulava`**).
-- **`endpoint` (OPTIONAL)** - Provider host listener, composed of `provider-host:provider-port,interface,geolocation`. More than one can be specified. If you specify only one, it will be applied to all APIs.
+- **`endpoint`** - Provider host listener, composed of `provider-host:provider-port,geolocation`.
 - **`geolocation`** - Indicates the geographical location where the process is located (e.g., **`1`** for US or **`2`** for EU).
 
 #### Flags Details
@@ -84,7 +84,7 @@ Ethereum and other EVMs usually have only `jsonrpc` interface:
 ```bash
 lavad tx pairing stake-provider "ETH1" \
     "50000000000ulava" \
-    "provider-host.com:1337,jsonrpc,1" 1 \
+    "provider-host.com:1337,1" 1 \
     --from "my_account_name" \
     --provider-moniker "your-moniker" \
     --keyring-backend "test" \
@@ -100,7 +100,7 @@ Cosmos's usually have `rest`, `tendermintrpc` & `grpc` interface, all mandatory:
 ```bash
 lavad tx pairing stake-provider "COS5T" \
     "50000000000ulava" \
-    "provider-host.com:1986,tendermintrpc,rest,grpc" 1 \
+    "provider-host.com:1986,1" 1 \
     --from "my_account_name" \
     --provider-moniker "your-moniker" \
     --keyring-backend "test" \
