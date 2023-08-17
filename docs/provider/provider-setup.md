@@ -50,7 +50,7 @@ lavad tx pairing stake-provider [chain-id] [amount] [endpoint endpoint ...] [geo
 
 - **`chain-id`** - The ID of the serviced chain (e.g., **`COS4`** or **`FTM250`**).
 - **`amount`** - Stake amount for the specific chain (e.g., **`2010ulava`**).
-- **`endpoint` (OPTIONAL) ** - Provider host listener, composed of `provider-host:provider-port,interface,geolocation`
+- **`endpoint`** - Provider host listener, composed of `provider-host:provider-port,geolocation`.
 - **`geolocation`** - Indicates the geographical location where the process is located (e.g., **`1`** for US or **`2`** for EU).
 
 #### Flags Details
@@ -65,13 +65,26 @@ lavad tx pairing stake-provider [chain-id] [amount] [endpoint endpoint ...] [geo
 
 ### Stake Examples
 
+#### Lava Testnet in US
+
+```bash
+lavad tx pairing stake-provider LAV1 \
+  "50000000000ulava" \
+   "lava.your-site.com:443,1" 1 \
+   --from my_account \
+   --provider-moniker my-lava-provider \
+    --gas-adjustment "1.5" \
+    --gas "auto" \ 
+    --gas-prices "0.0001ulava"
+```
+
 #### Ethereum Mainnet in US
 Ethereum and other EVMs usually have only `jsonrpc` interface:
 
 ```bash
 lavad tx pairing stake-provider "ETH1" \
     "50000000000ulava" \
-    "provider-host.com:1337,jsonrpc,1" 1 \
+    "provider-host.com:1337,1" 1 \
     --from "my_account_name" \
     --provider-moniker "your-moniker" \
     --keyring-backend "test" \
@@ -87,7 +100,7 @@ Cosmos's usually have `rest`, `tendermintrpc` & `grpc` interface, all mandatory:
 ```bash
 lavad tx pairing stake-provider "COS5T" \
     "50000000000ulava" \
-    "provider-host.com:1986,tendermintrpc,rest,grpc" 1 \
+    "provider-host.com:1986,1" 1 \
     --from "my_account_name" \
     --provider-moniker "your-moniker" \
     --keyring-backend "test" \
@@ -234,6 +247,11 @@ endpoints:
     node-urls: 
       - url: http://127.0.0.1:1317
 ```
+
+:::tip
+If you're using `nginx` or another proxy as is recommended in our [TLS setup guide](/provider-tls), you will need to add `disable-tls: true` to each endpoint specified. This allows `nginx` to handle TLS directly. 
+:::
+
 
 ## Step 5: Check Provider liveliness
 To ensure the provider is up and running correctly `lavad` provides a command to setup the necessary clients and verify all parameters are well defined.

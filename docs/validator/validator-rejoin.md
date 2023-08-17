@@ -69,6 +69,11 @@ mv lavad-v0.21.1.2-linux-amd64 cosmovisor/genesis/bin/lavad
 
 ### 🔼 Update node configuration files
 
+:::tip
+It's recommended to run the following command:
+`lavad config chain-id lava-testnet-2`
+:::
+
 Check the following variables are set as follows:
 
 <details> <summary> 🗎 config.toml</summary>
@@ -85,6 +90,7 @@ seeds="3a445bfdbe2d0c8ee82461633aa3af31bc2b4dc0@testnet2-seed-node.lavanet.xyz:2
 
 <details> <summary> 🗎 client.toml </summary> 
 broadcast-mode = "sync"
+chain-id = “lava-testnet-2”
 </details>
 
 <br />

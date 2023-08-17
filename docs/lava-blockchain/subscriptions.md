@@ -24,7 +24,7 @@ Consumers can create projects under their subscriptions, which can have differen
 :::info
 📖 Using the CLI? Add this flag to access a remote node:
 ```
---node https://public-rpc.lavanet.xyz:443
+--node https://public-rpc-testnet2.lavanet.xyz:443/
 ```
 :::
 
