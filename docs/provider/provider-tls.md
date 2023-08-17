@@ -113,7 +113,7 @@ You'll need both `Certificate Path` and `Private Key Path` for your next step.
 Lava recommends running each chain under a separate provider process. This will separate error logs and protect against complete provider failure in the case of a problematic provider process. The first step of this is to create different nginx routes for each chain.
 
 For each chain that you want to support, you will need to create a separate `nginx` config file. 
-`cd` into `/etc/sites-available` and create a `server` file for each chain. You will need to select an open port for each chain. `Nginx` will use these config files to create your routes.
+`cd` into `/etc/nginx/sites-available/` and create a `server` file for each chain. You will need to select an open port for each chain. `Nginx` will use these config files to create your routes.
 
 <Tabs>
 <TabItem value="eth_ex" label="eth_server">
@@ -162,6 +162,10 @@ server {
 </TabItem>
 </Tabs>
 
+In most cases, after creating a configuration file in accessible sites, you need to create a symbolic link to this file in the enabled sites directory. This can be done with a command like:
+```
+sudo ln -s /etc/nginx/sites-available/lava_server /etc/nginx/sites-enabled/lava_server
+```
 :::caution
 
 The above examples use ports `443` for external listening and `2223` / `2224` for internal comms, respectively. Using ports other than `443` for external listening means that some users will not be able to connect to your provider. This can result in less rewards and poorer quality of service. For internal listening, be aware that some ports on your OS may be used for internal communication and should be avoided. 
