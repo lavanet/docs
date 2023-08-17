@@ -46,7 +46,10 @@ lavad tendermint unsafe-reset-all
 ### 📥 Get new Genesis file
 
 Download the new genesis file into `~/.lava/config`. The file can be downloaded from https://github.com/lavanet/lava-config/blob/main/testnet-2/genesis_json/genesis.json
-
+or by using wget
+```bash
+wget https://raw.githubusercontent.com/lavanet/lava-config/main/testnet-2/genesis_json/genesis.json
+```
 <br />
 
 
@@ -58,7 +61,7 @@ Input the following commands:
 cd ~/.lava/
 sudo rm -rf ~/.lava/cosmovisor
 wget https://github.com/lavanet/lava/releases/download/v0.21.1.2/lavad-v0.21.1.2-linux-amd64
-mkdir cosmovisor; mkdir cosmovisor/genesis; mkdir cosmovisor/genesis/bin
+mkdir -p cosmovisor/genesis/bin
 mv lavad-v0.21.1.2-linux-amd64 cosmovisor/genesis/bin/lavad
 ```
 
