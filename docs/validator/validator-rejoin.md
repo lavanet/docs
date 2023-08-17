@@ -51,16 +51,15 @@ Download the new genesis file into `~/.lava/config`. The file can be downloaded 
 
 
 ### ⬇️ Download the new Binary Version
-
+lavad Binary version v0.21.1.2
 Input the following commands:
 
 ```bash
 cd ~/.lava/
 sudo rm -rf ~/.lava/cosmovisor
-wget https://lava-binary-upgrades.s3.amazonaws.com/testnet-2/cosmovisor-upgrades/cosmovisor-upgrades.zip
-unzip cosmovisor-upgrades.zip
-rm cosmovisor-upgrades.zip
-mv cosmovisor-upgrades cosmovisor
+wget https://github.com/lavanet/lava/releases/download/v0.21.1.2/lavad-v0.21.1.2-linux-amd64
+mkdir cosmovisor; mkdir cosmovisor/genesis; mkdir cosmovisor/genesis/bin
+mv lavad-v0.21.1.2-linux-amd64 cosmovisor/genesis/bin/lavad
 ```
 
 <br />
