@@ -211,7 +211,7 @@ Versions are tracked in [Lava git](https://github.com/lavanet/lava) (build from 
 # Upgrade configurations
 temp_folder=$(mktemp -d) && cd $temp_folder
 required_upgrade_name="v0.21.1.2" # CHANGE THIS
-upgrade_binary_url="https://github.com/lavanet/lava/releases/download/$TAG/lavad-$TAG-linux-amd64"
+upgrade_binary_url="https://github.com/lavanet/lava/releases/download/$required_upgrade_name/lavad-$required_upgrade_name-linux-amd64"
 ```
 
 
