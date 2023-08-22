@@ -103,7 +103,7 @@ Note that it does **not** include the "Cosmovisor" tool, hence once you install 
     lavad_binary_path="$HOME/go/bin/"
     mkdir -p $lavad_binary_path
     # Download the genesis binary to the lava path
-    wget https://lava-binary-upgrades.s3.amazonaws.com/testnet-2/genesis/lavad
+    wget -O ./lavad "https://github.com/lavanet/lava/releases/download/v0.21.1.2/lavad-v0.21.1.2-linux-amd64"
     chmod +x lavad
     # Lavad should now be accessible from PATH, to verify, try running
     cp lavad /usr/local/bin
@@ -201,7 +201,7 @@ Versions are tracked in [Lava git](https://github.com/lavanet/lava) (build from 
 | v0.14.0 | 254645 |
 | v0.15.1 | 266490 |
 | v0.16.0 | 286030 |
-| v0.21.0 | ?????? | <- testnet-2 fork
+| v0.21.1.2 | 340778 | <- testnet-2 fork
 
 ### Steps for upgrading your node
 
@@ -210,9 +210,10 @@ Versions are tracked in [Lava git](https://github.com/lavanet/lava) (build from 
 ```bash
 # Upgrade configurations
 temp_folder=$(mktemp -d) && cd $temp_folder
-required_upgrade_name="v0.4.0" # CHANGE THIS
-upgrade_binary_url="https://lava-binary-upgrades.s3.amazonaws.com/testnet-2/$required_upgrade_name/lavad"
+required_upgrade_name="v0.21.1.2" # CHANGE THIS
+upgrade_binary_url="https://github.com/lavanet/lava/releases/download/$required_upgrade_name/lavad-$required_upgrade_name-linux-amd64"
 ```
+
 
 2. Kill all current lavad processes
 
