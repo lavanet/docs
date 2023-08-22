@@ -104,6 +104,7 @@ The following sections will describe how to install Cosmovisor for automating th
     wget https://lava-binary-upgrades.s3.amazonaws.com/testnet-2/cosmovisor-upgrades/cosmovisor-upgrades.zip
     unzip cosmovisor-upgrades.zip
     cp -r cosmovisor-upgrades/* $lavad_home_folder/cosmovisor
+    chmod +x $lavad_home_folder/cosmovisor/genesis/bin/lavad
     ```
 
     ```bash
