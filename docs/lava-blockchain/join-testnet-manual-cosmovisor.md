@@ -99,11 +99,9 @@ The following sections will describe how to install Cosmovisor for automating th
     ```bash
     go install github.com/cosmos/cosmos-sdk/cosmovisor/cmd/cosmovisor@v1.0.0
     # Create the Cosmovisor folder and copy config files to it
-    mkdir -p $lavad_home_folder/cosmovisor
-    # Download the latest cosmovisor-upgrades from S3
-    wget https://lava-binary-upgrades.s3.amazonaws.com/testnet-2/cosmovisor-upgrades/cosmovisor-upgrades.zip
-    unzip cosmovisor-upgrades.zip
-    cp -r cosmovisor-upgrades/* $lavad_home_folder/cosmovisor
+    mkdir -p $lavad_home_folder/cosmovisor/genesis/bin/
+    # Download the genesis binary
+    wget -O  $lavad_home_folder/cosmovisor/genesis/bin/lavad "https://github.com/lavanet/lava/releases/download/v0.21.1.2/lavad-v0.21.1.2-linux-amd64"
     chmod +x $lavad_home_folder/cosmovisor/genesis/bin/lavad
     ```
 
