@@ -12,7 +12,7 @@ import TabItem from '@theme/TabItem';
 
 :::caution 
 
-Lava SDK is currently in Alpha. Please observe the documentation on both [frontend](https://docs.lavanet.xyz/sdk-frontend?utm_source=getting-juno-rpc&utm_medium=docs&utm_campaign=sdk-alpha) and [backend](https://docs.lavanet.xyz/sdk-backend?utm_source=getting-juno-rpc&utm_medium=docs&utm_campaign=sdk-alpha) use before getting started.
+Lava SDK is currently in Alpha. Please observe the documentation on both [frontend](https://docs.lavanet.xyz/sdk-frontend?utm_source=getting-juno-rpc&utm_medium=docs&utm_campaign=docs-to-docs) and [backend](https://docs.lavanet.xyz/sdk-backend?utm_source=getting-juno-rpc&utm_medium=docs&utm_campaign=docs-to-docs) use before getting started.
 
 :::
 
@@ -84,15 +84,15 @@ async function useJunoTestnet() {
 
 <iframe width="100%" src="/img/chains/juno_call.webm" frameborder="0" allow="autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-To learn more about our SDK visit the [Getting Started guide](https://docs.lavanet.xyz/sdk-getting-started?utm_source=getting-juno-rpc&utm_medium=docs&utm_campaign=juno-pre-grant)
+To learn more about our SDK visit the [Getting Started guide](https://docs.lavanet.xyz/sdk-getting-started?utm_source=getting-juno-rpc&utm_medium=docs&utm_campaign=docs-to-docs)
 
 <hr />
 
-## [Gateway](https://gateway.lavanet.xyz)
+## [Gateway](https://gateway.lavanet.xyz/?utm_source=juno-dev&utm_medium=docs&utm_campaign=docs-to-gateway)
 
 <video width="100%" height="100%" controls><source src="/img/chains/junovideodemo.mp4" type="video/mp4"></source></video>
 
-To learn more about using the Lava Gateway visit the [Getting Started guide](https://docs.lavanet.xyz/gateway-getting-started?utm_source=getting-juno-rpc&utm_medium=docs&utm_campaign=juno-pre-grant)
+To learn more about using the Lava Gateway visit the [Getting Started guide](https://docs.lavanet.xyz/gateway-getting-started?utm_source=juno-dev&utm_medium=docs&utm_campaign=docs-to-docs)
 
 <hr />
 <br />

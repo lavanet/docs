@@ -85,13 +85,13 @@ async function useoptimismMainnet() {
 
 <iframe width="100%" src="/img/chains/optimism_call.webm" frameborder="0" allow="autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-To learn more about our SDK visit the [Getting Started guide](https://docs.lavanet.xyz/sdk-getting-started?utm_source=getting-optimism-rpc&utm_medium=docs&utm_campaign=sdk-alpha-launch)
+To learn more about our SDK visit the [Getting Started guide](https://docs.lavanet.xyz/sdk-getting-started?utm_source=getting-optimism-rpc&utm_medium=docs&utm_campaign=docs-to-docs)
 
 <hr />
 
-## [Gateway](https://gateway.lavanet.xyz)
+## [Gateway](https://gateway.lavanet.xyz/?utm_source=optimism-dev&utm_medium=docs&utm_campaign=docs-to-gateway)
 
-To learn more about using the Lava Gateway visit the [Getting Started guide](/gateway-getting-started)
+To learn more about using the Lava Gateway visit the [Getting Started guide](https://docs.lavanet.xyz/gateway-getting-started?utm_source=optimism-dev&utm_medium=docs&utm_campaign=docs-to-docs)
 
 <hr />
 <br />

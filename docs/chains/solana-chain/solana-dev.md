@@ -13,7 +13,7 @@ import TabItem from '@theme/TabItem';
 
 :::caution
 
-Lava SDK is currently in Alpha. Please observe the documentation on both [frontend](https://docs.lavanet.xyz/sdk-frontend?utm_source=getting-solana-rpc&utm_medium=docs&utm_campaign=sdk-alpha) and [backend](https://docs.lavanet.xyz/sdk-backend?utm_source=getting-solana-rpc&utm_medium=docs&utm_campaign=sdk-alpha) use before getting started.
+Lava SDK is currently in Alpha. Please observe the documentation on both [frontend](https://docs.lavanet.xyz/sdk-frontend?utm_source=getting-solana-rpc&utm_medium=docs&utm_campaign=docs-to-docs) and [backend](https://docs.lavanet.xyz/sdk-backend?utm_source=getting-solana-rpc&utm_medium=docs&utm_campaign=docs-to-docs) use before getting started.
 
 :::
 
@@ -90,93 +90,13 @@ async function useSolanaMainnet() {
 
 <iframe width="100%" src="/img/chains/solana_call.webm" frameborder="0" allow="autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-To learn more about our SDK visit the [Getting Started guide](https://docs.lavanet.xyz/sdk-getting-started?utm_source=getting-solana-rpc&utm_medium=docs&utm_campaign=solana-pre-grant)
+To learn more about our SDK visit the [Getting Started guide](https://docs.lavanet.xyz/sdk-getting-started?utm_source=getting-solana-rpc&utm_medium=docs&utm_campaign=docs-to-docs)
 
 <hr />
 
-## [Gateway](https://gateway.lavanet.xyz)
+## [Gateway](https://gateway.lavanet.xyz/?utm_source=solana-dev&utm_medium=docs&utm_campaign=docs-to-gateway)
 
-To learn more about using the Lava Gateway visit the [Getting Started guide](https://docs.lavanet.xyz/gateway-getting-started?utm_source=getting-solana-rpc&utm_medium=docs&utm_campaign=solana-pre-grant)
+To learn more about using the Lava Gateway visit the [Getting Started guide](https://docs.lavanet.xyz/gateway-getting-started?utm_source=solana-dev&utm_medium=docs&utm_campaign=docs-to-docs)
 
 <hr />
 <br />
-
-
-## Supported APIs 
-
-https://raw.githubusercontent.com/lavanet/lava/main/cookbook/specs/spec_add_solana.json
-
-
-| Platform  |  jsonrpc/http | jsonrpc/wss 
-| --------- | ------------- | -----------
-| Gateway   | ✅            | ✅
-| SDK       | ✅            | 
-
-<details>
-<summary> All Methods</summary>
-
-
-- getAccountInfo
-- getBalance
-- getBlock
-- getBlockHeight
-- getBlockProduction
-- getBlockCommitment
-- getBlocks
-- getBlocksWithLimit
-- getBlockTime
-- getClusterNodes
-- getEpochInfo
-- getEpochSchedule
-- getFeeForMessage
-- getFirstAvailableBlock
-- getGenesisHash
-- getHealth
-- getHighestSnapshotSlot
-- getIdentity
-- getInflationGovernor
-- getInflationRate
-- getInflationReward
-- getLargestAccounts
-- getLatestBlockhash
-- getLeaderSchedule
-- getMaxRetransmitSlot
-- getMinimumBalanceForRentExemption
-- getMultipleAccounts
-- getProgramAccounts
-- getRecentPerformanceSamples
-- getRecentPrioritizationFees
-- getSignaturesForAddress
-- getSignatureStatuses
-- getSlot
-- getSlotLeader
-- getSlotLeaders
-- getStakeActivation
-- getStakeMinimumDelegation
-- getSupply
-- getTokenAccountBalance
-- getTokenAccountsByDelegate
-- getTokenAccountsByOwner
-- getTokenLargestAccounts
-- getTokenSupply
-- getTransaction
-- getTransactionCount
-- getVersion
-- getVoteAccounts
-- isBlockhashValid
-- minimumLedgerSlot
-- requestAirdrop
-- sendTransaction
-- simulateTransaction
-- getConfirmedBlock
-- getConfirmedBlocks
-- getConfirmedBlocksWithLimit
-- getConfirmedSignaturesForAddress2
-- getConfirmedTransaction
-- getFeeCalculatorForBlockhash
-- getFeeRateGovernor
-- getFees
-- getRecentBlockhash
-- getSnapshotSlot
-
-</details>
