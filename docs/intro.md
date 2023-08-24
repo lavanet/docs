@@ -33,7 +33,7 @@ Welcome testers! Thank you for joining the testnet
 
 - [Docs](https://docs.lavanet.xyz) ←You’re here
 - [Block explorer - BigDipper](https://bd.lavanet.xyz)
-- [Gateway](https://gateway.lavanet.xyz/login?utm_source=intro-page&utm_medium=docs) - Quick access APIs
+- [Gateway](https://gateway.lavanet.xyz/login?utm_source=intro-page&utm_medium=docs&utm_campaign=docs-to-gateway) - Quick access APIs
 
 ### Community & open-source
 
