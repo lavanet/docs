@@ -53,6 +53,21 @@ lavad tx pairing stake-provider [chain-id] [amount] [endpoint endpoint ...] [geo
 - **`endpoint`** - Provider host listener, composed of `provider-host:provider-port,geolocation`.
 - **`geolocation`** - Indicates the geographical location where the process is located (e.g., **`1`** for US or **`2`** for EU).
 
+#### Geolocations
+
+```javascript    
+    GLS = 0; // Global-strict
+    USC = 1; // US-Center
+    EU = 2; // Europe
+    USE = 4; // US-East
+    USW = 8; // US-West
+    AF = 16; // Africa
+    AS = 32; // Asia
+    AU = 64;  // (Australia, includes NZ)
+    GL = 65535; // Global
+```
+
+
 #### Flags Details
 
 - **`--from`** - The account to be used for the provider staking (e.g., **`my_account`**).
