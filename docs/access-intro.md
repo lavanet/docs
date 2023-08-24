@@ -10,7 +10,7 @@ Lava offers several attractive entry ways to our peer-to-peer RPC network. Unfor
 
 Lava offers:
 
-- **[a Hosted Gateway (web UI)](https://gateway.lavanet.xyz)**
+- **[a Hosted Gateway (web UI)](https://gateway.lavanet.xyz/login?utm_source=access-intro-page&utm_medium=docs)**
 - **[an SDK (TypeScript library)](https://github.com/lavanet/lava-sdk)**
 - **[a Server Kit (binary)](https://github.com/lavanet/lava/tree/main/protocol/rpcconsumer)**
 
