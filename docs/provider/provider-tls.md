@@ -12,6 +12,10 @@ import TabItem from '@theme/TabItem';
 All providers on `lava-testnet-2` must use a domain name and TLS (1.3). You must have a domain name to continue. If you have not already, please take a moment to purchase one! You can find cheap top-level domains [here](https://www.namecheap.com/) or [here](https://tld-list.com/).
 :::
 
+## 📊 Diagram
+
+![Provider TLS Diagram](/img/tutorial/provider/provider-tls-diagram.png)
+
 ## 📋 Prerequisites
 
 | Required Setup            |  ?  | 
@@ -22,7 +26,6 @@ All providers on `lava-testnet-2` must use a domain name and TLS (1.3). You must
 
 
 ## 📝 Written Guide (~45m)
-
 
 <br />
 
