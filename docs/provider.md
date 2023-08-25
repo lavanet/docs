@@ -38,7 +38,7 @@ Learn more by reading our [litepaper](https://lavanet.xyz)
 When staking as a provider, there are four main parameters used in the transaction:
 
 1. **Stake**: The amount of LAVA to stake for the service.
-2. **Geolocation**: The location of the provider's nodes.
+2. **Geolocation**: The location of the provider's nodes. (Note that `0` is *only* assigned via policy/gov proposal)
 ```javascript    
     GLS = 0; // Global-strict
     USC = 1; // US-Center
