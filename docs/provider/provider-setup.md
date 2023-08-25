@@ -56,7 +56,6 @@ lavad tx pairing stake-provider [chain-id] [amount] [endpoint endpoint ...] [geo
 #### Geolocations
 
 ```javascript    
-    GLS = 0; // Global-strict
     USC = 1; // US-Center
     EU = 2; // Europe
     USE = 4; // US-East
