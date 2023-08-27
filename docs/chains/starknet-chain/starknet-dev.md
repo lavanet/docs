@@ -12,7 +12,7 @@ import TabItem from '@theme/TabItem';
 
 :::caution 
 
-Lava SDK is currently in Alpha. Please observe the documentation on both [frontend](https://docs.lavanet.xyz/sdk-frontend?utm_source=getting-starknet-rpc&utm_medium=docs&utm_campaign=sdk-alpha) and [backend](https://docs.lavanet.xyz/sdk-backend?utm_source=getting-starknet-rpc&utm_medium=docs&utm_campaign=sdk-alpha) use before getting started.
+Lava SDK is currently in Alpha. Please observe the documentation on both [frontend](https://docs.lavanet.xyz/sdk-frontend?utm_source=getting-starknet-rpc&utm_medium=docs&utm_campaign=docs-to-docs) and [backend](https://docs.lavanet.xyz/sdk-backend?utm_source=getting-starknet-rpc&utm_medium=docs&utm_campaign=docs-to-docs) use before getting started.
 
 :::
 
@@ -89,11 +89,11 @@ async function useStarknet() {
 
 <iframe width="100%" src="/img/chains/starknet_call.webm" frameborder="0" allow="autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-To learn more about our SDK visit the [Getting Started guide](https://docs.lavanet.xyz/sdk-getting-started?utm_source=getting-starknet-rpc&utm_medium=docs&utm_campaign=sdk-alpha-launch)
+To learn more about our SDK visit the [Getting Started guide](https://docs.lavanet.xyz/sdk-getting-started?utm_source=getting-starknet-rpc&utm_medium=docs&utm_campaign=docs-to-docs)
 
 <hr />
 
-## [Gateway](https://gateway.lavanet.xyz)
+## [Gateway](https://gateway.lavanet.xyz/?utm_source=starknet-dev&utm_medium=docs&utm_campaign=docs-to-gateway)
 
-To learn more about using the Lava Gateway visit the [Getting Started guide](/gateway-getting-started)
+To learn more about using the Lava Gateway visit the [Getting Started guide](https://docs.lavanet.xyz/gateway-getting-started?utm_source=starknet-dev&utm_medium=docs&utm_campaign=docs-to-docs)
 

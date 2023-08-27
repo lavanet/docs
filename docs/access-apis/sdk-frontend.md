@@ -6,7 +6,7 @@ title: Frontend Use
 
 Using Lava SDK on the Frontend without special provisions is inherently unsafe. Private keys from any user can be leaked through the browser. Right now, Lava uses a Badge Server to solve these limitations. The default Badge Server is hosted by Lava for ease of use and onboarding purposes.
 
-You can access it right from the [Lava Gateway!](https://gateway.lavanet.xyz/?utm_source=lava-sdk-docs&utm_medium=docs&utm_campaign=sdk-alpha-launch) However, users who are interested in accomplishing the highest levels of decentralization are encouraged to run their own badge server. 
+You can access it right from the [Lava Gateway!](https://gateway.lavanet.xyz/?utm_source=sdk-frontend&utm_medium=docs&utm_campaign=docs-to-gateway) However, users who are interested in accomplishing the highest levels of decentralization are encouraged to run their own badge server. 
 
 ## Badges
 

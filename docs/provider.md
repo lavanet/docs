@@ -38,7 +38,18 @@ Learn more by reading our [litepaper](https://lavanet.xyz)
 When staking as a provider, there are four main parameters used in the transaction:
 
 1. **Stake**: The amount of LAVA to stake for the service.
-2. **Geolocation**: The location of the provider's nodes.
+2. **Geolocation**: The location of the provider's nodes. (Note that `0` is *only* assigned via policy/gov proposal)
+```javascript    
+    GLS = 0; // Global-strict
+    USC = 1; // US-Center
+    EU = 2; // Europe
+    USE = 4; // US-East
+    USW = 8; // US-West
+    AF = 16; // Africa
+    AS = 32; // Asia
+    AU = 64;  // (Australia, includes NZ)
+    GL = 65535; // Global
+```
 3. **ChainID**: The identifier of the target blockchain network, such as Cosmos Mainnet, Ethereum Ropsten, etc.
 4. **Endpoints**: A list of endpoints, each defining an address and geolocation
 

@@ -7,7 +7,7 @@ title: Backend Use
 
 :::tip
 
-If you are planning to use Lava for frontend development, you simply need to visit our [Gateway](https://gateway.lavanet.xyz/?utm_source=lava-sdk-docs&utm_medium=docs&utm_campaign=sdk-alpha-launch) to get started!
+If you are planning to use Lava for frontend development, you simply need to visit our [Gateway](https://gateway.lavanet.xyz/?utm_source=sdk-backend-page&utm_medium=docs&utm_campaign=docs-to-gateway) to get started!
  Read more about how badges make keyless frontend development safe [here](/sdk-frontend).
 
 :::
@@ -19,7 +19,7 @@ The first step to using the Lava SDK is to register for the Lava Gateway. You wi
 
 <center>
 
-👉🏿[Register now](https://accounts.lavanet.xyz/register?utm_source=lava-sdk-docs&utm_medium=docs&utm_campaign=sdk-alpha-launch) if you haven’t already!
+👉🏿[Register now](https://gateway.lavanet.xyz/?utm_source=sdk-backend-page&utm_medium=docs&utm_campaign=docs-to-gateway) if you haven’t already!
 
 
 ![Gateway Register](/img/tutorial/sdk/GatewayRegister.png)

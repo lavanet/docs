@@ -50,3 +50,14 @@ You can use the following query: `lavad q pairing providers <CHAIN_ID>`
 
 ### When running my provider process `lavad server` I get the following error `provider endpoint mismatch`
 This error means that you have used different geolocations when using  the `provider-stake` transaction and when running `lavad server`, please ensure they match and the problem should be resolved.
+
+## Developer
+
+### Using Lava with Other RPC Clients
+
+Lava easily integrates with other RPC clients. Simply create an account on the gateway, and replace your client's RPC URL with the appopriate one.
+
+#### How to change the RPC url which Cosmjs uses?
+If you want a native integration to use seamlessly, please check out the cosmolava-client created by one of our community members: [MELLIFERA-Labs/cosmolava-client](https://github.com/MELLIFERA-Labs/cosmolava-client)
+
+If you just want to switch the RPC URL you can do so using the HttpEndpoint interface on [stargate](https://cosmos.github.io/cosmjs/latest/stargate/interfaces/HttpEndpoint.html#url) or [cosmwasm-stargate](https://cosmos.github.io/cosmjs/latest/cosmwasm-stargate/interfaces/HttpEndpoint.html#url). Be sure you've grabbed the TendermintRPC endpoint from Lava or you may encounter errors.
