@@ -1,62 +1,62 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const lightCodeTheme = require("prism-react-renderer/themes/github");
+const darkCodeTheme = require("prism-react-renderer/themes/dracula");
+require("dotenv").config();
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Lava Docs',
-  tagline: 'Decentralizing Web3 Infra',
-  url: 'https://docs.lavanet.xyz',
-  baseUrl: '/',
-  onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/favicon.ico',
-  organizationName: 'lavanet',
-  projectName: 'docs',
+  title: "Lava Docs",
+  tagline: "Decentralizing Web3 Infra",
+  url: "https://docs.lavanet.xyz",
+  baseUrl: "/",
+  onBrokenLinks: "throw",
+  onBrokenMarkdownLinks: "warn",
+  favicon: "img/favicon.ico",
+  organizationName: "lavanet",
+  projectName: "docs",
   i18n: {
-    defaultLocale: 'en',
-    locales: ['en'],
+    defaultLocale: "en",
+    locales: ["en"],
   },
 
   presets: [
     [
-      'classic',
+      "classic",
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          routeBasePath: '/',
-          sidebarPath: require.resolve('./sidebars.js'),
-          editUrl:
-            'https://github.com/lavanet/docs/tree/master/',
+          routeBasePath: "/",
+          sidebarPath: require.resolve("./sidebars.js"),
+          editUrl: "https://github.com/lavanet/docs/tree/master/",
         },
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
+          customCss: require.resolve("./src/css/custom.css"),
         },
         gtag: {
-          trackingID: 'G-4G2GHTV35E',
+          trackingID: "G-4G2GHTV35E",
           anonymizeIP: true,
         },
       }),
     ],
     [
-      'redocusaurus',
+      "redocusaurus",
       /** @type {import('redocusaurus').PresetEntry} */
       {
         debug: Boolean(process.env.DEBUG || process.env.CI),
         specs: [
           {
-            id: 'lava-api',
-            spec: 'lava-api/openapi.yml',
-            route: 'lava-api'
-          }
+            id: "lava-api",
+            spec: "lava-api/openapi.yml",
+            route: "lava-api",
+          },
         ],
         theme: {
           /**
            * Highlight color for docs
            */
-          primaryColor: '#1890ff',
+          primaryColor: "#1890ff",
           /**
            * Options to pass to redoc
            * @see https://github.com/redocly/redoc#redoc-options-object
@@ -68,20 +68,20 @@ const config = {
            */
           theme: {
             scrollYOffset: 100,
-            sideNavStyle: "id-only"
+            sideNavStyle: "id-only",
             // nativeScrollbars: false
           },
         },
       },
-    ]
+    ],
   ],
 
   plugins: [
     [
       "docusaurus-plugin-segment",
       {
-        apiKey: "DQPhWiY1Diy8ywBu7fXgqLyii8HR3cXD"
-      }
+        apiKey: "DQPhWiY1Diy8ywBu7fXgqLyii8HR3cXD",
+      },
     ],
     "docusaurus-plugin-hotjar",
     async function myPlugin(context, options) {
@@ -101,50 +101,50 @@ const config = {
     mermaid: true,
   },
 
-  themes: ['@docusaurus/theme-mermaid'],
+  themes: ["@docusaurus/theme-mermaid"],
 
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       colorMode: {
-        defaultMode: 'dark'
+        defaultMode: "dark",
       },
       navbar: {
-        title: 'Lava Docs',
+        title: "Lava Docs",
         logo: {
-          alt: 'Lava Docs Logo',
-          src: 'img/lava_logo.svg',
+          alt: "Lava Docs Logo",
+          src: "img/lava_logo.svg",
         },
         items: [
           {
-            label: 'Access Web3 APIs ⚡️',
-            position: 'left',
-            to: 'access-intro',
+            label: "Access Web3 APIs ⚡️",
+            position: "left",
+            to: "access-intro",
           },
           {
-            label: 'Power-up Lava 🌋',
-            position: 'left',
-            to: 'power-lava',
+            label: "Power-up Lava 🌋",
+            position: "left",
+            to: "power-lava",
           },
           {
-            href: 'https://lavanet.xyz',
-            label: 'Lava Home',
-            position: 'right',
+            href: "https://lavanet.xyz",
+            label: "Lava Home",
+            position: "right",
           },
           {
-            href: 'https://github.com/lavanet/docs',
-            label: 'GitHub',
-            position: 'right',
+            href: "https://github.com/lavanet/docs",
+            label: "GitHub",
+            position: "right",
           },
           {
-            href: 'https://discord.gg/Tbk5NxTCdA',
-            label: 'Discord',
-            position: 'right',
+            href: "https://discord.gg/Tbk5NxTCdA",
+            label: "Discord",
+            position: "right",
           },
         ],
       },
       footer: {
-        style: 'dark',
+        style: "dark",
         copyright: `Copyright © ${new Date().getFullYear()} Lava. Docs built with Docusaurus.`,
       },
       prism: {
@@ -152,17 +152,29 @@ const config = {
         darkTheme: darkCodeTheme,
       },
       hotjar: {
-        applicationId: 3059536
+        applicationId: 3059536,
       },
       announcementBar: {
-        id: 'no_token',
+        id: "no_token",
         content:
           'Lava testnet is live. Mainnet tokens not yet available. <B>Beware of scams.</B> Need help? <a target="_blank" href="https://discord.gg/5VcqgwMmkA">Join our Discord.</a>',
-        backgroundColor: '#AA0000',
-        textColor: '#FFFFFF',
+        backgroundColor: "#AA0000",
+        textColor: "#FFFFFF",
         isCloseable: true,
       },
-      image: 'img/logo_with_text_bg_transparent.png'
+      image: "img/logo_with_text_bg_transparent.png",
+      algolia: {
+        // The application ID provided by Algolia
+        appId: process.env.ALGOLIA_APP_ID,
+
+        // Public API key: it is safe to commit it
+        apiKey: process.env.ALGOLIA_API_KEY,
+
+        indexName: process.env.ALGOLIA_INDEX_NAME,
+
+        // Optional: see doc section below
+        contextualSearch: true,
+      },
     }),
 };
 
