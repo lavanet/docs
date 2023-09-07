@@ -10,7 +10,7 @@ title: Public RPC Endpoints
 | Service 🔌 | URL 🔗 | Protocol |
 |--------|-------|-------- |
 | 🟢 rpc | https://public-rpc-testnet2.lavanet.xyz:443    | HTTP/1.1 |
-| 🟢 rest | https://public-rpc-testnet2.lavanet.xyz:443/rest    | HTTP/1.1 |
+| 🟢 rest | https://rest-public-rpc.lavanet.xyz/    | HTTP/1.1 |
 | 🟢 grpc | public-rpc-testnet2.lavanet.xyz:9090 |    HTTP/2 |
 
 ## Community / Testnet Services 🧑🏾‍🤝‍🧑🏾
