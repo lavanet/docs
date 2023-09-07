@@ -161,8 +161,9 @@ const sidebars = {
             `access-apis/sdk-getting-started`
           ]
         },
-        'access-apis/access-server-kit'
-      ]
+        'access-apis/access-server-kit',
+        'public-rpc',
+      ],
     },
     {
       type: 'category', 
@@ -236,6 +237,7 @@ const sidebars = {
     },
     `tutorials`,
     'faq',
+    'explorers',
     {
       type: 'link',
       label: 'Contribute to Docs',
