@@ -59,13 +59,31 @@ Providers need to stake separately for each supported spec. For example, if you 
 
 Lava's protocol expands its support to new RPCs by adding Specifications ("specs") via governance. Each spec describes the schema needed for the RPC and aligns the different actors on the provided interface.
 
+To obtain information on a specific chain, run the following command, replacing `SPEC-ID`:
+
+```bash
+curl -X 'GET' \
+  'https://rest-public-rpc.lavanet.xyz/lavanet/lava/spec/show_chain_info/SPEC-ID' \
+  -H 'accept: application/json'
+```
+
 ### Querying Available APIs and Chains {#chains}
 
-To obtain a list of available APIs and chains, [query all chain specs](https://public-rpc-testnet2.lavanet.xyz/rest/lavanet/lava/spec/show_all_chains) or use the following CLI commands for detailed list:
 
+To obtain a list of available APIs and chains, [query all chain specs](https://public-rpc-testnet2.lavanet.xyz/rest/lavanet/lava/spec/show_all_chains) or use the following CLI commands for a detailed list:
+
+
+```bash
+curl -X 'GET' \
+  'https://public-rpc-testnet2.lavanet.xyz/rest/lavanet/lava/spec/show_all_chains' \
+  -H 'accept: application/json' | jq
+```
+
+Alternatively,
 ```bash
 lavad q spec list-spec --node https://public-rpc-testnet2.lavanet.xyz:443/rpc/
 ```
+
 
 ## Next step: Setup a Provider
 

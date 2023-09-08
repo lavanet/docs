@@ -4,6 +4,9 @@ slug: /testnet-manual
 title: Option B - Without Cosmovisor
 ---
 import RoadmapItem from '@site/src/components/RoadmapItem';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 
 # Join testnet - Manual setup
 
@@ -182,8 +185,19 @@ This situation requires a different binary (`lavad`) to work with, the process i
 Below, you can find tracking of the required upgrade for block height. 
 Versions are tracked in [Lava git](https://github.com/lavanet/lava) (build from source or use the release page). 
 
+<Tabs>
+<TabItem value="lava-testnet-2" label="lava-testnet-2">
+
 | Version name | Block height
-| --- | ---
+| --- | --- |
+| v0.21.1.2 | 340778 |
+
+
+</TabItem>
+<TabItem value="lava-testnet-1" label="lava-testnet-1">
+
+| Version name | Block height
+| --- | --- |
 | v0.3.0 | genesis |
 | v0.4.0 | 838 |
 | v0.4.3 | 22300 |
@@ -201,7 +215,10 @@ Versions are tracked in [Lava git](https://github.com/lavanet/lava) (build from 
 | v0.14.0 | 254645 |
 | v0.15.1 | 266490 |
 | v0.16.0 | 286030 |
-| v0.21.1.2 | 340778 | <- testnet-2 fork
+
+</TabItem>
+
+</Tabs>
 
 ### Steps for upgrading your node
 
