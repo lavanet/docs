@@ -12,6 +12,9 @@ title: Public RPC Endpoints
 | 🟢 rpc | https://public-rpc-testnet2.lavanet.xyz:443    | HTTP/1.1 |
 | 🟢 rest | https://rest-public-rpc.lavanet.xyz/    | HTTP/1.1 |
 | 🟢 grpc | public-rpc-testnet2.lavanet.xyz:9090 |    HTTP/2 |
+| 🟢 rpc | https://lavatest-rpc.quickapi.com    | HTTP/1.1 |
+| 🟢 rest | https://lavatest-lcd.quickapi.com    | HTTP/1.1 |
+| 🟢 grpc | lavatest-grpc.quickapi.com |    HTTP/2 |
 
 ## Community / Testnet Services 🧑🏾‍🤝‍🧑🏾
 
