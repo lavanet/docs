@@ -23,3 +23,4 @@ Community Pages are provided by members of our community and not monitored/manag
 - ✨[ITRocket](https://itrocket.net/services/testnet/lava/)
 - ✨[GenZNodes](https://genznodes.dev/testnet_services/#lava)
 - ✨[Nodeist](https://nodeist.net/Lava/)
+- ✨[StakeTown](https://services.stake-town.com/home/testnet/lava/public-api)
