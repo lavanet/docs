@@ -16,6 +16,9 @@ https://lava.explorers.guru/
 - ✨[Kjnodes](https://explorer.kjnodes.com/lava-testnet)
 - ✨[Nodeist](https://exp.nodeist.net/Lava)
 - ✨[UTSA](https://exp.utsa.tech/lava-test)
+- ✨[NodeStake](https://explorer.nodestake.top/lava-testnet)
+- ✨[🔥STAVR🔥](https://explorer.stavr.tech/lava-testnet)
+- ✨[Stake Village](https://exp.stakevillage.net/Lava-testnet)
 
 ## Community Public RPC Explorer 🕵🏼
 One of our community members is providing an experimental service to see all exposed providers on the network:

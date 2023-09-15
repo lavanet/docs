@@ -24,3 +24,7 @@ Community Pages are provided by members of our community and not monitored/manag
 - ✨[GenZNodes](https://genznodes.dev/testnet_services/#lava)
 - ✨[Nodeist](https://nodeist.net/Lava/)
 - ✨[AM Solutions](https://www.theamsolutions.info/lava-network)
+- ✨[NodeStake](https://nodestake.top/lava/)
+- ✨[🔥STAVR🔥](https://github.com/obajay/StateSync-snapshots/tree/main/Projects/Lava)
+- ✨[LiveRaveN](https://services.liveraven.net/cosmos-testnets/lava-network)
+- ✨[Stake Village](https://stakevillage.net/en/lava-testnet2/endpoint.php)
