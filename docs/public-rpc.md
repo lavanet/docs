@@ -10,7 +10,7 @@ title: Public RPC Endpoints
 | Service 🔌 | URL 🔗 | Protocol |
 |--------|-------|-------- |
 | 🟢 rpc | https://public-rpc-testnet2.lavanet.xyz:443    | HTTP/1.1 |
-| 🟢 rest | https://rest-public-rpc.lavanet.xyz/    | HTTP/1.1 |
+| 🟢 rest | https://rest-public-rpc.lavanet.xyz:443    | HTTP/1.1 |
 | 🟢 grpc | public-rpc-testnet2.lavanet.xyz:9090 |    HTTP/2 |
 
 ## Community / Testnet Services 🧑🏾‍🤝‍🧑🏾
@@ -23,6 +23,7 @@ Community Pages are provided by members of our community and not monitored/manag
 - ✨[ITRocket](https://itrocket.net/services/testnet/lava/)
 - ✨[GenZNodes](https://genznodes.dev/testnet_services/#lava)
 - ✨[Nodeist](https://nodeist.net/Lava/)
+- ✨[AM Solutions](https://www.theamsolutions.info/lava-network)
 - ✨[NodeStake](https://nodestake.top/lava/)
 - ✨[🔥STAVR🔥](https://github.com/obajay/StateSync-snapshots/tree/main/Projects/Lava)
 - ✨[LiveRaveN](https://services.liveraven.net/cosmos-testnets/lava-network)
