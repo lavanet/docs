@@ -23,5 +23,6 @@ Community Pages are provided by members of our community and not monitored/manag
 - ✨[ITRocket](https://itrocket.net/services/testnet/lava/)
 - ✨[GenZNodes](https://genznodes.dev/testnet_services/#lava)
 - ✨[Nodeist](https://nodeist.net/Lava/)
+- ✨[LiveRaveN](https://services.liveraven.net/cosmos-testnets/lava-network)
 - ✨[StakeTown](https://services.stake-town.com/home/testnet/lava)
 - ✨[Stake Village](https://stakevillage.net/en/lava-testnet2/endpoint.php)
