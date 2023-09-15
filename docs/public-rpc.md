@@ -23,6 +23,7 @@ Community Pages are provided by members of our community and not monitored/manag
 - ✨[ITRocket](https://itrocket.net/services/testnet/lava/)
 - ✨[GenZNodes](https://genznodes.dev/testnet_services/#lava)
 - ✨[Nodeist](https://nodeist.net/Lava/)
+- ✨[w3coins](https://services.w3coins.io/testnet/lava-network)
 - ✨[AM Solutions](https://www.theamsolutions.info/lava-network)
 - ✨[NodeStake](https://nodestake.top/lava/)
 - ✨[🔥STAVR🔥](https://github.com/obajay/StateSync-snapshots/tree/main/Projects/Lava)
