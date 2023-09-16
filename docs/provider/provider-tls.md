@@ -119,7 +119,7 @@ For each chain that you want to support, you will need to create a separate `ngi
 `cd` into `/etc/nginx/sites-available/` and create a `server` file for each chain. You will need to select an open port for each chain. `Nginx` will use these config files to create your routes.
 
 <Tabs>
-<TabItem value="eth_ex" label="eth_server">
+<TabItem value="eth_ex" label="eth nginx server">
 
 🟢 ```sudo nano eth_server``` 
 
@@ -141,7 +141,7 @@ server {
 ```
 
 </TabItem>
-<TabItem value="lav_ex" label="lava_server">
+<TabItem value="lav_ex" label="lava nginx server">
 
 🟢 ```sudo nano lava_server```
 
@@ -163,6 +163,30 @@ server {
 
 
 </TabItem>
+
+<TabItem value="Caddy" label="caddy example">
+
+:::warning
+The below caddy example is to provide guidance only. The recommended route is through `nginx`. Although making a provider functional with Caddy is possible you are proceeding at your own risk and with your own expertise.
+:::
+
+
+```
+https://your-site.com:443 {
+   reverse_proxy {
+    to h2c://127.0.0.1:2221
+    transport http  {
+        versions h2c 2
+    }
+   }
+   log {
+       output file /var/log/caddy/your-site.com.log
+   }
+}
+```
+
+</TabItem>
+
 </Tabs>
 
 In most cases, after creating a configuration file in accessible sites, you need to create a symbolic link to this file in the enabled sites directory. This can be done with a command like:
