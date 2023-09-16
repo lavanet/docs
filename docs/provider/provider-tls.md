@@ -390,5 +390,11 @@ lavad test rpcprovider --from your_key_name_here --endpoints "lava.your-site:443
 
 lavad test rpcprovider --from your_key_name_here --endpoints "eth.your-site:443,ETH1"
 ```
+You can also get useful information on the setup using:
+
+```bash
+lavad q pairing account-info --from your_key_name
+```
+
 
 ❗ If you have any further issues, do not hesitate to venture to our [discord](https://discord.com/invite/Tbk5NxTCdA) where you can get better assistance!
