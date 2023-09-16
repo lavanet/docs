@@ -17,7 +17,7 @@ title: Running an Evmos RPC Node
 
 ## Install Evmos CLI 🚀
 
-This software is necessary to run a Juno RPC node.
+This software is necessary to run an Evmos RPC node.
 
 
 ```bash
@@ -31,7 +31,11 @@ make install
 It is necessary to replace `<tag>` with the name of the latest release which is visible [here](https://github.com/evmos/evmos/tags).
 
 ```bash
-evmosd start --json-rpc.enable
+./evmosd start \ 
+    --json-rpc.enable \
+    --api.enable \
+    --grpc-web.enable \
+    --grpc.enable
 ```
 You can edit your `app.toml` file to change settings on your node. Within `app.toml` you can find gas cap, CORS, Pruning, and how to configure a WebSocket Server. For further information, consult the [Evmos documentation](https://docs.evmos.org/protocol/evmos-cli/configuration#running-the-json-rpc-server)
 
