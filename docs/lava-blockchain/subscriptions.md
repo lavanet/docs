@@ -19,15 +19,18 @@ Lava network offers optional yearly discount rates for plans, which are applied 
 
 Consumers can create projects under their subscriptions, which can have different policies and usage keys. Lava network uses a flexible system for its plans via governance, allowing the network to react to market dynamics and maintain a competitive edge.
 
+<br />
 <hr />
 
-## Preparing an account 👛
+## Preparing an Account 👛
 Consumers need to have an address on-chain to manage their subscription and consume p2p relays.
 To create an account, please refer to [accounts & wallets](/docs/lava-blockchain/account-wallet.mdx)
 
+<br />
 <hr />
 
-## Interacting with your subscription 💱
+
+## Interacting with Subscriptions 💱
 
 :::tip
 📖 Using the CLI? Add this flag to access a remote node:
@@ -52,7 +55,7 @@ To view a specific plan in detail:
 ```bash
 lavad q plan info <plan_index>
 ```
-
+<center> .. </center>
 <br />
 
 ### 💸 Buy a Subscription Plan
@@ -73,7 +76,7 @@ lavad tx subscription buy explorer lava@1lr6...v4wu 3 \
 	--from my_wallet \
 	--chain-id lava-testnet-2
 ```
-
+<center> .. </center>
 <br />
 
 ### 👓 Check a Subscription Plan
@@ -84,7 +87,7 @@ The **`current`** command queries the current subscription of a consumer to a se
 lavad query subscription current <consumer>
 ```
 
-You'll receive a summary of the consumer's current subscription. Here's a simplified explanation of the key details:
+This outputs a summary of the consumer's current subscription. Here's a simplified explanation of the key details:
 
 - **consumer** and **creator**: These represent the addresses of the consumer benefiting from the subscription and the user who created (paid for) the subscription, respectively.
 - **duration_left** and **duration_total**: These values indicate the number of months remaining in the subscription and the total number of months the subscription was purchased for, respectively.
@@ -92,11 +95,15 @@ You'll receive a summary of the consumer's current subscription. Here's a simpli
 
 Other information provided in the output, such as block numbers and expiry times, can be helpful for tracking the subscription's history and understanding when resources expire or refresh. By understanding these essential details, consumers can effectively manage their subscription and make informed decisions about future plans or resource consumption.
 
+<center> .. </center>
 <br />
+<hr />
 
 ## Managing Projects 📈
 
-### ➕ Adding a Project to Your Subscription
+<br />
+
+### ➕ Adding a Project from a Subscription
 
 Once a consumer has purchased a subscription, it is reasonable to add a project on the subscription. Projects can be used to limit consumption of compute units (CUs), specify permitted APIs (including addons and extensions), limit provider pairings, and designate specific providers to interact with. To create a project:
 
@@ -112,6 +119,8 @@ lavad tx subscription add-project [project-name] --from <subscription_consumer>
 - **Keys** - If a project specifies authorized users' keys, specify them while adding a project with `--project-keys <project-keys-file-path>`. For an example project-key file, see the Lava Cookbook:
 	- [example project key YAML](https://github.com/lavanet/lava/blob/main/cookbook/projects/example_project_keys.yml)
 - **Disable** - Ultimately, a consumer may want to add a project but have it disabled by default. Do so with the `--disable` flag.
+
+<br />
 
 ### ➖ Deleting a Project from a Subscription
 
