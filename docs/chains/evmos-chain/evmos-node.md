@@ -30,6 +30,11 @@ make install
 
 It is necessary to replace `<tag>` with the name of the latest release which is visible [here](https://github.com/evmos/evmos/tags).
 
+
+## Start your Node ❗
+
+Starting a node with Evmos may require various configurations, but the commands are relatively simple:
+
 ```bash
 ./evmosd start \ 
     --json-rpc.enable \
@@ -39,10 +44,14 @@ It is necessary to replace `<tag>` with the name of the latest release which is 
 ```
 You can edit your `app.toml` file to change settings on your node. Within `app.toml` you can find gas cap, CORS, Pruning, and how to configure a WebSocket Server. For further information, consult the [Evmos documentation](https://docs.evmos.org/protocol/evmos-cli/configuration#running-the-json-rpc-server)
 
+## Evmos ipRPC 🪙
+
+Want to reach more developers and get more rewards as a node runner? Evmos offers Incentivized Public RPC (ipRPC) endpoints to developers in its ecosystem. By signing up here, you can become one of our premier providers contributing to decentralized public goods. [Sign up now!](https://lavanet.typeform.com/to/qQ1x6WJs?utm_source=becoming-a-lava-provider-for-evmos&utm_medium=docs&utm_campaign=evmos-post-grant)
+
 ## Apply to our Provider Incubation Program 📋
 
-In our current state of Testnet, there is an additional stage to pass through before you can become a provider on the Lava Network. Please fill out the [application form](https://lavanet.typeform.com/to/ORi3A13v?utm_source=becoming-a-lava-provider-for-evmos&utm_medium=docs&utm_campaign=evmos-pre-grant) for our Provider Incubation Program. Feel free to drop a line in our [Discord](https://discord.gg/UxujNZbW) once you’ve completed this step!
+To join our Incubation program, please fill out the [application form](https://lavanet.typeform.com/to/ORi3A13v?utm_source=becoming-a-lava-provider-for-evmos&utm_medium=docs&utm_campaign=evmos-post-grant). Feel free to drop a line in our [Discord](https://discord.gg/UxujNZbW) once you’ve completed this step!
 
 ## Setup your Provider on Lava Network 🌋
 
-Once you’ve been accepted - to set up your provider on the Lava Network, you can refer to the [provider setup documentation](https://docs.lavanet.xyz/provider-setup?utm_source=running-a-evmos-rpc-node&utm_medium=docs&utm_campaign=evmos-pre-grant) available elsewhere in our docs. This should provide you with the necessary information to configure and operate your provider node.
+Once you’ve been accepted - to set up your provider on the Lava Network, you can refer to the [provider setup documentation](https://docs.lavanet.xyz/provider-setup?utm_source=running-a-evmos-rpc-node&utm_medium=docs&utm_campaign=evmos-post-grant) available elsewhere in our docs. This should provide you with the necessary information to configure and operate your provider node.
