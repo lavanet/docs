@@ -8,6 +8,34 @@ import TabItem from '@theme/TabItem';
 
 # Getting Evmos RPC
 
+## Evmos ipRPC 🪙
+Lava🌋 now offers incentivized public RPC for Evmos. Developers can get free, public endpoints for all.
+
+### Mainnet 🌐
+
+| Service 🔌 | URL 🔗 |
+|--------|-------|
+| 🟢 tendermint-rpc | https://tendermint.evmos-mainnet.public.lavanet.xyz  |
+| 🟢 tendermint-rpc / websocket | wss://ws-tendermint.evmos-mainnet.public.lavanet.xyz  |
+| 🟢 json-rpc | https://json-rpc.evmos-mainnet.public.lavanet.xyz   |
+| 🟢 json-rpc / websocket | wss://ws-rpc.evmos-mainnet.public.lavanet.xyz   |  
+| 🟢 rest | https://rest.evmos-mainnet.public.lavanet.xyz   |
+| 🟢 grpc | grpc.evmos-mainnet.public.lavanet.xyz:30000 |
+
+### Testnet 🧪
+
+| Service 🔌 | URL 🔗 |
+|--------|-------|
+| 🟢 tendermint-rpc | https://tendermint.evmos-testnet.public.lavanet.xyz  |
+| 🟢 tendermint-rpc / websocket | wss://ws-tendermint.evmos-testnet.public.lavanet.xyz  |
+| 🟢 json-rpc | https://json-rpc.evmos-testnet.public.lavanet.xyz   |
+| 🟢 json-rpc / websocket | wss://ws-rpc.evmos-testnet.public.lavanet.xyz   |  
+| 🟢 rest | https://rest.evmos-testnet.public.lavanet.xyz   |
+| 🟢 grpc | grpc.evmos-testnet.public.lavanet.xyz:30000 |
+
+<br />
+<hr />
+
 ## [SDK](https://github.com/lavanet/lava-sdk)
 
 :::caution 
@@ -15,6 +43,7 @@ import TabItem from '@theme/TabItem';
 Lava SDK is currently in Alpha. Please observe the documentation on both [frontend](https://docs.lavanet.xyz/sdk-frontend?utm_source=getting-evmos-rpc&utm_medium=docs&utm_campaign=docs-to-docs) and [backend](https://docs.lavanet.xyz/sdk-backend?utm_source=getting-evmos-rpc&utm_medium=docs&utm_campaign=docs-to-docs) use before getting started.
 
 :::
+
 
 ### Input 📥
 
