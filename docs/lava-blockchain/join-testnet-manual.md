@@ -215,6 +215,8 @@ Versions are tracked in [Lava git](https://github.com/lavanet/lava) (build from 
 | v0.14.0 | 254645 |
 | v0.15.1 | 266490 |
 | v0.16.0 | 286030 |
+| v0.22.0 | 396585 |
+| v0.23.5 | 435990 |
 
 </TabItem>
 
