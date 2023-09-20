@@ -191,7 +191,8 @@ Versions are tracked in [Lava git](https://github.com/lavanet/lava) (build from 
 | Version name | Block height
 | --- | --- |
 | v0.21.1.2 | 340778 |
-
+| v0.22.0 | 396595 |
+| v0.23.5 | 435889 |
 
 </TabItem>
 <TabItem value="lava-testnet-1" label="lava-testnet-1">
@@ -215,8 +216,6 @@ Versions are tracked in [Lava git](https://github.com/lavanet/lava) (build from 
 | v0.14.0 | 254645 |
 | v0.15.1 | 266490 |
 | v0.16.0 | 286030 |
-| v0.22.0 | 396595 |
-| v0.23.5 | 435889 |
 
 </TabItem>
 
