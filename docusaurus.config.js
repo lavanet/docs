@@ -38,6 +38,9 @@ const config = {
           trackingID: "G-4G2GHTV35E",
           anonymizeIP: true,
         },
+        googleTagManager: {
+          containerId: 'GTM-PN3DCBDK',
+        },
       }),
     ],
     [
