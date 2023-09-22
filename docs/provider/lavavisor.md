@@ -18,7 +18,7 @@ When an upgrade becomes necessary, either because the current protocol version h
 ## 🧰 Setup
 
 :::tip
-Some older versions of lava-protocol binaries lack the version command, which LavaVisor employs to validate binary versions. Please ensure you've updated to the most recent version of LavaVisor.
+Some older versions of the `lava-protocol` binary lack the version command, which LavaVisor employs to validate binary versions. Please ensure you've updated to the most recent version of LavaVisor or you may face errors.
 :::
 
 Lavavisor is added as a `LAVA_ALL_BINARIES` parameter in the Makefile. As such, any script that executes `install-all` such as `start_env_dev.sh` will automatically install Lavavisor binary. 
