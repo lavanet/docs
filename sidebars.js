@@ -215,7 +215,8 @@ const sidebars = {
           items: [
             'provider/provider-setup',
             'provider/provider-features',
-            'provider/provider-tls'
+            'provider/provider-tls',
+            'provider/lavavisor'
           ]
         },    
         'lava-blockchain/account-wallet',
