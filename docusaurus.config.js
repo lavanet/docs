@@ -80,6 +80,7 @@ const config = {
   ],
 
   plugins: [
+    "docusaurus-plugin-clarity",
     [
       "docusaurus-plugin-segment",
       {
@@ -178,6 +179,9 @@ const config = {
         // Optional: see doc section below
         contextualSearch: true,
       },
+      clarity: {
+        ID: "iy35qq8h9v", // Instructions below
+      }
     }),
 };
 
