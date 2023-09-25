@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 :::warning
 
-With the launch of `lava-testnet-2`, aspects of our provider setup have changed. TLS Certificates are now a required part of Provider setup.
+With the launch of `lava-testnet-2`, aspects of our provider setup have changed. TLS Certificates are now a required part of Provider setup. [Lavavisor](/lavavisor) is now the recommended route for running the provider process.
 
 :::
 

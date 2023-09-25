@@ -15,13 +15,14 @@
     "typecheck": "tsc"
   },
   "dependencies": {
-    "@docusaurus/core": "2.4.0",
-    "@docusaurus/preset-classic": "2.4.0",
-    "@docusaurus/theme-mermaid": "^2.4.0",
+    "@docusaurus/core": "^2.4.3",
+    "@docusaurus/preset-classic": "^2.4.3",
+    "@docusaurus/theme-mermaid": "^2.4.3",
     "@docusaurus/theme-search-algolia": "^2.4.1",
     "@mdx-js/react": "^1.6.22",
     "autoprefixer": "^10.4.8",
     "clsx": "^1.1.1",
+    "docusaurus-plugin-clarity": "^2.1.0",
     "docusaurus-plugin-hotjar": "^0.0.2",
     "docusaurus-plugin-segment": "^1.0.4",
     "docusaurus-plugin-sentry": "^1.0.0",

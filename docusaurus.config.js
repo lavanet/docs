@@ -38,6 +38,9 @@ const config = {
           trackingID: "G-4G2GHTV35E",
           anonymizeIP: true,
         },
+        googleTagManager: {
+          containerId: 'GTM-PN3DCBDK',
+        },
       }),
     ],
     [
@@ -77,6 +80,7 @@ const config = {
   ],
 
   plugins: [
+    "docusaurus-plugin-clarity",
     [
       "docusaurus-plugin-segment",
       {
@@ -175,6 +179,9 @@ const config = {
         // Optional: see doc section below
         contextualSearch: true,
       },
+      clarity: {
+        ID: "iy35qq8h9v", // Instructions below
+      }
     }),
 };
 
