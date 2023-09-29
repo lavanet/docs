@@ -64,10 +64,10 @@ You must specify a whether you are creating a `provider` or `consumer` and the l
 
 ```bash
 # Provider Example
-lavavisor create-service provider ./config --geolocation 1 --from user --log-level warn
+lavavisor create-service provider ./config --geolocation 1 --from user --log_level warn
 
 # Consumer Example
-lavavisor create-service consumer ./config --geolocation 1 --from user2 --log-level info
+lavavisor create-service consumer ./config --geolocation 1 --from user2 --log_level info
 
 ```
 
