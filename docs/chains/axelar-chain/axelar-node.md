@@ -32,6 +32,7 @@ Before you start, ensure that your machine meets the following [minimum requirem
     OS: Ubuntu 18.04 or MacOS(x86)
 
 </TabItem>
+</Tabs>
 
 ## Install
 
