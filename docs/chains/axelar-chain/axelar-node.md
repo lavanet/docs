@@ -19,20 +19,32 @@ Before you start, ensure that your machine meets the following [minimum requirem
     CPU: 4 cores
     RAM: 8-16 GB RAM
     Storage: 512 GB
-    OS: Ubuntu 20.04 or MacOS >= 12
-    Network: sustained 5Mbps up/down bandwidth
-    Go version >= 1.19.6
+    OS: Ubuntu 18.04 or MacOS(x86)
+    ARM 64 or AMD64
 
 </TabItem>
 
 <TabItem value="rec_req" label="Recommended">
+    
+    CPU: 6-8 cores
+    RAM: 16-32 GB RAM
+    Storage: 1 TB
+    OS: Ubuntu 18.04 or MacOS(x86)
 
-
+</TabItem>
 
 ## Install
 
+Clone the Axelarate-Community Repo and then run the Node Setup Script.
+```bash
+git clone https://github.com/axelarnetwork/axelarate-community.git
+cd axelarate-community
+./scripts/setup-node.sh -n [mainnet|testnet]
+```
 
 ### Start your Node!
+
+Run the following command to initiate your node!
 
 ```bash
 $AXELARD_HOME/bin/axelard start [moniker] --home $AXELARD_HOME >> $AXELARD_HOME/logs/axelard.log 2>&1 &
