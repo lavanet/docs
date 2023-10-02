@@ -63,13 +63,13 @@ async function useAxelarMainnet() {
       badgeServerAddress: "https://badges.lavanet.xyz", // Or your own Badge-Server URL 
       projectId: "enter_your_project_id_here" 
     },
-    chainID: 'AVAX',
-    geolocation: "2"
+    chainID: 'AXELAR',
+    rpcInterface: "rest",
   });
 
   const AxelarBlockResponse =  await AxelarMainnet.sendRelay({
-    method: "eth_blockNumber",
-    params: [],
+    method: "GET",
+    url: "/node_info",
   });
 
   console.log(AxelarBlockResponse);
