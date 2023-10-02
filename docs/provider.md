@@ -81,7 +81,7 @@ curl -X 'GET' \
 
 Alternatively,
 ```bash
-lavad q spec list-spec --node https://public-rpc-testnet2.lavanet.xyz:443/rpc/
+lavap q spec list-spec --node https://public-rpc-testnet2.lavanet.xyz:443/rpc/
 ```
 
 
