@@ -21,7 +21,7 @@ All providers on `lava-testnet-2` must use a domain name and TLS (1.3). You must
 | Required Setup            |  ?  | 
 | --------------------------|-----|
 | acquired a domain name            | ✅  |
-| `lavad` is installed & configured | ✅  |
+| `lavap` is installed & configured | ✅  |
 | account with `ulava` balance      | ✅  |
 
 
@@ -293,7 +293,7 @@ Once we've created these files we can move onto starting the processes!
 
 ### 🏁 Start the Provider Process(es)
 
-First, we need to verify the blockchain is reachable with `lavad status` ✅ Once we have successfully gotten node info, we can continue. If you have not already set up your node you need to do so now. Here is where rubber meets road!
+First, we need to verify the blockchain is reachable with `lavap status` ✅ Once we have successfully gotten node info, we can continue. If you have not already set up your node you need to do so now. Here is where rubber meets road!
 
 In this example, we use the built-in terminal multiplexer `screen` to run multiple provider processes. Begin by typing `screen`. But you can also use a different multiplexer, e.g. `tmux`.
 
@@ -303,7 +303,7 @@ screen -S eth-provider
 
 # This will take us to a separate terminal where we can start the provider process:
 
-lavad rpcprovider eth-provider.yml --from your_key_name_here --geolocation 1 --chain-id lava-testnet-2 --log_level debug
+lavap rpcprovider eth-provider.yml --from your_key_name_here --geolocation 1 --chain-id lava-testnet-2 --log_level debug
 ```
 Press `CTRL+ad` to detach from the `eth-provider` screen. <br />
 ⏫ To start the Lava provider process
@@ -312,7 +312,7 @@ screen -S lava-provider
 
 # This will take us to a separate terminal where we can start the provider process:
 
-lavad rpcprovider lava-provider.yml --from your_key_name_here --geolocation 1 --chain-id lava-testnet-2 --log_level debug
+lavap rpcprovider lava-provider.yml --from your_key_name_here --geolocation 1 --chain-id lava-testnet-2 --log_level debug
 ```
 
 Some notes:
@@ -331,7 +331,7 @@ The syntax on your `.yml` files must be precise. Misplaced or invisible characte
 
 Run the following commands one at a time!
 
-`lavad test rpcprovider --from your_key_name_here --endpoints "your-site:443,LAV1"`
+`lavap test rpcprovider --from your_key_name_here --endpoints "your-site:443,LAV1"`
 
 🖳 Expected output:
 
@@ -352,7 +352,7 @@ Run the following commands one at a time!
 ```
 
 
-`lavad test rpcprovider --from your_key_name_here --endpoints "your-site:443,ETH1"`
+`lavap test rpcprovider --from your_key_name_here --endpoints "your-site:443,ETH1"`
 
 🖳 Expected output:
 
@@ -376,24 +376,24 @@ Run the following commands one at a time!
 Use a variation of the following command to stake on chain; the minimum stake is `50000000000ulava`
 
 ```bash
-lavad tx pairing stake-provider ETH1 "50000000000ulava" "eth.your-site:443,1" 1 -y --from your_key_name_here --provider-moniker your-provider-moniker-1 --gas-adjustment "1.5" --gas "auto" --gas-prices "0.0001ulava"
+lavap tx pairing stake-provider ETH1 "50000000000ulava" "eth.your-site:443,1" 1 -y --from your_key_name_here --provider-moniker your-provider-moniker-1 --gas-adjustment "1.5" --gas "auto" --gas-prices "0.0001ulava"
 ```
 
 ```bash
-lavad tx pairing stake-provider LAV1 "50000000000ulava" "lava.your-site:443,1" 1 -y --from your_key_name_here --provider-moniker your-provider-moniker-1 --gas-adjustment "1.5" --gas "auto" --gas-prices "0.0001ulava"
+lavap tx pairing stake-provider LAV1 "50000000000ulava" "lava.your-site:443,1" 1 -y --from your_key_name_here --provider-moniker your-provider-moniker-1 --gas-adjustment "1.5" --gas "auto" --gas-prices "0.0001ulava"
 ```
 
 ### ☑️ Test the Providers again! 
 
 ```bash
-lavad test rpcprovider --from your_key_name_here --endpoints "lava.your-site:443,LAV1"
+lavap test rpcprovider --from your_key_name_here --endpoints "lava.your-site:443,LAV1"
 
-lavad test rpcprovider --from your_key_name_here --endpoints "eth.your-site:443,ETH1"
+lavap test rpcprovider --from your_key_name_here --endpoints "eth.your-site:443,ETH1"
 ```
 You can also get useful information on the setup using:
 
 ```bash
-lavad q pairing account-info --from your_key_name
+lavap q pairing account-info --from your_key_name
 ```
 
 
