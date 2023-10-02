@@ -25,11 +25,13 @@ Before you start, ensure that your machine meets the following [minimum requirem
 </TabItem>
 
 <TabItem value="rec_req" label="Recommended">
-    
-    CPU: 6-8 cores
-    RAM: 16-32 GB RAM
-    Storage: 1 TB
-    OS: Ubuntu 18.04 or MacOS(x86)
+
+```
+CPU: 6-8 cores
+RAM: 16-32 GB RAM
+Storage: 1 TB
+OS: Ubuntu 18.04 or MacOS(x86)
+```
 
 </TabItem>
 </Tabs>
