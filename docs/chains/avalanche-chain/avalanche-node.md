@@ -60,6 +60,30 @@ cd avalanchego
 
 Your node will take time to sync after it has been started. Please allow it time to sync to the latest block.
 
+# Configure your Provider
+
+:::tip
+Avalanche has a specific use case for adding websockets to their Provider Endpoints. This is because only C chains support websocket endpoints whereas X/P chains do not. To read about the differences between different Avalanche chain types, inspect their [documentation](https://docs.avax.network/learn/avalanche/avalanche-platform#c-chain)/
+:::
+
+An example yaml is provided below. You can also find it in the Lava Monorepo [here](https://github.com/lavanet/lava/blob/main/config/provider_examples/avalanch_internal_paths_example.yml).
+
+```yaml
+endpoints:
+    - api-interface: jsonrpc
+      chain-id: AVAX
+      network-address: 127.0.0.1:2221
+      node-urls:
+        - url: ws://127.0.0.1:3333/C/rpc/ws
+          internal-path: "/C/rpc" # c chain like specified in the spec
+        - url: https://127.0.0.1:3334/C/avax
+          internal-path: "/C/avax" # c/avax like specified in the spec
+        - url: https://127.0.0.1:3335/X
+          internal-path: "/X" # x chain like specified in the spec
+        - url: https://127.0.0.1:3336/P
+          internal-path: "/P" # p chain like specified in the spec
+```
+
 ## Apply to our Provider Incubation Program 📋
 
 In our current state of Testnet, there is an additional stage to pass through before you can become a provider on the Lava Network. Please fill out the [application form](https://lavanet.typeform.com/to/ORi3A13v?utm_source=becoming-a-lava-provider-for-avalanche&utm_medium=docs&utm_campaign=avalanche-pre-grant) for our Provider Incubation Program. Feel free to drop a line in our [Discord](https://discord.gg/UxujNZbW) once you’ve completed this step!

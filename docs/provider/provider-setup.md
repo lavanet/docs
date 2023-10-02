@@ -26,7 +26,7 @@ In this guide, we'll create a configuration file that includes multiple chains (
 ## **Prerequisites**
 
 1. Go 1.20.5 or higher
-2. `lavad` installed (build or install at [https://github.com/lavanet/lava](https://github.com/lavanet/lava))
+2. `lavap` installed (build or install at [https://github.com/lavanet/lava](https://github.com/lavanet/lava))
 3. Account with enough LAVA for staking (learn about [creating Accounts](docs/lava-blockchain/account-wallet.mdx))
 4. Know which chains you want to provide ([how to query the latest list](https://docs.lavanet.xyz/provider/#chains))
 
@@ -41,7 +41,7 @@ As part of good security practice, Lava protocol communicates with end-to-end en
 Before you can run a multi-chain network provider, you need to stake a provider. You may have already taken this step and can move onto step 3. Otherwise, to stake a single service, use the following command:
 
 ```bash
-lavad tx pairing stake-provider [chain-id] [amount] [endpoint endpoint ...] [geolocation] [flags]
+lavap tx pairing stake-provider [chain-id] [amount] [endpoint endpoint ...] [geolocation] [flags]
 ```
 
 *Check the output for the status of the staking operation. A successful operation will have a code **`0`**.*
@@ -82,7 +82,7 @@ lavad tx pairing stake-provider [chain-id] [amount] [endpoint endpoint ...] [geo
 #### Lava Testnet in US
 
 ```bash
-lavad tx pairing stake-provider LAV1 \
+lavap tx pairing stake-provider LAV1 \
   "50000000000ulava" \
    "lava.your-site.com:443,1" 1 \
    --from my_account \
@@ -96,7 +96,7 @@ lavad tx pairing stake-provider LAV1 \
 Ethereum and other EVMs usually have only `jsonrpc` interface:
 
 ```bash
-lavad tx pairing stake-provider "ETH1" \
+lavap tx pairing stake-provider "ETH1" \
     "50000000000ulava" \
     "provider-host.com:1337,1" 1 \
     --from "my_account_name" \
@@ -112,7 +112,7 @@ lavad tx pairing stake-provider "ETH1" \
 Cosmos's usually have `rest`, `tendermintrpc` & `grpc` interface, all mandatory:
 
 ```bash
-lavad tx pairing stake-provider "COS5T" \
+lavap tx pairing stake-provider "COS5T" \
     "50000000000ulava" \
     "provider-host.com:1986,1" 1 \
     --from "my_account_name" \
@@ -133,7 +133,7 @@ To ensure that your account is successfully staked with the providers for a spec
 <TabItem value="wallet" label="Wallet">
 
 ```bash
-lavad query pairing account-info \
+lavap query pairing account-info \
 --from wallet_name \
 --node "{LAVA_RPC_NODE}"
 ```
@@ -142,12 +142,12 @@ lavad query pairing account-info \
 <TabItem value="addr" label="Address">
 
 ```bash
-lavad query pairing account-info \
+lavap query pairing account-info \
 {provider_address} \
 --node "{LAVA_RPC_NODE}"
 
 # Example: seeing all relevant information for an account
-# lavad query pairing account-info \
+# lavap query pairing account-info \
 # lava@1e4vghfjertxq25l2vv56egkfkvdjk90t0c667v \
 # --node https://public-rpc-testnet2.lavanet.xyz:443/rpc/
 
@@ -171,12 +171,12 @@ lavad query pairing account-info \
 
 Another useful command to check all providers for a specific chain:
 ```bash
-lavad query pairing providers \
+lavap query pairing providers \
 "{NETWORK_NAME}" \
 --node "{LAVA_RPC_NODE}"
 
 # Example: checking if your account is a paired provider for the ETH1 network,
-# lavad query pairing providers \
+# lavap query pairing providers \
 # ETH1 \
 # --node https://public-rpc-testnet2.lavanet.xyz:443/rpc/
 
@@ -193,10 +193,10 @@ lavad query pairing providers \
 
 **`rpcprovider`** is a command line tool for setting up an RPC server that listens for requests from Lava protocol RPC consumers, forwards them to a configured node, and responds with the reply. The configuration can be provided via a YAML configuration file or as command line arguments.
 
-**`rpcprovider`** is part of `lavad` and can run using the following syntax:
+**`rpcprovider`** is part of `lavap` and can run using the following syntax:
 
 ```bash
-lavad rpcprovider [config-file] || { {listen-host:listen-port spec-chain-id api-interface node-url} ... }
+lavap rpcprovider [config-file] || { {listen-host:listen-port spec-chain-id api-interface node-url} ... }
 ```
 
 ### Configuration
@@ -227,10 +227,10 @@ Here are some example usages of **`rpcprovider`**:
 
 ```bash
 # Using a custom configuration file and flags
-lavad rpcprovider path_to_my_config_file --geolocation 1 --from alice
+lavap rpcprovider path_to_my_config_file --geolocation 1 --from alice
 
 # Providing endpoint configurations as command line arguments
-lavad rpcprovider provider-host.com:1986 ETH1 jsonrpc https://localhost/eth/my_node_1 --geolocation 1 --from alice
+lavap rpcprovider provider-host.com:1986 ETH1 jsonrpc https://localhost/eth/my_node_1 --geolocation 1 --from alice
 ```
 
 ### Example: Multiple API Interfaces with Same Listen Address (ETH1 and COS3)
@@ -241,23 +241,27 @@ In this example, the provider supports all the API interfaces for the Ethereum M
 endpoints:
   - api-interface: jsonrpc
     chain-id: ETH1
-    network-address: 127.0.0.1:2221
+    network-address: 
+      address: 0.0.0.0:2221
     node-urls:
       - url: wss://eth-rpc/ws
   - api-interface: tendermintrpc
     chain-id: COS3
-    network-address: 127.0.0.1:2221
+    network-address: 
+      address: 0.0.0.0:2221
     node-urls:
       - url: ws://127.0.0.1:26657/websocket
       - url: http://127.0.0.1:26657
   - api-interface: grpc
     chain-id: COS3
-    network-address: 127.0.0.1:2221
+    network-address: 
+      address: 0.0.0.0:2221
     node-urls: 
       - url: 127.0.0.1:9090
   - api-interface: rest
     chain-id: COS3
-    network-address: 127.0.0.1:2221
+    network-address: 
+      address: 0.0.0.0:2221
     node-urls: 
       - url: http://127.0.0.1:1317
 ```
@@ -268,7 +272,7 @@ If you're using `nginx` or another proxy as is recommended in our [TLS setup gui
 
 
 ## Step 5: Check Provider liveliness
-To ensure the provider is up and running correctly `lavad` provides a command to setup the necessary clients and verify all parameters are well defined.
+To ensure the provider is up and running correctly `lavap` provides a command to setup the necessary clients and verify all parameters are well defined.
 This command is used to test the entire flow for a provider is working including stake and access, but with some additional arguments can be used prior to staking, as long as the rpcprovider process is up and running.
 
 ### Usage
@@ -278,10 +282,10 @@ This command is used to test the entire flow for a provider is working including
 <TabItem value="wallet" label="Wallet">
 
 ```bash
-lavad test rpcprovider --from {WALLET}
+lavap test rpcprovider --from {WALLET}
 
 # Example: checking if your provider, is staked correctly and listening on all staked services
-# lavad test rpcprovider --from provider1_us --node https://public-rpc-testnet2.lavanet.xyz:443/rpc/
+# lavap test rpcprovider --from provider1_us --node https://public-rpc-testnet2.lavanet.xyz:443/rpc/
 
 # Expected output:
 # ...logs...
@@ -299,10 +303,10 @@ lavad test rpcprovider --from {WALLET}
 <TabItem value="endpoint" label="Endpoint">
 
 ```bash
-lavad test rpcprovider --from {WALLET} --endpoints "{ENDPOINTS}"`
+lavap test rpcprovider --from {WALLET} --endpoints "{ENDPOINTS}"`
 
 # Example: checking your provider that is not staked yet, or when you want to add a new chain support
-# lavad test rpcprovider --from provider1_us --endpoints "provider-public-grpc:port,jsonrpc,ETH1 provider-public-grpc:port,rest,LAV1" --node https://public-rpc-testnet2.lavanet.xyz:443/rpc/ 
+# lavap test rpcprovider --from provider1_us --endpoints "provider-public-grpc:port,jsonrpc,ETH1 provider-public-grpc:port,rest,LAV1" --node https://public-rpc-testnet2.lavanet.xyz:443/rpc/ 
 
 # Expected output:
 # ...logs...
@@ -319,7 +323,7 @@ lavad test rpcprovider --from {WALLET} --endpoints "{ENDPOINTS}"`
 <TabItem value="addr" label="Address">
 
 ```bash
-lavad test rpcprovider {PROVIDER_ADDRESS}
+lavap test rpcprovider {PROVIDER_ADDRESS}
 ```
 
 </TabItem>
@@ -333,9 +337,9 @@ And review the Providers Features page for more capabilities.
 
 ## FAQ
 
-#### `lavad` not found
+#### `lavap` not found
 
-Make sure you downloaded/built the binary, and it is located in the path you use to run `lavad` commands, or you have it under /usr/local/bin or under PATH
+Make sure you downloaded/built the binary, and it is located in the path you use to run `lavap` commands, or you have it under /usr/local/bin or under PATH. You can download/build the binary with `sudo make install-all` from your cloned folder.
 
 #### Received error `account sequence mismatch`
 
@@ -346,14 +350,14 @@ Try to wait for a block_time (current=30s) and then run the command again
 Run the following command:
 
 ```
-lavad tx pairing unstake-provider "{NETWORK_NAME}" \\
+lavap tx pairing unstake-provider "{NETWORK_NAME}" \\
 --from "{ACCOUNT_NAME}" \\
 --keyring-backend "{KEYRING_BACKEND}" \\
 --chain-id "{CHAIN_ID}" \\
 --node "{LAVA_RPC_NODE}"
 
 # For example, unstake a provider for the ETH1 network,
-# lavad tx pairing unstake-provider ETH1 \\
+# lavap tx pairing unstake-provider ETH1 \\
 # --from my_account_name \\
 # --keyring-backend "test" \\
 # --chain-id "lava-testnet-2" \\
@@ -385,4 +389,4 @@ ERR sentry init failure to initialize error="provider stake verification mismatc
 
 ```
 
-It is likely that the stake-provider command was not taken into effect yet, if running the `lavad server` option, please wait a few minutes and try running the command again.
+It is likely that the stake-provider command was not taken into effect yet, if running the `lavap server` option, please wait a few minutes and try running the command again.

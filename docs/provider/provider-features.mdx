@@ -21,17 +21,17 @@ The **`freeze`** command allows a provider to freeze its service, effective next
 
 ```bash
 # required flags: --from alice. optional flags: --reason
-lavad tx pairing freeze [chain-ids] --from <provider_address>
-lavad tx pairing freeze [chain-ids] --from <provider_address> --reason <freeze_reason>
-lavad tx pairing freeze ETH1,COS3 --from alice --reason "maintenance"
+lavap tx pairing freeze [chain-ids] --from <provider_address>
+lavap tx pairing freeze [chain-ids] --from <provider_address> --reason <freeze_reason>
+lavap tx pairing freeze ETH1,COS3 --from alice --reason "maintenance"
 ```
 
 **Unfreeze:**
 
 ```bash
 # required flags: --from alice
-lavad tx pairing unfreeze [chain-ids] --from <provider_address>
-lavad tx pairing unfreeze ETH1,COS3 --from alice
+lavap tx pairing unfreeze [chain-ids] --from <provider_address>
+lavap tx pairing unfreeze ETH1,COS3 --from alice
 ```
 
 The **`freeze`** command requires the **`--from`** flag to specify the provider address. Optionally, you can provide a **`--reason`** flag to give a reason for the freeze.
@@ -49,7 +49,8 @@ The following RPCProvider Config Example demonstrated authentication using the "
 endpoints:
   - api-interface: tendermintrpc
     chain-id: COS3
-    network-address: 127.0.0.1:2221
+    network-address: 
+     address: 127.0.0.1:2221
     node-urls:
       - url: ws://127.0.0.1:26657/websocket
         auth-config:
@@ -71,7 +72,8 @@ The following RPCProvider Config Example demonstrated authentication using the "
 endpoints:
     - api-interface: tendermintrpc
       chain-id: COS3
-      network-address: 127.0.0.1:2221
+      network-address: 
+        address: 127.0.0.1:2221
       node-urls:
         - url: ws://127.0.0.1:26657/websocket
           // highlight-start
@@ -93,7 +95,8 @@ If you want to add TLS authentication to your gRPC endpoint you have 3 options:
 endpoints:
     - api-interface: grpc
       chain-id: LAV1
-      network-address: 127.0.0.1:2221
+      network-address: 
+        address: 127.0.0.1:2221
       node-urls:
         - url: 127.0.0.1:9090
           // highlight-start
@@ -108,7 +111,8 @@ endpoints:
 endpoints:
     - api-interface: grpc
       chain-id: LAV1
-      network-address: 127.0.0.1:2221
+      network-address: 
+        address: 127.0.0.1:2221
       node-urls:
         - url: 127.0.0.1:9090
           // highlight-start
@@ -125,7 +129,8 @@ endpoints:
 endpoints:
     - api-interface: grpc
       chain-id: LAV1
-      network-address: 127.0.0.1:2221
+      network-address: 
+        address: 127.0.0.1:2221
       node-urls:
         - url: 127.0.0.1:9090
           // highlight-start
@@ -144,7 +149,8 @@ The IP will be added to the following header: `X-Forwarded-For`
 endpoints:
     - api-interface: jsonrpc
       chain-id: ETH1
-      network-address: 127.0.0.1:2221
+      network-address: 
+        address: 127.0.0.1:2221
       node-urls: 
         - url: ws://your_node_url/
           // highlight-start
@@ -161,7 +167,8 @@ you can overwrite the timeouts with custom values using a flag in the node-urls 
 endpoints:
     - api-interface: jsonrpc
       chain-id: ETH1
-      network-address: 127.0.0.1:2221
+      network-address: 
+        address: 127.0.0.1:2221
       node-urls: 
         - url: ws://your_node_url/
           // highlight-start
