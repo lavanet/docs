@@ -241,23 +241,27 @@ In this example, the provider supports all the API interfaces for the Ethereum M
 endpoints:
   - api-interface: jsonrpc
     chain-id: ETH1
-    network-address: 127.0.0.1:2221
+    network-address: 
+      address: 0.0.0.0:2221
     node-urls:
       - url: wss://eth-rpc/ws
   - api-interface: tendermintrpc
     chain-id: COS3
-    network-address: 127.0.0.1:2221
+    network-address: 
+      address: 0.0.0.0:2221
     node-urls:
       - url: ws://127.0.0.1:26657/websocket
       - url: http://127.0.0.1:26657
   - api-interface: grpc
     chain-id: COS3
-    network-address: 127.0.0.1:2221
+    network-address: 
+      address: 0.0.0.0:2221
     node-urls: 
       - url: 127.0.0.1:9090
   - api-interface: rest
     chain-id: COS3
-    network-address: 127.0.0.1:2221
+    network-address: 
+      address: 0.0.0.0:2221
     node-urls: 
       - url: http://127.0.0.1:1317
 ```
