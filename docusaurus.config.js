@@ -39,7 +39,7 @@ const config = {
           anonymizeIP: true,
         },
         googleTagManager: {
-          containerId: 'GTM-PN3DCBDK',
+          containerId: 'GTM-P26HFWJW',
         },
       }),
     ],
