@@ -26,6 +26,20 @@ const sidebars = {
         },
         {
           type: 'category',
+          label: 'Axelar',
+          collapsible: true,
+          collapsed: true,
+          link: {
+            type: 'doc',
+            id: 'chains/axelar-chain/axelar'
+          },
+          items: [
+            'chains/axelar-chain/axelar-dev',
+            'chains/axelar-chain/axelar-node'
+          ]
+        },
+        {
+          type: 'category',
           label: 'Celo',
           collapsible: true,
           collapsed: true,

@@ -31,12 +31,13 @@ async function useAxelarMainnet() {
 
   const AxelarMainnet = await new LavaSDK({
     privateKey: process.env.PRIVATE_KEY, //hide your private key in an environmental variable
-    chainID: 'AVAX',
+    chainID: 'AXELAR',
+    rpcInterface: 'rest',
   });
 
   const AxelarBlockResponse =  await AxelarMainnet.sendRelay({
-    method: "eth_blockNumber",
-    params: [],
+    method: "GET",
+    url: "/node_info",
   });
 
   console.log(AxelarBlockResponse);
