@@ -8,6 +8,28 @@ import TabItem from '@theme/TabItem';
 
 # Getting Axelar RPC
 
+## Axelar ipRPC 🪙
+Lava🌋 now offers incentivized public RPC for Axelar. Developers can get free, public endpoints for all.
+
+### Mainnet 🌐
+
+| Service 🔌          | URL 🔗                                 |
+|---------------------|----------------------------------------|
+| 🟢 tendermint-rpc    | https://tm.axelar.lava.build            |
+| 🟢 tendermint-rpc / websocket | wss://tm.axelar.lava.build/websocket |
+| 🟢 rest              | https://rest.axelar.lava.build         |
+| 🟢 grpc              | grpc.axelar.lava.build:443             |
+
+### Testnet 🧪
+
+| Service 🔌                  | URL 🔗                                    |
+|-----------------------------|-------------------------------------------|
+| 🟢 tendermint-rpc            | https://tm.axelar-testnet.lava.build       |
+| 🟢 tendermint-rpc / websocket | wss://tm.axelar-testnet.lava.build/websocket |
+| 🟢 rest                      | https://rest.axelar-testnet.lava.build     |
+| 🟢 grpc                      | grpc.axelar-testnet.lava.build:443        |
+
+
 ## [SDK](https://github.com/lavanet/lava-sdk)
 
 :::caution 

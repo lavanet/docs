@@ -53,10 +53,15 @@ Run the following command to initiate your node!
 $AXELARD_HOME/bin/axelard start [moniker] --home $AXELARD_HOME >> $AXELARD_HOME/logs/axelard.log 2>&1 &
 ```
 
+## Axelar ipRPC 🪙
+
+Want to reach more developers and get more rewards as a node runner? Axelar pays providers who're interested. It offers Incentivized Public RPC (ipRPC) endpoints to developers in its ecosystem. By signing up here, you can become one of our premier providers contributing to decentralized public goods. [Sign up now!](https://lavanet.typeform.com/to/qQ1x6WJs?utm_source=becoming-a-lava-provider-for-axelar&utm_medium=docs&utm_campaign=axelar-post-grant)
+
+
 ## Apply to our Provider Incubation Program 📋
 
-In our current state of Testnet, there is an additional stage to pass through before you can become a provider on the Lava Network. Please fill out the [application form](https://lavanet.typeform.com/to/ORi3A13v?utm_source=becoming-a-lava-provider-for-axelar&utm_medium=docs&utm_campaign=axelar-pre-grant) for our Provider Incubation Program. Feel free to drop a line in our [Discord](https://discord.gg/UxujNZbW) once you’ve completed this step!
+In our current state of Testnet, there is an additional stage to pass through before you can become a provider on the Lava Network. Please fill out the [application form](https://lavanet.typeform.com/to/ORi3A13v?utm_source=becoming-a-lava-provider-for-axelar&utm_medium=docs&utm_campaign=axelar-post-grant) for our Provider Incubation Program. Feel free to drop a line in our [Discord](https://discord.gg/UxujNZbW) once you’ve completed this step!
 
 ## Setup your Provider on Lava Network 🌋
 
-Once you’ve been accepted - to set up your provider on the Lava Network, you can refer to the [provider setup documentation](https://docs.lavanet.xyz/provider-setup?utm_source=running-a-axelar-rpc-node&utm_medium=docs&utm_campaign=axelar-pre-grant) available elsewhere in our docs. This should provide you with the necessary information to configure and operate your provider node on the Lava Network.
+Once you’ve been accepted - to set up your provider on the Lava Network, you can refer to the [provider setup documentation](https://docs.lavanet.xyz/provider-setup?utm_source=running-a-axelar-rpc-node&utm_medium=docs&utm_campaign=axelar-post-grant) available elsewhere in our docs. This should provide you with the necessary information to configure and operate your provider node on the Lava Network.
