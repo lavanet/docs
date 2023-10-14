@@ -55,7 +55,7 @@ $AXELARD_HOME/bin/axelard start [moniker] --home $AXELARD_HOME >> $AXELARD_HOME/
 
 ## Axelar ipRPC 🪙
 
-Want to reach more developers and get more rewards as a node runner? Axelar pays providers who're interested. It offers Incentivized Public RPC (ipRPC) endpoints to developers in its ecosystem. By signing up here, you can become one of our premier providers contributing to decentralized public goods. [Sign up now!](https://lavanet.typeform.com/to/qQ1x6WJs?utm_source=becoming-a-lava-provider-for-axelar&utm_medium=docs&utm_campaign=axelar-post-grant)
+Want to reach more developers and get more rewards as a node runner? Axelar pays providers who're interested. Axelar offers Incentivized Public RPC (ipRPC) endpoints to developers in its ecosystem. By signing up here, you can become one of our premier providers contributing to decentralized public goods. [Sign up now!](https://lavanet.typeform.com/to/qQ1x6WJs?utm_source=becoming-a-lava-provider-for-axelar&utm_medium=docs&utm_campaign=axelar-post-grant)
 
 
 ## Apply to our Provider Incubation Program 📋
