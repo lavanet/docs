@@ -188,6 +188,7 @@ const sidebars = {
         id: 'power-lava-intro'
       },
       items: [
+        'lava-blockchain/install-lava',
         'lava-blockchain/hardware-requirements',
         {
           type: 'category', 
