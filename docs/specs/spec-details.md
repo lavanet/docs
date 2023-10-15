@@ -7,10 +7,12 @@ title: Reference
 
 This guide provides a detailed reference to the various specifications within the Lava Network. It encompasses the structure and definitions of proposals, specs, API collections, service APIs, and associated extensions. The objective is to ensure that developers, validators, and other stakeholders have a clear and consistent understanding of the configurations and functionalities.
 
+<br/>
+<hr/>
 
-## 📌 General Structure 
+## 📌 File Structure 
 
-<details><summary> Tree Structure </summary>
+<details><summary> 🔝 Tree Structure </summary>
 
 ```
 Spec (JSON)
@@ -71,7 +73,7 @@ Spec (JSON)
 
 </details>
 
-<details> <summary> JSON (Template) </summary>
+<details> <summary> 🗋 JSON (Template) </summary>
 
 ```json
 {
@@ -265,54 +267,74 @@ Represents the amount deposited by the user for the proposal.
 |---------|------------------------------------|------------------|
 | `deposit` | Amount deposited for the proposal in a particular denomination. | `10000000ulava` |
 
+<br/>
+<hr/>
 
-## Glossary 📖
-
-### `reliability_threshold`
-
-This threshhold determines the frequency at which free data reliability messages are broadcasted. At its essence, it dictates how resilient and trustworthy the data relayed is. The threshold is represented in hexadecimal format and functions as a mask to determine the frequency of reliability messages:
-
-    0x0FFFFFFF: This implies that roughly 1 out of every 16 messages is a data reliability message. It's relatively infrequent, optimizing for efficiency over reliability.
-
-    0x8FFFFFFF: Indicates a higher frequency – about 1 reliability message for every 2 standard messages. This is a middle-ground setting, balancing both efficiency and reliability.
-
-    0xFFFFFFFF: The maximum setting where every message is a data reliability message. It prioritizes reliability above all, ensuring that data integrity is maintained at all times.
-
-### `compares_hashes`
-
-When set to true, it activates the data reliability features of the Lava network for the specified chain. This involves constantly comparing and validating block hashes from different nodes to guarantee data authenticity and prevent any malicious or erroneous data propagation.
+## 📖 Glossary 
 
 
-### `finalization_criteria`
+### Terms 📚
 
-This parameter addresses the issue of blockchain finality. In the context of blockchains, particularly Proof-of-Work chains like Ethereum, blocks can sometimes be "orphaned" due to network forks. The "finalization_criteria" value represents the number of blocks back from the current block number that we deem "finalized" or irreversible.
-
-For instance, with a "finalization_criteria" of 7, if the latest block number is 1000, blocks 993 and earlier are considered finalized. By doing so, the system safeguards against relaying data from blocks that might later get rejected or orphaned.
-
-### `saved_blocks`
-
-It corresponds to the number of previously finalized blocks (as determined by "finalization_criteria") that providers should retain and attach to their responses for enhanced reliability. By providing a history of previous blocks, it ensures data consistency and allows for cross-validation of data among different providers.
-
-### `average_block_time`
+<details> <summary> 🗉 `average_block_time` </summary>
 
 This value represents the typical duration, in milliseconds, between consecutive blocks being added to the blockchain. It's essential for quality of service (QoS) considerations, ensuring timely and efficient data relay without causing undue strain on the network or the nodes.
 
-### `allowed_block_lag_for_qos_sync`
+</details>
+
+<details> <summary> 🗉 `allowed_block_lag_for_qos_sync` </summary>
 
 This configuration determines how many blocks behind the latest block a provider can be before their QoS score begins to degrade. It essentially quantifies the maximum allowable "out-of-sync" state for a provider, beyond which their performance is deemed suboptimal.
 
 For instance, if the network's latest block number is 1000 and a provider's latest block number is 995 with an "allowed_block_lag_for_qos_sync" of 5, their QoS score will start to be negatively impacted.
 
-### `deposit`
+</details>
 
-In a decentralized setup, actions like adding or updating specs may need consensus or approval. The "deposit" specifies the amount of "lava" (presumably the native token of the Lava network) that must be deposited as a proposal spec admission fee. It's akin to a security deposit or stake, ensuring that only serious and genuine proposals are submitted, and potentially safeguarding against spam or malicious actions.
+<details> <summary> 🗉 `compares_hashes`  </summary>
+
+When set to true, it activates the data reliability features of the Lava network for the specified chain. This involves constantly comparing and validating block hashes from different nodes to guarantee data authenticity and prevent any malicious or erroneous data propagation.
+
+</details>
+
+<details> <summary> 🗉 `deposit` </summary>
+
+In a decentralized setup, actions like adding or updating specs may need consensus or approval. The "deposit" specifies the amount of "ulava" (the native token of the Lava network) that must be deposited as a proposal spec admission fee. It's akin to a security deposit or stake, ensuring that only serious and genuine proposals are submitted, and potentially safeguarding against spam or malicious actions.
+
+</details>
+
+<details> <summary> 🗉 `finalization_criteria` </summary>
+
+This parameter addresses the issue of blockchain finality. In the context of blockchains, particularly Proof-of-Work chains like Ethereum, blocks can sometimes be "orphaned" due to network forks. The "finalization_criteria" value represents the number of blocks back from the current block number that we deem "finalized" or irreversible.
+
+For instance, with a "finalization_criteria" of 7, if the latest block number is 1000, blocks 993 and earlier are considered finalized. By doing so, the system safeguards against relaying data from blocks that might later get rejected or orphaned.
+
+</details>
+
+<details> <summary> 🗉 `reliability_threshold` </summary>
+
+This threshhold determines the frequency at which free data reliability messages are broadcasted. At its essence, it dictates how resilient and trustworthy the data relayed is. The threshold is represented in hexadecimal format and functions as a mask to determine the frequency of reliability messages:
+
+  - **0x0FFFFFFF**: This implies that roughly 1 out of every 16 messages is a data reliability message. It's relatively infrequent, optimizing for efficiency over reliability.
+
+  - **0x8FFFFFFF**: Indicates a higher frequency – about 1 reliability message for every 2 standard messages. This is a middle-ground setting, balancing both efficiency and reliability.
+
+  - **0xFFFFFFFF**: The maximum setting where every message is a data reliability message. It prioritizes reliability above all, ensuring that data integrity is maintained at all times.
+
+</details>
+
+<details> <summary> 🗉 `saved_blocks` </summary>
+
+It corresponds to the number of previously finalized blocks (as determined by "finalization_criteria") that providers should retain and attach to their responses for enhanced reliability. By providing a history of previous blocks, it ensures data consistency and allows for cross-validation of data among different providers.
+
+</details>
 
 
-### Parsing
+<br/>
+
+### Parsing 🧩
 
 Parsing is a critical aspect when interacting with diverse chains, as each chain returns data in a different format. The Lava Network has established parsing protocols to handle these variations effectively.
 
-#### Parsing Functions:
+<details><summary> Parsing Functions </summary>
 
 The parsing functions define how the returned data is processed to extract the necessary information.
 
@@ -331,17 +353,25 @@ The parsing functions define how the returned data is processed to extract the n
   - **PARSE_DICTIONARY_OR_ORDERED:**
       Description: It first tries the PARSE_DICTIONARY method, and if that fails, then it resorts to the PARSE_BY_ARG method.
 
-#### `block_parsing`:
+</details>
+
+<details><summary> Parsing Fields </summary>
+
+##### `block_parsing`:
 
 Determines how to extract the block number associated with a request. This is essential for queries that are specific to certain block heights.
-#### `result_parsing`:
+
+##### `result_parsing`:
 
 Determines how to extract the desired data from the response. Depending on the structure of the data returned by the chain, the appropriate parsing method is chosen.
 
-#### `function_tag`:
+##### `function_tag`:
 
 This is crucial for the Lava network's features, such as reliability, which require fetching certain data from the chain, like the latest block number or block hashes. The function_tag marks an endpoint as being suitable to fetch specific types of information. Some examples include getBlockNumber and getBlockByNumber.
 
-#### `function_template`:
+##### `function_template`:
 
 For endpoints with a defined function_tag, this template serves as a format string. It can be used by relayers to construct a query to an external chain. This ensures standardized queries across different relayers.
+
+</details>
+<br/>
