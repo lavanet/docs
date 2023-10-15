@@ -1,9 +1,9 @@
 ---
 slug: /add-spec
-title: Creating a New Specification
+title: New Spec
 ---
 
-# Creating a New Specification 
+# Adding a Specification to Lava
 
 <iframe width="100%" src="/img/tutorial/spec/spec_creation.webm" frameborder="0" allow="encrypted-media; gyroscope; picture-in-picture"></iframe>
 

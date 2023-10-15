@@ -3,11 +3,11 @@ slug: /spec
 title: Specifications
 ---
 
-# Specifications
+# Specifications (Specs)
 
 import RoadmapItem from '@site/src/components/RoadmapItem';
 
-## Overview 🔍
+## 🔍 Overview 
 
 Specifications (specs) are the foundational blueprints for Lava's multichain support. Presented in JSON format, they detail the bare minimum requirements for an API to run on Lava. Through these specs, Lava determines which chains and methods are supported and enabled, as well as establishes the costs, requirements, and verifications for them.
 
@@ -22,7 +22,7 @@ Whenever the ecosystem demands a new API, a new spec is integrated. This dynamic
 <hr />
 
 
-## Key Concepts 📖
+## 📖 Key Concepts 
 
 ### Index 📑
 An `index` is the name of the spec. Any time a spec is referenced it will be through its `index`.
@@ -168,7 +168,7 @@ This example specifies archive nodes who receive a "`cu_multiplier`" (hence more
 
 <hr />
 
-## Examples 💡
+## 💡 Examples 
 
 ### Blockchains ⛓️
 
