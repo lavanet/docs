@@ -17,62 +17,56 @@ Spec (JSON)
 │
 ├── Proposal (`proposal`)
 │   ├── title
-│   └── description
-│
-├── Specifications (`specs`)
-│   ├── index
-│   ├── name
-│   ├── enabled
-│   ├── imports
-│   ├── reliability_threshold
-│   ├── data_reliability_enabled
-│   ├── block_distance_for_finalized_data
-│   ├── blocks_in_finalization_proof
-│   ├── average_block_time
-│   ├── allowed_block_lag_for_qos_sync
-│   ├── min_stake_provider
-│   └── min_stake_client
-│
-├── API Collections (`api_collections`)
-│   ├── enabled
-│   ├── collection_data
-│   │   ├── api_interface
-│   │   ├── internal_path
-│   │   ├── type
-│   │   └── add_on
-│   ├── apis
-│   ├── headers
-│   ├── inheritance_apis
-│   ├── parse_directives
-│   └── verifications
+│   ├── description
+│   │
+│   └── Specifications (`specs`)
+│       ├── index
 │       ├── name
-│       └── values
+│       ├── enabled
+│       ├── imports
+│       ├── reliability_threshold
+│       ├── data_reliability_enabled
+│       ├── block_distance_for_finalized_data
+│       ├── blocks_in_finalization_proof
+│       ├── average_block_time
+│       ├── allowed_block_lag_for_qos_sync
+│       ├── min_stake_provider
+│       └── min_stake_client
+│       │
+│       └── API Collections (`api_collections`)
+│           ├── enabled
+│           ├── collection_data
+│           │   ├── api_interface
+│           │   ├── internal_path
+│           │   ├── type
+│           │   └── add_on
+│           ├── Service APIs (`apis`)
+│           │   ├── name
+│           │   ├── block_parsing
+│           │   │   ├── parser_arg
+│           │   │   └── parser_func
+│           │   ├── compute_units
+│           │   ├── enabled
+│           │   ├── category
+│           │   │   ├── deterministic
+│           │   │   ├── local
+│           │   │   ├── subscription
+│           │   │   └── stateful
+│           │   └── extra_compute_units
+│           ├── headers
+│           ├── inheritance_apis
+│           ├── parse_directives
+│           ├── Verifications (`verifications`)
+│           │   ├── name
+│           │   └── values
+│           └── Extensions (`extensions`)
+│               ├── name
+│               ├── cu_multiplier
+│               └── rule
 │
-├── Service APIs (`apis`)
-│   ├── name
-│   ├── block_parsing
-│   │   ├── parser_arg
-│   │   └── parser_func
-│   ├── compute_units
-│   ├── enabled
-│   ├── category
-│   │   ├── deterministic
-│   │   ├── local
-│   │   ├── subscription
-│   │   └── stateful
-│   └── extra_compute_units
-│
-├── Verification (`verifications`)
-│   ├── name
-│   └── values
-│
-├── Deposit (`deposit`)
-│   └── deposit
-│
-└── Extensions
-    ├── name
-    ├── cu_multiplier
-    └── rule
+└── Deposit (`deposit`)
+    └── deposit
+
 ```
 
 </details>
@@ -82,69 +76,83 @@ Spec (JSON)
 ```json
 {
   "proposal": {
-    "title": "",
-    "description": ""
-  },
-  "specs": {
-    "index": "",
-    "name": "",
-    "enabled": "",
-    "imports": "",
-    "reliability_threshold": "",
-    "data_reliability_enabled": "",
-    "block_distance_for_finalized_data": "",
-    "blocks_in_finalization_proof": "",
-    "average_block_time": "",
-    "allowed_block_lag_for_qos_sync": "",
-    "min_stake_provider": "",
-    "min_stake_client": ""
-  },
-  "api_collections": {
-    "enabled": "",
-    "collection_data": {
-      "api_interface": "",
-      "internal_path": "",
-      "type": "",
-      "add_on": ""
-    },
-    "apis": "",
-    "headers": "",
-    "inheritance_apis": "",
-    "parse_directives": "",
-    "verifications": {
-      "name": "",
-      "values": ""
+    "title": "Add Specs: API/Chain ",
+    "description": "...",
+    "specs": {
+      "index": "NAME",
+      "name": "name of the chain/api",
+      "enabled": true,
+      "imports": [],
+      "reliability_threshold": 268435455,
+      "data_reliability_enabled": true,
+      "block_distance_for_finalized_data": 0,
+      "blocks_in_finalization_proof": 1,
+      "average_block_time": 0,
+      "allowed_block_lag_for_qos_sync": 1,
+      "min_stake_provider": {
+        "denom": "ulava",
+        "amount": "5000000000"
+      },
+      "min_stake_client":  {
+        "denom": "ulava",
+        "amount": "5000000000"
+      },
+      "api_collections": [
+        {
+          "enabled": true,
+          "collection_data": {
+            "api_interface": "",
+            "internal_path": "",
+            "type": "",
+            "add_on": ""
+          },
+          "apis": [
+            {
+              "name": "",
+              "block_parsing": {
+                "parser_arg": [
+                  "latest"
+                ],
+                "parser_func": "DEFAULT"
+              },
+              "compute_units": 10,
+              "enabled": true,
+              "category": {
+                "deterministic": true,
+                "local": false,
+                "subscription": false,
+                "stateful": 0
+              },
+              "extra_compute_units": 0
+            }
+          ],
+          "headers": [],
+          "inheritance_apis": [],
+          "parse_directives": [],
+          "verifications": [
+            {
+              "name": "",
+              "values": [
+                {
+                "expected_value": ""
+                }
+              ]
+            }
+          ],
+          "extensions": [
+            {
+              "name": "",
+              "cu_multiplier": "",
+              "rule": ""
+            }
+          ]
+        }
+      ]
     }
   },
-  "apis": {
-    "name": "",
-    "block_parsing": {
-      "parser_arg": "",
-      "parser_func": ""
-    },
-    "compute_units": "",
-    "enabled": "",
-    "category": {
-      "deterministic": "",
-      "local": "",
-      "subscription": "",
-      "stateful": ""
-    },
-    "extra_compute_units": ""
-  },
-  "verifications": {
-    "name": "",
-    "values": ""
-  },
-  "deposit": {
-    "deposit": ""
-  },
-  "extensions": {
-    "name": "",
-    "cu_multiplier": "",
-    "rule": ""
-  }
+  "deposit": "0denom"
 }
+
 ```
 </details>
 
@@ -153,7 +161,7 @@ Spec (JSON)
 
 Each section details specific fields with descriptions and examples.
 
-### Proposal (`proposal`)
+### Proposal (`proposal`) 📜
 
 
 | Field         | Description                                                   | Example                                                  |
@@ -162,7 +170,7 @@ Each section details specific fields with descriptions and examples.
 | `description` | Brief description about the purpose of the proposal.          | `Adding new specification support for relaying Solana data on Lava` |
 
 
-### Specifications (`specs`)
+### Specifications (`specs`) 📘
 
 | Field | Description | Example |
 |-------|-------------|---------|
@@ -179,7 +187,7 @@ Each section details specific fields with descriptions and examples.
 | `min_stake_provider` | Minimum amount a provider needs to stake to offer services. | `{"denom": "ulava", "amount": "50000000000"}` |
 | `min_stake_client` | Minimum amount a client needs to stake to access services. | `{"denom": "ulava", "amount": "5000000000"}` |
 
-#### API Collections (`api_collections`)
+### API Collections (`api_collections`) 🗂️
 
 | Field | Description | Example |
 |-------|-------------|---------|
@@ -191,19 +199,17 @@ Each section details specific fields with descriptions and examples.
 | `parse_directives` | Directives to parse the API responses. | `[]` |
 | `verifications` | Contains verification details. | `{"name": "chain-id", "values": [ { "expected_value": "juno-1" } ]}` |
 
-##### API Collection Data (`collection_data`)
-
-Contains data related to the API collection.
+#### API Collection Data (`collection_data`)
 
 | Field | Description | Example |
 |-------|-------------|---------|
 | `api_interface` | Interface of the API (e.g., `rest`, `grpc`). | `rest` |
 | `internal_path` | Internal path for the API call. | `` |
 | `type` | HTTP method for the API request. | `GET` |
-| `add_on` | Additional data or configurations. | `` |
+| `add_on` | Name of add-on collection belongs to | `debug` |
 
 
-### Service APIs (`apis`)
+### Service APIs (`apis`) ⚙️
 
 | Field | Description | Example |
 |-------|-------------|---------|
@@ -234,8 +240,7 @@ Details on how block heights are derived from API requests.
 | `subscription` | Indicates if the API supports subscription. | `false` |
 | `stateful` | Describes the statefulness of the API. A value of `0` means it's stateless. | `0` |
 
-
-### Verification(`verifications`)
+#### Verification(`verifications`)
 
 Verification details used to validate the data.
 
@@ -244,8 +249,15 @@ Verification details used to validate the data.
 | `name` | Name of the verification. | `chain-id` |
 | `values` | Array containing expected values. | `[ { "expected_value": "juno-1" } ]` |
 
+#### Extensions (`extensions`)
 
-### Deposit (`deposit`)
+| Field           | Description                                | Example   |
+|-----------------|--------------------------------------------|-----------|
+| `name`          | Name of the extension.                     | `archive` |
+| `cu_multiplier` | Compute units multiplier for the extension.| `5`       |
+| `rule`          | Specific rules associated with the extension. (e.g., block number)| `block: 254`|
+
+### Deposit (`deposit`) 💰
 
 Represents the amount deposited by the user for the proposal.
 
@@ -254,20 +266,9 @@ Represents the amount deposited by the user for the proposal.
 | `deposit` | Amount deposited for the proposal in a particular denomination. | `10000000ulava` |
 
 
-### Extensions (`extensions`)
+## Glossary 📖
 
-| Field           | Description                                | Example   |
-|-----------------|--------------------------------------------|-----------|
-| `name`          | Name of the extension.                     | `archive` |
-| `cu_multiplier` | Compute units multiplier for the extension.| `5`       |
-| `rule`          | Specific rules associated with the extension. (e.g., block number)| `block: 254`|
-
-
-## Notes
-
-### Reliability Threshold
-
-`reliability_threshold`
+### `reliability_threshold`
 
 This threshhold determines the frequency at which free data reliability messages are broadcasted. At its essence, it dictates how resilient and trustworthy the data relayed is. The threshold is represented in hexadecimal format and functions as a mask to determine the frequency of reliability messages:
 
@@ -277,32 +278,32 @@ This threshhold determines the frequency at which free data reliability messages
 
     0xFFFFFFFF: The maximum setting where every message is a data reliability message. It prioritizes reliability above all, ensuring that data integrity is maintained at all times.
 
-### Compare Hashes (`compares_hashes`)
+### `compares_hashes`
 
 When set to true, it activates the data reliability features of the Lava network for the specified chain. This involves constantly comparing and validating block hashes from different nodes to guarantee data authenticity and prevent any malicious or erroneous data propagation.
 
 
-### Finalization Criteria ("finalization_criteria")
+### `finalization_criteria`
 
 This parameter addresses the issue of blockchain finality. In the context of blockchains, particularly Proof-of-Work chains like Ethereum, blocks can sometimes be "orphaned" due to network forks. The "finalization_criteria" value represents the number of blocks back from the current block number that we deem "finalized" or irreversible.
 
 For instance, with a "finalization_criteria" of 7, if the latest block number is 1000, blocks 993 and earlier are considered finalized. By doing so, the system safeguards against relaying data from blocks that might later get rejected or orphaned.
 
-### Saved Blocks ("saved_blocks")
+### `saved_blocks`
 
 It corresponds to the number of previously finalized blocks (as determined by "finalization_criteria") that providers should retain and attach to their responses for enhanced reliability. By providing a history of previous blocks, it ensures data consistency and allows for cross-validation of data among different providers.
 
-### Average Block Time ("average_block_time")
+### `average_block_time`
 
 This value represents the typical duration, in milliseconds, between consecutive blocks being added to the blockchain. It's essential for quality of service (QoS) considerations, ensuring timely and efficient data relay without causing undue strain on the network or the nodes.
 
-### Allowed Block Lag for QoS Sync ("allowed_block_lag_for_qos_sync")
+### `allowed_block_lag_for_qos_sync`
 
 This configuration determines how many blocks behind the latest block a provider can be before their QoS score begins to degrade. It essentially quantifies the maximum allowable "out-of-sync" state for a provider, beyond which their performance is deemed suboptimal.
 
 For instance, if the network's latest block number is 1000 and a provider's latest block number is 995 with an "allowed_block_lag_for_qos_sync" of 5, their QoS score will start to be negatively impacted.
 
-### Deposit ("deposit)
+### `deposit`
 
 In a decentralized setup, actions like adding or updating specs may need consensus or approval. The "deposit" specifies the amount of "lava" (presumably the native token of the Lava network) that must be deposited as a proposal spec admission fee. It's akin to a security deposit or stake, ensuring that only serious and genuine proposals are submitted, and potentially safeguarding against spam or malicious actions.
 
@@ -315,20 +316,20 @@ Parsing is a critical aspect when interacting with diverse chains, as each chain
 
 The parsing functions define how the returned data is processed to extract the necessary information.
 
-    EMPTY:
-        Description: The data is returned as it is without any parsing.
+  - **EMPTY:**
+      Description: The data is returned as it is without any parsing.
 
-    PARSE_BY_ARG:
-        Description: Assumes the returned data is an array. It takes an index as an argument and returns the element at that index in the returned data.
+  - **PARSE_BY_ARG:**
+      Description: Assumes the returned data is an array. It takes an index as an argument and returns the element at that index in the returned data.
 
-    PARSE_CANONICAL:
-        Description: Assumes the returned data is a canonically structured JSON. It receives key values as an argument and progresses through the JSON structure using the keys to fetch the desired element.
+  - **PARSE_CANONICAL:**
+      Description: Assumes the returned data is a canonically structured JSON. It receives key values as an argument and progresses through the JSON structure using the keys to fetch the desired element.
 
-    PARSE_DICTIONARY:
-        Description: Assumes the returned data is a string with a key-value structure (such as KEY=VAL). It receives a key and separator as arguments and returns the value corresponding to the key.
+  - **PARSE_DICTIONARY:**
+      Description: Assumes the returned data is a string with a key-value structure (such as KEY=VAL). It receives a key and separator as arguments and returns the value corresponding to the key.
 
-    PARSE_DICTIONARY_OR_ORDERED:
-        Description: It first tries the PARSE_DICTIONARY method, and if that fails, then it resorts to the PARSE_BY_ARG method.
+  - **PARSE_DICTIONARY_OR_ORDERED:**
+      Description: It first tries the PARSE_DICTIONARY method, and if that fails, then it resorts to the PARSE_BY_ARG method.
 
 #### `block_parsing`:
 
