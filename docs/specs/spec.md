@@ -16,7 +16,7 @@ Whenever the ecosystem demands a new API, a new spec is integrated. This dynamic
 <br/>
 
 [<RoadmapItem icon="⛓️‍💥" title="Add a Spec" description="Learn how to propose a new chain/API on Lava"/>](/add-spec)
-[<RoadmapItem icon="📐🗜️" title="Deep Dive into Specs" description="See a living reference manual for all the fields in a Spec"/>](/spec-details)
+[<RoadmapItem icon="📐🗜️" title="Deep Dive into Specs" description="See a living reference manual for all the fields in a Spec"/>](/spec-reference)
 
 <br/>
 <hr />

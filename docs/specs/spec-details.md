@@ -1,5 +1,5 @@
 ---
-slug: /spec-details
+slug: /spec-reference
 title: Reference
 ---
 
