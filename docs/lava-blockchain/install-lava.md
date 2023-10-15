@@ -42,7 +42,7 @@ The following packages are known dependencies of the install process:
 ## 🗄️ Installation Options 
 
 
-### Install all Binaries (Recommended) 🛠️
+### Install all Binaries 🛠️  **(Recommended)**
 
 Enter the following commands:
 
