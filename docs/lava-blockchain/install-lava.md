@@ -42,7 +42,7 @@ The following packages are known dependencies of the install process:
 ## 🗄️ Installation Options 
 
 
-### Install All (Recommended) 🛠️
+### Install all Binaries (Recommended) 🛠️
 
 Enter the following commands:
 
@@ -51,22 +51,6 @@ git clone https://github.com/lavanet/lava.git
 cd lava
 make install-all
 ```
-
-✅ Run `lavad version && lavap version` to ensure you've gotten the [latest releases](https://github.com/lavanet/lava/releases)!
-
-<br />
-
-### Build All Locally 🗜️
-
-Enter the following commands:
-
-```bash
-git clone https://github.com/lavanet/lava.git
-cd lava
-make build-all
-```
-
-📁 You will now have all three binaries (`lavad`,`lavap`,`lavavisor`) in `./build/`
 
 ✅ Run `lavad version && lavap version` to ensure you've gotten the [latest releases](https://github.com/lavanet/lava/releases)!
 
@@ -85,6 +69,23 @@ LAVA_BINARY=<name-of-binary> make install
 ✅ Run `<name-of-binary> --help` to ensure it installed properly.
 
 <br />
+
+### Build all Binaries Locally 🗜️
+
+Enter the following commands:
+
+```bash
+git clone https://github.com/lavanet/lava.git
+cd lava
+make build-all
+```
+
+📁 You will now have all three binaries (`lavad`,`lavap`,`lavavisor`) in `./build/`
+
+✅ Run `lavad version && lavap version` to ensure you've gotten the [latest releases](https://github.com/lavanet/lava/releases)!
+
+<br />
+
 
 ### Build a Specific Binary Locally 🔨
 
