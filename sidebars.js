@@ -140,6 +140,20 @@ const sidebars = {
     },
     {
       type: 'category', 
+      label: 'Specifications 🗜️',
+      collapsible: true,
+      collapsed: true,
+      link: {
+        type: 'doc',
+        id: 'specs/spec'
+      },
+      items: [
+        'specs/add-spec',
+        'specs/spec-reference'
+      ]
+    },
+    {
+      type: 'category', 
       label: 'Access Web3 APIs ⚡️',
       collapsible: false,
       link: {
@@ -188,6 +202,7 @@ const sidebars = {
         id: 'power-lava-intro'
       },
       items: [
+        'lava-blockchain/install-lava',
         'lava-blockchain/hardware-requirements',
         {
           type: 'category', 
@@ -236,18 +251,6 @@ const sidebars = {
         'lava-blockchain/account-wallet',
         'lava-blockchain/faucet',
         'lava-blockchain/subscriptions'
-      ]
-    },
-    {
-      type: 'category', 
-      label: 'Lava Network',
-      collapsible: true,
-      collapsed: false,
-      link: {
-        type: 'generated-index',
-        title: 'Lava Blockchain'
-      },
-      items: [
       ]
     },
     `tutorials`,
