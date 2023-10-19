@@ -5,7 +5,7 @@ title: Lava x Lava
 
 import RoadmapItem from '@site/src/components/RoadmapItem'
 
-![Lava Logo](/img/chains/filecoin_logo.svg)
+![Lava Logo](/img/chains/lava_logo.svg)
 
 [<RoadmapItem icon="⛏️" title="Get RPC" description="Get access to Lava's Web3 APIs and start building on the network with ease"/>](/lava-dev)
 
