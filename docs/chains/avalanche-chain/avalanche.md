@@ -34,6 +34,18 @@ https://raw.githubusercontent.com/lavanet/lava/main/cookbook/specs/spec_add_aval
 
 
 ### Methods 🛠️
+
+### Methods 🛠️
+
+#### ⌨️ Command:
+
+```bash
+lavad q spec show-chain-info AVAX
+```
+
+#### 📋 List :
+
+
 <details>
 <summary> List </summary>
 
