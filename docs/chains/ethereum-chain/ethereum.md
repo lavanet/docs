@@ -5,7 +5,7 @@ title: Ethereum x Lava
 
 import RoadmapItem from '@site/src/components/RoadmapItem'
 
-![Ethereum Logo](/img/chains/Ethereum_logo.svg)
+![Ethereum Logo](/img/chains/ethereum_logo.svg)
 
 [<RoadmapItem icon="⛏️" title="Get RPC" description="Get access to Lava's Web3 APIs and start building on the network with ease"/>](/ethereum-dev)
 
