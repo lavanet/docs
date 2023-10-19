@@ -7,6 +7,10 @@ const sidebars = {
     {
       type: 'category', 
       label: 'Chains ⛓️',
+      link: {
+        type: 'doc',
+        id: 'chains/chains'
+      },
       collapsible: true,
       collapsed: true,
       items: [
@@ -15,9 +19,10 @@ const sidebars = {
           label: 'Avalanche',
           collapsible: true,
           collapsed: true,
+          description: 'AVAX, AVAXT',
           link: {
             type: 'doc',
-            id: 'chains/avalanche-chain/avalanche'
+            id: 'chains/avalanche-chain/avalanche',
           },
           items: [
             'chains/avalanche-chain/avalanche-dev',
@@ -29,6 +34,7 @@ const sidebars = {
           label: 'Axelar',
           collapsible: true,
           collapsed: true,
+          description: 'AXELAR, AXELART',
           link: {
             type: 'doc',
             id: 'chains/axelar-chain/axelar'
@@ -43,6 +49,7 @@ const sidebars = {
           label: 'Celo',
           collapsible: true,
           collapsed: true,
+          description: 'CELO, ALFAJORES',
           link: {
             type: 'doc',
             id: 'chains/celo-chain/celo'
@@ -54,9 +61,25 @@ const sidebars = {
         },
         {
           type: 'category',
+          label: 'CosmosHub',
+          collapsible: true,
+          collapsed: true,
+          description: 'COS5, COS5T',
+          link: {
+            type: 'doc',
+            id: 'chains/cosmoshub-chain/cosmoshub'
+          },
+          items: [
+            'chains/cosmoshub-chain/cosmoshub-dev',
+            'chains/cosmoshub-chain/cosmoshub-node'
+          ]
+        },
+        {
+          type: 'category',
           label: 'Evmos',
           collapsible: true,
           collapsed: true,
+          description: 'EVMOS, EVMOST',
           link: {
             type: 'doc',
             id: 'chains/evmos-chain/evmos'
@@ -68,9 +91,25 @@ const sidebars = {
         },
         {
           type: 'category',
+          label: 'Ethereum',
+          collapsible: true,
+          collapsed: true,
+          description: 'ETH1, GTH1',
+          link: {
+            type: 'doc',
+            id: 'chains/ethereum-chain/ethereum'
+          },
+          items: [
+            'chains/ethereum-chain/ethereum-dev',
+            'chains/ethereum-chain/ethereum-node'
+          ]
+        },
+        {
+          type: 'category',
           label: 'Filecoin',
           collapsible: true,
           collapsed: true,
+          description: 'FVM',
           link: {
             type: 'doc',
             id: 'chains/filecoin-chain/filecoin'
@@ -85,6 +124,7 @@ const sidebars = {
           label: 'Juno',
           collapsible: true,
           collapsed: true,
+          description: 'JUN1, JUNT1',
           link: {
             type: 'doc',
             id: 'chains/juno-chain/juno'
@@ -96,9 +136,25 @@ const sidebars = {
         },
         {
           type: 'category',
+          label: 'Lava',
+          description: 'LAV1',
+          collapsible: true,
+          collapsed: true,
+          link: {
+            type: 'doc',
+            id: 'chains/lava-chain/lava'
+          },
+          items: [
+            'chains/lava-chain/lava-dev',
+            'chains/lava-chain/lava-node'
+          ]
+        },
+        {
+          type: 'category',
           label: 'Optimism',
           collapsible: true,
           collapsed: true,
+          description: 'OPTM, OPTMT',
           link: {
             type: 'doc',
             id: 'chains/optimism-chain/optimism'
@@ -113,6 +169,7 @@ const sidebars = {
           label: 'Solana',
           collapsible: true,
           collapsed: true,
+          description: 'SOL, SOLT',
           link: {
             type: 'doc',
             id: 'chains/solana-chain/solana'
@@ -127,6 +184,7 @@ const sidebars = {
           label: 'Starknet',
           collapsible: true,
           collapsed: true,
+          description: 'STRK, STRKT',
           link: {
             type: 'doc',
             id: 'chains/starknet-chain/starknet'
@@ -154,8 +212,9 @@ const sidebars = {
     },
     {
       type: 'category', 
-      label: 'Access Web3 APIs ⚡️',
-      collapsible: false,
+      label: 'Web3 APIs ⚡️',
+      collapsible: true,
+      collapsed: true,
       link: {
         type: 'doc',
         id: 'access-intro'
@@ -195,8 +254,9 @@ const sidebars = {
     },
     {
       type: 'category', 
-      label: 'Power-up Lava 🌋',
-      collapsible: false,
+      label: 'Lava Binaries 🌋',
+      collapsible: true,
+      collapsed: true,
       link: {
         type: 'doc',
         id: 'power-lava-intro'

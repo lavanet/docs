@@ -121,12 +121,12 @@ const config = {
         },
         items: [
           {
-            label: "Access Web3 APIs ⚡️",
+            label: "Web3 APIs ⚡️",
             position: "left",
             to: "access-intro",
           },
           {
-            label: "Power-up Lava 🌋",
+            label: "Lava 🌋",
             position: "left",
             to: "power-lava",
           },
