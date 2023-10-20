@@ -4,6 +4,8 @@ slug: /access-intro
 
 # Web3 APIs ⚡️
 
+![Web3 APIs Banner](/img/banner/Web3-APIs-80ba1f766f734b558f0b6d6bff488630.jpg)
+
 Lava offers several attractive entry ways to our peer-to-peer RPC network. Unfortunately, it can be confusing to new developers on which one to select! 
 
 

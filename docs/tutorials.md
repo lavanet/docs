@@ -4,6 +4,8 @@ slug: /tutorials
 
 # Tutorials & Resources 📚
 
+![Tutorials & Resource Banner](/img/banner/Tutorials-&-Resources-6c1b0890b929c44e93ad1d6f43c4d1fa.jpg)
+
 In addition to our documentation, Lava has a growing selection of supportive learning resources that can assist you in your journey to master Web3. 
 
 ---

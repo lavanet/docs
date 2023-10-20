@@ -7,6 +7,8 @@ title: Specifications
 
 import RoadmapItem from '@site/src/components/RoadmapItem';
 
+![Specs Banner](/img/banner/Specifications-8d88fb7fab996d996b8927b5a133c541.jpg)
+
 ## 🔍 Overview 
 
 Specifications (specs) are the foundational blueprints for Lava's multichain support. Presented in JSON format, they detail the bare minimum requirements for an API to run on Lava. Through these specs, Lava determines which chains and methods are supported and enabled, as well as establishes the costs, requirements, and verifications for them.

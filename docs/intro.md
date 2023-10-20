@@ -6,7 +6,10 @@ title: Intro
 
 import RoadmapItem from '@site/src/components/RoadmapItem';
 
+![Intro Banner](/img/banner/Intro.jpg)  
+
 # Lava Intro
+
 
 Web3 is only as strong as its weakest link.
 Today, due to complexities and lack of incentives to run your own node, apps rely on centralized services 🤷

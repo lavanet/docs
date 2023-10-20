@@ -5,6 +5,9 @@ slug: /power-lava
 import RoadmapItem from '@site/src/components/RoadmapItem';
 
 # Power-up the Lava Network
+
+![Lava Binary Banner](/img/banner/Lava-8d88fb7fab996d996b8927b5a133c541x.jpg)
+
 Lava Network is powered by its participants. 
 
 Participants joining the network help reinforce data reliability and high quality of service. Lava's incentive framework prioritizes API providers that excel and allows anyone to stake (same as other PoS chains). Lava achieves fair rewards, privacy and censorship resistance for users by distributing consensus.
