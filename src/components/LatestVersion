@@ -1,0 +1,30 @@
+import React, { useEffect, useState } from 'react';
+
+const LatestVersion = () => {
+  const [version, setVersion] = useState('Loading...');
+
+  useEffect(() => {
+    const url = 'https://api.github.com/repos/lavanet/lava/releases/latest';
+
+    fetch(url, {
+      headers: {
+        'Accept': 'application/vnd.github+json',
+        'X-GitHub-Api-Version': '2022-11-28',
+      },
+    })
+      .then(response => response.json())
+      .then(data => {
+        setVersion(data.tag_name);
+      })
+      .catch(error => {
+        console.error('Error fetching version:', error);
+        setVersion('Failed to load version');
+      });
+  }, []);
+
+  return (
+    version
+  );
+};
+
+export default LatestVersion;
