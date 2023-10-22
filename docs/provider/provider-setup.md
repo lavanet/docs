@@ -335,6 +335,61 @@ You can track your Provider rewards and transactions via [https://info.lavanet.x
 
 And review the Providers Features page for more capabilities. 
 
+## Step 7: Create Provider Service
+
+:::tip
+Please note that Lava has a dedicated binary in order to run and manage providers called `lavavisor`. make sure you are using either `lavavisor` OR a service file but not both.
+:::
+
+Assuming the following:
+- The `lavap` binary is located in ``/usr/bin``
+- The wallet responsible for the provider has a password
+- A configuration file was made for the provider
+
+First we need to set the following values:
+```bash
+TMP_PASSWORD=<your wallet password if you have one>
+TMP_CONFIG_FILE_PATH=<path to your config file>
+TMP_GEO_LOCATION=<the geolocation you wish to use>
+TMP_PROVIDER_WALLET_ACCOUNT=<your provider wallet account name>
+TMP_CHAIN_ID=<the lava chain id to run this on> # lava-testnet-2
+```
+
+Run the following to create the service file:
+```bash
+sudo tee <<EOF >/dev/null /etc/systemd/system/lava-provider.service
+[Unit]
+Description=Lava Provider
+After=network-online.target
+[Service]
+# the user that runs the service
+User=root
+
+# set the working directory so that its easier to note the config file
+WorkingDirectory=/root
+
+# since we are using the wallet we must send in the password automatically
+ExecStart=/usr/bin/sh -c 'echo $TMP_PASSWORD | /usr/bin/lavap rpcprovider $TMP_CONFIG_FILE_PATH --geolocation $TMP_GEO_LOCATION --from $TMP_PROVIDER_WALLET_ACCOUNT --chain-id $TMP_CHAIN_ID'
+
+Restart=always
+RestartSec=3
+[Install]
+WantedBy=multi-user.target
+EOF
+```
+
+Finally enable and run the service:
+```bash
+sudo systemctl daemon-reload
+sudo systemctl enable lava-provider.service
+sudo systemctl start lava-provider.service
+```
+
+View the logs:
+```bash
+journalctl -f -u lava-provider.service -o cat
+```
+
 ## FAQ
 
 #### `lavap` not found
