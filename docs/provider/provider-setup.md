@@ -35,10 +35,158 @@ As part of good security practice, Lava protocol communicates with end-to-end en
 
 ❗❗ If you already use a **TLS Certificate signed by a Certifiying Authority**, you can continue onto step 2. Otherwise, you may want to check out our guide on [setting up TLS for Lava Providers](/provider-tls).
 
+## Step 2: Run RPCProvider process
 
-## Step 2: Stake as Provider
+**`rpcprovider`** is a command line tool for setting up an RPC server that listens for requests from Lava protocol RPC consumers, forwards them to a configured node, and responds with the reply. The configuration can be provided via a YAML configuration file or as command line arguments.
 
-Before you can run a multi-chain network provider, you need to stake a provider. You may have already taken this step and can move onto step 3. Otherwise, to stake a single service, use the following command:
+**`rpcprovider`** is part of `lavap` and can run using the following syntax:
+
+```bash
+lavap rpcprovider [config-file] || { {listen-host:listen-port spec-chain-id api-interface node-url} ... }
+```
+
+### Configuration
+:::info 
+For advanced configuration such as **authentication**, header **forwarding**, configurable **node-timeout**, see [Provider Features](/provider-features)
+:::
+
+You can either provide a single configuration file (YAML) or specify one or more endpoint configurations as command line arguments.
+
+The default configuration file is named **`rpcprovider.yml`**. If a single argument is provided, it is assumed to be the name of the configuration file (without the extension).
+
+If no arguments are provided, the default configuration file is used. All configuration files should be located in the default node home directory (e.g., **`app.DefaultNodeHome/config`**) or the local running directory.
+
+### Command Flags
+
+**`rpcprovider`** accepts the following flags:
+
+- **`--geolocation`** (required): Geolocation to run from (e.g., **`1`**)
+- **`--from`** (required): Account name to use (e.g., **`alice`**)
+- **`--chain-id`**: Lava Network chain ID (e.g.: **`lava-testnet-2`**)
+- **`--pprof-address`**: pprof server address, used for code profiling (default: **`""`**)
+- **`--cache`**: Address for a cache server to improve performance (default: **`""`**)
+- **`--parallel-connections`**: Number of parallel connections (default: **`chainproxy.NumberOfParallelConnections`**)
+
+### Configuration Examples
+
+Here are some example usages of **`rpcprovider`**:
+
+```bash
+# Using a custom configuration file and flags
+lavap rpcprovider path_to_my_config_file --geolocation 1 --from alice
+
+# Providing endpoint configurations as command line arguments
+lavap rpcprovider provider-host.com:1986 ETH1 jsonrpc https://localhost/eth/my_node_1 --geolocation 1 --from alice
+```
+
+### Example: Multiple API Interfaces with Same Listen Address (ETH1 and COS3)
+
+In this example, the provider supports all the API interfaces for the Ethereum Mainnet (ETH1) and Osmosis Mainnet (COS3) networks. The listen address for all ETH1 interfaces and all COS3 interfaces is the same.
+
+```yaml
+endpoints:
+  - api-interface: jsonrpc
+    chain-id: ETH1
+    network-address: 
+      address: 0.0.0.0:2221
+    node-urls:
+      - url: wss://eth-rpc/ws
+  - api-interface: tendermintrpc
+    chain-id: COS3
+    network-address: 
+      address: 0.0.0.0:2221
+    node-urls:
+      - url: ws://127.0.0.1:26657/websocket
+      - url: http://127.0.0.1:26657
+  - api-interface: grpc
+    chain-id: COS3
+    network-address: 
+      address: 0.0.0.0:2221
+    node-urls: 
+      - url: 127.0.0.1:9090
+  - api-interface: rest
+    chain-id: COS3
+    network-address: 
+      address: 0.0.0.0:2221
+    node-urls: 
+      - url: http://127.0.0.1:1317
+```
+
+:::tip
+If you're using `nginx` or another proxy as is recommended in our [TLS setup guide](/provider-tls), you will need to add `disable-tls: true` to each endpoint specified. This allows `nginx` to handle TLS directly. 
+:::
+### more examples
+the team constantly adds configurations, you can check examples on our github:
+`https://github.com/lavanet/lava/tree/main/config/provider_examples`
+
+## Step 3: Check Provider liveliness - before staking
+To ensure the provider is up and running correctly `lavap` provides a command to setup the necessary clients and verify all parameters are well defined.
+This command is used to test the basic flow for a provider is working, including stake and access, but with some additional arguments can be used prior to staking, as long as the rpcprovider process is up and running.
+since we haven't staked yet we need to provide the command with the endpoints we are using
+### Usage
+
+<Tabs>
+
+<TabItem value="wallet" label="Wallet">
+
+```bash
+lavap test rpcprovider --from {WALLET} --endpoints "DESCRIBED UP AHEAD"
+
+# Example: checking if your provider, is staked correctly and listening on all staked services
+# lavap test rpcprovider --from provider1_us --node https://public-rpc-testnet2.lavanet.xyz:443/rpc/
+
+# Expected output:
+# ...logs...
+# ----------------------------------------SUMMARY----------------------------------------
+
+# Tests Passed:
+# ALFAJORES jsonrpc,APT1 rest,AXELAR rest,AXELAR grpc,AXELAR tendermintrpc,BASET jsonrpc,BSC jsonrpc,CANTO grpc,CELO jsonrpc,COS3 rest,COS3 tendermintrpc,COS5 rest,COS5 tendermintrpc,ETH1 jsonrpc,EVMOS rest,EVMOS
+
+# Tests Failed:
+# ARB1 jsonrpc,ARBN jsonrpc,AVAX jsonrpc,CANTO jsonrpc,CANTO tendermintrpc,CANTO rest,COS3 grpc,COS4 rest,COS4 grpc,COS4 tendermintrpc,COS5 grpc,JUN1 grpc,POLYGON1 jsonrpc,SOLANA jsonrpc
+
+```
+
+</TabItem>
+<TabItem value="endpoints" label="Endpoints">
+
+```bash
+lavap test rpcprovider --from {WALLET} --endpoints "{ENDPOINTS}"`
+
+# Example: checking your provider that is not staked yet, or when you want to add a new chain support
+# lavap test rpcprovider --from provider1_us --endpoints "provider-public-grpc:port,jsonrpc,ETH1 provider-public-grpc:port,rest,LAV1" --node https://public-rpc-testnet2.lavanet.xyz:443/rpc/ 
+
+# Expected output:
+# ...logs...
+# ----------------------------------------SUMMARY----------------------------------------
+
+# Tests Passed:
+# LAV1-rest; ETH1-jsonrpc
+
+# Tests Failed:
+#
+```
+
+</TabItem>
+<TabItem value="addr" label="Address">
+you can use the provider public address instead of the wallet name, it can also be fetched easily using lavad
+
+```bash
+lavad keys show -a {WALLET}
+```
+
+testing with the public address
+
+```bash
+lavap test rpcprovider {PROVIDER_ADDRESS} --endpoints "{ENDPOINTS}"
+```
+
+</TabItem>
+</Tabs>
+
+## Step 4: Stake as Provider
+
+Before you can expose your multi-chain provider to rpc consumers, you need to stake a provider. You may have already taken this step and can move onto step 3. Otherwise, to stake a single service, use the following command:
 
 ```bash
 lavap tx pairing stake-provider [chain-id] [amount] [endpoint endpoint ...] [geolocation] [flags]
@@ -124,7 +272,7 @@ lavap tx pairing stake-provider "COS5T" \
     --node "https://public-rpc-testnet2.lavanet.xyz:443/rpc/"
 ```
 
-## Step 3: Verify stake
+## Step 5: Verify stake
 
 To ensure that your account is successfully staked with the providers for a specific network, execute the following command. Make sure to check if your account's public address is present in the list generated by the command output:
 
@@ -189,92 +337,8 @@ lavap query pairing providers \
 - **`NETWORK_NAME`** - The ID of the chain. Examples: **`COS4`** or **`FTM250`**
 - **`LAVA_RPC_NODE`** - An RPC node for Lava. This can be omitted if the current node has already joined the Lava network. Example: **`https://public-rpc-testnet2.lavanet.xyz:443/rpc/`**
 
-## Step 4: Run RPCProvider process
-
-**`rpcprovider`** is a command line tool for setting up an RPC server that listens for requests from Lava protocol RPC consumers, forwards them to a configured node, and responds with the reply. The configuration can be provided via a YAML configuration file or as command line arguments.
-
-**`rpcprovider`** is part of `lavap` and can run using the following syntax:
-
-```bash
-lavap rpcprovider [config-file] || { {listen-host:listen-port spec-chain-id api-interface node-url} ... }
-```
-
-### Configuration
-:::info 
-For advanced configuration such as **authentication**, header **forwarding**, configurable **node-timeout**, see [Provider Features](/provider-features)
-:::
-
-You can either provide a single configuration file (YAML) or specify one or more endpoint configurations as command line arguments.
-
-The default configuration file is named **`rpcprovider.yml`**. If a single argument is provided, it is assumed to be the name of the configuration file (without the extension).
-
-If no arguments are provided, the default configuration file is used. All configuration files should be located in the default node home directory (e.g., **`app.DefaultNodeHome/config`**) or the local running directory.
-
-### Command Flags
-
-**`rpcprovider`** accepts the following flags:
-
-- **`--geolocation`** (required): Geolocation to run from (e.g., **`1`**)
-- **`--from`** (required): Account name to use (e.g., **`alice`**)
-- **`--chain-id`**: Lava Network chain ID (e.g.: **`lava-testnet-2`**)
-- **`--pprof-address`**: pprof server address, used for code profiling (default: **`""`**)
-- **`--cache`**: Address for a cache server to improve performance (default: **`""`**)
-- **`--parallel-connections`**: Number of parallel connections (default: **`chainproxy.NumberOfParallelConnections`**)
-
-### Configuration Examples
-
-Here are some example usages of **`rpcprovider`**:
-
-```bash
-# Using a custom configuration file and flags
-lavap rpcprovider path_to_my_config_file --geolocation 1 --from alice
-
-# Providing endpoint configurations as command line arguments
-lavap rpcprovider provider-host.com:1986 ETH1 jsonrpc https://localhost/eth/my_node_1 --geolocation 1 --from alice
-```
-
-### Example: Multiple API Interfaces with Same Listen Address (ETH1 and COS3)
-
-In this example, the provider supports all the API interfaces for the Ethereum Mainnet (ETH1) and Osmosis Mainnet (COS3) networks. The listen address for all ETH1 interfaces and all COS3 interfaces is the same.
-
-```yaml
-endpoints:
-  - api-interface: jsonrpc
-    chain-id: ETH1
-    network-address: 
-      address: 0.0.0.0:2221
-    node-urls:
-      - url: wss://eth-rpc/ws
-  - api-interface: tendermintrpc
-    chain-id: COS3
-    network-address: 
-      address: 0.0.0.0:2221
-    node-urls:
-      - url: ws://127.0.0.1:26657/websocket
-      - url: http://127.0.0.1:26657
-  - api-interface: grpc
-    chain-id: COS3
-    network-address: 
-      address: 0.0.0.0:2221
-    node-urls: 
-      - url: 127.0.0.1:9090
-  - api-interface: rest
-    chain-id: COS3
-    network-address: 
-      address: 0.0.0.0:2221
-    node-urls: 
-      - url: http://127.0.0.1:1317
-```
-
-:::tip
-If you're using `nginx` or another proxy as is recommended in our [TLS setup guide](/provider-tls), you will need to add `disable-tls: true` to each endpoint specified. This allows `nginx` to handle TLS directly. 
-:::
-
-
-## Step 5: Check Provider liveliness
-To ensure the provider is up and running correctly `lavap` provides a command to setup the necessary clients and verify all parameters are well defined.
-This command is used to test the entire flow for a provider is working including stake and access, but with some additional arguments can be used prior to staking, as long as the rpcprovider process is up and running.
-
+## Step 6: Check Provider liveliness - after staking
+now that your provider is taked you can repeat the command, but this time, without specifying the endpoints, as the cli will use the blockchain to fetch them, this verifies the data exists correctly on the blockchain
 ### Usage
 
 <Tabs>
@@ -300,42 +364,25 @@ lavap test rpcprovider --from {WALLET}
 ```
 
 </TabItem>
-<TabItem value="endpoint" label="Endpoint">
-
-```bash
-lavap test rpcprovider --from {WALLET} --endpoints "{ENDPOINTS}"`
-
-# Example: checking your provider that is not staked yet, or when you want to add a new chain support
-# lavap test rpcprovider --from provider1_us --endpoints "provider-public-grpc:port,jsonrpc,ETH1 provider-public-grpc:port,rest,LAV1" --node https://public-rpc-testnet2.lavanet.xyz:443/rpc/ 
-
-# Expected output:
-# ...logs...
-# ----------------------------------------SUMMARY----------------------------------------
-
-# Tests Passed:
-# LAV1-rest; ETH1-jsonrpc
-
-# Tests Failed:
-#
-```
-
-</TabItem>
 <TabItem value="addr" label="Address">
 
 ```bash
 lavap test rpcprovider {PROVIDER_ADDRESS}
+# Example: checking if your provider, is staked correctly and listening on all staked services
+# lavap test rpcprovider lava@myprovidersbech32pubaddress --node https://public-rpc-testnet2.lavanet.xyz:443/rpc/
 ```
+
 
 </TabItem>
 </Tabs>
 
-## Step 6: Provider Info and more features
+## Step 7: Provider Info and more features
 
 You can track your Provider rewards and transactions via [https://info.lavanet.xyz/providers](https://info.lavanet.xyz/providers) 
 
 And review the Providers Features page for more capabilities. 
 
-## Step 7: Create Provider Service
+## Step 8: Create Provider Service
 
 :::tip
 Please note that Lava has a dedicated binary in order to run and manage providers called `lavavisor`. make sure you are using either `lavavisor` OR a service file but not both.
@@ -399,6 +446,19 @@ Make sure you downloaded/built the binary, and it is located in the path you use
 #### Received error `account sequence mismatch`
 
 Try to wait for a block_time (current=30s) and then run the command again
+
+#### How do I make changes?
+it is possible for a provider to make changes in his on chain stake entry at any time, it is possible to do so by sending the same stake-provider tx we have used when first joining the network with the updated parameters
+it is also possible to use a convenience cli command wrapping it:
+
+```bash
+lavad tx pairing modify-provider {SpecID} --from {WALLET}
+
+# flags:
+# --endpoints "my-provider-africa.com:443,AF my-provider-europe.com:443,EU" # must come with --geolocation if the new endpoints change/add a geolocation
+# --amount 1000000000000ulava # when wanting to increase stake, decreasing can be done only by unstaking
+# --provider-moniker "my-new-nickname"
+```
 
 #### How do I unstake? {#unstake}
 
