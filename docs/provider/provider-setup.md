@@ -130,7 +130,7 @@ since we haven't staked yet we need to provide the command with the endpoints we
 <TabItem value="wallet" label="Wallet">
 
 ```bash
-lavap test rpcprovider --from {WALLET} --endpoints "DESCRIBED UP AHEAD"
+lavap test rpcprovider --from {WALLET} --endpoints "{ENDPOINTS}"
 
 # Example: checking if your provider, is staked correctly and listening on all staked services
 # lavap test rpcprovider --from provider1_us --node https://public-rpc-testnet2.lavanet.xyz:443/rpc/
@@ -270,7 +270,7 @@ lavap tx pairing stake-provider "ETH1" \
     --node "https://public-rpc-testnet2.lavanet.xyz:443/rpc/"
 ```
 
-#### Ethereum globally load balanced array of nodes
+#### Ethereum Globally Load Balanced Array of Nodes
 to be used if your endpoint is dns load balanced for all covered geolocations
 ```bash
 lavap tx pairing stake-provider "ETH1" \
