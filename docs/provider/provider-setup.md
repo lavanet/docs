@@ -232,7 +232,7 @@ lavap tx pairing stake-provider [chain-id] [amount] [endpoint endpoint ...] [geo
 ```bash
 lavap tx pairing stake-provider LAV1 \
   "50000000000ulava" \
-   "lava.your-site.com:443,1" 1 \
+   "lava.your-site.com:443,USC" USC \
    --from my_account \
    --provider-moniker my-lava-provider \
     --gas-adjustment "1.5" \
@@ -246,7 +246,36 @@ Ethereum and other EVMs usually have only `jsonrpc` interface:
 ```bash
 lavap tx pairing stake-provider "ETH1" \
     "50000000000ulava" \
-    "provider-host.com:1337,1" 1 \
+    "provider-host.com:443,USC" USC \
+    --from "my_account_name" \
+    --provider-moniker "your-moniker" \
+    --keyring-backend "test" \
+    --chain-id "lava-testnet-2" \
+    --gas="auto" \
+    --gas-adjustment "1.5" \
+    --node "https://public-rpc-testnet2.lavanet.xyz:443/rpc/"
+```
+
+#### Ethereum Mainnet in US And Europe
+```bash
+lavap tx pairing stake-provider "ETH1" \
+    "50000000000ulava" \
+    "provider-host-us.com:443,USC provider-host-eu.com:443,EU" "EU,USC" \
+    --from "my_account_name" \
+    --provider-moniker "your-moniker" \
+    --keyring-backend "test" \
+    --chain-id "lava-testnet-2" \
+    --gas="auto" \
+    --gas-adjustment "1.5" \
+    --node "https://public-rpc-testnet2.lavanet.xyz:443/rpc/"
+```
+
+#### Ethereum globally load balanced array of nodes
+to be used if your endpoint is dns load balanced for all covered geolocations
+```bash
+lavap tx pairing stake-provider "ETH1" \
+    "50000000000ulava" \
+    "provider-host-gl.com:443,GL" "GL" \
     --from "my_account_name" \
     --provider-moniker "your-moniker" \
     --keyring-backend "test" \

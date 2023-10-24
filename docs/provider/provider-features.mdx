@@ -11,6 +11,113 @@ import TOCInline from '@theme/TOCInline';
 This page details the various features available to providers in the Lava network, along with instructions on how to operate them:
 <TOCInline toc={toc} />
 
+## Addons and Extensions{#addonsextensions}
+Addons and Extensions are services that can be offered *in addition* to the basic spec.
+**Addons** are apis exposed in addition to existing apis, while **Extensions** are changes to existing apis responses.
+A few examples:
+```
+"archive" - an extension providing valid responses for older blocks than the current pruning definition in the basic spec
+"debug" - an addon that offers debug apis in addition to basic rpc calls
+```
+### Why Addons and Extensions
+consumers can use addons and extensions without configuring anything new in their clients, these are added to the consumer subscription
+requests are routed automatically to providers supporting the services, so a provider supporting a specific Addon will get requests for that addon while providers what do not support it will not be eligible for these requests
+
+### How - Addons and Extensions
+Addons and Extensions are configured both in the provider service config, and then staked for on chain.
+#### Addon - config
+in order to add an addon to the service the yaml must be configured with the addon command
+```yaml
+endpoints:
+    - api-interface: jsonrpc
+      chain-id: ETH1
+      network-address:
+        address: "127.0.0.1:2224"
+      node-urls:
+        - url: my-eth-node.com/eth-with-debug/ws
+          addons:
+            - debug
+```
+#### Extension - config
+since extensions must offer consumers the regular spec and the possibility of an extensions, both must be present. 
+therefore, extensions unlike addons, must be configured in a new url entry:
+```yaml
+endpoints:
+    - api-interface: jsonrpc
+      chain-id: ETH1
+      network-address:
+        address: "127.0.0.1:2224"
+      node-urls:
+        - url: my-eth-node.com/eth/ws/
+        - url: my-eth-node.com/eth-with-archive/ws
+          addons:
+            - archive
+```
+although this configuration offers you the chance to load balance different extension calls,
+if you run only a single archive node and do not want to automatically load balance archive calls to a pruned node, you can set both urls to point to the the archive node.
+
+additional extensions must be defined with all possible combinations, for example complience + archive will look like this:
+```yaml
+endpoints:
+    - api-interface: jsonrpc
+      chain-id: ETH1
+      network-address:
+        address: "127.0.0.1:2224"
+      node-urls:
+        - url: my-eth-node.com/eth/ws/
+        - url: my-eth-node.com/eth-with-archive/ws
+          addons:
+            - archive
+        - url: my-eth-node.com/eth-with-complience/ws
+          addons:
+            - complience
+        - url: my-eth-node.com/eth-with-complience-and-archive/ws
+          addons:
+            - complience
+            - archive
+```
+
+and a combination of an extension and addons will look like this:
+```yaml
+endpoints:
+    - api-interface: jsonrpc
+      chain-id: ETH1
+      network-address:
+        address: "127.0.0.1:2224"
+      node-urls:
+        - url: my-eth-node.com/eth/ws/archive
+          addons:
+            - archive
+        - url: my-eth-node.com/eth-with-debug/ws
+          addons:
+            - debug
+```
+
+#### staking
+before staking, make sure your process works correctly, if addons or extensions fail to verify the entire service for that spec and api interface will fail, so the test rpcprovider command can be used
+
+staking with an addon or an extensions is very similar to the normal staking command, by adding the list of addons and extensions separated by comma
+
+**Ethereum Mainnet in US with archive and debug**
+```bash
+lavap tx pairing stake-provider "ETH1" \
+    "50000000000ulava" \
+    "provider-host.com:443,USC,archive,debug" USC \
+    --from "my_account_name" \
+    --provider-moniker "your-moniker" \
+    --keyring-backend "test" \
+    --chain-id "lava-testnet-2" \
+    --gas="auto" \
+    --gas-adjustment "1.5" \
+    --node "https://public-rpc-testnet2.lavanet.xyz:443/rpc/"
+```
+do note the required addition of **,archive,debug** in each of the endpoints that support it if several exist
+setting these in a transaction replaces any existing endpoints, so make sure to give the full list of endpoints
+it is also possible to add these to an existing entry with `modify-provider`
+```bash
+lavap tx pairing modify-provider "ETH1" --endpoints "provider-host.com:443,USC,archive,debug" --geolocation "USC" ...
+```
+
 ## Freeze and Unfreeze{#freeze}
 
 The **`freeze`** command allows a provider to freeze its service, effective next epoch. This enables providers to pause their services without the impact of a bad QoS rating. While frozen, the provider won't be paired with consumers. To unfreeze, the provider must use the **`unfreeze`** transaction, effective next epoch. This feature can be useful in cases like a provider needing to halt its services during maintenance.
