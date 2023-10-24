@@ -166,7 +166,7 @@ const config = {
         textColor: "#FFFFFF",
         isCloseable: true,
       },
-      image: "img/logo_with_text_bg_transparent.png",
+      image: "img/logo_black_background.png",
       algolia: {
         // The application ID provided by Algolia
         appId: process.env.ALGOLIA_APP_ID,
