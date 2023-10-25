@@ -8,6 +8,10 @@ import TabItem from '@theme/TabItem';
 
 # Getting Lava RPC
 
+## Public RPC
+
+⚠️ Use our [Official Endpoints](/public-rpc)!
+
 ## [SDK](https://github.com/lavanet/lava-sdk)
 
 :::caution 
