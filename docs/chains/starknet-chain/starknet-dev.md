@@ -8,6 +8,22 @@ import TabItem from '@theme/TabItem';
 
 # Getting Starknet RPC 
 
+## Starknet Public RPC
+
+### Mainnet 🌐
+
+| Service 🔌          | URL 🔗                                 |
+|---------------------|----------------------------------------|
+| 🟢  json-rpc  | https://starknet-mainnet.public.lavanet.xyz/ |
+
+
+### Testnet 🧪
+
+| Service 🔌          | URL 🔗                                 |
+|---------------------|----------------------------------------|
+| 🟢  json-rpc  | https://starknet-testnet.public.lavanet.xyz/ |
+
+
 ## [SDK](https://github.com/lavanet/lava-sdk)
 
 :::caution 
