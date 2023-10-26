@@ -10,6 +10,7 @@ import TabItem from '@theme/TabItem';
 
 ## Public RPC
 
+Lava offers self-served RPC as well as  
 ⚠️ Use our [Official Endpoints](/public-rpc)!
 
 ## [SDK](https://github.com/lavanet/lava-sdk)
@@ -32,14 +33,15 @@ const { LavaSDK } = require("@lavanet/lava-sdk")
 
 async function uselavaMainnet() {
 
-  const lavaMainnet = await new LavaSDK({
+  const lavaMainnet = await LavaSDK.create({
     privateKey: process.env.PRIVATE_KEY, //hide your private key in an environmental variable
-    chainID: 'FVM',
+    chainIds: 'LAV1',
+    rpcInterface: 'rest'
   });
 
   const lavaBlockResponse =  await lavaMainnet.sendRelay({
-    method: "eth_blockNumber",
-    params: [],
+    connectionType: "GET",
+    url: "/cosmos/base/tendermint/v1beta1/node_info"
   });
 
   console.log(lavaBlockResponse);
@@ -60,17 +62,18 @@ const { LavaSDK } = require("@lavanet/lava-sdk")
 
 async function uselavaMainnet() {
 
-  const lavaMainnet = await new LavaSDK({
+  const lavaMainnet = await LavaSDK.create({
     badge: {
       badgeServerAddress: "https://badges.lavanet.xyz", // Or your own Badge-Server URL 
       projectId: "enter_your_project_id_here" 
     },    
-    chainID: 'FVM',
+    chainIds: 'LAV1',
+    rpcInterface: 'rest'
   });
 
   const lavaBlockResponse =  await lavaMainnet.sendRelay({
-    method: "eth_blockNumber",
-    params: [],
+    connectionType: "GET",
+    url: "/cosmos/base/tendermint/v1beta1/node_info"
   });
 
   console.log(lavaBlockResponse);

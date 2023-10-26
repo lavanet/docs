@@ -28,9 +28,9 @@ const { LavaSDK } = require("@lavanet/lava-sdk")
 
 async function useCeloMainnet() {
 
-  const celoMainnet = await new LavaSDK({
+  const celoMainnet = await LavaSDK.create({
     privateKey: process.env.PRIVATE_KEY, //hide your private key in an environmental variable
-    chainID: 'CELO',
+    chainIds: 'CELO',
   });
 
   const celoBlockResponse =  await celoMainnet.sendRelay({
@@ -55,12 +55,12 @@ const { LavaSDK } = require("@lavanet/lava-sdk")
 
 async function useCeloMainnet() {
 
-  const celoMainnet = await new LavaSDK({
+  const celoMainnet = await LavaSDK.create({
     badge: {
       badgeServerAddress: "https://badges.lavanet.xyz", // Or your own Badge-Server URL 
       projectId: "enter_your_project_id_here" 
     },
-    chainID: 'CELO',
+    chainIds: 'CELO',
     geolocation: "2"
   });
 

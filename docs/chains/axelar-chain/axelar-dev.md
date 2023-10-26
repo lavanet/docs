@@ -51,9 +51,9 @@ const { LavaSDK } = require("@lavanet/lava-sdk")
 
 async function useAxelarMainnet() {
 
-  const AxelarMainnet = await new LavaSDK({
+  const AxelarMainnet = await LavaSDK.create({
     privateKey: process.env.PRIVATE_KEY, //hide your private key in an environmental variable
-    chainID: 'AXELAR',
+    chainIds: 'AXELAR',
     rpcInterface: 'rest',
   });
 
@@ -81,12 +81,12 @@ const { LavaSDK } = require("@lavanet/lava-sdk")
 
 async function useAxelarMainnet() {
 
-  const AxelarMainnet = await new LavaSDK({
+  const AxelarMainnet = await LavaSDK.create({
     badge: {
       badgeServerAddress: "https://badges.lavanet.xyz", // Or your own Badge-Server URL 
       projectId: "enter_your_project_id_here" 
     },
-    chainID: 'AXELAR',
+    chainIds: 'AXELAR',
     rpcInterface: "rest",
   });
 

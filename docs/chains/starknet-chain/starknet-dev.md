@@ -46,9 +46,9 @@ const { LavaSDK } = require("@lavanet/lava-sdk")
 
 async function useStarknet() {
 
-  const starknet = await new LavaSDK({
+  const starknet = await LavaSDK.create({
     privateKey: process.env.PRIVATE_KEY,  //hide your private key in an environmental variable
-    chainID: 'STRK',
+    chainIds: 'STRK',
   });
 
   const starknetBlockResponse =  await starknet.sendRelay({
@@ -75,12 +75,12 @@ const { LavaSDK } = require("@lavanet/lava-sdk")
 
 async function useStarknet() {
 
-  const starknet = await new LavaSDK({
+  const starknet = await LavaSDK.create({
     badge: {
       badgeServerAddress: "https://badges.lavanet.xyz", // Or your own Badge-Server URL 
       projectId: "enter_your_project_id_here" 
     },
-    chainID: 'STRK',
+    chainIds: 'STRK',
     geolocation: "2"
   });
 

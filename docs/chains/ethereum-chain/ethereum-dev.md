@@ -28,9 +28,9 @@ const { LavaSDK } = require("@lavanet/lava-sdk")
 
 async function useEthereumMainnet() {
 
-  const ethereumMainnet = await new LavaSDK({
+  const ethereumMainnet = await LavaSDK.create({
     privateKey: process.env.PRIVATE_KEY, //hide your private key in an environmental variable
-    chainID: 'FVM',
+    chainIds: 'FVM',
   });
 
   const ethereumBlockResponse =  await ethereumMainnet.sendRelay({
@@ -56,12 +56,12 @@ const { LavaSDK } = require("@lavanet/lava-sdk")
 
 async function useEthereumMainnet() {
 
-  const ethereumMainnet = await new LavaSDK({
+  const ethereumMainnet = await LavaSDK.create({
     badge: {
       badgeServerAddress: "https://badges.lavanet.xyz", // Or your own Badge-Server URL 
       projectId: "enter_your_project_id_here" 
     },    
-    chainID: 'FVM',
+    chainIds: 'FVM',
   });
 
   const ethereumBlockResponse =  await ethereumMainnet.sendRelay({
