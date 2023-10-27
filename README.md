@@ -2,7 +2,7 @@
 
 # Lava Documentation 📕
 
-[![Website](https://img.shields.io/badge/WEBSITE-https%3A%2F%2Fdocs.lavanet.xyz-green?style=for-the-badge)](https://docs.lavanet.xyz) [![Discord](https://img.shields.io/discord/963778337904427018?color=green&logo=discord&logoColor=white&style=for-the-badge)](https://discord.gg/xp3vFSAMgS)
+[![Website](https://img.shields.io/badge/WEBSITE-https%3A%2F%2Fdocs.lavanet.xyz-green?style=for-the-badge)](https://docs.lavanet.xyz) &emsp;  [![Discord](https://img.shields.io/discord/963778337904427018?color=green&logo=discord&logoColor=white&style=for-the-badge)](https://discord.gg/xp3vFSAMgS)
 
 
 ## Overview 🔎
@@ -18,16 +18,12 @@ Contents include:
 
 ## Deployment 🚀
 
-### Current Status
+### Status
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/58c0a448-7af0-48d3-8e29-86fc4a6f4868/deploy-status)](https://app.netlify.com/sites/sage-swan-13ac7b/deploys)
 
 ### Process
 The `main` branch of this repository is automatically deployed to our docs site, and other branches and pull requests leverage Netlify deploy. Please note that unless you are a recognized contributor of this repository, each attempted PR generates a Netlify approval that will prevent your pull request from being merged. Once the request is approved and a Netlify deploy preview is generated, a Netlify deploy preview will appear in the body of your PR as `😎 Deploy Preview`. This deploy preview will be audited by a docs maintainer before merging your pull request.
-
-## Community & Contribution 😻
-Contributing to the documentation of Lava is a rewarding way to give back to the ecosystem. We always welcome contributors with love & kindness. Please read the [contribution](CONTRIBUTING.md) guide to help you get started.
-
 
 ## Local Development 🔧
 
@@ -42,7 +38,6 @@ SSH **(recommended)**
 ```bash
 git clone git@github.com:Your-User-Name-Here/lava-docs.git
 ```
-or
 
 HTTPS
 
@@ -69,11 +64,15 @@ Algolia search needs values assigned to these in order to start. For local docs 
 
 ### 4. Install all packages
 
-```yarn install```
+```
+yarn install
+```
 
 ### 5. Host a local preview of the docs (*Optional*)
 
-```yarn start```
+```
+yarn start
+```
 
 Your preview will dynamically change/hotload as you make changes to files.
 
@@ -85,7 +84,7 @@ yarn build
 
 Your build will appear in the `./build/` folder of your docs directory.
 
-### 7. Deployment (*Optional*)
+### 7. Deploy to Github (*Optional*)
 
 If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
 
@@ -93,3 +92,6 @@ If you are using GitHub pages for hosting, this command is a convenient way to b
 $ GIT_USER=<Your GitHub username> yarn deploy
 ```
 
+## Contribution 👥
+
+Contributing to the documentation of Lava is a rewarding way to give back to the ecosystem. We always welcome contributors with love & kindness. Please read the [contribution](CONTRIBUTING.md) guide to help you get started.
