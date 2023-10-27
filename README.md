@@ -73,13 +73,13 @@ Algolia search needs values assigned to these in order to start. For local docs 
 
 ```yarn install```
 
-### (Optional) 5. Host a local preview of the docs
+### 5. Host a local preview of the docs (*Optional*)
 
 ```yarn start```
 
 Your preview will dynamically change/hotload as you make changes to files.
 
-### (Optional) 6. Build a local deployment of the docs
+### 6. Build a local deployment of the docs (*Optional*)
 
 ```
 yarn build
@@ -87,7 +87,7 @@ yarn build
 
 Your build will appear in the `./build/` folder of your docs directory.
 
-### (Optional) 7. Deployment
+### 7. Deployment (*Optional*)
 
 If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
 
