@@ -16,6 +16,11 @@ Contents include:
 - Network & Protocol Details on Lava's Unique Features
 - Links to in-demand RPC & Web3 APIs
 
+## Contribution 👥
+
+Contributing to the documentation of Lava is a rewarding way to give back to the ecosystem. We always welcome contributors with love & kindness. After reviewing this README, please read the [contribution](CONTRIBUTING.md) guide to help you get started.
+
+
 ## Deployment 🚀
 
 ### Status
@@ -91,7 +96,3 @@ If you are using GitHub pages for hosting, this command is a convenient way to b
 ```
 $ GIT_USER=<Your GitHub username> yarn deploy
 ```
-
-## Contribution 👥
-
-Contributing to the documentation of Lava is a rewarding way to give back to the ecosystem. We always welcome contributors with love & kindness. Please read the [contribution](CONTRIBUTING.md) guide to help you get started.
