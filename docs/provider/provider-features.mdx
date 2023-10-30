@@ -21,8 +21,8 @@ A few examples:
 ```
 ### Why Addons and Extensions
 consumers can use addons and extensions without configuring anything new in their clients, these are added to the consumer subscription.
-requests are routed automatically to providers supporting the services, so a provider supporting a specific Addon will get requests for that addon while providers what do not support it will not be eligible for these requests
-
+requests are routed automatically to providers supporting the services, so a provider supporting a specific Addon will get requests for that addon while providers what do not support it will not be eligible for these requests.
+<br>
 extensions can also provide a CU boost on the regular api, archive calls for example will have a big multiplier on CU for each api request.
 only api requests to the archive endpoint will award these additional CUs, and lava knows which calls are archive or not according to the pruning of the regular spec defined by governance.
 
@@ -42,7 +42,7 @@ endpoints:
             - debug
 ```
 #### Extension - config
-since extensions must offer consumers the regular spec and the possibility of an extensions, both must be present. 
+since extensions must offer consumers the regular spec and the possibility of an extensions, both must be present.<br>
 therefore, extensions unlike addons, must be configured in a new url entry:
 ```yaml
 endpoints:
@@ -56,9 +56,21 @@ endpoints:
           addons:
             - archive
 ```
-although this configuration offers you the chance to load balance different extension calls,
-if you run only a single archive node and do not want to automatically load balance archive calls to a pruned node, you can set both urls to point to the the archive node.
-
+although this configuration offers you the chance to load balance different extension calls,<br>
+if you run only a single archive node and do not want to automatically load balance archive calls to a pruned node,<br>
+you can set both urls to point to the the archive node:
+```yaml
+endpoints:
+    - api-interface: jsonrpc
+      chain-id: ETH1
+      network-address:
+        address: "127.0.0.1:2224"
+      node-urls:
+        - url: my-eth-node.com/eth-with-archive/ws
+        - url: my-eth-node.com/eth-with-archive/ws
+          addons:
+            - archive
+```
 additional extensions must be defined with all possible combinations, for example complience + archive will look like this:
 ```yaml
 endpoints:
@@ -284,4 +296,27 @@ endpoints:
           // highlight-start
           timeout: 1s
           // highlight-end
+```
+
+## load balancer configuration {#config-stickyness}
+running multiple nodes with a load balancer can have multiple setups:
+1. run a provider on each node - provider processes can coexist, if you loadbalance grpc before the process of the provider and run a provider service on each node machine (close proximity)
+2. run one provider service and loadbalance the nodes - in this case all the nodes are used by one provider service, this setup is more likely to trigger consistency issues between the provider service and the nodes
+<br>
+### setting up stickyness support for loadbalanced nodes
+if you've set up the second option, meaning one provider service per multiple nodes, it is required to provide stickyness across the nodes by a header <br>
+the reason for this being the cryptographic proofs a provider signs, must be consistent and can't have the blocks progress backwards <br>
+in order to support stickyness headers lava adds by default a header called `X-Node-Sticky`, this header adds a consumer token consisting of several factors and are unique per consumer usage
+
+### changing the stickyness header
+in order to support existing load balancer configs, it is possible to change the header name with a configuration in the config:
+```yaml
+endpoints:
+    - api-interface: jsonrpc
+      chain-id: ETH1
+      network-address: 
+        address: 127.0.0.1:2221
+      node-urls: 
+        - url: ws://your_node_url/
+sticky-header: <your-sticky-header-name>
 ```
