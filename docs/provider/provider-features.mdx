@@ -127,9 +127,9 @@ lavap tx pairing stake-provider "ETH1" \
     --node "https://public-rpc-testnet2.lavanet.xyz:443/rpc/"
 ```
 do note the required addition of **,archive,debug** in each of the endpoints that support it if several exist
-:::
+
 setting these in a transaction replaces any existing endpoints, so make sure to give the full list of endpoints
-:::
+
 it is also possible to add these to an existing entry with `modify-provider`
 ```bash
 lavap tx pairing modify-provider "ETH1" --endpoints "provider-host.com:443,USC,archive,debug" --geolocation "USC" ...
@@ -285,7 +285,7 @@ endpoints:
 ## `node-timeout` configuration {#config-node-timeout}
 
 If your node is too far from the rpcprovider or responds too slowly, and you still want your provider process to start (note this will provide inferior QoS for consumers) without troubleshooting,
-:::
+
 you can overwrite the timeouts with custom values using a flag in the node-urls configuration
 
 ```yaml
@@ -308,9 +308,9 @@ running multiple nodes with a load balancer can have multiple setups:
 
 ### setting up stickyness support for loadbalanced nodes
 if you've set up the second option, meaning one provider service per multiple nodes, it is required to provide stickyness across the nodes by a header
-::: 
+
 the reason for this being the cryptographic proofs a provider signs, must be consistent and can't have the blocks progress backwards 
-:::
+
 in order to support stickyness headers lava adds by default a header called `X-Node-Sticky`, this header adds a consumer token consisting of several factors and are unique per consumer usage
 
 ### changing the stickyness header
