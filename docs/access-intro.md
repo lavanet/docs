@@ -6,6 +6,7 @@ slug: /access-intro
 
 ![Web3 APIs Banner](/img/banner/Web3-APIs-80ba1f766f734b558f0b6d6bff488630.jpg)
 
+## Overview 🔍
 Lava offers several attractive entry ways to our peer-to-peer RPC network. Unfortunately, it can be confusing to new developers on which one to select! 
 
 
@@ -19,11 +20,11 @@ Lava offers:
 No matter which offering you choose, you still get the same high speed, accountable RPC providers served from our P2P network.
 
 ---
-## Use-Cases
+## Use-Cases 🧩
 
 This page can help clarify which of Lava’s offerings is most suitable according to your specific use-case. Depending on the type of project you plan to build, you may get a better user experience out of one or a combination of our offerings, respectively. The table below is provided to help you make your decision.
 
-### Table of Uses
+### Table of Uses 📋
 
 Which Lava entry way should you use? Easy! Tell us what you’re trying to build and we can better assist your decision.
 
