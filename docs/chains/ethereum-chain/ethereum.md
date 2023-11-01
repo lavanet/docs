@@ -22,7 +22,7 @@ import RoadmapItem from '@site/src/components/RoadmapItem'
 
 ### Specification 📑
 
-https://raw.githubusercontent.com/lavanet/lava/main/cookbook/specs/spec_add_fvm.json
+https://raw.githubusercontent.com/lavanet/lava/main/cookbook/specs/spec_add_ethereum.json
 
 
 ### Protocols 🔗
@@ -34,102 +34,80 @@ https://raw.githubusercontent.com/lavanet/lava/main/cookbook/specs/spec_add_fvm.
 
 
 ### Methods 🛠️
-<details>
-<summary> List </summary>
 
-- Ethereum.ChainGetBlock
-- Ethereum.ChainGetBlockMessages
-- Ethereum.ChainGetGenesis
-- Ethereum.ChainGetMessage
-- Ethereum.ChainGetNode
-- Ethereum.ChainGetParentMessages
-- Ethereum.ChainGetParentReceipts
-- Ethereum.ChainGetPath
-- Ethereum.ChainGetTipSet
-- Ethereum.ChainGetTipSetAfterHeight
-- Ethereum.ChainGetTipSetByHeight
-- Ethereum.ChainHasObj
-- Ethereum.ChainHead
-- Ethereum.ChainNotify
-- Ethereum.ChainReadObj
-- Ethereum.ClientQueryAsk
-- Ethereum.GasEstimateFeeCap
-- Ethereum.GasEstimateGasLimit
-- Ethereum.GasEstimateGasPremium
-- Ethereum.MpoolGetNonce
-- Ethereum.MpoolPending
-- Ethereum.MpoolPush
-- Ethereum.StateAccountKey
-- Ethereum.StateAllMinerFaults
-- Ethereum.StateCall
-- Ethereum.StateChangedActors
-- Ethereum.StateCompute
-- Ethereum.StateDealProviderCollateralBounds
-- Ethereum.StateDecodeParams
-- Ethereum.StateGetActor
-- Ethereum.StateGetReceipt
-- Ethereum.StateListActors
-- Ethereum.StateListMessages
-- Ethereum.StateListMiners
-- Ethereum.StateLookupID
-- Ethereum.StateMarketBalance
-- Ethereum.StateMarketDeals
-- Ethereum.StateMarketParticipants
-- Ethereum.StateMarketStorageDeal
-- Ethereum.StateMinerActiveSectors
-- Ethereum.StateMinerAvailableBalance
-- Ethereum.StateMinerDeadlines
-- Ethereum.StateMinerFaults
-- Ethereum.StateMinerInfo
-- Ethereum.StateMinerInitialPledgeCollateral
-- Ethereum.StateMinerPartitions
-- Ethereum.StateMinerPower
-- Ethereum.StateMinerPreCommitDepositForPower
-- Ethereum.StateMinerProvingDeadline
-- Ethereum.StateMinerRecoveries
-- Ethereum.StateMinerSectorAllocated
-- Ethereum.StateMinerSectorCount
-- Ethereum.StateMinerSectors
-- Ethereum.StateNetworkName
-- Ethereum.StateNetworkVersion
-- Ethereum.StateReadState
-- Ethereum.StateReplay
-- Ethereum.StateSearchMsg
-- Ethereum.StateSearchMsgLimited
-- Ethereum.StateSectorExpiration
-- Ethereum.StateSectorGetInfo
-- Ethereum.StateSectorPartition
-- Ethereum.StateSectorPreCommitInfo
-- Ethereum.StateVMCirculatingSupplyInternal
-- Ethereum.StateVerifiedClientStatus
-- Ethereum.StateVerifiedRegistryRootKey
-- Ethereum.StateVerifierStatus
-- Ethereum.SyncState
-- Ethereum.WalletBalance
-- Ethereum.WalletValidateAddress
-- Ethereum.WalletVerify
-- Ethereum.EthAccounts
-- Ethereum.EthBlockNumber
-- Ethereum.EthCall
-- Ethereum.EthChainId
-- Ethereum.EthEstimateGas
-- Ethereum.EthFeeHistory
-- Ethereum.EthGasPrice
-- Ethereum.EthGetBalance
-- Ethereum.EthGetBlockByHash
-- Ethereum.EthGetBlockByNumber
-- Ethereum.EthGetBlockTransactionCountByHash
-- Ethereum.EthGetBlockTransactionCountByNumber
-- Ethereum.EthGetCode
-- Ethereum.EthGetFilterChanges
-- Ethereum.EthGetFilterLogs
-- Ethereum.EthGetLogs
-- Ethereum.EthGetMessageCidByTransactionHash
-- Ethereum.EthGetStorageAt
-- Ethereum.EthGetTransactionByHash
-- Ethereum.EthGetTransactionCount
-- Ethereum.EthGetTransactionHashByCid
-- Ethereum.EthGetTransactionReceipt
-- Ethereum.EthMaxPriorityFeePerGas
+#### ⌨️ Command:
+
+```bash
+lavad q spec show-chain-info ETH1
+```
+
+#### 📋 List :
+
+<details>
+<summary> JSONRPC </summary>
+
+- eth_accounts
+- eth_blockNumber
+- eth_call
+- eth_chainId
+- eth_coinbase
+- eth_compileLLL
+- eth_createAccessList
+- eth_estimateGas
+- eth_feeHistory
+- eth_gasPrice
+- eth_getBalance
+- eth_getBlockByHash
+- eth_getBlockByNumber
+- eth_getBlockTransactionCountByHash
+- eth_getBlockTransactionCountByNumber
+- eth_getCode
+- eth_getCompilers
+- eth_getFilterChanges
+- eth_getFilterLogs
+- eth_getLogs
+- eth_getProof
+- eth_getStorageAt
+- eth_getTransactionByBlockHashAndIndex
+- eth_getTransactionByBlockNumberAndIndex
+- eth_getTransactionByHash
+- eth_getTransactionCount
+- eth_getTransactionReceipt
+- eth_getUncleByBlockHashAndIndex
+- eth_getUncleByBlockNumberAndIndex
+- eth_getUncleCountByBlockHash
+- eth_getUncleCountByBlockNumber
+- eth_getWork
+- eth_hashrate
+- eth_maxPriorityFeePerGas
+- eth_mining
+- eth_newBlockFilter
+- eth_newFilter
+- eth_newPendingTransactionFilter
+- eth_protocolVersion
+- eth_sendRawTransaction
+- eth_sendTransaction
+- eth_sign
+- eth_signTransaction
+- eth_subscribe
+- eth_syncing
+- eth_uninstallFilter
+- eth_unsubscribe
+- net_listening
+- net_peerCount
+- net_version
+- rpc_modules
+- web3_clientVersion
+- web3_sha3
+- debug_getBadBlocks
+- debug_getRawBlock
+- debug_getRawHeader
+- debug_getRawReceipts
+- debug_getRawTransaction
+- debug_storageRangeAt
+- debug_traceBlockByHash
+- debug_traceBlockByNumber
+- debug_traceCall
+- debug_traceTransaction
 
 </details>
