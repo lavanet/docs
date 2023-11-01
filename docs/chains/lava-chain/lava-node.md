@@ -7,7 +7,7 @@ title: Running a Lava RPC Node
 
 ## Requirements 📄 
 
-The current recommended [hardware prerequisites](/hardware-requirements) for running a Lava RPC node are the following: 
+The current recommended [hardware prerequisites](/reqs) for running a Lava RPC node are the following: 
 
 ```
 16 GB RAM
@@ -27,7 +27,7 @@ make install-all
 
 ## Launch Your Node 🚀
 
-Set up and configure your node according to the [guides](/join-testnet-manual) available.
+Set up and configure your node according to the [guides](/testnet) available.
 You may use `Cosmovisor` (Recommended) or setup the node manually.
 
 ## Apply to our Provider Incubation Program 📋
