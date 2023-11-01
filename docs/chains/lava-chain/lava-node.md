@@ -28,7 +28,7 @@ make install-all
 ## Launch Your Node 🚀
 
 Set up and configure your node according to the [guides](/join-testnet-manual) available.
-
+You may use `Cosmovisor` (Recommended) or setup the node manually.
 
 ## Apply to our Provider Incubation Program 📋
 
