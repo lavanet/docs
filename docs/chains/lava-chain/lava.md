@@ -48,184 +48,183 @@ lavad q spec show-chain-info LAV1
 
 <details> <summary> REST </summary>
 
- - /lavanet/lava/conflict/conflict_vote
-  - /lavanet/lava/conflict/conflict_vote/{index}
-  - /lavanet/lava/conflict/params
-  - /lavanet/lava/epochstorage/epoch_details
-  - /lavanet/lava/epochstorage/fixated_params
-  - /lavanet/lava/epochstorage/params
-  - /lavanet/lava/epochstorage/stake_storage
-  - /lavanet/lava/epochstorage/stake_storage/{index}
-  - /lavanet/lava/pairing/clients/{chainID}
-  - /lavanet/lava/pairing/epoch_payments
-  - /lavanet/lava/pairing/epoch_payments/{index}
-  - /lavanet/lava/pairing/get_pairing/{chainID}/{client}
-  - /lavanet/lava/pairing/params
-  - /lavanet/lava/pairing/provider_payment_storage
-  - /lavanet/lava/pairing/provider_payment_storage/{index}
-  - /lavanet/lava/pairing/providers/{chainID}
-  - /lavanet/lava/pairing/unique_payment_storage_client_provider
-  - /lavanet/lava/pairing/unique_payment_storage_client_provider/{index}
-  - /lavanet/lava/pairing/user_entry/{address}/{chainID}
-  - /lavanet/lava/pairing/verify_pairing/{chainID}/{client}/{provider}/{block}
-  - /lavanet/lava/plans/show_all_plans
-  - /lavanet/lava/plans/show_plan_info/{plan_index}
-  - /lavanet/lava/spec/chain/{chainID}
-  - /lavanet/lava/spec/params
-  - /lavanet/lava/spec/show_all_chains
-  - /lavanet/lava/spec/show_chain_info/{chainName}
-  - /lavanet/lava/spec/spec
-  - /lavanet/lava/spec/spec/{index}
-  - /cosmos/auth/v1beta1/account_info/{address}
-  - /cosmos/auth/v1beta1/accounts
-  - /cosmos/auth/v1beta1/accounts/{address}
-  - /cosmos/auth/v1beta1/address_by_id/{id}
-  - /cosmos/auth/v1beta1/bech32
-  - /cosmos/auth/v1beta1/bech32/{address_bytes}
-  - /cosmos/auth/v1beta1/bech32/{address_string}
-  - /cosmos/auth/v1beta1/module_accounts
-  - /cosmos/auth/v1beta1/module_accounts/{name}
-  - /cosmos/auth/v1beta1/params
-  - /cosmos/authz/v1beta1/grants/grantee/{grantee}
-  - /cosmos/authz/v1beta1/grants/granter/{granter}
-  - /cosmos/bank/v1beta1/balances/{address}
-  - /cosmos/bank/v1beta1/balances/{address}/by_denom
-  - /cosmos/bank/v1beta1/base_denom
-  - /cosmos/bank/v1beta1/denom_owners/{denom}
-  - /cosmos/bank/v1beta1/denoms_metadata
-  - /cosmos/bank/v1beta1/denoms_metadata/{denom}
-  - /cosmos/bank/v1beta1/params
-  - /cosmos/bank/v1beta1/send_enabled
-  - /cosmos/bank/v1beta1/spendable_balances/{address}
-  - /cosmos/bank/v1beta1/spendable_balances/{address}/by_denom
-  - /cosmos/bank/v1beta1/supply
-  - /cosmos/bank/v1beta1/supply/by_denom
-  - /cosmos/bank/v1beta1/supply/{denom}
-  - /cosmos/bank/v1beta1/supply_without_offset
-  - /cosmos/bank/v1beta1/supply_without_offset/{denom}
-  - /cosmos/base/node/v1beta1/config
-  - /cosmos/base/reflection/v1beta1/app_descriptor/authn
-  - /cosmos/base/reflection/v1beta1/app_descriptor/chain
-  - /cosmos/base/reflection/v1beta1/app_descriptor/codec
-  - /cosmos/base/reflection/v1beta1/app_descriptor/configuration
-  - /cosmos/base/reflection/v1beta1/app_descriptor/query_services
-  - /cosmos/base/reflection/v1beta1/app_descriptor/tx_descriptor
-  - /cosmos/base/reflection/v1beta1/interfaces
-  - /cosmos/base/reflection/v1beta1/interfaces/{interface_name}/implementations
-  - /cosmos/base/tendermint/v1beta1/abci_query
-  - /cosmos/base/tendermint/v1beta1/blocks/latest
-  - /cosmos/base/tendermint/v1beta1/blocks/{height}
-  - /cosmos/base/tendermint/v1beta1/node_info
-  - /cosmos/base/tendermint/v1beta1/syncing
-  - /cosmos/base/tendermint/v1beta1/validatorsets/latest
-  - /cosmos/base/tendermint/v1beta1/validatorsets/{height}
-  - /cosmos/distribution/v1beta1/community_pool
-  - /cosmos/distribution/v1beta1/delegators/{delegator_address}/rewards
-  - /cosmos/distribution/v1beta1/delegators/{delegator_address}/rewards/{validator_address}
-  - /cosmos/distribution/v1beta1/delegators/{delegator_address}/validators
-  - /cosmos/distribution/v1beta1/delegators/{delegator_address}/withdraw_address
-  - /cosmos/distribution/v1beta1/params
-  - /cosmos/distribution/v1beta1/validators/{validator_address}/commission
-  - /cosmos/distribution/v1beta1/validators/{validator_address}/outstanding_rewards
-  - /cosmos/distribution/v1beta1/validators/{validator_address}/slashes
-  - /cosmos/evidence/v1beta1/evidence
-  - /cosmos/evidence/v1beta1/evidence/{evidence_hash}
-  - /cosmos/evidence/v1beta1/evidence/{hash}
-  - /cosmos/feegrant/v1beta1/allowance/{granter}/{grantee}
-  - /cosmos/feegrant/v1beta1/allowances/{grantee}
-  - /cosmos/feegrant/v1beta1/issued/{granter}
-  - /cosmos/gov/v1/params/{params_type}
-  - /cosmos/gov/v1/proposals
-  - /cosmos/gov/v1/proposals/{proposal_id}
-  - /cosmos/gov/v1/proposals/{proposal_id}/deposits
-  - /cosmos/gov/v1/proposals/{proposal_id}/deposits/{depositor}
-  - /cosmos/gov/v1/proposals/{proposal_id}/tally
-  - /cosmos/gov/v1/proposals/{proposal_id}/votes
-  - /cosmos/gov/v1/proposals/{proposal_id}/votes/{voter}
-  - /cosmos/gov/v1beta1/params/{params_type}
-  - /cosmos/gov/v1beta1/proposals
-  - /cosmos/gov/v1beta1/proposals/{proposal_id}
-  - /cosmos/gov/v1beta1/proposals/{proposal_id}/deposits
-  - /cosmos/gov/v1beta1/proposals/{proposal_id}/deposits/{depositor}
-  - /cosmos/gov/v1beta1/proposals/{proposal_id}/tally
-  - /cosmos/gov/v1beta1/proposals/{proposal_id}/votes
-  - /cosmos/gov/v1beta1/proposals/{proposal_id}/votes/{voter}
-  - /cosmos/mint/v1beta1/annual_provisions
-  - /cosmos/mint/v1beta1/inflation
-  - /cosmos/mint/v1beta1/params
-  - /cosmos/params/v1beta1/params
-  - /cosmos/slashing/v1beta1/params
-  - /cosmos/slashing/v1beta1/signing_infos
-  - /cosmos/slashing/v1beta1/signing_infos/{cons_address}
-  - /cosmos/staking/v1beta1/delegations/{delegator_addr}
-  - /cosmos/staking/v1beta1/delegators/{delegator_addr}/redelegations
-  - /cosmos/staking/v1beta1/delegators/{delegator_addr}/unbonding_delegations
-  - /cosmos/staking/v1beta1/delegators/{delegator_addr}/validators
-  - /cosmos/staking/v1beta1/delegators/{delegator_addr}/validators/{validator_addr}
-  - /cosmos/staking/v1beta1/historical_info/{height}
-  - /cosmos/staking/v1beta1/params
-  - /cosmos/staking/v1beta1/pool
-  - /cosmos/staking/v1beta1/validators
-  - /cosmos/staking/v1beta1/validators/{validator_addr}
-  - /cosmos/staking/v1beta1/validators/{validator_addr}/delegations
-  - /cosmos/staking/v1beta1/validators/{validator_addr}/delegations/{delegator_addr}
-  - /cosmos/staking/v1beta1/validators/{validator_addr}/delegations/{delegator_addr}/unbonding_delegation
-  - /cosmos/staking/v1beta1/validators/{validator_addr}/unbonding_delegations
-  - /cosmos/tx/v1beta1/txs
-  - /cosmos/tx/v1beta1/txs/block/{height}
-  - /cosmos/tx/v1beta1/txs/{hash}
-  - /cosmos/upgrade/v1beta1/applied_plan/{name}
-  - /cosmos/upgrade/v1beta1/current_plan
-  - /cosmos/upgrade/v1beta1/module_versions
-  - /cosmos/upgrade/v1beta1/upgraded_consensus_state/{last_height}
-  - /node_info
-  - /syncing
-  - /validatorsets/latest
-  - /validatorsets/{height}
-  - /ibc/apps/interchain_accounts/controller/v1/params
-  - /ibc/apps/interchain_accounts/host/v1/params
-  - /ibc/apps/transfer/v1/channels/{channel_id}/ports/{port_id}/escrow_address
-  - /ibc/apps/transfer/v1/denom_hashes/{trace}
-  - /ibc/apps/transfer/v1/denom_traces
-  - /ibc/apps/transfer/v1/denom_traces/{hash}
-  - /ibc/apps/transfer/v1/params
-  - /ibc/client/v1/params
-  - /ibc/core/channel/v1/channels
-  - /ibc/core/channel/v1/channels/{channel_id}/ports/{port_id}
-  - /ibc/core/channel/v1/channels/{channel_id}/ports/{port_id}/client_state
-  - /ibc/core/channel/v1/channels/{channel_id}/ports/{port_id}/consensus_state/revision/{revision_number}/height/{revision_height}
-  - /ibc/core/channel/v1/channels/{channel_id}/ports/{port_id}/next_sequence
-  - /ibc/core/channel/v1/channels/{channel_id}/ports/{port_id}/packet_acknowledgements
-  - /ibc/core/channel/v1/channels/{channel_id}/ports/{port_id}/packet_acks/{sequence}
-  - /ibc/core/channel/v1/channels/{channel_id}/ports/{port_id}/packet_commitments
-  - /ibc/core/channel/v1/channels/{channel_id}/ports/{port_id}/packet_commitments/{packet_ack_sequences}/unreceived_acks
-  - /ibc/core/channel/v1/channels/{channel_id}/ports/{port_id}/packet_commitments/{packet_commitment_sequences}/unreceived_packets
-  - /ibc/core/channel/v1/channels/{channel_id}/ports/{port_id}/packet_commitments/{sequence}
-  - /ibc/core/channel/v1/channels/{channel_id}/ports/{port_id}/packet_receipts/{sequence}
-  - /ibc/core/channel/v1/connections/{connection}/channels
-  - /ibc/core/client/v1/client_states
-  - /ibc/core/client/v1/client_states/{client_id}
-  - /ibc/core/client/v1/client_status/{client_id}
-  - /ibc/core/client/v1/consensus_states/{client_id}
-  - /ibc/core/client/v1/consensus_states/{client_id}/heights
-  - /ibc/core/client/v1/consensus_states/{client_id}/revision/{revision_number}/height/{revision_height}
-  - /ibc/core/client/v1/params
-  - /ibc/core/client/v1/upgraded_client_states
-  - /ibc/core/client/v1/upgraded_consensus_states
-  - /ibc/core/connection/v1/client_connections/{client_id}
-  - /ibc/core/connection/v1/connections
-  - /ibc/core/connection/v1/connections/{connection_id}
-  - /ibc/core/connection/v1/connections/{connection_id}/client_state
-  - /ibc/core/connection/v1/connections/{connection_id}/consensus_state/revision/{revision_number}/height/{revision_height}
-  - /ibc/core/connection/v1/params
-  - /cosmos/tx/v1beta1/decode
-  - /cosmos/tx/v1beta1/encode
-  - /cosmos/tx/v1beta1/encode/amino
-  - /cosmos/tx/v1beta1/simulate
-  - /cosmos/tx/v1beta1/txs
+- /lavanet/lava/conflict/conflict_vote
+- /lavanet/lava/conflict/conflict_vote/{index}
+- /lavanet/lava/conflict/params
+- /lavanet/lava/epochstorage/epoch_details
+- /lavanet/lava/epochstorage/fixated_params
+- /lavanet/lava/epochstorage/params
+- /lavanet/lava/epochstorage/stake_storage
+- /lavanet/lava/epochstorage/stake_storage/{index}
+- /lavanet/lava/pairing/clients/{chainID}
+- /lavanet/lava/pairing/epoch_payments
+- /lavanet/lava/pairing/epoch_payments/{index}
+- /lavanet/lava/pairing/get_pairing/{chainID}/{client}
+- /lavanet/lava/pairing/params
+- /lavanet/lava/pairing/provider_payment_storage
+- /lavanet/lava/pairing/provider_payment_storage/{index}
+- /lavanet/lava/pairing/providers/{chainID}
+- /lavanet/lava/pairing/unique_payment_storage_client_provider
+- /lavanet/lava/pairing/unique_payment_storage_client_provider/{index}
+- /lavanet/lava/pairing/user_entry/{address}/{chainID}
+- /lavanet/lava/pairing/verify_pairing/{chainID}/{client}/{provider}/{block}
+- /lavanet/lava/plans/show_all_plans
+- /lavanet/lava/plans/show_plan_info/{plan_index}
+- /lavanet/lava/spec/chain/{chainID}
+- /lavanet/lava/spec/params
+- /lavanet/lava/spec/show_all_chains
+- /lavanet/lava/spec/show_chain_info/{chainName}
+- /lavanet/lava/spec/spec
+- /lavanet/lava/spec/spec/{index}
+- /cosmos/auth/v1beta1/account_info/{address}
+- /cosmos/auth/v1beta1/accounts
+- /cosmos/auth/v1beta1/accounts/{address}
+- /cosmos/auth/v1beta1/address_by_id/{id}
+- /cosmos/auth/v1beta1/bech32
+- /cosmos/auth/v1beta1/bech32/{address_bytes}
+- /cosmos/auth/v1beta1/bech32/{address_string}
+- /cosmos/auth/v1beta1/module_accounts
+- /cosmos/auth/v1beta1/module_accounts/{name}
+- /cosmos/auth/v1beta1/params
+- /cosmos/authz/v1beta1/grants/grantee/{grantee}
+- /cosmos/authz/v1beta1/grants/granter/{granter}
+- /cosmos/bank/v1beta1/balances/{address}
+- /cosmos/bank/v1beta1/balances/{address}/by_denom
+- /cosmos/bank/v1beta1/base_denom
+- /cosmos/bank/v1beta1/denom_owners/{denom}
+- /cosmos/bank/v1beta1/denoms_metadata
+- /cosmos/bank/v1beta1/denoms_metadata/{denom}
+- /cosmos/bank/v1beta1/params
+- /cosmos/bank/v1beta1/send_enabled
+- /cosmos/bank/v1beta1/spendable_balances/{address}
+- /cosmos/bank/v1beta1/spendable_balances/{address}/by_denom
+- /cosmos/bank/v1beta1/supply
+- /cosmos/bank/v1beta1/supply/by_denom
+- /cosmos/bank/v1beta1/supply/{denom}
+- /cosmos/bank/v1beta1/supply_without_offset
+- /cosmos/bank/v1beta1/supply_without_offset/{denom}
+- /cosmos/base/node/v1beta1/config
+- /cosmos/base/reflection/v1beta1/app_descriptor/authn
+- /cosmos/base/reflection/v1beta1/app_descriptor/chain
+- /cosmos/base/reflection/v1beta1/app_descriptor/codec
+- /cosmos/base/reflection/v1beta1/app_descriptor/configuration
+- /cosmos/base/reflection/v1beta1/app_descriptor/query_services
+- /cosmos/base/reflection/v1beta1/app_descriptor/tx_descriptor
+- /cosmos/base/reflection/v1beta1/interfaces
+- /cosmos/base/reflection/v1beta1/interfaces/{interface_name}/implementations
+- /cosmos/base/tendermint/v1beta1/abci_query
+- /cosmos/base/tendermint/v1beta1/blocks/latest
+- /cosmos/base/tendermint/v1beta1/blocks/{height}
+- /cosmos/base/tendermint/v1beta1/node_info
+- /cosmos/base/tendermint/v1beta1/syncing
+- /cosmos/base/tendermint/v1beta1/validatorsets/latest
+- /cosmos/base/tendermint/v1beta1/validatorsets/{height}
+- /cosmos/distribution/v1beta1/community_pool
+- /cosmos/distribution/v1beta1/delegators/{delegator_address}/rewards
+- /cosmos/distribution/v1beta1/delegators/{delegator_address}/rewards/{validator_address}
+- /cosmos/distribution/v1beta1/delegators/{delegator_address}/validators
+- /cosmos/distribution/v1beta1/delegators/{delegator_address}/withdraw_address
+- /cosmos/distribution/v1beta1/params
+- /cosmos/distribution/v1beta1/validators/{validator_address}/commission
+- /cosmos/distribution/v1beta1/validators/{validator_address}/outstanding_rewards
+- /cosmos/distribution/v1beta1/validators/{validator_address}/slashes
+- /cosmos/evidence/v1beta1/evidence
+- /cosmos/evidence/v1beta1/evidence/{evidence_hash}
+- /cosmos/evidence/v1beta1/evidence/{hash}
+- /cosmos/feegrant/v1beta1/allowance/{granter}/{grantee}
+- /cosmos/feegrant/v1beta1/allowances/{grantee}
+- /cosmos/feegrant/v1beta1/issued/{granter}
+- /cosmos/gov/v1/params/{params_type}
+- /cosmos/gov/v1/proposals
+- /cosmos/gov/v1/proposals/{proposal_id}
+- /cosmos/gov/v1/proposals/{proposal_id}/deposits
+- /cosmos/gov/v1/proposals/{proposal_id}/deposits/{depositor}
+- /cosmos/gov/v1/proposals/{proposal_id}/tally
+- /cosmos/gov/v1/proposals/{proposal_id}/votes
+- /cosmos/gov/v1/proposals/{proposal_id}/votes/{voter}
+- /cosmos/gov/v1beta1/params/{params_type}
+- /cosmos/gov/v1beta1/proposals
+- /cosmos/gov/v1beta1/proposals/{proposal_id}
+- /cosmos/gov/v1beta1/proposals/{proposal_id}/deposits
+- /cosmos/gov/v1beta1/proposals/{proposal_id}/deposits/{depositor}
+- /cosmos/gov/v1beta1/proposals/{proposal_id}/tally
+- /cosmos/gov/v1beta1/proposals/{proposal_id}/votes
+- /cosmos/gov/v1beta1/proposals/{proposal_id}/votes/{voter}
+- /cosmos/mint/v1beta1/annual_provisions
+- /cosmos/mint/v1beta1/inflation
+- /cosmos/mint/v1beta1/params
+- /cosmos/params/v1beta1/params
+- /cosmos/slashing/v1beta1/params
+- /cosmos/slashing/v1beta1/signing_infos
+- /cosmos/slashing/v1beta1/signing_infos/{cons_address}
+- /cosmos/staking/v1beta1/delegations/{delegator_addr}
+- /cosmos/staking/v1beta1/delegators/{delegator_addr}/redelegations
+- /cosmos/staking/v1beta1/delegators/{delegator_addr}/unbonding_delegations
+- /cosmos/staking/v1beta1/delegators/{delegator_addr}/validators
+- /cosmos/staking/v1beta1/delegators/{delegator_addr}/validators/{validator_addr}
+- /cosmos/staking/v1beta1/historical_info/{height}
+- /cosmos/staking/v1beta1/params
+- /cosmos/staking/v1beta1/pool
+- /cosmos/staking/v1beta1/validators
+- /cosmos/staking/v1beta1/validators/{validator_addr}
+- /cosmos/staking/v1beta1/validators/{validator_addr}/delegations
+- /cosmos/staking/v1beta1/validators/{validator_addr}/delegations/{delegator_addr}
+- /cosmos/staking/v1beta1/validators/{validator_addr}/delegations/{delegator_addr}/unbonding_delegation
+- /cosmos/staking/v1beta1/validators/{validator_addr}/unbonding_delegations
+- /cosmos/tx/v1beta1/txs
+- /cosmos/tx/v1beta1/txs/block/{height}
+- /cosmos/tx/v1beta1/txs/{hash}
+- /cosmos/upgrade/v1beta1/applied_plan/{name}
+- /cosmos/upgrade/v1beta1/current_plan
+- /cosmos/upgrade/v1beta1/module_versions
+- /cosmos/upgrade/v1beta1/upgraded_consensus_state/{last_height}
+- /node_info
+- /syncing
+- /validatorsets/latest
+- /validatorsets/{height}
+- /ibc/apps/interchain_accounts/controller/v1/params
+- /ibc/apps/interchain_accounts/host/v1/params
+- /ibc/apps/transfer/v1/channels/{channel_id}/ports/{port_id}/escrow_address
+- /ibc/apps/transfer/v1/denom_hashes/{trace}
+- /ibc/apps/transfer/v1/denom_traces
+- /ibc/apps/transfer/v1/denom_traces/{hash}
+- /ibc/apps/transfer/v1/params
+- /ibc/client/v1/params
+- /ibc/core/channel/v1/channels
+- /ibc/core/channel/v1/channels/{channel_id}/ports/{port_id}
+- /ibc/core/channel/v1/channels/{channel_id}/ports/{port_id}/client_state
+- /ibc/core/channel/v1/channels/{channel_id}/ports/{port_id}/consensus_state/revision/{revision_number}/height/{revision_height}
+- /ibc/core/channel/v1/channels/{channel_id}/ports/{port_id}/next_sequence
+- /ibc/core/channel/v1/channels/{channel_id}/ports/{port_id}/packet_acknowledgements
+- /ibc/core/channel/v1/channels/{channel_id}/ports/{port_id}/packet_acks/{sequence}
+- /ibc/core/channel/v1/channels/{channel_id}/ports/{port_id}/packet_commitments
+- /ibc/core/channel/v1/channels/{channel_id}/ports/{port_id}/packet_commitments/{packet_ack_sequences}/unreceived_acks
+- /ibc/core/channel/v1/channels/{channel_id}/ports/{port_id}/packet_commitments/{packet_commitment_sequences}/unreceived_packets
+- /ibc/core/channel/v1/channels/{channel_id}/ports/{port_id}/packet_commitments/{sequence}
+- /ibc/core/channel/v1/channels/{channel_id}/ports/{port_id}/packet_receipts/{sequence}
+- /ibc/core/channel/v1/connections/{connection}/channels
+- /ibc/core/client/v1/client_states
+- /ibc/core/client/v1/client_states/{client_id}
+- /ibc/core/client/v1/client_status/{client_id}
+- /ibc/core/client/v1/consensus_states/{client_id}
+- /ibc/core/client/v1/consensus_states/{client_id}/heights
+- /ibc/core/client/v1/consensus_states/{client_id}/revision/{revision_number}/height/{revision_height}
+- /ibc/core/client/v1/params
+- /ibc/core/client/v1/upgraded_client_states
+- /ibc/core/client/v1/upgraded_consensus_states
+- /ibc/core/connection/v1/client_connections/{client_id}
+- /ibc/core/connection/v1/connections
+- /ibc/core/connection/v1/connections/{connection_id}
+- /ibc/core/connection/v1/connections/{connection_id}/client_state
+- /ibc/core/connection/v1/connections/{connection_id}/consensus_state/revision/{revision_number}/height/{revision_height}
+- /ibc/core/connection/v1/params
+- /cosmos/tx/v1beta1/decode
+- /cosmos/tx/v1beta1/encode
+- /cosmos/tx/v1beta1/encode/amino
+- /cosmos/tx/v1beta1/simulate
+- /cosmos/tx/v1beta1/txs
 
 </details>
-
 
 <details> <summary> TendermintRPC </summary>
 
