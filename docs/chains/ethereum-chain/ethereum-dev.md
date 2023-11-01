@@ -8,7 +8,7 @@ import TabItem from '@theme/TabItem';
 
 # Getting Ethereum RPC
 
-## [SDK](https://github.com/lavanet/lava-sdk)
+## SDK
 
 :::caution 
 
@@ -30,7 +30,7 @@ async function useEthereumMainnet() {
 
   const ethereumMainnet = await LavaSDK.create({
     privateKey: process.env.PRIVATE_KEY, //hide your private key in an environmental variable
-    chainIds: 'FVM',
+    chainIds: 'ETH1',
   });
 
   const ethereumBlockResponse =  await ethereumMainnet.sendRelay({
@@ -61,7 +61,7 @@ async function useEthereumMainnet() {
       badgeServerAddress: "https://badges.lavanet.xyz", // Or your own Badge-Server URL 
       projectId: "enter_your_project_id_here" 
     },    
-    chainIds: 'FVM',
+    chainIds: 'ETH1',
   });
 
   const ethereumBlockResponse =  await ethereumMainnet.sendRelay({
@@ -78,12 +78,6 @@ async function useEthereumMainnet() {
 ```
 </TabItem>
 </Tabs>
-
-### Output 📤
-
-<iframe width="100%" src="/img/chains/ethereum_call.webm" frameborder="0" allow="autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-To learn more about our SDK visit the [Getting Started guide](https://docs.lavanet.xyz/sdk-getting-started?utm_source=getting-ethereum-rpc&utm_medium=docs&utm_campaign=docs-to-docs)
 
 <hr />
 
