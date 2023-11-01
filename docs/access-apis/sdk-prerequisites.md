@@ -7,7 +7,7 @@ import RoadmapItem from '@site/src/components/RoadmapItem';
 
 # Looking for our SDK? 🔎
 
-![SDK Install Example](/img/tutorial/sdk/sdk-install.gif)
+![SDK Install Example](/img/tutorial/sdk/sdk-install.gif) 
 
 [<RoadmapItem icon="🚀" title="Get Started Right Away!" description="build an example application"/>](/sdk-getting-started)
 
