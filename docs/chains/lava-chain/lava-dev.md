@@ -13,7 +13,7 @@ import TabItem from '@theme/TabItem';
 Lava offers self-served RPC as well as  
 ⚠️ Use our [Official Endpoints](/public-rpc)!
 
-## [SDK](https://github.com/lavanet/lava-sdk)
+## SDK
 
 :::caution 
 
@@ -86,9 +86,6 @@ async function uselavaMainnet() {
 </TabItem>
 </Tabs>
 
-### Output 📤
-
-<iframe width="100%" src="/img/chains/lava_call.webm" frameborder="0" allow="autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 To learn more about our SDK visit the [Getting Started guide](https://docs.lavanet.xyz/sdk-getting-started?utm_source=getting-lava-rpc&utm_medium=docs&utm_campaign=docs-to-docs)
 
