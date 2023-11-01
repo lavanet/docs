@@ -28,14 +28,15 @@ const { LavaSDK } = require("@lavanet/lava-sdk")
 
 async function useCosmoshubMainnet() {
 
-  const cosmoshubMainnet = await new LavaSDK({
+  const cosmoshubMainnet = await LavaSDK.create({
     privateKey: process.env.PRIVATE_KEY, //hide your private key in an environmental variable
-    chainID: 'FVM',
+    chainIds: 'COS5',
   });
 
   const cosmoshubBlockResponse =  await cosmoshubMainnet.sendRelay({
-    method: "eth_blockNumber",
-    params: [],
+    method: "GET",
+    url: "/node_info",
+    rpcInterface: "rest",
   });
 
   console.log(cosmoshubBlockResponse);
@@ -56,17 +57,18 @@ const { LavaSDK } = require("@lavanet/lava-sdk")
 
 async function useCosmoshubMainnet() {
 
-  const cosmoshubMainnet = await new LavaSDK({
+  const cosmoshubMainnet = await LavaSDK.create({
     badge: {
       badgeServerAddress: "https://badges.lavanet.xyz", // Or your own Badge-Server URL 
       projectId: "enter_your_project_id_here" 
     },    
-    chainID: 'FVM',
+    chainIds: 'COS5',
   });
 
   const cosmoshubBlockResponse =  await cosmoshubMainnet.sendRelay({
-    method: "eth_blockNumber",
-    params: [],
+    method: "GET",
+    url: "/node_info",
+    rpcInterface: "rest",
   });
 
   console.log(cosmoshubBlockResponse);
@@ -78,12 +80,6 @@ async function useCosmoshubMainnet() {
 ```
 </TabItem>
 </Tabs>
-
-### Output 📤
-
-<iframe width="100%" src="/img/chains/cosmoshub_call.webm" frameborder="0" allow="autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-To learn more about our SDK visit the [Getting Started guide](https://docs.lavanet.xyz/sdk-getting-started?utm_source=getting-cosmoshub-rpc&utm_medium=docs&utm_campaign=docs-to-docs)
 
 <hr />
 
