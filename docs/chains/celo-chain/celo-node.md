@@ -10,7 +10,7 @@ title: Running an Celo RPC Node
 Before you start, be sure to install [Docker](https://www.docker.com/get-started). Once you have docker installed, you can continue onto the next step.
 
 
-## Install Celo Docker Image 
+## Install Celo Docker Image 📥
 
 Celo's node is built from a Docker image pulled using Docker CLI. This software is necessary to run a Celo RPC node. To get started, input the following in terminal:
 
@@ -21,7 +21,7 @@ mkdir celo-data
 cd celo-data
 ```
 
-### Place your public address in an environmental variable
+### Place your public address in an environmental variable 🪧
 ```bash
 export CELO_ACCOUNT_ADDRESS=<YOUR-ACCOUNT-ADDRESS>
 ```
@@ -31,7 +31,8 @@ If you don't already have a Celo account address, create one using the following
 docker run -v $PWD:/root/.celo --rm -it $CELO_IMAGE account new
 ```
 
-### Start your node
+### Start your node 🚀
+
 ```bash
 docker run --name celo-fullnode -d --restart unless-stopped --stop-timeout 300 -p 127.0.0.1:8545:8545 -p 127.0.0.1:8546:8546 -p 30303:30303 -p 30303:30303/udp -v $PWD:/root/.celo $CELO_IMAGE --verbosity 3 --syncmode full --http --http.addr 0.0.0.0 --http.api eth,net,web3,debug,admin,personal --light.serve 90 --light.maxpeers 1000 --maxpeers 1100 --etherbase $CELO_ACCOUNT_ADDRESS --datadir /root/.celo
 ```

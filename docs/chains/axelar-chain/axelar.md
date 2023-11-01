@@ -37,7 +37,7 @@ https://raw.githubusercontent.com/lavanet/lava/main/cookbook/specs/spec_add_axel
 #### ⌨️ Command:
 
 ```bash
-lavad q spec get-chain-info AXELAR
+lavad q spec show-chain-info AXELAR
 ```
 
 #### 📋 List :

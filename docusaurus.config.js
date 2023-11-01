@@ -20,7 +20,17 @@ const config = {
     defaultLocale: "en",
     locales: ["en"],
   },
-
+  scripts: [
+    {
+      src: "https://widget.kapa.ai/kapa-widget.bundle.js",
+      "data-website-id": "7a6c07b5-14a4-47c9-819f-ffc0d86aee42",
+      "data-project-name": "Lava",
+      "data-project-color": "#4B1112",
+      "data-project-logo":
+        "https://avatars.githubusercontent.com/u/100386277?s=280&v=4",
+      async: true,
+    },
+  ],
   presets: [
     [
       "classic",
@@ -121,12 +131,12 @@ const config = {
         },
         items: [
           {
-            label: "Access Web3 APIs ⚡️",
+            label: "Web3 APIs ⚡️",
             position: "left",
             to: "access-intro",
           },
           {
-            label: "Power-up Lava 🌋",
+            label: "Lava Protocol 🌋",
             position: "left",
             to: "power-lava",
           },
@@ -166,7 +176,7 @@ const config = {
         textColor: "#FFFFFF",
         isCloseable: true,
       },
-      image: "img/logo_with_text_bg_transparent.png",
+      image: "img/logo_black_background.png",
       algolia: {
         // The application ID provided by Algolia
         appId: process.env.ALGOLIA_APP_ID,

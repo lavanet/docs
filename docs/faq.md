@@ -6,6 +6,8 @@ title: FAQs ❓
 
 # FAQs
 
+![FAQs Banner](/img/banner/FAQs.jpg)
+
 :::info
 This section is the same as the #FAQ channel in Discord. If you need further help hop on to our support channels there.
 :::

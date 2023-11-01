@@ -30,9 +30,9 @@ const { LavaSDK } = require("@lavanet/lava-sdk")
 
 async function useSolanaMainnet() {
 
-    const solanaMainnet = await new LavaSDK({
+    const solanaMainnet = await LavaSDK.create({
       privateKey: process.env.PRIVATE_KEY, //hide your private key in an environmental variable
-      chainID: 'SOLANA',
+      chainIds: 'SOLANA',
     });
 
     const solanaBlockResponse =  await solanaMainnet.sendRelay({
@@ -59,12 +59,12 @@ const { LavaSDK } = require("@lavanet/lava-sdk")
 
 async function useSolanaMainnet() {
 
-    const solanaMainnet = await new LavaSDK({
+    const solanaMainnet = await LavaSDK.create({
       badge: {
         badgeServerAddress: "https://badges.lavanet.xyz", // Or your own Badge-Server URL 
         projectId: "enter_your_project_id_here" 
       },
-      chainID: 'SOLANA',
+      chainIds: 'SOLANA',
       geolocation: "2"
     });
 

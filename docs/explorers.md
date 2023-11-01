@@ -5,6 +5,8 @@ title: Explorers 🔭
 
 # Lava Blockchain Explorers 🔭
 
+![Explorers Banner](/img/banner/Explorers-b802a6190fe349c4b6181d3971f81da9.jpg)
+
 ## Official Explorer ⭕
 
 ![Nodes Guru](/img/explorer/nodes_guru.svg) <br />

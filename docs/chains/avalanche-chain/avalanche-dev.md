@@ -29,9 +29,9 @@ const { LavaSDK } = require("@lavanet/lava-sdk")
 
 async function useAvalancheMainnet() {
 
-  const avalancheMainnet = await new LavaSDK({
+  const avalancheMainnet = await LavaSDK.create({
     privateKey: process.env.PRIVATE_KEY, //hide your private key in an environmental variable
-    chainID: 'AVAX',
+    chainIds: 'AVAX',
   });
 
   const avalancheBlockResponse =  await avalancheMainnet.sendRelay({
@@ -58,12 +58,12 @@ const { LavaSDK } = require("@lavanet/lava-sdk")
 
 async function useAvalancheMainnet() {
 
-  const avalancheMainnet = await new LavaSDK({
+  const avalancheMainnet = await LavaSDK.create({
     badge: {
       badgeServerAddress: "https://badges.lavanet.xyz", // Or your own Badge-Server URL 
       projectId: "enter_your_project_id_here" 
     },
-    chainID: 'AVAX',
+    chainIds: 'AVAX',
     geolocation: "2"
   });
 

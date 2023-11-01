@@ -61,9 +61,9 @@ const { LavaSDK } = require("@lavanet/lava-sdk")
 
 async function useEvmosTestnet() {
 
-  const evmosTestnet = await new LavaSDK({
+  const evmosTestnet = await LavaSDK.create({
     privateKey: process.env.PRIVATE_KEY, //hide your private key in an environmental variable
-    chainID: 'EVMOST',
+    chainIds: 'EVMOST',
   });
 
   const evmosBlockResponse =  await evmosTestnet.sendRelay({
@@ -88,12 +88,12 @@ const { LavaSDK } = require("@lavanet/lava-sdk")
 
 async function useEvmosTestnet() {
 
-  const evmosTestnet = await new LavaSDK({
+  const evmosTestnet = await LavaSDK.create({
     badge: {
       badgeServerAddress: "https://badges.lavanet.xyz", // Or your own Badge-Server URL 
       projectId: "enter_your_project_id_here" 
     },
-    chainID: 'EVMOST',
+    chainIds: 'EVMOST',
   });
 
   const evmosBlockResponse =  await evmosTestnet.sendRelay({

@@ -29,9 +29,9 @@ const { LavaSDK } = require("@lavanet/lava-sdk")
 
 async function useoptimismMainnet() {
 
-  const optimismMainnet = await new LavaSDK({
+  const optimismMainnet = await LavaSDK.create({
     privateKey: process.env.PRIVATE_KEY, //hide your private key in an environmental variable
-    chainID: 'OPTM',
+    chainIds: 'OPTM',
   });
 
   const optimismBlockResponse =  await optimismMainnet.sendRelay({
@@ -57,12 +57,12 @@ const { LavaSDK } = require("@lavanet/lava-sdk")
 
 async function useoptimismMainnet() {
 
-  const optimismMainnet = await new LavaSDK({
+  const optimismMainnet = await LavaSDK.create({
     badge: {
       badgeServerAddress: "https://badges.lavanet.xyz", // Or your own Badge-Server URL 
       projectId: "enter_your_project_id_here" 
     },    
-    chainID: 'OPTM',
+    chainIds: 'OPTM',
   });
 
   const optimismBlockResponse =  await optimismMainnet.sendRelay({
