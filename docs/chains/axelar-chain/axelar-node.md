@@ -36,7 +36,11 @@ OS: Ubuntu 18.04 or MacOS(x86)
 </TabItem>
 </Tabs>
 
-## Install
+## Install 📥
+
+:::caution
+Some users have reported issues with the Axelarate install script. If you encounter issues, please consider making an [issue](https://github.com/axelarnetwork/axelarate-community/issues) or trying to install manually.
+:::
 
 Clone the Axelarate-Community Repo and then run the Node Setup Script.
 ```bash
@@ -45,7 +49,7 @@ cd axelarate-community
 ./scripts/setup-node.sh -n [mainnet|testnet]
 ```
 
-### Start your Node!
+### Start your Node! 🚀
 
 Run the following command to initiate your node!
 
