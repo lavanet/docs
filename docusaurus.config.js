@@ -126,7 +126,7 @@ const config = {
             to: "access-intro",
           },
           {
-            label: "Lava Binaries 🌋",
+            label: "Lava Protocol 🌋",
             position: "left",
             to: "power-lava",
           },

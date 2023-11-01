@@ -254,7 +254,7 @@ const sidebars = {
     },
     {
       type: 'category', 
-      label: 'Lava Binaries 🌋',
+      label: 'Lava Protocol 🌋',
       collapsible: true,
       collapsed: true,
       link: {
