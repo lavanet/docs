@@ -1,65 +1,73 @@
 ---
 sidebar_position: 1
 slug: /
-title: Intro
+title: Lava Documentation 📖
 ---
 
 import RoadmapItem from '@site/src/components/RoadmapItem';
+import LatestVersion from '@site/src/components/LatestVersion';
+import LatestDocsVersion from '@site/src/components/LatestDocsVersion';
+
+
+# Lava Docs 📑
 
 ![Intro Banner](/img/banner/Intro.jpg)  
 
-# Lava Intro
-
-
-Web3 is only as strong as its weakest link.
-Today, due to complexities and lack of incentives to run your own node, apps rely on centralized services 🤷
-
-Lava is here to fix it. 
-Access Lava, Access Web3.
-
 :::danger Testnet is up and running!
-Welcome testers! Thank you for joining the testnet
+Welcome testers! Thank you for joining the testnet. If you find errors in our docs, please consider [contributing!](https://github.com/lavanet/docs)
 :::
-## Getting started 🌋⚡️
 
-### Access Web3 APIs ⚡️
-[<RoadmapItem icon="🧑‍💻" title="Access Web3 APIs" description="Start using Web3 APIs, seamlessly onboarding Lava's network"/>](/access-intro.md)
+## Overview 🔍
 
-### Power up Lava 🌋
+Web3 is only as strong as its weakest link. Today, due to complexities and lack of incentives to run your own node, apps rely on costly centralized services, unreliable public RPC endpoints, and self-hosted services. Lava is here to fix it. Access Lava, Access Web3.
 
-[<RoadmapItem icon="🧑‍⚖️" title="Power as a Validator" description="Validate blocks, secure the network, earn rewards"/>](/validator)
+Lava is built as an application-specific L1 PoS Blockchain, based on [CosmosSDK](https://tendermint.com/sdk/). We are building the most reliable, modular, and extensible network, which ensures high network performance and secure blockchain access for all web3 APIs. 
 
-[<RoadmapItem icon="💁" title="Power as a Provider" description="Service chain access, grow the network, earn rewards"/>](/provider)
+Lava documentation is intended to be the definitive reference for all technical aspects of Lava Protocol. For other information about Lava Network, please visit our [blog](https://www.lavanet.xyz/blog?utm_source=intro-page&utm_medium=docs) or review our new [research](https://community.lavanet.xyz/c/research/9?utm_source=intro-page&utm_medium=docs)! 
 
 
-### Navigating the Lava - quick links
+## Getting started 🌪️
 
-- [Docs](https://docs.lavanet.xyz) ←You’re here
-- [Block explorer](https://lava.explorers.guru/)
-- [Gateway](https://gateway.lavanet.xyz/login?utm_source=intro-page&utm_medium=docs&utm_campaign=docs-to-gateway) - Quick access APIs
+[<RoadmapItem icon="⛓️" title="Supported Chains" description="Learn more about the Chains that Lava supports."/>](/chains)
 
-### Community & open-source
+[<RoadmapItem icon="⚡️" title="Access Web3 APIs" description="Start using Web3 APIs, seamlessly onboarding Lava's network"/>](/access-intro)
 
-- [Twitter](https://twitter.com/lavanetxyz)
-- [Discord](https://discord.gg/5VcqgwMmkA)
-- [GitHub](https://github.com/lavanet)
+[<RoadmapItem icon="🌋" title="Become a Lava Validator" description="Validate blocks, secure the network, earn rewards"/>](/validator)
 
-## What is Lava?
+[<RoadmapItem icon="🔄" title="Become an API Provider" description="Service chain access, grow the network, earn rewards"/>](/provider)
+
+## Version Information ℹ️
+
+|           |                   |
+|-----------|-------------------|
+| *Lava* Version         | **<LatestVersion />** |
+| *Go* Version           | > ** 1.20.5 **        |
+| CosmosSDK            |   ** v0.47 **      |
+| Current Testnet      |  `lava-testnet-2`  |
+| Docs Version         | **<LatestDocsVersion />** |
+
+## Quick Links 🔗
+
+- [🚪 Gateway](https://gateway.lavanet.xyz/login?utm_source=intro-page&utm_medium=docs&utm_campaign=docs-to-gateway) - Quick access APIs
+- [🔭 Explorer](https://lava.explorers.guru/) - Use our Official Block Explorer
+- [💬 Community Forum](https://community.lavanet.xyz/?utm_source=intro-page&utm_medium=docs) - Long-form Discussion
+- [🐦 Twitter/X Account](https://twitter.com/lavanetxyz) - Follow us on X!
+
+---
+
+## What is Lava? 🌋
 
 **Lava is decentralizing access to blockchain data. It is the first truly unstoppable protocol for blockchain API access.**
 
-Serving as a two-sided marketplace that incentivizes and coordinates blockchain nodes to provide dapps with blockchain data, Lava is setting the standard for fast, reliable, and secure API at scale.
+Serving as a two-sided marketplace that incentivizes and coordinates blockchain nodes to provide dapps with blockchain data, Lava is setting the standard for fast, reliable, and secure APIs at scale.
 
-### How Does it work?
-
-Lava is built as an application-specific L1 PoS Blockchain, based on [Cosmos and Tendermint](https://tendermint.com/sdk/).
+### How Does It Work? 🔩
 
 Lava’s network is a Web3 APIs marketplace that acts as a settlement layer with dynamic pricing. On one side are developers & dapps (consumers) who need access to data or want to send transactions, and on the other are node runners (providers) that earn rewards for servicing requests.
 
-### Why Lava?
+### Why Lava? ❣️
 
-We are building the most reliable, and censorship-resistant network, which ensures high network performance and secure blockchain access. Lava and its community are building a network that can compete with centralized solutions all while retaining the core values of Web3:
-
+ Lava provides Multi-Chain RPC that just works:
 
 1. **Quality of Service -** Consumers monitor and rate providers based on response time, availability and freshness. When asking for rewards, providers are required to attach their QoS score and are rewarded accordingly.
 
@@ -73,4 +81,3 @@ We are building the most reliable, and censorship-resistant network, which ensur
 More on that soon 👀
 
 6. **Open Source -** Lava as a public good. A base for developers to build on and draw inspiration from.
-

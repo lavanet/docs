@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 
-const LatestVersion = () => {
+const LatestDocsVersion = () => {
   const [version, setVersion] = useState('Loading...');
 
   useEffect(() => {
-    const url = 'https://api.github.com/repos/lavanet/lava/releases/latest';
+    const url = 'https://api.github.com/repos/lavanet/docs/releases/latest';
 
     fetch(url, {
       headers: {
@@ -23,8 +23,8 @@ const LatestVersion = () => {
   }, []);
 
   return (
-    version || ""
+    version || "N/A"
   );
 };
 
-export default LatestVersion;
+export default LatestDocsVersion;
