@@ -20,7 +20,17 @@ const config = {
     defaultLocale: "en",
     locales: ["en"],
   },
-
+  scripts: [
+    {
+      src: "https://widget.kapa.ai/kapa-widget.bundle.js",
+      "data-website-id": "7a6c07b5-14a4-47c9-819f-ffc0d86aee42",
+      "data-project-name": "Lava",
+      "data-project-color": "#4B1112",
+      "data-project-logo":
+        "https://avatars.githubusercontent.com/u/100386277?s=280&v=4",
+      async: true,
+    },
+  ],
   presets: [
     [
       "classic",
