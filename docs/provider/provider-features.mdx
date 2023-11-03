@@ -14,6 +14,7 @@ This page details the various features available to providers in the Lava networ
 - [⏩ `ip-forwarding` Configuration](#config-ip-forwarding)
 - [⌛ `node-timeout` Configuration](#config-node-timeout)
 - [⚖️ Load Balancer Configuration](#config-stickyness)
+- [📈 Prometheus Metrics Configuration](#config-prometheus)
 
 --- 
 
@@ -383,5 +384,25 @@ endpoints:
         - url: ws://your_node_url/
 // highlight-start
 sticky-header: <your-sticky-header-name>
+// highlight-end
+```
+
+<br />
+
+## 📈 Prometheus Metrics Configuration {#config-prometheus}
+
+Adding support for prometheus is a simple change. Set the `metrics-listening-address:` below.
+Please note that all Lava analytics start with `lava_`. Change the config below:
+
+```yaml
+endpoints:
+    - api-interface: jsonrpc
+      chain-id: ETH1
+      network-address: 
+        address: 127.0.0.1:2221
+      node-urls: 
+        - url: ws://your_node_url/
+// highlight-start
+metrics-listen-address: ":7780"
 // highlight-end
 ```
