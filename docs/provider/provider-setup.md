@@ -233,11 +233,13 @@ lavap tx pairing stake-provider [chain-id] [amount] [endpoint endpoint ...] [geo
 lavap tx pairing stake-provider LAV1 \
   "50000000000ulava" \
    "lava.your-site.com:443,USC" USC \
-   --from my_account \
-   --provider-moniker my-lava-provider \
+    --from "my_account_name" \
+    --provider-moniker "your-moniker" \
+    --keyring-backend "test" \
+    --chain-id "lava-testnet-2" \
+    --gas="auto" \
     --gas-adjustment "1.5" \
-    --gas "auto" \ 
-    --gas-prices "0.0001ulava"
+    --node "https://public-rpc-testnet2.lavanet.xyz:443/rpc/"
 ```
 
 #### Ethereum Mainnet in US
