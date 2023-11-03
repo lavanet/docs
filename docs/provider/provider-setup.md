@@ -115,9 +115,9 @@ endpoints:
 :::tip
 If you're using `nginx` or another proxy as is recommended in our [TLS setup guide](/provider-tls), you will need to add `disable-tls: true` to each endpoint specified. This allows `nginx` to handle TLS directly. 
 :::
-### more examples
-the team constantly adds configurations, you can check examples on our github:
-`https://github.com/lavanet/lava/tree/main/config/provider_examples`
+### More Examples
+
+The team constantly adds configurations, you can check examples on our [github](https://github.com/lavanet/lava/tree/main/config/provider_examples).
 
 ## Step 3: Check Provider liveliness - before staking
 To ensure the provider is up and running correctly `lavap` provides a command to setup the necessary clients and verify all parameters are well defined.
@@ -367,7 +367,9 @@ lavap query pairing providers \
 - **`LAVA_RPC_NODE`** - An RPC node for Lava. This can be omitted if the current node has already joined the Lava network. Example: **`https://public-rpc-testnet2.lavanet.xyz:443/rpc/`**
 
 ## Step 6: Check Provider liveliness - after staking
-now that your provider is taked you can repeat the command, but this time, without specifying the endpoints, as the cli will use the blockchain to fetch them, this verifies the data exists correctly on the blockchain
+
+Now that your provider is staked you can repeat the command, but this time, without specifying the endpoints, as the CLI will use the blockchain to fetch them, this verifies the data exists correctly on the blockchain.
+
 ### Usage
 
 <Tabs>
@@ -466,7 +468,9 @@ View the logs:
 journalctl -f -u lava-provider.service -o cat
 ```
 
-## FAQ
+--- 
+
+## **FAQ** ❓
 
 #### `lavap` not found
 
@@ -477,8 +481,9 @@ Make sure you downloaded/built the binary, and it is located in the path you use
 Try to wait for a block_time (current=30s) and then run the command again
 
 #### How do I make changes?
-it is possible for a provider to make changes in his on chain stake entry at any time, it is possible to do so by sending the same stake-provider tx we have used when first joining the network with the updated parameters
-it is also possible to use a convenience cli command wrapping it:
+It is possible for a provider to make changes in his on chain stake entry at any time, it is possible to do so by sending the same stake-provider tx we have used when first joining the network with the updated parameters.
+
+It is also possible to use a convenience cli command wrapping it:
 
 ```bash
 lavad tx pairing modify-provider {SpecID} --from {WALLET}
