@@ -18,6 +18,8 @@ title: Public RPC Endpoints
 :::info
 Community Pages are provided by members of our community and not monitored/managed by Lava.
 :::
+
+- ✨[AKNodes](https://services.aknodes.com/testnet/lava)
 - ✨[AutoStake](https://autostake.com/networks/testnets/lava/#services)
 - ✨[KJNodes](https://services.kjnodes.com/testnet/lava/)
 - ✨[ITRocket](https://itrocket.net/services/testnet/lava/)
