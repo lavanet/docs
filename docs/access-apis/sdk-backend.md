@@ -36,7 +36,7 @@ If you already have lavad installed - you can easily generate a lava address by 
 <iframe width="100%" height="480" src="/img/tutorial/sdk/adding_lava_key.mp4" frameborder="0" allow="autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
-You'll need both `lava@` address and a privatekey to proceed. If you have an address that exists and no longer remember its private key, you can alwasy use `lavad keys export <key-name> --unarmored-hex --unsafe` to see your privatekey printed as a string. Do not share the output with anyone!
+You'll need both `lava@` address and a privatekey to proceed. If you have an address that exists and no longer remember its private key, you can always use `lavad keys export <key-name> --unarmored-hex --unsafe` to see your privatekey printed as a string. Do not share the output with anyone!
 
 Once you have an address, you can continue to the next step! You’ll need to make special note of your mnemonic so that you retain access to this key.
 
