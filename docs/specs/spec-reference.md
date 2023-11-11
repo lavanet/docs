@@ -311,7 +311,7 @@ For instance, with a "finalization_criteria" of 7, if the latest block number is
 
 <details> <summary> 🗉 `reliability_threshold` </summary>
 
-This threshhold determines the frequency at which free data reliability messages are broadcasted. At its essence, it dictates how resilient and trustworthy the data relayed is. The threshold is represented in hexadecimal format and functions as a mask to determine the frequency of reliability messages:
+This threshold determines the frequency at which free data reliability messages are broadcasted. At its essence, it dictates how resilient and trustworthy the data relayed is. The threshold is represented in hexadecimal format and functions as a mask to determine the frequency of reliability messages:
 
   - **0x0FFFFFFF**: This implies that roughly 1 out of every 16 messages is a data reliability message. It's relatively infrequent, optimizing for efficiency over reliability.
 
