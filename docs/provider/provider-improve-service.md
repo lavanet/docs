@@ -1,6 +1,6 @@
 ---
-slug: /provider-QoS
-title: Improve QoS and jailing
+slug: /provider-improve-service
+title: Improve Service - QoS and jailing
 ---
 
 import Tabs from '@theme/Tabs';

@@ -306,7 +306,7 @@ const sidebars = {
             'provider/provider-features',
             'provider/provider-tls',
             'provider/lavavisor',
-            'provider/provider-QoS'
+            'provider/provider-improve-service'
           ]
         },    
         'lava-blockchain/account-wallet',
