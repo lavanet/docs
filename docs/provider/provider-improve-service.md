@@ -36,7 +36,7 @@ can be checked in the provider logs, requests that time out are also identified 
 ```
 can be checked in the provider initialization logs and on the request logs, also on the prometheus metrics for disabled chains
 ```
-* errors - any lava error, whether unscyned epoch in the provider, wrong wallet, misconfigured url
+* errors - any lava error, whether unsynced epoch in the provider, wrong wallet, misconfigured url
 ```
 can be checked in the provider logs, and prometheus metrics for disabled chains
 ```
@@ -104,7 +104,7 @@ all the actions mentioned here to improve passable QoS affect excellence
 Excellence Quality of score divides into 3 metrics:
 * Availability - score in the range `0-1`
 * Sync/ Freshness of data - how much time behind other providers are we, lower is better, 0 means your sync is the best in the pairing
-* Latency - how many benchmark ticks passed during a relay in average (time taken / benchamrk time). lower is better
+* Latency - how many benchmark ticks passed during a relay in average (time taken / benchmark time). lower is better
 
 # How to fix getting jailed
 lava protocol removes providers that are providing inferior service. the mechanism is detached from QoS measurements.
@@ -112,7 +112,7 @@ in order to be jailed a provider needs to avoid the following
 * have the staked endpoint not respond to connections
 * have disabled chains in the staked endpoint
 * have too many consecutive errors with a large group of consumers
-* have a non TLS connection or an exired certificate
+* have a non TLS connection or an expired certificate
 * block headers or origins
 * miss on getting rewards
 
@@ -121,7 +121,7 @@ lava's blockchain jails a provider if:
 * there are enough other providers in the spec
 * the provider is not frozen (if you freeze for maintenance you will not get jailed)
 * the provider is active for at least 8 epochs
-* in the last 8 epohs the provider got less sum of rewards than reports sum in the last 2 epochs
+* in the last 8 epochs the provider got less sum of rewards than reports sum in the last 2 epochs
 
 ## identify getting jailed
 if your provider got jailed it will immediately upon the next epoch stop receiving requests. 
