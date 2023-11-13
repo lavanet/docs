@@ -5,16 +5,22 @@ title: SDK
 
 # Lava SDK
 
-### 🌋 Programmatic, decentralized access to any Web3 API, from anywhere, the Lava way 😉
+**🌋 Programmatic, decentralized access to any Web3 API, from anywhere, the Lava way 😉**
 
-The **Lava-SDK** is a powerful JavaScript/TypeScript library designed for developers. It enables decentralized access to all chains supported by the Lava ecosystem and can be used both in server and browser environments. By importing Lava-SDK into their projects, developers can easily interact with various blockchains and build decentralized applications with ease.
+The **Lava-SDK** is a powerful JavaScript/TypeScript library designed for developers. It enables decentralized access to all chains supported by the Lava ecosystem and can be used both in server and browser environments. By importing Lava-SDK into a project, developers can easily interact with various blockchains and build decentralized applications.
 
 ### Prerequisites
 
-Lava SDK setup requires additional steps at the moment, but we're working on minimizing prerequisites as we progress through the roadmap.
+Lava SDK setup requires additional steps at the moment, but we're working on minimizing prerequisites as we progress towards Mainnet. The recommended flow is as follows:
 
-1. Create a wallet on the Lava Testnet, have LAVA tokens
-2. Stake in the Lava chain and the chain you want to access or create subscription plan
+1. Create an account on the [Lava Gateway](https://gateway.lavanet.xyz?utm_source=access-sdk-page&utm_medium=docs)
+
+2. Install `@lavanet/lava-sdk` into your local project repository !
+
+4. Decide whether you'll be doing [frontend](/sdk-frontend) or [backend](/sdk-backend)
+
+3. Add a public key to the Lava Gateway or use your auto-generated badge from Lava's badge server!
+
 
 ### Overview
 
