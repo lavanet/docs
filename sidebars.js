@@ -248,6 +248,7 @@ const sidebars = {
             `access-apis/sdk-getting-started`
           ]
         },
+        'access-apis/sdk-integrations',
         'access-apis/access-server-kit',
         'public-rpc',
       ],
