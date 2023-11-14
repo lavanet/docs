@@ -1,97 +1,169 @@
 ---
-slug: /badge-server-hidden
+slug: /badge-server
 title: Badge Server - FrontEnd
 ---
+
 # Badge Server
 
-Using Lava SDK on the Frontend without special provisions is inherently unsafe. Private keys from any user can be leaked through the browser. Right now, Lava uses a Badge Server to solve these limitations. The default Badge Server is hosted by Lava for ease of use and onboarding purposes.
+## Running a Badge Server *(Experimental)* 🧪
 
-You can access it right from the [Lava Gateway!](https://gateway.lavanet.xyz/) However, users who are interested in accomplishing the highest levels of decentralization are encouraged to run their own badge server. 
+:::warning
 
-## Badges
+Running a badge server is advanced and requires a lot more setup than using Lava's default badge server. We recommend using the [Lava Gateway!](https://gateway.lavanet.xyz/?utm_source=sdk-frontend&utm_medium=docs&utm_campaign=docs-to-gateway) instead.
 
-Badges are objects passed to the SDK instance which allow a user to forgo the usage of private keys.  A badge has the following format:
+:::
 
-```jsx
-const myBadge = {
-  badgeServerAddress: "https://badges.lavanet.xyz", // Or your own Badge-Server URL
-  projectId: "<from gateway>" //input your project ID from the Gateway or custom setup
-};
-```
+The badge server's primary function is to generate badges. To generate badges successfully, it requires a valid private key associated with a project that is registered on-chain. This server is purposefully designed to be versatile, supporting multiple project configurations tailored for various decentralized applications (dApps). It achieves this flexibility through the use of environment variables. This approach ensures that the badge server can adapt to the specific needs of different dApps while maintaining a seamless and organized system for badge generation.
 
-A user can initialize the SDK using a badge instead of a privatekey
+When the badge server receives a request to generate a badge, it performs the following check: If the project specified in the request exists in the server's configuration, it uses the private key associated with that project to sign the badge. However, if the project is not found in the configuration, the server defaults to using a predefined default configuration for the badge signing process.
 
-```jsx
-const lavaSDK = await new sdk.LavaSDK({
-    badge: myBadge,
-    chainID: "LAV1",
-    rpcInterface:  "rest",
-});
-```
+<br/>
 
-And make calls all the same!
+### 📥 Install `lavap` 
 
-```jsx
-const info = await lavaSDK.sendRelay({
-    method: "GET",
-    url: "/node_info",
-});
-```
+Follow instructions at the [install page](/install-lava) to setup `lavap`
 
-## Running a Badge Server
-
-Running a badge server is advanced and requires a little more setup than using Lava's default badge server. With a few steps, you can have your own badge server up and running for maximum decentralization and trustlessness.
-
-
-### 1. Install `lavad`
-
-The badge server is launched from `lavad` using the `badgegenerator` command. Our first step is to get lavad:
-
-```
+```bash
 git clone https://github.com/lavanet/lava.git
-git 
+cd lava
+LAVA_BINARY=lavap make install
 ```
 
-
-### 2. Run a Lava Node or Get Access to a Lava Node with gRPC
-
-In order to start the badge server, you will need access to a Lava Node which has gRPC ports exposed. You can setup a Lava node using [Cosmovisor](/testnet-manual-cosmovisor) or do things [manually](/testnet-manual). If you're running a node, gRPC should be available to you by default at `127.0.0.1:9090`.
+<br/>
 
 
-### 3. Create a `BADGE_USER_DATA` environmental variable
+### 🪛 Configure Environmental Variables 
+`lavap` uses a `badgegenerator` command to set up the badge server. `badgegenerator` command takes a series of inputs from environmental variables. Some of these variables have default values, but others will be required to be configured to successfully run a badge server. To get started, you'll need to configure the environmental variables properly.
 
-`lavad` will pull the configuration 
+<hr/>
+
+#### `PORT`
+
+This specifies the port that the badge server will run on. 
+
+```bash
+#default value
+PORT=8080
+```
+<hr/>
+
+#### `METRICS_PORT`
+
+The Metrics Port is used by Prometheus to track three metrics:
+ - Total Requests
+ - Failed Requests
+ - Successful Processed Requests
+
+
+```bash
+#default value
+METRICS_PORT=8081
+```
+
+<hr/>
+
+
+#### `USER_DATA`
+
+Within this variable, lies a mapping structure, where each entry connects a geolocation # to a project ID complete with the relevant keys and settings. It is in JSON format and used for the encryption mechanism of the badge server.
+
+```json
+{
+  "2": {
+    "default": {
+      "project_public_key": "lava@......",
+      "private_key": "<private key>",
+      "epochs_max_cu": 99999
+    },
+    "project_id": {
+      "project_public_key": "lava@......",
+      "private_key": "<private key>",
+      "epochs_max_cu": 99999
+    }
+  },
+  "1": {
+    "default": {
+      "project_public_key": "lava@...",
+      "private_key": "<private key>",
+      "epochs_max_cu": 99999
+    }
+  }
+}
+```
+
+<hr/>
+
+#### `GRPC_URL`
+
+This specifies the URL of the node with exposed gRPC port. Badge servers require access to a node with gRPC in order to function correctly.
+
+```bash
+GRPC_URL=public-rpc-testnet2.lavanet.xyz:9090
+```
+<hr/>
+
+#### `CHAIN_ID`
+This specifies the chain that will be used for providing badges.
+
+```bash
+#default value
+CHAIN_ID=lava-tesnet-2
+```
+
+<hr/>
+
+#### `DEFAULT_GEOLOCATION`
+This holds importance as it serves as a fallback mechanism in cases where the user's country of origin cannot be determined for any reason. In such instances, the system defaults to the value specified in this variable.
+
+```bash
+#default value
+DEFAULT_GEOLOCATION=1
+```
+
+<hr/>
+
+#### `COUNTRIES_FILE_PATH`
+
+This is the path-to-file for a CSV (Comma-Separated Values) file containing essential data about various countries, along with their corresponding links to Lava-geolocation information. This file structure consists of four columns: `country-code`, `country-name`, `continent code`, and `lava-geolocation`. 
+
+You can download the file needed [here](https://storage.googleapis.com/lavanet-public-asssets/countries.csv).
+<hr/>
+
+
+#### `IP_FILE_PATH`
+
+This is the path-to-file for a TSV (Tab-Separated Values) document containing IP address ranges and their corresponding country codes. The file consists of five columns: `range_start`, `range_end`, `AS_number`, `country_code`, and `AS_description`. 
+
+It is available for download at the following location: [ip2asn-v4.tsv](https://iptoasn.com/)
+<hr/>
+
+<br/>
+
+### 🔨 Run the `badgegenerator` command
+
+Once you've taken the time to configure environmental variables, there is less need to use flags. The magic happens all with a single command:
 
 ```
-BADGE_USER_DATA="{\"projectnamegoeshere\":{\"project_public_key\":\"lava@19u6dq2zanqrs9y08e93nz4zask6elem3eww85x\",\"private_key\":\"0330e1290ffcbdf5a8671b46356aec4e1c746e9e44946e0363c09bd6a10d7893\",\"epochs_max_cu\":2233333333}}"
+lavap badgegenerator --log_level debug
 ```
 
-### 4. Run `lavad badgegenerator` command
+:::tip
 
-The magic happens all with a single command.
+`log_level` should be set to `debug`. Setting to `debug` ensures that errors are caught in this experimental phase!
 
-```
-lavad badgegenerator --grpc-url=<lava-node-ip/domain>:<grpc-port> --log_level=debug --node=https://<lava-node-ip/domain>:<rpc-port> --chain-id=lava-testnet-1
-```
+:::
 
-`grpc-url` 
+<br/>
 
-`node`
+### 📏 Create and use a `badge` with LavaSDK
 
-`chain-id` is `lava-testnet-1`
+You can test the functionality of your badge server by asking it to sign a self-generated badge!
 
-`log_level` should be set to `debug`. Setting to `debug` ensures that 
-
-### 5. Create and use a BadgeObject for the SDK instance
-
-You can test the of your badge server by asking it for credentials
-Instantiate an instacne of 
-
-```jsx
-const lavaSDK = await new sdk.LavaSDK({
+```javascript
+const lavaSDK = await LavaSDK.create({
     badge: {
         badgeServerAddress: "<yourURLorAddress>",
-        projectId: "<from gateway>" //input your project ID from the Gateway or custom setup
+        projectId: "<from setup>" //input your project ID from your setup
         },    
     chainID: "LAV1",
     rpcInterface:  "rest",
