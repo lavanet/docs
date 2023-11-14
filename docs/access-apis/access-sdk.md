@@ -37,17 +37,13 @@ Lava SDK setup requires additional steps at the moment, but we're working on min
 3. Add a public key to the Lava Gateway or use your auto-generated badge from Lava's badge server!
 
 
-
-
-![Lava SDK](/img/lava-sdk.png)
+## Repositories 
 
 1. [Lava-SDK](https://github.com/lavanet/lava-sdk): implementation of the Lava SDK library. This repository provides the core functionality for developers to interact with various blockchain networks in a decentralized manner.
 
 In addition to the core Lava-SDK library, the Lava ecosystem has several other open-source GitHub repositories that extend its functionality. These include:
 
 1. [Lava-SDK-providers](https://github.com/lavanet/lava-sdk-providers/tree/feature/implement_ethersjs_provider): contains implementations of providers for various third-party libraries used for accessing blockchains using Lava SDK. Lava-SDK-providers currently supports ethers.js implementation and we plan to add support for even more blockchain libraries in the future.
-2. [Lava-SDK-playground](https://github.com/lavanet/lava-sdk-playground): a playground for the Lava SDK. It provides a simple Node.js application with Lava SDK imported, allowing you to run scripts and test requests to the Lava network. Use this repository to experiment with Lava SDK on the server.
-3. [Lava-SDK-demo](https://github.com/lavanet/lava_sdk_demo): a playground for the Lava SDK. It provides a simple React application with Lava SDK imported, allowing you to test Lava-SDK in the demo browser app. Use this repository to experiment with Lava SDK on browser
 4. [Lava-providers](https://github.com/lavanet/lava-providers): contains `sdkSeedProviders.json`, a resource for Lava Access SDK to discover the first providers to connect to access initial Pairing data.
 
 ### Demo applications
