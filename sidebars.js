@@ -248,7 +248,23 @@ const sidebars = {
             `access-apis/sdk-getting-started`
           ]
         },
-        'access-apis/sdk-integrations',
+        {
+          type: 'category', 
+          label: 'Library Integrations',
+          collapsible: true,
+          collapsed: true,
+          link: {
+            type: 'doc',
+            id: 'access-apis/sdk-integrations'
+          },
+          items: [
+            'integrations/ethersjs5',
+            'integrations/ethersjs6',
+            'integrations/web3js',
+            'integrations/viem',
+            'integrations/cosmjs'
+          ]
+        },
         'access-apis/access-server-kit',
         'public-rpc',
       ],
