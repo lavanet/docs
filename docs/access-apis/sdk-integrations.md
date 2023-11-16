@@ -18,9 +18,9 @@ Taking advantage of integrations is an important way to multi-chain and decentra
 
 1. Install the supported web3 development package (i.e. `npm i viem`) in your project.
 2. Install the Lava integration package into your project (i.e. `npm i @lavanet/lava-viem`)
-3. Initialize the respective SDK integration object using the proper [parameters](#initialization-parameters). A chart is provided below for your reference. You must provide either a subscribed *privateKey* or a valid *badge*, but not both.
+3. Initialize the respective SDK integration object using the proper [parameters](#parameters). A chart is provided below for your reference. You must provide either a subscribed *privateKey* or a valid *badge*, but not both.
 
-### ✔️ Required Parameters
+### ✔️ Required Parameters{#parameters}
 
 The two primary fields that are necessary are a `badge`/`privateKey` to cover the cost of API calls and `chainIds` to let Lava know which chains to target. If you haven't already, you should sign up from the [Lava Gateway](https://gateway.lavanet.xyz/?utm_source=library-integrations&utm_medium=docs&utm_campaign=lava-phase-2), where you can acquire both of these with ease!
 
