@@ -5,21 +5,36 @@ title: viem
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import ViemLogo from '/static/img/tutorial/integrations/viem-icon-dark.png';
+
+# 
+
+<center>
+<img src={ViemLogo} width="150"/>
+</center>
+
+![npm](/img/npm_favicon.ico) [npm](https://www.npmjs.com/package/@lavanet/lava-viem):
+
+```
+npm i @lavanet/lava-viem
+```
+
+<Tabs>
+<TabItem value='viem' label='create()'>
 
 ```javascript
-import { createViemClientWithLavaSDK } from "../src/lavaViemProvider";
+import { createViemClientWithLavaSDK } from "@lavanet/lava-viem";
 
-// Backend usage with a subscribed private key.
-// A pre subscribed key can be set for free on https://gateway.lavanet.xyz .
 async function printLatestBlock() {
   const viem = await createViemClientWithLavaSDK({
-    privateKey: process.env.PRIVATE_KEY,
+    // subscribed private key or badge must be supplied
+    badge: {
+      badgeServerAddress: "https://badges.lavanet.xyz", // Or your own Badge-Server URL
+      projectId: "//", // Fetch your project ID from https://gateway.lavanet.xyz
+    },
     chainIds: "ETH1",
-    geolocation: "1",
-    pairingListConfig: process.env.PAIRING_LIST_CONFIG_PATH,
-    lavaChainId: "lava",
     logLevel: "info",
-    allowInsecureTransport: true,
+    geolocation: "2", // OPTIONAL
   });
 
   const latestBlock = await viem.request({
@@ -30,3 +45,7 @@ async function printLatestBlock() {
 }
 
 ```
+</TabItem>
+</Tabs>
+
+❓ Looking for more examples? Check out the [examples](https://github.com/lavanet/lava-sdk-providers/tree/main/viem/examples) folder on our repository.
