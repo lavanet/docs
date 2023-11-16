@@ -1,12 +1,18 @@
 ---
 slug: /cosmjs
-title: CosmJS
+title: cosmjs
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import CosmJSLogo from '/static/img/tutorial/integrations/cosmjs-logo-vertical-dark.png';
 
-## cosmjs
+# 
+
+<center>
+<img src={CosmJSLogo} width="150"/>
+</center>
+
 
 ![npm](/img/npm_favicon.ico) [npm](https://www.npmjs.com/package/@lavanet/lava-cosmjs):
 
@@ -15,149 +21,96 @@ npm i @lavanet/lava-cosmjs
 ```
 
 <Tabs>
-<TabItem value='cosmjs-opt1' label='create'>
+<TabItem value='cosmjs-opt1' label='create()'>
 
-```typescript
 
-import { LavaSDKOptions } from "@lavanet/lava-sdk";
-import {
-  Tendermint34Client,
-  Tendermint37Client,
-  TendermintClient,
-  Comet,
-} from "@cosmjs/tendermint-rpc";
-import { LavaCosmJsRPCClient } from "@lavanet/lava-cosmjs";
+```javascript
+const { Tendermint37Client } = require("@cosmjs/tendermint-rpc");
+const { LavaCosmJsRPCClient } = require("@lavanet/lava-cosmjs");
 
-async function createTendermintClientInstance(
-  rpcClientName: string,
-  options: LavaSDKOptions
-): Promise<TendermintClient> {
-  const client = await LavaCosmJsRPCClient.create(options);
-  switch (rpcClientName) {
-    case "tendermint34":
-      return Tendermint34Client.create(client);
-    case "tendermint37":
-      return Tendermint37Client.create(client);
-    default:
-      throw new Error(`Unknown RPC client: ${rpcClientName}`);
-  }
-}
+async function getAbciInfo() {
 
-async function printLatestBlock(rpcClientName: string) {
-  const tendermintClient = await createTendermintClientInstance(rpcClientName, {
-    privateKey: process.env.PRIVATE_KEY, // or badge!
-    chainIds: "LAV1",
-    geolocation: "1",
-    pairingListConfig: process.env.PAIRING_LIST_CONFIG_PATH,
-    lavaChainId: "lava",
-    logLevel: "info",
-    allowInsecureTransport: true,
-  });
+  //LavaCosmJsRPCClient is initialized upon calling create()
+    const client = await LavaCosmJsRPCClient.create({
+        // privatekey or badge must be supplied
+        badge: {
+            badgeServerAddress: "https://badges.lavanet.xyz",
+            projectId: "//" //login to gateway.lavanet.xyz to get a projectId!
+        },
+        chainIds: "LAV1",
+        lavaChainId: "lava-testnet-2",
+        geolocation: "1", //optional
+    })
 
-  const latestBlock = await tendermintClient.abciInfo();
-  return latestBlock;
+    const client = await Tendermint37Client.create(client);
+
+    console.log(client.abciInfo());    
 }
 
 ```
 
 </TabItem>
 
-<TabItem value='cosmjs-opt2' label='new (manual init)'>
+<TabItem value='cosmjs-opt2' label='new() ...init()'>
 
-```typescript
+```javascript
+const { Tendermint37Client } = require("@cosmjs/tendermint-rpc");
+const { LavaCosmJsRPCClient } = require("@lavanet/lava-cosmjs");
 
-import { LavaSDKOptions } from "@lavanet/lava-sdk";
-import {
-  Tendermint34Client,
-  Tendermint37Client,
-  TendermintClient,
-  Comet,
-} from "@cosmjs/tendermint-rpc";
-import { LavaCosmJsRPCClient } from "@lavanet/lava-cosmjs";
+async function getAbciInfo() {
 
-async function createTendermintClientInstance(
-  rpcClientName: string,
-  options: LavaSDKOptions
-): Promise<TendermintClient> {
-  // In this case, the provider is initialized manually by calling init()
-     const provider = new LavaCosmJsRPCClient(options);
-     await provider.init();
+  //LavaCosmJsRPCClient is initialized by calling init() after new()
+    const client = new LavaCosmJsRPCClient({
+        // privatekey or badge must be supplied
+        badge: {
+            badgeServerAddress: "https://badges.lavanet.xyz",
+            projectId: "//" //login to gateway.lavanet.xyz to get a projectId!
+        },
+        chainIds: "LAV1",
+        lavaChainId: "lava-testnet-2",
+        geolocation: "1", //optional
+    })
 
-  switch (rpcClientName) {
-    case "tendermint34":
-      return Tendermint34Client.create(client);
-    case "tendermint37":
-      return Tendermint37Client.create(client);
-    default:
-      throw new Error(`Unknown RPC client: ${rpcClientName}`);
-  }
-}
+    //client is initialized at the following call
+    await client.init()
+    const cosmJS = Tendermint37Client.create(client);
 
-async function printLatestBlock(rpcClientName: string) {
-  const tendermintClient = await createTendermintClientInstance(rpcClientName, {
-    privateKey: process.env.PRIVATE_KEY,
-    chainIds: "LAV1",
-    geolocation: "1",
-    pairingListConfig: process.env.PAIRING_LIST_CONFIG_PATH,
-    lavaChainId: "lava",
-    logLevel: "info",
-    allowInsecureTransport: true,
-  });
-
-  const latestBlock = await tendermintClient.abciInfo();
-  return latestBlock;
+    console.log(cosmJS.abciInfo());    
 }
 
 ```
 
 </TabItem>
 
-<TabItem value='cosmjs-opt3' label='new (auto init)'>
+<TabItem value='cosmjs-opt3' label='new()...relay'>
 
-```typescript
+```javascript
+const { Tendermint37Client } = require("@cosmjs/tendermint-rpc");
+const { LavaCosmJsRPCClient } = require("@lavanet/lava-cosmjs");
 
-import { LavaSDKOptions } from "@lavanet/lava-sdk";
-import {
-  Tendermint34Client,
-  Tendermint37Client,
-  TendermintClient,
-  Comet,
-} from "@cosmjs/tendermint-rpc";
-import { LavaCosmJsRPCClient } from "@lavanet/lava-cosmjs";
+async function getAbciInfo() {
 
-async function createTendermintClientInstance(
-  rpcClientName: string,
-  options: LavaSDKOptions
-): Promise<TendermintClient> {
-  // In this case, the provider will be initialized automatically on the first request
-    const provider = new LavaCosmJsRPCClient(options);
+  //LavaCosmJsRPCClient is initialized at first relay
+    const client = new LavaCosmJsRPCClient({
+        // privatekey or badge must be supplied
+        badge: {
+            badgeServerAddress: "https://badges.lavanet.xyz",
+            projectId: "//" //login to gateway.lavanet.xyz to get a projectId!
+        },
+        chainIds: "LAV1",
+        lavaChainId: "lava-testnet-2",
+        geolocation: "1", //optional
+    })
 
-  switch (rpcClientName) {
-    case "tendermint34":
-      return Tendermint34Client.create(client);
-    case "tendermint37":
-      return Tendermint37Client.create(client);
-    default:
-      throw new Error(`Unknown RPC client: ${rpcClientName}`);
-  }
-}
+    const client = Tendermint37Client.create(client);
 
-async function printLatestBlock(rpcClientName: string) {
-  const tendermintClient = await createTendermintClientInstance(rpcClientName, {
-    privateKey: process.env.PRIVATE_KEY,
-    chainIds: "LAV1",
-    geolocation: "1",
-    pairingListConfig: process.env.PAIRING_LIST_CONFIG_PATH,
-    lavaChainId: "lava",
-    logLevel: "info",
-    allowInsecureTransport: true,
-  });
-
-  const latestBlock = await tendermintClient.abciInfo();
-  return latestBlock;
+    //client is initialized at the following call
+    console.log(client.abciInfo());    
 }
 
 ```
 
 </TabItem>
 </Tabs>
+
+❓ Looking for more examples? Check out the [examples](https://github.com/lavanet/lava-sdk-providers/tree/main/cosmjs/examples) folder on our repository.
