@@ -1,9 +1,19 @@
 ---
 slug: /badge-server
-title: Badge Server - FrontEnd
+title: Badge Server
 ---
 
 # Badge Server
+
+## Overview 🔎
+
+The badge server's primary function is to generate badges. Badges allow a user to make calls to any supported API without providing their private key. To do so, each badge server requires access to a valid private key associated with a project that is registered on-chain. This server is purposefully designed to be versatile, supporting multiple project configurations tailored for various decentralized applications (dApps). It achieves this flexibility through the use of several highly configurable environment variables. This approach ensures that the badge server can adapt to the specific needs of different dApps while maintaining a seamless and organized system for badge generation.
+
+When the badge server receives a request to generate a badge, it performs the following check: If the project specified in the request exists in the server's configuration, it uses the private key associated with that project to sign the badge. However, if the project is not found in the configuration, the server defaults to using a predefined default configuration for the badge signing process.
+
+## Lava Badge Server 🌋
+
+Lava provides a hosted solution so that users do not have to spin up their own badge server! Lava's default badge server is reachable at `https://badges.lavanet.xyz`. A user can generate badges for use with Lava's badge server by creating projects on the [Lava Gateway](https://gateway.lavanet.xyz/?utm_source=badge-server&utm_medium=docs&utm_campaign=lava-phase-2).
 
 ## Running a Badge Server *(Experimental)* 🧪
 
@@ -13,11 +23,6 @@ Running a badge server is advanced and requires a lot more setup than using Lava
 
 :::
 
-The badge server's primary function is to generate badges. To generate badges successfully, it requires a valid private key associated with a project that is registered on-chain. This server is purposefully designed to be versatile, supporting multiple project configurations tailored for various decentralized applications (dApps). It achieves this flexibility through the use of environment variables. This approach ensures that the badge server can adapt to the specific needs of different dApps while maintaining a seamless and organized system for badge generation.
-
-When the badge server receives a request to generate a badge, it performs the following check: If the project specified in the request exists in the server's configuration, it uses the private key associated with that project to sign the badge. However, if the project is not found in the configuration, the server defaults to using a predefined default configuration for the badge signing process.
-
-<br/>
 
 ### 📥 Install `lavap` 
 
