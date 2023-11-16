@@ -245,7 +245,7 @@ const sidebars = {
           items: [
             'access-apis/sdk-frontend',
             'access-apis/sdk-backend',
-            `access-apis/sdk-getting-started`
+            `access-apis/sdk-getting-started`,
           ]
         },
         {
@@ -327,7 +327,8 @@ const sidebars = {
         },    
         'lava-blockchain/account-wallet',
         'lava-blockchain/faucet',
-        'lava-blockchain/subscriptions'
+        'lava-blockchain/subscriptions',
+        'lava-blockchain/badge-server'
       ]
     },
     `tutorials`,
