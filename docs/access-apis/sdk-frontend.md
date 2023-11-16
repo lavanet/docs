@@ -2,20 +2,35 @@
 slug: /sdk-frontend
 title: Frontend Use
 ---
-# Using LavaSDK in FrontEnd Development
+# Using LavaSDK 
 
-Using private keys on the frontend without special provisions is inherently unsafe. In ordinary development scenarios, private keys from a user can be leaked through the browser. 
+## 🛡️ The Frontend 
 
-Lava uses a unique solution called `badges` to solve these limitations. A `badge` consists of several parts and is used in lieu of a private key. It must, however, be signed by an external server that holds the relevant authorizing party's private key. The default Badge Server is hosted by Lava and requires no additional configurations.
+☠️ **The Problem**:   Using private keys on the frontend without special provisions is inherently unsafe. In ordinary development scenarios, private keys from a user can be leaked through the browser. 
 
-You can get started right from the [Lava Gateway](https://gateway.lavanet.xyz/?utm_source=sdk-frontend-page&utm_medium=docs&utm_campaign=docs-to-gateway)! We recognize that a hosted solution is not ideal for every use case. Users who are interested in accomplishing the highest levels of decentralization may run their own [badge server](/badge-server).
+✅ **The Solution**:  Lava uses a unique solution called `badges` to solve these limitations. A `badge` consists of several parts and is used in lieu of a private key. It must, however, be signed by an external server that holds the relevant authorizing party's private key. The [default Badge Server](/badge-server#lava-badge-server-) is hosted by Lava and requires no additional configurations.
+
+🚀 **Get Started**:  You can get started right from the [Lava Gateway](https://gateway.lavanet.xyz/?utm_source=sdk-frontend-page&utm_medium=docs&utm_campaign=docs-to-gateway)! We recognize that a hosted solution is not ideal for every use case. Users who are interested in accomplishing the highest levels of decentralization may run their own [badge server](/badge-server#running-a-badge-server-experimental-).
 
 
 <center>
 
-👉🏿[Register now](https://gateway.lavanet.xyz/?utm_source=sdk-frontend-page&utm_medium=docs&utm_campaign=docs-to-gateway) if you haven’t already!
+
 
 </center>
+
+## ↪️ Recommended Flow
+
+Although you can host your own badge server, the easiest way to get started is through Lava's Gateway. 
+1. Sign up to the Gateway. 👉🏿[Register now](https://gateway.lavanet.xyz/?utm_source=sdk-frontend-page&utm_medium=docs&utm_campaign=docs-to-gateway) if you haven’t already!
+
+2. Create a Project and Select your APIs!
+
+3. Open an API and click LavaSDK.
+
+3. Install the SDK into your project -> `npm install @lavanet-lava-sdk`
+
+4. Copy & paste your code snippet into your code.
 
 
 ## 📛 Badges
