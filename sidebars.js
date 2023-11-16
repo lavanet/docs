@@ -258,11 +258,11 @@ const sidebars = {
             id: 'access-apis/sdk-integrations'
           },
           items: [
+            'integrations/cosmjs',
             'integrations/ethersjs5',
             'integrations/ethersjs6',
             'integrations/web3js',
-            'integrations/viem',
-            'integrations/cosmjs'
+            'integrations/viem'
           ]
         },
         'access-apis/access-server-kit',
