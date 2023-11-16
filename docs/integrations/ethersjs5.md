@@ -5,10 +5,15 @@ title: ethers.js (5.x)
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import EthersLogo from '/static/img/tutorial/integrations/ethersjsbanner.png';
 
-# ether.js (version 5.x)
 
-## Use
+# 
+
+<center>
+<img src={EthersLogo} width="300"/>
+</center>
+
 
 ![npm](/img/npm_favicon.ico) [npm](https://www.npmjs.com/package/@lavanet/lava-ethers-v5):
 
@@ -27,11 +32,12 @@ import { LavaEthersProvider } from "@lavanet/lava-ethers-v5";
 
 //ethersProvider is initialized upon calling create()
 const ethersProvider = await LavaEthersProvider.create({
-  privateKey: privateKey,
-  chainId: chainId,
-  pairingListConfig: localConfigPath, // Optional
-  networkId: networkId, // Optional
-  geolocation: geolocation, //Optional
+  badge: {
+    badgeServerAddress: "https://badges.lavanet.xyz",
+    projectId: "//" //login to gateway.lavanet.xyz to get a projectId!
+  },  
+  chainIds: "ETH1",
+  geolocation: "1" //optional
 });
 
 
@@ -47,15 +53,17 @@ const blockNumber = await ethersProvider.getBlockNumber();
 
 import { LavaEthersProvider } from "@lavanet/lava-ethers-v5";
 
+//ethersProvider is initialized by calling init() after new()
 const ethersProvider = new LavaEthersProvider({
-  privateKey: privateKey,
-  chainId: chainId,
-  pairingListConfig: localConfigPath, // Optional
-  networkId: networkId, // Optional
-  geolocation: geolocation, //Optional
+  badge: {
+    badgeServerAddress: "https://badges.lavanet.xyz",
+    projectId: "//" //login to gateway.lavanet.xyz to get a projectId!
+  },  
+  chainIds: "ETH1",
+  geolocation: "1" //optional
 });
 
-//ethersProvider is initialized by calling init() after new()
+//client is initialized after the following call
 await ethersProvider.init();
 
 const blockNumber = await ethersProvider.getBlockNumber();
@@ -70,15 +78,17 @@ const blockNumber = await ethersProvider.getBlockNumber();
 
 import { LavaEthersProvider } from "@lavanet/lava-ethers-v5";
 
+//ethersProvider is initialized at first relay
 const ethersProvider = new LavaEthersProvider({
-  privateKey: privateKey,
-  chainId: chainId,
-  pairingListConfig: localConfigPath, // Optional
-  networkId: networkId, // Optional
-  geolocation: geolocation, //Optional
+  badge: {
+    badgeServerAddress: "https://badges.lavanet.xyz",
+    projectId: "//" //login to gateway.lavanet.xyz to get a projectId!
+  },  
+  chainIds: "ETH1",
+  geolocation: "1" //optional
 });
 
-//ethersProvider is initialized at the following call
+//client is initialized at the following call
 const blockNumber = await ethersProvider.getBlockNumber();
 
 ```
@@ -86,3 +96,5 @@ const blockNumber = await ethersProvider.getBlockNumber();
 </TabItem>
 
 </Tabs>
+
+❓ Looking for more examples? Check out the [examples](https://github.com/lavanet/lava-sdk-providers/tree/main/ethersjs/v5/examples) folder on our repository.
