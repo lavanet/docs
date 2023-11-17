@@ -1,27 +1,22 @@
 ---
 slug: /sdk-getting-started
-title: Getting Started with Lava SDK 🔥
+title: Getting Started with Lava SDK 
 ---
-:::caution
 
-During our Testnet, if you are using Lava SDK for the backend, there are a few prerequisites necessary to use the SDK. Before Getting Started be sure you have completed the [Prerequisites!](/sdk-backend)
+# Getting Started 🔥
 
-:::
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
-
-
-## 🎥 Video Demonstration (~9m)
-
-<video width="100%" height="100%" controls><source src="/img/tutorial/sdk/sdk_getting_startedv2.mp4" type="video/mp4"></source></video>
-
-<br /> <br />
-<hr />
-<br />
 
 ## 📝 Written Guide (~5m)
 
+### 0. Sign up for an Account on the Gateway!
+
+While not a strict prerequisite for using the SDK - using the [Lava Gateway](https://gateway.lavanet.xyz/?utm_source=sdk-frontend-page&utm_medium=docs&utm_campaign=docs-to-gateway) gives an easy and free way to get a `privateKey` and/or `badge`, which LavaSDK requires to initialize. We recommend deciding whether you're going to use Lava on the [backend](/sdk-backend) or [frontend](/sdk-frontend) and starting there.
+
 ### 1. Set up a new Node.JS project using Node Package Manager 
-To get started, we’ll want to create a backend application. Currently, LavaSDK is not safe to use in the browser in production grade applications. Doing so may expose a user’s private keys. So we'll opt for a simple node application.
+To get started, we'll opt for a simple node application.
 
 ```bash
 mkdir sdk-project/
@@ -53,38 +48,52 @@ OR
 const { LavaSDK } = require("@lavanet/lava-sdk")
 ```
 
-### 4. Initialize an instance of the SDK for each blockchain you want to access! 
+### 4. Initialize an instance of the SDK! 
 
 :::info
 
-It is currently best practice to hide the privatekey in an environmental variable instead of putting it in plain text in your code. For now, we’ll use `privKey` as a stand-in!
+When developing on the [backend](/sdk-backend), it is currently best practice to hide the privatekey in an environmental variable instead of putting it in plain text in your code. For now, we’ll use `privKey` as a stand-in!
+
+When developing on the [frontend](/sdk-frontend), you don't need to use privatekeys at all. Simply input a badge!
 
 :::
+
+<Tabs>
+<TabItem value ="frontend" label="Badges">
 
 ```jsx
 //Our Main Program Function
 async function useSDK() {
-    // For CosmosHub Testnet Access
-    const cosmosHubTestnet = await new LavaSDK({
-      privateKey: privKey,
-      chainID: 'COS5T',
-      rpcInterface: 'rest'
+    // For CosmosHub Testnet, Juno Testnet, & Polygon Testnet Access
+    const lavaNetwork = await LavaSDK.create({
+      badge: {
+        badgeServerAddress: "https://badges.lavanet.xyz" //or your own URL
+        projectId: ""
+      },
+      chainIds: ['COS5T','JUNT1','POLYGON1']
     });
   
-    // For Juno Testnet Access
-    const junoTestnet = await new LavaSDK({
-      privateKey: privKey,
-      chainID: 'JUNT1',
-    });
-  
-    // For Polygon Testnet Access
-    const polygonTestnet = await new LavaSDK({
-      privateKey: privKey,
-      chainID: 'POLYGON1',
-    });
 ```
 
-You can specify geolocation and rpcInterface per instance. There is no limit to the amount of instances you run simultaneously!
+</TabItem>
+<TabItem value ="backend" label="Private Key">
+
+```jsx
+//Our Main Program Function
+async function useSDK() {
+    // For CosmosHub Testnet, Juno Testnet, & Polygon Testnet Access
+    const lavaNetwork = await LavaSDK.create({
+      privateKey: privKey,
+      chainIds: ['COS5T','JUNT1','POLYGON1']
+    });
+
+```
+
+</TabItem>
+</Tabs>
+
+
+There is no limit to the amount of chains you can handle simultaneously! In addition to those shown in the example above, there are a number of [optional parameters](/sdk-integrations#-all-options) that you can view.
 
 A full list of supported chains, their respective IDs, and supported interfaces can be found using `lavad`
 
@@ -101,27 +110,34 @@ lavad q spec show-all-chains | grep chainID
 ### 5. Make your queries or requests
 We'll do so by sending relays within our `useSDK()` function!
 
+
 ```jsx
 //Example Juno Query - Grab an arbitrary block from Juno!
-const junoBlockResponse =  await junoTestnet.sendRelay({
+const junoBlockResponse =  await lavaNetwork.sendRelay({
     method: "block",
     params: ["82500"],
-      });
+    chainId: "JUNT1",
+    apiInterface: "tendermintrpc"
+});
 
 console.log("Juno Block: ", junoBlockResponse);
 
 //Example Cosmos Query - Get the latest block from CosmosHub!
-const cosmosBlockResponse = await cosmosHubTestnet.sendRelay({
+const cosmosBlockResponse = await lavaNetwork.sendRelay({
     method: "GET",
     url: "/cosmos/base/tendermint/v1beta1/blocks/latest",
-  });
+    chainId: "COS5T",
+    apiInterface: "rest"
+});
 
 console.log("Cosmos Block: ",cosmosBlockResponse)
 
 //Example Polygon Query - Get the most recent block from Polygon!
-const polygonBlockResponse = await polygonTestnet.sendRelay({
-	method: "eth_blockNumber",
-	params: [],
+const polygonBlockResponse = await lavaNetwork.sendRelay({
+    method: "eth_blockNumber",
+    params: [],
+    chainId: "POLYGON1",
+    apiInterface: "jsonrpc"
 });
 
 console.log("Polygon Block: ", polygonBlockResponse)
