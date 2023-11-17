@@ -8,6 +8,13 @@ title: Getting Started with Lava SDK
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+## 🎥 Video Demonstration (~11m)
+
+<video width="90%" height="90%" controls><source src="/img/tutorial/sdk/sdk-getting-started-v3.mp4" type="video/mp4"></source></video>
+
+<br /> <br />
+<hr />
+<br />
 
 ## 📝 Written Guide (~5m)
 
