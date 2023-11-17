@@ -18,7 +18,7 @@ When an upgrade becomes necessary, either because the current protocol version h
 ## 🧰 Setup
 
 :::tip
-Some older versions of the `lava-protocol` binary lack the version command, which LavaVisor employs to validate binary versions. Please ensure you've updated to the most recent version of LavaVisor or you may face errors.
+Some older versions of the `lava-protocol` binary (now `lavap`) lack the version command, which LavaVisor employs to validate binary versions. Please ensure you've updated to the most recent version of LavaVisor or you may face errors.
 :::
 
 Lavavisor is added as a `LAVA_ALL_BINARIES` parameter in the Makefile. As such, any script that executes `install-all` such as `start_env_dev.sh` will automatically install Lavavisor binary. 
@@ -89,11 +89,11 @@ LavaVisor starts the specified services using the linked binary. It also starts 
 
 3. Instead of creating service files manually, execute `lavavisor create-service` command to generate the service files. Let’s say we want to start one consumer and two provider processes, then we need to execute total of three commands like this:
 
-    - `lavavisor create-service consumer /home/ubuntu/config/consumer-ETH1.yml --geolocation 1 --from user1 --log_level info --keyring-backend test --chain-id lava --node http://127.0.0.1:26657`
+    - `lavavisor create-service consumer /home/ubuntu/config/consumer-ETH1.yml --geolocation 1 --from user1 --log_level info --keyring-backend test --chain-id lava-testnet-2 --node https://public-rpc-testnet2.lavanet.xyz:443/rpc/`
 
-    - `lavavisor create-service provider /home/ubuntu/config/provider1-ETH1.yml --geolocation 1 --from servicer1 --log_level info --keyring-backend test --chain-id lava --node http://127.0.0.1:26657`
+    - `lavavisor create-service provider /home/ubuntu/config/provider1-ETH1.yml --geolocation 1 --from servicer1 --log_level info --keyring-backend test --chain-id lava-testnet-2 --node https://public-rpc-testnet2.lavanet.xyz:443/rpc/`
     
-    - `lavavisor create-service provider /home/ubuntu/config/provider1-LAV1.yml --geolocation 1 --from servicer2 --log_level info --keyring-backend test --chain-id lava --node http://127.0.0.1:26657`
+    - `lavavisor create-service provider /home/ubuntu/config/provider1-LAV1.yml --geolocation 1 --from servicer2 --log_level info --keyring-backend test --chain-id lava-testnet-2 --node https://public-rpc-testnet2.lavanet.xyz:443/rpc/`
 
 4. Check the `~/.lavavisor/` dir and validate `config.yml` . It should look like this (adjust the service names according to your process):
 
@@ -118,7 +118,7 @@ endpoints:
     network-address:
       address: 127.0.0.1:2221
     node-urls:
-      - url: wss://kololo8ex9:ifififkwqlspAFJIjfdMCsdmasdgAKoakdFOAKSFOakfaSEFkbntb311esad@prod-pnet-ethmainnet-1.lavapro.xyz/eth/ws/
+      - url: wss://eth-exampleprovider.net/eth/ws/
 ```
 
 </TabItem>

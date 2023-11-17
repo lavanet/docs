@@ -8,6 +8,7 @@ title: Features
 
 This page details the various features available to providers in the Lava network, along with instructions on how to operate them:
 
+- [⚡ Caching](#caching)
 - [🔌 Addons and Extensions](#addonsextensions)
 - [🧊 Freeze and Unfreeze](#freeze)
 - [🔐 Advanced Auth Configuration](#config-auth)
@@ -17,6 +18,37 @@ This page details the various features available to providers in the Lava networ
 - [📈 Prometheus Metrics Configuration](#config-prometheus)
 
 --- 
+
+## ⚡ Caching
+
+Lava's caching service is used to cut costs and improve the overall performance of the network. Both provider and consumer processes benefit from the caching service. Providers who enable caching may be able to return responses faster than providers who do not have caching enabled.
+
+In order to use the caching service, run the following process:
+
+```
+ListenAddress="127.0.0.1:7777"
+ListenMetricsAddress="127.0.0.1:5747"
+lavap cache $ListenAddress --metrics_address $ListenMetricsAddress --log_level debug
+```
+
+The cache service will run in the background. Plug in the caching service with the consumer or provider process as applicable:
+
+<details> <summary> rpcprovider </summary>
+
+```
+lavap rpcprovider <your-regular-cli-options> --cache-be $ListenAddress
+```
+</details>
+
+<details> <summary> rpcconsumer </summary>
+
+```
+lavap rpcconsumer <your-regular-cli-options> --cache-be $ListenAddress
+```
+
+</details>
+
+<br/>
 
 ## 🔌 Addons and Extensions{#addonsextensions}
 
