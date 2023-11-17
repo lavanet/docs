@@ -245,7 +245,24 @@ const sidebars = {
           items: [
             'access-apis/sdk-frontend',
             'access-apis/sdk-backend',
-            `access-apis/sdk-getting-started`
+            `access-apis/sdk-getting-started`,
+          ]
+        },
+        {
+          type: 'category', 
+          label: 'Library Integrations',
+          collapsible: true,
+          collapsed: true,
+          link: {
+            type: 'doc',
+            id: 'access-apis/sdk-integrations'
+          },
+          items: [
+            'integrations/cosmjs',
+            'integrations/ethersjs5',
+            'integrations/ethersjs6',
+            'integrations/web3js',
+            'integrations/viem'
           ]
         },
         'access-apis/access-server-kit',
@@ -302,16 +319,16 @@ const sidebars = {
             id: 'provider'
           },
           items: [
+            'provider/lavavisor',
             'provider/provider-setup',
             'provider/provider-features',
             'provider/provider-tls',
-            'provider/lavavisor',
-            'provider/provider-improve-service'
           ]
         },    
         'lava-blockchain/account-wallet',
         'lava-blockchain/faucet',
-        'lava-blockchain/subscriptions'
+        'lava-blockchain/subscriptions',
+        'lava-blockchain/badge-server'
       ]
     },
     `tutorials`,
