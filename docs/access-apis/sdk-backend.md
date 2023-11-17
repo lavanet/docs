@@ -25,15 +25,15 @@ Although you can subscribe your private key from the commandline, the easiest wa
 
 3. Go to Settings -> Project Keys
 
-3. Click `Add New Key` and decide whether you want to `Generate a new Key` or `Add a public Key`
+4. Click `Add New Key` and decide whether you want to `Generate a new Key` or `Add a public Key`
 
-4. Give a moment for your key to sync! 
+5. Give a moment for your key to sync! 
 
 ![SynchingKey](/img/tutorial/sdk/SynchingKey.png)
 
-5. Install the SDK into your project -> `npm install @lavanet-lava-sdk`
+6. Install the SDK into your project -> `npm install @lavanet-lava-sdk`
 
-5. Select any of your API accesses (LavaSDK -> `Use in BackEnd`) & copy & paste your code snippet into your code.
+7. Select any of your API accesses (LavaSDK -> `Use in BackEnd`) & copy & paste your code snippet into your code.
 
 <br/>
 
