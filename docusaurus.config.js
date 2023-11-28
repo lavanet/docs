@@ -171,7 +171,7 @@ const config = {
       announcementBar: {
         id: "no_token",
         content:
-          'Lava Phase 2 is Live 🔥 Decentralized, Multi-chain RPC & APIs. <B>Mainnet Soon!</B>',
+          '<a href="https://www.lavanet.xyz/roadmap?utm_source=announcement-bar&utm_medium=docs&utm_campaign=lava-phase-2">Lava Phase 2</a> is Live 🔥 Decentralized, Multi-chain RPC & APIs. <B>Mainnet Soon!</B>',
         backgroundColor: "#AA0000",
         textColor: "#FFFFFF",
         isCloseable: true,
