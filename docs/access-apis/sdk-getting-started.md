@@ -20,7 +20,7 @@ import TabItem from '@theme/TabItem';
 
 ### 0. Sign up for an Account on the Gateway!
 
-While not a strict prerequisite for using the SDK - using the [Lava Gateway](https://gateway.lavanet.xyz/?utm_source=sdk-frontend-page&utm_medium=docs&utm_campaign=docs-to-gateway) gives an easy and free way to get a `privateKey` and/or `badge`, which LavaSDK requires to initialize. We recommend deciding whether you're going to use Lava on the [backend](/sdk-backend) or [frontend](/sdk-frontend) and starting there.
+While not a strict prerequisite for using the SDK - using the [Lava Gateway](https://gateway.lavanet.xyz/?utm_source=sdk-frontend-page&utm_medium=docs&utm_campaign=docs-to-gateway) gives an easy and free way to get a `privateKey` and/or `badge`, which LavaSDK requires to initialize. We recommend deciding whether you're going to use Lava on the [backend](/sdk-backend) or [frontend](/sdk-frontend) and starting there. LavaSDK is peer-to-peer (p2p) and executes relays in a  decentralized manner. 
 
 ### 1. Set up a new Node.JS project using Node Package Manager 
 To get started, we'll opt for a simple node application.
