@@ -66,6 +66,7 @@ If no arguments are provided, the default configuration file is used. All config
 - **`--pprof-address`**: pprof server address, used for code profiling (default: **`""`**)
 - **`--cache`**: Address for a cache server to improve performance (default: **`""`**)
 - **`--parallel-connections`**: Number of parallel connections (default: **`chainproxy.NumberOfParallelConnections`**)
+- **`--reward-server-storage`**:  The path to store reward server data (default **`".storage/rewardserver"`**)
 
 ### Configuration Examples
 
