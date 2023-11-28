@@ -171,7 +171,7 @@ const config = {
       announcementBar: {
         id: "no_token",
         content:
-          'Lava testnet is live. Mainnet tokens not yet available. <B>Beware of scams.</B> Need help? <a target="_blank" href="https://discord.gg/5VcqgwMmkA">Join our Discord.</a>',
+          'Lava Phase 2 is Live 🔥 Decentralized, Multi-chain RPC & APIs. <B>Mainnet Soon!</B>',
         backgroundColor: "#AA0000",
         textColor: "#FFFFFF",
         isCloseable: true,
