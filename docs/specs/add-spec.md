@@ -9,7 +9,9 @@ title: New Spec
 
 
 ## ℹ️ Context 
-Creating a new specification in the Lava ecosystem is important for those aiming to extend or introduce new functionalities within the network. In Lava, a specification, often referred to as a 'spec', acts as a foundational blueprint that details the APIs, required methods, compute unit costs, and expected behavior pertinent to a specific chain or application.
+Creating a new specification in the Lava ecosystem is important for those aiming to extend or introduce new functionalities within the network. Lava is modular; entirely new APIs, additional chains, and indexers can be supported without modifications to the Lava Protocol.  In Lava, a specification, often referred to as a 'spec', acts as a foundational blueprint that details the APIs, required methods, compute unit costs, and expected behavior pertinent to a specific chain or application. 
+
+Contributors play a vital role in Lava by adding new specs. Becoming a contributor to Lava is one of the most significant roles to play in the entire ecosystem. At Mainnet, it is planned for Contributors to be rewarded by the economics of the protocol. Creating new specs is not only a way to expand Lava, but has many other benefits: it builds a community of providers for an in-demand API, it allows modular changes to API collections on an as-needed basis, and it gives an opportunity to potentially earn rewards as a maintainer and creator of the spec. The contribution of new specs is highly appreciated and necessary endeavor for securing and improving web3 infrastructure.
 
 ## 🏗️ Essential Steps
 
