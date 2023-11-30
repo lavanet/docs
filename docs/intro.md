@@ -48,7 +48,7 @@ Lava documentation is intended to be the definitive reference for all technical 
 
 ## Quick Links 🔗
 
-- [🚪 Gateway](https://gateway.lavanet.xyz/login?utm_source=intro-page&utm_medium=docs&utm_campaign=docs-to-gateway) - Quick access APIs
+- [🚪 Gateway](https://gateway.lavanet.xyz/?utm_source=intro-page&utm_medium=docs&utm_campaign=docs-to-gateway) - Quick access APIs
 - [🔭 Explorer](https://lava.explorers.guru/) - Use our Official Block Explorer
 - [💬 Community Forum](https://community.lavanet.xyz/?utm_source=intro-page&utm_medium=docs) - Long-form Discussion
 - [🐦 Twitter/X Account](https://twitter.com/lavanetxyz) - Follow us on X!
