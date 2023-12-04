@@ -187,20 +187,25 @@ lavap test rpcprovider {PROVIDER_ADDRESS} --endpoints "{ENDPOINTS}"
 
 ## Step 4: Stake as Provider
 
-Before you can expose your multi-chain provider to rpc consumers, you need to stake a provider. You may have already taken this step and can move onto step 3. Otherwise, to stake a single service, use the following command:
+Before you can expose your multi-chain provider to rpc consumers, you need to stake a provider. You may have already taken this step and can move onto step 5. Otherwise, to stake a single service, use the following command:
 
 ```bash
-lavap tx pairing stake-provider [chain-id] [amount] [endpoint endpoint ...] [geolocation] [flags]
+lavap tx pairing stake-provider [chain-id] [amount] [endpoint endpoint ...] [geolocation] {validator} [flags]
 ```
 
 *Check the output for the status of the staking operation. A successful operation will have a code **`0`**.*
 
+:::info 
+Note that this TX can also be used to increase the provider's stake. To increase, the amount should be the sum of the current amount and the desired addition. For example, a provider is staked with `100ulava` and wants to increase its stake by `10ulava`. Then, the appropriate `amount` argument for the `stake-provider` command should be `110ulava`.
+:::
+
 #### Parameters Description
 
-- **`chain-id`** - The ID of the serviced chain (e.g., **`COS4`** or **`FTM250`**).
+- **`chain-id`** - The ID of the serviced chain (e.g., **`COS4`** or **`FTM250`**). To get the full list of available chains use: `lavap query spec show-all-chains --node {LAVA_RPC_NODE}`.
 - **`amount`** - Stake amount for the specific chain (e.g., **`2010ulava`**).
-- **`endpoint`** - Provider host listener, composed of `provider-host:provider-port,geolocation`.
-- **`geolocation`** - Indicates the geographical location where the process is located (e.g., **`1`** for US or **`2`** for EU).
+- **`endpoint`** - Provider host listener, composed of `provider-host:provider-port,geolocation`. To define multiple endpoints do: `"host:port,geolocation host2:port2,geolocation2"`. To define advanced endpoint features like `trace`, `debug`, and more, ask the Lava team.
+- **`geolocation`** - Indicates the geographical location where the process is located (e.g., **`1`** for US or **`2`** for EU). This argument must specify all the geolocations of the defined endpoints (see the "Ethereum Mainnet in US And Europe" below).
+- **`validator`** - Validator address for staking (optional). Validator address is required when staking due to the dualstaking mechanism. If no validator is specified, the highest stake validator will be picked automatically. Note that the validator address should be in a sdk.ValAddress format (`lava@valoper...`).
 
 #### Geolocations
 
@@ -228,12 +233,13 @@ lavap tx pairing stake-provider [chain-id] [amount] [endpoint endpoint ...] [geo
 
 ### Stake Examples
 
-#### Lava Testnet in US
+#### Lava Testnet in US (with specified validator)
 
 ```bash
 lavap tx pairing stake-provider LAV1 \
   "50000000000ulava" \
    "lava.your-site.com:443,USC" USC \
+   "validator_lava_address" \
     --from "my_account_name" \
     --provider-moniker "your-moniker" \
     --keyring-backend "test" \
@@ -243,7 +249,7 @@ lavap tx pairing stake-provider LAV1 \
     --node "https://public-rpc-testnet2.lavanet.xyz:443/rpc/"
 ```
 
-#### Ethereum Mainnet in US
+#### Ethereum Mainnet in US (without specified validator)
 Ethereum and other EVMs usually have only `jsonrpc` interface:
 
 ```bash
@@ -259,7 +265,7 @@ lavap tx pairing stake-provider "ETH1" \
     --node "https://public-rpc-testnet2.lavanet.xyz:443/rpc/"
 ```
 
-#### Ethereum Mainnet in US And Europe
+#### Ethereum Mainnet in US And Europe (multiple endpoints)
 ```bash
 lavap tx pairing stake-provider "ETH1" \
     "50000000000ulava" \
@@ -274,7 +280,7 @@ lavap tx pairing stake-provider "ETH1" \
 ```
 
 #### Ethereum Globally Load Balanced Array of Nodes
-to be used if your endpoint is dns load balanced for all covered geolocations
+To be used if your endpoint is DNS load balanced for all covered geolocations.
 ```bash
 lavap tx pairing stake-provider "ETH1" \
     "50000000000ulava" \
@@ -366,8 +372,12 @@ lavap query pairing providers \
 
 #### Parameter Descriptions (with examples):
 
-- **`NETWORK_NAME`** - The ID of the chain. Examples: **`COS4`** or **`FTM250`**
+- **`NETWORK_NAME`** - The ID of the chain. Examples: **`COS4`** or **`FTM250`**. To get the full list of available chains use: `lavap query spec show-all-chains --node {LAVA_RPC_NODE}`.
 - **`LAVA_RPC_NODE`** - An RPC node for Lava. This can be omitted if the current node has already joined the Lava network. Example: **`https://public-rpc-testnet2.lavanet.xyz:443/rpc/`**
+
+:::info 
+Note, a new provider stake is only applied on the start of the next epoch. Currently, an epoch is defined as 30 blocks. With block time of 30sec, in the worst case scenario the stake will be applied after 15min.
+:::
 
 ## Step 6: Check Provider liveliness - after staking
 
@@ -471,7 +481,152 @@ View the logs:
 journalctl -f -u lava-provider.service -o cat
 ```
 
---- 
+## Step 9: Unstake
+A provider can unstake to get its stake funds back to its wallet. The provider can unstake completely or partially. Note that the funds will be sent to the wallet after the Cosmos staking module's unbond period of time which is currently defined as 3 weeks. Also, if a provider fully unstakes, it's removed from the pairing list by the next epoch.
+
+### Complete Unstake
+To unstake the full stake amount for a single service, use the following command:
+
+```bash
+lavap tx pairing unstake-provider [chain-id] {validator} [flags]
+```
+
+*Check the output for the status of the staking operation. A successful operation will have a code **`0`**.*
+
+#### Parameters Description
+
+- **`chain-id`** - The ID of the serviced chain (e.g., **`COS4`** or **`FTM250`**). To get the full list of available chains use: `lavap query spec show-all-chains --node {LAVA_RPC_NODE}`.
+- **`validator`** - Validator address for unstaking (optional). If no validator is specified, the highest stake validator on which the provider is delegated to will be picked automatically. To view all the provider's delegations with the validators addresses use: `lavap query staking delegations [provider] --node {LAVA_RPC_NODE}`. Note that the validator address should be in a sdk.ValAddress format (`lava@valoper...`).
+
+#### Flags Details
+
+- **`--from`** - The account to be used for the provider staking (e.g., **`my_account`**).
+- **`--keyring-backend`** - A keyring-backend of your choosing (e.g., **`test`**).
+- **`--chain-id`** - The chain_id of the network (e.g., **`lava-testnet-2`**).
+- **`--gas`** - The gas limit for the transaction (e.g., **`"auto"`**).
+- **`--gas-adjustment`** - The gas adjustment factor (e.g., **`"1.5"`**).
+- **`--node`** - A RPC node for Lava (e.g., **`https://public-rpc-testnet2.lavanet.xyz:443/rpc/`**).
+
+### Unstake Examples
+
+#### Unstake with specified validator
+
+```bash
+lavap tx pairing unstake-provider LAV1 \
+   "validator_lava_address" \
+    --from "my_account_name" \
+    --keyring-backend "test" \
+    --chain-id "lava-testnet-2" \
+    --gas="auto" \
+    --gas-adjustment "1.5" \
+    --node "https://public-rpc-testnet2.lavanet.xyz:443/rpc/"
+```
+
+#### Unstake with unspecified validator
+
+```bash
+lavap tx pairing unstake-provider LAV1 \
+    --from "my_account_name" \
+    --keyring-backend "test" \
+    --chain-id "lava-testnet-2" \
+    --gas="auto" \
+    --gas-adjustment "1.5" \
+    --node "https://public-rpc-testnet2.lavanet.xyz:443/rpc/"
+```
+
+### Partial Unstake
+To unstake some of the stake amount for a single service, use the following command:
+
+```bash
+lavap tx dualstaking unbond [validator] [provider] [chain-id] [amount] [flags]
+```
+
+*Check the output for the status of the staking operation. A successful operation will have a code **`0`**.*
+
+:::info
+Note that the `unbond` command should be used because the proivder unbonds some of its funds from his self-delegation (which is its stake).
+:::
+
+#### Parameters Description
+
+- **`validator`** - Validator address for unstaking. To view all the provider's delegations with the validators addresses use: `lavap query staking delegations [provider] --node {LAVA_RPC_NODE}`. Note that the validator address should be in a sdk.ValAddress format (`lava@valoper...`).
+- **`provider`** - Provider lava address (of format `lava@...`).
+- **`chain-id`** - The ID of the serviced chain (e.g., **`COS4`** or **`FTM250`**). To get the full list of available chains use: `lavap query spec show-all-chains --node {LAVA_RPC_NODE}`.
+- **`amount`** - Amount to unstake (for example: "`2010ulava`").
+
+
+#### Flags Details
+
+- **`--from`** - The account to be used for the provider staking (e.g., **`my_account`**).
+- **`--keyring-backend`** - A keyring-backend of your choosing (e.g., **`test`**).
+- **`--chain-id`** - The chain_id of the network (e.g., **`lava-testnet-2`**).
+- **`--gas`** - The gas limit for the transaction (e.g., **`"auto"`**).
+- **`--gas-adjustment`** - The gas adjustment factor (e.g., **`"1.5"`**).
+- **`--node`** - A RPC node for Lava (e.g., **`https://public-rpc-testnet2.lavanet.xyz:443/rpc/`**).
+
+### Unbond Examples
+
+```bash
+lavap tx dualstaking unbond "validator_lava_address" \ 
+    "provider_lava_address" \
+    LAV1 \
+    2010ulava \ 
+    --from "my_account_name" \
+    --keyring-backend "test" \
+    --chain-id "lava-testnet-2" \
+    --gas="auto" \
+    --gas-adjustment "1.5" \
+    --node "https://public-rpc-testnet2.lavanet.xyz:443/rpc/"
+```
+
+## Step 10: Modify stake entry
+A provider can modify different properties of its stake entry using the `modify-provider` TX. The properties that can be changed using this TX include its stake amount, moniker, available endpoints, delegation commission and more.
+
+### Modify provider stake entry
+To modify the provider's stake entry for a single service, use the following command:
+
+```bash
+lavap tx pairing modify-provider [chain-id] [flags]
+```
+
+*Check the output for the status of the staking operation. A successful operation will have a code **`0`**.*
+
+:::tip
+Note that most changes are defined using the optional flags listed below.
+:::
+
+#### Parameters Description
+
+- **`chain-id`** - The ID of the serviced chain (e.g., **`COS4`** or **`FTM250`**). To get the full list of available chains use: `lavap query spec show-all-chains --node {LAVA_RPC_NODE}`.
+
+#### Flags Details
+
+- **`--from`** - The account to be used for the provider staking (e.g., **`my_account`**).
+- **`--keyring-backend`** - A keyring-backend of your choosing (e.g., **`test`**).
+- **`--chain-id`** - The chain_id of the network (e.g., **`lava-testnet-2`**).
+- **`--gas`** - The gas limit for the transaction (e.g., **`"auto"`**).
+- **`--gas-adjustment`** - The gas adjustment factor (e.g., **`"1.5"`**).
+- **`--node`** - A RPC node for Lava (e.g., **`https://public-rpc-testnet2.lavanet.xyz:443/rpc/`**).
+- **`--amount`** - Provider stake amount. This is equivalent to the stake modifications TXs, so the `--validator` flag should be considered.
+- **`--delegate-commission`** - Provider delegation commission (optional).
+- **`--delegate-limit`** - Provider delegation limit (optional).
+- **`--endpoints`** - Provider endpoints (optional). Need to follow the endpoints definition format as in the `stake-provider` command.
+- **`--geolocation`** - Provider geolocation (optional). Can be set with `int32` value or string value ("`EU,US`").
+- **`--provider-moniker`** - Provider moniker (optional).
+- **`--validator`** - Validator address for staking/unstaking when using the `--amount` flag (optional). If no validator is specified, the highest stake validator on which the provider is delegated to will be picked automatically. To view all the provider's delegations with the validators addresses use: `lavap query staking delegations [provider] --node {LAVA_RPC_NODE}`. Note that the validator address should be in a sdk.ValAddress format (`lava@valoper...`).
+
+### Example
+
+```bash
+lavap tx pairing modify-provider ETH1 \
+    --gas-adjustment "1.5" \
+    --gas "auto" \
+    --from "my-account-name"
+    --amount "2010ulava"
+    --endpoints "my-provider-africa.com:443,AF my-provider-europe.com:443,EU" \
+    --geolocation "AF,EU" \
+    --validator  lava@valoper13w... \
+```
 
 ## **FAQ** ❓
 
