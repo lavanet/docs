@@ -376,7 +376,7 @@ lavap query pairing providers \
 - **`LAVA_RPC_NODE`** - An RPC node for Lava. This can be omitted if the current node has already joined the Lava network. Example: **`https://public-rpc-testnet2.lavanet.xyz:443/rpc/`**
 
 :::info 
-Note, a new provider stake is only applied on the start of the next epoch. Currently, an epoch is defined as 20 blocks. With block time of 30sec, in the worst case scenario the stake will be applied after 10min.
+Note, a new provider stake is only applied on the start of the next epoch. Currently, an epoch is defined as 30 blocks. With block time of 30sec, in the worst case scenario the stake will be applied after 15min.
 :::
 
 ## Step 6: Check Provider liveliness - after staking
@@ -482,7 +482,7 @@ journalctl -f -u lava-provider.service -o cat
 ```
 
 ## Step 9: Unstake
-A provider can unstake to get its stake funds back to its wallet. The provider can unstake completely or partially. Note that the funds will be sent to the wallet after the `unstake_hold_blocks` period of time which is currently defined as 3 weeks. Also, if a provider fully unstakes, it's removed from the pairing list by the next epoch.
+A provider can unstake to get its stake funds back to its wallet. The provider can unstake completely or partially. Note that the funds will be sent to the wallet after the Cosmos staking module's unbond period of time which is currently defined as 3 weeks. Also, if a provider fully unstakes, it's removed from the pairing list by the next epoch.
 
 ### Complete Unstake
 To unstake the full stake amount for a single service, use the following command:
