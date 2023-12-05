@@ -27,7 +27,11 @@ https://raw.githubusercontent.com/lavanet/lava/main/cookbook/specs/spec_add_near
 
 ### Protocols 🔗
 
-** COMING SOON **
+
+| Platform  |  json-rpc |
+| --------- | ----------|
+| Gateway   | ✅        |
+| SDK       | ✅        | 
 
 ### Methods 🛠️
 
