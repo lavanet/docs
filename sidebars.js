@@ -151,6 +151,21 @@ const sidebars = {
         },
         {
           type: 'category',
+          label: 'NEAR',
+          description: 'NEAR, NEART',
+          collapsible: true,
+          collapsed: true,
+          link: {
+            type: 'doc',
+            id: 'chains/near-chain/near'
+          },
+          items: [
+            'chains/near-chain/near-dev',
+            'chains/near-chain/near-node'
+          ]
+        },
+        {
+          type: 'category',
           label: 'Optimism',
           collapsible: true,
           collapsed: true,
