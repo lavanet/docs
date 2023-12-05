@@ -1,4 +1,4 @@
-slug: /NEAR-dev
+slug: /near-dev
 title: Getting NEAR RPC
 ---
 
