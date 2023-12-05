@@ -11,50 +11,74 @@ import TabItem from '@theme/TabItem';
 
 ## Requirements 📄 
 
-Before you start, ensure that your machine meets the following [minimum requirements](https://docs.avax.network/nodes/build/set-up-node-with-installer#before-you-start):
+Before you start, ensure that your machine meets the following [minimum requirements](https://near-nodes.io/rpc/hardware-rpc):
 
 <Tabs>
-<TabItem value="min_req" label="Minimum">
+<TabItem value="rec_req" label="Recommended">
 
-    CPU: 4 cores
-    RAM: 8-16 GB RAM
-    Storage: 512 GB
-    OS: Ubuntu 18.04 or MacOS(x86)
-    ARM 64 or AMD64
+    CPU: 8-Core (16-Thread) Intel i7/Xeon or equivalent with AVX support
+    RAM: 20GB DDR4
+    Storage: 1TB SSD  - NVMe SSD recommended
+    OS: MacOS / Linux
 
 </TabItem>
 
-<TabItem value="rec_req" label="Recommended">
+<TabItem value="min_req" label="Minimum">
 
 ```
-CPU: 6-8 cores
-RAM: 16-32 GB RAM
-Storage: 1 TB
-OS: Ubuntu 18.04 or MacOS(x86)
+CPU: 8-Core (16-Thread) Intel i7/Xeon or equivalent with AVX support
+RAM: 12GB DDR4
+Storage: 500GB SSD
+OS: MacOS / Linux
 ```
 
 </TabItem>
 </Tabs>
 
-## Install 📥
+:::tip
 
-:::caution
-Some users have reported issues with the NEARate install script. If you encounter issues, please consider making an [issue](https://github.com/NEARnetwork/NEARate-community/issues) or trying to install manually.
+Installing NEAR will also require a current installation of [Rust](https://www.rust-lang.org/), [Git](https://git-scm.com/), as well as many common dev tools (`python`, `docker`, `awscli`, & `protobuf-compiler`).
+
 :::
+
+## Install 📥
 
 Clone the NEARate-Community Repo and then run the Node Setup Script.
 ```bash
-git clone https://github.com/NEARnetwork/NEARate-community.git
-cd NEARate-community
-./scripts/setup-node.sh -n [mainnet|testnet]
+git clone https://github.com/near/nearcore
+cd nearcore
+git fetch origin --tags
 ```
+
+Get the latest release
+
+git checkout tags/1.25.0 -b mynode
+
+make release
+
+:::caution
+Compilation is a time-intensive process and can take ~30 minutes or longer on recommmended hardware.
+:::
+
+
+```
+./target/release/neard --home ~/.near init --chain-id mainnet --download-genesis --download-config
+```
+
+his command will create the required directory structure by generating a config.json, node_key.json, and downloads a genesis.json for mainnet.
 
 ### Start your Node! 🚀
 
 Run the following command to initiate your node!
 
 ```bash
-$NEARD_HOME/bin/NEARd start [moniker] --home $NEARD_HOME >> $NEARD_HOME/logs/NEARd.log 2>&1 &
+# Get data backup 
+aws s3 --no-sign-request cp s3://near-protocol-public/backups/mainnet/rpc/latest .
+LATEST=$(cat latest)
+aws s3 --no-sign-request cp --no-sign-request --recursive s3://near-protocol-public/backups/mainnet/rpc/$LATEST ~/.near/data
+
+# Start the Node!
+./target/release/neard --home ~/.near run
 ```
 
 ## NEAR ipRPC 🪙
