@@ -30,24 +30,11 @@ To ensure that a LavaVisor binary is created, navigate to your local `/lava` dir
 
 1. Go version above than 1.19
 
-<br />
-<hr />
+### Whats next?
+Proceed to either [Process Wrapper](/lavavisor-wrap) or [Service Manager](/lavavisor-services) to set up your lavavisor properly
 
-## ♨️ Usage
+### Which one should I choose? 
 
-### > `lavavisor init`
-LavaVisor `init` command initializes the environment for LavaVisor. It is generally the first command run when using LavaVisor.
+we recommend using the process wrapper as it has more capabilities such as running with keyring os and it has more control over the process.
+The service manager is useful for many services under one machine as it will hold only one lavavisor instance that will use less queries, but it is less recommended to use as it cant work with keyring-backend os and it doesnt fit dockers / kubernetes services. 
 
-**Optional Flags:**
-    
-`--directory` -  specifies the protocol flags directory (default "~/")
-    
-`--auto-download` - automatically downloads missing binaries
-    
-`--auto-start` - automatically issues `start` after the the `init` command completes
-
-**Example usage:**
-
-```bash
-lavavisor init --auto-download --chain-id lava-testnet-2
-```

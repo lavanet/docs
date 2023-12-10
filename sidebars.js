@@ -332,7 +332,6 @@ const sidebars = {
               items: [
                 'provider/lavavisor/lavavisor-wrap',
                 'provider/lavavisor/lavavisor-services',
-                'provider/lavavisor/test',
               ]
             },
             'provider/provider-setup',
