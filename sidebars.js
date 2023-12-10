@@ -319,7 +319,22 @@ const sidebars = {
             id: 'provider'
           },
           items: [
-            'provider/lavavisor',
+            {
+              type: 'category',
+              label: 'Lavavisor',
+              collapsible: true,
+              collapsed: true,
+              description: 'lavavisor',
+              link: {
+                type: 'doc',
+                id: 'provider/lavavisor/lavavisor',
+              },
+              items: [
+                'provider/lavavisor/lavavisor-wrap',
+                'provider/lavavisor/lavavisor-services',
+                'provider/lavavisor/test',
+              ]
+            },
             'provider/provider-setup',
             'provider/provider-features',
             'provider/provider-tls',
