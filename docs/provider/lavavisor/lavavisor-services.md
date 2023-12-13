@@ -47,7 +47,7 @@ lavavisor init --auto-download --chain-id lava-testnet-2
 ### > `lavavisor create-service` 
 LavaVisor uses service files for each provider/consumer at play. LavaVisor `create-service` command creates these  files according to the supplied consumer / provider config file and flags.
 
-You must specify a whether you are creating a `provider` or `consumer` and the location of the config file.
+You must specify whether you are creating a `provider` or `consumer` and the location of the config file.
 
 **Example usage:**
 
