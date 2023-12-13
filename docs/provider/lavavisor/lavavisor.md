@@ -30,11 +30,17 @@ To ensure that a LavaVisor binary is created, navigate to your local `/lava` dir
 
 1. Go version above than 1.19
 
-### Whats next?
-Proceed to either [Process Wrapper](/lavavisor-wrap) or [Service Manager](/lavavisor-services) to set up your lavavisor properly
+### Getting Started 🔥
 
-### Which one should I choose? 
+To configure your Lavavisor properly, you have two options to choose from:
 
-we recommend using the process wrapper as it has more capabilities such as running with keyring os and it has more control over the process.
-The service manager is useful for many services under one machine as it will hold only one lavavisor instance that will use less queries, but it is less recommended to use as it cant work with keyring-backend os and it doesnt fit dockers / kubernetes services. 
+- [**Process Wrapper**](/lavavisor-wrap): This option offers advanced capabilities, including compatibility with keyring-based operating systems and enhanced control over your processes.
+
+- [**Service Manager**](/lavavisor-services): If you are managing multiple services on a single machine, the service manager may be a suitable choice. It maintains a single Lavavisor instance, resulting in fewer queries.
+
+### Recommended Route ⤵️
+
+We recommend the **process wrapper** for its extensive feature set, making it ideal for scenarios that require compatibility with keyring-based operating systems and greater process control.
+
+The **service manager** is beneficial when you have numerous services on a single machine, as it manages a single Lavavisor instance, reducing query overhead. However, please note that it may not be the best choice for environments using keyring-backend operating systems or for those working with Docker or Kubernetes services.
 
