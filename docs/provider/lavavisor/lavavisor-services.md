@@ -10,16 +10,19 @@ import TabItem from '@theme/TabItem';
 # **LavaVisor Service Manager**
 
 ## 📄 Overview 
-Lavavisor service manager is a feature to enable the users to run one lavavisor service to manage multiple lavap services. 
-the benefit of using this approach is that running only one lavavisor instance can save on some rpc calls as opposed to the lavavisor wrap command
+Lavavisor Service Manager is a feature to enable the users to run one lavavisor service to manage multiple `lavap` services. 
+The benefit of using this approach is that running only one lavavisor instance can save on some rpc calls as opposed to the lavavisor wrap command
 that each lavavisor instance would query once every 30 seconds. 
 
-* We improved the rpc calls intervals in recent patches so we recommend using the lavavisor wrap / pod commands instead of the service manager command even for multiple services.
+:::info 
+We improved the rpc calls intervals in recent patches so we recommend using the [`lavavisor wrap` or `pod` commands](/lavavisor-wrap#services) instead of the service manager command. This is still applicable even for multiple services.
+
+:::
 
 <br />
 <hr />
 
-## ♨️ Usage
+## ♨️ Commands
 
 ### > `lavavisor init`
 LavaVisor `init` command initializes the environment for LavaVisor. It is generally the first command run when using LavaVisor.
