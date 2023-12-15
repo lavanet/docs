@@ -1,5 +1,5 @@
 ---
-slug: /cosmjs-old
+slug: /cosmjs
 title: cosmjs
 ---
 

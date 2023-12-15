@@ -1,5 +1,5 @@
 ---
-slug: /viem-old
+slug: /viem
 title: viem
 ---
 

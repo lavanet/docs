@@ -1,5 +1,5 @@
 ---
-slug: /ethersjs5-old
+slug: /ethersjs5
 title: ethers.js (5.x)
 ---
 

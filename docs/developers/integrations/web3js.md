@@ -1,5 +1,5 @@
 ---
-slug: /web3js-old
+slug: /web3js
 title: web3.js
 ---
 

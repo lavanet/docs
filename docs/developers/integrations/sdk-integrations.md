@@ -1,5 +1,5 @@
 ---
-slug: /sdk-integrations-old
+slug: /sdk-integrations
 title: Library Integrations
 ---
 
