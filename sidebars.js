@@ -3,7 +3,20 @@
 /** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
 const sidebars = {
   theSidebar: [
-    'intro',
+    {
+      type: 'category',
+      label: 'Introduction',
+      link: {
+        type: 'doc',
+        id: 'intro/intro'
+      },
+      collapsible: true,
+      collapsed: true,
+      items: [
+        'intro/faq',
+        'intro/key-terms'
+      ]
+    },
     {
       type: 'category', 
       label: 'Chains ⛓️',
@@ -362,7 +375,6 @@ const sidebars = {
       ]
     },
     `tutorials`,
-    'faq',
     'explorers',
     {
       type: 'link',
