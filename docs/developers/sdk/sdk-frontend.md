@@ -1,5 +1,5 @@
 ---
-slug: /sdk-frontend-old
+slug: /sdk-frontend
 title: Frontend Use
 ---
 # Using LavaSDK 

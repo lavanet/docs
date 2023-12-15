@@ -1,5 +1,5 @@
 ---
-slug: /sdk-prerequisites-old
+slug: /sdk-prerequisites
 title: Looking for our SDK?
 ---
 

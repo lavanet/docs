@@ -1,5 +1,5 @@
 ---
-slug: /sdk-getting-started-old
+slug: /sdk-getting-started
 title: Getting Started with Lava SDK 
 ---
 

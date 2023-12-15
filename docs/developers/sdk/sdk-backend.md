@@ -1,5 +1,5 @@
 ---
-slug: /sdk-backend-old
+slug: /sdk-backend
 title: Backend Use
 ---
 

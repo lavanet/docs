@@ -1,5 +1,5 @@
 ---
-slug: /access-sdk-old
+slug: /access-sdk
 title: SDK
 ---
 
