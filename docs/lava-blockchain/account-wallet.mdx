@@ -59,7 +59,7 @@ export function add(){
 window.keplr.experimentalSuggestChain({
     chainId: "lava-testnet-2",
     chainName: "Lava Testnet",
-    rpc: "https://public-rpc.lavanet.xyz/rpc",
+    rpc: "https://public-rpc.lavanet.xyz",
     rest: "https://public-rpc.lavanet.xyz/rest",
     bip44: {
         coinType: 118,
@@ -75,7 +75,7 @@ window.keplr.experimentalSuggestChain({
     currencies: [ 
         { 
             coinDenom: "LAVA", 
-            coinMinimalDenom: "uLAVA", 
+            coinMinimalDenom: "ulava", 
             coinDecimals: 6, 
             coinGeckoId: "lava", 
         }, 
@@ -83,20 +83,20 @@ window.keplr.experimentalSuggestChain({
     feeCurrencies: [
         {
             coinDenom: "LAVA",
-            coinMinimalDenom: "uLAVA",
+            coinMinimalDenom: "ulava",
             coinDecimals: 6,
             coinGeckoId: "lava",
         },
     ],
     stakeCurrency: {
         coinDenom: "LAVA",
-        coinMinimalDenom: "uLAVA",
+        coinMinimalDenom: "ulava",
         coinDecimals: 6,
         coinGeckoId: "lava",
     },
     coinType: 118,
     gasPriceStep: {
-        low: 0.01,
+        low: 0.001,
         average: 0.025,
         high: 0.03,
     },
