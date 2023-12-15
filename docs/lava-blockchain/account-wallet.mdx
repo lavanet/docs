@@ -16,11 +16,11 @@ there are several ways to create your wallet or integrate an existing one, it is
 * **prefix** - lava@
 * **coinDecimals** - 6
 
-# using wallets
+## Using wallets
 
 the following wallets support hardware wallets
 
-## Keplr integration {#keplr}
+### Keplr integration {#keplr}
 
 :::warning experimental 
 Adding Lava to Keplr wallet is experimental
@@ -91,7 +91,7 @@ window.keplr.experimentalSuggestChain({
         }} onClick={() => add()}>ADD LAVA TO KEPLR</button>
 </p>
 
-## Leap Usage {#leap}
+### Leap Usage {#leap}
 in order to use Leap wallet, under Switch Chains menu, click Add New Chain (located at the bottom) then enter the following details:
 * **Chain id** - lava-testnet-2
 * **Chain Name** - Lava Testnet
@@ -105,7 +105,7 @@ in order to use Leap wallet, under Switch Chains menu, click Add New Chain (loca
 
 your chain should be added, and you should see your balance within the wallet, you can now sign transactions with this wallet or use it's send functions
 
-# using the cli {#cli}
+## Using the cli {#cli}
 
 there are several ways to use the cli, it is possible to connect to your hardware ledger device
 we will describe them in the following section
@@ -120,7 +120,7 @@ lavad config keyring-backend [os|file|kwallet|pass|test|memory]
 ```
 
 
-### using the keyring to store your private key
+### Using the keyring to store your private key
 :::caution
 make sure you understand the risks of saving your private key in the keyring
 :::
@@ -154,7 +154,7 @@ Keep the newly created account info:
 
 :::
 
-#### recovering an account into the keyring
+#### Recovering an account into the keyring
 
 if you already have an account generated in a different place and want to store it in the keyring for usage it is possible to do so using the mnemonic
 ```bash
@@ -169,7 +169,7 @@ to make sure your account was successfully imported use
 $current_lavad_binary keys show $ACCOUNT_NAME
 ```
 
-### using ledger in the cli
+### Using ledger in the cli
 it is possible to use a hardware wallet, this will not import your private key on the machine,
 :::info
 make sure your ledger is updated to work with cosmos
@@ -191,9 +191,9 @@ $current_lavad_binary tx bank send $ACCOUNT_NAME <lava@target-account> 10000ulav
 further clarifications are existing in: ($current_lavad_binary is the command to use)
 https://github.com/cosmos/gaia/blob/main/docs/resources/ledger.md
 
-# multisig
+## Multisig
 
-## creating a multisig
+### Creating a multisig
 it is possible to generate multisig transactions and addresses using only public addresses. you will need to import the public key for this.
 ```bash
 $current_lavad_binary keys show wallet_imported
@@ -237,17 +237,17 @@ $current_lavad_binary keys add multisig2_of_3 --multisig wallet1,wallet2,wallet3
   type: multi
 ```
 
-## signing transactions
+### Signing transactions
 
 signing multisig transactions requires separate signing, this is done offline as it requires each signer to privately sign
 
-### generating the transaction
+#### generating the transaction
 alice and bob generated their private keys in their own environment, and created a multisig in a shared machine
 ```bash
 $current_lavad_binary tx bank send $(lavad keys show alice-bob-multisig -a) lava@destination-address 10000000ulava  --generate-only --chain-id lava-testnet-2 > tx_bank.json
 ```
 
-### signing it
+#### Signing it
 copying the transaction to the local separate environment of the signers, then signing it. this requires either a connection to the rpc (to fetch account number and sequence for you) or setting account-number and sequence manually via flags
 
 ```bash
@@ -261,7 +261,7 @@ and a different signer on his local environment
 lavad tx sign --from $(lavad keys show -a bob-ledger) --multisig lava@multisig-address tx.json --sign-mode amino-json --chain-id lava-testnet-2 >> tx-signed-bob.json
 ```
 
-### creating the signed multisig tx, then broadcast it
+#### Creating the signed multisig tx, then broadcast it
 ```bash
 lavad tx multisign --from alice-bob-multisig tx.json alice-bob-multisig tx-signed-alice.json tx-signed-bob.json --chain-id lava-testnet-2 > tx_ms.json
 lavad tx broadcast ms/tx_ms.json --chain-id lava-testnet-2
