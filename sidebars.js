@@ -340,7 +340,7 @@ const sidebars = {
             'provider/provider-improve-service'
           ]
         },    
-        'lava-blockchain/account-wallet',
+        'lava-blockchain/wallet',
         'lava-blockchain/faucet',
         'lava-blockchain/subscriptions',
         'lava-blockchain/badge-server'

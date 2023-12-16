@@ -24,7 +24,7 @@ Consumers can create projects under their subscriptions, which can have differen
 
 ## Preparing an Account 👛
 Consumers need to have an address on-chain to manage their subscription and consume p2p relays.
-To create an account, please refer to [accounts & wallets](/docs/lava-blockchain/account-wallet.mdx)
+To create an account, please refer to [accounts & wallets](/docs/lava-blockchain/wallet.mdx)
 
 <br />
 <hr />
