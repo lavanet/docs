@@ -1,34 +1,33 @@
 ---
 sidebar_position: 10
-title: Set up a Wallet
+title: Setting Up a Wallet
 slug: /wallet
 ---
 
-Lava uses the Cosmos SDK bank & account modules for seamless integration with existing Cosmos wallets.
+Lava leverages the Cosmos SDK's bank and account modules for seamless integration with existing Cosmos wallets.
 
-After setting up a wallet, it is highly recommended to test using it. You can test it using the [faucet](/faucet#discord-faucet).
-Get testnet tokens from the faucet, and execute a transaction by sending them to another account address and then back.
+**Recommendation**: After setting up your wallet, it's crucial to test its functionality. Utilize the [faucet](/faucet#discord-faucet) to acquire testnet tokens. Then, execute a transaction by transferring these tokens to another account and back.
 
-## Choose a wallet
+## Choosing a Wallet
 
-Popular wallet options include:
+For your convenience, here are some popular wallet options:
 * [Keplr](#keplr)
 * [Leap](#leap)
-* Advanced: [CLI wallet](#cli)
-* Advanced: [Other wallets](#other)
+* For Advanced Users: [CLI Wallet](#cli)
+* For Advanced Users: [Other Wallets](#other)
 
-### Using Keplr {#keplr}
+### Keplr Usage {#keplr}
 
 :::info experimental 
-Lava Keplr wallet support is experimental
+Keplr wallet support in Lava is currently experimental.
 :::
 
-1. Download and install [Keplr (Link)](https://www.keplr.app/)
-2. Complete the setup instructions in the Keplr extension (Hardware wallet supported was tested with Ledger)
-3. Open the Keplr extension
+1. Download and install Keplr from [here](https://www.keplr.app/).
+2. Follow the setup instructions in the Keplr extension. (Note: Hardware wallet support, tested with Ledger, is available.)
+3. Access the Keplr extension.
 <p><img src="/img/wallet/keplr/keplr1.png" width="200"/></p>
-4. **Refresh this page**
-5. Press the button below, then the `Approve` button.
+4. **Refresh this page.**
+5. Click the button below and then select `Approve`.
 
 <p>
 
@@ -94,29 +93,30 @@ window.keplr.experimentalSuggestChain({
 </p>
 
 <p><img src="/img/wallet/keplr/keplr2.png" width="200"/></p>
-6. Go to `Settings` -> `General` -> `Manage Chain Visibility` -> Search for `Lava Testnet` -> Enable it and press `Save`
+6. Navigate to `Settings` -> `General` -> `Manage Chain Visibility`. Search for `Lava Testnet`, enable it, and click `Save`.
 <p><img src="/img/wallet/keplr/keplr3.png" width="200"/></p>
 <p><img src="/img/wallet/keplr/keplr4.png" width="200"/></p>
 <p><img src="/img/wallet/keplr/keplr5.png" width="200"/></p>
 <p><img src="/img/wallet/keplr/keplr6.png" width="200"/></p>
 <p><img src="/img/wallet/keplr/keplr7.png" width="450"/></p>
-7. Go back to the Keplr extension, press `Copy Address`, Select the Lava testnet
+7. Return to the Keplr extension, copy the Lava testnet address.
 <p><img src="/img/wallet/keplr/keplr8.png" width="200"/></p>
 <p><img src="/img/wallet/keplr/keplr9.png" width="200"/></p>
-8. You now have a lava address in your clipboard, it should look like this: `lava@11223344556677889900aabbccddeeff1122334`
+8. You will now have a Lava address copied to your clipboard, resembling: `lava@11223344556677889900aabbccddeeff1122334`.
 
-### Leap Usage {#leap}
+### Leap Wallet {#leap}
 
 :::info experimental 
-Lava Leap wallet support is experimental
+Lava's support for the Leap wallet is experimental.
 :::
 
-1. Download and install [Leap (Link)](https://www.leapwallet.io/)
-2. Complete the setup instructions in the Leap extension (Hardware wallet supported was tested with Ledger)
-3. Open the Leap extension
+1. Download and install Leap from [here](https://www.leapwallet.io/).
+2. Complete the setup instructions in the Leap extension. (Hardware wallet support, tested with Ledger, is available.)
+3. Open the Leap extension.
 <p><img src="/img/wallet/leap/leap1.png" width="200"/></p>
 4. **Refresh this page**
-5. Press the button below, then the `Approve` button.
+5. Click the button below and then select `Approve`.
+
 
 <p>
 
@@ -182,33 +182,30 @@ window.leap.experimentalSuggestChain({
 </p>
 
 <p><img src="/img/wallet/leap/leap2.png" width="200"/></p>
-6. Open the extension, and copy your wallet address
+6. Open the extension and copy your wallet address.
 <p><img src="/img/wallet/leap/leap3.png" width="200"/></p>
-7. You now have a lava address in your clipboard, it should look like this: `lava@11223344556677889900aabbccddeeff1122334`
+7. Your Lava address will be copied to the clipboard, looking like: `lava@11223344556677889900aabbccddeeff1122334`
 
-## CLI wallet {#cli}
+## CLI Wallet {#cli}
 
 :::warning experimental 
-This section is for advanced users only
+This section is intended for advanced users.
 :::
 
-The command line (CLI) wallet offers multiple backends including a hardware wallet.
+The CLI wallet provides various backends, including support for hardware wallets.
 
-## Prepare an account using the CLI {#account}
-Set your preferred keyring backend ([FAQ: what is a keyring](/faq#keyring)).
-
+## Account Preparation using CLI {#account}
+Choose your preferred keyring backend ([FAQ: what is a keyring](/faq#keyring)).
 ```bash
 lavad config keyring-backend [os|file|kwallet|pass|test|memory]
 ```
 
-
-### Add a key
+### Adding a Key
 :::caution
-Read and understand the of saving your private key in your chosen keyring
+Ensure you understand the implications of storing your private key in your chosen keyring.
 :::
 
-1. Replace $ACCOUNT_NAME with your chosen account name:
-
+1. Substitute $ACCOUNT_NAME with your desired account name:
 ```bash
 current_lavad_binary="$HOME/.lava/cosmovisor/current/bin/lavad"
 ACCOUNT_NAME="name_here"
@@ -216,69 +213,58 @@ $current_lavad_binary keys add $ACCOUNT_NAME
 ```
 
 :::danger
-Write down your mnemonic in a safe place, it can not recovered. 
+Securely store your mnemonic in a safe location, as it cannot be retrieved once lost.
 :::
 
-2. Show and lookup your account in your keys list:
-
+2. Verify and locate your account in the keys list:
 ```bash
 $current_lavad_binary keys show $ACCOUNT_NAME
 $current_lavad_binary keys list
 ```
 
 :::caution Pencils out 📝
-Your public address starts with `lava@`
+Your public address begins with lava@.
 :::
 
-#### Recovering an account
+#### Account Recovery
 
-1. To recover an account using your existing mnemonics:
+1. Recover an existing account using your mnemonic:
 ```bash
 lavad keys add $NEW_NAME --recover
 ```
-You will be prompted to enter your seed phrase.
-
-<br/>
-
-2. Check your account was successfully imported:
-
+After entering your seed phrase:
 ```bash
 $current_lavad_binary keys show $ACCOUNT_NAME
 ```
 
-### Hardware wallet with the CLI
+### Using a Hardware Wallet with CLI
 :::info
-These instructions are for the Ledger hardware wallet.
-Your device should be up-to-date and with the Cosmos application installed.
+These steps are specifically for Ledger hardware wallets, which should be updated and have the Cosmos application installed.
 :::
 
-Register your ledger wallet with $ACCOUNT_NAME:
+Register your Ledger wallet:
 ```bash
 $current_lavad_binary keys add $ACCOUNT_NAME --ledger
 ```
 
-
 :::info
-Always add the `--ledger` flag to transactions commands (lavad tx ...) when using Ledger
+Always include the --ledger flag in transaction commands when using a Ledger.
 :::
-
 ```bash
 $current_lavad_binary tx bank send $ACCOUNT_NAME <lava@target-account> 10000ulava --from $ACCOUNT_NAME --ledger
 ```
+For detailed information, visit [Cosmos Ledger Documentation](https://github.com/cosmos/gaia/blob/main/docs/resources/ledger.md) (replace the command with `$current_lavad_binary`).
 
-For more information read https://github.com/cosmos/gaia/blob/main/docs/resources/ledger.md (Use `$current_lavad_binary` for the command).
+## Multisig Wallets
+### Creating a Multisig Wallet
 
-## Multisig
-
-### Creating a multisig
-
-1. Import the public keys of the signers:
+1. Import public keys of signers:
 ```bash
 $current_lavad_binary keys add multisig_imported_alice --pubkey '{"@type":"/cosmos.crypto.secp256k1.PubKey","key":"data1..."}'
 $current_lavad_binary keys add multisig_imported_bob --pubkey '{"@type":"/cosmos.crypto.secp256k1.PubKey","key":"data2..."}'
 ```
 
-2. Lookup the imported keys:
+2. Verify the imported keys:
 ```bash
 $current_lavad_binary keys show wallet_imported
 - address: lava@xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx...
@@ -293,14 +279,14 @@ $current_lavad_binary keys show wallet_generated_keyring
   type: local
 ```
 
-3. Create an account with the imported keys:
+3. Create a multisig account with imported keys:
 ```bash
 $current_lavad_binary keys add $MULTISIG_ACCOUNT_NAME --multisig multisig_imported_alice,multisig_imported_bob --multisig-threshold $THRESHOLD
 ```
 
 * **$THRESHOLD** - defines the number of signers required for a valid signature
 
-4. Get the multisig public address with 
+4. Retrieve the multisig public address:
 ```bash
 $current_lavad_binary keys show $MULTISIG_ACCOUNT_NAME
 ```
@@ -315,44 +301,38 @@ $current_lavad_binary keys add multisig2_of_3 --multisig wallet1,wallet2,wallet3
   type: multi
 ```
 
-### Signing transactions
+### Signing Transactions
+For multisig transactions, each signer independently signs the transaction offline.
 
-To sign a multisig transaction, etach signer signs it separately offline.
-
-#### Generate the transaction
-Alice and bob have their private keys in their own environment, and created a multisig in a shared machine
+#### Transaction Generation
+Create a multisig transaction on a shared machine:
 ```bash
 $current_lavad_binary tx bank send $(lavad keys show alice-bob-multisig -a) lava@destination-address 10000000ulava  --generate-only --chain-id lava-testnet-2 > tx_bank.json
 ```
 
-#### Signing it
-Copy the transaction to signer's environment and sign it.
-Use an rpc to fetch account number and sequence for you or set them manually via flags.
+#### Signing the Transaction
+Each signer signs the transaction in their environment:
 ```bash
 lavad tx sign --from $(lavad keys show -a alice-ledger) --multisig lava@multisig-address tx.json --sign-mode amino-json --chain-id lava-testnet-2 >> tx-signed-alice.json
 or
 lavad tx sign --from $(lavad keys show -a alice-ledger) --multisig lava@multisig-address tx.json --sign-mode amino-json --chain-id lava-testnet-2 --account-number X --sequence X >> tx-signed-alice.json
 ```
+A second signer follows a similar process.
 
-A second signe in a different environment:
-```bash
-lavad tx sign --from $(lavad keys show -a bob-ledger) --multisig lava@multisig-address tx.json --sign-mode amino-json --chain-id lava-testnet-2 >> tx-signed-bob.json
-```
-
-#### Sending it
-1. Creating the signed multisig transaction
-2. Broadcasting it
+#### Broadcasting the Transaction
+1. Create the signed multisig transaction.
+2. Broadcast the transaction.
 ```bash
 lavad tx multisign --from alice-bob-multisig tx.json alice-bob-multisig tx-signed-alice.json tx-signed-bob.json --chain-id lava-testnet-2 > tx_ms.json
 lavad tx broadcast ms/tx_ms.json --chain-id lava-testnet-2
 ```
 
-### Other wallets {#other}
+### Other Wallets {#other}
 
 :::warning experimental 
-This section is for advanced users only
+This section is for advanced users.
 :::
-You can use the following arguments to setup a different wallet no described in this manual.
+Use the following parameters to set up a wallet not described in this manual:
 
 * **coinType** - 118 (standard cosmos wallet type)
 * **minimal denom** - ulava
