@@ -319,14 +319,28 @@ const sidebars = {
             id: 'provider'
           },
           items: [
-            'provider/lavavisor',
+            {
+              type: 'category',
+              label: 'Lavavisor',
+              collapsible: true,
+              collapsed: true,
+              description: 'lavavisor',
+              link: {
+                type: 'doc',
+                id: 'provider/lavavisor/lavavisor',
+              },
+              items: [
+                'provider/lavavisor/lavavisor-wrap',
+                'provider/lavavisor/lavavisor-services',
+              ]
+            },
             'provider/provider-setup',
             'provider/provider-features',
             'provider/provider-tls',
             'provider/provider-improve-service'
           ]
         },    
-        'lava-blockchain/account-wallet',
+        'lava-blockchain/wallet',
         'lava-blockchain/faucet',
         'lava-blockchain/subscriptions',
         'lava-blockchain/badge-server'
