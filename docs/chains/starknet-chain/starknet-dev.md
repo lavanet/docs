@@ -6,7 +6,7 @@ title: Getting Starknet RPC
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Getting Starknet RPC 
+# Getting Starknet RPC
 
 ## Starknet Public RPC
 
@@ -14,26 +14,23 @@ import TabItem from '@theme/TabItem';
 
 | Service 🔌          | URL 🔗                                 |
 |---------------------|----------------------------------------|
-| 🟢  json-rpc  | https://starknet-mainnet.public.lavanet.xyz/ |
-
+| 🟢  json-rpc  | <https://rpc.starknet.lava.build> |
 
 ### Testnet 🧪
 
 | Service 🔌          | URL 🔗                                 |
 |---------------------|----------------------------------------|
-| 🟢  json-rpc  | https://starknet-testnet.public.lavanet.xyz/ |
-
+| 🟢  json-rpc  | <https://rpc.starknet-testnet.lava.build> |
 
 ## [SDK](https://github.com/lavanet/lava-sdk)
 
-:::caution 
+:::caution
 
 Lava SDK is currently in Alpha. Please observe the documentation on both [frontend](https://docs.lavanet.xyz/sdk-frontend?utm_source=getting-starknet-rpc&utm_medium=docs&utm_campaign=docs-to-docs) and [backend](https://docs.lavanet.xyz/sdk-backend?utm_source=getting-starknet-rpc&utm_medium=docs&utm_campaign=docs-to-docs) use before getting started.
 
 :::
 
 ### Input 📥
-
 
 <Tabs>
 
@@ -97,6 +94,7 @@ async function useStarknet() {
     await useStarknet();
   })();
 ```
+
 </TabItem>
 
 </Tabs>
@@ -112,4 +110,3 @@ To learn more about our SDK visit the [Getting Started guide](https://docs.lavan
 ## [Gateway](https://gateway.lavanet.xyz/?utm_source=starknet-dev&utm_medium=docs&utm_campaign=docs-to-gateway)
 
 To learn more about using the Lava Gateway visit the [Getting Started guide](https://docs.lavanet.xyz/gateway-getting-started?utm_source=starknet-dev&utm_medium=docs&utm_campaign=docs-to-docs)
-
