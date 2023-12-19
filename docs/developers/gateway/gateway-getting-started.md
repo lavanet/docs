@@ -1,6 +1,6 @@
 ---
-slug: /gateway-getting-started-old
-title: Getting Started with Lava Gateway 🔥
+slug: /gateway-getting-started
+title: Getting Started ⚡ 
 ---
 # Getting Started with Lava Gateway 🔥
 

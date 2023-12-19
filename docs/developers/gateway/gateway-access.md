@@ -1,5 +1,5 @@
 ---
-slug: /gateway-access-old
+slug: /gateway-access
 title: Gateway
 ---
 # Lava Gateway
