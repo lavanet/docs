@@ -1,6 +1,6 @@
 ---
 slug: /about
-title: About Lava 🌋
+title: 🌋 About Lava
 ---
 
 # Web3 Modular Data Access

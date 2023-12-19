@@ -1,6 +1,6 @@
 ---
 slug: /key-terms
-title: Key Terms 📝
+title: 📝 Key Terms
 ---
 
 # Key Terminology 📝
