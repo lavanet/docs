@@ -1,8 +1,9 @@
 ---
 slug: /sdk-gallery
+title: 🌌 Lava SDK Beta Gallery
 ---
 
-# Lava SDK Beta Gallery
+# 🌌 Lava SDK Beta Gallery
 
 ## Introduction 🌟
 
