@@ -56,8 +56,11 @@ curl --location --request POST 'http://localhost:8545' \
 
 Compare your numbers with Starknet's Testnet_1 before proceeding.
 
-## Install the Starknet L2 Package 📦 
+## Install the Starknet L2 Package 📦
 
+> There are three posible nodes avaliable for [Starknet](https://www.starknet.io/en/ecosystem/fullnodes-and-rpc-services)
+
+### Pathfinder node
 `Cd` into the starknet-stack project root and start the L2 execution client with this command:
 
 ```bash
@@ -79,6 +82,38 @@ curl --location --request POST 'http://localhost:9545' \
 ```
 
 Inspect your output! Once `current_block_num` and `highest_block_num` are the same, you've accomplished sync.
+
+### Juno node
+Juno is a golang Starknet node implementation by Nethermind with the aim of decentralising Starknet.
+
+#### Run with Docker
+To run Juno with Docker, use the following command. Make sure to create the $HOME/juno directory on your local machine before running the command.
+
+```bash
+docker run -d \
+  --name juno \
+  -p 6060:6060 \
+  -v $HOME/juno:/var/lib/juno \
+  nethermind/juno:latest \
+  --http \
+  --http-port 6060 \
+  --http-host 0.0.0.0 \
+  --db-path /var/lib/juno \
+  --eth-node <YOUR-ETH-NODE> \
+  --pending-poll-interval=3s
+```
+
+You should replace ```<YOUR-ETH-NODE>``` with your actual Ethereum node address.
+
+The ```--pending-poll-interval``` parameter sets how frequently pending block will be updated.
+
+❗ _It is disabled by default, but should be enabled since lava version v0.27.0._
+
+To view logs from the Docker container, use the following command:
+
+```docker logs -f juno```
+
+For more details, please visit [official docs](https://github.com/NethermindEth/juno)
 
 ## Run the Indexer  🏃
 
