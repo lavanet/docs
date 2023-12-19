@@ -1,6 +1,6 @@
 ---
 slug: /gateway-getting-started
-title: Getting Started with Lava Gateway 🔥
+title: Getting Started ⚡ 
 ---
 # Getting Started with Lava Gateway 🔥
 

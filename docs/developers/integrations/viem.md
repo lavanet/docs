@@ -1,6 +1,6 @@
 ---
 slug: /viem
-title: viem
+title: viem ✨
 ---
 
 import Tabs from '@theme/Tabs';

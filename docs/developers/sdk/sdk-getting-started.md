@@ -1,9 +1,9 @@
 ---
 slug: /sdk-getting-started
-title: Getting Started with Lava SDK 
+title: Getting Started ⚡
 ---
 
-# Getting Started 🔥
+# 🔥 Getting Started with Lava SDK
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
