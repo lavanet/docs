@@ -63,15 +63,13 @@ This error means that you have used different geolocations when using  the `prov
 
 Lava easily integrates with other RPC clients. 
 
-1. **Gateway** - Simply create an account on the gateway, and replace your client's RPC URL with the appopriate one.
-2. **SDK** - You can 
+1. **Gateway** - Simply create an account on the gateway, and replace your client's RPC URL with the appopriate one. Get started [immediately](/gateway-getting-started)!
+2. **SDK** - You can also use the SDK to integrate with [viem](), [cosmjs](), [web3js](), or  
 
 
 
 ### I'm already using another SDK.
-No problem, Lava offers integrations to existing 
-
-
+No problem, Lava offers integrations to existing popular libraries [here](/sdk-integrations).
 
 
 ### How to change the RPC url which Cosmjs uses?
