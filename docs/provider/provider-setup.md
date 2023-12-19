@@ -27,7 +27,7 @@ In this guide, we'll create a configuration file that includes multiple chains (
 
 1. Go 1.20.5 or higher
 2. `lavap` installed (build or install at [https://github.com/lavanet/lava](https://github.com/lavanet/lava))
-3. Account with enough LAVA for staking (learn about [creating Accounts](docs/lava-blockchain/account-wallet.mdx))
+3. Account with enough LAVA for staking (learn about [creating Accounts](docs/lava-blockchain/wallet.mdx))
 4. Know which chains you want to provide ([how to query the latest list](https://docs.lavanet.xyz/provider/#chains))
 
 ## Step 1: Setup TLS

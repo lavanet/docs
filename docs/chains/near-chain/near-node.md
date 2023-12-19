@@ -94,12 +94,12 @@ With one command you can create the required directory structure -- generating a
 </TabItem>
 </Tabs>
 
-
 ### Start your Node! 🚀
 
 Run the following command to initiate your node!
 
 ```bash
+
 # Get a data backup 
 aws s3 --no-sign-request cp s3://near-protocol-public/backups/mainnet/rpc/latest .
 LATEST=$(cat latest)
@@ -150,9 +150,9 @@ metrics-listen-address: ":port"
 </TabItem>
 </Tabs>
 
-## NEAR ipRPC 🪙
 
-Want to reach more developers and get more rewards as a node runner? NEAR pays providers who're interested. NEAR offers Incentivized Public RPC (ipRPC) endpoints to developers in its ecosystem. By signing up here, you can become one of our premier providers contributing to decentralized public goods. [Sign up now!](https://lavanet.typeform.com/to/qQ1x6WJs?utm_source=becoming-a-lava-provider-for-near&utm_medium=docs&utm_campaign=near-post-grant)
+Want to reach more developers and get more rewards as a node runner? NEAR is looking to offer Incentivized Public RPC (ipRPC) endpoints to developers in its ecosystem. By signing up here, you can be first in line to being one of our premier providers contributing to decentralized public goods. [Sign up now!](https://lavanet.typeform.com/to/qQ1x6WJs?utm_source=becoming-a-lava-provider-for-NEAR&utm_medium=docs&utm_campaign=NEAR-post-grant)
+
 
 
 ## Apply to our Provider Incubation Program 📋
