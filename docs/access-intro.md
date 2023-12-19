@@ -30,6 +30,6 @@ Which Lava entry way should you use? Easy! Tell us what you’re trying to build
 
 | App Type      |  Intention     | Recommended Interface |
 |--------------|-----------|------------|
-| Front-End | building a dApp, smart contract, or NFT project | [Lava Gateway](/access-gateway), [Lava SDK](/access-sdk) |
+| Front-End | building a dApp, smart contract, or NFT project | [Lava Gateway](/gateway-access), [Lava SDK](/access-sdk) |
 | Back-End  | creating microservices, clients, daemons, or tooling | [Lava SDK](/access-sdk)  or [Server Kit](/access-server-kit)|
 Gateway / Portal | self-hosting a centralized point for high throughput Lava P2P network access | [Server Kit](/access-server-kit)
