@@ -1,6 +1,6 @@
 ---
 slug: /block-explorer
-title: Explorers 🔭
+title: 🔭 Explorers
 ---
 
 # Lava Blockchain Explorers 🔭

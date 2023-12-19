@@ -14,7 +14,7 @@ In addition to our documentation, Lava has a growing selection of supportive lea
 ## ![](/img/favicon.ico) Lava Tutorials 
 
 
-- [Getting Started with our Gateway](docs/access-apis/gateway-getting-started.md) 
+- [Getting Started with our Gateway](/gateway-getting-started) 
 - [Using Lava Gateway for Juno RPC](https://medium.com/lava-network/tutorial-using-lava-gateway-for-juno-rpc-junod-bfe866296023)
 - [Using Lava Gateway for Osmosis RPC](https://medium.com/lava-network/tutorial-using-lava-gateway-for-osmosis-rpc-osmosisd-f19bc30d0323)
 - [Using Lava Gateway with Ethers.js](https://medium.com/lava-network/tutorial-using-lava-gateway-for-ethereum-rpc-access-ethers-js-7ad82293e37d)

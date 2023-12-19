@@ -1,11 +1,11 @@
 ---
 sidebar_position: 1
-slug: provider
+slug: /provider
 ---
 
 import RoadmapItem from '@site/src/components/RoadmapItem';
 
-# Be a Provider
+# Become a Provider
 Welcome to the Lava network's provider introduction. In this page, you'll learn about the role of providers in the Lava network, as well as the necessary steps to get started as one.
 
 :::info want to be a testnet Provider? ✍️

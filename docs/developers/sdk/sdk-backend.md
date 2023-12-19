@@ -1,6 +1,6 @@
 ---
 slug: /sdk-backend
-title: Backend Use
+title: Backend Use 🛡️
 ---
 
 # Using LavaSDK
