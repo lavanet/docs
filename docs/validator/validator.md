@@ -9,7 +9,7 @@ import RoadmapItem from '@site/src/components/RoadmapItem';
 # Power-up Lava as a Validator
 
 This section will help you start as a validator, step by step.
-For additional help see the [FAQ Section](faq.md)
+For additional help see the [FAQ Section](/faq)
 
 ## What is a Validator?
 Lava blockchain uses Proof-of-stake (PoS) as the consensus mechanism, based on [Tendermint](https://tendermint.com/). Validators participate in the network by verifying new blocks to earn rewards.
