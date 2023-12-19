@@ -1,6 +1,6 @@
 ---
 slug: /cosmjs
-title: cosmjs
+title: cosmjs ✨
 ---
 
 import Tabs from '@theme/Tabs';

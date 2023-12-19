@@ -1,6 +1,6 @@
 ---
 slug: /ethersjs5
-title: ethers.js (5.x)
+title: ethers.js (5.x) ✨
 ---
 
 import Tabs from '@theme/Tabs';

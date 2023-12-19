@@ -1,6 +1,6 @@
 ---
 slug: /web3js
-title: web3.js
+title: web3.js ✨
 ---
 
 import Tabs from '@theme/Tabs';
