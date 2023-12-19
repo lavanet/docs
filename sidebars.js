@@ -5,7 +5,7 @@ const sidebars = {
   theSidebar: [
     {
       type: 'category',
-      label: 'Introduction',
+      label: 'Introduction 🎉',
       link: {
         type: 'doc',
         id: 'intro/intro'
@@ -13,8 +13,107 @@ const sidebars = {
       collapsible: true,
       collapsed: true,
       items: [
+        'intro/about',
+        'intro/key-terms',
         'intro/faq',
-        'intro/key-terms'
+      ]
+    },
+    {
+      type: 'category',
+      label: 'Developers 💻',
+      link: {
+        type: 'doc',
+        id: 'developers/developer-intro'
+      },
+      collapsible: true,
+      collapsed: true,
+      items: [
+        {
+          type: 'category', 
+          label: '🌀 Gateway ',
+          collapsible: true,
+          collapsed: true,
+          link: {
+            type: 'doc',
+            id: 'developers/gateway/gateway-access'
+          },
+          items: [
+            'developers/gateway/gateway-getting-started',
+          ]
+        },
+        {
+          type: 'category', 
+          label: '🛠️ Server Kit ',
+          collapsible: true,
+          collapsed: true,
+          link: {
+            type: 'doc',
+            id: 'developers/server-kit/access-server-kit'
+          },
+          items: []
+        },
+       {
+        type: 'category', 
+        label: '📦 SDK',
+        collapsible: true,
+        collapsed: true,
+        link: {
+          type: 'doc',
+          id: 'developers/sdk/access-sdk'
+        },
+        items: [
+          'developers/sdk/sdk-getting-started',
+          'developers/sdk/sdk-backend',
+          'developers/sdk/sdk-frontend',
+          {
+            type: 'category', 
+            label: 'Examples 💡',
+            collapsible: true,
+            collapsed: true,
+            link: {
+              type: 'doc',
+              id: 'developers/sdk/access-sdk'
+            },
+            items: [
+              'developers/sdk/sdk-multichain-example',
+              'developers/sdk/lava-sdk-gallery',
+              'developers/sdk/lava-bazaar',
+            ]
+          },
+
+        ]
+      },
+      {
+        type: 'category', 
+        label: '🔌 Integrations',
+        collapsible: true,
+        collapsed: true,
+        link: {
+          type: 'doc',
+          id: 'developers/integrations/sdk-integrations'
+        },
+        items: [
+          'developers/integrations/cosmjs',
+          'developers/integrations/ethersjs5',
+          'developers/integrations/ethersjs6',
+          'developers/integrations/viem',
+          'developers/integrations/web3js'
+        ]
+      },
+      {
+        type: 'category', 
+        label: '🗜️ Specifications',
+        collapsible: true,
+        collapsed: true,
+        link: {
+          type: 'doc',
+          id: 'specs/spec'
+        },
+        items: [
+          'specs/add-spec',
+          'specs/spec-reference'
+        ]
+     },
       ]
     },
     {
@@ -226,20 +325,6 @@ const sidebars = {
     },
     {
       type: 'category', 
-      label: 'Specifications 🗜️',
-      collapsible: true,
-      collapsed: true,
-      link: {
-        type: 'doc',
-        id: 'specs/spec'
-      },
-      items: [
-        'specs/add-spec',
-        'specs/spec-reference'
-      ]
-    },
-    {
-      type: 'category', 
       label: 'Web3 APIs ⚡️',
       collapsible: true,
       collapsed: true,
@@ -248,52 +333,6 @@ const sidebars = {
         id: 'access-intro'
       },
       items: [
-        {
-          type: 'category', 
-          label: 'Gateway',
-          collapsible: true,
-          collapsed: true,
-          link: {
-            type: 'doc',
-            id: 'access-apis/gateway-access'
-          },
-          items: [
-            `access-apis/gateway-getting-started`
-          ]
-        }, 
-        {
-          type: 'category', 
-          label: 'SDK',
-          collapsible: true,
-          collapsed: true,
-          link: {
-            type: 'doc',
-            id: 'access-apis/access-sdk'
-          },
-          items: [
-            'access-apis/sdk-frontend',
-            'access-apis/sdk-backend',
-            `access-apis/sdk-getting-started`,
-          ]
-        },
-        {
-          type: 'category', 
-          label: 'Library Integrations',
-          collapsible: true,
-          collapsed: true,
-          link: {
-            type: 'doc',
-            id: 'access-apis/sdk-integrations'
-          },
-          items: [
-            'integrations/cosmjs',
-            'integrations/ethersjs5',
-            'integrations/ethersjs6',
-            'integrations/web3js',
-            'integrations/viem'
-          ]
-        },
-        'access-apis/access-server-kit',
         'public-rpc',
       ],
     },
