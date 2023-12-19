@@ -1,5 +1,5 @@
 ---
-slug: /access-server-kit-old
+slug: /access-server-kit
 title: Server Kit
 ---
 # Lava Server Kit
