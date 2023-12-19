@@ -3,7 +3,22 @@
 /** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
 const sidebars = {
   theSidebar: [
-    'intro',
+    {
+      type: 'category',
+      label: 'Introduction 🎉',
+      link: {
+        type: 'doc',
+        id: 'intro/intro'
+      },
+      collapsible: true,
+      collapsed: true,
+      items: [
+        'intro/about',
+        'intro/explorers',
+        'intro/key-terms',
+        'intro/faq'
+      ]
+    },
     {
       type: 'category', 
       label: 'Chains ⛓️',
@@ -16,7 +31,7 @@ const sidebars = {
       items: [
         {
           type: 'category',
-          label: 'Avalanche',
+          label: '🔗 Avalanche',
           collapsible: true,
           collapsed: true,
           description: 'AVAX, AVAXT',
@@ -31,7 +46,7 @@ const sidebars = {
         },
         {
           type: 'category',
-          label: 'Axelar',
+          label: '🔗 Axelar',
           collapsible: true,
           collapsed: true,
           description: 'AXELAR, AXELART',
@@ -46,7 +61,7 @@ const sidebars = {
         },
         {
           type: 'category',
-          label: 'Celo',
+          label: '🔗 Celo',
           collapsible: true,
           collapsed: true,
           description: 'CELO, ALFAJORES',
@@ -61,7 +76,7 @@ const sidebars = {
         },
         {
           type: 'category',
-          label: 'CosmosHub',
+          label: '🔗 CosmosHub',
           collapsible: true,
           collapsed: true,
           description: 'COS5, COS5T',
@@ -76,7 +91,7 @@ const sidebars = {
         },
         {
           type: 'category',
-          label: 'Evmos',
+          label: '🔗 Evmos',
           collapsible: true,
           collapsed: true,
           description: 'EVMOS, EVMOST',
@@ -91,7 +106,7 @@ const sidebars = {
         },
         {
           type: 'category',
-          label: 'Ethereum',
+          label: '🔗 Ethereum',
           collapsible: true,
           collapsed: true,
           description: 'ETH1, GTH1',
@@ -106,7 +121,7 @@ const sidebars = {
         },
         {
           type: 'category',
-          label: 'Filecoin',
+          label: '🔗 Filecoin',
           collapsible: true,
           collapsed: true,
           description: 'FVM',
@@ -121,7 +136,7 @@ const sidebars = {
         },
         {
           type: 'category',
-          label: 'Juno',
+          label: '🔗 Juno',
           collapsible: true,
           collapsed: true,
           description: 'JUN1, JUNT1',
@@ -136,7 +151,7 @@ const sidebars = {
         },
         {
           type: 'category',
-          label: 'Lava',
+          label: '🔗 Lava',
           description: 'LAV1',
           collapsible: true,
           collapsed: true,
@@ -151,7 +166,22 @@ const sidebars = {
         },
         {
           type: 'category',
-          label: 'Optimism',
+          label: '🔗 NEAR',
+          description: 'NEAR, NEART',
+          collapsible: true,
+          collapsed: true,
+          link: {
+            type: 'doc',
+            id: 'chains/near-chain/near'
+          },
+          items: [
+            'chains/near-chain/near-dev',
+            'chains/near-chain/near-node'
+          ]
+        },
+        {
+          type: 'category',
+          label: '🔗 Optimism',
           collapsible: true,
           collapsed: true,
           description: 'OPTM, OPTMT',
@@ -166,7 +196,7 @@ const sidebars = {
         },
         {
           type: 'category',
-          label: 'Solana',
+          label: '🔗 Solana',
           collapsible: true,
           collapsed: true,
           description: 'SOL, SOLT',
@@ -181,7 +211,7 @@ const sidebars = {
         },
         {
           type: 'category',
-          label: 'Starknet',
+          label: '🔗 Starknet',
           collapsible: true,
           collapsed: true,
           description: 'STRK, STRKT',
@@ -197,90 +227,111 @@ const sidebars = {
       ]
     },
     {
-      type: 'category', 
-      label: 'Specifications 🗜️',
-      collapsible: true,
-      collapsed: true,
+      type: 'category',
+      label: 'Developers 💻',
       link: {
         type: 'doc',
-        id: 'specs/spec'
+        id: 'developers/developer-intro'
       },
+      collapsible: true,
+      collapsed: true,
       items: [
-        'specs/add-spec',
-        'specs/spec-reference'
+        {
+          type: 'category', 
+          label: '🌀 Gateway ',
+          collapsible: true,
+          collapsed: true,
+          link: {
+            type: 'doc',
+            id: 'developers/gateway/gateway-access'
+          },
+          items: [
+            'developers/gateway/gateway-getting-started',
+          ]
+        },
+        {
+          type: 'category', 
+          label: '🛠️ Server Kit ',
+          collapsible: true,
+          collapsed: true,
+          link: {
+            type: 'doc',
+            id: 'developers/server-kit/access-server-kit'
+          },
+          items: []
+        },
+       {
+        type: 'category', 
+        label: '📦 SDK',
+        collapsible: true,
+        collapsed: true,
+        link: {
+          type: 'doc',
+          id: 'developers/sdk/access-sdk'
+        },
+        items: [
+          'developers/sdk/sdk-getting-started',
+          'developers/sdk/sdk-backend',
+          'developers/sdk/sdk-frontend',
+          {
+            type: 'category', 
+            label: 'Examples 💡',
+            collapsible: true,
+            collapsed: true,
+            link: {
+              type: 'generated-index'
+            },
+            items: [
+              'developers/sdk/examples/sdk-multichain-example',
+              'developers/sdk/examples/lava-sdk-gallery',
+              'developers/sdk/examples/lava-bazaar',
+            ]
+          },
+        ]
+      },
+      {
+        type: 'category', 
+        label: '🔌 Integrations',
+        collapsible: true,
+        collapsed: true,
+        link: {
+          type: 'doc',
+          id: 'developers/integrations/sdk-integrations'
+        },
+        items: [
+          'developers/integrations/cosmjs',
+          'developers/integrations/ethersjs5',
+          'developers/integrations/ethersjs6',
+          'developers/integrations/viem',
+          'developers/integrations/web3js'
+        ]
+      },
+      {
+        type: 'category', 
+        label: '🗜️ Specifications',
+        collapsible: true,
+        collapsed: true,
+        link: {
+          type: 'doc',
+          id: 'specs/spec'
+        },
+        items: [
+          'specs/add-spec',
+          'specs/spec-reference'
+        ]
+     },
       ]
     },
     {
       type: 'category', 
-      label: 'Web3 APIs ⚡️',
+      label: 'Validators ⚖️',
       collapsible: true,
       collapsed: true,
       link: {
         type: 'doc',
-        id: 'access-intro'
+        id: 'validator/validator'
       },
       items: [
-        {
-          type: 'category', 
-          label: 'Gateway',
-          collapsible: true,
-          collapsed: true,
-          link: {
-            type: 'doc',
-            id: 'access-apis/gateway-access'
-          },
-          items: [
-            `access-apis/gateway-getting-started`
-          ]
-        }, 
-        {
-          type: 'category', 
-          label: 'SDK',
-          collapsible: true,
-          collapsed: true,
-          link: {
-            type: 'doc',
-            id: 'access-apis/access-sdk'
-          },
-          items: [
-            'access-apis/sdk-frontend',
-            'access-apis/sdk-backend',
-            `access-apis/sdk-getting-started`,
-          ]
-        },
-        {
-          type: 'category', 
-          label: 'Library Integrations',
-          collapsible: true,
-          collapsed: true,
-          link: {
-            type: 'doc',
-            id: 'access-apis/sdk-integrations'
-          },
-          items: [
-            'integrations/cosmjs',
-            'integrations/ethersjs5',
-            'integrations/ethersjs6',
-            'integrations/web3js',
-            'integrations/viem'
-          ]
-        },
-        'access-apis/access-server-kit',
-        'public-rpc',
-      ],
-    },
-    {
-      type: 'category', 
-      label: 'Lava Protocol 🌋',
-      collapsible: true,
-      collapsed: true,
-      link: {
-        type: 'doc',
-        id: 'power-lava-intro'
-      },
-      items: [
-        'lava-blockchain/install-lava',
-        'lava-blockchain/hardware-requirements',
         {
           type: 'category', 
           label: 'Join testnet',
@@ -295,45 +346,73 @@ const sidebars = {
             'lava-blockchain/join-testnet-manual'
           ]
         },
+        'validator/validator-manual',
+        'validator/validator-rejoin'
+      ]
+    },
+    {
+      type: 'category', 
+      label: 'Providers 📡',
+      collapsible: true,
+      collapsed: true,
+      link: {
+        type: 'doc',
+        id: 'provider/provider'
+      },
+      items: [
         {
-          type: 'category', 
-          label: 'Be a Validator',
+          type: 'category',
+          label: 'Lavavisor',
           collapsible: true,
           collapsed: true,
+          description: 'lavavisor',
           link: {
             type: 'doc',
-            id: 'validator'
+            id: 'provider/lavavisor/lavavisor',
           },
           items: [
-            'validator/validator-manual',
-            'validator/validator-rejoin'
+            'provider/lavavisor/lavavisor-wrap',
+            'provider/lavavisor/lavavisor-services',
           ]
-        },    
-        {
-          type: 'category', 
-          label: 'Be a Provider',
-          collapsible: true,
-          collapsed: true,
-          link: {
-            type: 'doc',
-            id: 'provider'
-          },
-          items: [
-            'provider/lavavisor',
-            'provider/provider-setup',
-            'provider/provider-features',
-            'provider/provider-tls',
-          ]
-        },    
-        'lava-blockchain/account-wallet',
+        },
+        'provider/provider-setup',
+        'provider/provider-features',
+        'provider/provider-tls',
+        'provider/provider-improve-service'
+      ]
+    },
+    {
+      type: 'category', 
+      label: 'Lava Protocol 🌋',
+      collapsible: true,
+      collapsed: true,
+      link: {
+        type: 'doc',
+        id: 'power-lava-intro'
+      },
+      items: [
+        'lava-blockchain/install-lava',
+        'lava-blockchain/hardware-requirements',     
+        'lava-blockchain/wallet',
         'lava-blockchain/faucet',
         'lava-blockchain/subscriptions',
         'lava-blockchain/badge-server'
       ]
     },
+    {
+      type: 'category', 
+      label: 'Get RPC / Web3 APIs ⚡️',
+      collapsible: true,
+      collapsed: true,
+      link: {
+        type: 'doc',
+        id: 'access-intro'
+      },
+      items: [
+        'public-rpc',
+      ],
+    },
     `tutorials`,
-    'faq',
-    'explorers',
     {
       type: 'link',
       label: 'Contribute to Docs',
