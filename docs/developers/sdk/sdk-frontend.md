@@ -1,6 +1,6 @@
 ---
 slug: /sdk-frontend
-title: Frontend Use
+title: Frontend Use 🛡️
 ---
 # Using LavaSDK 
 
