@@ -231,7 +231,7 @@ const sidebars = {
       label: 'Developers 💻',
       link: {
         type: 'doc',
-        id: 'developers/developer-intro'
+        id: 'developer/developer'
       },
       collapsible: true,
       collapsed: true,
@@ -243,10 +243,10 @@ const sidebars = {
           collapsed: true,
           link: {
             type: 'doc',
-            id: 'developers/gateway/gateway-access'
+            id: 'developer/gateway/gateway-access'
           },
           items: [
-            'developers/gateway/gateway-getting-started',
+            'developer/gateway/gateway-getting-started',
           ]
         },
         {
@@ -256,7 +256,7 @@ const sidebars = {
           collapsed: true,
           link: {
             type: 'doc',
-            id: 'developers/server-kit/access-server-kit'
+            id: 'developer/server-kit/access-server-kit'
           },
           items: []
         },
@@ -267,12 +267,12 @@ const sidebars = {
         collapsed: true,
         link: {
           type: 'doc',
-          id: 'developers/sdk/access-sdk'
+          id: 'developer/sdk/access-sdk'
         },
         items: [
-          'developers/sdk/sdk-getting-started',
-          'developers/sdk/sdk-backend',
-          'developers/sdk/sdk-frontend',
+          'developer/sdk/sdk-getting-started',
+          'developer/sdk/sdk-backend',
+          'developer/sdk/sdk-frontend',
           {
             type: 'category', 
             label: 'Examples 💡',
@@ -282,9 +282,9 @@ const sidebars = {
               type: 'generated-index'
             },
             items: [
-              'developers/sdk/examples/sdk-multichain-example',
-              'developers/sdk/examples/lava-sdk-gallery',
-              'developers/sdk/examples/lava-bazaar',
+              'developer/sdk/examples/sdk-multichain-example',
+              'developer/sdk/examples/lava-sdk-gallery',
+              'developer/sdk/examples/lava-bazaar',
             ]
           },
         ]
@@ -296,14 +296,14 @@ const sidebars = {
         collapsed: true,
         link: {
           type: 'doc',
-          id: 'developers/integrations/sdk-integrations'
+          id: 'developer/integrations/sdk-integrations'
         },
         items: [
-          'developers/integrations/cosmjs',
-          'developers/integrations/ethersjs5',
-          'developers/integrations/ethersjs6',
-          'developers/integrations/viem',
-          'developers/integrations/web3js'
+          'developer/integrations/cosmjs',
+          'developer/integrations/ethersjs5',
+          'developer/integrations/ethersjs6',
+          'developer/integrations/viem',
+          'developer/integrations/web3js'
         ]
       },
       {
@@ -320,6 +320,19 @@ const sidebars = {
           'specs/spec-reference'
         ]
      },
+     {
+      type: 'category', 
+      label: '💫 Endpoints',
+      collapsible: true,
+      collapsed: true,
+      link: {
+        type: 'doc',
+        id: 'developer/endpoints/iprpc'
+      },
+      items: [
+        'developer/endpoints/public-rpc',
+        'developer/endpoints/iprpc']
+   }
       ]
     },
     {
@@ -408,9 +421,7 @@ const sidebars = {
         type: 'doc',
         id: 'access-intro'
       },
-      items: [
-        'public-rpc',
-      ],
+      items: [      ],
     },
     `tutorials`,
     {
