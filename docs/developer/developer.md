@@ -1,5 +1,5 @@
 ---
-slug: /developer-intro
+slug: /developer
 title: Developers 💻
 ---
 
