@@ -9,7 +9,7 @@ title: 🌋 About Lava
 
 ```mermaid
 flowchart LR
-    p1[Contributor] --spec --> lava[[Lava Network]]
+    p1[Contributor] --spec --> lava[[Lava Protocol]]
     lava ---> |rewards| p2((API Providers Pool))
     lava <---> |relays| p2
     lava <--- |compute cost| p3([Consumer])
