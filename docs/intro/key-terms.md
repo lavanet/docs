@@ -9,7 +9,7 @@ title: 📝 Key Terms
 
 <details>
   <summary>Lava Network</summary> 
-  A marketplace for blockchain data, driven by open-source software and protocols, aiming for data accessibility and availability.
+  A marketplace for blockchain data, driven by open-source software and protocols, aiming for modular peer-to-peer data accessibility and availability.
 </details>
 
 <details>
@@ -19,12 +19,17 @@ title: 📝 Key Terms
 
 <details>
   <summary>Token (LAVA)</summary> 
-  LAVA is the native digital asset of the Lava Network, central to its economic model.
+  LAVA is the native digital asset of the Lava Network, central to its economic model. It serves multiple purposes within the network, including as a means to pay for gas fees required for transactions, a governance token allowing holders to participate in network decisions, and as rewards distributed to validators, providers, and contributors. 
 </details>
 
 <details>
   <summary>Governance</summary> 
   The decentralized decision-making process in Lava Network, where token holders have control over key aspects.
+</details>
+
+<details>
+  <summary>Specifications</summary>
+  Modular blueprints for Lava's multichain and multi-API support, defining chain and method requirements, costs, and verifications. Specs are the minimum module necessary for Lava API support.
 </details>
 
 ## 💰 Subscriptions and Plans
@@ -88,7 +93,7 @@ title: 📝 Key Terms
 
 <details>
   <summary>SDK</summary> 
-  A JavaScript-based tool that simplifies the process of sending data relays to providers, offering compatibility with various development environments.
+  A JavaScript/TypeScript package that simplifies the process of sending data relays to providers, offering compatibility with various development environments.
 </details>
 
 <details>
@@ -108,6 +113,10 @@ title: 📝 Key Terms
   A web application providing insights into the Lava protocol, including data on relays, Compute Unit (CU) usage, provider statistics, and more.
 </details>
 
+<details>
+  <summary>Server Kit</summary>
+</details>
+
 ## 🎖️ Badges, Pairing, and Rewards
 
 <details>
@@ -123,4 +132,32 @@ title: 📝 Key Terms
 <details>
   <summary>Rewards</summary> 
   In LAVA tokens, these incentivize honest participation in the Lava Network, distributed to validators, providers, and contributors for their contributions and services.
+</details>
+
+## Accounts & Wallets 
+
+<details>
+<summary>Keyring</summary>
+The keyring holds the private/public keypairs used to interact with a node. For instance, a validator key needs to be set up before running the blockchain node, so that blocks can be correctly signed. The private key can be stored in different locations, called "backends", such as a file or the operating system's own key storage. <a href="https://docs.cosmos.network/main/run-node/keyring.html">(learn more here)</a>
+</details>
+
+<details>
+<summary>Keypair</summary>
+
+A keypair in the context of the Lava Network consists of two essential components: a public key and a private key. This cryptographic pair is crucial for securing accounts and authorizing transactions within the Lava ecosystem.
+</details>
+
+<details>
+<summary>Public Key</summary>
+A public key is a cryptographic key that is openly shared and used for various purposes, including encrypting data, verifying digital signatures, and establishing secure communication within the Lava Network. It is one half of a key pair, with the other half being the private key. Public keys are essential for securing Lava assets, verifying transactions, and ensuring data integrity.
+
+Example Key: `lava@16g2y9l2zj5yrwcftd6lrwepnhjnl0f2gd70tjg`
+
+</details>
+
+<details>
+<summary>Private Key</summary>
+In the Lava Network, a private key is a highly confidential and secret cryptographic key that forms a key pair with a corresponding public key. The private key is used for critical tasks such as decrypting data, signing transactions, and providing access to Lava assets and sensitive information. It should be securely stored and never shared publicly, as it grants full control and ownership over cryptographic assets and secure communications.
+
+Example Key: (`64 character hexadecimal string`)
 </details>
