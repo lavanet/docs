@@ -7,6 +7,10 @@ import RoadmapItem from '@site/src/components/RoadmapItem';
 
 # Developers 💻
 
+![Web3 APIs Banner](/img/banner/Web3-APIs-80ba1f766f734b558f0b6d6bff488630.jpg)
+
+## Role 👤
+
 The role of **Developers** in the Lava Network: 
 - consume APIs on the network via the Lava Gateway
 - making contributions by maintaining and developing specifications for new blockchains and APIs
