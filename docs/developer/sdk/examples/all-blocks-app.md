@@ -1,6 +1,6 @@
 ---
 slug: /all-blocks-app
-title: All Blocks (Vercel App)
+title: 🧱 All Blocks (Vercel App)
 ---
 
 # All Blocks (Vercel App)
@@ -11,7 +11,7 @@ title: All Blocks (Vercel App)
 
 ## Live Application 📱
 
-https://allblocks.vercel.app/
+> https://allblocks.vercel.app/
 
 ## Repository 🧰
 
