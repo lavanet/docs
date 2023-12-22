@@ -14,6 +14,14 @@ The role of **Developers** in the Lava Network:
 - building dApps and platforms which use LavaSDK or ServerKit (`RPCConsumer`)
 
 
+## Use-Cases 🧩
+
+| App Type      |  Intention     | Recommended Interface |
+|--------------|-----------|------------|
+| Front-End | building a dApp, smart contract, or NFT project | [Lava Gateway](/gateway-access), [Lava SDK](/access-sdk) |
+| Back-End  | creating microservices, clients, daemons, or tooling | [Lava SDK](/access-sdk)  or [Server Kit](/access-server-kit)|
+Gateway / Portal | self-hosting a centralized point for high throughput Lava P2P network access | [Server Kit](/access-server-kit)
+
 ## Quick Start
 
 
