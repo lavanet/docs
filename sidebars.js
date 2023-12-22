@@ -16,6 +16,20 @@ const sidebars = {
         'intro/about',
         'intro/explorers',
         'intro/key-terms',
+        {
+          type: 'category', 
+          label: '🗜️ Specifications',
+          collapsible: true,
+          collapsed: true,
+          link: {
+            type: 'doc',
+            id: 'intro/specs/spec'
+          },
+          items: [
+            'intro/specs/add-spec',
+            'intro/specs/spec-reference'
+          ]
+       },
         'intro/faq'
       ]
     },
@@ -285,6 +299,7 @@ const sidebars = {
               'developer/sdk/examples/sdk-multichain-example',
               'developer/sdk/examples/lava-sdk-gallery',
               'developer/sdk/examples/lava-bazaar',
+              'developer/sdk/examples/all-blocks-app'
             ]
           },
         ]
@@ -306,20 +321,6 @@ const sidebars = {
           'developer/integrations/web3js'
         ]
       },
-      {
-        type: 'category', 
-        label: '🗜️ Specifications',
-        collapsible: true,
-        collapsed: true,
-        link: {
-          type: 'doc',
-          id: 'specs/spec'
-        },
-        items: [
-          'specs/add-spec',
-          'specs/spec-reference'
-        ]
-     },
      {
       type: 'category', 
       label: '💫 Endpoints',
