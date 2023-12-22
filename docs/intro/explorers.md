@@ -30,4 +30,8 @@ https://lava.explorers.guru/
 
 ## Community Public RPC Explorer 🕵🏼
 One of our community members is providing an experimental service to see all exposed providers on the network:
-https://services.kjnodes.com/testnet/lava/public-rpc/
+> https://services.kjnodes.com/testnet/lava/public-rpc/
+
+## Lava SDK Block Explorer 🌐 
+One of our team members has developed an [`allblocks`](/all-blocks-app) application which gets the latest block from Lava supported chains and reports latency information:
+> https://allblocks.vercel.app
