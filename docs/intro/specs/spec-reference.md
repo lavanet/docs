@@ -1,6 +1,6 @@
 ---
 slug: /spec-reference
-title: Reference
+title: Reference Guide 📐
 ---
 
 # Spec Reference Guide
