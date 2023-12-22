@@ -413,17 +413,6 @@ const sidebars = {
         'lava-blockchain/badge-server'
       ]
     },
-    {
-      type: 'category', 
-      label: 'Get RPC / Web3 APIs ⚡️',
-      collapsible: true,
-      collapsed: true,
-      link: {
-        type: 'doc',
-        id: 'access-intro'
-      },
-      items: [      ],
-    },
     `tutorials`,
     {
       type: 'link',
