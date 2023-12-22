@@ -13,13 +13,12 @@ There is an additional channel called #FAQ on our Discord. If you need further h
 
 <hr />
 
-## Dictionary 📖
+## Nodes, Validators and Providers ⏫ {#nodes-validators-providers}
 
-### Keyring
-The keyring holds the private/public keypairs used to interact with a node. For instance, a validator key needs to be set up before running the blockchain node, so that blocks can be correctly signed. The private key can be stored in different locations, called "backends", such as a file or the operating system's own key storage. ([learn more here](https://docs.cosmos.network/main/run-node/keyring.html))
+### What is a specification and what does it let me do? {#specs}
+A specification (“spec”) is a module which you can add to Lava, extending the range of data services the network of providers can serve. RPC specs are the first to be added to Lava, and we will offer subgraph specs soon.
 
 
-## Nodes, Validators and Providers ⏫
 ### I have problems running the install scripts. {#install-troubleshooting}
 
 Troubleshooting:
@@ -40,39 +39,35 @@ Troubleshooting:
     1. Make sure your account is funded from Lava side before you try to stake as a validator
 
 ## Providers 🖥️
-### How can I update/edit my provider information?
+
+### How can I update/edit my provider information? {#provider-info}
 To update your provider information on chain, send the `provider-stake` transaction with the updated information and an additional stake of minimum 1 ulava.
 
-### I get `ERR_stake_provider_endpoints: invalid provider endpoints` error when trying to stake as a provider
+### I get `ERR_stake_provider_endpoints: invalid provider endpoints` error when trying to stake as a provider {#staking-error}
 In your stake-provider transaction you need to specify all required provider endpoints based on the chain you are staking on. For example to provide for cosmos chains you need both tendermint-rpc and rest as follows: `"IP:port,tendermintrpc,1 IP:port,rest,1"`.
 
-### Is there an unboding period for providers?
+### Is there an unbonding period for providers? #{unbonding-period}
 Yes, it's currently configured to 21 days.
 
-### How can I see my current provider state (incl. unbonding)?
+### How can I see my current provider state (incl. unbonding)? #{provider-state}
 You can use the following query: `lavad q pairing providers <CHAIN_ID>`
 
-### When running my provider process `lavad server` I get the following error `provider endpoint mismatch`
+### When running my provider process `lavad server` I get the following error `provider endpoint mismatch` {#provider-endpoint-mismatch}
 This error means that you have used different geolocations when using  the `provider-stake` transaction and when running `lavad server`, please ensure they match and the problem should be resolved.
 
 ## Developer ⌨️
 
-
-
-### Using Lava with Other RPC Clients
+### Using Lava with Other RPC Clients #{using-lava-with-other-rpcs}
 
 Lava easily integrates with other RPC clients. 
 
 1. **Gateway** - Simply create an account on the gateway, and replace your client's RPC URL with the appopriate one. Get started [immediately](/gateway-getting-started)!
 2. **SDK** - You can also use the SDK library integrations to integrate with [viem](/viem), [cosmjs](/cosmjs), [web3.js](/web3js), or [ethers.js](/ethersjs5).
 
-
-
-### I'm already using another SDK.
+### I'm already using another SDK. #{using-lava-with-other-sdks}
 No problem, Lava offers integrations to existing popular libraries [here](/sdk-integrations).
 
-
-### How to change the RPC url which Cosmjs uses?
+### How to change the RPC url which Cosmjs uses? #{changing-cosmjs-url}
 
 If you want a native integration to use seamlessly, please check out the new Lava integration for [CosmJS](/cosmjs)!
 Alternatively, please check out the cosmolava-client created by one of our community members: [MELLIFERA-Labs/cosmolava-client](https://github.com/MELLIFERA-Labs/cosmolava-client)
