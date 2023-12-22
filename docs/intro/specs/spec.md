@@ -143,7 +143,7 @@ The following is a snippet of the `debug` add-on for our `ETH1` spec:
 </details><br/>
 
 ### Extensions 〰️
-`"extensions"` allow for the adjustment or enhancement of existing methods and APIs within a spec for special use cases. They provide the means to tweak, optimize, or expand current functions based on the needs of a subset of consumers who require more functionality from specified method calls. This allows for alternative functionalities to be outlined inside a spec, giving both providers and consumers flexibility to
+`"extensions"` allow for the adjustment or enhancement of existing methods and APIs within a spec for special use cases. They provide the means to tweak, optimize, or expand current functions based on the needs of a subset of consumers who require more functionality from specified method calls. This allows for alternative functionalities to be outlined inside a spec, giving both providers and consumers flexibility to serve / request special functions.
 
 
 <details><summary> Example </summary>
