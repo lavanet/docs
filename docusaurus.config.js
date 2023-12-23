@@ -133,7 +133,7 @@ const config = {
           {
             label: "Web3 APIs ⚡️",
             position: "left",
-            to: "access-intro",
+            to: "developer",
           },
           {
             label: "Lava Protocol 🌋",
