@@ -30,13 +30,13 @@ Lava🌋 now offers incentivized public RPC for Axelar. Developers can get free,
 | 🟢 grpc                      | grpc.axelar-testnet.lava.build:443        |
 
 
+
+## [Gateway](https://gateway.lavanet.xyz/?utm_source=axelar-dev&utm_medium=docs&utm_campaign=docs-to-gateway)
+
+To learn more about using the Lava Gateway visit the [Getting Started guide](https://docs.lavanet.xyz/gateway-getting-started?utm_source=axelar-dev&utm_medium=docs&utm_campaign=docs-to-docs)
+
+
 ## [SDK](https://github.com/lavanet/lava-sdk)
-
-:::caution 
-
-Lava SDK is currently in Alpha. Please observe the documentation on both [frontend](https://docs.lavanet.xyz/sdk-frontend?utm_source=getting-axelar-rpc&utm_medium=docs&utm_campaign=docs-to-docs) and [backend](https://docs.lavanet.xyz/sdk-backend?utm_source=getting-axelar-rpc&utm_medium=docs&utm_campaign=docs-to-docs) use before getting started.
-
-:::
 
 ### Input 📥
 
@@ -113,8 +113,3 @@ async function useAxelarMainnet() {
 To learn more about our SDK visit the [Getting Started guide](https://docs.lavanet.xyz/sdk-getting-started?utm_source=getting-axelar-rpc&utm_medium=docs&utm_campaign=docs-to-docs)
 
 <hr />
-
-## [Gateway](https://gateway.lavanet.xyz/?utm_source=axelar-dev&utm_medium=docs&utm_campaign=docs-to-gateway)
-
-To learn more about using the Lava Gateway visit the [Getting Started guide](https://docs.lavanet.xyz/gateway-getting-started?utm_source=axelar-dev&utm_medium=docs&utm_campaign=docs-to-docs)
-

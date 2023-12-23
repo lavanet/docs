@@ -1,6 +1,6 @@
 ---
 slug: /public-rpc
-title: Public RPC Endpoints
+title: Lava Public RPC 🌋
 ---
 
 # Lava Public RPC (Testnet-2)

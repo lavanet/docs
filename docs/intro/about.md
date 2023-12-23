@@ -5,6 +5,18 @@ title: 🌋 About Lava
 
 # Web3 Modular Data Access
 
+<center>
+
+```mermaid
+flowchart LR
+    p1[Contributor] --spec --> lava[[Lava Protocol]]
+    lava ---> |rewards| p2((API Providers Pool))
+    lava <---> |relays| p2
+    lava <--- |compute cost| p3([Consumer])
+    lava <--> |relays| p3
+```
+</center>
+
 ## What is Lava? 🌋
 
 Lava is the first modular data access layer for blockchains. It introduces [`specs`](/spec): a modular primitive that lets contributors permissionlessly add support for new chains and data services to the base protocol. RPC is the first service supported by the protocol but we are soon bringing further choice by integrating with indexing and API partners, such as Subsquid. 

@@ -8,6 +8,15 @@ import TabItem from '@theme/TabItem';
 
 # Getting Juno RPC
 
+## [Gateway](https://gateway.lavanet.xyz/?utm_source=juno-dev&utm_medium=docs&utm_campaign=docs-to-gateway)
+
+<video width="100%" height="100%" controls><source src="/img/chains/junovideodemo.mp4" type="video/mp4"></source></video>
+
+To learn more about using the Lava Gateway visit the [Getting Started guide](https://docs.lavanet.xyz/gateway-getting-started?utm_source=juno-dev&utm_medium=docs&utm_campaign=docs-to-docs)
+
+<hr />
+<br />
+
 ## [SDK](https://github.com/lavanet/lava-sdk)
 
 :::caution 
@@ -87,12 +96,3 @@ async function useJunoTestnet() {
 To learn more about our SDK visit the [Getting Started guide](https://docs.lavanet.xyz/sdk-getting-started?utm_source=getting-juno-rpc&utm_medium=docs&utm_campaign=docs-to-docs)
 
 <hr />
-
-## [Gateway](https://gateway.lavanet.xyz/?utm_source=juno-dev&utm_medium=docs&utm_campaign=docs-to-gateway)
-
-<video width="100%" height="100%" controls><source src="/img/chains/junovideodemo.mp4" type="video/mp4"></source></video>
-
-To learn more about using the Lava Gateway visit the [Getting Started guide](https://docs.lavanet.xyz/gateway-getting-started?utm_source=juno-dev&utm_medium=docs&utm_campaign=docs-to-docs)
-
-<hr />
-<br />

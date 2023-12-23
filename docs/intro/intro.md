@@ -18,9 +18,9 @@ Welcome testers! Thank you for joining the testnet. If you find errors in our do
 
 ## Overview 🔍
 
-Web3 is only as strong as its weakest link. Today, due to complexities and lack of incentives to run your own node, apps rely on costly centralized services, unreliable public RPC endpoints, and self-hosted services. Lava is here to fix it. Access Lava, Access Web3.
+Today, RPC & data infrastructure is not up to par for scaling Ethereum, its rollups and all other blockchains. Lava’s novel architecture aims to offer developers fast, reliable and accurate access to any chain. RPC is the first service on Lava, but we will be expanding to subgraphs, oracles and more. 
 
-Lava is built as an application-specific L1 PoS Blockchain, based on [CosmosSDK](https://tendermint.com/sdk/). We are building the most reliable, modular, and extensible network, which ensures high network performance and secure blockchain access for all web3 APIs. 
+Lava is built as an application-specific L1 PoS Blockchain, based on CosmosSDK. The protocol introduces a primitive called “specs”. Specs are modules defining APIs in JSON-format, which can then be served by the network of providers to meet demand. We envision a modular economy for data infrastructure for web3 and beyond.
 
 Lava documentation is intended to be the definitive reference for all technical aspects of Lava Protocol. For other information about Lava Network, please visit our [blog](https://www.lavanet.xyz/blog?utm_source=intro-page&utm_medium=docs) or review our new [research](https://community.lavanet.xyz/c/research/9?utm_source=intro-page&utm_medium=docs)! 
 
@@ -29,7 +29,7 @@ Lava documentation is intended to be the definitive reference for all technical 
 
 [<RoadmapItem icon="⛓️" title="Supported Chains" description="Learn more about the Chains that Lava supports."/>](/chains)
 
-[<RoadmapItem icon="⚡️" title="Access Web3 APIs" description="Start using Web3 APIs, seamlessly onboarding Lava's network"/>](/access-intro)
+[<RoadmapItem icon="⚡️" title="Access Web3 APIs" description="Start using Web3 APIs, seamlessly onboarding Lava's network"/>](/developer)
 
 [<RoadmapItem icon="🌋" title="Become a Lava Validator" description="Validate blocks, secure the network, earn rewards"/>](/validator)
 

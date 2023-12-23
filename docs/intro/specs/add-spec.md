@@ -1,6 +1,6 @@
 ---
 slug: /add-spec
-title: New Spec
+title: Adding Specifications 🔧
 ---
 
 # Adding a Specification to Lava

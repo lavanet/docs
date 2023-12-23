@@ -8,13 +8,14 @@ import TabItem from '@theme/TabItem';
 
 # Getting Ethereum RPC
 
+## [Gateway](https://gateway.lavanet.xyz/?utm_source=ethereum-dev&utm_medium=docs&utm_campaign=docs-to-gateway)
+
+To learn more about using the Lava Gateway visit the [Getting Started guide](https://docs.lavanet.xyz/gateway-getting-started?utm_source=ethereum-dev&utm_medium=docs&utm_campaign=docs-to-docs)
+
+<hr />
+<br />
+
 ## SDK
-
-:::caution 
-
-Lava SDK is currently in Alpha. Please observe the documentation on both [frontend](https://docs.lavanet.xyz/sdk-frontend?utm_source=getting-ethereum-rpc&utm_medium=docs&utm_campaign=docs-to-docs) and [backend](https://docs.lavanet.xyz/sdk-backend?utm_source=getting-ethereum-rpc&utm_medium=docs&utm_campaign=docs-to-docs) use before getting started.
-
-:::
 
 ### Input 📥
 
@@ -80,10 +81,3 @@ async function useEthereumMainnet() {
 </Tabs>
 
 <hr />
-
-## [Gateway](https://gateway.lavanet.xyz/?utm_source=ethereum-dev&utm_medium=docs&utm_campaign=docs-to-gateway)
-
-To learn more about using the Lava Gateway visit the [Getting Started guide](https://docs.lavanet.xyz/gateway-getting-started?utm_source=ethereum-dev&utm_medium=docs&utm_campaign=docs-to-docs)
-
-<hr />
-<br />
