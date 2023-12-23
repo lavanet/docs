@@ -29,7 +29,7 @@ Lava documentation is intended to be the definitive reference for all technical 
 
 [<RoadmapItem icon="⛓️" title="Supported Chains" description="Learn more about the Chains that Lava supports."/>](/chains)
 
-[<RoadmapItem icon="⚡️" title="Access Web3 APIs" description="Start using Web3 APIs, seamlessly onboarding Lava's network"/>](/access-intro)
+[<RoadmapItem icon="⚡️" title="Access Web3 APIs" description="Start using Web3 APIs, seamlessly onboarding Lava's network"/>](/developer)
 
 [<RoadmapItem icon="🌋" title="Become a Lava Validator" description="Validate blocks, secure the network, earn rewards"/>](/validator)
 
