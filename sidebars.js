@@ -27,7 +27,8 @@ const sidebars = {
           },
           items: [
             'intro/specs/add-spec',
-            'intro/specs/spec-reference'
+            'intro/specs/spec-reference',
+            'intro/specs/spec-guide'
           ]
        },
         'intro/faq'
