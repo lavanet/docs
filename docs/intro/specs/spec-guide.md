@@ -1,6 +1,6 @@
 ---
 slug: /spec-guide
-title: Spec Proposal Guide
+title: Spec Proposal Guide 📜
 ---
 
 import Tabs from '@theme/Tabs';
@@ -19,6 +19,7 @@ This guide is a work-in-progress! Please forgive errors, inconsistencies, or inc
 
 This guide is intended to assist someone with the process of writing and designing a spec proposal in a step-by-step way. The process of creating or maintaining a spec can seem overwhelming initially, but is actually a straightforward process once you understand the fundamentals. Follow along below to get through the entire process of making a specification.
 
+<br/>
 
 ## Step 1: Create the Proposal/JSON
 
