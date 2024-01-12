@@ -8,6 +8,13 @@ import TabItem from '@theme/TabItem';
 
 # Spec Proposal Guide (Walk-thru)
 
+:::caution UNDER CONSTRUCTION
+
+This guide is a work-in-progress! Please forgive errors, inconsistencies, or incompleteness.
+
+:::
+
+
 ## Overview 🔎
 
 This guide is intended to assist someone with the process of writing and designing a spec proposal in a step-by-step way. The process of creating or maintaining a spec can seem overwhelming initially, but is actually a straightforward process once you understand the fundamentals. Follow along below to get through the entire process of making a specification.
@@ -152,6 +159,7 @@ This field defines the minimum amount that a provider must have staked to serve 
 
 Once each of these fields has been dealt with, we’re ready to move onto setting up inheritance!
 
+<br />
 
 ## Step 2: Inheritance
 
@@ -205,6 +213,15 @@ More often than not, a spec will only use one of the aforementioned imports. Spe
 ### Inheritance APIs
 
 If you’re picky about the imports you want to do, it is possible to specify individual APIs, using the `inheritance_apis` field under an `api_collection`. If you’re confused don’t worry - we’ll explain more about API Collections next. For now, it is strongly recommended that you use imports instead. Remember, you can always disable unused `apis` and `api_collections`.
+
+### Overwriting Aspects
+
+An import generically brings in all parse directives, verifications, API Collections, and APIs by default. To overwrite specific mandatory behavior - simply define the parse_directive, verification, API Collection, or API by its `name` ( or `function_tag` if editing a parse directive) in the spec which is inheriting.
+
+🔖REFERENCE: [`imports`](/spec#imports)
+
+<br />
+
 
 ## Step 3: API Collections
 
@@ -331,27 +348,99 @@ Some example API Collections are defined (with differences *highlighted*) below:
 </TabItem>
 </Tabs>
 
-Each API collection is composed of various pieces,
+Each API collection is composed of various pieces. These pieces collectively give definition to the APIs that a Provider will serve. It's important that we review these pieces in detail so that you're familiar with what goes where:
 
-### AddOn
+🔖REFERENCE: [`api_collections`](/spec-reference#api_collections)
 
-Leaving this field as a blank string is the default and expected input. If you add anything to the string, the API Collection will be processed as an addon to normal Provider behavior and treated as optional to providers. 
+🔖REFERENCE: [`collection_data`](/spec-reference#collection_data)
 
-### APIs
+For now, most of the fields are beyond the scope of what we'll explain here & can be ignored (`headers`,`internal_path`).
+<br/>
 
-This will contain
+### Collection Data
 
-### Headers
+<details><summary> `api_interface`</summary>
 
-Leave this blank for now.
+```bash
+# pick one of the following:
+"tendermintrpc"
+"grpc"
+"jsonrpc"
+"rest"
+```
 
-### Parse Directives
+</details>
 
-Because every API returns data in a different format, Lava protocol establishes a standardized way to deal with data parsing. These standards are called `parse directives`. Parse directives are a (/spec-reference#parsing)
 
-:::warn
+<details><summary> `type`</summary>
 
-🔥 Get_BlockNum and Get_Block_by_Num must be defined for Lava data reliability checks to succeed. 
+```bash
+# pick one of the following:
+""
+"GET"
+"POST"
+```
+
+</details>
+
+<br />
+
+### Other Fields
+
+#### AddOn
+
+Leaving this field as a blank string(`""`) is the default and expected input. If you add anything to the string, the API Collection will be processed as an addon with the name provided in the string. Under that condition, the collection will be treated as optional to providers. We cover addons in more detail in a [later section](/spec-guide#step-6-addonsextensions-optional-apis) of this guide. 
+
+#### APIs
+
+This is an array will contain all of the collection's APIs - outlined in such a manner that you can see the compute units. There is a [whole section](/spec-guide#api_collections) dedicated to adding APIs to an API Collection, so we can leave this blank for now, as well.
+
+#### Headers
+
+It is possible to specify headers to be used in the API using this array. However, it's currently beyond scope. Leave this blank for now: `[]`.
+
+#### Parse Directives
+
+Because every API returns data in a different format, Lava protocol establishes a standardized way to deal with data parsing. These standards are called `parse directives`. Parse directives are a critical part of how API responses are handled. Please take a moment to familiarize yourself with Lava parsing functions before continuing:
+
+🔖REFERENCE: [Parsing](/spec-reference#parsing)
+
+If a spec is imported, then this is most likely already handled for you and does not require definition. However, in case 
+
+```json
+{
+    "function_tag": "GET_BLOCK_BY_NUM",
+    "function_template": "{\"jsonrpc\":\"2.0\",\"method\":\"starknet_getBlockWithTxHashes\",\"params\":[{\"block_number\":%d}],\"id\":1}",
+    "result_parsing": {
+        "parser_arg": [
+            "0",
+            "block_hash"
+        ],
+        "parser_func": "PARSE_CANONICAL",
+        "encoding": "base64"
+    },
+    "api_name": "starknet_getBlockWithTxHashes"
+},
+{
+    "function_template": "{\"jsonrpc\":\"2.0\",\"method\":\"starknet_blockNumber\",\"params\":[],\"id\":1}",
+    "function_tag": "GET_BLOCKNUM",
+    "result_parsing": {
+        "parser_arg": [
+            "0"
+        ],
+        "parser_func": "PARSE_BY_ARG"
+    },
+    "api_name": "starknet_blockNumber"
+}
+
+
+
+```
+
+
+:::warning
+
+Get_BlockNum and Get_Block_by_Num must be defined for Lava data reliability checks to succeed. If your API does not support block numbers - please ensure that `data_reliability_enabled` is set to `false`.
 
 :::
 
@@ -361,24 +450,88 @@ Because every API returns data in a different format, Lava protocol establishes 
 
 > Design APIs which were not inherited from another spec.
 
+
+
+```json
+{
+    "name": "blockHashAndNumber",
+    "block_parsing": {
+        "parser_arg": [
+            "latest"
+        ],
+        "parser_func": "DEFAULT"
+    },
+    "compute_units": 10,
+    "enabled": true,
+    "category": {
+        "deterministic": true,
+        "local": false,
+        "subscription": false,
+        "stateful": 0
+    },
+    "extra_compute_units": 0
+},
+
+```
+
 ### Compute Units
 
-Describes the number of compute units which each API call expends. This number is a proxy for the compute intensiveness/difficulty and therefore the cost of calling this API. Compute unitminimum 10 units
+Describes the number of compute units which each API call expends. This number is a proxy for the compute intensiveness/difficulty and therefore the cost of calling this API. Note: compute units are not just tethered to rewards - they also indirectly inform the protocol of the expected time to response; by default, each compute unit adds ~100 ms to the relay's timeout threshhold.
 
+There are a minimum of 10 CU per call - this should be sufficient for most calls.
+
+🔖REFERENCE: [`Compute Units`](/spec#cu)
+
+### Other Fields
+
+For other fields, please take a look at the reference(s) and observe other specs.
+
+🔖REFERENCE: [`APIs`](/spec-reference#apis),[`Block Parsing`](/spec-reference#block-parsing), [`Category`](/spec-reference#api_category)
+
+<br />
 
 ## Step 5: Verifications
 
 > Define tests which confirm that a Provider is serving the proper data
 > 
 
-Earlier, we looked at Parse Directives as a means for f
+Earlier, we looked at Parse Directives as a means for understanding the type of data that a relay returns. A verification is a `parse_directive` combined with an `expected value`. It provides a means for the protocol to intelligently check if the provider is serving the correct data. Each `API Collection` has its own set of verifications. Define verifications like below:
+
+```json
+"verifications": [
+    {
+        "name": "enabled",
+        "parse_directive": {
+            "function_template": "{\"jsonrpc\":\"2.0\",\"method\":\"getRawHeader\",\"params\":[\"latest\"],\"id\":1}",
+            "function_tag": "VERIFICATION",
+            "result_parsing": {
+                "parser_arg": [
+                    "0"
+                ],
+                "parser_func": "PARSE_BY_ARG",
+                "encoding": "hex"
+            },
+            "api_name": "getRawHeader"
+        },
+        "values": [
+            {
+                "expected_value": "*"
+            }
+        ]
+    }
+]
+```
+
+🔖REFERENCE: [`Verifications`](/spec-reference#verifications)
+
+<br/>
 
 ## Step 6: Addons/Extensions (Optional APIs)
 
 > Define optional API Collections which a Provider may choose to serve for more CU
 > 
 
-Specs are both highly modular and composable. Sometimes, the minimum requirements of a provider may not be satisfactory for all consumers on the network. A great example is for archive nodes;   can be Addons add new functionality
+Specs are both highly modular and composable. Sometimes, the minimum requirements of a provider may not be satisfactory for all consumers on the network. A great example is for archive nodes; not every Provider on a network needs to serve Archive data, but for those who want to opt-in you can define the rules and rewards using extensions. Addons are additional sets of API Collections that are not mandatory- a great example of an addon would be a node which answers debug APIs! 
 
 ### Creating Addons
 
@@ -397,10 +550,14 @@ Making an Addon is very similar to making any other API Collection. The sole dif
                         },
 ```
 
+🔖REFERENCE: [`Addons`](/spec#addon)
+
+
 ### Creating Extensions
 
-Making an Extension follows a slightly different process than making an Addon. To
+Making an Extension follows a slightly different process than making an Addon. We define extensions as an array which is a child of an `api_collection` object:
 
+#### Archive Example
 ```json
 "extensions": [
                             {
@@ -413,14 +570,72 @@ Making an Extension follows a slightly different process than making an Addon. T
                         ]
 ```
 
+`archive` Providers must return blocks from at least 254 blocks from latest, thus receiving 5x the CU.
+
+
+#### Censorship Example
 ```json
 "extensions": [
                             {
                                 "name": "censorship",
                                 "cu_multiplier": 2,
                                 "rule": {
-                                    "block":10
+                                    "block": 1
                                 }
                             }
                         ]
 ```
+`censorship` Providers may only return blocks 1 block away from the latest, thus receiving 2x the CU rewards.
+
+:::info
+
+Currently, rules are hard-coded. As of the time of this guide, "block" is the only rule defined in code.
+
+:::
+
+🔖REFERENCE: [`Extensions`](/spec#extensions)
+
+<br />
+
+## Step 7: Verifications for Optional APIs
+
+> Define tests for Providers who serves addons and extension API Collections
+
+### Verifications for Addons
+
+Verifications for addons are simple! They are defined in the [exact same way](#step-5-verifications) as they are for other api_collections; populate `verifications` with your verifications 
+
+
+### Verifications for Extensions
+
+Verifications for extensions are similarly simple. Create a child of `extensions` called `verifications` and define verifications as you would for any other API.
+
+
+<br />
+
+## Step 8: Test with Local Blockchain
+
+> Use the `test_spec_full.sh` script to automatically execute local tests.
+
+### Install Lava
+
+1. Install [Lava Binaries](/install-lava) on Your Local Machine
+2. Check that the `test_spec_full.sh` exists in the `./scripts` folder of your install
+
+### Run Command
+
+```
+./scripts/test_spec_full.sh cookbook/specs/spec_add_X.json <interface> <rpc_url_for_index1> <interface> <rpc_url_for_index2>
+```
+
+It will scaffold a  local block chain and create a test network of several providers running the spec! You can see errors in real-time which will alert you to where you need to debug. Once you have debugged all issues-  go on to the next step!
+
+
+<br/>
+
+## Step 9: Push to your Repository & Share
+
+> Add your `JSON` file to your local `cookbook/spec/`  directory.
+
+
+Share your progress with the [Lava Team & Community!](https://discord.gg/Tbk5NxTCdA)
