@@ -293,8 +293,6 @@ Once we've created these files we can move onto starting the processes!
 
 ### 🏁 Start the Provider Process(es)
 
-First, we need to verify the blockchain is reachable with `lavap status` ✅ Once we have successfully gotten node info, we can continue. If you have not already set up your node you need to do so now. Here is where rubber meets road!
-
 In this example, we use the built-in terminal multiplexer `screen` to run multiple provider processes. Begin by typing `screen`. But you can also use a different multiplexer, e.g. `tmux`.
 
 ⏫ To start the Ethereum process
