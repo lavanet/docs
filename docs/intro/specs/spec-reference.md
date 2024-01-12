@@ -224,7 +224,7 @@ Each section details specific fields with descriptions and examples.
 
 
 
-#### Block Parsing(`block_parsing`)
+#### Block Parsing(`block_parsing`) {#block_parsing}
 
 Details on how block heights are derived from API requests.
 
@@ -233,7 +233,7 @@ Details on how block heights are derived from API requests.
 | `parser_arg` | Arguments for the parser function. | `["latest"]` |
 | `parser_func` | The function used for parsing. | `DEFAULT` |
 
-#### Service API Categories(`category`)
+#### Service API Categories(`category`) {#api_category}
 
 | Field | Description | Example |
 |-------|-------------|---------|
@@ -242,7 +242,7 @@ Details on how block heights are derived from API requests.
 | `subscription` | Indicates if the API supports subscription. | `false` |
 | `stateful` | Describes the statefulness of the API. A value of `0` means it's stateless. | `0` |
 
-#### Verification(`verifications`)
+#### Verification(`verifications`) {#verifications}
 
 Verification details used to validate the data.
 
