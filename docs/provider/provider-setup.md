@@ -46,13 +46,16 @@ lavap rpcprovider [config-file] || { {listen-host:listen-port spec-chain-id api-
 ```
 
 ### Configuration
+:::warning
+Configuration varies per chain. Some chains have steeper configuration requirements than others. If you're unsure, please visit the [chain page](/chains) of the specific endpoints you're attempting to setup and view our `Run an RPC Node` guide. 
+:::
 :::info 
 For advanced configuration such as **authentication**, header **forwarding**, configurable **node-timeout**, see [Provider Features](/provider-features)
 :::
 
 You can either provide a single configuration file (YAML) or specify one or more endpoint configurations as command line arguments.
 
-The default configuration file is named **`rpcprovider.yml`**. If a single argument is provided, it is assumed to be the name of the configuration file (without the extension). Configuration varies per chain. Some chains have steeper configuration requirements than others. If you're unsure, please visit the [chain page](/chains) of the specific endpoints you're attempting to setup and view our `Run an RPC Node` guide. 
+The default configuration file is named **`rpcprovider.yml`**. If a single argument is provided, it is assumed to be the name of the configuration file (without the extension). 
 
 If no arguments are provided, the default configuration file is used. All configuration files should be located in the default node home directory (e.g., **`app.DefaultNodeHome/config`**) or the local running directory.
 
