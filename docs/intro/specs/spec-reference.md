@@ -163,7 +163,7 @@ Spec (JSON)
 
 Each section details specific fields with descriptions and examples.
 
-### Proposal (`proposal`) 📜
+### Proposal (`proposal`) 📜 {#proposal}
 
 
 | Field         | Description                                                   | Example                                                  |
@@ -172,7 +172,7 @@ Each section details specific fields with descriptions and examples.
 | `description` | Brief description about the purpose of the proposal.          | `Adding new specification support for relaying Solana data on Lava` |
 
 
-### Specifications (`specs`) 📘
+### Specifications (`specs`) 📘 {#specs}
 
 | Field | Description | Example |
 |-------|-------------|---------|
@@ -189,7 +189,7 @@ Each section details specific fields with descriptions and examples.
 | `min_stake_provider` | Minimum amount a provider needs to stake to offer services. | `{"denom": "ulava", "amount": "50000000000"}` |
 | `min_stake_client` | Minimum amount a client needs to stake to access services. | `{"denom": "ulava", "amount": "5000000000"}` |
 
-### API Collections (`api_collections`) 🗂️
+### API Collections (`api_collections`) 🗂️ {#api_collections}
 
 | Field | Description | Example |
 |-------|-------------|---------|
@@ -201,7 +201,7 @@ Each section details specific fields with descriptions and examples.
 | `parse_directives` | Directives to parse the API responses. | `[]` |
 | `verifications` | Contains verification details. | `{"name": "chain-id", "values": [ { "expected_value": "juno-1" } ]}` |
 
-#### API Collection Data (`collection_data`)
+#### API Collection Data (`collection_data`) {#collection_data}
 
 | Field | Description | Example |
 |-------|-------------|---------|
@@ -211,7 +211,7 @@ Each section details specific fields with descriptions and examples.
 | `add_on` | Name of add-on collection belongs to | `debug` |
 
 
-### Service APIs (`apis`) ⚙️
+### Service APIs (`apis`) ⚙️ {#apis}
 
 | Field | Description | Example |
 |-------|-------------|---------|
@@ -224,7 +224,7 @@ Each section details specific fields with descriptions and examples.
 
 
 
-#### Block Parsing(`block_parsing`)
+#### Block Parsing(`block_parsing`) {#block_parsing}
 
 Details on how block heights are derived from API requests.
 
@@ -233,7 +233,7 @@ Details on how block heights are derived from API requests.
 | `parser_arg` | Arguments for the parser function. | `["latest"]` |
 | `parser_func` | The function used for parsing. | `DEFAULT` |
 
-#### Service API Categories(`category`)
+#### Service API Categories(`category`) {#api_category}
 
 | Field | Description | Example |
 |-------|-------------|---------|
@@ -242,7 +242,7 @@ Details on how block heights are derived from API requests.
 | `subscription` | Indicates if the API supports subscription. | `false` |
 | `stateful` | Describes the statefulness of the API. A value of `0` means it's stateless. | `0` |
 
-#### Verification(`verifications`)
+#### Verification(`verifications`) {#verifications}
 
 Verification details used to validate the data.
 
@@ -259,7 +259,7 @@ Verification details used to validate the data.
 | `cu_multiplier` | Compute units multiplier for the extension.| `5`       |
 | `rule`          | Specific rules associated with the extension. (e.g., block number)| `block: 254`|
 
-### Deposit (`deposit`) 💰
+### Deposit (`deposit`) 💰 {#deposit}
 
 Represents the amount deposited by the user for the proposal.
 
