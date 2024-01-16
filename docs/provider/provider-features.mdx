@@ -8,7 +8,7 @@ title: Features
 
 This page details the various features available to providers in the Lava network, along with instructions on how to operate them:
 
-- [⚡ Rewards(#rewards)
+- [💰 Rewards Tracking](#rewards-tracking)
 - [⚡ Caching](#caching)
 - [🔌 Addons and Extensions](#addonsextensions)
 - [🧊 Freeze and Unfreeze](#freeze)
@@ -20,20 +20,29 @@ This page details the various features available to providers in the Lava networ
 
 --- 
 
-## ⚡ Rewards{#rewards}
+## 💰 Rewards Tracking{#rewards-tracking}
 
-Once a provider is up and running, consumers will request relay services from the provider. once the provider provide the service he will be aligible to get rewards from the consumer he served (this happens when a consumers mopnthly plan expires).
+Once a provider is up and running, consumers will request relay services from the provider. Once the provider provides the service, they will be eligible to get rewards from the consumer they served. The provider can receive rewards when a consumer's monthly plan expires.
 
-providers can Query the estimated amount they will recieve with the query:
-lavad q pairing provider-monthly-payout <lava-provider-address>
+Providers can query the estimated amount they will receive with the query:
 
-claimable rewards can be queried with:
+```bash
+lavad q pairing provider-monthly-payout <lava-provider-address> 
+```
+
+Claimable rewards can be queried with:
+
+```bash
 lavad q dualstaking delegator-rewards <lava-provider-address>
+```
 
 and can be claimed to the provider balance with:
-lavad tx dualstaking claim-rewards --from <provider-key>
 
---- 
+```bash
+lavad tx dualstaking claim-rewards --from <provider-key>
+```
+
+<br />
 
 ## ⚡ Caching{#caching}
 
