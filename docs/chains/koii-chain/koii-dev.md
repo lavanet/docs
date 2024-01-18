@@ -13,7 +13,6 @@ import TabItem from '@theme/TabItem';
 To learn more about using the Lava Gateway visit the [Getting Started guide](https://docs.lavanet.xyz/gateway-getting-started?utm_source=koii-dev&utm_medium=docs&utm_campaign=docs-to-docs)
 
 <hr />
-<br />
 
 ## [SDK](https://github.com/lavanet/lava-sdk)
 
