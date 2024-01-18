@@ -181,6 +181,21 @@ const sidebars = {
         },
         {
           type: 'category',
+          label: '🔗 Koii',
+          collapsible: true,
+          collapsed: true,
+          description: 'KOII, KOIIT',
+          link: {
+            type: 'doc',
+            id: 'chains/koii-chain/koii'
+          },
+          items: [
+            'chains/koii-chain/koii-dev',
+            'chains/koii-chain/koii-node'
+          ]
+        },
+        {
+          type: 'category',
           label: '🔗 Lava',
           description: 'LAV1',
           collapsible: true,
