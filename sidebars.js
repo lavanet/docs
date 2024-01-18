@@ -76,6 +76,21 @@ const sidebars = {
         },
         {
           type: 'category',
+          label: '🔗 Base',
+          collapsible: true,
+          collapsed: true,
+          description: 'BASE, BASET',
+          link: {
+            type: 'doc',
+            id: 'chains/base-chain/base'
+          },
+          items: [
+            'chains/base-chain/base-dev',
+            'chains/base-chain/base-node'
+          ]
+        },
+        {
+          type: 'category',
           label: '🔗 Celo',
           collapsible: true,
           collapsed: true,
