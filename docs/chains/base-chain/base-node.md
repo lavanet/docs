@@ -15,11 +15,11 @@ Before you start, be sure to install [Docker](https://www.docker.com/get-started
 
 ## Setup Your Base Node Image 📥
 
-### Setup a L1 Full Node RPC 💿
+### 💿 Setup a L1 Full Node RPC 
 
 You need a Ethereum L1 Full Node running before you can use Base. Set `OP_NODE_L1_ETH_RPC` if you're using docker-compose.
 
-### Clone the Repo ✨
+### ✨ Clone the Repo 
 
 ```bash
 git clone https://github.com/base-org/node.git
@@ -28,7 +28,7 @@ git clone https://github.com/base-org/node.git
 Uncomment the line(s) relevant to your network in the`docker-compose.yml`
 
 
-### Start your node 🚀
+### 🚀 Start your node 
 
 ```bash
 docker compose up --build
