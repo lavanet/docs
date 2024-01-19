@@ -81,9 +81,6 @@ koii-validator \
 There maybe additional configurations necessary to complete your setup.
 You should consult the [Validator setup guide](https://docs.koii.network/run-a-node/k2-validators/validator-setup) for Koii and the [RPC Setup Guide](https://docs.solana.com/validator/get-started/setup-an-rpc-node) for Solana to ensure you've covered all necessary steps.
 
-## Apply to our Provider Incubation Program 📋
-
-In our current state of Testnet, there is an additional stage to pass through before you can become a provider on the Lava Network. Please fill out the [application form](https://lavanet.typeform.com/to/ORi3A13v?utm_source=becoming-a-lava-provider-for-solana&utm_medium=docs&utm_campaign=solana-pre-grant) for our Provider Incubation Program. Feel free to drop a line in our [Discord](https://discord.gg/UxujNZbW) once you’ve completed this step!
 
 ## Setup your Provider on Lava Network 🌋
 
