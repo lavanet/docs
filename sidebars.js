@@ -76,6 +76,21 @@ const sidebars = {
         },
         {
           type: 'category',
+          label: '🔗 Base',
+          collapsible: true,
+          collapsed: true,
+          description: 'BASE, BASET',
+          link: {
+            type: 'doc',
+            id: 'chains/base-chain/base'
+          },
+          items: [
+            'chains/base-chain/base-dev',
+            'chains/base-chain/base-node'
+          ]
+        },
+        {
+          type: 'category',
           label: '🔗 Celo',
           collapsible: true,
           collapsed: true,
@@ -162,6 +177,21 @@ const sidebars = {
           items: [
             'chains/juno-chain/juno-dev',
             'chains/juno-chain/juno-node'
+          ]
+        },
+        {
+          type: 'category',
+          label: '🔗 Koii',
+          collapsible: true,
+          collapsed: true,
+          description: 'KOII, KOIIT',
+          link: {
+            type: 'doc',
+            id: 'chains/koii-chain/koii'
+          },
+          items: [
+            'chains/koii-chain/koii-dev',
+            'chains/koii-chain/koii-node'
           ]
         },
         {

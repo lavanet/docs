@@ -155,11 +155,6 @@ metrics-listen-address: ":port"
 Want to reach more developers and get more rewards as a node runner? NEAR offers Incentivized Public RPC (ipRPC) endpoints to developers in its ecosystem. By signing up here, you can be first in line to being one of our premier providers contributing to decentralized public goods. [Sign up now!](https://lavanet.typeform.com/to/plCaDdVM?utm_source=becoming-a-lava-provider-for-near&utm_medium=docs&utm_campaign=near-post-grant)
 
 
-
-## Apply to our Provider Incubation Program 📋
-
-In our current state of Testnet, there is an additional stage to pass through before you can become a provider on the Lava Network. Please fill out the [application form](https://lavanet.typeform.com/to/ORi3A13v?utm_source=becoming-a-lava-provider-for-near&utm_medium=docs&utm_campaign=near-post-grant) for our Provider Incubation Program. Feel free to drop a line in our [Discord](https://discord.gg/UxujNZbW) once you’ve completed this step!
-
 ## Setup your Provider on Lava Network 🌋
 
 Once you’ve been accepted - to set up your provider on the Lava Network, you can refer to the [provider setup documentation](https://docs.lavanet.xyz/provider-setup?utm_source=running-a-near-rpc-node&utm_medium=docs&utm_campaign=near-post-grant) available elsewhere in our docs. This should provide you with the necessary information to configure and operate your provider node on the Lava Network.
