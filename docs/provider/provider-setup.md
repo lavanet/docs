@@ -46,8 +46,8 @@ lavap rpcprovider [config-file] || { {listen-host:listen-port spec-chain-id api-
 ```
 
 ### Configuration
-:::warning
-Configuration varies per chain. Some chains have steeper configuration requirements than others. If you're unsure, please visit the [chain page](/chains) of the specific endpoints you're attempting to setup and view our `Run an RPC Node` guide. 
+:::warning READ BEFORE CONTINUING
+Configuration varies per chain. Some chains have steeper configuration requirements than others. If you're unsure, please visit the [chain page](/chains) of the specific endpoints you're attempting to setup and view our `Run an RPC Node` guide for that chain. 
 :::
 :::info 
 For advanced configuration such as **authentication**, header **forwarding**, configurable **node-timeout**, see [Provider Features](/provider-features)
