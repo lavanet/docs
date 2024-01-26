@@ -15,13 +15,13 @@ This guide is a work-in-progress! Please forgive errors, inconsistencies, or inc
 :::
 
 
-## Overview 🔎
+## Overview 🔎 {#overview}
 
 This guide is intended to assist someone with the process of writing and designing a spec proposal in a step-by-step way. The process of creating or maintaining a spec can seem overwhelming initially, but is actually a straightforward process once you understand the fundamentals. Follow along below to get through the entire process of making a specification.
 
 <br/>
 
-## Step 1: Create the Proposal/JSON
+## Step 1: Create the Proposal/JSON {#create-proposal}
 
 > Create a specification `JSON` file
 > 
@@ -36,7 +36,7 @@ There are three ways to start in the creation of a spec
 
 <br />
 
-### Define Proposal
+### Define Proposal {#define-proposal}
 
 The recommended approach is to start from scratch and go field by field. Let’s start with a blank JSON and create our top-level field. This key is called `proposal` and it describes the specifications we’re about to propose:
 
@@ -55,7 +55,7 @@ The format of it is pretty much standard, so you can copy the example above and 
 
 <br />
 
-### Define Specs
+### Define Specs {#define-specs}
 
 Each proposal introduces new `specs` to Lava. As mentioned elsewhere, specs are the minimum requirements that an API provider must meet in order to serve the API. Lava uses several fields to establish the initial parameters for a spec including an `index` , a `name`, the `data_reliability_enabled`  marker, and the`minimum_stake_provider` must make. 
 
@@ -150,6 +150,12 @@ This is the maximum amount of blocks that can pass before the data a provider se
 
 </details>
 
+<details><summary> `shares` </summary>
+
+The default is `1`. This is a bonus multiplier for rewards at the end of each month. There should be no reason to change this unless diected otherwise.
+
+</details>
+
 <details><summary> `min_stake_provider` </summary>
 
 This field defines the minimum amount that a provider must have staked to serve this API. This value can remain identical with default values supplied by all other specs during our testnet. As of `lava-testnet-2` ,the amount is `5000000` in denom `ulava`. 
@@ -162,14 +168,16 @@ Once each of these fields has been dealt with, we’re ready to move onto settin
 
 <br />
 
-## Step 2: Inheritance
+## Step 2: Inheritance {#inheritance}
 
 > Inherit attributes from an existing spec.
 > 
 
 Before defining any APIs, it’s wise to pull others that already exist to save work. Most APIs in Lava use common methods and can be created from specs already in use on-chain. In Lava, we call this process of borrowing from earlier specs **inheritance**. Specs use inheritance to eliminate redundancy, minimize size, and save time. An additional benefit - as inherited specs are updated - their descendent specs automatically pull in their updates! Inheritance makes things easy.
 
-### Imports
+### Imports {#imports}
+
+An import generically brings in all parse directives, verifications, API Collections, and APIs by default. To overwrite specific mandatory behavior - simply define the parse_directive, verification, API Collection, or API by its `name` ( or `function_tag` if editing a parse directive) in the spec which is inheriting.
 
 To inherit, a new spec, use the `imports` field:
 
@@ -211,20 +219,16 @@ Common imports will include one of the following:
 More often than not, a spec will only use one of the aforementioned imports. Specs are completely modular and can import any other specs. This modular design pattern comes in handy, for example, when designing a spec for mainnet and a spec for testnet. Usually, the testnet spec simply inherits the mainnet spec and requires no further configurations.
 :::
 
-### Inheritance APIs
+### Inheritance APIs {#inheritance-apis}
 
 If you’re picky about the imports you want to do, it is possible to specify individual APIs, using the `inheritance_apis` field under an `api_collection`. If you’re confused don’t worry - we’ll explain more about API Collections next. For now, it is strongly recommended that you use imports instead. Remember, you can always disable unused `apis` and `api_collections`.
-
-### Overwriting Aspects
-
-An import generically brings in all parse directives, verifications, API Collections, and APIs by default. To overwrite specific mandatory behavior - simply define the parse_directive, verification, API Collection, or API by its `name` ( or `function_tag` if editing a parse directive) in the spec which is inheriting.
 
 🔖REFERENCE: [`imports`](/spec#imports)
 
 <br />
 
 
-## Step 3: API Collections
+## Step 3: API Collections {#api-collections}
 
 > Specify the API collections and interfaces which are mandatory for Providers.
 
@@ -355,7 +359,6 @@ Each API collection is composed of various pieces. These pieces collectively giv
 
 🔖REFERENCE: [`collection_data`](/spec-reference#collection_data)
 
-For now, most of the fields are beyond the scope of what we'll explain here & can be ignored (`headers`,`internal_path`).
 <br/>
 
 ### Collection Data
@@ -372,6 +375,12 @@ For now, most of the fields are beyond the scope of what we'll explain here & ca
 
 </details>
 
+<details><summary> `internal_path`</summary>
+
+This field gives the internal path of the node for this specific ApiCollection. This is **most likely unneeded** unless the API sets vary on internal paths on teh node. The best example is the [AVAX specification](https://raw.githubusercontent.com/lavanet/lava/main/cookbook/specs/spec_add_avalanche.json) which uses internal paths to distinguish between subnets with distinct ApiCollections.
+
+</details>
+
 
 <details><summary> `type`</summary>
 
@@ -380,7 +389,18 @@ For now, most of the fields are beyond the scope of what we'll explain here & ca
 ""
 "GET"
 "POST"
+"PUT"
+"PATCH"
+"DELETE"
+
 ```
+
+</details>
+
+
+<details><summary> `add_on` </summary>
+
+Leaving this field as a blank string(`""`) is the default and expected input. If you add anything to the string, the API Collection will be processed as an addon with the name provided in the string. Under that condition, the collection will be treated as optional to providers. We cover addons in more detail in a [later section](/spec-guide#step-6-addonsextensions-optional-apis) of this guide. 
 
 </details>
 
@@ -388,17 +408,41 @@ For now, most of the fields are beyond the scope of what we'll explain here & ca
 
 ### Other Fields
 
-#### AddOn
-
-Leaving this field as a blank string(`""`) is the default and expected input. If you add anything to the string, the API Collection will be processed as an addon with the name provided in the string. Under that condition, the collection will be treated as optional to providers. We cover addons in more detail in a [later section](/spec-guide#step-6-addonsextensions-optional-apis) of this guide. 
 
 #### APIs
 
-This is an array will contain all of the collection's APIs - outlined in such a manner that you can see the compute units. There is a [whole section](/spec-guide#api_collections) dedicated to adding APIs to an API Collection, so we can leave this blank for now, as well.
+This is an array will contain all of the collection's APIs - outlined in such a manner that you can see the compute units. There is a [whole section](/spec-guide#new-apis) dedicated to adding APIs to an API Collection, so we can leave this blank for now, as well. 
+
+<br/>
 
 #### Headers
 
-It is possible to specify headers to be used in the API using this array. However, it's currently beyond scope. Leave this blank for now: `[]`.
+It is possible to specify headers to be used in the API using this array. Leave this blank for now: `[]` unless you want to identify headers that a consumer can send along with their request. 
+
+Each Header is composed of a `name` and a `kind` , optionally a `function_tag`.
+
+<details><summary>An Example Header </summary>
+
+```json
+{
+    "name": "x-aptos-ledger-version",
+    "kind": "pass_reply"
+}
+```
+
+</details>
+
+##### Kinds of Headers
+
+| Header      | Description                                                              | Example                                       |
+|-------------|--------------------------------------------------------------------------|-----------------------------------------------|
+| pass_ignore | Relies on node-specific information and excludes header from reliability.| Time tag of reply on Aptos (varies per node). |
+| pass_reply  | Node returns header to user; user cannot request it. One-way.            | Ledger version 0, e.g., x-aptos-echo from node. |
+| pass_both   | Two-way communication: Node and user can both send and receive headers.  | Cosmos block.                                 |
+| pass_send   | User can send to node, but node cannot send to user. One-way.            | Instruction headers.                           |
+
+It is possible to use a `function_tag` to parse the header's response. The `function_tag` *must* correlate to an existing parse_directive.
+<br />
 
 #### Parse Directives
 
@@ -406,7 +450,7 @@ Because every API returns data in a different format, Lava protocol establishes 
 
 🔖REFERENCE: [Parsing](/spec-reference#parsing)
 
-If a spec is imported, then this is most likely already handled for you and does not require definition. However, in case 
+If a spec is imported, then this is most likely already handled for you and does not require definition. However, in case it is not, there is a need for 
 
 ```json
 {
@@ -434,10 +478,19 @@ If a spec is imported, then this is most likely already handled for you and does
     "api_name": "starknet_blockNumber"
 }
 
-
-
 ```
 
+<details><summary> `function_tag` </summary>
+ This is the global name and identification of the parse_directive. Anywhere else that a parse_directive is referenced it will be referenced by this name.
+</details>
+
+<details><summary> `function_template` </summary>
+This is the (JSON) template from which the response will be parsed. It is used to identify the standard format of responses.
+</details>
+
+<details><summary> `api_name` </summary>
+The `api_name`` refers to the specific API that will be parsed by the parse_directive. It should correlate to a defined api in the `api_collections` or one inherited.
+</details>
 
 :::warning
 
@@ -447,7 +500,7 @@ Get_BlockNum and Get_Block_by_Num must be defined for Lava data reliability chec
 
 <br />
 
-## Step 4: New APIs
+## Step 4: New APIs {#new-apis}
 
 > Design APIs which were not inherited from another spec.
 
@@ -474,6 +527,11 @@ Get_BlockNum and Get_Block_by_Num must be defined for Lava data reliability chec
 },
 
 ```
+### Block Parsing
+
+This area is used to describe how to extract the block number from the API request. Make sure to review the parsing reference and several spec examples to ensure it's defined correctly.
+
+🔖REFERENCE: [`Block Parsing`](/spec-reference#block-parsing), [`Parsing`](/spec-reference#parsing-)
 
 ### Compute Units
 
@@ -481,17 +539,47 @@ Describes the number of compute units which each API call expends. This number i
 
 There are a minimum of 10 CU per call - this should be sufficient for most calls.
 
+🚧 Note that `extra_compute_units` is presently not used, but will be useful for varying cost based upon consumer arguments.
+
 🔖REFERENCE: [`Compute Units`](/spec#cu)
+
+### Category
+
+<details><summary> `deterministic` </summary>
+<b>true</b> if deterministic responses from API <i>(default)</i><br />
+ <b>false</b> disables data reliability for non-deterministic responses. 
+</details>
+
+<details><summary> `local` </summary>
+<b>true</b> if local information from the node is returned through the API.<br />
+<b>false</b> if the local information on the node is irrelevant to response. <i>(default)</i>
+</details>
+
+<details><summary> 🚧 `subscription` </summary>
+
+UNDER CONSTRUCTION => mark <b>false</b> <br />
+subscription indicates when to open up a streaming API with the provider (wss is currently disabled.
+
+</details>
+
+<details><summary> `stateful` </summary>
+
+Manages nonce consistency. Use <b>1</b> to propagate information to all providers, <b>0</b> for no propagation. 
+
+</details>
+
+
+🔖REFERENCE: [`Category`](/spec-reference#api_category)
 
 ### Other Fields
 
 For other fields, please take a look at the reference(s) and observe other specs.
 
-🔖REFERENCE: [`APIs`](/spec-reference#apis),[`Block Parsing`](/spec-reference#block-parsing), [`Category`](/spec-reference#api_category)
+🔖REFERENCE: [`APIs`](/spec-reference#apis)
 
 <br />
 
-## Step 5: Verifications
+## Step 5: Verifications {#verifications}
 
 > Define tests which confirm that a Provider is serving the proper data
 > 
@@ -523,11 +611,13 @@ Earlier, we looked at Parse Directives as a means for understanding the type of 
 ]
 ```
 
+The default behavior of verifications is to restrict a provider from serving the APIs if failed. This cna be altered with a field called `severity` but it is not recommended behavior unless specific to your usecase.
+
 🔖REFERENCE: [`Verifications`](/spec-reference#verifications)
 
 <br/>
 
-## Step 6: Addons/Extensions (Optional APIs)
+## Step 6: Addons/Extensions (Optional APIs) {#addons-extensions}
 
 > Define optional API Collections which a Provider may choose to serve for more CU
 > 
@@ -590,7 +680,7 @@ Making an Extension follows a slightly different process than making an Addon. W
 
 :::info
 
-Currently, rules are hard-coded. As of the time of this guide, "block" is the only rule defined in code.
+Currently, rules and extensions are hard-coded. As of the time of this guide, "block" is the only rule defined in code and "archive" is the only recognized extension.
 
 :::
 
@@ -598,23 +688,35 @@ Currently, rules are hard-coded. As of the time of this guide, "block" is the on
 
 <br />
 
-## Step 7: Verifications for Optional APIs
+## Step 7: Verifications for Optional APIs {#verifications-for-addons-extensions}
 
 > Define tests for Providers who serves addons and extension API Collections
 
 ### Verifications for Addons
 
-Verifications for addons are simple! They are defined in the [exact same way](#step-5-verifications) as they are for other api_collections; populate `verifications` with your verifications 
+Verifications for addons are simple! They are defined in the [exact same way](#verifications) as they are for other api_collections; when defining an api_collection as an addon, populate `verifications` with your verifications.
 
 
 ### Verifications for Extensions
 
-Verifications for extensions are similarly simple. Create a child of `extensions` called `verifications` and define verifications as you would for any other API.
+Verifications for extensions are similarly simple. Within `verifications` , under the child `values`, create another entry with the `extension` name like so:
+
+```json
+
+"values": [
+    {
+        "latest_distance": 6646
+    },
+    {
+        "extension": "archive",
+        "expected_value": "0x0"
+    }
+```
 
 
 <br />
 
-## Step 8: Test with Local Blockchain
+## Step 8: Test with Local Blockchain {#test}
 
 > Use the `test_spec_full.sh` script to automatically execute local tests.
 
@@ -634,7 +736,7 @@ It will scaffold a  local block chain and create a test network of several provi
 
 <br/>
 
-## Step 9: Push to your Repository & Share
+## Step 9: Push to your Repository & Share {#push-and-share}
 
 > Add your `JSON` file to your local `cookbook/spec/`  directory.
 
