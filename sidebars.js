@@ -49,7 +49,7 @@ const sidebars = {
           label: '🔗 Agoric',
           collapsible: true,
           collapsed: true,
-          description: 'AGOR, AGORT',
+          description: 'AGR, AGRT',
           link: {
             type: 'doc',
             id: 'chains/agoric-chain/agoric'
