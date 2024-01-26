@@ -46,6 +46,21 @@ const sidebars = {
       items: [
         {
           type: 'category',
+          label: '🔗 Agoric',
+          collapsible: true,
+          collapsed: true,
+          description: 'AGR, AGRT',
+          link: {
+            type: 'doc',
+            id: 'chains/agoric-chain/agoric'
+          },
+          items: [
+            'chains/agoric-chain/agoric-dev',
+            'chains/agoric-chain/agoric-node'
+          ]
+        },
+        {
+          type: 'category',
           label: '🔗 Avalanche',
           collapsible: true,
           collapsed: true,

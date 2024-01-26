@@ -187,7 +187,7 @@ Each section details specific fields with descriptions and examples.
 | `average_block_time` | The average time (in ms) taken for a block to be produced. | `6500` |
 | `allowed_block_lag_for_qos_sync` | Number of blocks a quality of service sync can lag by. | `2` |
 | `min_stake_provider` | Minimum amount a provider needs to stake to offer services. | `{"denom": "ulava", "amount": "50000000000"}` |
-| `min_stake_client` | Minimum amount a client needs to stake to access services. | `{"denom": "ulava", "amount": "5000000000"}` |
+| `min_stake_client` | *(deprecated)* Minimum amount a client needs to stake to access services. | `{"denom": "ulava", "amount": "5000000000"}` |
 
 ### API Collections (`api_collections`) 🗂️ {#api_collections}
 

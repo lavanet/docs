@@ -53,10 +53,10 @@ cd nearcore
 git fetch origin --tags
 ```
 
-Get the latest release
+Get the [latest release](https://github.com/near/nearcore/releases).
 
 ```bash
-git checkout tags/1.25.0 -b mynode
+git checkout tags/<RELEASE TAG HERE> -b mynode
 ```
 
 ### Compile the latest stable release
