@@ -27,6 +27,21 @@ Lava works with various blockchains to establish **Incentivized Public RPC (ipRP
 
 <br/>
 
+## NEAR Endpoints 🌟
+
+### Mainnet 🌐 `NEAR`
+
+| Service 🔌          | URL 🔗                                 |
+|---------------------|----------------------------------------|
+| 🟢  json-rpc  | https://near.lava.build
+ |
+
+### Testnet 🧪 `NEART`
+
+| Service 🔌          | URL 🔗                                 |
+|---------------------|----------------------------------------|
+| 🟢  json-rpc  | https://near-testnet.lava.build |
+
 
 ## Evmos Endpoints 🌟
 
