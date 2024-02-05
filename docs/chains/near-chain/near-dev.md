@@ -9,7 +9,20 @@ import TabItem from '@theme/TabItem';
 # Getting NEAR RPC
 
 ## NEAR ipRPC 🪙
-Lava🌋 will soon offer incentivized public RPC for NEAR. Developers can get free, public endpoints for all.
+
+Lava🌋 offers incentivized public RPC for NEAR. Developers can get free, public endpoints for all.
+
+### Mainnet 🌐
+
+| Service 🔌          | URL 🔗                                 |
+|---------------------|----------------------------------------|
+| 🟢  json-rpc  | <https://near.lava.build> |
+
+### Testnet 🧪
+
+| Service 🔌          | URL 🔗                                 |
+|---------------------|----------------------------------------|
+| 🟢  json-rpc  | <https://near-testnet.lava.build> |
 
 <hr />
 
