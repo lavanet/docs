@@ -42,11 +42,29 @@ Lava works with various blockchains to establish **Incentivized Public RPC (ipRP
 |---------------------|----------------------------------------|
 | 🟢  json-rpc  | https://near-testnet.lava.build |
 
+## Agoric Endpoints 🌟
+
+### Mainnet 🌐
+
+| Service 🔌          | URL 🔗                                 |
+|---------------------|----------------------------------------|
+| 🟢  rest  | <https://agr.rest.lava.build> |
+| 🟢  grpc  | <https://agr.grpc.lava.build> |
+| 🟢  tendermintrpc | <https://agr.tendermint.lava.build> |
+---------------------------------------------------------------
+
+### Testnet 🧪
+
+| Service 🔌          | URL 🔗                                 |
+|---------------------|----------------------------------------|
+| 🟢  rest  | <https://agrt.rest.lava.build> |
+| 🟢  grpc  | <https://agrt.grpc.lava.build> |
+| 🟢  tendermintrpc | <https://agrt.tendermint.lava.build> |
+---------------------------------------------------------------
 
 ## Evmos Endpoints 🌟
 
 ### Mainnet 🌐 `EVMOS`
-
 
 
 | Service 🔌          | URL 🔗                                 |
