@@ -51,7 +51,6 @@ Lava works with various blockchains to establish **Incentivized Public RPC (ipRP
 | 🟢  rest  | <https://agr.rest.lava.build> |
 | 🟢  grpc  | <https://agr.grpc.lava.build> |
 | 🟢  tendermintrpc | <https://agr.tendermint.lava.build> |
----------------------------------------------------------------
 
 ### Testnet 🧪
 
@@ -60,7 +59,6 @@ Lava works with various blockchains to establish **Incentivized Public RPC (ipRP
 | 🟢  rest  | <https://agrt.rest.lava.build> |
 | 🟢  grpc  | <https://agrt.grpc.lava.build> |
 | 🟢  tendermintrpc | <https://agrt.tendermint.lava.build> |
----------------------------------------------------------------
 
 ## Evmos Endpoints 🌟
 
