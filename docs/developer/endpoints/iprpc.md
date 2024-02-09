@@ -27,50 +27,23 @@ Lava works with various blockchains to establish **Incentivized Public RPC (ipRP
 
 <br/>
 
-## NEAR Endpoints 🌟
+## Agoric Endpoints 🌟
 
-### Mainnet 🌐 `NEAR`
-
-| Service 🔌          | URL 🔗                                 |
-|---------------------|----------------------------------------|
-| 🟢  json-rpc  | https://near.lava.build
- |
-
-### Testnet 🧪 `NEART`
+### Mainnet 🌐 `AGR`
 
 | Service 🔌          | URL 🔗                                 |
 |---------------------|----------------------------------------|
-| 🟢  json-rpc  | https://near-testnet.lava.build |
+| 🟢  rest  | <https://agr.rest.lava.build> |
+| 🟢  grpc  | <https://agr.grpc.lava.build> |
+| 🟢  tendermintrpc | <https://agr.tendermint.lava.build> |
 
-
-## Evmos Endpoints 🌟
-
-### Mainnet 🌐 `EVMOS`
-
-
+### Testnet 🧪 `AGRT`
 
 | Service 🔌          | URL 🔗                                 |
 |---------------------|----------------------------------------|
-| 🟢 tendermint-rpc    | https://tm.evmos.lava.build            |
-| 🟢 tendermint-rpc / websocket | <wss://tm.evmos.lava.build/websocket> |
-| 🟢 json-rpc          | https://evmos.lava.build               |
-| 🟢 json-rpc / websocket | <wss://evmos.lava.build/websocket>     |
-| 🟢 rest              | https://rest.evmos.lava.build          |
-| 🟢 web-gRPC          | https://grpc.evmos.lava.build          |
-| 🟢 grpc              | grpc.evmos.lava.build:443              |
-
-
-### Testnet 🧪 `EVMOST`
-
-| Service 🔌                  | URL 🔗                                    |
-|-----------------------------|-------------------------------------------|
-| 🟢 tendermint-rpc            | https://tm.evmos-testnet.lava.build       |
-| 🟢 tendermint-rpc / websocket | <wss://tm.evmos-testnet.lava.build/websocket> |
-| 🟢 json-rpc                  | https://evmos-testnet.lava.build          |
-| 🟢 json-rpc / websocket      | <wss://evmos-testnet.lava.build/websocket>  |
-| 🟢 rest                      | https://rest.evmos-testnet.lava.build     |
-| 🟢 web-gRPC                  | https://grpc.evmos-testnet.lava.build     |
-| 🟢 grpc                      | grpc.evmos-testnet.lava.build:443         |
+| 🟢  rest  | <https://agrt.rest.lava.build> |
+| 🟢  grpc  | <https://agrt.grpc.lava.build> |
+| 🟢  tendermintrpc | <https://agrt.tendermint.lava.build> |
 
 <br />
 
@@ -93,6 +66,52 @@ Lava works with various blockchains to establish **Incentivized Public RPC (ipRP
 | 🟢 tendermint-rpc / websocket | wss://tm.axelar-testnet.lava.build/websocket |
 | 🟢 rest                      | https://rest.axelar-testnet.lava.build     |
 | 🟢 grpc                      | grpc.axelar-testnet.lava.build:443        |
+
+<br />
+
+## Evmos Endpoints 🌟
+
+### Mainnet 🌐 `EVMOS`
+
+
+| Service 🔌          | URL 🔗                                 |
+|---------------------|----------------------------------------|
+| 🟢 tendermint-rpc    | https://tm.evmos.lava.build            |
+| 🟢 tendermint-rpc / websocket | <wss://tm.evmos.lava.build/websocket> |
+| 🟢 json-rpc          | https://evmos.lava.build               |
+| 🟢 json-rpc / websocket | <wss://evmos.lava.build/websocket>     |
+| 🟢 rest              | https://rest.evmos.lava.build          |
+| 🟢 web-gRPC          | https://grpc.evmos.lava.build          |
+| 🟢 grpc              | grpc.evmos.lava.build:443              |
+
+### Testnet 🧪 `EVMOST`
+
+| Service 🔌                  | URL 🔗                                    |
+|-----------------------------|-------------------------------------------|
+| 🟢 tendermint-rpc            | https://tm.evmos-testnet.lava.build       |
+| 🟢 tendermint-rpc / websocket | <wss://tm.evmos-testnet.lava.build/websocket> |
+| 🟢 json-rpc                  | https://evmos-testnet.lava.build          |
+| 🟢 json-rpc / websocket      | <wss://evmos-testnet.lava.build/websocket>  |
+| 🟢 rest                      | https://rest.evmos-testnet.lava.build     |
+| 🟢 web-gRPC                  | https://grpc.evmos-testnet.lava.build     |
+| 🟢 grpc                      | grpc.evmos-testnet.lava.build:443         |
+
+<br />
+
+## NEAR Endpoints 🌟
+
+### Mainnet 🌐 `NEAR`
+
+| Service 🔌          | URL 🔗                                 |
+|---------------------|----------------------------------------|
+| 🟢  json-rpc  | https://near.lava.build
+ |
+
+### Testnet 🧪 `NEART`
+
+| Service 🔌          | URL 🔗                                 |
+|---------------------|----------------------------------------|
+| 🟢  json-rpc  | https://near-testnet.lava.build |
 
 <br />
 

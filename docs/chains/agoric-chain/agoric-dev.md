@@ -8,6 +8,27 @@ import TabItem from '@theme/TabItem';
 
 # Getting Agoric RPC
 
+## Agoric ipRPC 🪙
+
+Lava🌋 offers incentivized public RPC for Agoric. Developers can get free, public endpoints for all.
+
+### Mainnet 🌐
+
+| Service 🔌          | URL 🔗                                 |
+|---------------------|----------------------------------------|
+| 🟢  rest  | <https://agr.rest.lava.build> |
+| 🟢  grpc  | <https://agr.grpc.lava.build> |
+| 🟢  tendermintrpc | <https://agr.tendermint.lava.build> |
+
+### Testnet 🧪
+
+| Service 🔌          | URL 🔗                                 |
+|---------------------|----------------------------------------|
+| 🟢  rest  | <https://agrt.rest.lava.build> |
+| 🟢  grpc  | <https://agrt.grpc.lava.build> |
+| 🟢  tendermintrpc | <https://agrt.tendermint.lava.build> |
+
+
 ## [Gateway](https://gateway.lavanet.xyz/?utm_source=agoric-dev&utm_medium=docs&utm_campaign=docs-to-gateway)
 
 To learn more about using the Lava Gateway visit the [Getting Started guide](https://docs.lavanet.xyz/gateway-getting-started?utm_source=agoric-dev&utm_medium=docs&utm_campaign=docs-to-docs)
