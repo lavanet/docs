@@ -47,7 +47,14 @@ $current_lavad_binary query \
    `$lavad_home_folder/config/priv_validator_key.json` by default, or a custom
    path specified in the parameter `priv_validator_key_file` of config.toml.
 
-4. Stake validator
+   ```bash
+   #open consensus key file
+   nano $lavad_home_folder/config/priv_validator_key.json
+   ```
+   backup file content. use CTRL X to exit.
+   PS: Do not modify the content.
+
+5. Stake validator
 
 Here's an example with Values which starts with a stake of `50000000ulava`.
 Replace `<<moniker_node>>` With a human readable name you choose for your validator.
