@@ -39,3 +39,4 @@ Community Pages are provided by members of our community and not monitored/manag
 - ✨[LiveRaveN](https://services.liveraven.net/cosmos-testnets/lava-network)
 - ✨[Stake Village](https://stakevillage.net/en/lava-testnet2/endpoint.php)
 - ✨[StakeTown](https://services.stake-town.com/home/testnet/lava/public-api)
+- ✨[NODEJUMPER](https://app.nodejumper.io/lava-testnet)
