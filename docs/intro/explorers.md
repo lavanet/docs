@@ -1,23 +1,23 @@
 ---
 slug: /block-explorer
-title: 🔭 Explorers
+title: 🔭 区块资源管理器
 ---
 
-# Lava Blockchain Explorers 🔭
+# Lava 区块资源管理器 🔭
 
 ![Explorers Banner](/img/banner/Explorers-b802a6190fe349c4b6181d3971f81da9.jpg)
 
 <center>
 
-## ⭕ Official Explorer {#official-explorer} 
+## ⭕ 官方区块资源管理器 {#official-explorer} 
 
 ![Nodes Guru](/img/explorer/nodes_guru.svg) <br />
-Our **official block explorer** is brought to you by Nodes.Guru: <br />
+我们的**官方区块资源管理器**由 Nodes.Guru 提供： <br />
 https://lava.explorers.guru/
 
 </center>
 
-## Community Block Explorers 🧑🏾‍🤝‍🧑🏾
+## 社区区块资源管理器 🧑🏾‍🤝‍🧑🏾
 - ✨[BCCNodes](https://explorer.bccnodes.com/lava-T/)
 - ✨[Kjnodes](https://explorer.kjnodes.com/lava-testnet)
 - ✨[Nodeist](https://exp.nodeist.net/Lava)
@@ -28,10 +28,10 @@ https://lava.explorers.guru/
 - ✨[STAKEME](https://lava.exploreme.pro)
 
 
-## Community Public RPC Explorer 🕵🏼
-One of our community members is providing an experimental service to see all exposed providers on the network:
+## 社区公共 RPC 区块资源管理器 🕵🏼
+我们的一位社区成员正在提供一项实验性服务，以查看网络上所有公开的提供商：
 > https://services.kjnodes.com/testnet/lava/public-rpc/
 
-## Lava SDK Block Explorer 🌐 
-One of our team members has developed an [`allblocks`](/all-blocks-app) application which gets the latest block from Lava supported chains and reports latency information:
+## Lava SDK 区块资源管理器 🌐 
+我们的一名团队成员开发了一个 [`allblocks`](/all-blocks-app) 应用程序，该应用程序从 Lava 支持的链中获取最新的区块并报告延迟信息：
 > https://allblocks.vercel.app

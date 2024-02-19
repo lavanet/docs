@@ -1,6 +1,6 @@
 ---
 slug: /
-title: Introduction ❕
+title: 介绍 ❕
 ---
 
 import RoadmapItem from '@site/src/components/RoadmapItem';

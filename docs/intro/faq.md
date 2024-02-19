@@ -1,31 +1,31 @@
 ---
 slug: /faq
-title: ❓ FAQs 
+title: ❓ 常见问题 
 ---
 
-# FAQs
+# 常见问题
 
 ![FAQs Banner](/img/banner/FAQs.jpg)
 
 :::info
-There is an additional channel called #FAQ on our Discord. If you need further help hop on to our support channels there.
+在我们的Discord上还有一个名为#FAQ的频道。如果您需要进一步帮助，请访问我们的支持频道。
 :::
 
 <hr />
 
-## Nodes, Validators and Providers ⏫ {#nodes-validators-providers}
+## 节点、验证器和提供者 ⏫ {#nodes-validators-providers}
 
-### 🟡  What is a specification and what does it let me do? {#specs}
-A specification (“spec”) is a module which you can add to Lava, extending the range of data services the network of providers can serve. RPC specs are the first to be added to Lava, and we will offer subgraph specs soon.
+### 🟡 specification是什么？它能让我做什么？ {#specs}
+specification（"spec"）是您可以添加到 Lava 的模块，它扩展了提供商网络可提供的数据服务范围。RPC specs是首批添加到 Lava ，我们将很快提供subgraph specs。
 
 
-### 🟡 I have problems running the install scripts. {#install-troubleshooting}
+### 🟡 我在运行安装脚本时有问题。 {#install-troubleshooting}
 
-Troubleshooting:
+故障排除:
 
-1. `lavad` command not found
-    1. Try running `source ~/.profile`
-2. The node is stuck on “Waiting for node to catch up”
+1. `lavad` 未找到命令
+    1. 尝试运行 `source ~/.profile`
+2. 节点卡在“Waiting for node to catch upgit”上。
     1. This process might take some time based on your internet connection, compute capabilities and the height of the latest block on the network
     2. Please allow 5-20 minutes for this procedure to catch up with the latest block in the network
 3. curl or unzip commands are not found

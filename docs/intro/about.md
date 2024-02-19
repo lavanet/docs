@@ -1,9 +1,9 @@
 ---
 slug: /about
-title: 🌋 About Lava
+title: 🌋 关于 Lava
 ---
 
-# Web3 Modular Data Access
+# Web3模块化数据访问
 
 <center>
 
@@ -17,36 +17,36 @@ flowchart LR
 ```
 </center>
 
-## What is Lava? 🌋
+## Lava是什么？ 🌋
 
-Lava is the first modular data access layer for blockchains. It introduces [`specs`](/spec): a modular primitive that lets contributors permissionlessly add support for new chains and data services to the base protocol. RPC is the first service supported by the protocol but we are soon bringing further choice by integrating with indexing and API partners, such as Subsquid. 
+Lava是区块链的第一个模块化数据访问层。它引入了 [`specs`](/spec)：一种模块化原语，让贡献者无需权限即可向基础协议添加对新链和数据服务的支持。RPC是协议支持的第一个服务，但我们很快将通过与索引和API合作伙伴（例如 Subsquid）进行集成，为用户带来更多选择。
 
-Data consumers send requests to Lava’s network of data providers (node operators), who join Lava to meet demand for data. Lava creates dynamic, scalable markets around any blockchain data service. The protocol also creates crypto-economic guarantees around the quality of service, across speed, uptime and data accuracy. 
+数据消费者向 Lava 的数据提供者（节点运营商）网络发送请求，后者加入 Lava 以满足数据需求。Lava 围绕任何区块链数据服务创建动态、可扩展的市场。该协议还围绕服务质量（速度、运行时间和数据准确性）创建了加密经济保证。
 
-By leveraging modular architecture and a peer-to-peer network of node operators, Lava creates a unified platform for accessing the multi-chain world.
-
-
-### How Does It Work? 🔩
-
-**Developers and data consumers:** 
-With Lava, data consumers get easy, fast and reliable access to 30+ chains. The protocol incentivizes providers to offer performant service and algorithmically pairs consumers with the best node available.
-
-**Data providers (RPC node runners, indexers, etc):**
-Providers join Lava to reach more developers and to monetize their existing infrastructure. We also have 250+ providers on the Lava testnet, including large providers such as Blockdaemon. Lava also runs programs called Incentivized Public RPC. On these programs, chains such as Evmos, Axelar, NEAR and more pay node operators to serve quality RPC. 
+通过利用模块化架构和节点运营商的对等网络，Lava创建了一个访问多链世界的统一平台。
 
 
-### Why Lava? ❣️
+### 它是如何工作的? 🔩
 
- Lava provides Multi-Chain RPC that just works:
+**开发者和数据消费者:**
+有了Lava，数据消费者可以轻松、快速和可靠地访问30多个链。该协议激励提供商提供高性能的服务，并在算法上将消费者与可用的最佳节点配对。
 
-1. **Quality of Service -** Consumers monitor and rate providers based on response time, availability and freshness. When asking for rewards, providers are required to attach their QoS score and are rewarded accordingly.
+**数据提供者（RPC 节点运行器、索引器等）：**
+供应商加入Lava以触达更多开发者并将其现有基础设施变现。我们在Lava测试网上还有250多个提供商，包括像Blockdaemon这样的大型提供商。Lava还运行名为激励公共RPC的程序。在这些项目中，Evmos、Axelar、NEAR 等链向节点运营商支付提供高服务质量 RPC 的费用。
 
-2. **Data Reliability -** Providers are subject to fraud and fault detection checks, whereby the network uses statistical inference and verifiably random selections to compare the responses of multiple providers. If a conflict is detected, the network uses an honest majority of providers to attain who was wrong, penalizing the offender.
 
-3. **Privacy & Anonymity -** Relays are randomly distributed between a changing list of top providers, so consumers are less likely to get service from the same provider for a significant period of time. Consumer-provider communications happen directly and identities are not linked to Lava Wallets.
+### 为什么选择Lava？❣️
 
-4. **Scalability -** Every aspect of Lava is being built with scalability in mind. A single-step reward system, aggregation, direct provider-dApp communication and staking incentives are designed to increase efficiency by sparing unnecessary stress from the network.
+Lava 提供了即用的多链 RPC：
 
-5. **Decentralized Access -** We encourage users to access our network in a fully decentralized way. All relays on our network are conducted peer-to-peer (P2P).
+1. **服务质量 -** 消费者根据响应时间、可用性和数据时效性监控和评价提供者。提供者在请求奖励时需要附加他们的QoS（服务质量）分数，并根据分数获得相应奖励。
 
-6. **Open Source -** Lava is commmitted to open source and modularity. Developers can investigate the code for the chain and any specs implemented.
+2. **数据的可靠性 -** 提供者受到欺诈和故障检测的审查，网络使用统计推断和可验证的随机选择来比较多个提供者的响应。如果检测到冲突，网络将利用大多数诚实的提供者来确定谁错了，并对违规者进行惩罚。
+
+3. **隐私与匿名 -** 中继器在不断变化的顶级供应商名单之间随机分配，因此消费者不太可能在相当长的一段时间内获得同一供应商的服务。消费者与提供商之间的通信是直接进行的，身份与 Lava 钱包没有关联。
+
+4. **可扩展性 -** Lava 的方方面面都考虑到了可扩展性。单步奖励系统、聚合、提供商与应用程序之间的直接通信以及质押激励措施旨在通过减少网络不必要的压力来提高效率。
+
+5. **去中心化访问 -** 我们鼓励用户以完全去中心化的方式访问我们的网络。 我们网络上的所有中继都是点对点（P2P）进行的。
+
+6. **开源 -** Lava 致力于开源和模块化。开发人员可以研究链的代码和实施的任何规范。
