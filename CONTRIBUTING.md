@@ -1,77 +1,77 @@
-# Welcome to Lava docs contributing guide <!-- omit in toc -->
+# Benvenuti nella guida alla contribuzione dei documenti di Lava <!-- omettere nel toc -->.
 
-> First of all - THANK YOU for taking the time to contribute! 🌋👍
+> Prima di tutto - GRAZIE per aver trovato il tempo di contribuire! 🌋👍
 
-This website is built using [Docusaurus 2](https://docusaurus.io/), all your changes will be reflected on Lava Docs @ [docs.lavanet.xyz](https://docs.lavanet.xyz)
+Questo sito web è costruito utilizzando [Docusaurus 2](https://docusaurus.io/), tutte le vostre modifiche si rifletteranno su Lava Docs @ [docs.lavanet.xyz](https://docs.lavanet.xyz)
 
-### How can you help 💪?
-1. Report an issue/mistake you found
-2. Suggest a fix via PR (read below)
-3. Want to add new content/tutorials? Please propose it first via a new issue, and only then write it up, to save you time
+### Come puoi aiutare 💪?
+1. Segnala un problema o un errore riscontrato
+2. Suggerite una correzione tramite PR (leggete sotto)
+3. Vuoi aggiungere nuovi contenuti/tutorial? Proponetelo prima tramite un nuovo problema e solo dopo scrivetelo, per risparmiare tempo.
 
-In this guide you will get an overview of the contribution workflow from opening an issue, creating a PR, reviewing, and merging the PR.
+In questa guida avrete una panoramica del flusso di lavoro dei contributi, dall'apertura di un problema, alla creazione di una PR, alla revisione e all'unione della PR.
 
-## New contributor guide
+## Guida per i nuovi contributori
 
-To get an overview of Lava, read the [Docs Intro](/docs/intro.md). 
+Per avere una visione d'insieme di Lava, leggere la [Docs Intro](/docs/intro.md).
 
-This repository aligns with best practices for contributing to open source as you will find in many repositories on GitHub. If you are not familiar with these, please start with these great resources:
-- [Finding ways to contribute to open source on GitHub](https://docs.github.com/en/get-started/exploring-projects-on-github/finding-ways-to-contribute-to-open-source-on-github)
-- [Set up Git](https://docs.github.com/en/get-started/quickstart/set-up-git)
-- [GitHub flow](https://docs.github.com/en/get-started/quickstart/github-flow)
-- [Collaborating with pull requests](https://docs.github.com/en/github/collaborating-with-pull-requests)
+Questo repository è in linea con le migliori pratiche di contribuzione all'open source che si trovano in molti repository su GitHub. Se non le conoscete, iniziate da queste ottime risorse:
+- [Trovare modi per contribuire all'open source su GitHub](https://docs.github.com/en/get-started/exploring-projects-on-github/finding-ways-to-contribute-to-open-source-on-github)
+- [Configurare Git](https://docs.github.com/en/get-started/quickstart/set-up-git)
+- [Flusso di GitHub](https://docs.github.com/en/get-started/quickstart/github-flow)
+- [Collaborare con le richieste di pull](https://docs.github.com/en/github/collaborating-with-pull-requests)
 
-## Styleguide
-Lava docs serves multiple user types in different lifecycle steps.
-We want to create a doc resource that will fit all, but have a common denominator of style.
+## Guida di stile
+Lava docs serve diversi tipi di utenti in diverse fasi del ciclo di vita.
+Vogliamo creare una risorsa di documenti che si adatti a tutti, ma che abbia un denominatore comune di stile.
 
-Styleguides are guidance and not a restriction, good articles we picked for this purpose are:
-- When it comes to git opeartions, we recommend https://cbea.ms/git-commit/
-- When it is docs actual content, we recommend https://medium.com/larimaza-en/how-to-write-good-documentation-e19c70dc67f0
+Le guide di stile sono una guida e non una restrizione; i buoni articoli che abbiamo scelto per questo scopo sono:
+- Quando si tratta di opeartizioni git, raccomandiamo https://cbea.ms/git-commit/.
+- Quando si tratta del contenuto vero e proprio dei documenti, raccomandiamo https://medium.com/larimaza-en/how-to-write-good-documentation-e19c70dc67f0
 
-## Getting started
+## Iniziare
 
-### Issues
+### Problemi
 
-#### Create a new issue
+#### Creare un nuovo problema
 
-If you spot a problem with the docs, [search if an issue already exists](https://docs.github.com/en/github/searching-for-information-on-github/searching-on-github/searching-issues-and-pull-requests#search-by-the-title-body-or-comments). If a related issue doesn't exist, you can open a new issue using a relevant [issue form](https://github.com/lavanet/docs/issues/new/choose). 
+Se si riscontra un problema nella documentazione, [cercare se esiste già un problema](https://docs.github.com/en/github/searching-for-information-on-github/searching-on-github/searching-issues-and-pull-requests#search-by-the-title-body-or-comments). Se non esiste un problema correlato, si può aprire un nuovo problema usando un apposito [modulo per i problemi](https://github.com/lavanet/docs/issues/new/choose).
 
-#### Solve an issue
+#### Risolvere un problema
 
-Scan through our [existing issues](https://github.com/lavanet/docs/issues) to find one that interests you. You can narrow down the search using `labels` as filters. If you find an issue to work on, you are welcome to open a PR with a fix.
+Scorrete i nostri [problemi esistenti](https://github.com/lavanet/docs/issues) per trovarne uno che vi interessa. È possibile restringere la ricerca utilizzando i `labels` come filtri. Se si trova un problema su cui lavorare, si può aprire una PR con una soluzione.
 
-### Make Changes
+### Apportare modifiche
 
-#### Make changes to content
+#### Apportare modifiche al contenuto
 
-Click **Make a contribution** at the bottom of any docs page to make small changes such as a typo, sentence fix, or a broken link. This takes you to the `.md` file where you can make your changes and create a pull request for a review. 
+Fare clic su **Porta un contributo** in fondo a qualsiasi pagina del documento per apportare piccole modifiche, come un errore di battitura, la correzione di una frase o un link interrotto. Si accede al file `.md' dove si possono apportare le modifiche e creare una richiesta di pull per la revisione.
 
-#### Make changes locally
+#### Apportare modifiche localmente
 
-1. Install Git
-2. Fork the repository
-3. Clone it to your working space 
-4. Run a local version using  `$ yarn start`
-5. Create a working branch and start with your changes!
+1. Installare Git
+2. Aprire il repository
+3. Clonarlo nel proprio spazio di lavoro
+4. Eseguire una versione locale usando `$ yarn start`.
+5. Create un ramo di lavoro e iniziate con le vostre modifiche!
 
-### Commit & Pull Request
+### Impegno e richiesta di prelievo
 
-Commit the changes once you are happy with them. 
+Effettuare il commit delle modifiche una volta che si è soddisfatti.
 
-When you're finished with the changes, create a pull request, also known as a PR.
-- Fill the "Ready for review" template so that we can review your PR. This template helps reviewers understand your changes as well as the purpose of your pull request. 
-- Don't forget to [link PR to issue](https://docs.github.com/en/issues/tracking-your-work-with-issues/linking-a-pull-request-to-an-issue) if you are solving one.
-- Enable the checkbox to [allow maintainer edits](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/allowing-changes-to-a-pull-request-branch-created-from-a-fork) so the branch can be updated for a merge.
-Once you submit your PR, a team member will review your proposal. We may ask questions or request for additional information.
-- We may ask for changes to be made before a PR can be merged, either using [suggested changes](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/incorporating-feedback-in-your-pull-request) or pull request comments. You can apply suggested changes directly through the UI. You can make any other changes in your fork, then commit them to your branch.
-- As you update your PR and apply changes, mark each conversation as [resolved](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/commenting-on-a-pull-request#resolving-conversations).
-- If you run into any merge issues, checkout this [git tutorial](https://lab.github.com/githubtraining/managing-merge-conflicts) to help you resolve merge conflicts and other issues.
+Una volta terminate le modifiche, creare una richiesta di pull, nota anche come PR.
+- Compilare il modello "Ready for review" (pronto per la revisione), in modo che la PR possa essere revisionata. Questo modello aiuta i revisori a capire le modifiche e lo scopo della richiesta di pull.
+- Non dimenticare di [collegare la PR al problema](https://docs.github.com/en/issues/tracking-your-work-with-issues/linking-a-pull-request-to-an-issue) se ne stai risolvendo uno.
+- Attivare la casella di controllo [allow maintainer edits](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/allowing-changes-to-a-pull-request-branch-created-from-a-fork), in modo che il ramo possa essere aggiornato per un merge.
+Una volta inviata la PR, un membro del team esaminerà la proposta. Potremmo fare domande o richiedere informazioni aggiuntive.
+- Potremmo chiedere di apportare delle modifiche prima che la PR possa essere unita, usando [suggested changes](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/incorporating-feedback-in-your-pull-request) o i commenti alla richiesta di pull. È possibile applicare le modifiche suggerite direttamente attraverso l'interfaccia utente. È possibile apportare qualsiasi altra modifica nel proprio fork, quindi eseguire il commit nel proprio ramo.
+- Quando si aggiorna la PR e si applicano le modifiche, contrassegnare ogni conversazione come [risolta](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/commenting-on-a-pull-request#resolving-conversations).
+- Se si incontrano problemi di fusione, consultare questo [tutorial git](https://lab.github.com/githubtraining/managing-merge-conflicts) per risolvere conflitti di fusione e altri problemi.
 
-### Your PR is merged!
+### Il tuo PR è stato unito!
 
-Congratulations 🦸 Lava thanks you 🌋🙏. 
+Congratulazioni 🦸 Lava ti ringrazia 🌋🙏.
 
-Once your PR is merged, your contributions will be publicly visible on the [Lava Docs](https://docs.lavanet.xyz)
+Una volta che il tuo PR è stato unito, i tuoi contributi saranno visibili pubblicamente su [Lava Docs](https://docs.lavanet.xyz).
 
-_Thanks goes to [GitHub Docs](https://github.com/github/docs) for inspiration on writing this contribution text_
+Grazie a [GitHub Docs](https://github.com/github/docs) per l'ispirazione nella stesura del testo di questo contributo.
