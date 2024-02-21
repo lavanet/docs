@@ -1,18 +1,18 @@
 ---
 slug: /spec-reference
-title: Reference Guide 📐
+title: 参考指南 📐
 ---
 
-# Spec Reference Guide
+# Spec 参考指南
 
-This guide provides a detailed reference to the various specifications within the Lava Network. It encompasses the structure and definitions of proposals, specs, API collections, service APIs, and associated extensions. The objective is to ensure that developers, validators, and other stakeholders have a clear and consistent understanding of the configurations and functionalities.
+本指南详细参考了Lava网络中的各种规范。它包含了提案、specs、API集合、服务API和相关扩展的结构和定义。目标是确保开发人员、验证人员和其他涉众对配置和功能有一个清晰和一致的理解。
 
 <br/>
 <hr/>
 
-## 📌 File Structure 
+## 📌 文件结构
 
-<details><summary> 🔝 Tree Structure </summary>
+<details><summary> 🔝 树状结构 </summary>
 
 ```
 Spec (JSON)
@@ -159,74 +159,74 @@ Spec (JSON)
 </details>
 
 
-## 📖 Section Reference
+## 📖 章节参考
 
-Each section details specific fields with descriptions and examples.
+每个部分都详细介绍了特定字段，并附有说明和示例。
 
-### Proposal (`proposal`) 📜 {#proposal}
+### 提案 (`proposal`) 📜 {#proposal}
 
 
-| Field         | Description                                                   | Example                                                  |
-|---------------|---------------------------------------------------------------|----------------------------------------------------------|
-| `title`       | Title of the proposal.                                        | `Add Specs: Solana`                                      |
-| `description` | Brief description about the purpose of the proposal.          | `Adding new specification support for relaying Solana data on Lava` |
+| 字段            | 说明                    | 示例                                                               |
+|---------------|-------------------------|--------------------------------------------------------------------|
+| `title`       | 提案的标题                | `Add Specs: Solana`                                                |
+| `description` | 简短的描述提案的目的        | `Adding new specification support for relaying Solana data on Lava`|
 
 
 ### Specifications (`specs`) 📘 {#specs}
 
-| Field | Description | Example |
-|-------|-------------|---------|
-| `index` | A unique identifier for the spec. | `JUN1` |
-| `name` | A human-readable name for the spec. | `juno mainnet` |
-| `enabled` | Indicates if the spec is active. | `true` |
-| `imports` | An array of other spec indices. Allows one spec to inherit settings from another. | `["COSMOSSDKFULL"]` |
-| `reliability_threshold` | A system parameter for data reliability. | `268435455` |
-| `data_reliability_enabled` | Flag indicating if data reliability is enabled. | `true` |
-| `block_distance_for_finalized_data` | The number of blocks considered safe from chain reorganizations. | `0` |
-| `blocks_in_finalization_proof` | Number of blocks in the finality proof. | `1` |
-| `average_block_time` | The average time (in ms) taken for a block to be produced. | `6500` |
-| `allowed_block_lag_for_qos_sync` | Number of blocks a quality of service sync can lag by. | `2` |
-| `min_stake_provider` | Minimum amount a provider needs to stake to offer services. | `{"denom": "ulava", "amount": "50000000000"}` |
-| `min_stake_client` | *(deprecated)* Minimum amount a client needs to stake to access services. | `{"denom": "ulava", "amount": "5000000000"}` |
+| 字段                                  | 说明                                              | 示例                                            |
+|-------------------------------------|---------------------------------------------------|-----------------------------------------------|
+| `index`                             | spec的唯一标识符。                                   | `JUN1`                                        |
+| `name`                              | spec的可读名称。                                     | `juno mainnet`                                |
+| `enabled`                           | 提示该spec是否处于活动状态。                            | `true`                                        |
+| `imports`                           | 其他 spec索引的数组。允许一个 spec从另一个 spec继承设置。  | `["COSMOSSDKFULL"]`                           |
+| `reliability_threshold`             | 数据可靠性的系统参数。                                 | `268435455`                                   |
+| `data_reliability_enabled`          | 表示是否启用数据可靠性的标志。                           | `true`                                        |
+| `block_distance_for_finalized_data` | 被认为不受链重组影响的区块数量。                          | `0`                                           |
+| `blocks_in_finalization_proof`      | 最终证明的块数。                                       | `1`                                           |
+| `average_block_time`                | 生成一个数据块所花费的平均时间(单位为ms)。                 | `6500`                                        |
+| `allowed_block_lag_for_qos_sync`    | 服务质量同步可能滞后的块数。                             | `2`                                           |
+| `min_stake_provider`                | 提供商提供服务所需的最少质押。                            | `{"denom": "ulava", "amount": "50000000000"}` |
+| `min_stake_client`                  | *(已弃用)*客户端访问服务所需支付的最小金额。                | `{"denom": "ulava", "amount": "5000000000"}`  |
 
-### API Collections (`api_collections`) 🗂️ {#api_collections}
+### API 集合 (`api_collections`) 🗂️ {#api_collections}
 
-| Field | Description | Example |
-|-------|-------------|---------|
-| `enabled` | Indicates if the API collection is active. | `true` |
-| `collection_data` | Contains data related to the collection. | `{"api_interface": "rest", "internal_path": "", "type": "GET", "add_on": ""}` |
-| `apis` | An array containing details of each API in the collection. | Array of API objects |
-| `headers` | Headers to be included in the API requests. | `[]` |
-| `inheritance_apis` | An array of APIs inherited from imported specs. | `[]` |
-| `parse_directives` | Directives to parse the API responses. | `[]` |
-| `verifications` | Contains verification details. | `{"name": "chain-id", "values": [ { "expected_value": "juno-1" } ]}` |
+| 字段                 | 说明                                         | 示例                                                                            |
+|--------------------|----------------------------------------------|-------------------------------------------------------------------------------|
+| `enabled`          | 表明API集合是否处于活动状态。                     | `true`                                                                        |
+| `collection_data`  | 包含与集合相关的数据。                            | `{"api_interface": "rest", "internal_path": "", "type": "GET", "add_on": ""}` |
+| `apis`             | 一个数组，包含集合中每个API的详细信息。              | Array of API objects                                                          |
+| `headers`          | 要包含在API请求中的标头。                         | `[]`                                                                          |
+| `inheritance_apis` | 从导入的specs继承的API数组。                      | `[]`                                                                          |
+| `parse_directives` | 解析API响应的指令。                              | `[]`                                                                          |
+| `verifications`    | 包含验证详细信息。                                | `{"name": "chain-id", "values": [ { "expected_value": "juno-1" } ]}`          |
 
-#### API Collection Data (`collection_data`) {#collection_data}
+#### API 集合数据 (`collection_data`) {#collection_data}
 
-| Field | Description | Example |
-|-------|-------------|---------|
-| `api_interface` | Interface of the API (e.g., `rest`, `grpc`). | `rest` |
-| `internal_path` | Internal path for the API call. | `` |
-| `type` | HTTP method for the API request. | `GET` |
-| `add_on` | Name of add-on collection belongs to | `debug` |
-
-
-### Service APIs (`apis`) ⚙️ {#apis}
-
-| Field | Description | Example |
-|-------|-------------|---------|
-| `name` | Name of the API. | `juno.mint.Query/AnnualProvisions` |
-| `block_parsing` | Describes how block heights are derived from API requests. | `{"parser_arg": ["latest"], "parser_func": "DEFAULT"}` |
-| `compute_units` | Number of compute units required for the API. | `10` |
-| `enabled` | Indicates if the API is active. | `true` |
-| `category` | Specifies the category of the API. | `{"deterministic": true, "local": false, "subscription": false, "stateful": 0}` |
-| `extra_compute_units` | Additional compute units if required. | `0` |
+| 字段              | 说明                                   | 示例     |
+|-----------------|----------------------------------------|---------|
+| `api_interface` | API接口(e.g., `rest`, `grpc`).          | `rest`  |
+| `internal_path` | API调用的内部路径。                        | ``      |
+| `type`          | API请求的HTTP方法。                       | `GET`   |
+| `add_on`        | 加载项集合的名称属于                        | `debug` |
 
 
+### 服务API (`apis`) ⚙️ {#apis}
 
-#### Block Parsing(`block_parsing`) {#block_parsing}
+| 字段                    | 说明               | 示例                                                                             |
+|-----------------------|------------------|---------------------------------------------------------------------------------|
+| `name`                | API的名称。          | `juno.mint.Query/AnnualProvisions`                                              |
+| `block_parsing`       | 描述如何从API请求解析块高度。 | `{"parser_arg": ["latest"], "parser_func": "DEFAULT"}`                          |
+| `compute_units`       | API所需的计算单元数量。    | `10`                                                                            |
+| `enabled`             | 表明API是否激活。       | `true`                                                                          |
+| `category`            | 指定API的类别。        | `{"deterministic": true, "local": false, "subscription": false, "stateful": 0}` |
+| `extra_compute_units` | 如果需要额外的计算单元。     | `0`                                                                             |
 
-Details on how block heights are derived from API requests.
+
+
+#### 区块解析(`block_parsing`) {#block_parsing}
+
+关于如何从API请求中推导出区块高度的详细信息。
 
 | Field | Description | Example |
 |-------|-------------|---------|

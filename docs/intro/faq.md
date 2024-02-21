@@ -13,7 +13,7 @@ title: ❓ 常见问题
 
 <hr />
 
-## 节点、验证器和提供者 ⏫ {#nodes-validators-providers}
+## 节点、验证器和提供商 ⏫ {#nodes-validators-providers}
 
 ### 🟡 specification是什么？它能让我做什么？ {#specs}
 specification（"spec"）是您可以添加到 Lava 的模块，它扩展了提供商网络可提供的数据服务范围。RPC specs是首批添加到 Lava ，我们将很快提供subgraph specs。
@@ -23,53 +23,53 @@ specification（"spec"）是您可以添加到 Lava 的模块，它扩展了提�
 
 故障排除:
 
-1. `lavad` 未找到命令
+1. 未找`lavad` 到命令
     1. 尝试运行 `source ~/.profile`
 2. 节点卡在“Waiting for node to catch upgit”上。
-    1. This process might take some time based on your internet connection, compute capabilities and the height of the latest block on the network
-    2. Please allow 5-20 minutes for this procedure to catch up with the latest block in the network
-3. curl or unzip commands are not found
+    1. 这一过程可能需要一些时间，具体取决于您的网络连接、计算能力以及网络上最新区块的高度。
+    2. 请在 5-20 分钟内完成此程序，以便赶上网络中的最新区块
+3. 未找到 curl 或 unzip 命令
     1. `sudo apt update && sudo apt install curl unzip -y`
-4. sudo command not found
+4. 未找到 sudo 命令
     1. `apt install sudo -y`
-5. When running `stake_validator` you get the error
+5. 运行 `stake_validator` 时，您会收到错误信息
     ```bash
     account lava@XYZ not found: key not found
     ```
-    1. Make sure your account is funded from Lava side before you try to stake as a validator
+    1. 在您尝试以验证者身份质押之前，请确保您的账户已从 Lava 获得资金
 
-## Providers 🖥️
+## 提供商 🖥️
 
-### 🟡  How can I update/edit my provider information? {#provider-info}
-To update your provider information on chain, send the `provider-stake` transaction with the updated information and an additional stake of minimum 1 ulava.
+### 🟡  如何更新/编辑我的服务提供商信息？{#provider-info}
+要更新链上的提供商信息，请发送包含更新信息和最少 1 ulava 额外质押的`provider-stake`交易。
 
-### 🟡 I get `ERR_stake_provider_endpoints: invalid provider endpoints` error when trying to stake as a provider {#staking-error}
-In your stake-provider transaction you need to specify all required provider endpoints based on the chain you are staking on. For example to provide for cosmos chains you need both tendermint-rpc and rest as follows: `"IP:port,tendermintrpc,1 IP:port,rest,1"`.
+### 🟡 在尝试以提供商身份质押时，我收到了`ERR_stake_provider_endpoints: invalid provider endpoints` （ERR_stake_provider_endpoints：无效提供商端点）错误信息 {#staking-error}
+在您的质押提供商交易中，您需要根据您质押的链指定所有必需的提供者端点。例如，为了支持 Cosmos 链，您需要同时提供 tendermint-rpc 和 rest，格式如下：`"IP:port,tendermintrpc,1 IP:port,rest,1"`。
 
-### 🟡 Is there an unbonding period for providers? {#unbonding-period}
-Yes, it's currently configured to 21 days.
+### 🟡 供应商是否有解绑期？ {#unbonding-period}
+有的，目前配置为 21 天。
 
-### 🟡 How can I see my current provider state (incl. unbonding)? {#provider-state}
-You can use the following query: `lavad q pairing providers <CHAIN_ID>`
+### 🟡 如何查看我当前的提供商状态（包括解除绑定）？ {#provider-state}
+您可以使用以下查询：`lavad q pairing providers <CHAIN_ID>`
 
-### 🟡 When running my provider process `lavad server` I get the following error `provider endpoint mismatch` {#provider-endpoint-mismatch}
-This error means that you have used different geolocations when using  the `provider-stake` transaction and when running `lavad server`, please ensure they match and the problem should be resolved.
+### 🟡 运行我的提供商程序进程`lavad server` 时，出现以下错误`provider endpoint mismatch` {#provider-endpoint-mismatch}
+这个错误意味着在使用`provider-stake`交易和运行`lavad server`时使用了不同的地理位置，请确保它们匹配，问题可以得到解决。
 
-## Developer ⌨️
+## 开发者 ⌨️
 
-### 🟡 Using Lava with Other RPC Clients {#using-lava-with-other-rpcs}
+### 🟡 与其他 RPC 客户端一起使用 Lava {#using-lava-with-other-rpcs}
 
-Lava easily integrates with other RPC clients. 
+Lava 可轻松与其他 RPC 客户端集成。
 
-1. **Gateway** - Simply create an account on the gateway, and replace your client's RPC URL with the appopriate one. Get started [immediately](/gateway-getting-started)!
-2. **SDK** - You can also use the SDK library integrations to integrate with [viem](/viem), [cosmjs](/cosmjs), [web3.js](/web3js), or [ethers.js](/ethersjs5).
+1. **Gateway** - 简单地在网关上创建一个账户，并用相应的客户端 RPC URL 替换掉您的客户端。立即[开始](/gateway-getting-started)！
+2. **SDK** - 您还可以使用 SDK 库来与 [viem](/viem), [cosmjs](/cosmjs), [web3.js](/web3js)，或 [ethers.js](/ethersjs5) 进行集成。
 
-### 🟡 I'm already using another SDK. {#using-lava-with-other-sdks}
-No problem, Lava offers integrations to existing popular libraries [here](/sdk-integrations).
+### 🟡 我已经在使用另一个 SDK。 {#using-lava-with-other-sdks}
+没问题，Lava 提供与现有流行库的集成 [此处](/sdk-integrations)。
 
-### 🟡 How to change the RPC url which Cosmjs uses? {#changing-cosmjs-url}
+### 🟡 如何更改 Cosmjs 使用的 RPC 网址？ {#changing-cosmjs-url}
 
-If you want a native integration to use seamlessly, please check out the new Lava integration for [CosmJS](/cosmjs)!
-Alternatively, please check out the cosmolava-client created by one of our community members: [MELLIFERA-Labs/cosmolava-client](https://github.com/MELLIFERA-Labs/cosmolava-client)
+如果您希望实现无缝使用的原生集成，请查看新的 Lava 集成 [CosmJS](/cosmjs)！
+或者，请查看我们社区成员创建的 cosmolava-client：[MELLIFERA-Labs/cosmolava-client](https://github.com/MELLIFERA-Labs/cosmolava-client)
 
-If you just want to switch the RPC URL you can do so using the HttpEndpoint interface on [stargate](https://cosmos.github.io/cosmjs/latest/stargate/interfaces/HttpEndpoint.html#url) or [cosmwasm-stargate](https://cosmos.github.io/cosmjs/latest/cosmwasm-stargate/interfaces/HttpEndpoint.html#url). Be sure you've grabbed the TendermintRPC endpoint from Lava or you may encounter errors.
+如果您只想切换 RPC URL，您可以使用 [stargate](https://cosmos.github.io/cosmjs/latest/stargate/interfaces/HttpEndpoint.html#url) 或 [cosmwasm-stargate](https://cosmos.github.io/cosmjs/latest/cosmwasm-stargate/interfaces/HttpEndpoint.html#url) 上的 HttpEndpoint 接口。请确保您已从 Lava 获取了 TendermintRPC 端点，否则可能会遇到错误。

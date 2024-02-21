@@ -1,37 +1,37 @@
 ---
 slug: /spec
-title: Specifications
+title: Specifications模块
 ---
 
-# Specifications (Specs)
+# Specifications模块 (Specs)
 
 import RoadmapItem from '@site/src/components/RoadmapItem';
 
 ![Specs Banner](/img/banner/Specifications-8d88fb7fab996d996b8927b5a133c541.jpg)
 
-## 🔍 Overview 
+## 🔍 概览 
 
-Specifications (specs) are the foundational blueprints for Lava's multichain support. Presented in JSON format, they detail the bare minimum requirements for an API to run on Lava. Through these specs, Lava determines which chains and methods are supported and enabled, as well as establishes the costs, requirements, and verifications for them.
+Specifications(specs)是Lava多链支持的基础蓝图。它们以JSON格式呈现，详细说明了在Lava上运行API的最低要求。通过这些规范，Lava确定支持和启用哪些链和方法，并为它们确定成本、需求和验证。
 
-Whenever the ecosystem demands a new API, a new spec is integrated. This dynamic approach incorporates modularity and extensibility directly into the protocol and ensures Lava remains current and adaptable.
+每当生态系统需要新的API时，就会集成新的spec。这种动态方法将模块化和可扩展性直接合并到协议中，并确保Lava保持最新和可适应性。
 
 <br/>
 
-[<RoadmapItem icon="⛓️‍💥" title="Add a Spec" description="Learn how to propose a new chain/API on Lava"/>](/add-spec)
-[<RoadmapItem icon="📐🗜️" title="Deep Dive into Specs" description="See a living reference manual for all the fields in a Spec"/>](/spec-reference)
+[<RoadmapItem icon="⛓️‍💥" title="添加 Spec" description="了解如何在Lava上提议新的链/API"/>](/add-spec)
+[<RoadmapItem icon="📐🗜️" title="深入了解 Specs" description="请参阅 Spec 中所有字段的实时参考手册"/>](/spec-reference)
 
 <br/>
 <hr />
 
 
-## 📖 Key Concepts 
+## 📖 主要概念
 
-### Index 📑 {#index}
-An `index` is the name of the spec. Any time a spec is referenced it will be through its `index`.
+### 索引 📑 {#index}
+`index`是spec的名称。 任何时候引用spec都将通过其`index`。
 
-<details> <summary> Example </summary>
+<details> <summary> 示例 </summary>
 
-You can see the `EVMOS` spec live in production:
+你可以在生产环境中看到`EVMOS`规范:
 
 ```json
 {
@@ -46,12 +46,12 @@ You can see the `EVMOS` spec live in production:
 ```
 </details><br/>
 
-### Imports ⬇️ {#imports}
-`imports` are references to borrowed functions from other sources. APIs/Chains of the same or similar architecture can import methods from an existing spec using its `index` and implementing any new logic. `imports` improve efficiency by eliminating the need to repeatedly integrate identical APIs.
+### 导入 ⬇️ {#imports}
+`imports`是对从其他源借用的函数的引用。相同或类似架构的api /chain 可以使用其`index`从现有规范中导入方法并实现任何新逻辑。`imports`通过消除重复集成相同api的需要来提高效率。
 
-<details> <summary> Example </summary>
+<details> <summary> 示例 </summary>
 
-The following spec implements both Cosmos and Ethereum methods:
+下面的spec同时实现了Cosmos和Ethereum的方法:
 
 ```json
 "imports": [
@@ -61,10 +61,10 @@ The following spec implements both Cosmos and Ethereum methods:
 ```
 </details><br/>
 
-### API Collection 🛠️ {#api_collections}
-A specification always contains an `api_collection`. The `api_collection` contains the list of available methods or APIs that are activated and their respective `api_interfaces` (e.g. `"rest"`,`"grpc"`,`"jsonrpc"`,`"tendermintrpc"`, etc.). In other words, it outlines all the APIs or methods that must be active and operational to support a specific chain/API. Each method listed here must be served by providers and answerable to consumers.
+### API集合 🛠️ {#api_collections}
+specification总是包含一个`api_collection`。`api_collection`包含可用的激活方法或api的列表以及它们各自的`api_interface `(例如:“`"rest"`,`"grpc"`,`"jsonrpc"`,`"tendermintrpc"`”,等等)。换句话说，它概述了所有必须是活动的和可操作的API或方法，以支持特定的chain/API。这里列出的每个方法都必须由提供者提供服务，并对使用者负责。
 
-<details> <summary> Example </summary>
+<details> <summary> 示例 </summary>
 
 ```json
   "api_collections": [
@@ -83,10 +83,10 @@ A specification always contains an `api_collection`. The `api_collection` contai
 ```
 </details><br/>
 
-### Compute Units (CU) 🔢 {#cu}
-Every API call has a computational overhead. To quantify this, Lava employs `"compute_units"` or CUs. They act as a metric, assigning a nominal "cost" to each API call. This ensures transparent resource allocation and utilization, allowing consumers to gauge the intensity of their calls, and providers, in turn, to be rewarded based upon the intensity of compute.
+### 计算单元(CU) 🔢 {#cu}
+每个API调用都有计算开销。为了量化这一点，Lava使用了`"compute_units"`或CUs。它们相当于一个指标，为每个API调用分配名义上的“成本”。这确保了透明的资源分配和利用，让消费者可以衡量他们的调用强度，而提供商则可以根据计算强度获得奖励。
 
-<details> <summary> Example </summary>
+<details> <summary> 示例 </summary>
 
 ```json
  "apis": [
@@ -112,13 +112,13 @@ Every API call has a computational overhead. To quantify this, Lava employs `"co
 
 </details><br/>
 
-### Add-Ons ➕ {#addons}
+### 附加组件 ➕ {#addons}
 
-Add-Ons (`"add-on"`) introduce optional new methods and APIs which are beyond the basic requirements for a chain/API. They are akin to plugins or modules that specific consumers may time-to-time request and providers may choose to serve for additional rewards. This allows for supplementary functionalities to be outlined inside a spec, giving both providers and consumers flexibility in customizing their experiences.
+附加组件 (`"add-on"`)引入了可选的新方法和API，这些超出了chain/API的基本要求。它们类似于插件或模块，特定的使用者可以不时地请求，提供商可以选择提供服务以获得额外的奖励。这允许在spec中概述补充功能，使提供商和使用者都可以灵活地定制他们的体验。
 
-<details> <summary> Example </summary>
+<details> <summary> 示例 </summary>
 
-The following is a snippet of the `debug` add-on for our `ETH1` spec:
+下面是我们的`ETH1`spec的`debug`插件的代码片段:
 
 ```json
 
@@ -142,13 +142,13 @@ The following is a snippet of the `debug` add-on for our `ETH1` spec:
 
 </details><br/>
 
-### Extensions 〰️ {#extensions}
-`"extensions"` allow for the adjustment or enhancement of existing methods and APIs within a spec for special use cases. They provide the means to tweak, optimize, or expand current functions based on the needs of a subset of consumers who require more functionality from specified method calls. This allows for alternative functionalities to be outlined inside a spec, giving both providers and consumers flexibility to serve / request special functions.
+### 扩展 〰️ {#extensions}
+`"extensions"`允许针对特殊用例调整或增强规范中的现有方法和api。它们提供了根据用户子集的需求调整、优化或扩展当前函数的方法，这些用户子集需要通过指定的方法调用实现更多的功能。这允许在spec中概述替代功能，为提供商和使用者提供服务/请求特殊功能的灵活性。
 
 
-<details><summary> Example </summary>
+<details><summary> 示例 </summary>
 
-The following is a snippet of the `"archive"` extension from our `ETH1` spec:
+以下是我们的`ETH1`spec中的`"archive"`扩展片段:
 
 
 ```json
@@ -164,22 +164,22 @@ The following is a snippet of the `"archive"` extension from our `ETH1` spec:
 
 ```
 
-This example specifies archive nodes who receive a "`cu_multiplier`" (hence more rewards) for returning earlier blocks.
+这个例子指定了存档节点，当它们返回较早的块时，会收到一个“`cu_multiplier`”(因此会得到更多奖励)。
 
 </details><br/>
 
 <hr />
 
-## 💡 Examples 
+## 💡 示例 
 
-### Blockchains ⛓️
+### 区块链 ⛓️
 
 - [Lava](https://github.com/lavanet/lava/blob/main/cookbook/specs/spec_add_lava.json)
 - [Ethereum](https://github.com/lavanet/lava/blob/main/cookbook/specs/spec_add_ethereum.json)
 - [Axelar](https://github.com/lavanet/lava/blob/main/cookbook/specs/spec_add_axelar.json)
 - [Evmos](https://github.com/lavanet/lava/blob/main/cookbook/specs/spec_add_evmos.json)
 
-### Rich APIs 🌟
+### 丰富的 APIs 🌟
 
 - [IBC](https://github.com/lavanet/lava/blob/main/cookbook/specs/spec_add_ibc.json)
 - [CosmWasm](https://github.com/lavanet/lava/blob/main/cookbook/specs/spec_add_cosmoswasm.json)
