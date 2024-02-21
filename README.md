@@ -1,44 +1,44 @@
 ![Banner](static/img/banner/Chains.jpg)
 
-# Lava Documentation 📕
+# Documentazione su lava 📕
 
-[![Website](https://img.shields.io/badge/WEBSITE-https%3A%2F%2Fdocs.lavanet.xyz-green?style=for-the-badge)](https://docs.lavanet.xyz) &emsp;  [![Discord](https://img.shields.io/discord/963778337904427018?color=green&logo=discord&logoColor=white&style=for-the-badge)](https://discord.gg/EKzbc6bx)
-
-
-## Overview 🔎
-
-This repository (**@lavanet/docs**) contains technical documentation for the Lava ecosystem. The most recent version of this repository is deployed to the Lava docs [website](https://docs.lavanet.xyz/) and is viewable there. If you're averse to rich formatting, Lava Documentation can also be browsed as plain source in the markdown files available in the [docs folder](/docs/) of this repository. The Lava docs website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator, and deployed using the [Netlify Web Platform](https://www.netlify.com/).
-
-Contents include:
-
-- Information on Lava's supported chains
-- Installation & Setup Guides for Validators, Providers, and Developers
-- Network & Protocol Details on Lava's Unique Features
-- Links to in-demand RPC & Web3 APIs
-
-## Contribution 👥
-
-Contributing to the documentation of Lava is a rewarding way to give back to the ecosystem. We always welcome contributors with love & kindness. After reviewing this README, please read the [contribution](CONTRIBUTING.md) guide to help you get started.
+[![Sito web](https://img.shields.io/badge/WEBSITE-https%3A%2F%2Fdocs.lavanet.xyz-green?style=for-the-badge)](https://docs.lavanet.xyz) &emsp; [![Discordia](https://img.shields.io/discord/963778337904427018?color=green&logo=discord&logoColor=white&style=for-the-badge)](https://discord.gg/EKzbc6bx)
 
 
-## Deployment 🚀
+## Panoramica 🔎
 
-### Status
+Questo repository (**@lavanet/docs**) contiene la documentazione tecnica per l'ecosistema Lava. La versione più recente di questo repository è distribuita sul sito Lava docs [website](https://docs.lavanet.xyz/) ed è visualizzabile lì. Se siete contrari alla formattazione, la documentazione di Lava può essere consultata anche come sorgente semplice nei file markdown disponibili nella cartella [docs](/docs/) di questo repository. Il sito web della documentazione di Lava è stato costruito utilizzando [Docusaurus 2](https://docusaurus.io/), un moderno generatore di siti web statici, e distribuito utilizzando la [Netlify Web Platform](https://www.netlify.com/).
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/58c0a448-7af0-48d3-8e29-86fc4a6f4868/deploy-status)](https://app.netlify.com/sites/sage-swan-13ac7b/deploys)
+I contenuti includono:
 
-### Process
-The `main` branch of this repository is automatically deployed to our docs site, and other branches and pull requests leverage Netlify deploy. Please note that unless you are a recognized contributor of this repository, each attempted PR generates a Netlify approval that will prevent your pull request from being merged. Once the request is approved and a Netlify deploy preview is generated, a Netlify deploy preview will appear in the body of your PR as `😎 Deploy Preview`. This deploy preview will be audited by a docs maintainer before merging your pull request.
+- Informazioni sulle catene supportate da Lava
+- Guide all'installazione e alla configurazione per validatori, fornitori e sviluppatori
+- Dettagli su reti e protocolli sulle caratteristiche uniche di Lava
+- Collegamenti alle API RPC e Web3 più richieste
 
-## Local Development 🔧
+## Contributo 👥
 
-### 1. Fork this repository!
+Contribuire alla documentazione di Lava è un modo gratificante per contribuire all'ecosistema. Accogliamo sempre i collaboratori con amore e gentilezza. Dopo aver letto questo README, leggere la guida [contribution](CONTRIBUTING.md) per iniziare.
 
-We recommend naming your fork `lava-docs` to distinguish from other projects which might have similar naming conventions.
 
-### 2. Clone your fork
+## Distribuzione 🚀
 
-SSH **(recommended)**
+### Stato
+
+[![Stato Netlify](https://api.netlify.com/api/v1/badges/58c0a448-7af0-48d3-8e29-86fc4a6f4868/deploy-status)](https://app.netlify.com/sites/sage-swan-13ac7b/deploys)
+
+### Processo
+Il ramo `main` di questo repository viene automaticamente distribuito al nostro sito di documentazione, mentre gli altri rami e le richieste di pull sfruttano Netlify deploy. Si noti che, a meno che non si sia un collaboratore riconosciuto di questo repository, ogni tentativo di PR genera un'approvazione Netlify che impedirà alla richiesta di pull di essere unita. Una volta che la richiesta è stata approvata e che è stata generata un'anteprima di deploy Netlify, un'anteprima di deploy Netlify apparirà nel corpo della PR come `😎 Deploy Preview`. Questa anteprima di distribuzione sarà verificata da un manutentore dei documenti prima di unire la richiesta di pull.
+
+## Sviluppo locale 🔧
+
+### 1. Sostituire questo repository!
+
+Si consiglia di nominare il proprio fork `lava-docs` per distinguerlo da altri progetti che potrebbero avere convenzioni di denominazione simili.
+
+### 2. Clonate il vostro fork
+
+SSH **(consigliato)**
 
 ```bash
 git clone git@github.com:Your-User-Name-Here/lava-docs.git
@@ -46,18 +46,18 @@ git clone git@github.com:Your-User-Name-Here/lava-docs.git
 
 HTTPS
 
-```bash
+``bash
 git clone https://github.com/Your-User-Name-Here/lava-docs.git
 ```
 
-### 3. Set up environmental variables
+### 3. Impostare le variabili ambientali
 
 ```bash
 cd lava-docs/
 cp .env.example .env
 ```
 
-Change the contents of your environmental variables(`.env`) file to the following:
+Modificare il contenuto del file delle variabili ambientali (`.env`) come segue:
 
 ```
 ALGOLIA_APP_ID=demo
@@ -65,34 +65,34 @@ ALGOLIA_API_KEY=demo
 ALGOLIA_INDEX_NAME=demo
 ```
 
-Algolia search needs values assigned to these in order to start. For local docs instances (w/ non-functional search), any dummy values will work.
+La ricerca di Algolia ha bisogno di valori assegnati a questi per avviarsi. Per le istanze di documenti locali (con ricerca non funzionale), qualsiasi valore fittizio funzionerà.
 
-### 4. Install all packages
+### 4. Installare tutti i pacchetti
 
 ```
 yarn install
 ```
 
-### 5. Host a local preview of the docs (*Optional*)
+### 5. Ospitare un'anteprima locale dei documenti (*opzionale*)
 
 ```
 yarn start
 ```
 
-Your preview will dynamically change/hotload as you make changes to files.
+L'anteprima cambierà/caricherà dinamicamente man mano che si apportano modifiche ai file.
 
-### 6. Build a local deployment of the docs (*Optional*)
+### 6. Creare una distribuzione locale dei documenti (*opzionale*)
 
 ```
 yarn build
 ```
 
-Your build will appear in the `./build/` folder of your docs directory.
+La compilazione apparirà nella cartella `./build/` della cartella docs.
 
-### 7. Deploy to Github (*Optional*)
+### 7. Distribuzione su Github (*Opzionale*)
 
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+Se si usa GitHub pages per l'hosting, questo comando è un modo comodo per costruire il sito web e fare il push al ramo `gh-pages`.
 
 ```
-$ GIT_USER=<Your GitHub username> yarn deploy
+$ GIT_USER=<il vostro nome utente GitHub> yarn deploy
 ```
