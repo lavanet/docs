@@ -1,14 +1,14 @@
 ---
 slug: /cosmoshub-node
-title: Running a Cosmoshub RPC Node
+title: 运行 Cosmoshub RPC 节点
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Running a CosmosHub RPC Node
+# 运行 Cosmoshub RPC 节点
 
-## Requirements 📄 
+## 配置要求 📄 
 
 <Tabs>
 <TabItem value="def_req" label="Default">
@@ -35,21 +35,21 @@ import TabItem from '@theme/TabItem';
 </TabItem>
 </Tabs>
 
-## Install `gaiad` 
+## 安装 `gaiad` 
 
-One of the prerequisites to running a node on CosmosHub is the use of `gaiad`. To get started ensure that you [install `gaiad`](https://hub.cosmos.network/main/getting-started/installation.html).
+在 CosmosHub 上运行节点的前置条件之一是使用 `gaiad`。要开始使用，请确保您 [install 安装 `gaiad`](https://hub.cosmos.network/main/getting-started/installation.html)。
 
-## Configure and Start your Node! 🚀
+## 配置和启动节点 🚀
 
-Follow along with the official Cosmos guide on how to get your node started:
+请跟随 Cosmos 官方指南了解如何启动您的节点：
 https://hub.cosmos.network/main/hub-tutorials/join-mainnet.html#general-configuration
 
-You will make changes to both `~/.gaia/config/config.toml` and `~/.gaia/config/app.toml` before running `gaiad start` !
+在运行 `gaiad start` 之前，您需要修改 `~/.gaia/config/config.toml` 和 `~/.gaia/config/app.toml` ！
 
-## Apply to our Provider Incubation Program 📋
+## 申请我们的提供商孵化计划 📋
 
-In our current state of Testnet, there is an additional stage to pass through before you can become a provider on the Lava Network. Please fill out the [application form](https://lavanet.typeform.com/to/ORi3A13v?utm_source=becoming-a-lava-provider-for-cosmoshub&utm_medium=docs&utm_campaign=cosmoshub-pre-grant) for our Provider Incubation Program. Feel free to drop a line in our [Discord](https://discord.gg/UxujNZbW) once you’ve completed this step!
+在目前的 Testnet 状态下，您还需要通过一个额外的阶段，才能成为 Lava 网络的供应商。请填写[申请表](https://lavanet.typeform.com/to/ORi3A13v?utm_source=becoming-a-lava-provider-for-cosmoshub&utm_medium=docs&utm_campaign=cosmoshub-pre-grant)，参加我们的供应商孵化计划。完成此步骤后，请随时在我们的[Discord](https://discord.gg/UxujNZbW) 留言！
 
-## Setup your Provider on Lava Network 🌋
+## 在Lava网络上设置你的提供商 🌋
 
-Once you’ve been accepted - to set up your provider on the Lava Network, you can refer to the [provider setup documentation](https://docs.lavanet.xyz/provider-setup?utm_source=running-a-cosmoshub-rpc-node&utm_medium=docs&utm_campaign=cosmoshub-pre-grant) available elsewhere in our docs. This should provide you with the necessary information to configure and operate your provider node.
+一旦您被接受--要在 Lava 网络上设置您的提供商，您可以参考我们文档中其他地方的[提供商设置文档](https://docs.lavanet.xyz/provider-setup?utm_source=running-a-cosmoshub-rpc-node&utm_medium=docs&utm_campaign=cosmoshub-pre-grant)。这将为您提供配置和操作提供商节点的必要信息。

@@ -1,14 +1,14 @@
 ---
 slug: /starknet-dev
-title: Getting Starknet RPC
+title: 获取 Starknet RPC
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Getting Starknet RPC
+# 获取 Starknet RPC
 
-## Starknet Public RPC
+## Starknet 公共 RPC
 
 ### Mainnet 🌐
 
@@ -24,31 +24,31 @@ import TabItem from '@theme/TabItem';
 
 ## [Gateway](https://gateway.lavanet.xyz/?utm_source=starknet-dev&utm_medium=docs&utm_campaign=docs-to-gateway)
 
-To learn more about using the Lava Gateway visit the [Getting Started guide](https://docs.lavanet.xyz/gateway-getting-started?utm_source=starknet-dev&utm_medium=docs&utm_campaign=docs-to-docs)
+要了解有关使用Lava网关的更多信息，请访问[入门指南](https://docs.lavanet.xyz/gateway-getting-started?utm_source=starknet-dev&utm_medium=docs&utm_campaign=docs-to-docs)
 
 ## [SDK](https://github.com/lavanet/lava-sdk)
 
 :::caution
 
-Lava SDK is currently in Alpha. Please observe the documentation on both [frontend](https://docs.lavanet.xyz/sdk-frontend?utm_source=getting-starknet-rpc&utm_medium=docs&utm_campaign=docs-to-docs) and [backend](https://docs.lavanet.xyz/sdk-backend?utm_source=getting-starknet-rpc&utm_medium=docs&utm_campaign=docs-to-docs) use before getting started.
+Lava SDK目前处于Alpha阶段。在开始之前，请观察[前端](https://docs.lavanet.xyz/sdk-frontend?utm_source=getting-starknet-rpc&utm_medium=docs&utm_campaign=docs-to-docs)和[后端](https://docs.lavanet.xyz/sdk-backend?utm_source=getting-starknet-rpc&utm_medium=docs&utm_campaign=docs-to-docs)的文档。
 
 :::
 
-### Input 📥
+### 输入 📥
 
 <Tabs>
 
 <TabItem value="backend" label="BackEnd">
 
 ```jsx
-// Install lavaSDK with the following command:
+// 使用以下命令安装lavaSDK:
 // npm i @lavanet/lava-sdk
 const { LavaSDK } = require("@lavanet/lava-sdk")
 
 async function useStarknet() {
 
   const starknet = await LavaSDK.create({
-    privateKey: process.env.PRIVATE_KEY,  //hide your private key in an environmental variable
+    privateKey: process.env.PRIVATE_KEY,  //将私钥隐藏在环境变量中
     chainIds: 'STRK',
   });
 
@@ -70,7 +70,7 @@ async function useStarknet() {
 <TabItem value="frontend" label="FrontEnd">
 
 ```jsx
-// Install lavaSDK with the following command:
+// 使用以下命令安装lavaSDK:
 // npm i @lavanet/lava-sdk
 const { LavaSDK } = require("@lavanet/lava-sdk")
 
@@ -78,7 +78,7 @@ async function useStarknet() {
 
   const starknet = await LavaSDK.create({
     badge: {
-      badgeServerAddress: "https://badges.lavanet.xyz", // Or your own Badge-Server URL 
+      badgeServerAddress: "https://badges.lavanet.xyz", // 或者您自己的徽章服务器URL 
       projectId: "enter_your_project_id_here" 
     },
     chainIds: 'STRK',
@@ -103,10 +103,10 @@ async function useStarknet() {
 
 </Tabs>
 
-### Output 📤
+### 输出 📤
 
 <iframe width="100%" src="/img/chains/starknet_call.webm" frameborder="0" allow="autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-To learn more about our SDK visit the [Getting Started guide](https://docs.lavanet.xyz/sdk-getting-started?utm_source=getting-starknet-rpc&utm_medium=docs&utm_campaign=docs-to-docs)
+要了解有关我们的SDK的更多信息，请访问[入门指南](https://docs.lavanet.xyz/sdk-getting-started?utm_source=getting-starknet-rpc&utm_medium=docs&utm_campaign=docs-to-docs)
 
 <hr />
