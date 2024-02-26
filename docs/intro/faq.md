@@ -16,7 +16,7 @@ title: ❓ 常见问题
 ## 节点、验证器和提供商 ⏫ {#nodes-validators-providers}
 
 ### 🟡 specification是什么？它能让我做什么？ {#specs}
-specification（"spec"）是您可以添加到 Lava 的模块，它扩展了提供商网络可提供的数据服务范围。RPC specs是首批添加到 Lava ，我们将很快提供subgraph specs。
+specification（"spec"）是您可以添加到 Lava 的参数模块，它扩展了提供商网络可提供的数据服务范围。RPC specs是首批添加到 Lava ，我们将很快提供subgraph 参数。
 
 
 ### 🟡 我在运行安装脚本时有问题。 {#install-troubleshooting}

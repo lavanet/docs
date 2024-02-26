@@ -7,35 +7,35 @@ title: Service Manager
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# **LavaVisor Service Manager**
+# **LavaVisor 服务管理器**
 
-## 📄 Overview 
-Lavavisor Service Manager is a feature to enable the users to run one lavavisor service to manage multiple `lavap` services. 
-The benefit of using this approach is that running only one lavavisor instance can save on some rpc calls as opposed to the lavavisor wrap command
-that each lavavisor instance would query once every 30 seconds. 
+## 📄 概览
+Lavavisor服务管理器是一个功能，使用户可以运行一个Lavavisor服务来管理多个lavap服务。
+使用这种方法的好处是，与lavavisor wrap命令相比，只运行一个lavavisor实例可以节省一些rpc调用。
+每个lavavisor实例每30秒查询一次。
 
-:::info 
-We improved the rpc calls intervals in recent patches so we recommend using the [`lavavisor wrap` or `pod` commands](/lavavisor-wrap#services) instead of the service manager command. This is still applicable even for multiple services.
+:::info
+我们在最近的补丁中改进了rpc调用间隔，所以我们建议使用[`lavavisor wrap` or `pod` commands](/lavavisor-wrap#services)代替service manager命令。这仍然适用于多个服务。
 
 :::
 
 <br />
 <hr />
 
-## ♨️ Commands
+## ♨️ 命令
 
 ### > `lavavisor init`
-LavaVisor `init` command initializes the environment for LavaVisor. It is generally the first command run when using LavaVisor.
+LavaVisor `init`命令用来初始化LavaVisor的环境。它通常是使用LavaVisor时运行的第一个命令。
 
-**Optional Flags:**
+**可选标识:**
     
-`--directory` -  specifies the protocol flags directory (default "~/")
+`--directory` -  指定协议目录 (default "~/")
     
-`--auto-download` - automatically downloads missing binaries
+`--auto-download` - 自动下载缺少的二进制文件
     
-`--auto-start` - automatically issues `start` after the the `init` command completes
+`--auto-start` - 在`init`命令完成后自动发出`start` 命令
 
-**Example usage:**
+**用法示例：**
 
 ```bash
 lavavisor init --auto-download --chain-id lava-testnet-2
@@ -45,11 +45,11 @@ lavavisor init --auto-download --chain-id lava-testnet-2
 <br />
 
 ### > `lavavisor create-service` 
-LavaVisor uses service files for each provider/consumer at play. LavaVisor `create-service` command creates these  files according to the supplied consumer / provider config file and flags.
+LavaVisor 为每个正在运行的提供程序/消费者使用服务文件。LavaVisor `create-service`命令根据提供的消费者/提供者配置文件和标志创建这些文件。
 
-You must specify whether you are creating a `provider` or `consumer` and the location of the config file.
+您必须指定创建的是`provider`还是`consumer` 以及配置文件的位置。
 
-**Example usage:**
+**用法示例：**
 
 ```bash
 # Provider Example
@@ -63,20 +63,20 @@ lavavisor create-service consumer ./config --geolocation 1 --from user2 --log_le
 <br />
 
 ### > `lavavisor start` 
-LavaVisor starts the specified services using the linked binary. It also starts the LavaVisor version monitor. The simplest way to activate this is by running the command `lavavisor init --auto-download --auto-start`. Secondarily, you can use the `start` command on your own, to further configure your provider/consumer or create services.
+LavaVisor 使用链接的二进制文件启动指定的服务。它还会启动 LavaVisor 版本监视器。最简单的激活方法是运行 `lavavisor init --auto-download --auto-start` 命令。其次，您可以自行使用 `start` 命令进一步配置提供程序/用户或创建服务。
 
 <br />
 <hr />
 
-## 🗜️ Test
+## 🗜️ 测试
 
-1. First of all, LavaVisor should run in a node which is connected to a running Lava Network (local or public).
+1. 首先，LavaVisor 应在连接到运行中的 Lava 网络（本地或公共网络）的节点上运行。
 
-2. Run `lavavisor init --auto-download`  → This will setup LavaVisor directory and link the protocol binary
+2. 运行 `lavavisor init --auto-download` → 这将设置 LavaVisor 目录并链接协议二进制文件
     
     ![lavavisor init](/img/tutorial/lavavisor/lavavisor1.png)
 
-3. Instead of creating service files manually, execute `lavavisor create-service` command to generate the service files. Let’s say we want to start one consumer and two provider processes, then we need to execute total of three commands like this:
+3. 与其手动创建服务文件，不如执行 `lavavisor create-service` 命令来生成服务文件。假设我们要启动一个消费者进程和两个提供者进程，那么我们总共需要执行以下三条命令：
 
     - `lavavisor create-service consumer /home/ubuntu/config/consumer-ETH1.yml --geolocation 1 --from user1 --log_level info --keyring-backend test --chain-id lava-testnet-2 --node https://public-rpc-testnet2.lavanet.xyz:443/rpc/`
 
@@ -84,7 +84,7 @@ LavaVisor starts the specified services using the linked binary. It also starts 
     
     - `lavavisor create-service provider /home/ubuntu/config/provider1-LAV1.yml --geolocation 1 --from servicer2 --log_level info --keyring-backend test --chain-id lava-testnet-2 --node https://public-rpc-testnet2.lavanet.xyz:443/rpc/`
 
-4. Check the `~/.lavavisor/` dir and validate `config.yml` . It should look like this (adjust the service names according to your process):
+4. 检查 `~/.lavavisor/` 目录并验证 `config.yml` 。它应该是这样的（根据进程调整服务名称）：
 
 
 ```yaml
@@ -94,10 +94,10 @@ services:
   - provider1-LAV1
 ```
 
-5. The `create-service` command should also create a `service_configs` folder within the `.lavavisor/services` directory and copy the configuration files provided as command arguments (e.g., provider1-ETH1.yml). Ensure the directory and configuration files exist.
+5. `create-service`命令还应该在目录下创建一个 `service_configs`文件夹。并复制作为命令参数提供的配置文件(例如，provider1-ETH1.yml)。确保目录和配置文件存在。
 
 <Tabs>
-<TabItem value="provider_conf" label="✅ Example provider config file:">
+<TabItem value="provider_conf" label="✅ 提供者配置文件示例:">
 
 
 ```yaml
@@ -112,7 +112,7 @@ endpoints:
 
 </TabItem>
 
-<TabItem value="consumer_conf" label="✅ Example consumer config file:">
+<TabItem value="consumer_conf" label="✅ 消费者配置文件示例:">
 
     
 ```yaml
@@ -125,13 +125,13 @@ metrics-listen-address: ":7779"
 </TabItem>
 </Tabs>
 
-6. Execute `lavavisor start`, and you should observe all services running. Additionally, the version monitor will begin validating versions.
+6. 执行`lavavisor start`，你应该可以看到所有服务都在运行。此外，版本监控器将开始验证版本。
     
     ![lavavisor start](/img/tutorial/lavavisor/lavavisor2.png)
 
-7. Now we need to make an upgrade proposal by using `/gov` module, so that protocol version will change in the consensus and LavaVisor will detect & initiate auto-upgrade.
+7. 现在我们需要使用`/gov`模块来做一个升级建议，这样协议版本将在共识中发生变化，LavaVisor将检测并启动自动升级。
     
-    🔽 Here is an example `proposal.json` file:
+    🔽 下面是一个示例`proposal. json` 文件:
     
     <details>
     <summary> 📄 proposal.json </summary>
@@ -158,16 +158,16 @@ metrics-listen-address: ":7779"
 
     </details>
     
-    🔽 Here is the script for sending version update proposal transaction (for Cosmos SDK v0.47.0):
+    🔽 以下是发送版本更新建议事务的脚本(适用于Cosmos SDK v0.47.0):
     
     <details>
     <summary> 📄 upgrade_chain.sh </summary>
 
     ```bash
     #!/bin/bash
-    # upgrade script (upgrade_chain.sh)
+    # 升级脚本 (upgrade_chain.sh)
     
-    # function to wait for next block (should be used when proposing on chains with Cosmos SDK 0.47 or higher)
+    # 等待下一个区块的功能(建议使用Cosmos SDK 0.47或更高版本的链时应该使用)
     function wait_next_block {
       current=$( lavad q block | jq .block.header.height)
       echo "Waiting for next block $current"
@@ -182,7 +182,7 @@ metrics-listen-address: ":7779"
       done
     }
     
-    # The software upgrade proposal command. This only proposes a software upgrade. To apply the upgrade, you need to vote "yes" (like below).
+    # 软件升级建议命令。这只建议软件升级。要应用升级，您需要投票"yes"(如下所示)。
     lavad tx gov submit-legacy-proposal param-change proposal.json \
     --gas "auto" \
     --from alice \
@@ -193,21 +193,21 @@ metrics-listen-address: ":7779"
     
     wait_next_block
     
-    # The vote command. Use vote ID 4 (like here) if you used the init_chain_commands.sh script. If the vote doesn't work because of a bad
-    # vote ID, use the 'lavad q gov proposals' query to check the latest proposal ID, and put here the latest ID + 1.
+    # 投票命令。如果使用init_chain_commands.sh脚本，则使用投票ID 4(如这里所示)。如果投票失败是因为一个坏的
+    # 投票 ID，使用 "lavad q gov proposals "查询查看最新提案 ID，并将最新 ID + 1 放在此处。
     lavad tx gov vote 4 yes -y --from alice --gas-adjustment "1.5" --gas "auto" --gas-prices "0.000000001ulava"
     ```
     
     </details>
 
-    (Fix proposal ID 4 according to your state - if you didn’t run ‘init_chain_commands’ you should put 1 there)
+    (根据您的状态修正建议 ID 4 - 如果您没有运行 "init_chain_commands"，则应在此处置 1)
     
-8. After the proposal passed, LavaVisor will detect the event and update the binaries. Then, it will reboot the processes with the new established symbolic link:
+8. 提议通过后，LavaVisor 将检测事件并更新二进制文件。然后，它会使用新建立的符号链接重新启动进程：
     
     ![Update detected](/img/tutorial/lavavisor/lavavisor3.png)
     
-    ❗ Update detected
+    ❗ 已检测到更新
     
     ![Upgrade successful](/img/tutorial/lavavisor/lavavisor4.png)
     
-    ✔️ Upgrade successful
+    ✔️ 升级成功

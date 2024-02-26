@@ -1,14 +1,14 @@
 ---
 slug: /sdk-getting-started
-title: Getting Started ⚡
+title: 开始 ⚡
 ---
 
-# 🔥 Getting Started with Lava SDK
+# 🔥 Lava SDK 入门
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-## 🎥 Video Demonstration (~11m)
+## 🎥 视频演示 (~11m)
 
 <video width="90%" height="90%" controls><source src="/img/tutorial/sdk/sdk-getting-started-v3.mp4" type="video/mp4"></source></video>
 
@@ -16,14 +16,14 @@ import TabItem from '@theme/TabItem';
 <hr />
 <br />
 
-## 📝 Written Guide (~5m)
+## 📝 书面指南 (~5m)
 
-### 0. Sign up for an Account on the Gateway!
+### 0. 在网关上注册账户！
 
-While not a strict prerequisite for using the SDK - using the [Lava Gateway](https://gateway.lavanet.xyz/?utm_source=sdk-frontend-page&utm_medium=docs&utm_campaign=docs-to-gateway) gives an easy and free way to get a `privateKey` and/or `badge`, which LavaSDK requires to initialize. We recommend deciding whether you're going to use Lava on the [backend](/sdk-backend) or [frontend](/sdk-frontend) and starting there. LavaSDK is peer-to-peer (p2p) and executes relays in a  decentralized manner. 
+使用 [Lava Gateway](https://gateway.lavanet.xyz/?utm_source=sdk-frontend-page&utm_medium=docs&utm_campaign=docs-to-gateway)不是使用 SDK 的严格先决条件，但它提供了一种简单、免费的方法来获取 LavaSDK 初始化所需的`privateKey`或  `badge`。我们建议您决定是在 [backend](/sdk-backend) 还是 [frontend](/sdk-frontend) 上使用 Lava，然后从那里开始。LavaSDK 是点对点（p2p）的，以分散的方式执行中继。
 
-### 1. Set up a new Node.JS project using Node Package Manager 
-To get started, we'll opt for a simple node application.
+### 1. 使用 Node 包管理器创建新的 Node.JS 项目
+首先，我们将选择一个简单的node应用。
 
 ```bash
 mkdir sdk-project/
@@ -31,7 +31,7 @@ cd sdk-project
 npm init -y
 ```
 
-### 2. Install the SDK using yarn or NPM
+### 2. 使用 yarn 或 NPM 安装 SDK
 
 ```bash
 npm i @lavanet/lava-sdk
@@ -43,7 +43,7 @@ or
 yarn add @lavanet/lava-sdk
 ```
 
-### 3. Create a new `index.js` file and import the Lava SDK
+### 3. 创建新的 `index.js` 文件并导入 Lava SDK
 
 ```jsx
 import { LavaSDK } from "@lavanet/lava-sdk";
@@ -55,13 +55,13 @@ OR
 const { LavaSDK } = require("@lavanet/lava-sdk")
 ```
 
-### 4. Initialize an instance of the SDK! 
+### 4. 初始化 SDK 实例！
 
 :::info
 
-When developing on the [backend](/sdk-backend), it is currently best practice to hide the privatekey in an environmental variable instead of putting it in plain text in your code. For now, we’ll use `privKey` as a stand-in!
+在 [backend](/sdk-backend)上开发时，目前的最佳做法是将私钥隐藏在环境变量中，而不是以纯文本形式写入代码。现在，我们将使用 `privKey` 作为代替！
 
-When developing on the [frontend](/sdk-frontend), you don't need to use privatekeys at all. Simply input a badge!
+在 [frontend](/sdk-frontend) 上开发时，根本不需要使用私钥。只需输入一个badge即可！
 
 :::
 
@@ -100,26 +100,26 @@ async function useSDK() {
 </Tabs>
 
 
-There is no limit to the amount of chains you can handle simultaneously! In addition to those shown in the example above, there are a number of [optional parameters](/sdk-integrations#-all-options) that you can view.
+同时处理的链数量没有限制！除了上述示例中显示的参数外，您还可以查看许多 [可选参数](/sdk-integrations#-all-options)。
 
-A full list of supported chains, their respective IDs, and supported interfaces can be found using `lavad`
+使用 `lavad` 可以查看支持的链的完整列表、各自的 ID 和支持的接口。
 
 ```bash
 lavad q spec show-all-chains
 ```
 
-For a short list of just chainIDs run it as follows:
+如需查看链 ID 的简短列表，请按以下步骤运行：
 
 ```bash
 lavad q spec show-all-chains | grep chainID
 ```
 
-### 5. Make your queries or requests
-We'll do so by sending relays within our `useSDK()` function!
+### 5. 制作您的查询或请求
+我们将通过在`useSDK()`函数中发送中继来实现!
 
 
 ```jsx
-//Example Juno Query - Grab an arbitrary block from Juno!
+//示例Juno查询——从Juno获取任意块!
 const junoBlockResponse =  await lavaNetwork.sendRelay({
     method: "block",
     params: ["82500"],
@@ -129,7 +129,7 @@ const junoBlockResponse =  await lavaNetwork.sendRelay({
 
 console.log("Juno Block: ", junoBlockResponse);
 
-//Example Cosmos Query - Get the latest block from CosmosHub!
+//示例Cosmos查询-从CosmosHub获取最新的块!
 const cosmosBlockResponse = await lavaNetwork.sendRelay({
     method: "GET",
     url: "/cosmos/base/tendermint/v1beta1/blocks/latest",
@@ -139,7 +139,7 @@ const cosmosBlockResponse = await lavaNetwork.sendRelay({
 
 console.log("Cosmos Block: ",cosmosBlockResponse)
 
-//Example Polygon Query - Get the most recent block from Polygon!
+//示例多边形查询-从Polygon获取最近的块!
 const polygonBlockResponse = await lavaNetwork.sendRelay({
     method: "eth_blockNumber",
     params: [],
@@ -150,9 +150,9 @@ const polygonBlockResponse = await lavaNetwork.sendRelay({
 console.log("Polygon Block: ", polygonBlockResponse)
 ```
 
-### 6. Now let’s implement the program logic! 
+### 6. 现在让我们实现程序逻辑!
 
-We want to call `useSDK()` to run asynchronously.
+我们想要调用`useSDK()`来异步运行。
 
 ```jsx
 (async () => {
@@ -166,15 +166,15 @@ We want to call `useSDK()` to run asynchronously.
 node index.js
 ```
 
-You should get 3 responses like so:
+你将得到3个类似这样的响应:
 
 ![Success1](/img/tutorial/sdk/SucccesfulSDKCall1.png)
 ![Success2](/img/tutorial/sdk/SucccesfulSDKCall2.png)
 ![Success3](/img/tutorial/sdk/SucccesfulSDKCall3.png)
 
 
-### **That’s it! You’ve successfully used LavaSDK.**
+### **就是这样!您已经成功地使用了LavaSDK。**
 
-For more information look around the rest of our documentation!
+有关更多信息，请查看我们的其他文档!
 
-Having trouble? Head to our [Discord!](https://discord.gg/Tbk5NxTCdA)
+有困难吗?前往我们的[Discord!](https://discord.gg/Tbk5NxTCdA)

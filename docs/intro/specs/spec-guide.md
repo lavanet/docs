@@ -1,12 +1,12 @@
 ---
 slug: /spec-guide
-title: Spec 提案指南 📜
+title: 参数提案指南 📜
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Spec 提案指南 (Walk-thru)
+# 参数提案指南 (Walk-thru)
 
 :::caution 正在建设中
 
@@ -17,28 +17,28 @@ import TabItem from '@theme/TabItem';
 
 ## 概览 🔎 {#overview}
 
-本指南旨在帮助人们逐步完成撰写和设计spec提案的过程。创建或维护spec的过程一开始可能会让人不知所措，但一旦了解了基本原理，这个过程就会变得简单明了。请跟随下面的步骤，了解制作spec的整个过程。
+本指南旨在帮助人们逐步完成撰写和设计参数提案的过程。创建或维护参数的过程一开始可能会让人不知所措，但一旦了解了基本原理，这个过程就会变得简单明了。请跟随下面的步骤，了解制作参数的整个过程。
 
 <br/>
 
 ## Step 1: 创建proposal/JSON {#create-proposal}
 
-> 创建specification `JSON` 文件
+> 创建技术参数 `JSON` 文件
 >
 
-创建specification涉及多个步骤，是一个复杂的过程。为做好准备，您可以做的最好的练习之一就是访问现有specification并检查它们。查看现有specification可以让未来的specification创建者了解specification的标准结构和布局。
+创建技术参数涉及多个步骤，是一个复杂的过程。为做好准备，您可以做的最好的练习之一就是访问现有技术参数并检查它们。查看现有技术参数可以让未来的技术参数创建者了解技术参数的标准结构和布局。
 
-创建spec有三种方法
+创建参数有三种方法
 
-1. 📒**Cookbook**  - 所有目前在 Lava 上运行的specs都可以在这里找到 - [the Lava cookbook](https://github.com/lavanet/lava/tree/main/cookbook/specs). 请使用其中一个开始，根据需要更改字段。
+1. 📒**Cookbook**  - 所有目前在 Lava 上运行的技术参数都可以在这里找到 - [the Lava cookbook](https://github.com/lavanet/lava/tree/main/cookbook/specs). 请使用其中一个开始，根据需要更改字段。
 2. 📄**Template -** 你可以在[这里](/spec-reference#-file-structure)找到一个空白模板。只要在你编写的过程中填写空白即可。
-3. ✏️**From Scratch -** 完全从头开始编写spec可以避免不必要的混乱和多余的字段。
+3. ✏️**From Scratch -** 完全从头开始编写参数可以避免不必要的混乱和多余的字段。
 
 <br />
 
 ### 定义 Proposal {#define-proposal}
 
-建议的方法是从零开始，逐个字段进行。让我们从一个空的 JSON 开始，创建我们的头部字段。 这个键称为 `proposal`，它描述了我们即将提出的specifications。
+建议的方法是从零开始，逐个字段进行。让我们从一个空的 JSON 开始，创建我们的头部字段。 这个键称为 `proposal`，它描述了我们即将提出的技术参数。
 
 ```json
 {
@@ -55,11 +55,11 @@ import TabItem from '@theme/TabItem';
 
 <br />
 
-### 定义 Specs {#define-specs}
+### 定义参数 {#define-specs}
 
-每个提案向 Lava 引入新的 `specs`。如其他地方所述，`specs` 是 API 提供者必须满足的最低要求，以便提供 API 服务。Lava 使用几个字段来为一个规范建立初始参数，包括一个 `index`，一个 `name`，一个 `data_reliability_enabled` 标记，以及 `minimum_stake_provider` 必须达到的抵押金额。
+每个提案向 Lava 引入新的 `specs`。如其他地方所述，`specs` 是 API 提供者必须满足的最低要求，以便提供 API 服务。Lava 使用几个字段来为一个规范建立初始技术参数，包括一个 `index`，一个 `name`，一个 `data_reliability_enabled` 标记，以及 `minimum_stake_provider` 必须达到的质押金额。
 
-这些字段与其他字段相结合，构成了spec的第一部分：
+这些字段与其他字段相结合，构成了参数的第一部分：
 
 ```json
 {
@@ -96,19 +96,19 @@ import TabItem from '@theme/TabItem';
 
 <details> <summary> `index` </summary>
 
-索引是spec的通用标识符。索引不得与任何其他spec共享。无论spec被引用或导入到何处，它都将被引用。索引的命名约定方法是使用全部大写字母，不包含空格。更短/更简略的索引更受欢迎。（可选）为了缩短长索引，许多spec采用省略元音或缩短单词的策略（例如，`OPTM` 代表 Optimism，`STRK` 代表 Starknet，或 `AGR` 代表 Agoric）。
+索引是参数的通用标识符。索引不得与任何其他参数共享。无论参数被引用或导入到何处，它都将被引用。索引的命名约定方法是使用全部大写字母，不包含空格。更短/更简略的索引更受欢迎。（可选）为了缩短长索引，许多参数采用省略元音或缩短单词的策略（例如，`OPTM` 代表 Optimism，`STRK` 代表 Starknet，或 `AGR` 代表 Agoric）。
 
 </details>
 
 <details> <summary> `name` </summary>
 
-名称是spec的长形描述性标识符。名称应指明spec是什么/与提供类似数据的spec有所区别。如果它是特定区块链的测试网或主网，应明确说明。
+名称是参数的长形描述性标识符。名称应指明参数是什么/与提供类似数据的参数有所区别。如果它是特定区块链的测试网或主网，应明确说明。
 
 </details>
 
 <details> <summary> `enabled` </summary>
 
-enabled字段描述了spec是否处于活跃状态。有时spec可能已定义但未被使用，或者spec可能需要暂时停用。一般情况下，默认值应为true。
+enabled字段描述了参数是否处于活跃状态。有时参数可能已定义但未被使用，或者参数可能需要暂时停用。一般情况下，默认值应为true。
 
 </details>
 
@@ -120,7 +120,7 @@ enabled字段描述了spec是否处于活跃状态。有时spec可能已定义�
 
 <details> <summary> `data_reliability_enabled` </summary>
 
-数据可靠性应该启用，除非有充分的理由禁用它！默认值为 `true`。这意味着 Lava 协议将通过进行数据可靠性检查来确保数据的准确性。请注意，如果您要为除区块链之外的其他内容创建spec，则应将其设置为 `false`。
+数据可靠性应该启用，除非有充分的理由禁用它！默认值为 `true`。这意味着 Lava 协议将通过进行数据可靠性检查来确保数据的准确性。请注意，如果您要为除区块链之外的其他内容创建参数，则应将其设置为 `false`。
 
 ⚠️ 截至 `lava-testnet-2`，对各种 API 的数据可靠性支持正在进行中。
 
@@ -128,13 +128,13 @@ enabled字段描述了spec是否处于活跃状态。有时spec可能已定义�
 
 <details><summary> `block_distance_for_finalized_data` </summary>
 
-这个字段定义了应该被视为安全免受链重组影响的区块数量；它因链而异。可以参考其他类似架构的specs，获取建议的数值。
+这个字段定义了应该被视为安全免受链重组影响的区块数量；它因链而异。可以参考其他类似架构的参数，获取建议的数值。
 
 </details>
 
 <details><summary> `blocks_in_finalization_proof` </summary>
 
-这个字段定义了在最终性证明中应该包含的区块数量；这会因链而异。请查看其他类似架构的specs以获取建议的数值。
+这个字段定义了在最终性证明中应该包含的区块数量；这会因链而异。请查看其他类似架构的参数以获取建议的数值。
 
 </details>
 
@@ -146,7 +146,7 @@ enabled字段描述了spec是否处于活跃状态。有时spec可能已定义�
 
 <details><summary> `allowed_block_lag_for_qos_sync` </summary>
 
-这是在服务提供商提供的数据被视为过时之前可以经过的最大区块数。对于更快的区块链/数据源，将允许更多的区块。对于较慢的区块链/数据源，较少的区块更合适。查看其他类似架构的 specs 以获取数值参考。
+这是在服务提供商提供的数据被视为过时之前可以经过的最大区块数。对于更快的区块链/数据源，将允许更多的区块。对于较慢的区块链/数据源，较少的区块更合适。查看其他类似架构的参数以获取数值参考。
 
 </details>
 
@@ -158,7 +158,7 @@ enabled字段描述了spec是否处于活跃状态。有时spec可能已定义�
 
 <details><summary> `min_stake_provider` </summary>
 
-该字段定义了提供商为该 API 提供服务所必须持有的最低金额。该值可与测试网络中所有其他 spec 提供的默认值保持一致。从 `lava-testnet-2` 开始，该金额为 `5000000`，单位为 `ulava`。
+该字段定义了提供商为该 API 提供服务所必须持有的最低金额。该值可与测试网络中所有其他参数提供的默认值保持一致。从 `lava-testnet-2` 开始，该金额为 `5000000`，单位为 `ulava`。
 
 </details>
 
@@ -170,16 +170,16 @@ enabled字段描述了spec是否处于活跃状态。有时spec可能已定义�
 
 ## Step 2: 继承 {#inheritance}
 
-> 从现有spec继承属性。
+> 从现有参数继承属性。
 >
 
-在定义任何 API 之前，从已存在的specs中提取specs是明智的做法，以节省工作量。Lava 中的大多数 API 使用共同的方法，并且可以根据已在链上使用的specs创建。在 Lava 中，我们称这个从先前specs中借用的过程为继承。specs使用继承来消除冗余，最小化大小，并节省时间。另一个好处是 - 当继承的specs更新时，它们的后代specs会自动拉取更新！继承使事情变得容易。
+在定义任何 API 之前，从已存在的参数中提取参数是明智的做法，以节省工作量。Lava 中的大多数 API 使用共同的方法，并且可以根据已在链上使用的参数创建。在 Lava 中，我们称这个从先前参数中借用的过程为继承。参数使用继承来消除冗余，最小化大小，并节省时间。另一个好处是 - 当继承的参数更新时，它们的后代参数会自动拉取更新！继承使事情变得容易。
 
 ### 导入 {#imports}
 
-导入一般会引入所有解析指令、验证、API集合和默认API。要重写特定的强制行为——只需在继承specs中定义parse_directive、verification、API集合或API的`name`(如果编辑的是parse指令，则是`function_tag`)。
+导入一般会引入所有解析指令、验证、API集合和默认API。要重写特定的强制行为——只需在继承参数中定义parse_directive、verification、API集合或API的`name`(如果编辑的是parse指令，则是`function_tag`)。
 
-要继承一个新specs，使用`imports`字段:
+要继承一个新参数，使用`imports`字段:
 
 ```json
 "specs": [
@@ -216,7 +216,7 @@ enabled字段描述了spec是否处于活跃状态。有时spec可能已定义�
 ```
 
 :::info
-通常情况下，spec将只使用上述导入中的一种。spec是完全模块化的，可以导入任何其他spec。例如，在设计主网spec和测试网spec时，这种模块化设计模式会派上用场。通常，测试网spec只是简单地继承主网spec，不需要进一步的配置。
+通常情况下，参数将只使用上述导入中的一种。参数是完全模块化的，可以导入任何其他长春市。例如，在设计主网参数和测试网参数时，这种模块化设计模式会派上用场。通常，测试网参数只是简单地继承主网参数，不需要进一步的配置。
 :::
 
 ### 继承 APIs {#inheritance-apis}
@@ -232,7 +232,7 @@ enabled字段描述了spec是否处于活跃状态。有时spec可能已定义�
 
 > 指定提供商必须使用的API集合和接口。
 
-每个spec可以包含多个类别的 API 集合。尽管 API 集合的构造类似，但它们被分成不同的接口。如果一个spec只包含它导入的另一个spec的 API，那么可能根本不需要定义 API 集合...
+每个参数可以包含多个类别的 API 集合。尽管 API 集合的构造类似，但它们被分成不同的接口。如果一个参数只包含它导入的另一个参数的 API，那么可能根本不需要定义 API 集合...
 
 下面定义了一些应用程序接口集合示例（差异*高亮显示*）：
 
@@ -449,7 +449,7 @@ enabled字段描述了spec是否处于活跃状态。有时spec可能已定义�
 
 🔖参考资料: [Parsing](/spec-reference#parsing)
 
-如果导入了spec，那么很可能已经为您处理过了，不需要定义。但是，如果没有导入，则需要
+如果导入了参数，那么很可能已经为您处理过了，不需要定义。但是，如果没有导入，则需要
 
 ```json
 {
@@ -501,7 +501,7 @@ Lava数据可靠性检查要成功，必须定义Get_BlockNum和Get_Block_by_Num
 
 ## Step 4: 新 APIs {#new-apis}
 
-> 设计不继承自其他spec的api。
+> 设计不继承自其他参数的api。
 
 
 
@@ -528,7 +528,7 @@ Lava数据可靠性检查要成功，必须定义Get_BlockNum和Get_Block_by_Num
 ```
 ### 区块解析
 
-该区域用于描述如何从API请求中提取块号。一定要检查解析参考和几个spec示例，以确保它的定义是正确的。
+该区域用于描述如何从API请求中提取块号。一定要检查解析参考和几个参数示例，以确保它的定义是正确的。
 
 🔖参考资料: [`Block Parsing`](/spec-reference#block-parsing), [`Parsing`](/spec-reference#parsing-)
 
@@ -572,7 +572,7 @@ subscription指示何时使用提供商打开流API (wss当前已禁用）。
 
 ### 其他字段
 
-对于其他字段，请查看参考资料并观察其他specs。
+对于其他字段，请查看参考资料并观察其他参数。
 
 🔖参考资料: [`APIs`](/spec-reference#apis)
 
@@ -621,7 +621,7 @@ subscription指示何时使用提供商打开流API (wss当前已禁用）。
 > 定义可选的API集合，提供者可以选择为更多的CU提供服务
 >
 
-Specs是高度模块化和可组合的。有时，提供商的最低要求可能不能满足网络上的所有消费者。归档节点就是一个很好的例子;并不是网络上的每个提供商都需要提供存档数据，但是对于那些想要选择加入的人，您可以使用扩展来定义规则和奖励。插件是一组非强制性的附加API集合——一个很好的例子就是一个响应调试API的节点!
+参数是高度模块化和可组合的。有时，提供商的最低要求可能不能满足网络上的所有消费者。归档节点就是一个很好的例子;并不是网络上的每个提供商都需要提供存档数据，但是对于那些想要选择加入的人，您可以使用扩展来定义规则和奖励。插件是一组非强制性的附加API集合——一个很好的例子就是一个响应调试API的节点!
 
 ### 创建插件
 
@@ -730,14 +730,14 @@ Specs是高度模块化和可组合的。有时，提供商的最低要求可能
 ./scripts/test_spec_full.sh cookbook/specs/spec_add_X.json <interface> <rpc_url_for_index1> <interface> <rpc_url_for_index2>
 ```
 
-它将搭建一个本地区块链，并创建一个由几个运行该spec的提供商组成的测试网络!您可以实时看到错误，这将提醒您需要调试的地方。一旦您调试了所有问题-继续下一步!
+它将搭建一个本地区块链，并创建一个由几个运行该参数的提供商组成的测试网络!您可以实时看到错误，这将提醒您需要调试的地方。一旦您调试了所有问题-继续下一步!
 
 
 <br/>
 
 ## Step 9: 推送到您的仓库并分享 {#push-and-share}
 
-> Add your `JSON` file to your local `cookbook/spec/`  directory.
+> 将您的 `JSON` 文件添加到本地的 `cookbook/spec/` 目录中。
 
 
 与[Lava团队和社区!](https://discord.gg/Tbk5NxTCdA)分享您的进展

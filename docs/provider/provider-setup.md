@@ -27,8 +27,8 @@ import TabItem from '@theme/TabItem';
 
 1. Go 1.20.5 或更高版本
 2. 已安装`lavap`（在 [https://github.com/lavanet/lava](https://github.com/lavanet/lava) 上构建或安装）
-3. 拥有足够 LAVA 的账户，以便进行质押（了解 [创建账户](docs/lava-blockchain/wallet.mdx)
-4. 了解您想提供哪些链（[如何查询最新列表](https://docs.lavanet.xyz/provider/#chains)
+3. 拥有足够 LAVA 的账户，以便进行质押（了解 [创建账户](docs/lava-blockchain/wallet.mdx)）
+4. 了解您想提供哪些链（[如何查询最新列表](https://docs.lavanet.xyz/provider/#chains)）
 
 ## Step 1: 设置 TLS
 作为良好安全实践的一部分，Lava 协议在 RPC 的提供者和消费者之间采用端到端加密通信。这就要求提供者采取一些额外的配置步骤，即在认证机构设置 TLS 认证。
@@ -253,7 +253,7 @@ lavap tx pairing stake-provider LAV1 \
 ```
 
 #### 美国的以太坊主网（未指定验证器）
-Ethereum and other EVMs usually have only `jsonrpc` interface:
+以太坊和其他 EVM 通常只有 `jsonrpc` 接口：
 
 ```bash
 lavap tx pairing stake-provider "ETH1" \

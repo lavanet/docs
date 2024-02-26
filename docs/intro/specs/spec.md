@@ -1,9 +1,9 @@
 ---
 slug: /spec
-title: Specifications模块
+title: 技术参数模块
 ---
 
-# Specifications模块 (Specs)
+# 技术参数模块 (Specs)
 
 import RoadmapItem from '@site/src/components/RoadmapItem';
 
@@ -11,9 +11,9 @@ import RoadmapItem from '@site/src/components/RoadmapItem';
 
 ## 🔍 概览 
 
-Specifications(specs)是Lava多链支持的基础蓝图。它们以JSON格式呈现，详细说明了在Lava上运行API的最低要求。通过这些规范，Lava确定支持和启用哪些链和方法，并为它们确定成本、需求和验证。
+技术参数(specs)是Lava多链支持的基础蓝图。它们以JSON格式呈现，详细说明了在Lava上运行API的最低要求。通过这些技术参数，Lava确定支持和启用哪些链和方法，并为它们确定成本、需求和验证。
 
-每当生态系统需要新的API时，就会集成新的spec。这种动态方法将模块化和可扩展性直接合并到协议中，并确保Lava保持最新和可适应性。
+每当生态系统需要新的API时，就会集成新的技术参数。这种动态方法将模块化和可扩展性直接合并到协议中，并确保Lava保持最新和可适应性。
 
 <br/>
 
@@ -27,11 +27,11 @@ Specifications(specs)是Lava多链支持的基础蓝图。它们以JSON格式呈
 ## 📖 主要概念
 
 ### 索引 📑 {#index}
-`index`是spec的名称。 任何时候引用spec都将通过其`index`。
+`index`是技术参数的名称。 任何时候引用技术参数都将通过其`index`。
 
 <details> <summary> 示例 </summary>
 
-你可以在生产环境中看到`EVMOS`规范:
+你可以在生产环境中看到`EVMOS`参数:
 
 ```json
 {
@@ -47,11 +47,11 @@ Specifications(specs)是Lava多链支持的基础蓝图。它们以JSON格式呈
 </details><br/>
 
 ### 导入 ⬇️ {#imports}
-`imports`是对从其他源借用的函数的引用。相同或类似架构的api /chain 可以使用其`index`从现有规范中导入方法并实现任何新逻辑。`imports`通过消除重复集成相同api的需要来提高效率。
+`imports`是对从其他源借用的函数的引用。相同或类似架构的api /chain 可以使用其`index`从现有技术参数中导入方法并实现任何新逻辑。`imports`通过消除重复集成相同api的需要来提高效率。
 
 <details> <summary> 示例 </summary>
 
-下面的spec同时实现了Cosmos和Ethereum的方法:
+下面的参数同时实现了Cosmos和Ethereum的方法:
 
 ```json
 "imports": [
@@ -62,7 +62,7 @@ Specifications(specs)是Lava多链支持的基础蓝图。它们以JSON格式呈
 </details><br/>
 
 ### API集合 🛠️ {#api_collections}
-specification总是包含一个`api_collection`。`api_collection`包含可用的激活方法或api的列表以及它们各自的`api_interface `(例如:“`"rest"`,`"grpc"`,`"jsonrpc"`,`"tendermintrpc"`”,等等)。换句话说，它概述了所有必须是活动的和可操作的API或方法，以支持特定的chain/API。这里列出的每个方法都必须由提供者提供服务，并对使用者负责。
+参数总是包含一个`api_collection`。`api_collection`包含可用的激活方法或api的列表以及它们各自的`api_interface `(例如:“`"rest"`,`"grpc"`,`"jsonrpc"`,`"tendermintrpc"`”,等等)。换句话说，它概述了所有必须是活动的和可操作的API或方法，以支持特定的chain/API。这里列出的每个方法都必须由提供者提供服务，并对使用者负责。
 
 <details> <summary> 示例 </summary>
 
@@ -114,7 +114,7 @@ specification总是包含一个`api_collection`。`api_collection`包含可用�
 
 ### 附加组件 ➕ {#addons}
 
-附加组件 (`"add-on"`)引入了可选的新方法和API，这些超出了chain/API的基本要求。它们类似于插件或模块，特定的使用者可以不时地请求，提供商可以选择提供服务以获得额外的奖励。这允许在spec中概述补充功能，使提供商和使用者都可以灵活地定制他们的体验。
+附加组件 (`"add-on"`)引入了可选的新方法和API，这些超出了chain/API的基本要求。它们类似于插件或模块，特定的使用者可以不时地请求，提供商可以选择提供服务以获得额外的奖励。这允许在参数中概述补充功能，使提供商和使用者都可以灵活地定制他们的体验。
 
 <details> <summary> 示例 </summary>
 
@@ -143,7 +143,7 @@ specification总是包含一个`api_collection`。`api_collection`包含可用�
 </details><br/>
 
 ### 扩展 〰️ {#extensions}
-`"extensions"`允许针对特殊用例调整或增强规范中的现有方法和api。它们提供了根据用户子集的需求调整、优化或扩展当前函数的方法，这些用户子集需要通过指定的方法调用实现更多的功能。这允许在spec中概述替代功能，为提供商和使用者提供服务/请求特殊功能的灵活性。
+`"extensions"`允许针对特殊用例调整或增强参数中的现有方法和api。它们提供了根据用户子集的需求调整、优化或扩展当前函数的方法，这些用户子集需要通过指定的方法调用实现更多的功能。这允许在参数中概述替代功能，为提供商和使用者提供服务/请求特殊功能的灵活性。
 
 
 <details><summary> 示例 </summary>

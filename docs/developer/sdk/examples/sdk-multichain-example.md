@@ -1,6 +1,6 @@
 ---
 slug: /sdk-multichain-example
-title: 🌈 Multi Chain Example
+title: 🌈 多链示例
 ---
 
 import Tabs from '@theme/Tabs';

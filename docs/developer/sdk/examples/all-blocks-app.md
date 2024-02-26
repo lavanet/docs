@@ -5,17 +5,17 @@ title: 🧱 All Blocks (Vercel App)
 
 # All Blocks (Vercel App)
 
-**All Blocks** is a [Next.js](https://nextjs.org/) project bootstrapped with `create-next-app` that grabs the latest block from multiple supported chains on Lava, measuring and reporting latency and uptime info in real-time. 
+**All Blocks**是一个使用 "create-next-app "启动的[Next.js](https://nextjs.org/)项目，可从 Lava 上多个受支持的链中抓取最新区块，实时测量并报告延迟和正常运行时间信息。
 
 ![All Blocks Image](/img/tutorial/sdk/demo_app/all_blocks_ui.png)
 
-## Live Application 📱
+## 实时应用 📱
 
 > https://allblocks.vercel.app/
 
-## Repository 🧰
+## 仓库 🧰
 
-For more detailed information and updates, visit the All Blocks repository:
+有关更多详细信息和更新，请访问 All Blocks 仓库：
 
 > 📦 [All Blocks](https://github.com/gilxgil/allblocks)
 

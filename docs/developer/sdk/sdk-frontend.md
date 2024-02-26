@@ -1,16 +1,16 @@
 ---
 slug: /sdk-frontend
-title: Frontend Use 🛡️
+title: 前端使用 🛡️
 ---
-# Using LavaSDK 
+# 使用 LavaSDK 
 
-## 🛡️ The Frontend 
+## 🛡️ 前端
 
-☠️ **The Problem**:   Using private keys on the frontend without special provisions is inherently unsafe. In ordinary development scenarios, private keys from a user can be leaked through the browser. 
+☠️**问题**:在没有特殊规定的情况下在前端使用私钥本质上是不安全的。在一般的开发场景中，用户的私钥可能会通过浏览器泄露。
 
-✅ **The Solution**:  Lava uses a unique solution called `badges` to solve these limitations. A `badge` consists of several parts and is used in lieu of a private key. It must, however, be signed by an external server that holds the relevant authorizing party's private key. The [default Badge Server](/badge-server#lava-badge-server-) is hosted by Lava and requires no additional configurations.
+✅**解决方案**:Lava使用了一种名为`badge`的独特解决方案来解决这些限制。`badge`由几个部分组成，用来代替私钥。但是，它必须由持有相关授权方私钥的外部服务器进行签名。[默认的徽章服务器](/badge-server#lava-badge-server-)由Lava托管，不需要额外的配置。
 
-🚀 **Get Started**:  You can get started right from the [Lava Gateway](https://gateway.lavanet.xyz/?utm_source=sdk-frontend-page&utm_medium=docs&utm_campaign=docs-to-gateway)! We recognize that a hosted solution is not ideal for every use case. Users who are interested in accomplishing the highest levels of decentralization may run their own [badge server](/badge-server#running-a-badge-server-experimental-).
+🚀**开始**:你可以开始从[Lava门户](https://gateway.lavanet.xyz/?utm_source=sdk-frontend-page&utm_medium=docs&utm_campaign=docs-to-gateway)!我们认识到托管解决方案并不适合所有用例。对实现最高级别的去中心化感兴趣的用户可以运行他们自己的[徽章服务器](/badge-server#running-a-badge-server-experimental-)。
 
 
 <center>
@@ -19,25 +19,25 @@ title: Frontend Use 🛡️
 
 </center>
 
-## ↪️ Recommended Flow
+## ↪️ 推荐流程
 
-Although you can host your own badge server, the easiest way to get started is through Lava's Gateway. 
-1. Sign up to the Gateway. 👉🏿[Register now](https://gateway.lavanet.xyz/?utm_source=sdk-frontend-page&utm_medium=docs&utm_campaign=docs-to-gateway) if you haven’t already!
+虽然你可以托管自己的徽章服务器，但最简单的方法是通过Lava的网关开始。
 
-2. Create a Project and Select your APIs!
+1. 注册到网关。👉🏿[现在注册](https://gateway.lavanet.xyz/?utm_source=sdk-frontend-page&utm_medium=docs&utm_campaign=docs-to-gateway)。
 
-3. Open an API and click LavaSDK.
+2. 创建一个项目并选择你的api !
 
-3. Install the SDK into your project -> `npm install @lavanet-lava-sdk`
+3. 打开API，单击“LavaSDK”。
 
-4. Copy & paste your code snippet into your code.
+3. 安装SDK到你的项目-> ' npm Install @lavanet-lava-sdk '
 
+4. 复制和粘贴你的代码片段到你的代码。
 
 ## 📛 Badges
 
-### Usage ⚙️
+### 使用 ⚙️
 
-Badges are objects passed to the SDK instance which allow a user to forgo the usage of private keys.  A badge has the following format:
+徽章是传递给SDK实例的对象，它允许用户放弃使用私钥。徽章的格式如下:
 
 ```jsx
 const myBadge = {
@@ -46,7 +46,7 @@ const myBadge = {
 };
 ```
 
-A user can initialize the SDK using a badge instead of a privatekey
+用户可以使用badge而不是privatekey初始化SDK
 
 ```jsx
 const lavaSDK = await LavaSDK.create({
@@ -56,7 +56,7 @@ const lavaSDK = await LavaSDK.create({
 });
 ```
 
-And make calls all the same - no privatekeys exposed!
+调用也一样，不会暴露私钥！
 
 ```jsx
 const info = await lavaSDK.sendRelay({
@@ -65,4 +65,4 @@ const info = await lavaSDK.sendRelay({
 });
 ```
 
-🚀 That's it. For most users, there is no additional information required to successfully use LavaSDK on the front end!
+🚀 就是这样。对于大多数用户来说，在前端成功使用 LavaSDK 不需要其他信息！
