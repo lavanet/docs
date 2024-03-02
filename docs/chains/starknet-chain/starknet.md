@@ -20,7 +20,7 @@ import RoadmapItem from '@site/src/components/RoadmapItem'
 
 <center>
 
-## ⚙️ Supported APIs ⚙️
+## ⚙️ 支持的 APIs ⚙️
 
 </center>
 
@@ -29,7 +29,7 @@ import RoadmapItem from '@site/src/components/RoadmapItem'
 https://raw.githubusercontent.com/lavanet/lava/main/cookbook/specs/spec_add_starknet.json
 
 
-### Protocols 🔗
+### 协议 🔗
 
 | Platform  |  jsonrpc/http |
 | --------- | -------- | 
@@ -37,9 +37,9 @@ https://raw.githubusercontent.com/lavanet/lava/main/cookbook/specs/spec_add_star
 | SDK       | ✅       | 
 
 
-### Methods 🛠️
+### 方法 🛠️
 <details>
-<summary> List </summary>
+<summary> 列表 </summary>
 
 - starknet_blockNumber
 - starknet_blockHashAndNumber

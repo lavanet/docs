@@ -1,11 +1,11 @@
 ---
 slug: /evmos-node
-title: Running an Evmos RPC Node
+title: 运行 Evmos RPC 节点
 ---
 
-# Running an Evmos RPC Node
+# 运行 Evmos RPC 节点
 
-## Requirements 📄 
+## 配置要求 📄 
 
 ```
 - 8 core CPU 
@@ -15,9 +15,9 @@ title: Running an Evmos RPC Node
 - ports 8545/8546 open & exposed
 ```
 
-## Install Evmos CLI 🚀
+## 安装 Evmos CLI 🚀
 
-This software is necessary to run an Evmos RPC node.
+该软件是运行Evmos RPC节点所必需的。
 
 
 ```bash
@@ -28,12 +28,12 @@ git checkout <tag>
 make install
 ```
 
-It is necessary to replace `<tag>` with the name of the latest release which is visible [here](https://github.com/evmos/evmos/tags).
+需要将`<tag>`替换为[此处](https://github.com/evmos/evmos/tags)可见的最新版本的名称。
 
 
-## Start your Node ❗
+## 启动节点 ❗
 
-Starting a node with Evmos may require various configurations, but the commands are relatively simple:
+使用Evmos启动节点可能需要各种配置，但命令相对简单:
 
 ```bash
 ./evmosd start \ 
@@ -42,12 +42,11 @@ Starting a node with Evmos may require various configurations, but the commands 
     --grpc-web.enable \
     --grpc.enable
 ```
-You can edit your `app.toml` file to change settings on your node. Within `app.toml` you can find gas cap, CORS, Pruning, and how to configure a WebSocket Server. For further information, consult the [Evmos documentation](https://docs.evmos.org/protocol/evmos-cli/configuration#running-the-json-rpc-server)
-
+您可以编辑 `app. toml` 文件来更改节点上的设置。 在 `app. toml` 文件中，您可以找到gas cap, CORS, Pruning以及如何配置 WebSocket 服务器。 如需更多信息，请查阅 [Evmos 文档](https://docs.evmos.org/protocol/evmos-cli/configuration#running-the-json-rpc-server)
 ## Evmos ipRPC 🪙
 
-Want to reach more developers and get more rewards as a node runner? Evmos pays providers who're interested. Evmos offers Incentivized Public RPC (ipRPC) endpoints to developers in its ecosystem. By signing up here, you can become one of our premier providers contributing to decentralized public goods. [Sign up now!](https://lavanet.typeform.com/to/qQ1x6WJs?utm_source=becoming-a-lava-provider-for-evmos&utm_medium=docs&utm_campaign=evmos-post-grant)
+作为节点运行商，您想接触更多开发人员并获得更多奖励吗？Evmos 向感兴趣的提供商支付报酬。Evmos 向其生态系统中的开发者提供激励公共 RPC（ipRPC）端点。在这里注册，您就可以成为我们的主要提供商之一，为去中心化公共产品做出贡献。[立即注册！](https://lavanet.typeform.com/to/qQ1x6WJs?utm_source=becoming-a-lava-provider-for-evmos&utm_medium=docs&utm_campaign=evmos-post-grant)
 
-## Setup your Provider on Lava Network 🌋
+## 在 Lava 网络上设置您的提供商 🌋
 
-Once you’ve been accepted - to set up your provider on the Lava Network, you can refer to the [provider setup documentation](https://docs.lavanet.xyz/provider-setup?utm_source=running-a-evmos-rpc-node&utm_medium=docs&utm_campaign=evmos-post-grant) available elsewhere in our docs. This should provide you with the necessary information to configure and operate your provider node.
+一旦您被接受--要在 Lava 网络上设置您的提供商，您可以参考我们文档中其他地方的[提供商设置文档](https://docs.lavanet.xyz/provider-setup?utm_source=running-a-evmos-rpc-node&utm_medium=docs&utm_campaign=evmos-post-grant)。这将为您提供配置和操作提供商节点的必要信息。

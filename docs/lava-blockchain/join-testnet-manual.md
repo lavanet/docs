@@ -1,25 +1,25 @@
 ---
 sidebar_position: 2
 slug: /testnet-manual
-title: Option B - Without Cosmovisor
+title: 方案 B - 不带 Cosmovisor
 ---
 import RoadmapItem from '@site/src/components/RoadmapItem';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 
-# Join testnet - Manual setup
+# 加入测试网 - 手动设置
 
-This page will walk you through the manual installation of the node and joining the network.
+本页将指导你手动安装节点并加入网络。
 
-Note that it does **not** include the "Cosmovisor" tool, hence once you install the first genesis binary, you will need to incrementally upgrade your node, as described in [upgrades](#upgrades).
+请注意，它不包括 "Cosmovisor "工具，因此一旦安装了第一个创世二进制文件，就需要按照[upgrades](#upgrades)中的说明逐步升级节点。
 
-## Prerequisites
+## 必要准备
 
-1. Verify [hardware requirements](reqs) are met
-2. Install package dependencies
-    - Note: You may need to run as `sudo`
-    - Required packages installation
+1. 验证[硬件要求](reqs)是否满足
+2. 安装软件包依赖项
+    - 注意：可能需要以 `sudo` 身份运行
+    - 安装所需软件包
         
         ```bash
         ### Packages installations
@@ -29,7 +29,7 @@ Note that it does **not** include the "Cosmovisor" tool, hence once you install 
         temp_folder=$(mktemp -d) && cd $temp_folder
         ```
         
-    - Go installation
+    - Go 安装
         
         ```bash
         ### Configurations
@@ -45,38 +45,38 @@ Note that it does **not** include the "Cosmovisor" tool, hence once you install 
         source ~/.profile
         ```
         
-    - Installation verifications
+    - 安装验证
         
         
-        1. You can verify the installed go version by running: `go version`
+        1. 您可以运行： `go version` 来验证已安装的 go 版本。
         
-        2. The command `go env GOPATH` should include `$HOME/go`
-        If not, then, `export GOPATH=$HOME/go`
+        2. 命令 `go env GOPATH` 应包括`$HOME/go`。
+        如果没有，则`export GOPATH=$HOME/go`
         
-        3. PATH should include `$HOME/go/bin`
-        To verify PATH, run `echo $PATH`
+        3.PATH 应包括`$HOME/go/bin`。
+        要验证 PATH，请运行 `echo $PATH`
         
 
-## 1. Set up a local node
+## 1. 创建本地节点
 
-### Download app configurations
+### 下载应用程序的配置
 
-- Download setup configuration
-    
-    Download the configuration files needed for the installation
+- 下载安装配置
+
+    下载安装所需的配置文件
     
     ```bash
-    # Download the installation setup configuration
+    # 下载安装设置配置
     git clone https://github.com/lavanet/lava-config.git
     cd lava-config/testnet-2
-    # Read the configuration from the file
-    # Note: you can take a look at the config file and verify configurations
+    # 从文件中读取配置
+    # 注意：您可以查看配置文件并验证配置
     source setup_config/setup_config.sh
     ```
     
-- Set app configurations
-        
-    Copy lavad default config files to config Lava config folder
+- 设置应用程序配置
+
+  将 lavad 默认配置文件复制到 config Lava 配置文件夹中
     
     ```bash
     echo "Lava config file path: $lava_config_folder"
@@ -86,40 +86,40 @@ Note that it does **not** include the "Cosmovisor" tool, hence once you install 
     ```
     
 
-### Set the genesis file
+### 设置创世文件
 
-- Set the genesis JSON file in the configuration folder
+- 在配置文件夹中设置创世 JSON 文件
     
     ```bash
-    # Copy the genesis.json file to the Lava config folder
+    # 将 genesis.json 文件复制到 Lava 配置文件夹中
     cp genesis_json/genesis.json $lava_config_folder/genesis.json
     ```
 
-## 2. Join the Lava Testnet
+## 2. 加入Lava测试网
 
-### Copy the genesis binary
+### 复制创世二进制文件
 
-- Set the lavad binary location and copy the genesis binary to it
+- 设置 lavad 二进制文件的位置，并将创世二进制文件复制到该位置
 
     ```bash
-    # Set and create the lavad binary path
+    # 设置并创建 lavad 二进制路径
     lavad_binary_path="$HOME/go/bin/"
     mkdir -p $lavad_binary_path
-    # Download the genesis binary to the lava path
+    # 下载创世二进制到Lava路径
     wget -O ./lavad "https://github.com/lavanet/lava/releases/download/v0.21.1.2/lavad-v0.21.1.2-linux-amd64"
     chmod +x lavad
-    # Lavad should now be accessible from PATH, to verify, try running
+    # 现在应该可以从 PATH 访问 Lavad 了，要验证这一点，请尝试运行
     cp lavad /usr/local/bin
-    # In case it is not accessible, make sure $lavad_binary_path is part of PATH (you can refer to the "Go installation" section)
+    # 如果无法访问，请确保 $lavad_binary_path 是 PATH 的一部分（请参阅 "Go 安装 "部分）。
     lavad --help # Make sure you can see the lavad binary help printed out
     ```
 
-### Start running the node using the genesis binary
+### 使用创世二进制文件开始运行节点
 
-- Create a systemd service to run the Lava node
+- 创建运行 Lava 节点的 systemd 服务
 
     ```bash
-    # Create systemd unit file with logrotate
+    # 使用 logrotate 创建 systemd 单元文件
     echo "[Unit]
     Description=Lava Node
     After=network-online.target
@@ -135,55 +135,54 @@ Note that it does **not** include the "Cosmovisor" tool, hence once you install 
     sudo mv lavad.service /lib/systemd/system/lavad.service
     ```
 
-### Download the latest Lava data snapshot (_optional_) {#snapshots} 
+### 下载最新的 Lava 数据快照（_可选项） {#snapshots}
 
-_Coming soon_
+_即将到来_
 
-### Service start and validation
+### 启动和验证服务
 
-- Configure the lavad service to run on boot, and start it
+- 配置 lavad 服务在启动时运行，并启动它
 
     ```bash
-    # Enable the lavad service so that it will start automatically when the system boots
+    # 启用 lavad 服务，使其在系统启动时自动启动
     sudo systemctl daemon-reload
     sudo systemctl enable lavad.service
     sudo systemctl restart systemd-journald
     sudo systemctl start lavad
     ```
 
-- Check the state of the lavad service
+- 检查 lavad 服务的状态
     
     ```bash
     sudo systemctl status lavad
-    # To view the service logs
+    # 查看服务日志
     sudo journalctl -u lavad -f
     ```
 
-## 3. Upgrades {#upgrades}
-Lava blockchain upgrades requires you to update `lavad`. This guide covers the manual steps for doing so, assuming you do not use Cosmovisor.
+## 3. 升级 {#upgrades}
+Lava 区块链升级需要更新 `lavad`。假设您不使用 Cosmovisor，本指南将介绍手动更新步骤。
 
-### How to know there's an upgrade?
+### 如何知道要进行升级？
 
-Once you have joined the Lava testnet, and your node has started syncing, you may have noticed an error message such as:
+加入 Lava 测试网后，您的节点开始同步时，您可能会发现一条错误信息，例如
 
 ```bash
 panic: UPGRADE "XYZ" NEEDED at height: 12345
 ```
 
-This message specifies that it was agreed to upgrade to a new version at a certain height of the network. Note: When using a cosmovisor setup, the upgrade is being taken care of automatically for you.
+此消息指定已同意在网络的某个高度升级到新版本。注意：当使用 cosmovisor 设置时，升级将自动为您处理。
 
-This situation requires a different binary (`lavad`) to work with, the process is as specified below:
+这种情况需要使用不同的二进制文件 (`lavad`) 进行工作，过程如下：
 
-1. You have joined the network using the genesis binary
-2. The node has started to sync
-3. **An error of a needed upgrade** 👈 You are here
-4. Manually upgrade the node to work with the new binary
-5. Node continues to sync with the new binary
+1. 您已使用创世二进制文件加入了网络
+2. 节点已开始同步
+3. **需要升级的错误** 👈 您现在处于此步骤
+4. 手动升级节点以使用新的二进制文件
+5. 节点继续使用新的二进制文件同步
+### 升级列表历史记录
 
-### Upgrades list history
-
-Below, you can find tracking of the required upgrade for block height. 
-Versions are tracked in [Lava git](https://github.com/lavanet/lava) (build from source or use the release page). 
+下面是块高度所需的升级跟踪。
+版本跟踪在 [Lava git](https://github.com/lavanet/lava) 中（从源代码构建或使用发布页面）。
 
 <Tabs>
 <TabItem value="lava-testnet-2" label="lava-testnet-2">
@@ -221,61 +220,61 @@ Versions are tracked in [Lava git](https://github.com/lavanet/lava) (build from 
 
 </Tabs>
 
-### Steps for upgrading your node
+### 升级节点的步骤
 
-1. Set up the configurations required for the process
+1. 设置进程所需的配置
 
 ```bash
-# Upgrade configurations
+# 升级配置
 temp_folder=$(mktemp -d) && cd $temp_folder
 required_upgrade_name="v0.21.1.2" # CHANGE THIS
 upgrade_binary_url="https://github.com/lavanet/lava/releases/download/$required_upgrade_name/lavad-$required_upgrade_name-linux-amd64"
 ```
 
 
-2. Kill all current lavad processes
+2.杀死所有当前的 lavad 进程
 
 ```bash
 source ~/.profile
-# If using lavad as a service, run
+# 如果将 lavad 作为服务使用，请运行
 sudo systemctl stop lavad
 ```
 
-3. Download the binary and replace the current `lavad`
+3.下载二进制文件并替换当前的 `lavad
 
 ```bash
-# Download the binary and replace it with the current one
+# 下载二进制文件并替换为当前文件
 wget "$upgrade_binary_url" -q -O $temp_folder/lavad
 chmod +x $temp_folder/lavad
 
-# Replace the current lava binary with the upgraded binary
+# 用升级后的二进制文件替换当前的 lava 二进制文件
 sudo cp $temp_folder/lavad $(which lavad)
 ```
 
-4. Run the lava node
+4. 运行 lava 节点
 
 ```bash
-# Re-start the stopped lavad service
+# 重新启动已停止的 lavad 服务
 sudo systemctl start lavad
 ```
 
-5. Verify the node continues to sync from the latest block height
+5. 验证节点是否继续从最新区块高度同步
 
 ```bash
-# Check if the node is currently in the process of catching up
+# 检查节点当前是否处于追赶最新区块过程中
 lavad status | jq .SyncInfo.catching_up
-# Check the lavad process logs
+# 检查 lavad 进程日志
 sudo journalctl -u lavad -f
 ```
 
-## Welcome to Lava Testnet 🌋
+## 欢迎来到 Lava Testnet 🌋
 
-:::tip Joined Testnet? Be a validator!
-You are now running a Node in the Lava network 🎉🥳! 
+:::tip 已加入 Testnet？成为验证者！
+您现在正在 Lava 网络中运行一个节点 🎉🥳!！
 
-Congrats, happy to have you here 😻 Celebrate it with us on Discord.
+祝贺你，很高兴你能来到这里 😻 在 Discord 上与我们一起庆祝。
 
-When you're ready, start putting the node to use **as a validator**:
+准备就绪后，开始将节点用作**验证器**：
 [<RoadmapItem icon="🧑‍⚖️" title="Power as a Validator" description="Validate blocks, secure the network, earn rewards"/>](/validator-manual#account)
 
 :::

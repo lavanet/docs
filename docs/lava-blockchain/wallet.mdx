@@ -1,33 +1,33 @@
 ---
 sidebar_position: 10
-title: Setting Up a Wallet
+title: 设置钱包
 slug: /wallet
 ---
 
-Lava leverages the Cosmos SDK's bank and account modules for seamless integration with existing Cosmos wallets.
+Lava 利用 Cosmos SDK 的 bank 和 account 模块与现有的 Cosmos 钱包进行无缝集成。
 
-**Recommendation**: After setting up your wallet, it's crucial to test its functionality. Utilize the [faucet](/faucet#discord-faucet) to acquire testnet tokens. Then, execute a transaction by transferring these tokens to another account and back.
+**建议**：在设置好您的钱包之后，测试其功能至关重要。使用[水龙头](/faucet#discord-faucet)获取测试网络代币。然后，通过将这些代币转账到另一个账户再转回来，执行一笔交易来测试。
 
-## Choosing a Wallet
+## 选择钱包
 
-For your convenience, here are some popular wallet options:
+为了您的方便，这里有一些流行的钱包选项：
 * [Keplr](#keplr)
 * [Leap](#leap)
-* For Advanced Users: [CLI Wallet](#cli)
-* For Advanced Users: [Other Wallets](#other)
+* 对于高级用户：[CLI 钱包](#cli)
+* 对于高级用户：[其他钱包](#other)
 
-### Keplr Usage {#keplr}
+### Keplr 使用 {#keplr}
 
-:::info experimental 
-Keplr wallet support in Lava is currently experimental.
+:::info 试验性
+在Lava中对Keplr钱包的支持目前是实验性的。
 :::
 
-1. Download and install Keplr from [here](https://www.keplr.app/).
-2. Follow the setup instructions in the Keplr extension. (Note: Hardware wallet support, tested with Ledger, is available.)
-3. Access the Keplr extension.
-<p><img src="/img/wallet/keplr/keplr1.png" width="200"/></p>
-4. **Refresh this page.**
-5. Click the button below and then select `Approve`.
+1. 从 [此处](https://www.keplr.app/)下载并安装 Keplr。
+2. 按照 Keplr 扩展中的设置说明进行操作。(注：支持硬件钱包，已通过 Ledger 测试）。
+3. 访问 Keplr 扩展。
+<p><img src="/img/wallet/keplr/keplr1.png" width="200"/></p> 4.
+4. **刷新**此页面。
+5. 点击下面的按钮，然后选择`Approve`。
 
 <p>
 
@@ -93,29 +93,29 @@ window.keplr.experimentalSuggestChain({
 </p>
 
 <p><img src="/img/wallet/keplr/keplr2.png" width="200"/></p>
-6. Navigate to `Settings` -> `General` -> `Manage Chain Visibility`. Search for `Lava Testnet`, enable it, and click `Save`.
+6. 导航至 "设置"->"常规"->"管理链可见性"。搜索 "Lava Testnet"，启用并单击 "保存"。
 <p><img src="/img/wallet/keplr/keplr3.png" width="200"/></p>
 <p><img src="/img/wallet/keplr/keplr4.png" width="200"/></p>
 <p><img src="/img/wallet/keplr/keplr5.png" width="200"/></p>
 <p><img src="/img/wallet/keplr/keplr6.png" width="200"/></p>
 <p><img src="/img/wallet/keplr/keplr7.png" width="450"/></p>
-7. Return to the Keplr extension, copy the Lava testnet address.
+7. 返回 Keplr 扩展，复制 Lava 测试网地址。
 <p><img src="/img/wallet/keplr/keplr8.png" width="200"/></p>
 <p><img src="/img/wallet/keplr/keplr9.png" width="200"/></p>
-8. You will now have a Lava address copied to your clipboard, resembling: `lava@11223344556677889900aabbccddeeff1122334`.
+8.现在，您将在剪贴板中复制一个 Lava 地址，类似于：`lava@11223344556677889900aabbccddeeff1122334`。
 
-### Leap Wallet {#leap}
+### Leap 钱包 {#leap}
 
-:::info experimental 
-Lava's support for the Leap wallet is experimental.
+:::info 试验性
+Lava 对 Leap 钱包的支持是试验性的。
 :::
 
-1. Download and install Leap from [here](https://www.leapwallet.io/).
-2. Complete the setup instructions in the Leap extension. (Hardware wallet support, tested with Ledger, is available.)
-3. Open the Leap extension.
+1. 从[此处](https://www.leapwallet.io/)下载并安装 Leap。
+2. 完成 Leap 扩展中的设置说明。(支持硬件钱包，已通过 Ledger 测试）。
+3. 打开 Leap 扩展。
 <p><img src="/img/wallet/leap/leap1.png" width="200"/></p>
-4. **Refresh this page**
-5. Click the button below and then select `Approve`.
+4. **刷新此页面**
+5. 点击下面的按钮，然后选择 "批准"。
 
 
 <p>
@@ -182,30 +182,30 @@ window.leap.experimentalSuggestChain({
 </p>
 
 <p><img src="/img/wallet/leap/leap2.png" width="200"/></p>
-6. Open the extension and copy your wallet address.
+6. 打开扩展，复制你的钱包地址。
 <p><img src="/img/wallet/leap/leap3.png" width="200"/></p>
-7. Your Lava address will be copied to the clipboard, looking like: `lava@11223344556677889900aabbccddeeff1122334`
+7. 您的 Lava 地址将被复制到剪贴板，看起来就像这样： `lava@11223344556677889900aabbccddeeff1122334`
 
-## CLI Wallet {#cli}
+## CLI 钱包 {#cli}
 
-:::warning experimental 
-This section is intended for advanced users.
+:::warning 实验性
+本节面向高级用户。
 :::
 
-The CLI wallet provides various backends, including support for hardware wallets.
+CLI 钱包提供各种后端，包括对硬件钱包的支持。
 
-## Account Preparation using CLI {#account}
-Choose your preferred keyring backend... ([What is a keyring?](/key-terms#accounts--wallets)).
+## 使用 CLI 准备账户 {#account}
+选择您喜欢的keyring backend... ([What is a keyring?](/key-terms#accounts--wallets)).
 ```bash
 lavad config keyring-backend [os|file|kwallet|pass|test|memory]
 ```
 
-### Adding a Key
+### 添加密钥
 :::caution
-Ensure you understand the implications of storing your private key in your chosen keyring.
+确保您理解将私钥存储在所选keyring中的含义。
 :::
 
-1. Substitute $ACCOUNT_NAME with your desired account name:
+1. 将$ACCOUNT_NAME替换为您想要的帐户名:
 ```bash
 current_lavad_binary="$HOME/.lava/cosmovisor/current/bin/lavad"
 ACCOUNT_NAME="name_here"
@@ -213,58 +213,58 @@ $current_lavad_binary keys add $ACCOUNT_NAME
 ```
 
 :::danger
-Securely store your mnemonic in a safe location, as it cannot be retrieved once lost.
+将您的助记符妥善存放在安全的地方，因为一旦丢失就无法找回。
 :::
 
-2. Verify and locate your account in the keys list:
+2. 验证并在密钥列表中找到您的账户：
 ```bash
 $current_lavad_binary keys show $ACCOUNT_NAME
 $current_lavad_binary keys list
 ```
 
 :::caution Pencils out 📝
-Your public address begins with lava@.
+您的公共地址以 lava@ 开头。
 :::
 
-#### Account Recovery
+#### 账户恢复
 
-1. Recover an existing account using your mnemonic:
+1. 使用助记词恢复现有账户：
 ```bash
 lavad keys add $NEW_NAME --recover
 ```
-After entering your seed phrase:
+输入助记词短语后：
 ```bash
 $current_lavad_binary keys show $ACCOUNT_NAME
 ```
 
-### Using a Hardware Wallet with CLI
+### 通过 CLI 使用硬件钱包
 :::info
-These steps are specifically for Ledger hardware wallets, which should be updated and have the Cosmos application installed.
+这些步骤专门针对 Ledger 硬件钱包，它们应已更新并安装了 Cosmos 应用程序。
 :::
 
-Register your Ledger wallet:
+注册您的 Ledger 钱包：
 ```bash
 $current_lavad_binary keys add $ACCOUNT_NAME --ledger
 ```
 
 :::info
-Always include the --ledger flag in transaction commands when using a Ledger.
+在使用分类账时，务必在事务命令中包含 --ledger 标志。
 :::
 ```bash
 $current_lavad_binary tx bank send $ACCOUNT_NAME <lava@target-account> 10000ulava --from $ACCOUNT_NAME --ledger
 ```
-For detailed information, visit [Cosmos Ledger Documentation](https://github.com/cosmos/gaia/blob/main/docs/resources/ledger.md) (replace the command with `$current_lavad_binary`).
+详细信息请访问 [Cosmos Ledger Documentation](https://github.com/cosmos/gaia/blob/main/docs/resources/ledger.md)（将命令替换为 `$current_lavad_binary`）。
 
-## Multisig Wallets
-### Creating a Multisig Wallet
+## 多签钱包
+### 创建多签钱包
 
-1. Import public keys of signers:
+1. 导入签名者的公钥
 ```bash
 $current_lavad_binary keys add multisig_imported_alice --pubkey '{"@type":"/cosmos.crypto.secp256k1.PubKey","key":"data1..."}'
 $current_lavad_binary keys add multisig_imported_bob --pubkey '{"@type":"/cosmos.crypto.secp256k1.PubKey","key":"data2..."}'
 ```
 
-2. Verify the imported keys:
+2. 验证导入的密钥：
 ```bash
 $current_lavad_binary keys show wallet_imported
 - address: lava@xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx...
@@ -279,19 +279,19 @@ $current_lavad_binary keys show wallet_generated_keyring
   type: local
 ```
 
-3. Create a multisig account with imported keys:
+3. 使用导入的密钥创建多重签名账户：
 ```bash
 $current_lavad_binary keys add $MULTISIG_ACCOUNT_NAME --multisig multisig_imported_alice,multisig_imported_bob --multisig-threshold $THRESHOLD
 ```
 
-* **$THRESHOLD** - defines the number of signers required for a valid signature
+* **$THRESHOLD** - 定义了有效签名所需的签名人数
 
-4. Retrieve the multisig public address:
+4. 读取多签公钥
 ```bash
 $current_lavad_binary keys show $MULTISIG_ACCOUNT_NAME
 ```
 
-* Example output:
+* 输出示例：
 ```bash
 $current_lavad_binary keys add multisig2_of_3 --multisig wallet1,wallet2,wallet3 --multisig-threshold 2
 
@@ -301,38 +301,38 @@ $current_lavad_binary keys add multisig2_of_3 --multisig wallet1,wallet2,wallet3
   type: multi
 ```
 
-### Signing Transactions
-For multisig transactions, each signer independently signs the transaction offline.
+### 签署交易
+对于多签名交易，每个签名者都独立进行离线签名。
 
-#### Transaction Generation
-Create a multisig transaction on a shared machine:
+#### 生成交易
+在共享计算机上创建多重签名事务：
 ```bash
 $current_lavad_binary tx bank send $(lavad keys show alice-bob-multisig -a) lava@destination-address 10000000ulava  --generate-only --chain-id lava-testnet-2 > tx_bank.json
 ```
 
-#### Signing the Transaction
-Each signer signs the transaction in their environment:
+#### 签署交易
+每个签名者在各自的环境中签署交易：
 ```bash
 lavad tx sign --from $(lavad keys show -a alice-ledger) --multisig lava@multisig-address tx.json --sign-mode amino-json --chain-id lava-testnet-2 >> tx-signed-alice.json
 or
 lavad tx sign --from $(lavad keys show -a alice-ledger) --multisig lava@multisig-address tx.json --sign-mode amino-json --chain-id lava-testnet-2 --account-number X --sequence X >> tx-signed-alice.json
 ```
-A second signer follows a similar process.
+第二位签名者也遵循类似的程序。
 
-#### Broadcasting the Transaction
-1. Create the signed multisig transaction.
-2. Broadcast the transaction.
+#### 广播交易
+1. 创建已签名的多重签名交易。
+2. 广播交易。
 ```bash
 lavad tx multisign --from alice-bob-multisig tx.json alice-bob-multisig tx-signed-alice.json tx-signed-bob.json --chain-id lava-testnet-2 > tx_ms.json
 lavad tx broadcast ms/tx_ms.json --chain-id lava-testnet-2
 ```
 
-### Other Wallets {#other}
+### 其他钱包 {#other}
 
-:::warning experimental 
-This section is for advanced users.
+:::warning 实验性
+本节针对高级用户。
 :::
-Use the following parameters to set up a wallet not described in this manual:
+使用以下参数设置本手册未描述的钱包：
 
 * **coinType** - 118 (standard cosmos wallet type)
 * **minimal denom** - ulava

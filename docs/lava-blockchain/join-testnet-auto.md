@@ -1,21 +1,20 @@
 ---
 sidebar_position: 2
 slug: /testnet-auto
-title: Option A - Automatic (Cosmovisor)
+title: 选项 A - 自动（Cosmovisor）
 ---
 
 import RoadmapItem from '@site/src/components/RoadmapItem';
 
-# Join testnet - Automatic setup with Cosmovisor
+# 加入测试网 - 使用 Cosmovisor 进行自动设置
 
-This section will help you onboard Lava network with the "automatic scripts" flow: installing a node and joining the network. 
-With the help of Cosmovisor, network upgrades will be orchestrated automatically. 
+这一部分将帮助您通过“自动脚本”流程加入 Lava 网络：安装节点并加入网络。借助 Cosmovisor，网络升级将自动进行调度。
 
-Before starting, verify [hardware requirements](reqs) are met.
+在开始之前，请验证[硬件要求](reqs)是否满足。
 
-### 1. Install node (`lavad`) & Join network
+### 1. 安装节点 (`lavad`) 并加入网络
 
-**Prepare**
+**准备**
 ```bash
 sudo apt update
 ``` 
@@ -24,13 +23,13 @@ sudo apt update
 sudo apt install curl jq unzip coreutils -y
 ```
 
-**Install and join the network**
+**安装并加入网络**
 
-Running the script will:
+运行该脚本将：
 
-1. Install `lavad` (using Cosmovisor)
-2. Join the testnet
-3. Sync to latest block
+1. 安装 `lavad` （使用 Cosmovisor）
+2. 加入测试网络
+3. 同步到最新区块
 
 ```bash
 curl -s --location \
@@ -40,39 +39,39 @@ chmod +x 00_join_network.sh && \
 ./00_join_network.sh
 ```
 
-### 2. Verify
+### 2. 验证
 
-#### Verify `cosmovisor` setup
+#### 验证 `cosmovisor` 设置
 
-Make sure `cosmovisor` is running by checking the state of the cosmovisor service:
+通过检查 cosmovisor 服务的状态，确保 `cosmovisor` 正在运行：
     
 ```bash
-# Check the service status - you should expect the service to be "Active", if you see errors connecting to peers, that is normal
+# 检查服务状态--你应该希望服务处于 "激活 "状态，如果你看到连接到对等设备时出现错误，那是正常的。
 sudo systemctl status cosmovisor
-# To view the service logs - verify that you can see the blocks height advancing
+# 要查看服务日志，请确认您可以看到正在推进的区块高度。
 sudo journalctl -u cosmovisor -f
 ```
 
-#### Verify node status
+#### 验证节点状态
 
-Note the location of `lavad` now exists under cosmovisor path:
+注意 `lavad` 的位置现在存在于 cosmovisor 路径下：
 
 ```bash
-# Check if the node is currently in the process of catching up
+# 检查节点当前是否处于追赶最新区块过程中
 $HOME/.lava/cosmovisor/current/bin/lavad status | jq
 ```
 
-🛟 Problems? Head over to our [FAQ's section](./faq#i-have-problems-running-the-install-scripts)
+🛟 有问题？请访问我们的 [常见问题](./faq#i-have-problems-running-the-install-scripts) 部分。
 
 
-## Welcome to Lava Testnet 🌋
+## 欢迎访问 Lava Testnet 🌋
 
-:::tip Joined Testnet? Be a validator!
-You are now running a Node in the Lava network 🎉🥳! 
+:::tip 已加入 Testnet？成为验证者
+您现在正在 Lava 网络中运行一个节点🎉🥳！
 
-Congrats, happy to have you here 😻 Celebrate it with us on Discord.
+祝贺您，很高兴您来到这里 😻 在 Discord 上与我们一起庆祝。
 
-When you're ready, start putting the node to use **as a validator**:
+准备就绪后，开始将节点用作**验证器**：
 [<RoadmapItem icon="🧑‍⚖️" title="Power as a Validator" description="Validate blocks, secure the network, earn rewards"/>](/validator-auto#account)
 
 :::

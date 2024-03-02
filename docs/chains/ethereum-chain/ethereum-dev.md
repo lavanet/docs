@@ -1,36 +1,36 @@
 ---
 slug: /ethereum-dev
-title: Getting Ethereum RPC
+title: 获取 Ethereum RPC
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Getting Ethereum RPC
+# 获取 Ethereum RPC
 
 ## [Gateway](https://gateway.lavanet.xyz/?utm_source=ethereum-dev&utm_medium=docs&utm_campaign=docs-to-gateway)
 
-To learn more about using the Lava Gateway visit the [Getting Started guide](https://docs.lavanet.xyz/gateway-getting-started?utm_source=ethereum-dev&utm_medium=docs&utm_campaign=docs-to-docs)
+要了解有关使用 Lava Gateway 的更多信息，请访问 [入门指南](https://docs.lavanet.xyz/gateway-getting-started?utm_source=ethereum-dev&utm_medium=docs&utm_campaign=docs-to-docs)
 
 <hr />
 <br />
 
 ## SDK
 
-### Input 📥
+### 输入 📥
 
 <Tabs>
 <TabItem value="backend" label="BackEnd">
 
 ```jsx
-// Install lavaSDK with the following command:
+// 使用以下命令安装 lavaSDK：
 // npm i @lavanet/lava-sdk
 const { LavaSDK } = require("@lavanet/lava-sdk")
 
 async function useEthereumMainnet() {
 
   const ethereumMainnet = await LavaSDK.create({
-    privateKey: process.env.PRIVATE_KEY, //hide your private key in an environmental variable
+    privateKey: process.env.PRIVATE_KEY, //将私钥隐藏在环境变量中
     chainIds: 'ETH1',
   });
 
@@ -51,7 +51,7 @@ async function useEthereumMainnet() {
 <TabItem value="frontend" label="FrontEnd">
 
 ```jsx
-// Install lavaSDK with the following command:
+// 使用以下命令安装 lavaSDK：
 // npm i @lavanet/lava-sdk
 const { LavaSDK } = require("@lavanet/lava-sdk")
 

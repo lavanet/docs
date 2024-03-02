@@ -3,11 +3,11 @@ slug: /iprpc
 title: ipRPC 🔥
 ---
 
-# Incentivized Public RPC (ipRPC) 
+# 受激励的公共 RPC（ipRPC）
 
-## Overview 🔎
+## 概览 🔎
 
-Lava works with various blockchains to establish **Incentivized Public RPC (ipRPC) endpoints**. ipRPC endpoints are given unified URLs serviced by diverse providers of each chain's ecosystem. Providers are paid by those respective ecosystems to offer their services and developers benefit from the availability of highly-serviced endpoints unified through a single URL.
+Lava 与各种区块链合作，建立**激励公共 RPC (ipRPC)端点**。ipRPC 端点被赋予统一的 URL，由各链生态系统的不同提供商提供服务。提供商由各自的生态系统付费提供服务，开发人员则可从通过单个 URL 统一的高服务端点中获益。
 
 <center> 
 

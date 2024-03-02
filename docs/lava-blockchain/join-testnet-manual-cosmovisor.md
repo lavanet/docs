@@ -1,17 +1,17 @@
 ---
 sidebar_position: 2
 slug: /testnet-manual-cosmovisor
-title: Option A - With Cosmovisor
+title: 方案 A - 带 Cosmovisor
 ---
 import RoadmapItem from '@site/src/components/RoadmapItem';
 
-# Join testnet - Manual setup with Cosmovisor
-## Prerequisites
+# 加入测试网 - 使用 Cosmovisor 进行手动设置
+## 必要准备
 
-1. Verify [hardware requirements](reqs) are met
-2. Install package dependencies
-    - Note: You may need to run as `sudo`
-    - Required packages installation
+1. 验证[硬件要求](reqs)是否满足
+2. 安装软件包依赖项
+    - 注意：可能需要以 `sudo` 身份运行
+    - 安装所需软件包
         
         ```bash
         ### Packages installations
@@ -37,38 +37,37 @@ import RoadmapItem from '@site/src/components/RoadmapItem';
         source ~/.profile
         ```
         
-    - Installation verifications
+    - 安装验证
         
         
-        1. You can verify the installed go version by running: `go version`
+        1. 您可以运行： `go version` 来验证已安装的 go 版本。
         
-        2. The command `go env GOPATH` should include `$HOME/go`
-        If not, then, `export GOPATH=$HOME/go`
+        2. `go env GOPATH` 命令应包括 `$HOME/go` 。
+        如果没有，则执行 `export GOPATH=$HOME/go` 命令。
         
-        3. PATH should include `$HOME/go/bin`
-        To verify PATH, run `echo $PATH`
-        
+        3. PATH 应包括`$HOME/go/bin`。
+        要验证 PATH，请运行 `echo $PATH`
 
-## 1. Set up a local node
+## 1. 创建本地节点
 
-### Download app configurations
+### 下载应用程序配置
 
-- Download setup configuration
-    
-    Download the configuration files needed for the installation
+- 下载设置配置
+
+  下载安装所需的配置文件
     
     ```bash
-    # Download the installation setup configuration
+    # 下载安装设置配置
     git clone https://github.com/lavanet/lava-config.git
     cd lava-config/testnet-2
-    # Read the configuration from the file
-    # Note: you can take a look at the config file and verify configurations
+    # 从文件中读取配置
+    # 注意：您可以查看配置文件并验证配置
     source setup_config/setup_config.sh
     ```
     
-- Set app configurations
-        
-    Copy lavad default config files to config Lava config folder
+- 设置应用程序配置
+
+  将 lavad 默认配置文件复制到 config Lava 配置文件夹中
     
     ```bash
     echo "Lava config file path: $lava_config_folder"
@@ -78,35 +77,35 @@ import RoadmapItem from '@site/src/components/RoadmapItem';
     ```
     
 
-### Set the genesis file
+### 设置创世文件
 
-- Set the genesis file in the configuration folder
+- 在配置文件夹中设置创世文件
     
     ```bash
-    # Copy the genesis.json file to the Lava config folder
+    # 将 genesis.json 文件复制到 Lava 配置文件夹中
     cp genesis_json/genesis.json $lava_config_folder/genesis.json
     ```
 
-## 2. Join the Lava Testnet
+## 2. 加入Lava测试网
 
-The following sections will describe how to install Cosmovisor for automating the upgrades process.
+下文将介绍如何安装 Cosmovisor 以实现自动升级。
 
 
-### Set up Cosmovisor {#cosmovisor}
+### 设置 Cosmovisor {#cosmovisor}
 
-- Set up cosmovisor to ensure any future upgrades happen flawlessly. To install Cosmovisor:
+- 设置 Cosmovisor 以确保将来的升级完美无瑕。安装 Cosmovisor
     
     ```bash
     go install github.com/cosmos/cosmos-sdk/cosmovisor/cmd/cosmovisor@v1.0.0
-    # Create the Cosmovisor folder and copy config files to it
+    # 创建 Cosmovisor 文件夹并将配置文件复制到其中
     mkdir -p $lavad_home_folder/cosmovisor/genesis/bin/
-    # Download the genesis binary
+    # 下载创世二进制文件
     wget -O  $lavad_home_folder/cosmovisor/genesis/bin/lavad "https://github.com/lavanet/lava/releases/download/v0.21.1.2/lavad-v0.21.1.2-linux-amd64"
     chmod +x $lavad_home_folder/cosmovisor/genesis/bin/lavad
     ```
 
     ```bash
-    # Set the environment variables
+    # 设置环境变量
     echo "# Setup Cosmovisor" >> ~/.profile
     echo "export DAEMON_NAME=lavad" >> ~/.profile
     echo "export CHAIN_ID=lava-testnet-2" >> ~/.profile
@@ -119,7 +118,7 @@ The following sections will describe how to install Cosmovisor for automating th
     ```
 
     ```bash
-    # Initialize the chain
+    # 初始化链
     $lavad_home_folder/cosmovisor/genesis/bin/lavad init \
     my-node \
     --chain-id lava-testnet-2 \
@@ -128,19 +127,19 @@ The following sections will describe how to install Cosmovisor for automating th
     cp genesis_json/genesis.json $lava_config_folder/genesis.json
     ```
 
-    :::caution Please note that cosmovisor will throw an error ⚠️ This is ok.
-    The following error will be thrown,
-    lstat /home/ubuntu/.lava/cosmovisor/current/upgrade-info.json: no such file or directory
-    :::
+:::caution 请注意，cosmovisor 会提示错误 ⚠️。
+
+将出现以下错误，lstat /home/ubuntu/.lava/cosmovisor/current/upgrade-info.json: no such file or directory（没有此类文件或目录）
+:::
 
     ```bash
     cosmovisor version
     ```
-    
-    Create the systemd unit file
+
+  创建 systemd 运行单元文件
     
     ```bash
-    # Create Cosmovisor unit file
+    # 创建 Cosmovisor 单元文件
 
     echo "[Unit]
     Description=Cosmovisor daemon
@@ -164,15 +163,15 @@ The following sections will describe how to install Cosmovisor for automating th
     sudo mv cosmovisor.service /lib/systemd/system/cosmovisor.service
     ```
 
-### Download the latest Lava data snapshot (_optional_) {#snapshots}
+### 下载最新的 Lava 数据快照 (_optional_) {#snapshots}
 
-_Coming soon_
+_即将到来_
 
-### Enable and start the Cosmovisor service
+### 激活并启动 Cosmovisor 服务
     
-- Configure the Cosmovisor service to run on boot, and start it
+- 配置 Cosmovisor 服务在启动时运行，并启动它
     ```bash
-    # Enable the cosmovisor service so that it will start automatically when the system boots
+    # 启用 cosmovisor 服务，使其在系统启动时自动启动
     sudo systemctl daemon-reload
     sudo systemctl enable cosmovisor.service
     sudo systemctl restart systemd-journald
@@ -180,39 +179,39 @@ _Coming soon_
     ```
     
 
-## 3. Verify
+## 3. 验证
 
-### Verify `cosmovisor` setup
+### 验证 `cosmovisor` 设置
 
-Make sure `cosmovisor` is running by checking the state of the cosmovisor service:
+通过检查 cosmovisor 服务的状态，确保 `cosmovisor` 正在运行：
 
-- Check the status of the service
+- 检查服务状态
     ```bash
     sudo systemctl status cosmovisor
     ```
-- To view the service logs - to escape, hit CTRL+C
+- 要查看服务日志 - 要退出，请点击 CTRL+C
 
     ```bash
     sudo journalctl -u cosmovisor -f
     ```
 
-### Verify node status
+### 验证节点状态
 
-Note the location of `lavad` now exists under `cosmovisor` path:
+注意 `lavad` 现在存在于 `cosmovisor` 路径下：
 
 ```bash
-# Check if the node is currently in the process of catching up
+# 检查节点当前是否处于同步区块过程中
 $HOME/.lava/cosmovisor/current/bin/lavad status | jq .SyncInfo.catching_up
 ```
 
-## Welcome to Lava Testnet 🌋
+## 欢迎来到 Lava Testnet🌋
 
-:::tip Joined Testnet? Be a validator!
-You are now running a Node in the Lava network 🎉🥳! 
+:::tip 已加入 Testnet？成为验证者！
+您现在正在 Lava 网络中运行一个节点 🎉🥳!！
 
-Congrats, happy to have you here 😻 Celebrate it with us on Discord.
+祝贺你，很高兴你能来到这里 😻 在 Discord 上与我们一起庆祝。
 
-When you're ready, start putting the node to use **as a validator**:
+准备就绪后，开始将节点用作**验证器**：
 [<RoadmapItem icon="🧑‍⚖️" title="Power as a Validator" description="Validate blocks, secure the network, earn rewards"/>](/validator-manual#account)
 
 :::

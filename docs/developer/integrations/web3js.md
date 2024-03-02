@@ -99,4 +99,4 @@ async function createWeb3Instance {
 
 </Tabs>
 
-❓ Looking for more examples? Check out the [examples](https://github.com/lavanet/lava-sdk-providers/tree/main/web3js/examples) folder on our repository.
+❓ 寻找更多示例？请查看我们仓库中的 [examples](https://github.com/lavanet/lava-sdk-providers/tree/main/web3js/examples) 文件夹。

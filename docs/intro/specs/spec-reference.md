@@ -1,18 +1,18 @@
 ---
 slug: /spec-reference
-title: Reference Guide 📐
+title: 参考指南 📐
 ---
 
-# Spec Reference Guide
+# Spec 参考指南
 
-This guide provides a detailed reference to the various specifications within the Lava Network. It encompasses the structure and definitions of proposals, specs, API collections, service APIs, and associated extensions. The objective is to ensure that developers, validators, and other stakeholders have a clear and consistent understanding of the configurations and functionalities.
+本指南详细参考了Lava网络中的各种规范。它包含了提案、参数、API集合、服务API和相关扩展的结构和定义。目标是确保开发人员、验证人员和其他涉众对配置和功能有一个清晰和一致的理解。
 
 <br/>
 <hr/>
 
-## 📌 File Structure 
+## 📌 文件结构
 
-<details><summary> 🔝 Tree Structure </summary>
+<details><summary> 🔝 树状结构 </summary>
 
 ```
 Spec (JSON)
@@ -159,219 +159,218 @@ Spec (JSON)
 </details>
 
 
-## 📖 Section Reference
+## 📖 章节参考
 
-Each section details specific fields with descriptions and examples.
+每个部分都详细介绍了特定字段，并附有说明和示例。
 
-### Proposal (`proposal`) 📜 {#proposal}
+### 提案 (`proposal`) 📜 {#proposal}
 
 
-| Field         | Description                                                   | Example                                                  |
-|---------------|---------------------------------------------------------------|----------------------------------------------------------|
-| `title`       | Title of the proposal.                                        | `Add Specs: Solana`                                      |
-| `description` | Brief description about the purpose of the proposal.          | `Adding new specification support for relaying Solana data on Lava` |
+| 字段            | 说明                    | 示例                                                               |
+|---------------|-------------------------|--------------------------------------------------------------------|
+| `title`       | 提案的标题                | `Add Specs: Solana`                                                |
+| `description` | 简短的描述提案的目的        | `Adding new specification support for relaying Solana data on Lava`|
 
 
 ### Specifications (`specs`) 📘 {#specs}
 
-| Field | Description | Example |
-|-------|-------------|---------|
-| `index` | A unique identifier for the spec. | `JUN1` |
-| `name` | A human-readable name for the spec. | `juno mainnet` |
-| `enabled` | Indicates if the spec is active. | `true` |
-| `imports` | An array of other spec indices. Allows one spec to inherit settings from another. | `["COSMOSSDKFULL"]` |
-| `reliability_threshold` | A system parameter for data reliability. | `268435455` |
-| `data_reliability_enabled` | Flag indicating if data reliability is enabled. | `true` |
-| `block_distance_for_finalized_data` | The number of blocks considered safe from chain reorganizations. | `0` |
-| `blocks_in_finalization_proof` | Number of blocks in the finality proof. | `1` |
-| `average_block_time` | The average time (in ms) taken for a block to be produced. | `6500` |
-| `allowed_block_lag_for_qos_sync` | Number of blocks a quality of service sync can lag by. | `2` |
-| `min_stake_provider` | Minimum amount a provider needs to stake to offer services. | `{"denom": "ulava", "amount": "50000000000"}` |
-| `min_stake_client` | *(deprecated)* Minimum amount a client needs to stake to access services. | `{"denom": "ulava", "amount": "5000000000"}` |
+| 字段                                  | 说明                                              | 示例                                            |
+|-------------------------------------|---------------------------------------------------|-----------------------------------------------|
+| `index`                             | spec的唯一标识符。                                   | `JUN1`                                        |
+| `name`                              | spec的可读名称。                                     | `juno mainnet`                                |
+| `enabled`                           | 提示该spec是否处于活动状态。                            | `true`                                        |
+| `imports`                           | 其他 spec索引的数组。允许一个 spec从另一个 spec继承设置。  | `["COSMOSSDKFULL"]`                           |
+| `reliability_threshold`             | 数据可靠性的系统参数。                                 | `268435455`                                   |
+| `data_reliability_enabled`          | 表示是否启用数据可靠性的标志。                           | `true`                                        |
+| `block_distance_for_finalized_data` | 被认为不受链重组影响的区块数量。                          | `0`                                           |
+| `blocks_in_finalization_proof`      | 最终证明的块数。                                       | `1`                                           |
+| `average_block_time`                | 生成一个数据块所花费的平均时间(单位为ms)。                 | `6500`                                        |
+| `allowed_block_lag_for_qos_sync`    | 服务质量同步可能滞后的块数。                             | `2`                                           |
+| `min_stake_provider`                | 提供商提供服务所需的最少质押。                            | `{"denom": "ulava", "amount": "50000000000"}` |
+| `min_stake_client`                  | *(已弃用)*客户端访问服务所需支付的最小金额。                | `{"denom": "ulava", "amount": "5000000000"}`  |
 
-### API Collections (`api_collections`) 🗂️ {#api_collections}
+### API 集合 (`api_collections`) 🗂️ {#api_collections}
 
-| Field | Description | Example |
-|-------|-------------|---------|
-| `enabled` | Indicates if the API collection is active. | `true` |
-| `collection_data` | Contains data related to the collection. | `{"api_interface": "rest", "internal_path": "", "type": "GET", "add_on": ""}` |
-| `apis` | An array containing details of each API in the collection. | Array of API objects |
-| `headers` | Headers to be included in the API requests. | `[]` |
-| `inheritance_apis` | An array of APIs inherited from imported specs. | `[]` |
-| `parse_directives` | Directives to parse the API responses. | `[]` |
-| `verifications` | Contains verification details. | `{"name": "chain-id", "values": [ { "expected_value": "juno-1" } ]}` |
+| 字段                 | 说明                                         | 示例                                                                            |
+|--------------------|----------------------------------------------|-------------------------------------------------------------------------------|
+| `enabled`          | 表明API集合是否处于活动状态。                     | `true`                                                                        |
+| `collection_data`  | 包含与集合相关的数据。                            | `{"api_interface": "rest", "internal_path": "", "type": "GET", "add_on": ""}` |
+| `apis`             | 一个数组，包含集合中每个API的详细信息。              | Array of API objects                                                          |
+| `headers`          | 要包含在API请求中的标头。                         | `[]`                                                                          |
+| `inheritance_apis` | 从导入的specs继承的API数组。                      | `[]`                                                                          |
+| `parse_directives` | 解析API响应的指令。                              | `[]`                                                                          |
+| `verifications`    | 包含验证详细信息。                                | `{"name": "chain-id", "values": [ { "expected_value": "juno-1" } ]}`          |
 
-#### API Collection Data (`collection_data`) {#collection_data}
+#### API 集合数据 (`collection_data`) {#collection_data}
 
-| Field | Description | Example |
-|-------|-------------|---------|
-| `api_interface` | Interface of the API (e.g., `rest`, `grpc`). | `rest` |
-| `internal_path` | Internal path for the API call. | `` |
-| `type` | HTTP method for the API request. | `GET` |
-| `add_on` | Name of add-on collection belongs to | `debug` |
-
-
-### Service APIs (`apis`) ⚙️ {#apis}
-
-| Field | Description | Example |
-|-------|-------------|---------|
-| `name` | Name of the API. | `juno.mint.Query/AnnualProvisions` |
-| `block_parsing` | Describes how block heights are derived from API requests. | `{"parser_arg": ["latest"], "parser_func": "DEFAULT"}` |
-| `compute_units` | Number of compute units required for the API. | `10` |
-| `enabled` | Indicates if the API is active. | `true` |
-| `category` | Specifies the category of the API. | `{"deterministic": true, "local": false, "subscription": false, "stateful": 0}` |
-| `extra_compute_units` | Additional compute units if required. | `0` |
+| 字段              | 说明                                   | 示例     |
+|-----------------|----------------------------------------|---------|
+| `api_interface` | API接口(e.g., `rest`, `grpc`).          | `rest`  |
+| `internal_path` | API调用的内部路径。                        | ``      |
+| `type`          | API请求的HTTP方法。                       | `GET`   |
+| `add_on`        | 加载项集合的名称属于                        | `debug` |
 
 
+### 服务API (`apis`) ⚙️ {#apis}
 
-#### Block Parsing(`block_parsing`) {#block_parsing}
+| 字段                    | 说明               | 示例                                                                             |
+|-----------------------|------------------|---------------------------------------------------------------------------------|
+| `name`                | API的名称。          | `juno.mint.Query/AnnualProvisions`                                              |
+| `block_parsing`       | 描述如何从API请求解析块高度。 | `{"parser_arg": ["latest"], "parser_func": "DEFAULT"}`                          |
+| `compute_units`       | API所需的计算单元数量。    | `10`                                                                            |
+| `enabled`             | 表明API是否激活。       | `true`                                                                          |
+| `category`            | 指定API的类别。        | `{"deterministic": true, "local": false, "subscription": false, "stateful": 0}` |
+| `extra_compute_units` | 如果需要额外的计算单元。     | `0`                                                                             |
 
-Details on how block heights are derived from API requests.
 
-| Field | Description | Example |
-|-------|-------------|---------|
-| `parser_arg` | Arguments for the parser function. | `["latest"]` |
-| `parser_func` | The function used for parsing. | `DEFAULT` |
 
-#### Service API Categories(`category`) {#api_category}
+#### 区块解析(`block_parsing`) {#block_parsing}
 
-| Field | Description | Example |
-|-------|-------------|---------|
-| `deterministic` | Indicates if the API's outcome is deterministic. | `true` |
-| `local` | Specifies if the API call is local. | `false` |
-| `subscription` | Indicates if the API supports subscription. | `false` |
-| `stateful` | Describes the statefulness of the API. A value of `0` means it's stateless. | `0` |
+关于如何从API请求中解析出区块高度的详细信息。
 
-#### Verification(`verifications`) {#verifications}
+| 字段            | 说明                  | 示例           |
+|---------------|-----------------------|--------------|
+| `parser_arg`  | 解析器函数的参数。        | `["latest"]` |
+| `parser_func` | 用于解析的函数。          | `DEFAULT`    |
 
-Verification details used to validate the data.
+#### 服务API类别(`category`) {#api_category}
 
-| Field   | Description                        | Example          |
-|---------|------------------------------------|------------------|
-| `name` | Name of the verification. | `chain-id` |
-| `values` | Array containing expected values. | `[ { "expected_value": "juno-1" } ]` |
+| 字段              | 说明                                 | 示例      |
+|-----------------|---------------------------------------|---------|
+| `deterministic` | 表明API的结果是否确定。                  | `true`  |
+| `local`         | 表明API调用是否是本地的。                | `false` |
+| `subscription`  | 表明API是否支持订阅。                   | `false` |
+| `stateful`      | 描述API的状态。值为`0`意味着它是无状态的。 | `0`     |
 
-#### Extensions (`extensions`)
+#### 验证(`verifications`) {#verifications}
 
-| Field           | Description                                | Example   |
-|-----------------|--------------------------------------------|-----------|
-| `name`          | Name of the extension.                     | `archive` |
-| `cu_multiplier` | Compute units multiplier for the extension.| `5`       |
-| `rule`          | Specific rules associated with the extension. (e.g., block number)| `block: 254`|
+用于验证数据的验证细节。
 
-### Deposit (`deposit`) 💰 {#deposit}
+| 字段       | 说明              | 示例                                  |
+|----------|-------------------|--------------------------------------|
+| `name`   | 验证的名称。         | `chain-id`                           |
+| `values` | 包含预期值的数组。    | `[ { "expected_value": "juno-1" } ]` |
 
-Represents the amount deposited by the user for the proposal.
+#### 扩展 (`extensions`)
 
-| Field   | Description                        | Example          |
-|---------|------------------------------------|------------------|
-| `deposit` | Amount deposited for the proposal in a particular denomination. | `10000000ulava` |
+| 字段              | 说明                             | 示例           |
+|-----------------|----------------------------------|--------------|
+| `name`          | 扩展名。                           | `archive`    |
+| `cu_multiplier` | 计算扩展的单位乘数。                  | `5`          |
+| `rule`          | 与扩展相关的特定规则。(例如，区块编号)   | `block: 254` |
+
+### 存款 (`deposit`) 💰 {#deposit}
+
+表示用户为提案存入的金额。
+
+| 字段        | 说明                           | 示例            |
+|-----------|--------------------------------|-----------------|
+| `deposit` | 在特定货币单位中存入的提案金额。     | `10000000ulava` |
 
 <br/>
 <hr/>
 
-## 📖 Glossary 
+## 📖 术语表 
 
 
-### Terms 📚
+### 条款 📚
 
 <details> <summary> 🗉 `average_block_time` </summary>
 
-This value represents the typical duration, in milliseconds, between consecutive blocks being added to the blockchain. It's essential for quality of service (QoS) considerations, ensuring timely and efficient data relay without causing undue strain on the network or the nodes.
+该值表示连续区块被添加到区块链之间的典型持续时间，以毫秒为单位。这对于质量服务（QoS）的考虑至关重要，确保及时高效地传输数据，而不会对网络或节点造成不必要的负担。
 
 </details>
 
 <details> <summary> 🗉 `allowed_block_lag_for_qos_sync` </summary>
 
-This configuration determines how many blocks behind the latest block a provider can be before their QoS score begins to degrade. It essentially quantifies the maximum allowable "out-of-sync" state for a provider, beyond which their performance is deemed suboptimal.
+该配置决定了提供商在其 QoS 分数开始下降之前可以落后最新数据块多少个数据块。它基本上量化了提供商可允许的最大 "out-of-sync"状态，超过这一状态，其性能将被视为不理想。
 
-For instance, if the network's latest block number is 1000 and a provider's latest block number is 995 with an "allowed_block_lag_for_qos_sync" of 5, their QoS score will start to be negatively impacted.
+例如，如果网络的最新区块编号是 1000，而提供商的最新区块编号是 995，且 "allowed_block_lag_for_qos_sync "为 5，那么他们的 QoS 分数将开始受到负面影响。
 
 </details>
 
 <details> <summary> 🗉 `compares_hashes`  </summary>
 
-When set to true, it activates the data reliability features of the Lava network for the specified chain. This involves constantly comparing and validating block hashes from different nodes to guarantee data authenticity and prevent any malicious or erroneous data propagation.
+设置为 "true "时，它将激活指定链的 Lava 网络数据可靠性功能。这包括不断比较和验证来自不同节点的区块哈希值，以保证数据的真实性，防止任何恶意或错误的数据传播。
 
 </details>
 
 <details> <summary> 🗉 `deposit` </summary>
 
-In a decentralized setup, actions like adding or updating specs may need consensus or approval. The "deposit" specifies the amount of "ulava" (the native token of the Lava network) that must be deposited as a proposal spec admission fee. It's akin to a security deposit or stake, ensuring that only serious and genuine proposals are submitted, and potentially safeguarding against spam or malicious actions.
+在去中心化设置中，添加或更新参数等操作可能需要共识或批准。“存款”指定了“ulava”(lava网络的本地令牌)的数量，必须作为提案参数入场费存入。它类似于保证金或质押，确保只有严肃和真正的提案被提交，并可能防止垃圾邮件或恶意行为。
 
 </details>
 
 <details> <summary> 🗉 `finalization_criteria` </summary>
 
-This parameter addresses the issue of blockchain finality. In the context of blockchains, particularly Proof-of-Work chains like Ethereum, blocks can sometimes be "orphaned" due to network forks. The "finalization_criteria" value represents the number of blocks back from the current block number that we deem "finalized" or irreversible.
-
-For instance, with a "finalization_criteria" of 7, if the latest block number is 1000, blocks 993 and earlier are considered finalized. By doing so, the system safeguards against relaying data from blocks that might later get rejected or orphaned.
+此参数解决了区块链终结性的问题。在区块链的背景下，特别是像以太坊这样的工作证明链，区块有时会因为网络分叉而“孤立”。“finalization_criteria”值表示从我们认为“已完成”或不可逆的当前块数返回的块数。
+例如，“finalization_criteria”为7，如果最新的区块号为1000，则认为993及更早的区块已完成。通过这样做，系统可以防止从块中中继数据，这些数据可能会在以后被拒绝或孤立。
 
 </details>
 
 <details> <summary> 🗉 `reliability_threshold` </summary>
 
-This threshold determines the frequency at which free data reliability messages are broadcasted. At its essence, it dictates how resilient and trustworthy the data relayed is. The threshold is represented in hexadecimal format and functions as a mask to determine the frequency of reliability messages:
+该阈值决定广播空闲数据可靠性消息的频率。从本质上讲，它决定了中继数据的弹性和可信度。该阈值以十六进制形式表示，用作掩码，用于确定可靠性消息的频率:
 
-  - **0x0FFFFFFF**: This implies that roughly 1 out of every 16 messages is a data reliability message. It's relatively infrequent, optimizing for efficiency over reliability.
+  - **0x0FFFFFFF**: 这意味着大约每16条消息中就有1条是数据可靠性消息。这种情况相对较少，优化的是效率而不是可靠性。
 
-  - **0x8FFFFFFF**: Indicates a higher frequency – about 1 reliability message for every 2 standard messages. This is a middle-ground setting, balancing both efficiency and reliability.
+  - **0x8FFFFFFF**: 频率较高，大约每2条标准消息对应1条可靠性消息。这是一个平衡效率和可靠性的中间设置。
 
-  - **0xFFFFFFFF**: The maximum setting where every message is a data reliability message. It prioritizes reliability above all, ensuring that data integrity is maintained at all times.
+  - **0xFFFFFFFF**: 每条消息都是数据可靠性消息的最大设置。它优先考虑可靠性，确保始终保持数据完整性。
 
 </details>
 
 <details> <summary> 🗉 `saved_blocks` </summary>
 
-It corresponds to the number of previously finalized blocks (as determined by "finalization_criteria") that providers should retain and attach to their responses for enhanced reliability. By providing a history of previous blocks, it ensures data consistency and allows for cross-validation of data among different providers.
+它对应于先前确定的块的数量(由“finalization_criteria”确定)，提供者应该保留并附加到其响应中以增强可靠性。通过提供以前块的历史记录，它确保了数据的一致性，并允许不同提供者之间的数据交叉验证。
 
 </details>
 
 
 <br/>
 
-### Parsing 🧩
+### 解析 🧩
 
-Parsing is a critical aspect when interacting with diverse chains, as each chain returns data in a different format. The Lava Network has established parsing protocols to handle these variations effectively.
+解析是与不同链交互时的一个关键方面，因为每个链以不同的格式返回数据。Lava 网络已经建立了解析协议来有效地处理这些变化。
 
-<details><summary> Parsing Functions </summary>
+<details><summary> 解析函数 </summary>
 
-The parsing functions define how the returned data is processed to extract the necessary information.
+解析函数定义了如何处理返回的数据以提取必要的信息。
 
   - **EMPTY:**
-      Description: The data is returned as it is without any parsing.
+    说明:返回的数据没有任何解析。
 
   - **PARSE_BY_ARG:**
-      Description: Assumes the returned data is an array. It takes an index as an argument and returns the element at that index in the returned data.
+    说明:假定返回的数据是一个数组。它接受一个索引作为参数，并返回返回数据中位于该索引处的元素。
 
   - **PARSE_CANONICAL:**
-      Description: Assumes the returned data is a canonically structured JSON. It receives key values as an argument and progresses through the JSON structure using the keys to fetch the desired element.
+    说明:假设返回的数据是一个标准结构的JSON。它接收键值作为参数，并使用键在JSON结构中获取所需的元素。
 
   - **PARSE_DICTIONARY:**
-      Description: Assumes the returned data is a string with a key-value structure (such as KEY=VAL). It receives a key and separator as arguments and returns the value corresponding to the key.
+    说明:假设返回的数据是一个具有键值结构(如KEY=VAL)的字符串。它接收键和分隔符作为参数，并返回键对应的值。
 
   - **PARSE_DICTIONARY_OR_ORDERED:**
-      Description: It first tries the PARSE_DICTIONARY method, and if that fails, then it resorts to the PARSE_BY_ARG method.
+    说明:它首先尝试PARSE_DICTIONARY方法，如果失败，则求助于PARSE_BY_ARG方法。
 
 </details>
 
-<details><summary> Parsing Fields </summary>
+<details><summary> 解析字段 </summary>
 
 ##### `block_parsing`:
 
-Determines how to extract the block number associated with a request. This is essential for queries that are specific to certain block heights.
+决定如何提取与请求相关的区块编号。这对特定于某些区块高度的查询至关重要。
 
 ##### `result_parsing`:
 
-Determines how to extract the desired data from the response. Depending on the structure of the data returned by the chain, the appropriate parsing method is chosen.
+决定如何从响应中提取所需的数据。根据链返回的数据结构，选择适当的解析方法。
 
 ##### `function_tag`:
 
-This is crucial for the Lava network's features, such as reliability, which require fetching certain data from the chain, like the latest block number or block hashes. The function_tag marks an endpoint as being suitable to fetch specific types of information. Some examples include getBlockNumber and getBlockByNumber.
+这对 Lava 网络的可靠性等功能至关重要，因为这些功能需要从链中获取某些数据，如最新的区块编号或区块哈希值。function_tag 标记一个端点适合获取特定类型的信息。例如 getBlockNumber 和 getBlockByNumber。
 
 ##### `function_template`:
 
-For endpoints with a defined function_tag, this template serves as a format string. It can be used by relayers to construct a query to an external chain. This ensures standardized queries across different relayers.
+对于已定义 function_tag 的端点，该模板可用作格式字符串。中继器可以用它来构建对外部链的查询。这可确保不同中继器之间的查询标准化。
 
 </details>
 <br/>

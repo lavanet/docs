@@ -1,11 +1,11 @@
 ---
 slug: /starknet-node
-title: Running a Starknet RPC Node
+title: 运行 Starknet RPC 节点
 ---
 
-# Running a Starknet RPC Node
+# 运行 Starknet RPC 节点
 
-## Requirements 📄
+## 配置要求 📄
 
 ### Minimum Requirements
 
@@ -22,9 +22,9 @@ title: Running a Starknet RPC Node
     Connection Speed: 25+ mbps/sec
 
 
-##  Install the Starknet L1 Package 📦 
+##  安装Starknet L1包 📦 
 
-Docker abstracts the ETH L1 Node needs, but behind the scenes Starknet requires Lighthouse and Besu. Lighthouse handles consensus and Besu handles execution. Both of them can be installed with the following command:
+Docker抽象了ETH L1节点的需求，但在幕后，Starknet需要Lighthouse和Besu。Lighthouse处理共识，Besu处理执行。它们都可以使用以下命令安装:
 
 ```bash
 git clone git@github.com:starknet-edu/starknet-stack.git
@@ -32,17 +32,17 @@ cd starknet-stack
 docker compose -f dc-l1.yaml up -d
 ```
 
-To verify success, check to see the ports in the following command outputs:
+为验证连接是否成功，可以在以下命令输出中查看端口信息:
 
 ```bash
 sudo netstat -lpnut | grep -E '30303|8551|854
 sudo netstat -lpnut | grep -E '5054|9000'
 ```
 
-After you've seen success, your L1 client will take a moment to sync. You can check its status like so:
+在您看到成功之后，您的L1客户端将需要一段时间来同步。你可以像这样检查它的状态:
 
 ```bash
-# check goerli etherscan to make sure you have the latest block
+# 检查goerli etherscan以确保您拥有最新的区块
 
 curl --location --request POST 'http://localhost:8545' \
 --header 'Content-Type: application/json' \
@@ -54,20 +54,20 @@ curl --location --request POST 'http://localhost:8545' \
 }'
 ```
 
-Compare your numbers with Starknet's Testnet_1 before proceeding.
+在继续之前，将您的数字与Starknet的Testnet_1进行比较。
 
-## Install the Starknet L2 Package 📦
+## 安装Starknet L2包 📦
 
-> There are three posible nodes avaliable for [Starknet](https://www.starknet.io/en/ecosystem/fullnodes-and-rpc-services)
+> 有三个可能的节点可用于[Starknet](https://www.starknet.io/en/ecosystem/fullnodes-and-rpc-services)
 
 ### Pathfinder node
-`Cd` into the starknet-stack project root and start the L2 execution client with this command:
+`cd`到starknet-stack项目根目录，并使用以下命令启动L2执行客户端:
 
 ```bash
 docker compose -f dc-l2.yaml up -d
 ```
 
-It will take a while to sync, but you can always check it like so:
+它需要一段时间来同步，但你可以随时检查它，像这样:
 
 ```bash
 
@@ -81,13 +81,13 @@ curl --location --request POST 'http://localhost:9545' \
 }'
 ```
 
-Inspect your output! Once `current_block_num` and `highest_block_num` are the same, you've accomplished sync.
+检查你的输出!一旦`current_block_num`和`highest_block_num`相同，你就完成了同步。
 
-### Juno node
-Juno is a golang Starknet node implementation by Nethermind with the aim of decentralising Starknet.
+### Juno 节点
+Juno是Nethermind实现的golang Starknet节点，目的是去中心化Starknet。
 
-#### Run with Docker
-To run Juno with Docker, use the following command. Make sure to create the $HOME/juno directory on your local machine before running the command.
+#### 使用Docker运行
+要使用Docker运行Juno，请使用以下命令。在运行命令之前，请确保在本地计算机上创建了$HOME/juno目录。
 
 ```bash
 docker run -d \
@@ -103,38 +103,38 @@ docker run -d \
   --pending-poll-interval=3s
 ```
 
-You should replace ```<YOUR-ETH-NODE>``` with your actual Ethereum node address.
+您应该将```<YOUR-ETH-NODE>```替换为您实际的以太坊节点地址。
 
-The ```--pending-poll-interval``` parameter sets how frequently pending block will be updated.
+参数```——pending-poll-interval```设置挂起的块被更新的频率。
 
-❗ _It is disabled by default, but should be enabled since lava version v0.27.0._
+❗ **默认情况下它是禁用的，但从lava v0.27.0开始应该启用**
 
-To view logs from the Docker container, use the following command:
+使用下面的命令查看Docker容器中的日志:
 
 ```docker logs -f juno```
 
-For more details, please visit [official docs](https://github.com/NethermindEth/juno)
+更多详情，请访问[官方文档](https://github.com/NethermindEth/juno)
 
-## Run the Indexer  🏃
+## 运行索引器  🏃
 
 ```bash
 /indexer/indexer.sh
 ```
 
-## Do a Test Transaction 💸 
+## 做一个测试交易 💸 
 
-As part of the Starknet documentation, it is recommended that you perform a test transaction to verify all the levels of Starknet are working and valid.
+作为Starknet文档的一部分，建议您执行一个测试事务来验证Starknet的所有级别都是正常工作和有效的。
 
 ```bash
 https://book.starknet.io/chapter_4/node.html#layer_4_transport_layer
 ```
 
-That's it ! You're ready to serve RPC!
+就是这样!你已经准备好为RPC服务了!
 
-## Apply to our Provider Incubation Program 📋
+## 申请我们的供应商孵化计划 📋
 
-In our current state of Testnet, there is an additional stage to pass through before you can become a provider on the Lava Network. Please fill out the [application form](https://lavanet.typeform.com/to/ORi3A13v?utm_source=becoming-a-lava-provider-for-starknet&utm_medium=docs&utm_campaign=starknet-pre-grant) for our Provider Incubation Program. Feel free to drop a line in our [Discord](https://discord.gg/UxujNZbW) once you’ve completed this step!
+在我们目前的Testnet状态中，在您可以成为Lava网络上的提供者之前，还需要通过一个额外的阶段。请填写[申请表格](https://lavanet.typeform.com/to/ORi3A13v?utm_source=becoming-a-lava-provider-for-starknet&utm_medium=docs&utm_campaign=starknet-pre-grant)。一旦你完成了这一步，请随时在我们的[Discord](https://discord.gg/UxujNZbW)中留言!
 
-## Setup your Provider on Lava Network 🌋
+## 在Lava网络上设置你的提供商 🌋
 
-Once you’ve been accepted - to set up your provider on the Lava Network, you can refer to the [provider setup documentation](https://docs.lavanet.xyz/provider-setup?utm_source=running-a-starknet-rpc-node&utm_medium=docs&utm_campaign=starknet-pre-grant) available elsewhere in our docs. This should provide you with the necessary information to configure and operate your provider node.
+一旦您被接受-要在Lava网络上设置您的提供商，您可以参阅我们文档中其他地方的[提供商设置文档](https://docs.lavanet.xyz/provider-setup?utm_source=running-a-starknet-rpc-node&utm_medium=docs&utm_campaign=starknet-pre-grant)。这将为您提供配置和操作provider节点所需的信息。

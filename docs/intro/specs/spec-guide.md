@@ -1,44 +1,44 @@
 ---
 slug: /spec-guide
-title: Spec Proposal Guide 📜
+title: 参数提案指南 📜
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Spec Proposal Guide (Walk-thru)
+# 参数提案指南 (Walk-thru)
 
-:::caution UNDER CONSTRUCTION
+:::caution 正在建设中
 
-This guide is a work-in-progress! Please forgive errors, inconsistencies, or incompleteness.
+本指南正在编写中！如有错误、不一致或不完整之处，敬请见谅。
 
 :::
 
 
-## Overview 🔎 {#overview}
+## 概览 🔎 {#overview}
 
-This guide is intended to assist someone with the process of writing and designing a spec proposal in a step-by-step way. The process of creating or maintaining a spec can seem overwhelming initially, but is actually a straightforward process once you understand the fundamentals. Follow along below to get through the entire process of making a specification.
+本指南旨在帮助人们逐步完成撰写和设计参数提案的过程。创建或维护参数的过程一开始可能会让人不知所措，但一旦了解了基本原理，这个过程就会变得简单明了。请跟随下面的步骤，了解制作参数的整个过程。
 
 <br/>
 
-## Step 1: Create the Proposal/JSON {#create-proposal}
+## Step 1: 创建proposal/JSON {#create-proposal}
 
-> Create a specification `JSON` file
-> 
+> 创建技术参数 `JSON` 文件
+>
 
-Creating a specification involves multiple steps and can be an involved process. One of the best exercises you can do to prepare yourself is to visit existing specs and inspect them. Looking at existing specs can give a future spec creator a feel for the standard structure and layout of a spec. 
+创建技术参数涉及多个步骤，是一个复杂的过程。为做好准备，您可以做的最好的练习之一就是访问现有技术参数并检查它们。查看现有技术参数可以让未来的技术参数创建者了解技术参数的标准结构和布局。
 
-There are three ways to start in the creation of a spec
+创建参数有三种方法
 
-1. 📒**Cookbook**  - All of the specs which are currently live on Lava can be found here - in [the Lava cookbook](https://github.com/lavanet/lava/tree/main/cookbook/specs). Use one of them to get started, changing fields as needed.
-2. 📄**Template -** A blank template is available, right [here](/spec-reference#-file-structure) from the docs. Simply fill in the blanks as you progress.
-3. ✏️**From Scratch -** Writing a spec completely from scratch gives the opportunity to avoid unnecessary messiness and superfluous fields.
+1. 📒**Cookbook**  - 所有目前在 Lava 上运行的技术参数都可以在这里找到 - [the Lava cookbook](https://github.com/lavanet/lava/tree/main/cookbook/specs). 请使用其中一个开始，根据需要更改字段。
+2. 📄**Template -** 你可以在[这里](/spec-reference#-file-structure)找到一个空白模板。只要在你编写的过程中填写空白即可。
+3. ✏️**From Scratch -** 完全从头开始编写参数可以避免不必要的混乱和多余的字段。
 
 <br />
 
-### Define Proposal {#define-proposal}
+### 定义 Proposal {#define-proposal}
 
-The recommended approach is to start from scratch and go field by field. Let’s start with a blank JSON and create our top-level field. This key is called `proposal` and it describes the specifications we’re about to propose:
+建议的方法是从零开始，逐个字段进行。让我们从一个空的 JSON 开始，创建我们的头部字段。 这个键称为 `proposal`，它描述了我们即将提出的技术参数。
 
 ```json
 {
@@ -49,17 +49,17 @@ The recommended approach is to start from scratch and go field by field. Let’s
 }
 ```
 
-The format of it is pretty much standard, so you can copy the example above and replace `X` with the name of the API being created.
+其格式基本符合标准，因此您可以复制上面的示例，并将 `X` 替换为正在创建的 API 的名称。
 
-🔖REFERENCE: [`Proposal`](/spec-reference#proposal)
+🔖参考资料: [`Proposal`](/spec-reference#proposal)
 
 <br />
 
-### Define Specs {#define-specs}
+### 定义参数 {#define-specs}
 
-Each proposal introduces new `specs` to Lava. As mentioned elsewhere, specs are the minimum requirements that an API provider must meet in order to serve the API. Lava uses several fields to establish the initial parameters for a spec including an `index` , a `name`, the `data_reliability_enabled`  marker, and the`minimum_stake_provider` must make. 
+每个提案向 Lava 引入新的 `specs`。如其他地方所述，`specs` 是 API 提供者必须满足的最低要求，以便提供 API 服务。Lava 使用几个字段来为一个规范建立初始技术参数，包括一个 `index`，一个 `name`，一个 `data_reliability_enabled` 标记，以及 `minimum_stake_provider` 必须达到的质押金额。
 
-These fields combined with others make the first section of a spec:
+这些字段与其他字段相结合，构成了参数的第一部分：
 
 ```json
 {
@@ -91,95 +91,95 @@ These fields combined with others make the first section of a spec:
 
 ```
 
- 🔍 Let’s investigate these fields one-by-one:
+ 🔍 让我们逐一研究这些字段:
 
 
 <details> <summary> `index` </summary>
 
-The index is the universal identifier for a spec. The index must not be shared by any other spec. It is what will be referenced anywhere else the spec is referenced or imported. The naming convention method for an index is to use all caps, no spaces. Shorter/more abbreviated indexes are preferred. Optionally, to truncate long indexes, many specs employ the strategy of dropping vowels or shortening words (e.g. `OPTM` for Optimism, `STRK` for Starknet, or`AGR` for Agoric) .
+索引是参数的通用标识符。索引不得与任何其他参数共享。无论参数被引用或导入到何处，它都将被引用。索引的命名约定方法是使用全部大写字母，不包含空格。更短/更简略的索引更受欢迎。（可选）为了缩短长索引，许多参数采用省略元音或缩短单词的策略（例如，`OPTM` 代表 Optimism，`STRK` 代表 Starknet，或 `AGR` 代表 Agoric）。
 
 </details>
 
 <details> <summary> `name` </summary>
 
-The name is the longform descriptive identifier for a spec. The name should indicate what exactly the spec is/distinguish from specs which serve similar data. If it is a testnet or mainnet of a specific blockchain it should say so.
+名称是参数的长形描述性标识符。名称应指明参数是什么/与提供类似数据的参数有所区别。如果它是特定区块链的测试网或主网，应明确说明。
 
 </details>
 
 <details> <summary> `enabled` </summary>
 
-The enabled field describes whether the spec is active. There are times when a spec is defined but not used - or when a spec is to be deactivated temporarily. In our case, this should default to `true`.
+enabled字段描述了参数是否处于活跃状态。有时参数可能已定义但未被使用，或者参数可能需要暂时停用。一般情况下，默认值应为true。
 
 </details>
 
 <details> <summary> `reliability threshhold` </summary>
 
-Reliability threshold sets the frequency of reliability related messages. By default, we set this to `268435455` which is the minimum and efficient choice. If you’d like to set it higher - there are more details that can be learned here. [/spec-reference#terms]
+可靠性阈值设置可靠性相关消息的频率。默认情况下，我们将其设置为 `268435455`，这是最小且高效的选择。如果您希望将其设置得更高 - 可以在这里[/spec-reference#terms]了解更多详细信息。
 
 </details>
 
 <details> <summary> `data_reliability_enabled` </summary>
 
-Data reliability should be enabled unless there is a compelling reason to disable it! The default value here is `true`. This means Lava protocol will work to ensure data is accurate by doing data reliability checks. Note that if you are creating a spec for something other than a blockchain - you will want to set this to `false`. 
+数据可靠性应该启用，除非有充分的理由禁用它！默认值为 `true`。这意味着 Lava 协议将通过进行数据可靠性检查来确保数据的准确性。请注意，如果您要为除区块链之外的其他内容创建参数，则应将其设置为 `false`。
 
-⚠️ As of `lava-testnet-2` support for data reliability on diverse APIs is work-in-progress.
+⚠️ 截至 `lava-testnet-2`，对各种 API 的数据可靠性支持正在进行中。
 
 </details>
 
 <details><summary> `block_distance_for_finalized_data` </summary>
 
-This field defines the number of blocks that should be considered safe from chain reorganization; it varies from chain to chain. Look to other similarly architected specs for suggested values.
+这个字段定义了应该被视为安全免受链重组影响的区块数量；它因链而异。可以参考其他类似架构的参数，获取建议的数值。
 
 </details>
 
 <details><summary> `blocks_in_finalization_proof` </summary>
 
-This field defines the number of blocks that should be found in a finality proof; this will vary from chain to chain. Look to other similarly architected specs fo suggested values.
+这个字段定义了在最终性证明中应该包含的区块数量；这会因链而异。请查看其他类似架构的参数以获取建议的数值。
 
 </details>
 
 <details><summary> `average_block_time` </summary>
 
-The amount of time, on average, that a block passes in milliseconds. This field is used in several algorithms by the protocol to ensure provider quality of service.
+平均每个区块通过的时间（以毫秒为单位）。该字段由协议中的几个算法使用，以确保服务提供商的服务质量。
 
 </details>
 
 <details><summary> `allowed_block_lag_for_qos_sync` </summary>
 
-This is the maximum amount of blocks that can pass before the data a provider serves is considered stale. For faster blockchains/data sources, more blocks will be allowed. For slower blockchains/data sources, less blocks is suitable. Look to other similarly architected specs for values.
+这是在服务提供商提供的数据被视为过时之前可以经过的最大区块数。对于更快的区块链/数据源，将允许更多的区块。对于较慢的区块链/数据源，较少的区块更合适。查看其他类似架构的参数以获取数值参考。
 
 </details>
 
 <details><summary> `shares` </summary>
 
-The default is `1`. This is a bonus multiplier for rewards at the end of each month. There should be no reason to change this unless diected otherwise.
+默认为 `1`。这是每月月底奖励的奖金乘数。除非另有说明，否则没有必要更改。
 
 </details>
 
 <details><summary> `min_stake_provider` </summary>
 
-This field defines the minimum amount that a provider must have staked to serve this API. This value can remain identical with default values supplied by all other specs during our testnet. As of `lava-testnet-2` ,the amount is `5000000` in denom `ulava`. 
+该字段定义了提供商为该 API 提供服务所必须持有的最低金额。该值可与测试网络中所有其他参数提供的默认值保持一致。从 `lava-testnet-2` 开始，该金额为 `5000000`，单位为 `ulava`。
 
 </details>
 
-🔖REFERENCE: [`specs`](/spec-reference#specs)
+🔖参考资料: [`specs`](/spec-reference#specs)
 
-Once each of these fields has been dealt with, we’re ready to move onto setting up inheritance!
+一旦处理完这些字段，我们就可以开始设置继承了!
 
 <br />
 
-## Step 2: Inheritance {#inheritance}
+## Step 2: 继承 {#inheritance}
 
-> Inherit attributes from an existing spec.
-> 
+> 从现有参数继承属性。
+>
 
-Before defining any APIs, it’s wise to pull others that already exist to save work. Most APIs in Lava use common methods and can be created from specs already in use on-chain. In Lava, we call this process of borrowing from earlier specs **inheritance**. Specs use inheritance to eliminate redundancy, minimize size, and save time. An additional benefit - as inherited specs are updated - their descendent specs automatically pull in their updates! Inheritance makes things easy.
+在定义任何 API 之前，从已存在的参数中提取参数是明智的做法，以节省工作量。Lava 中的大多数 API 使用共同的方法，并且可以根据已在链上使用的参数创建。在 Lava 中，我们称这个从先前参数中借用的过程为继承。参数使用继承来消除冗余，最小化大小，并节省时间。另一个好处是 - 当继承的参数更新时，它们的后代参数会自动拉取更新！继承使事情变得容易。
 
-### Imports {#imports}
+### 导入 {#imports}
 
-An import generically brings in all parse directives, verifications, API Collections, and APIs by default. To overwrite specific mandatory behavior - simply define the parse_directive, verification, API Collection, or API by its `name` ( or `function_tag` if editing a parse directive) in the spec which is inheriting.
+导入一般会引入所有解析指令、验证、API集合和默认API。要重写特定的强制行为——只需在继承参数中定义parse_directive、verification、API集合或API的`name`(如果编辑的是parse指令，则是`function_tag`)。
 
-To inherit, a new spec, use the `imports` field:
+要继承一个新参数，使用`imports`字段:
 
 ```json
 "specs": [
@@ -204,7 +204,7 @@ To inherit, a new spec, use the `imports` field:
                 },
 ```
 
-Common imports will include one of the following:
+常见的导入将包括以下内容之一:
 
 ```json
 "COSMOSSDK"      # Cosmos SDK Standard (i.e. Cosmos Chains)
@@ -216,25 +216,25 @@ Common imports will include one of the following:
 ```
 
 :::info
-More often than not, a spec will only use one of the aforementioned imports. Specs are completely modular and can import any other specs. This modular design pattern comes in handy, for example, when designing a spec for mainnet and a spec for testnet. Usually, the testnet spec simply inherits the mainnet spec and requires no further configurations.
+通常情况下，参数将只使用上述导入中的一种。参数是完全模块化的，可以导入任何其他长春市。例如，在设计主网参数和测试网参数时，这种模块化设计模式会派上用场。通常，测试网参数只是简单地继承主网参数，不需要进一步的配置。
 :::
 
-### Inheritance APIs {#inheritance-apis}
+### 继承 APIs {#inheritance-apis}
 
-If you’re picky about the imports you want to do, it is possible to specify individual APIs, using the `inheritance_apis` field under an `api_collection`. If you’re confused don’t worry - we’ll explain more about API Collections next. For now, it is strongly recommended that you use imports instead. Remember, you can always disable unused `apis` and `api_collections`.
+如果你对想要导入的东西很挑剔，可以使用 `api_collection`下的`inheritance_apis` 字段来指定单个api。如果你对此感到困惑，不要担心——我们将在接下来解释更多关于API集合的内容。现在，强烈建议您使用导入。记住，你总是可以禁用未使用的 `apis` 和`api_collections`。
 
-🔖REFERENCE: [`imports`](/spec#imports)
+🔖参考资料: [`imports`](/spec#imports)
 
 <br />
 
 
-## Step 3: API Collections {#api-collections}
+## Step 3: API集合 {#api-collections}
 
-> Specify the API collections and interfaces which are mandatory for Providers.
+> 指定提供商必须使用的API集合和接口。
 
-Each spec can contain several categories of API Collections. API Collections are split across different interfaces, although they are constructed similarly. If a spec only contains the APIs of another spec it imports, it may not be necessary to define API collections at all…
+每个参数可以包含多个类别的 API 集合。尽管 API 集合的构造类似，但它们被分成不同的接口。如果一个参数只包含它导入的另一个参数的 API，那么可能根本不需要定义 API 集合...
 
-Some example API Collections are defined (with differences *highlighted*) below:
+下面定义了一些应用程序接口集合示例（差异*高亮显示*）：
 
 <Tabs>
 <TabItem value='jsonrpc' label='JSONRPC'>
@@ -353,15 +353,15 @@ Some example API Collections are defined (with differences *highlighted*) below:
 </TabItem>
 </Tabs>
 
-Each API collection is composed of various pieces. These pieces collectively give definition to the APIs that a Provider will serve. It's important that we review these pieces in detail so that you're familiar with what goes where:
+每个 API 集合都由不同的部分组成。这些部分共同定义了提供商将提供的 API。我们有必要详细回顾一下这些组件，以便您熟悉它们的用途：
 
-🔖REFERENCE: [`api_collections`](/spec-reference#api_collections)
+🔖参考资料: [`api_collections`](/spec-reference#api_collections)
 
-🔖REFERENCE: [`collection_data`](/spec-reference#collection_data)
+🔖参考资料: [`collection_data`](/spec-reference#collection_data)
 
 <br/>
 
-### Collection Data
+### 数据集合
 
 <details><summary> `api_interface`</summary>
 
@@ -377,7 +377,7 @@ Each API collection is composed of various pieces. These pieces collectively giv
 
 <details><summary> `internal_path`</summary>
 
-This field gives the internal path of the node for this specific ApiCollection. This is **most likely unneeded** unless the API sets vary on internal paths on teh node. The best example is the [AVAX specification](https://raw.githubusercontent.com/lavanet/lava/main/cookbook/specs/spec_add_avalanche.json) which uses internal paths to distinguish between subnets with distinct ApiCollections.
+这个字段给出了这个特定apiccollection的节点的内部路径。这很可能是不需要的，除非API集在节点的内部路径上有所不同。最好的例子是[AVAX规范](https://raw.githubusercontent.com/lavanet/lava/main/cookbook/specs/spec_add_avalanche.json)，它使用内部路径来区分具有不同apiccollections的子网。
 
 </details>
 
@@ -400,28 +400,27 @@ This field gives the internal path of the node for this specific ApiCollection. 
 
 <details><summary> `add_on` </summary>
 
-Leaving this field as a blank string(`""`) is the default and expected input. If you add anything to the string, the API Collection will be processed as an addon with the name provided in the string. Under that condition, the collection will be treated as optional to providers. We cover addons in more detail in a [later section](/spec-guide#step-6-addonsextensions-optional-apis) of this guide. 
-
+将此字段保留为空字符串(`""`)是默认和预期的输入。如果您向字符串中添加任何内容，API Collection将作为带有字符串中提供的名称的插件进行处理。在这种情况下，该集合将被视为提供者商可选集合。我们将在本指南的后面一节 [later section](/spec-guide#step-6-addonsextensions-optional-apis)中更详细地介绍插件。
 </details>
 
 <br />
 
-### Other Fields
+### 其他字段
 
 
 #### APIs
 
-This is an array will contain all of the collection's APIs - outlined in such a manner that you can see the compute units. There is a [whole section](/spec-guide#new-apis) dedicated to adding APIs to an API Collection, so we can leave this blank for now, as well. 
+这个数组将包含集合的所有api——以一种您可以看到计算单元的方式进行概述。有一个[whole section](/spec-guide#new-apis)专门介绍向API Collection添加API，所以我们现在也可以把这个留作空白。
 
 <br/>
 
 #### Headers
 
-It is possible to specify headers to be used in the API using this array. Leave this blank for now: `[]` unless you want to identify headers that a consumer can send along with their request. 
+可以使用此数组指定要在API中使用的头。暂时将此项留空：`[]`，除非您想确定消费者可以随请求一起发送的标头。
 
-Each Header is composed of a `name` and a `kind` , optionally a `function_tag`.
+每个Header由 `name` 和 `kind` 组成，`function_tag`是可选的。
 
-<details><summary>An Example Header </summary>
+<details><summary>Header 示例</summary>
 
 ```json
 {
@@ -432,25 +431,25 @@ Each Header is composed of a `name` and a `kind` , optionally a `function_tag`.
 
 </details>
 
-##### Kinds of Headers
+##### header的种类
 
-| Header      | Description                                                              | Example                                       |
-|-------------|--------------------------------------------------------------------------|-----------------------------------------------|
-| pass_ignore | Relies on node-specific information and excludes header from reliability.| Time tag of reply on Aptos (varies per node). |
-| pass_reply  | Node returns header to user; user cannot request it. One-way.            | Ledger version 0, e.g., x-aptos-echo from node. |
-| pass_both   | Two-way communication: Node and user can both send and receive headers.  | Cosmos block.                                 |
-| pass_send   | User can send to node, but node cannot send to user. One-way.            | Instruction headers.                           |
+| Header      | 说明                                       | 示例                                             |
+|-------------|-------------------------------------------|-------------------------------------------------|
+| pass_ignore | 依赖于特定于节点的信息，排除了header的可靠性。    | Time tag of reply on Aptos (varies per node).   |
+| pass_reply  | 节点将头返回给用户；用户无法请求。单向。          | Ledger version 0, e.g., x-aptos-echo from node. |
+| pass_both   | 双向通信：节点和用户都可以发送和接收header。      | Cosmos block.                                   |
+| pass_send   | 用户可以发送到节点，但节点不能发送到用户。单向的    | Instruction headers.                            |
 
-It is possible to use a `function_tag` to parse the header's response. The `function_tag` *must* correlate to an existing parse_directive.
+我们可以使用`function_tag`来解析header的响应。`function_tag` **必须**与现有的parse_directive相关。
 <br />
 
-#### Parse Directives
+#### 解析指令
 
-Because every API returns data in a different format, Lava protocol establishes a standardized way to deal with data parsing. These standards are called `parse directives`. Parse directives are a critical part of how API responses are handled. Please take a moment to familiarize yourself with Lava parsing functions before continuing:
+因为每个API都以不同的格式返回数据，所以Lava协议建立了一种处理数据解析的标准化方法。这些标准被称为`parse指令`。解析指令是处理API响应的关键部分。在继续下面的内容之前，请花点时间熟悉一下Lava解析函数:
 
-🔖REFERENCE: [Parsing](/spec-reference#parsing)
+🔖参考资料: [Parsing](/spec-reference#parsing)
 
-If a spec is imported, then this is most likely already handled for you and does not require definition. However, in case it is not, there is a need for 
+如果导入了参数，那么很可能已经为您处理过了，不需要定义。但是，如果没有导入，则需要
 
 ```json
 {
@@ -481,28 +480,28 @@ If a spec is imported, then this is most likely already handled for you and does
 ```
 
 <details><summary> `function_tag` </summary>
- This is the global name and identification of the parse_directive. Anywhere else that a parse_directive is referenced it will be referenced by this name.
+这是parse_directive的全局名称和标识。在其他任何地方引用parse_directive时，都会使用这个名称。
 </details>
 
 <details><summary> `function_template` </summary>
-This is the (JSON) template from which the response will be parsed. It is used to identify the standard format of responses.
+这是解析响应的（JSON）模板。它用于确定响应的标准格式。
 </details>
 
 <details><summary> `api_name` </summary>
-The `api_name`` refers to the specific API that will be parsed by the parse_directive. It should correlate to a defined api in the `api_collections` or one inherited.
+`api_name`指的是将被parse_directive解析的特定API。它应该与`api_collections`中定义的api或继承的api相关联。
 </details>
 
 :::warning
 
-Get_BlockNum and Get_Block_by_Num must be defined for Lava data reliability checks to succeed. If your API does not support block numbers - please ensure that `data_reliability_enabled` is set to `false`.
+Lava数据可靠性检查要成功，必须定义Get_BlockNum和Get_Block_by_Num。如果你的API不支持区块号——请确保将`data_reliability_enabled`设置为`false`。
 
 :::
 
 <br />
 
-## Step 4: New APIs {#new-apis}
+## Step 4: 新 APIs {#new-apis}
 
-> Design APIs which were not inherited from another spec.
+> 设计不继承自其他参数的api。
 
 
 
@@ -527,64 +526,64 @@ Get_BlockNum and Get_Block_by_Num must be defined for Lava data reliability chec
 },
 
 ```
-### Block Parsing
+### 区块解析
 
-This area is used to describe how to extract the block number from the API request. Make sure to review the parsing reference and several spec examples to ensure it's defined correctly.
+该区域用于描述如何从API请求中提取块号。一定要检查解析参考和几个参数示例，以确保它的定义是正确的。
 
-🔖REFERENCE: [`Block Parsing`](/spec-reference#block-parsing), [`Parsing`](/spec-reference#parsing-)
+🔖参考资料: [`Block Parsing`](/spec-reference#block-parsing), [`Parsing`](/spec-reference#parsing-)
 
-### Compute Units
+### 计算单元
 
-Describes the number of compute units which each API call expends. This number is a proxy for the compute intensiveness/difficulty and therefore the cost of calling this API. Note: compute units are not just tethered to rewards - they also indirectly inform the protocol of the expected time to response; by default, each compute unit adds ~100 ms to the relay's timeout threshhold.
+描述每个API调用消耗的计算单元的数量。这个数字代表了计算强度/难度，因此也代表了调用这个API的成本。注意:计算单元不仅与奖励挂钩——它们还间接告知协议预期的响应时间;默认情况下，每个计算单元将中继的超时阈值增加约100毫秒。
 
-There are a minimum of 10 CU per call - this should be sufficient for most calls.
+每次调用至少有10个CU，这对大多数调用来说应该足够了。
 
-🚧 Note that `extra_compute_units` is presently not used, but will be useful for varying cost based upon consumer arguments.
+🚧 备注 `extra_compute_units`目前没有使用，但可以根据消费者参数来改变成本。
 
-🔖REFERENCE: [`Compute Units`](/spec#cu)
+🔖参考资料: [`Compute Units`](/spec#cu)
 
-### Category
+### 分类
 
 <details><summary> `deterministic` </summary>
-<b>true</b> if deterministic responses from API <i>(default)</i><br />
- <b>false</b> disables data reliability for non-deterministic responses. 
+<b>true</b> 如果应用程序接口作出确定性响应 <i>(default)</i><br />
+ <b>false</b> 对非确定性响应禁用数据可靠性。
 </details>
 
 <details><summary> `local` </summary>
-<b>true</b> if local information from the node is returned through the API.<br />
-<b>false</b> if the local information on the node is irrelevant to response. <i>(default)</i>
+<b>true</b> 如果通过 API 返回节点的本地信息。<br />
+<b>false</b> 如果节点上的本地信息与响应无关。 <i>(默认)</i>
 </details>
 
 <details><summary> 🚧 `subscription` </summary>
 
 UNDER CONSTRUCTION => mark <b>false</b> <br />
-subscription indicates when to open up a streaming API with the provider (wss is currently disabled.
+subscription指示何时使用提供商打开流API (wss当前已禁用）。
 
 </details>
 
 <details><summary> `stateful` </summary>
 
-Manages nonce consistency. Use <b>1</b> to propagate information to all providers, <b>0</b> for no propagation. 
+管理nonce一致性。使用<b>1</b>将信息传播到所有提供商，<b>0</b>表示不传播。
 
 </details>
 
 
-🔖REFERENCE: [`Category`](/spec-reference#api_category)
+🔖参考资料: [`Category`](/spec-reference#api_category)
 
-### Other Fields
+### 其他字段
 
-For other fields, please take a look at the reference(s) and observe other specs.
+对于其他字段，请查看参考资料并观察其他参数。
 
-🔖REFERENCE: [`APIs`](/spec-reference#apis)
+🔖参考资料: [`APIs`](/spec-reference#apis)
 
 <br />
 
-## Step 5: Verifications {#verifications}
+## Step 5: 验证 {#verifications}
 
-> Define tests which confirm that a Provider is serving the proper data
-> 
+> 定义测试，以确认提供商程序正在提供适当的数据
+>
 
-Earlier, we looked at Parse Directives as a means for understanding the type of data that a relay returns. A verification is a `parse_directive` combined with an `expected value`. It provides a means for the protocol to intelligently check if the provider is serving the correct data. Each `API Collection` has its own set of verifications. Define verifications like below:
+之前，我们将解析指令视为一种理解中继返回数据类型的方法。验证是一个`parse_directive`和一个`expected value`的组合。它为协议提供了一种智能检查提供商是否提供正确数据的方法。每个`API Collection` 都有自己的一套验证方法。定义如下验证:
 
 ```json
 "verifications": [
@@ -611,22 +610,22 @@ Earlier, we looked at Parse Directives as a means for understanding the type of 
 ]
 ```
 
-The default behavior of verifications is to restrict a provider from serving the APIs if failed. This cna be altered with a field called `severity` but it is not recommended behavior unless specific to your usecase.
+验证的默认行为是，如果失败，则限制提供商为 API 提供服务。这可以通过一个名为`severity`的字段来改变，但除非是针对您的特定用例，否则不建议采用这种行为。
 
-🔖REFERENCE: [`Verifications`](/spec-reference#verifications)
+🔖参考资料: [`Verifications`](/spec-reference#verifications)
 
 <br/>
 
-## Step 6: Addons/Extensions (Optional APIs) {#addons-extensions}
+## Step 6: 插件/扩展 (可选的 APIs) {#addons-extensions}
 
-> Define optional API Collections which a Provider may choose to serve for more CU
-> 
+> 定义可选的API集合，提供者可以选择为更多的CU提供服务
+>
 
-Specs are both highly modular and composable. Sometimes, the minimum requirements of a provider may not be satisfactory for all consumers on the network. A great example is for archive nodes; not every Provider on a network needs to serve Archive data, but for those who want to opt-in you can define the rules and rewards using extensions. Addons are additional sets of API Collections that are not mandatory- a great example of an addon would be a node which answers debug APIs! 
+参数是高度模块化和可组合的。有时，提供商的最低要求可能不能满足网络上的所有消费者。归档节点就是一个很好的例子;并不是网络上的每个提供商都需要提供存档数据，但是对于那些想要选择加入的人，您可以使用扩展来定义规则和奖励。插件是一组非强制性的附加API集合——一个很好的例子就是一个响应调试API的节点!
 
-### Creating Addons
+### 创建插件
 
-Making an Addon is very similar to making any other API Collection. The sole difference is that the `add_on` field must contain a unique name.
+制作插件与制作任何其他API集合非常相似。唯一的区别是`add_on`字段必须包含一个唯一的名称。
 
 ```json
 {
@@ -641,12 +640,12 @@ Making an Addon is very similar to making any other API Collection. The sole dif
                         },
 ```
 
-🔖REFERENCE: [`Addons`](/spec#addon)
+🔖参考资料: [`Addons`](/spec#addon)
 
 
-### Creating Extensions
+### 创建扩展
 
-Making an Extension follows a slightly different process than making an Addon. We define extensions as an array which is a child of an `api_collection` object:
+与制作插件相比，制作扩展的过程略有不同。我们将扩展定义为一个数组，它是`api_collection`对象的子对象:
 
 #### Archive Example
 ```json
@@ -661,10 +660,10 @@ Making an Extension follows a slightly different process than making an Addon. W
                         ]
 ```
 
-`archive` Providers must return blocks from at least 254 blocks from latest, thus receiving 5x the CU.
+`archive`提供商必须从latest返回至少254个块，从而接收5倍的CU（计算单元）。
 
 
-#### Censorship Example
+#### 审查示例
 ```json
 "extensions": [
                             {
@@ -676,30 +675,30 @@ Making an Extension follows a slightly different process than making an Addon. W
                             }
                         ]
 ```
-`censorship` Providers may only return blocks 1 block away from the latest, thus receiving 2x the CU rewards.
+`censorship`提供商可能只返回距离最近一个区块1个区块的数据，从而获得2倍的CU奖励。
 
 :::info
 
-Currently, rules and extensions are hard-coded. As of the time of this guide, "block" is the only rule defined in code and "archive" is the only recognized extension.
+目前，规则和扩展是硬编码的。在编写本指南时，“block”是代码中定义的唯一规则，“archive”是唯一公认的扩展。
 
 :::
 
-🔖REFERENCE: [`Extensions`](/spec#extensions)
+🔖参考资料: [`Extensions`](/spec#extensions)
 
 <br />
 
-## Step 7: Verifications for Optional APIs {#verifications-for-addons-extensions}
+## Step 7: 可选 APIs 的验证 {#verifications-for-addons-extensions}
 
-> Define tests for Providers who serves addons and extension API Collections
+> 为提供插件和扩展API集合的提供商定义测试
 
-### Verifications for Addons
+### 对插件的验证
 
-Verifications for addons are simple! They are defined in the [exact same way](#verifications) as they are for other api_collections; when defining an api_collection as an addon, populate `verifications` with your verifications.
+验证插件很简单!它们的定义[完全相同](#verifications)与其他api_collection的定义相同;当定义一个api_collection作为插件时，用你的验证填充` verified `。
 
 
-### Verifications for Extensions
+### 对扩展的验证
 
-Verifications for extensions are similarly simple. Within `verifications` , under the child `values`, create another entry with the `extension` name like so:
+对扩展的验证也同样简单。在` verified `中，在子元素`values`下，创建另一个名为`extension`的条目，如下所示:
 
 ```json
 
@@ -716,29 +715,29 @@ Verifications for extensions are similarly simple. Within `verifications` , unde
 
 <br />
 
-## Step 8: Test with Local Blockchain {#test}
+## Step 8: 使用本地区块链进行测试 {#test}
 
-> Use the `test_spec_full.sh` script to automatically execute local tests.
+> 使用`test_spec_full.sh`脚本自动执行本地测试。
 
-### Install Lava
+### 安装 Lava
 
-1. Install [Lava Binaries](/install-lava) on Your Local Machine
-2. Check that the `test_spec_full.sh` exists in the `./scripts` folder of your install
+1. 在本地机器上安装[Lava Binaries](/install-lava) 
+2. 检查`test_spec_full.sh`是否存在于`. /scripts` 文件夹
 
-### Run Command
+### 运行命令
 
 ```
 ./scripts/test_spec_full.sh cookbook/specs/spec_add_X.json <interface> <rpc_url_for_index1> <interface> <rpc_url_for_index2>
 ```
 
-It will scaffold a  local block chain and create a test network of several providers running the spec! You can see errors in real-time which will alert you to where you need to debug. Once you have debugged all issues-  go on to the next step!
+它将搭建一个本地区块链，并创建一个由几个运行该参数的提供商组成的测试网络!您可以实时看到错误，这将提醒您需要调试的地方。一旦您调试了所有问题-继续下一步!
 
 
 <br/>
 
-## Step 9: Push to your Repository & Share {#push-and-share}
+## Step 9: 推送到您的仓库并分享 {#push-and-share}
 
-> Add your `JSON` file to your local `cookbook/spec/`  directory.
+> 将您的 `JSON` 文件添加到本地的 `cookbook/spec/` 目录中。
 
 
-Share your progress with the [Lava Team & Community!](https://discord.gg/Tbk5NxTCdA)
+与[Lava团队和社区!](https://discord.gg/Tbk5NxTCdA)分享您的进展

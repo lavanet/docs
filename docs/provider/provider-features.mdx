@@ -1,12 +1,12 @@
 ---
 sidebar_position: 2
 slug: /provider-features
-title: Features
+title: 功能
 ---
 
-# Provider Features 🧰
+# 提供商功能 🧰
 
-This page details the various features available to providers in the Lava network, along with instructions on how to operate them:
+本页面详细介绍了Lava网络中提供的各种功能，以及如何操作它们的说明:
 
 - [💰 Rewards Tracking](#rewards-tracking)
 - [⚡ Caching](#caching)
@@ -20,23 +20,23 @@ This page details the various features available to providers in the Lava networ
 
 --- 
 
-## 💰 Rewards Tracking{#rewards-tracking}
+## 💰 奖励追踪{#rewards-tracking}
 
-Once a provider is up and running, consumers will request relay services from the provider. Once the provider provides the service, they will be eligible to get rewards from the consumer they served. The provider can receive rewards when a consumer's monthly plan expires.
+一旦提供商启动并运行，消费者将向提供商请求中继服务。一旦提供商提供服务，他们将有资格从他们所服务的消费者那里获得奖励。当消费者的月度计划到期时，提供商可以获得奖励。
 
-Providers can query the estimated amount they will receive with the query:
+提供商可以通过以下查询查询来查询他们将收到的估计金额：
 
 ```bash
 lavad q pairing provider-monthly-payout <lava-provider-address> 
 ```
 
-Claimable rewards can be queried with:
+可领取的奖励可以通过以下方式查询：
 
 ```bash
 lavad q dualstaking delegator-rewards <lava-provider-address>
 ```
 
-and can be claimed to the provider balance with:
+并且可以通过以下方式向提供商余额认领：
 
 ```bash
 lavad tx dualstaking claim-rewards --from <provider-key>
@@ -44,11 +44,11 @@ lavad tx dualstaking claim-rewards --from <provider-key>
 
 <br />
 
-## ⚡ Caching{#caching}
+## ⚡ 缓存{#caching}
 
-Lava's caching service is used to cut costs and improve the overall performance of the network. Both provider and consumer processes benefit from the caching service. Providers who enable caching may be able to return responses faster than providers who do not have caching enabled.
+Lava 的缓存服务用于降低成本并提高网络的整体性能。提供者和使用者进程都受益于缓存服务。启用缓存的提供程序可能比未启用缓存的提供程序更快地返回响应。
 
-In order to use the caching service, run the following process:
+要使用缓存服务，请运行以下命令：
 
 ```
 ListenAddress="127.0.0.1:7777"
@@ -56,7 +56,7 @@ ListenMetricsAddress="127.0.0.1:5747"
 lavap cache $ListenAddress --metrics_address $ListenMetricsAddress --log_level debug
 ```
 
-The cache service will run in the background. Plug in the caching service with the consumer or provider process as applicable:
+缓存服务将在后台运行。根据情况将缓存服务插入消费者或提供者进程：
 
 <details> <summary> rpcprovider </summary>
 
@@ -75,36 +75,34 @@ lavap rpcconsumer <your-regular-cli-options> --cache-be $ListenAddress
 
 <br/>
 
-## 🔌 Addons and Extensions{#addonsextensions}
+## 🔌 插件和扩展{#addonsextensions}
 
-Addons and Extensions are services that can be offered *in addition* to the basic spec on a provider service.
-**Addons** are APIs exposed in addition to existing APIs, while **Extensions** are changes to existing API responses.
+插件和扩展是除了提供程序服务的基本规范之外还可以提供的服务。插件是除了现有 API 之外公开的 API，而扩展是对现有 API 响应的更改。
 
-A few examples:
-- `"archive"` - an extension providing valid responses for older blocks than the current pruning definition in the basic spec
-- `"debug" `- an addon that offers debug apis in addition to basic rpc calls
+举几个例子：
+- `"archive"` - 一个扩展，为比基本规范中当前修剪定义更旧的块提供有效的响应
+- `"debug" `- 除了基本的 RPC 调用之外，还提供调试 API 的插件
 
-### Why Addons and Extensions  ❔
+### 为什么选择插件和扩展程序 ❔
 
-Servicing Addons and Extensions can be a good way to generate additional traffic to your endpoints and higher rewards.
+服务插件和扩展程序是为您的端点带来额外流量和更高奖励的好方法。
 
-#### ⛗ Additional Traffic 
+#### ⛗ 其他流量
 
-Consumers can easily use addons and extensions without any client configuration. They're included in the consumer subscription. The Lava Protocol automatically routes requests to providers that support desired services, which may result in increased traffic for those providers supporting specific addons, while providers without support won't receive such requests.
+消费者无需任何客户端配置即可轻松使用插件和扩展程序。它们包含在使用者订阅中。Lava 协议会自动将请求路由到支持所需服务的提供商，这可能会导致支持特定插件的提供商的流量增加，而不支持的提供商将不会收到此类请求。
 
-#### 💱 Higher Rewards 
+#### 💱 更高的奖励
 
-Extensions can also provide a CU boost on the regular API, meaning modified calls may be more highly rewarded. `"archive"` calls, for example, will have a big multiplier on CU for each API request.
-Only API requests to the `"archive"` endpoint will award these additional CUs, and Lava knows which calls are `"archive"` or not according to the pruning of the regular spec defined by governance.
+扩展还可以在常规 API 上提供 CU 提升，这意味着修改后的调用可能会获得更高的奖励。`"archive"` 例如，对于每个 API 请求，调用在 CU 上都会有一个很大的乘数。只有对端点的 `"archive"` API 请求才会授予这些额外的 CU，并且 Lava 根据治理定义的常规规范的修剪知道哪些调用是`"archive"` 或不是。
 
-### Set up Addons and Extensions ⚙️
+### 设置插件和扩展程序 ⚙️
 
-Addons and Extensions are configured both in the provider service config, and then staked for on chain. 💡 For simplicity's sake, both Addons and Extensions are defined using the `addons:` field. For a reference, please see this [example provider config file](https://raw.githubusercontent.com/lavanet/lava/main/config/provider_examples/evmos_provider_with_archive.yml).
+插件和扩展在提供者服务配置中配置，然后在链上质押。💡 为简单起见，插件和扩展都是使用该`addons:`字段定义的。有关参考，请参阅此[示例](https://raw.githubusercontent.com/lavanet/lava/main/config/provider_examples/evmos_provider_with_archive.yml)提供程序配置文件。
 
 
-#### 🗒️ Addon (Config File)
+#### 🗒️ 插件 （配置文件）
 
-In order to add an addon to the service the yaml must be configured with the addon command:
+为了将插件添加到服务中，必须使用 addon 命令配置 yaml：
 
 ```yaml
 endpoints:
@@ -120,11 +118,11 @@ endpoints:
           // highlight-end
 ```
 
-#### 🗒️ Extension (Config File)
+#### 🗒️ 扩展名 （配置文件）
 
-Since extensions must offer consumers the regular spec function and the possibility of extended functionality, both must be present.
+由于扩展必须为消费者提供常规规范功能和扩展功能的可能性，因此两者都必须存在。
 
-Therefore, extensions unlike addons, must be configured in a new url entry:
+因此，与插件不同的扩展必须在新的 url 条目中配置：
 
 ```yaml
 endpoints:
@@ -142,9 +140,7 @@ endpoints:
 ```
 
 
-Although this configuration offers you the chance to load balance different extension calls,
-if you run only a single archive node and do not want to automatically load balance archive calls to a pruned node,
-you can set both urls to point to the the archive node:
+尽管此配置为您提供了对不同扩展调用进行负载均衡的机会，但如果您只运行单个存档节点，并且不希望自动对已修剪的节点的存档调用进行负载均衡，则可以将两个 URL 设置为指向存档节点：
 
 ```yaml
 endpoints:
@@ -161,9 +157,11 @@ endpoints:
       // highlight-end
 ```
 
-#### 🗒️ Multiple Extensions (Config File)
+#### 🗒️ 多个扩展名（配置文件）
 
-Additional extensions must be defined with all possible combinations, for example compliance + archive will look like this:
+必须使用所有可能的组合定义其他扩展，例如，合规性 + 存档将如下所示：
+
+
 
 ```yaml
 endpoints:
@@ -187,9 +185,9 @@ endpoints:
         // highlight-end
 ```
 
-#### 🗒️ Combination (Config File)
+#### 🗒️ 组合（配置文件）
 
-A combination of an extension and addons will look like this:
+扩展和插件的组合如下所示：
 ```yaml
 endpoints:
     - api-interface: jsonrpc
@@ -205,15 +203,15 @@ endpoints:
             - debug
 ```
 
-#### ⛏️ Staking
+#### ⛏️ 质押
 
-Before staking, make sure your process works correctly. If addons or extensions fail to verify, the entire service for that spec and api interface will fail. Please use the `lavap test rpcprovider` command to verify that your setup is correct.
+在质押之前，请确保您的进程正常运行。如果插件或扩展无法验证，则该规范和 api 接口的整个服务将失败。请使用该 lavap test rpcprovider 命令验证您的设置是否正确。
 
-Staking with an addon or an extensions is very similar to the normal staking command. Simply modify it by adding the list of addons and extensions separated by comma:
+使用插件或扩展进行质押与普通的质押命令非常相似。只需通过添加以逗号分隔的插件和扩展列表来修改它：
 
-**Staking Example: `stake-provider` ⌨️ **
+**质押示例：`stake-provider` ⌨️ **
 
-Ethereum Mainnet in US with archive and debug
+在美国地区的以太坊主网，具有存档和调试功能
 
 ```bash
 lavap tx pairing stake-provider "ETH1" \
@@ -227,13 +225,13 @@ lavap tx pairing stake-provider "ETH1" \
     --gas-adjustment "1.5" \
     --node "https://public-rpc-testnet2.lavanet.xyz:443/rpc/"
 ```
-
-Do note the required addition of **`,archive,debug`** in each of the endpoints that support it if several exist. Setting these in a transaction replaces any existing endpoints, so make sure to give the full list of endpoints.
-
-** Staking Example: `modify-provider` ⌨️ **
+请注意，如果存在多个端点，则需要**`，archive,debug`**在支持它的每个端点中添加 。在事务中设置这些终结点会替换任何现有终结点，因此请确保提供终结点的完整列表。
 
 
-It is also possible to add these to an existing entry with the `modify-provider` command:
+** 质押示例： `modify-provider` ⌨️ **
+
+也可以使用以下`modify-provider`命令将这些添加到现有条目中：
+
 
 ```bash
 lavap tx pairing modify-provider "ETH1" --endpoints "provider-host.com:443,USC,archive,debug" --geolocation "USC" ...
@@ -241,13 +239,13 @@ lavap tx pairing modify-provider "ETH1" --endpoints "provider-host.com:443,USC,a
 
 <br/>
 
-## 🧊 Freeze and Unfreeze{#freeze}
+## 🧊 冻结和解冻{#freeze}
 
-The **`freeze`** command allows a provider to freeze its service, effective next epoch. This enables providers to pause their services without the impact of a bad QoS rating. While frozen, the provider won't be paired with consumers. To unfreeze, the provider must use the **`unfreeze`** transaction, effective next epoch. This feature can be useful in cases like a provider needing to halt its services during maintenance.
+该**`freeze`**命令允许提供者冻结其服务，在下一个纪元生效。这使提供商能够暂停其服务，而不会受到不良 QoS 评级的影响。冻结时，提供商不会与使用者配对。要解冻，提供商必须使用**`unfreeze`**交易，在下一个纪元生效。此功能在提供商需要在维护期间停止其服务等情况下非常有用。
 
-### Usage 🔨
+### 使用 🔨
 
-#### ❄️ Freeze:
+#### ❄️ 冻结:
 
 ```bash
 # required flags: --from alice. optional flags: --reason
@@ -255,27 +253,28 @@ lavap tx pairing freeze [chain-ids] --from <provider_address>
 lavap tx pairing freeze [chain-ids] --from <provider_address> --reason <freeze_reason>
 lavap tx pairing freeze ETH1,COS3 --from alice --reason "maintenance"
 ```
-The **`freeze`** command requires the **`--from`** flag to specify the provider address. Optionally, you can provide a **`--reason`** flag to give a reason for the freeze.
 
+该**`freeze`**命令需要该**`--from`**标志来指定提供程序地址。（可选）您可以提供一个**`--reason`**标志来说明冻结的原因。
 
-#### 🌡️ Unfreeze:
+#### 🌡️ 解冻：
 
 ```bash
 # required flags: --from alice
 lavap tx pairing unfreeze [chain-ids] --from <provider_address>
 lavap tx pairing unfreeze ETH1,COS3 --from alice
 ```
+该**`unfreeze`**命令还需要该**`--from`**标志来指定提供程序地址。
 
-The **`unfreeze`** command also requires the **`--from`** flag to specify the provider address.
 
 <br />
 
-## 🔐 Advanced Auth Configuration {#config-auth}
-In this example, COS3 tendermint URLs are using client authentication, assuming the node URL is capable of processing this authentication.
+## 🔐 高级身份验证配置 {#config-auth}
+在此示例中，假设节点 URL 能够处理此身份验证，则 COS3 tendermint URL 使用客户端身份验证。
 
-### Auth using HTTP headers 🔑 {#auth-headers}
+### 使用 HTTP 标头进行身份验证 🔑 {#auth-headers}
 
-The following RPCProvider Config Example demonstrated authentication using the "auth-headers" option:
+以下 RPCProvider 配置示例演示了使用“auth-headers”选项进行身份验证：
+
 
 ```yaml
 endpoints:
@@ -296,9 +295,9 @@ endpoints:
         // highlight-end
 ```
 
-### Auth using Query Params󠁛 🔑 {#auth-query}
+### 使用查询参数进行身份验证 🔑 {#auth-query}
 
-The following RPCProvider Config Example demonstrated authentication using the "auth-query" option:
+以下 RPCProvider 配置示例演示了使用“auth-query”选项进行身份验证：
 
 ```yaml
 endpoints:
@@ -317,11 +316,11 @@ endpoints:
             auth-query: auth=xyz
 ```
 
-### gRPC TLS configuration 🔑 {#grpc-tls}
+### gRPC TLS 配置 🔑 {#grpc-tls}
 
-If you want to add TLS authentication to your gRPC endpoint you have 3 options:
+如果要将 TLS 身份验证添加到 gRPC 端点，则有 3 个选项：
 
-#### 1. Dynamic certificate
+#### 1. 动态证书
 
 ```yaml
 endpoints:
@@ -337,7 +336,7 @@ endpoints:
           // highlight-end
 ```
 
-#### 2. Provide a certificate and a key: 
+#### 2. 提供证书和密钥：
 
 ```yaml
 endpoints:
@@ -355,7 +354,7 @@ endpoints:
           // highlight-end
 ```
 
-#### 3. Provide a root certificate:
+#### 3. 提供根证书：
 
 ```yaml
 endpoints:
@@ -374,10 +373,10 @@ endpoints:
 
 <br />
 
-## ⏩ `ip-forwarding` Configuration {#config-ip-forwarding}
+## ⏩ `ip-forwarding` 配置 {#config-ip-forwarding}
 
-If you want to IP load balance / throttle this is also supported by adding `ip-forwarding: true`.  
-The IP will be added to the following header: `X-Forwarded-For`
+如果要进行 IP 负载均衡/限制，也可以通过添加：`ip-forwarding: true`。
+ 将该 IP 添加到以下标头： `X-Forwarded-For`。
 
 ```yaml
 endpoints:
@@ -394,13 +393,12 @@ endpoints:
 
 <br />
 
-## ⌛ `node-timeout` Configuration {#config-node-timeout}
+## ⌛ `node-timeout` 配置 {#config-node-timeout}
 
 :::caution
-Overwriting the timeout time can result in inferior QoS for consumers. 
+覆盖超时时间可能会导致使用者的 QoS 较差。
 :::
-
-If your node is too far from the `rpcprovider` or responds too slowly, and you still want your provider process to start without troubleshooting, you can overwrite the timeouts with custom values using a flag in the node-urls configuration:
+如果您的节点离`rpcprovider`太远或响应速度太慢，并且您仍然希望提供商程序进程在不进行故障排除的情况下启动，则可以使用 node-urls 配置中的标志使用自定义值覆盖超时：
 
 ```yaml
 endpoints:
@@ -416,21 +414,21 @@ endpoints:
 ```
 <br />
 
-## ⚖️ Load Balancer Configuration {#config-stickyness}
+## ⚖️ 负载均衡器配置 {#config-stickyness}
 
-Running multiple nodes with a load balancer can have multiple setups:
-1. **Run a Provider on each node** - provider processes can coexist, if you loadbalance grpc before the process of the provider and run a provider service on each node machine (close proximity)
-2. **Run one Provider service and Loadbalance the nodes** - in this case all the nodes are used by one provider service, this setup is more likely to trigger consistency issues between the provider service and the nodes
+使用负载均衡器运行多个节点可以有多个设置：
+1. **在每个节点上运行一个提供者** - 如果在提供者进程之前负载均衡 gRPC，并在每个节点机器上运行一个提供者服务（距离较近），那么提供者进程可以共存。
+2. **运行一个提供者服务并对节点进行负载均衡 **- 在这种情况下，所有节点都由一个提供者服务使用，这种设置更有可能触发提供者服务和节点之间的一致性问题。
 
-### Setting up Stickyness support for Loadbalanced nodes 🍯
+### 为负载均衡节点设置stickyness支持 🍯
 
-If you've set up the second option, meaning one provider service per multiple nodes, it is required to provide stickyness across the nodes by a header. The reason for this being the cryptographic proofs a provider signs, must be consistent and can't have the blocks progress backwards 
+如果您设置了第二个选项，即每个多个节点一个提供者服务，则需要通过一个标头在节点之间提供stickyness。原因是提供者签署的加密证明必须一致，不能让区块的进度倒退。
 
-In order to support stickyness headers lava adds by default a header called `X-Node-Sticky`, this header adds a consumer token consisting of several factors and are unique per consumer usage
+为了支持stickyness标头，Lava 默认添加了一个名为 `X-Node-Sticky` 的标头，该标头添加了一个由多个因素组成且对每个消费者使用唯一的消费者令牌。
 
-### Changing the Stickyness Header 🔀
+### 更改Stickyness标头 🔀
 
-In order to support existing load balancer configs, it is possible to change the header name with a configuration in the config:
+为了支持现有的负载均衡器配置，可以使用配置中的配置来更改标头名称：
 ```yaml
 endpoints:
     - api-interface: jsonrpc
@@ -446,10 +444,10 @@ sticky-header: <your-sticky-header-name>
 
 <br />
 
-## 📈 Prometheus Metrics Configuration {#config-prometheus}
+## 📈 Prometheus 指标配置 {#config-prometheus}
 
-Adding support for prometheus is a simple change. Set the `metrics-listening-address:` below.
-Please note that all Lava analytics start with `lava_`. Change the config below:
+添加对 prometheus 的支持是一个简单的更改。设置以下内容`metrics-listening-address:`。请注意，所有 Lava 分析都以`lava_`开头。更改以下配置：
+
 
 ```yaml
 endpoints:

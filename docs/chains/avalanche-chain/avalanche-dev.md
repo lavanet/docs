@@ -1,35 +1,35 @@
 ---
 slug: /avalanche-dev
-title: Getting Avalanche RPC
+title: 获取 Avalanche RPC
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Getting Avalanche RPC
+# 获取 Avalanche RPC
 
 ## [Gateway](https://gateway.lavanet.xyz/?utm_source=avalanche-dev&utm_medium=docs&utm_campaign=docs-to-gateway)
 
-To learn more about using the Lava Gateway visit the [Getting Started guide](https://docs.lavanet.xyz/gateway-getting-started?utm_source=avalanche-dev&utm_medium=docs&utm_campaign=docs-to-docs)
+要了解有关使用Lava网关的更多信息，请访问[入门指南](https://docs.lavanet.xyz/gateway-getting-started?utm_source=avalanche-dev&utm_medium=docs&utm_campaign=docs-to-docs)
 
 
 ## [SDK](https://github.com/lavanet/lava-sdk)
 
-### Input 📥
+### 输入 📥
 
 
 <Tabs>
 <TabItem value="backend" label="BackEnd">
 
 ```jsx
-// Install lavaSDK with the following command:
+// 使用以下命令安装lavaSDK:
 // npm i @lavanet/lava-sdk
 const { LavaSDK } = require("@lavanet/lava-sdk")
 
 async function useAvalancheMainnet() {
 
   const avalancheMainnet = await LavaSDK.create({
-    privateKey: process.env.PRIVATE_KEY, //hide your private key in an environmental variable
+    privateKey: process.env.PRIVATE_KEY, //将私钥隐藏在环境变量中
     chainIds: 'AVAX',
   });
 
@@ -51,7 +51,7 @@ async function useAvalancheMainnet() {
 <TabItem value="frontend" label="FrontEnd">
 
 ```jsx
-// Install lavaSDK with the following command:
+// 使用以下命令安装lavaSDK:
 // npm i @lavanet/lava-sdk
 const { LavaSDK } = require("@lavanet/lava-sdk")
 
@@ -59,7 +59,7 @@ async function useAvalancheMainnet() {
 
   const avalancheMainnet = await LavaSDK.create({
     badge: {
-      badgeServerAddress: "https://badges.lavanet.xyz", // Or your own Badge-Server URL 
+      badgeServerAddress: "https://badges.lavanet.xyz", // 或者您自己的徽章服务器URL
       projectId: "enter_your_project_id_here" 
     },
     chainIds: 'AVAX',
@@ -82,10 +82,10 @@ async function useAvalancheMainnet() {
 </TabItem>
 </Tabs>
 
-### Output 📤
+### 输出 📤
 
 <iframe width="100%" src="/img/chains/avalanche_call.webm" frameborder="0" allow="autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-To learn more about our SDK visit the [Getting Started guide](https://docs.lavanet.xyz/sdk-getting-started?utm_source=getting-avalanche-rpc&utm_medium=docs&utm_campaign=docs-to-docs)
+要了解有关我们的SDK的更多信息，请访问[入门指南](https://docs.lavanet.xyz/sdk-getting-started?utm_source=getting-avalanche-rpc&utm_medium=docs&utm_campaign=docs-to-docs)
 
 <hr />

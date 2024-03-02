@@ -1,42 +1,41 @@
 ![Banner](static/img/banner/Chains.jpg)
 
-# Lava Documentation 📕
+# Lava 文档 📕
 
 [![Website](https://img.shields.io/badge/WEBSITE-https%3A%2F%2Fdocs.lavanet.xyz-green?style=for-the-badge)](https://docs.lavanet.xyz) &emsp;  [![Discord](https://img.shields.io/discord/963778337904427018?color=green&logo=discord&logoColor=white&style=for-the-badge)](https://discord.gg/EKzbc6bx)
 
 
-## Overview 🔎
+## 概览 🔎
 
-This repository (**@lavanet/docs**) contains technical documentation for the Lava ecosystem. The most recent version of this repository is deployed to the Lava docs [website](https://docs.lavanet.xyz/) and is viewable there. If you're averse to rich formatting, Lava Documentation can also be browsed as plain source in the markdown files available in the [docs folder](/docs/) of this repository. The Lava docs website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator, and deployed using the [Netlify Web Platform](https://www.netlify.com/).
+这个仓库 (**@lavanet/docs**) 包含了 Lava 生态系统的技术文档。该仓库的最新版本已部署到 Lava 文档 [网站](https://docs.lavanet.xyz/) 并可在那里查看。如果你不喜欢丰富的格式，Lava 文档也可以在该仓库的 [docs 文件夹](/docs/) 中的 markdown 文件中以纯源码形式浏览。Lava 文档网站是使用 [Docusaurus 2](https://docusaurus.io/)，一种现代静态网站生成器构建的，并使用 [Netlify Web 平台](https://www.netlify.com/) 部署的。
 
-Contents include:
+内容包括:
 
-- Information on Lava's supported chains
-- Installation & Setup Guides for Validators, Providers, and Developers
-- Network & Protocol Details on Lava's Unique Features
-- Links to in-demand RPC & Web3 APIs
+-Lava支持链的信息
+-针对验证者、提供者和开发人员的安装和设置指南
+-关于Lava独特功能的网络和协议细节
+-到需要的RPC和Web3 api的链接
 
-## Contribution 👥
+## 贡献 👥
 
-Contributing to the documentation of Lava is a rewarding way to give back to the ecosystem. We always welcome contributors with love & kindness. After reviewing this README, please read the [contribution](CONTRIBUTING.md) guide to help you get started.
+对Lava的记录做出贡献是回报生态系统的一种有益的方式。我们总是以爱心和善意欢迎贡献者。在审阅完这个自述文件后，请阅读[contribution](CONTRIBUTING.md)指南以帮助您开始。
 
 
-## Deployment 🚀
+## 部署 🚀
 
-### Status
+### 状态
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/58c0a448-7af0-48d3-8e29-86fc4a6f4868/deploy-status)](https://app.netlify.com/sites/sage-swan-13ac7b/deploys)
 
-### Process
-The `main` branch of this repository is automatically deployed to our docs site, and other branches and pull requests leverage Netlify deploy. Please note that unless you are a recognized contributor of this repository, each attempted PR generates a Netlify approval that will prevent your pull request from being merged. Once the request is approved and a Netlify deploy preview is generated, a Netlify deploy preview will appear in the body of your PR as `😎 Deploy Preview`. This deploy preview will be audited by a docs maintainer before merging your pull request.
+### 处理
+这个仓库的`main`分支自动部署到我们的文档站点，其他分支和pull请求利用Netlify deploy。请注意，除非您是此存储库的公认贡献者，否则每次尝试PR都会生成一个Netlify批准，以防止您的pull request被合并。一旦请求被批准并生成一个Netlify部署预览版，一个Netlify部署预览版将出现在你的PR主体中，名为 `😎 Deploy Preview`。这个部署预览将由文档维护者在合并你的pull request之前进行审计。
+## 本地开发 🔧
 
-## Local Development 🔧
+### 1. 分叉该版本库！
 
-### 1. Fork this repository!
+我们建议将您的 fork 命名为 `lava-docs`，以区别于其他可能有类似命名约定的项目。
 
-We recommend naming your fork `lava-docs` to distinguish from other projects which might have similar naming conventions.
-
-### 2. Clone your fork
+### 2. 克隆你的分叉
 
 SSH **(recommended)**
 
@@ -50,14 +49,14 @@ HTTPS
 git clone https://github.com/Your-User-Name-Here/lava-docs.git
 ```
 
-### 3. Set up environmental variables
+### 3. 设置环境变量
 
 ```bash
 cd lava-docs/
 cp .env.example .env
 ```
 
-Change the contents of your environmental variables(`.env`) file to the following:
+将环境变量（`.env`）文件的内容更改为以下内容：
 
 ```
 ALGOLIA_APP_ID=demo
@@ -65,33 +64,33 @@ ALGOLIA_API_KEY=demo
 ALGOLIA_INDEX_NAME=demo
 ```
 
-Algolia search needs values assigned to these in order to start. For local docs instances (w/ non-functional search), any dummy values will work.
+Algolia 搜索需要为这些值赋值才能启动。对于本地文档实例（无功能搜索），任何虚值都可以使用。
 
-### 4. Install all packages
+### 4. 安装所有软件包
 
 ```
 yarn install
 ```
 
-### 5. Host a local preview of the docs (*Optional*)
+### 5. 在本地预览文档（*可选*）。
 
 ```
 yarn start
 ```
 
-Your preview will dynamically change/hotload as you make changes to files.
+当你对文件进行修改时，预览会动态更改/热载。
 
-### 6. Build a local deployment of the docs (*Optional*)
+### 6. 构建文档的本地部署（*可选*）。
 
 ```
 yarn build
 ```
 
-Your build will appear in the `./build/` folder of your docs directory.
+您的构建将出现在文档目录下的 `./build/` 文件夹中。
 
-### 7. Deploy to Github (*Optional*)
+### 7. 部署到 Github（*可选*）。
 
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+如果使用 GitHub 页面托管，该命令可以方便地构建网站并推送到 `gh-pages` 分支。
 
 ```
 $ GIT_USER=<Your GitHub username> yarn deploy

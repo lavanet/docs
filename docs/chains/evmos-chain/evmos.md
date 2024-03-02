@@ -16,7 +16,7 @@ import RoadmapItem from '@site/src/components/RoadmapItem'
 
 <center>
 
-## ⚙️ Supported APIs ⚙️
+## ⚙️ 支持的 APIs ⚙️
 
 </center>
 
@@ -25,7 +25,7 @@ import RoadmapItem from '@site/src/components/RoadmapItem'
 https://raw.githubusercontent.com/lavanet/lava/main/cookbook/specs/spec_add_evmos.json
 
 
-### Protocols 🔗
+### 协议 🔗
 
 | Platform  |  rest/http | uri/http | tendermint/http | tendermint/wss | jsonrpc/http | jsonrpc/wss
 | --------- | -------- |------------| ------------- | ---------------------| ------------ | -----------------
@@ -33,9 +33,9 @@ https://raw.githubusercontent.com/lavanet/lava/main/cookbook/specs/spec_add_evmo
 | SDK       | ✅       |            | ✅            |                      | ✅           | 
 
 
-### Methods 🛠️
+### 方法 🛠️
 <details>
-<summary> List </summary>
+<summary> 列表</summary>
 
 - /evmos/claims/v1/claims_records
 - /evmos/claims/v1/claims_records/{address}

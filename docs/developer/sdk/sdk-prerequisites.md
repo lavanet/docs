@@ -1,11 +1,11 @@
 ---
 slug: /sdk-prerequisites
-title: Looking for our SDK?
+title: 寻找我们的SDK?
 ---
 
 import RoadmapItem from '@site/src/components/RoadmapItem';
 
-# Looking for our SDK? 🔎
+# 寻找我们的SDK?🔎
 
 ![SDK Install Example](/img/tutorial/sdk/sdk-install.gif) 
 

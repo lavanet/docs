@@ -1,22 +1,22 @@
 ---
 slug: /access-server-kit
-title: Server Kit
+title: 服务器工具包
 ---
-# Lava Server Kit
+# Lava 服务器工具包
 
 :::note 
 🧪
-The Lava Server Kit (referenced in code as `RPCConsumer`) is currently in an experimental phase. There may be major and breaking changes during this phase. If you are looking for simple RPC access, consider using the Gateway or SDK instead. If you're looking to tinker, source code is available on our [Github repository](https://github.com/lavanet/lava/tree/main/protocol/rpcconsumer)). 
+Lava 服务器工具包（代码中称为 `RPCConsumer`）目前处于试验阶段。在这一阶段，可能会有重大的、破坏性的更改。如果您需要简单的 RPC 访问，请考虑使用网关或 SDK。如果您想修修补补，我们的 [Github 代码库](https://github.com/lavanet/lava/tree/main/protocol/rpcconsumer)) 提供了源代码。
 :::
 
-🌋 **Enterprise-grade self-hosted and secure gateway access to Web3 APIs, the Lava way 😉**
+🌋 **企业级自托管安全网关访问 Web3 API，Lava 方式😉**
 
-The **Lava Server Kit** is a GO language reference implementation that provides self-hosted gateway access to blockchain APIs, designed as a solution for running as a backend server. It is capable of accepting raw RPC queries, wrapping them up with the protocol layer, and sending them directly to providers on our network in a decentralized manner. The Lava Server Kit is highly concurrent and performant and is used in enterprise-grade applications which require high throughput and efficiency in scaling. 
+**Lava服务器套件**是GO语言的参考实现，提供区块链应用程序接口的自托管网关访问，旨在作为后端服务器运行的解决方案。它能够接受原始 RPC 查询，用协议层对其进行封装，并以去中心化的方式将其直接发送给我们网络上的提供者。Lava 服务器套件具有高并发性和高性能，适用于需要高吞吐量和高效扩展的企业级应用。
 
 
 
-### Features
+### 特点
 
-1. Serve multiple blockchain RPC endpoints
-2. High throughput with multiple sessions
-3. Easy setup process
+1. 为多个区块链 RPC 端点提供服务
+2. 多个会话的高吞吐量
+3. 设置过程简单

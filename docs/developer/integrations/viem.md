@@ -48,4 +48,4 @@ async function printLatestBlock() {
 </TabItem>
 </Tabs>
 
-❓ Looking for more examples? Check out the [examples](https://github.com/lavanet/lava-sdk-providers/tree/main/viem/examples) folder on our repository.
+❓ 寻找更多示例？请查看我们仓库中的 [examples](https://github.com/lavanet/lava-sdk-providers/tree/main/viem/examples) 文件夹。

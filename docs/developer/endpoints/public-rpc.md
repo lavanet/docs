@@ -1,11 +1,11 @@
 ---
 slug: /public-rpc
-title: Lava Public RPC 🌋
+title: Lava 公共 RPC 🌋
 ---
 
-# Lava Public RPC (Testnet-2)
+# Lava 公共 RPC (Testnet-2)
 
-## Official Endpoints ⭕
+## 官方端点 ⭕
 
 | Service 🔌 | URL 🔗 | Protocol |
 |--------|-------|-------- |
@@ -13,16 +13,16 @@ title: Lava Public RPC 🌋
 | 🟢 rest | https://rest-public-rpc.lavanet.xyz:443    | HTTP/1.1 |
 | 🟢 grpc | public-rpc-testnet2.lavanet.xyz:9090 |    HTTP/2 |
 
-## Incentivized Public RPC 💫
+## 激励公共 RPC 💫
 
 ✴️[**Starknet**](https://www.lavanet.xyz/get-started/starknet?utm_source=public-rpc-page&utm_medium=docs&utm_campaign=starknet-iprpc-dev)
 ✴️[**Axelar**](https://www.lavanet.xyz/get-started/axelar?utm_source=public-rpc-page&utm_medium=docs&utm_campaign=axelar-iprpc-dev)
 ✴️[**Evmos**](https://www.lavanet.xyz/get-started/evmos?utm_source=public-rpc-page&utm_medium=docs&utm_campaign=evmos-iprpc-dev)
 
-## Community / Testnet Services 🧑🏾‍🤝‍🧑🏾
+## 社区 / 测试网服务 🧑🏾‍🤝‍🧑🏾
 
 :::info
-Community Pages are provided by members of our community and not monitored/managed by Lava.
+社区页面由社区成员提供，并非由 Lava 监控/管理。
 :::
 
 - ✨[AKNodes](https://services.aknodes.com/testnet/lava)
