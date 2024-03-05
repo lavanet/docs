@@ -79,7 +79,7 @@ async function useSDK() {
       },
       chainIds: ['COS5T','JUNT1','POLYGON1']
     });
-  
+}
 ```
 
 </TabItem>
