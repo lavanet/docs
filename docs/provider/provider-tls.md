@@ -374,11 +374,12 @@ Run the following commands one at a time!
 Use a variation of the following command to stake on chain; the minimum stake is `50000000000ulava`
 
 ```bash
-lavap tx pairing stake-provider ETH1 "50000000000ulava" "eth.your-site:443,1" 1 -y --from your_key_name_here --provider-moniker your-provider-moniker-1 --gas-adjustment "1.5" --gas "auto" --gas-prices "0.0001ulava"
+lavap tx pairing stake-provider ETH1 "50000000000ulava" "eth.your-site:443,1" 1 validator -y --from your_key_name_here --provider-moniker your-provider-moniker-1 --delegate-limit "0ulava" --gas-adjustment "1.5" --gas "auto" --gas-prices "0.0001ulava"
 ```
+* validator - active validator address
 
 ```bash
-lavap tx pairing stake-provider LAV1 "50000000000ulava" "lava.your-site:443,1" 1 -y --from your_key_name_here --provider-moniker your-provider-moniker-1 --gas-adjustment "1.5" --gas "auto" --gas-prices "0.0001ulava"
+lavap tx pairing stake-provider LAV1 "50000000000ulava" "lava.your-site:443,1" 1 validator -y --from your_key_name_here --provider-moniker your-provider-moniker-1 --delegate-limit "0ulava" --gas-adjustment "1.5" --gas "auto" --gas-prices "0.0001ulava"
 ```
 
 ### ☑️ Test the Providers again! 
