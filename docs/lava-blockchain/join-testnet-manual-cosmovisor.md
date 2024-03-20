@@ -125,7 +125,6 @@ The following sections will describe how to install Cosmovisor for automating th
     --chain-id lava-testnet-2 \
     --home $lavad_home_folder \
     --overwrite
-    cp genesis_json/genesis.json $lava_config_folder/genesis.json
     ```
 
     :::caution Please note that cosmovisor will throw an error ⚠️ This is ok.
