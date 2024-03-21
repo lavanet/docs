@@ -40,8 +40,64 @@ Troubleshooting:
 
 ## Providers 🖥️
 
+### 🟡 What is QoS (Passable Quality-of-Service)?
+This score for providers per relay is based on the metrics of latency, sync, and availability. There are two different types of QoS: 
+- Excellence QoS - https://docs.lavanet.xyz/provider-improve-service#-passable-qos
+- Passable QoS - https://docs.lavanet.xyz/provider-improve-service#-qos-excellence
+
+### 🟡 How can you improve your provider's QoS?
+Providers are rated based on response time, availability and freshness. It is also important to maintain high performance on your nodes and to have powerful servers. For more details, visit: https://community.lavanet.xyz/t/rsch-1000-passable-quality-of-service/25
+
+### 🟡 How can I check the provider's performance?
+You can check all providers on the portal: https://info.lavanet.xyz. For your own provider, you can configure Prometheus using the `metrics-listening-address` flag. You can find more information here: https://docs.lavanet.xyz/provider-features/#config-prometheus.
+You can also track your own performance using the CLI: `lavad test rpcprovider...`.
+
+### 🟡 How do I earn Magma points with a provider?
+At the moment, providers are not connected to Magma and you cannot earn any points. This will be possible in the future. However, you can already test the performance of providers, evaluate your CU, QoS...
+
+### 🟡  What is the difference between a provider who uses Lavavisor and one who does not?
+There is no difference. LavaVisor updates the binary automatically. Without it you have to do it manually. LavaVisor is based on Cosmovisor: https://docs.cosmos.network/main/build/tooling/cosmovisor
+
+### 🟡  The tokens used for providers and validators are different?
+No, there is only one token - lava. It is used as a governance token, as gas fees required for transactions, for rewards distributed to validators/providers, etc.
+Lava uses double staking, stake to provider = stake to validator. 
+If you do not specify a validator when staking to a provider, the validator will be selected automatically. But it is best to specify it manually.
+
+### 🟡  How does slashing work for providers?
+Slashing has not yet been implemented for providers. It is planned to only be for fraudulent activity. A freeze feature has been implemented for service providers to avoid downtime or poor QoS. 
+The team is working on documentation for jailing, but nothing has been made public yet. Here is a summary from the team:
+- providers claim CUs serviced via relay payments;
+- each relay payment has an unreponsive providers list (provider1's claim might report providers 2,3 for example), these reports are signed by the consumer as well as the CU used;
+- every epoch (15m) the chain checks unresponsiveness claims, against the CU serviced over the last 5 epochs;
+- if the ratio of complaints per relay is greater than the ratio of service claimed (if you want the full equation lmk) if more than 0.5 AND the number of providers available in the specification is greater than 5 per geolocation, then the provider is jailed and gets all its funds back after 25 hours.
+
+### 🟡  How much do providers earn now?
+Providers earn fees in the form of lava tokens from consumers for servicing requests. Accordingly, testnet providers are currently earning lava tokens on the testnet.
+Remember that Testnet tokens have no value!
+
+### 🟡  How quickly do new providers receive relay requests?
+It can take up to 15m to get relays again.
+
+### 🟡  Is it ok to use the same wallet address between node and provider? 
+Yes, you can, it's allowed.
+
+### 🟡 What is Incentivized Public RPC (ipRPC)?
+
+These are incentivized programs where providers earn for servicing specific chains. Chains reward node operators for joining Lava and serving infrastructure in their native token.
+The following ipRPCs are currently supported:
+- Evmos: https://bit.ly/42thABo
+- Axelar: https://bit.ly/484Yena
+- NEAR: https://bit.ly/3wavoEC
+- more coming soon
+
+### 🟡  Who can join the Incentivized Public RPC?
+Anyone can join the ipRPC. You need to check the docs: https://docs.lavanet.xyz/provider-setup. Then sign up to receive lava testnet tokens using the appropriate forms:
+- Evmos ipRPC - https://lavanet.typeform.com/to/qQ1x6WJs
+- Axelar ipRPC: https://lavanet.typeform.com/to/iW8rynWg
+- NEAR ipRPC: https://lavanet.typeform.com/to/plCaDdVM
+
 ### 🟡  How can I update/edit my provider information? {#provider-info}
-To update your provider information on chain, send the `provider-stake` transaction with the updated information and an additional stake of minimum 1 ulava.
+To update your provider information on chain, send the `lavad tx pairing modify-provider...` transaction with the updated information and an additional stake of minimum 1 ulava.
 
 ### 🟡 I get `ERR_stake_provider_endpoints: invalid provider endpoints` error when trying to stake as a provider {#staking-error}
 In your stake-provider transaction you need to specify all required provider endpoints based on the chain you are staking on. For example to provide for cosmos chains you need both tendermint-rpc and rest as follows: `"IP:port,tendermintrpc,1 IP:port,rest,1"`.
