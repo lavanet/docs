@@ -459,6 +459,18 @@ const sidebars = {
         'lava-blockchain/badge-server'
       ]
     },
+    {
+      type: 'category', 
+      label: 'Tokenomics 🪙',
+      collapsible: true,
+      collapsed: true,
+      items: [
+        'tokenomics/supply',
+        'tokenomics/demand',
+        'tokenomics/distribution',
+        'tokenomics/growth'
+      ]
+    },
     `tutorials`,
     {
       type: 'link',
