@@ -3,7 +3,7 @@ slug: /demand
 title: 🛒 Demand
 ---
 
-# 🪙 Tokenomics: Demand Details 
+# 🪙 Demand Details 
 ## 🌐 Role of `LAVA`
 
 The `LAVA` token serves various purposes on the Lava Network:
@@ -18,12 +18,12 @@ The `LAVA` token serves various purposes on the Lava Network:
 ## 🏆 Reward Types
 There are **5 types of rewards** on Lava and each is distributed across different actors. All % are determined by and can be changed by DAO governance.
 
-![tokenomics-chart1](/img/tokenomics/chart1.png)
+![chart1](/img/tokenomics/chart1.png)
 
 
 :::info
 
-A few flows are missing from this diagram: (i) data accuracy slashing / rewards (ii) cosmos validator slashing for misbehavior (iii) Referral / affiliate fees (iv) staking, (iv) Incentivized RPC Pools
+A few flows are missing from this diagram: (i) data accuracy slashing / rewards (ii) cosmos validator slashing for misbehavior (iii) Referral / affiliate fees (iv) staking, (iv) Incentivized RPC Pools, (v) validators rewards from subscription rewards.
 
 :::
 
@@ -58,7 +58,7 @@ Provider Drops are a rewards reserve dedicated to attracting Providers to join t
 - **0-100%** to Providers
 - **0-100%** burn
 
-The higher the paid demand for Lava subscriptions, the higher the payouts of Provider Drops (up to a limit per month)
+The higher the paid demand for Lava subscriptions, the higher the payouts of Provider Drops (up to a limit per month).
 
 
 ### Provider and Validator Commissions 💰
@@ -67,7 +67,7 @@ Delegators earn rewards minus a commission % Set by Providers and Validators.
 
 The *default commission *for Providers is **50%**.
 
-Commission is expected to be higher for Providers because they run a more operationally intensive business than Validators
+Commission is expected to be higher for Providers because they run a more operationally intensive business than Validators.
 
 
 

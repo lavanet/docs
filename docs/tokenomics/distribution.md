@@ -5,7 +5,7 @@ title: 📊 Distribution
 
 
 
-# 🪙 Tokenomics: Distribution Details
+# 🪙 Distribution Details
 
 ## 🧮 Distribution Breakdown 
 

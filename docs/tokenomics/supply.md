@@ -3,7 +3,7 @@ slug: /supply
 title: 🏭 Supply
 ---
 
-# 🪙 Tokenomics: Supply Details
+# 🪙 Supply Details
 
 <center>
 
@@ -16,7 +16,7 @@ title: 🏭 Supply
 
 </center>
 
-## 👤 Economic Actors and Key Terms
+## Economic Actors and Key Terms 👤
 
 - 🛒 **Consumers**  buy Subscription plans in `LAVA` on-chain to gain access to a diverse set of API ‘specs’ via the Lava Protocol.
     -  💸 **Subscription** plans are priced by governance, offer a limited amount of compute units and vary by their specs.
@@ -34,11 +34,11 @@ title: 🏭 Supply
 
 :::
 
-## `LAVA` deflation
+## `LAVA` supply 💵
 
-Lava has a fixed supply and no more tokens will be minted. Furthermore, Lava has developed a novel deflationary mechanism for bootstrapping demand for the network’s service i.e. RPC and APIs.  `LAVA` deflates at a rate depending on how much of the monthly reward pool for Providers is burned.
+Lava has a fixed supply and no more tokens will be minted. Furthermore, Lava has developed a novel deflationary mechanism for attracting Providers in the initial stages of Mainnet.
 
-6.6% of the total supply is distributed on a monthly basis over 4 years to Providers as a reward boost called a Provider Drop. This reserve is a fixed allocation of rewards available for the first 4 years and emitted once a month, burning the previous month’s unused allocation. It is used to further incentivize participation from Providers in the network while it is still early in revenue generated from subscriptions. 
+6.6% of supply is devoted to “Provider Drops" which are a monthly-distributed reward mechanism for bootstrapping Provider participation. Monthly rewards vary depending on paid demand for services on Lava; higher paid demand generally results in more rewards for Providers who have joined Lava early.
 
 As the network draws more and more consumers, the need for the Drops will decrease, as Providers will make the difference from subscription payments.
 
@@ -46,4 +46,4 @@ As the network draws more and more consumers, the need for the Drops will decrea
 | Parameter                               | % of total `LAVA` supply |
 |-----------------------------------------|------------------------------------|
 | 🚀 **Provider Reward Boosts** (“Provider Drops”)| **6.6%**          |
-| 🔥 **Range of Burn Rate  **                    | **0 - 6.6%**                    |
+| 🔥 **Range of Burn Rate**                    | **0 - 6.6%**                    |
