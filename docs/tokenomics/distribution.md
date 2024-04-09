@@ -22,36 +22,15 @@ Max Supply: `1,000,000,000 LAVA` (**100%**)
 
 <br />
 
-### Public Allocation 🎁
+###
 
-| Public Allocation                    | %    |
-|--------------------------------------|------|
-| Community Engagement Initiatives     | 15%  |
-| Rewards Reserve                      | 10%  |
-| Provider Drops                       | 6.6% |
-| Validator block Rewards              | 3.4% |
-| **Total**                            | **25%** |
-
-<br />
-
-### R&D & Ecosystem 🌱
-
-
-| R&D & Ecosystem                                   |  % |
-|---------------------------------------------------|----|
-| Protocol maintenance and development              |    |
-| Programs for providers, validators, and champions |    |
-| **Total**                                         | **31%** |
-
-<br />
-
-### Investors & Contributors 👥 
-
-| Investors & Contributors               | % |
-|--------------------------|---|
-| Investors / Early Supporters of Lava | 17% |
-| Initial Core Contributors            | 27% |
-| **Total**                | **44%** |
+| Category               |  Description | %    |
+|------------------------|--------------|------|
+| Public Allocation 🎁   |  Community Engagement Initiatives, Rewards Reserve, Provider Drops, & Validator Block Rewards       | 25%  |
+| R&D & Ecosystem 🌱     |  Protocol Maintenance & Development; Programs for Providers, Validators, and Champions     | 31%  |
+| Investors 💰           |  Early Supporters of Lava                                    | 17%  |
+| Contributors 👥        |  Early contributors, Core Team, Advisors, & Others           | 27%  |
+|                        |     **Total**         | **100%** |
 
 </center>
 
@@ -66,3 +45,8 @@ Max Supply: `1,000,000,000 LAVA` (**100%**)
 | Investors                  | 33% unlocked at year 1. Remaining 67% unlocks continuously from year 1 to year 3.  |
 | Initial Core Contributors | 33% unlocked at year 1. Remaining 67% unlocks continuously from year 1 to year 3.   |
 
+
+## 🏛️ Disclaimer
+
+THIS DOCUMENT IS NEITHER AN OFFER TO SELL NOR A SOLICITATION TO BUY ANY ASSETS, AND IT SHOULD NOT BE CONSIDERED AN OFFER, ADVERTISEMENT, INVITATION, CONFIRMATION, OR ANY FORM OF FINANCIAL PROMOTION MEANT TO ENCOURAGE OR INDUCE PARTICIPATION IN INVESTMENT ACTIVITIES. THE INFORMATION PROVIDED HEREIN SHOULD NOT BE VIEWED AS LEGAL, INVESTMENT, FINANCIAL, TAX, OR ANY OTHER TYPE OF PROFESSIONAL ADVICE AND IS NOT MEANT TO REPLACE PROFESSIONAL CONSULTATION.
+THE CONTENT INCLUDES FORWARD-LOOKING STATEMENTS, ESTIMATIONS, AND/OR HYPOTHETICAL FIGURES THAT ARE INHERENTLY SUBJECT TO UNCERTAINTY AND MAY UNDERGO ADJUSTMENTS; THEREFORE, ACTUAL OUTCOMES MAY DIFFER SIGNIFICANTLY. WE MAKE NO CLAIMS REGARDING THE RELIABILITY, ACCURACY, COMPLETENESS, OR VALIDITY OF THE INFORMATION CONTAINED WITHIN THIS DOCUMENT. BE AWARE THAT THIS MATERIAL MAY BE INACCURATE OR CONTAIN ERRORS. YOU SHOULD RECOGNIZE THAT INFORMATION HEREIN COULD BE UPDATED OR CHANGED WITHOUT NOTICE. ANY ADVICE OR INFORMATION RECEIVED FROM THE LAVA FOUNDATION, REGARDLESS OF HOW IT IS CONVEYED, SHOULD NOT BE SEEN AS CREATING ANY GUARANTEES OR REPRESENTATIONS NOT DIRECTLY STATED IN THIS DOCUMENT.
