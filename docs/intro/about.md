@@ -49,4 +49,4 @@ Providers join Lava to reach more developers and to monetize their existing infr
 
 5. **Decentralized Access -** We encourage users to access our network in a fully decentralized way. All relays on our network are conducted peer-to-peer (P2P).
 
-6. **Open Source -** Lava is commmitted to open source and modularity. Developers can investigate the code for the chain and any specs implemented.
+6. **Open Source -** Lava is committed to open source and modularity. Developers can investigate the code for the chain and any specs implemented.
