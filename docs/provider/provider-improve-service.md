@@ -17,7 +17,7 @@ import TabItem from '@theme/TabItem';
 
 <br/>
 
-## 📊 Passable QoS 
+## 📊 Passable QoS {#passable-qos}
 Passable Quality of Service is scored separately in each relay session. Lower scores mean lower rewards. Up to half the accumulated CU can be reduced for bad service. Passable QoS metrics can be viewed both in the [Lava Info explorer](https://info.lavanet.xyz/?utm_source=provider-rewards&utm_medium=docs&utm_campaign=docs-to-info) and [Prometheus metrics](/provider-features#config-prometheus).
 
 Passable QoS is binary, either it's good or bad there is no in-between. Scores in the range `0-1` are a result of averaging that binary score across relays. You can learn more about Passable QoS from our [📄 RSCH-1000](https://community.lavanet.xyz/t/rsch-1000-passable-quality-of-service/25) research paper.
@@ -120,7 +120,7 @@ lavap test events 2000 --event lava_provider_latest_block_report --node https://
 
 <br />
 
-## 📊 QoS Excellence
+## 📊 QoS Excellence {#qos-excellence}
 
 QoS Excellence is calculated very similarly to Passable QoS. QoS Excellence provides a range of scores that are time-weighted to take the latest information
 all the actions mentioned here to improve passable QoS affect excellence
@@ -133,7 +133,7 @@ Excellence Quality of score divides into 3 metrics:
 
 <br />
 
-## 🏛️ Jailing
+## 🏛️ Jailing {#jailing}
 
 ### How to Fix Getting Jailed 🔓
 Lava Protocol removes providers that are providing inferior service. The mechanism is detached from QoS measurements.
