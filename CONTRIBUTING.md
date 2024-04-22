@@ -26,7 +26,7 @@ Lava docs serves multiple user types in different lifecycle steps.
 We want to create a doc resource that will fit all, but have a common denominator of style.
 
 Styleguides are guidance and not a restriction, good articles we picked for this purpose are:
-- When it comes to git opeartions, we recommend https://cbea.ms/git-commit/
+- When it comes to git operations, we recommend https://cbea.ms/git-commit/
 - When it is docs actual content, we recommend https://medium.com/larimaza-en/how-to-write-good-documentation-e19c70dc67f0
 
 ## Getting started

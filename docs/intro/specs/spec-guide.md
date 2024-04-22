@@ -112,7 +112,7 @@ The enabled field describes whether the spec is active. There are times when a s
 
 </details>
 
-<details> <summary> `reliability threshhold` </summary>
+<details> <summary> `reliability threshold` </summary>
 
 Reliability threshold sets the frequency of reliability related messages. By default, we set this to `268435455` which is the minimum and efficient choice. If you’d like to set it higher - there are more details that can be learned here. [/spec-reference#terms]
 
@@ -377,7 +377,7 @@ Each API collection is composed of various pieces. These pieces collectively giv
 
 <details><summary> `internal_path`</summary>
 
-This field gives the internal path of the node for this specific ApiCollection. This is **most likely unneeded** unless the API sets vary on internal paths on teh node. The best example is the [AVAX specification](https://raw.githubusercontent.com/lavanet/lava/main/cookbook/specs/spec_add_avalanche.json) which uses internal paths to distinguish between subnets with distinct ApiCollections.
+This field gives the internal path of the node for this specific ApiCollection. This is **most likely unneeded** unless the API sets vary on internal paths on the node. The best example is the [AVAX specification](https://raw.githubusercontent.com/lavanet/lava/main/cookbook/specs/spec_add_avalanche.json) which uses internal paths to distinguish between subnets with distinct ApiCollections.
 
 </details>
 
@@ -535,7 +535,7 @@ This area is used to describe how to extract the block number from the API reque
 
 ### Compute Units
 
-Describes the number of compute units which each API call expends. This number is a proxy for the compute intensiveness/difficulty and therefore the cost of calling this API. Note: compute units are not just tethered to rewards - they also indirectly inform the protocol of the expected time to response; by default, each compute unit adds ~100 ms to the relay's timeout threshhold.
+Describes the number of compute units which each API call expends. This number is a proxy for the compute intensiveness/difficulty and therefore the cost of calling this API. Note: compute units are not just tethered to rewards - they also indirectly inform the protocol of the expected time to response; by default, each compute unit adds ~100 ms to the relay's timeout threshold.
 
 There are a minimum of 10 CU per call - this should be sufficient for most calls.
 
@@ -611,7 +611,7 @@ Earlier, we looked at Parse Directives as a means for understanding the type of 
 ]
 ```
 
-The default behavior of verifications is to restrict a provider from serving the APIs if failed. This cna be altered with a field called `severity` but it is not recommended behavior unless specific to your usecase.
+The default behavior of verifications is to restrict a provider from serving the APIs if failed. This can be altered with a field called `severity` but it is not recommended behavior unless specific to your usecase.
 
 🔖REFERENCE: [`Verifications`](/spec-reference#verifications)
 

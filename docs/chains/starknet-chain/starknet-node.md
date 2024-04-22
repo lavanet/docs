@@ -58,7 +58,7 @@ Compare your numbers with Starknet's Testnet_1 before proceeding.
 
 ## Install the Starknet L2 Package 📦
 
-> There are three posible nodes avaliable for [Starknet](https://www.starknet.io/en/ecosystem/fullnodes-and-rpc-services)
+> There are three possible nodes available for [Starknet](https://www.starknet.io/en/ecosystem/fullnodes-and-rpc-services)
 
 ### Pathfinder node
 `Cd` into the starknet-stack project root and start the L2 execution client with this command:
