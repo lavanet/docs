@@ -1,9 +1,9 @@
 ---
-slug: /demand
-title: 🛒 Demand
+slug: /rewards-restaking
+title: 🛒 Rewards and Restaking
 ---
 
-# 🪙 Demand Details 
+# 🪙 Rewards and Restaking
 ## 🌐 Role of `LAVA`
 
 The `LAVA` token serves various purposes on the Lava Network:

@@ -480,7 +480,7 @@ const sidebars = {
       collapsed: true,
       items: [
         'tokenomics/supply',
-        'tokenomics/demand',
+        'tokenomics/rewards-restaking',
         'tokenomics/distribution',
         'tokenomics/growth'
       ]
