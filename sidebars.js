@@ -256,6 +256,20 @@ const sidebars = {
         },
         {
           type: 'category',
+          label: '🔗 Secret',
+          collapsible: true,
+          collapsed: true,
+          description: 'SECRET, SECRETP',
+          link: {
+            type: 'doc',
+            id: 'chains/secret-chain/secret'
+          },
+          items: [
+            'chains/secret-chain/secret-node',
+          ]
+        },
+        {
+          type: 'category',
           label: '🔗 Solana',
           collapsible: true,
           collapsed: true,
