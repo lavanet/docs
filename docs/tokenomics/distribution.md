@@ -11,7 +11,7 @@ title: 📊 Distribution
 
 Lava will have `1,000,000,000` tokens at Genesis with no inflation to token supply. The following table and chart shows how the tokens are distributed at Genesis:
 
-![tokenomics](/img/tokenomics/bargraph.png)
+![tokenomics](/img/tokenomics/piegraph.png)
 
 <center>
 
