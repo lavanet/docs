@@ -476,6 +476,10 @@ const sidebars = {
     {
       type: 'category', 
       label: 'Tokenomics 🪙',
+      link: {
+        type: 'doc',
+        id: 'tokenomics/token'
+      },
       collapsible: true,
       collapsed: true,
       items: [
