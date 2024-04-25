@@ -26,10 +26,10 @@ Max Supply: `1,000,000,000 LAVA` (**100%**)
 
 | Category               |  Description | %    |
 |------------------------|--------------|------|
-| Public Allocation 🎁   |  Future initiatives and Rewards Reserve (Provider Drops and Validator rewards)       | 25%  |
-| R&D & Ecosystem 🌱     |  Protocol Maintenance & Development; Programs for Providers, Validators, and Champions     | 31%  |
-| Investors 💰           |  Early Supporters of Lava                                    | 17%  |
-| Contributors 👥        |  Early contributors, Core Team, Advisors, & Others           | 27%  |
+| Public Allocation    |  Future initiatives and Rewards Reserve (Provider Drops and Validator rewards)       | 25%  |
+| R&D & Ecosystem      |  Protocol Maintenance & Development; Programs for Providers, Validators, and Champions     | 31%  |
+| Investors            |  Early Supporters of Lava                                    | 17%  |
+| Contributors         |  Early contributors, Core Team, Advisors, & Others           | 27%  |
 |                        |     **Total**         | **100%** |
 
 </center>
