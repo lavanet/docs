@@ -41,7 +41,7 @@ Max Supply: `1,000,000,000 LAVA` (**100%**)
 | Category                   | Unlock Schedule                                                                                                       |
 |----------------------------|-----------------------------------------------------------------------------------------------------------------------|
 | Public Allocation          | Fully unlocked at Launch.  Except rewards reserve: unlocks continuously from launch to year 4.  |
-| R&D & Ecosystem            | 25% unlocked at launch. Remaining 75% unlocks continuously from year 1 to year |
+| R&D & Ecosystem            | 25% unlocked at launch. Remaining 75% unlocks continuously from year 1 to year 4. |
 | Investors                  | 33% unlocked at year 1. Remaining 67% unlocks continuously from year 1 to year 3.  |
 | Initial Core Contributors | 33% unlocked at year 1. Remaining 67% unlocks continuously from year 1 to year 3.   |
 
