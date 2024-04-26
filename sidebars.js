@@ -297,6 +297,21 @@ const sidebars = {
             'chains/starknet-chain/starknet-dev',
             'chains/starknet-chain/starknet-node'
           ]
+        },
+        {
+          type: 'category',
+          label: '🔗 Stargaze',
+          collapsible: true,
+          collapsed: true,
+          description: 'STRGZ, STRGZT',
+          link: {
+            type: 'doc',
+            id: 'chains/stargaze-chain/stargaze'
+          },
+          items: [
+            'chains/stargaze-chain/stargaze-dev',
+            'chains/stargaze-chain/stargaze-node'
+          ]
         }
       ]
     },
