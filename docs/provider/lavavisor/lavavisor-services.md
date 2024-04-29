@@ -33,7 +33,7 @@ LavaVisor `init`命令用来初始化LavaVisor的环境。它通常是使用Lava
     
 `--auto-download` - 自动下载缺少的二进制文件
     
-`--auto-start` - 在`init`命令完成后自动发出`start` 命令
+`--auto-start` - automatically issues `start` after the `init` command completes
 
 **用法示例：**
 
@@ -45,7 +45,7 @@ lavavisor init --auto-download --chain-id lava-testnet-2
 <br />
 
 ### > `lavavisor create-service` 
-LavaVisor 为每个正在运行的提供程序/消费者使用服务文件。LavaVisor `create-service`命令根据提供的消费者/提供者配置文件和标志创建这些文件。
+LavaVisor 使用针对每个提供者/消费者的服务文件。LavaVisor 的 `create-service` 命令根据提供的消费者/提供者配置文件和标志创建这些文件。
 
 您必须指定创建的是`provider`还是`consumer` 以及配置文件的位置。
 

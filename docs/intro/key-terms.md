@@ -137,8 +137,8 @@ title: 📝 关键词
 ## 账户和钱包
 
 <details>
-<summary>Keyring</summary>
-密匙环保存用于与节点交互的私有/公共对。例如，在运行区块链节点之前需要设置验证器密钥，以便对块进行正确签名。私钥可以存储在不同的位置，称为“backends”，例如文件或操作系统自己的密钥存储。<a href="https://docs.cosmos.network/main/run-node/keyring.html">(点击这里了解更多)</a>
+<summary>密钥环</summary>
+密钥环保存了与节点交互所使用的私钥/公钥对。例如，在运行区块链节点之前，需要设置验证器密钥，以便正确签署区块。私钥可以存储在不同的位置，称为“后端”，例如文件或操作系统自身的密钥存储中。<a href="https://docs.cosmos.network/main/run-node/keyring">(在此处了解更多)</a>
 </details>
 
 <details>
@@ -159,5 +159,5 @@ Lava 网络中的密钥对由两个基本部分组成：公钥和私钥。这对
 <summary>私钥</summary>
 在 Lava 网络中，私钥是一种高度机密的秘密加密密钥，它与相应的公钥组成一对密钥对。私钥用于解密数据、签署交易、访问 Lava 资产和敏感信息等关键任务。私钥应安全存储，切勿公开共享，因为它赋予了对加密资产和安全通信的完全控制权和所有权。
 
-密钥示例: (`64 character hexadecimal string`)
+Example Key: (`64 character hexadecimal string`)
 </details>

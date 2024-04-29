@@ -374,11 +374,12 @@ lavap rpcprovider lava-provider.yml --from your_key_name_here --geolocation 1 --
 使用以下命令对链进行质押；最小质押为 `50000000000ulava`
 
 ```bash
-lavap tx pairing stake-provider ETH1 "50000000000ulava" "eth.your-site:443,1" 1 -y --from your_key_name_here --provider-moniker your-provider-moniker-1 --gas-adjustment "1.5" --gas "auto" --gas-prices "0.0001ulava"
+lavap tx pairing stake-provider ETH1 "50000000000ulava" "eth.your-site:443,1" 1 validator -y --from your_key_name_here --provider-moniker your-provider-moniker-1 --delegate-limit "0ulava" --gas-adjustment "1.5" --gas "auto" --gas-prices "0.0001ulava"
 ```
+* validator - active validator address
 
 ```bash
-lavap tx pairing stake-provider LAV1 "50000000000ulava" "lava.your-site:443,1" 1 -y --from your_key_name_here --provider-moniker your-provider-moniker-1 --gas-adjustment "1.5" --gas "auto" --gas-prices "0.0001ulava"
+lavap tx pairing stake-provider LAV1 "50000000000ulava" "lava.your-site:443,1" 1 validator -y --from your_key_name_here --provider-moniker your-provider-moniker-1 --delegate-limit "0ulava" --gas-adjustment "1.5" --gas "auto" --gas-prices "0.0001ulava"
 ```
 
 ### ☑️ 再次测试供应商！

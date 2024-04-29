@@ -25,7 +25,7 @@ title: Lava 公共 RPC 🌋
 社区页面由社区成员提供，并非由 Lava 监控/管理。
 :::
 
-- ✨[AKNodes](https://services.aknodes.com/testnet/lava)
+- ✨[AKNodes](https://services.aknodes.com/lava)
 - ✨[AutoStake](https://autostake.com/networks/testnets/lava/#services)
 - ✨[KJNodes](https://services.kjnodes.com/testnet/lava/)
 - ✨[ITRocket](https://itrocket.net/services/testnet/lava/)
@@ -39,3 +39,4 @@ title: Lava 公共 RPC 🌋
 - ✨[LiveRaveN](https://services.liveraven.net/cosmos-testnets/lava-network)
 - ✨[Stake Village](https://stakevillage.net/en/lava-testnet2/endpoint.php)
 - ✨[StakeTown](https://services.stake-town.com/home/testnet/lava/public-api)
+- ✨[BonyNode💚](https://services.bonynode.online/testnet/lava/public-rpc-api)

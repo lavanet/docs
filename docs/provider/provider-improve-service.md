@@ -17,8 +17,8 @@ import TabItem from '@theme/TabItem';
 
 <br/>
 
-## 📊 合格的服务质量
-合格服务质量在每个中继环节分别计分。分数越低，奖励越低。如果服务质量差，累积的 CU 最多会减少一半。可通过的 QoS 指标可在 [Lava Info explorer](https://info.lavanet.xyz/?utm_source=provider-rewards&utm_medium=docs&utm_campaign=docs-to-info) 和 [Prometheus metrics](/provider-features#config-prometheus) 中查看。
+## 📊 可接受的服务质量 {#passable-qos}
+可接受的服务质量在每个中继会话中单独评分。较低的分数意味着较低的奖励。最多可因糟糕的服务而减少累积 CU 的一半。可接受的 QoS 指标可以在[Lava Info 浏览器](https://info.lavanet.xyz/?utm_source=provider-rewards&utm_medium=docs&utm_campaign=docs-to-info)和[Prometheus 指标](/provider-features#config-prometheus)中查看。
 
 合格的 QoS 是二进制的，要么好要么坏，没有中间值。0-1 "范围内的分数是各中继站平均二进制分数的结果。您可以从我们的[📄 RSCH-1000](https://community.lavanet.xyz/t/rsch-1000-passable-quality-of-service/25)研究论文中了解有关可通过 QoS 的更多信息。
 
@@ -120,7 +120,7 @@ lavap test events 2000 --event lava_provider_latest_block_report --node https://
 
 <br />
 
-## 📊 优质服务
+## 📊 QoS Excellence {#qos-excellence}
 
 优质服务的计算方法与合格服务质量非常相似。优质服务提供一系列分数，这些分数经过时间加权，以获得最新信息。
 这里提到的所有改善合格 QoS 的措施都会影响优质服务。
@@ -133,7 +133,7 @@ lavap test events 2000 --event lava_provider_latest_block_report --node https://
 
 <br />
 
-## 🏛️ 监禁
+## 🏛️ Jailing {#jailing}
 
 ### 如何避免被监禁 🔓
 Lava 协议删除提供劣质服务的供应商。该机制与 QoS 测量无关。
