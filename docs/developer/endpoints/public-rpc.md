@@ -11,7 +11,7 @@ title: Lava Public RPC 🌋
 |--------|-------|-------- |
 | 🟢 rpc | https://public-rpc-testnet2.lavanet.xyz:443    | HTTP/1.1 |
 | 🟢 rest | https://rest-public-rpc.lavanet.xyz:443    | HTTP/1.1 |
-| 🟢 grpc | public-rpc-testnet2.lavanet.xyz:443 |    HTTP/2 |
+| 🟢 grpc | grpc-public-rpc.lavanet.xyz:443 |    HTTP/2 |
 
 ## Incentivized Public RPC 💫
 

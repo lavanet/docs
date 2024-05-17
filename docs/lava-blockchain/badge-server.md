@@ -103,7 +103,7 @@ Within this variable, lies a mapping structure, where each entry connects a geol
 This specifies the URL of the node with exposed gRPC port. Badge servers require access to a node with gRPC in order to function correctly.
 
 ```bash
-GRPC_URL=public-rpc-testnet2.lavanet.xyz:443
+GRPC_URL=grpc-public-rpc.lavanet.xyz:443
 ```
 <hr/>
 
