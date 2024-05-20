@@ -297,6 +297,20 @@ const sidebars = {
             'chains/starknet-chain/starknet-dev',
             'chains/starknet-chain/starknet-node'
           ]
+        },
+        {
+          type: 'category',
+          label: '🔗 Celestia',
+          collapsible: true,
+          collapsed: true,
+          description: 'CELESTIA',
+          link: {
+            type: 'doc',
+            id: 'chains/celestia-chain/celestia'
+          },
+          items: [
+            'chains/celestia-chain/celestia-node'
+          ]
         }
       ]
     },
