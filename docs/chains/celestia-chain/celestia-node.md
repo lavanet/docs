@@ -35,3 +35,34 @@ To set up your provider on the Lava Network, you can refer to the [provider setu
 Celestia providers must supply endpoint for both consensus and DA node:
 - consensus node: rest, tendermint, grpc (this is the same as every other cosmos node)
 - DA node: jsonrpc (when running the light DA node the defualt port will be 26658)
+
+
+example for provider configuration file
+```yaml
+endpoints:
+  - api-interface: jsonrpc
+    chain-id: CELESTIA
+    network-address: 
+      address: 0.0.0.0:2221
+    node-urls:
+      - url: http://127.0.0.1:26658
+  - api-interface: tendermintrpc
+    chain-id: CELESTIA
+    network-address: 
+      address: 0.0.0.0:2221
+    node-urls:
+      - url: ws://127.0.0.1:26657/websocket
+      - url: http://127.0.0.1:26657
+  - api-interface: grpc
+    chain-id: CELESTIA
+    network-address: 
+      address: 0.0.0.0:2221
+    node-urls: 
+      - url: 127.0.0.1:9090
+  - api-interface: rest
+    chain-id: CELESTIA
+    network-address: 
+      address: 0.0.0.0:2221
+    node-urls: 
+      - url: http://127.0.0.1:1317
+```
