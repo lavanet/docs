@@ -22,10 +22,15 @@ Data availabillity light node https://docs.celestia.org/nodes/light-node
 Consensus node https://docs.celestia.org/nodes/full-consensus-node
 
 Important note:
-When running the light node make sure to add the flag --rpc.skip-auth to let consumers use the node without authentication
+When running the light DA node we need to make sure to do one of the following:
+* disable authentication with the flag --rpc.skip-auth to let provider use the node without authentication
 example:
 ```bash
-celestia light start --core.ip public-celestia-mocha4-consensus.numia.xyz --p2p.network mocha --rpc.skip-auth 
+celestia light start --core.ip public-celestia-mocha4-consensus.numia.xyz --p2p.network celestia --rpc.skip-auth 
+```
+* configure the provider process to use the authentication token
+```bash
+export CELESTIA_NODE_AUTH_TOKEN=$(celestia light auth admin --p2p.network celestia)
 ```
 
 ## Setup your Provider on Lava Network 🌋
@@ -38,6 +43,7 @@ Celestia providers must supply endpoint for both consensus and DA node:
 
 
 example for provider configuration file
+(use the "auth-config:" configuration only if you choose to configure the token)
 ```yaml
 endpoints:
   - api-interface: jsonrpc
@@ -46,6 +52,9 @@ endpoints:
       address: 0.0.0.0:2221
     node-urls:
       - url: http://127.0.0.1:26658
+        auth-config:
+            auth-headers:
+                Authorization: Bearer {CELESTIA_NODE_AUTH_TOKEN}
   - api-interface: tendermintrpc
     chain-id: CELESTIA
     network-address: 
