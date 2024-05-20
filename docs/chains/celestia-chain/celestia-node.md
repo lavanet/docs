@@ -1,0 +1,37 @@
+---
+slug: /celestia-node
+title: Running a celestia RPC Node
+---
+
+# Running a celestia RPC Node
+
+## Requirements 📄
+
+### Recommended Specifications
+
+    CPU: 4+ cores
+    RAM: 8 GB+
+    Disk 1 TB
+    Connection Speed: 25+ mbps/sec
+
+
+##  Setup celestia consensus and DA node
+
+Follow celestia docs for instructions on how to setup and run the nodes:
+Data availabillity light node https://docs.celestia.org/nodes/light-node
+Consensus node https://docs.celestia.org/nodes/full-consensus-node
+
+Important note:
+When running the light node make sure to add the flag --rpc.skip-auth to let consumers use the node without authentication
+example:
+```bash
+celestia light start --core.ip public-celestia-mocha4-consensus.numia.xyz --p2p.network mocha --rpc.skip-auth 
+```
+
+## Setup your Provider on Lava Network 🌋
+
+To set up your provider on the Lava Network, you can refer to the [provider setup documentation](https://docs.lavanet.xyz/provider-setup?utm_source=running-a-starknet-rpc-node&utm_medium=docs&utm_campaign=celestia-pre-grant) available elsewhere in our docs. This should provide you with the necessary information to configure and operate your provider node.
+
+Celestia providers must supply endpoint for both consensus and DA node:
+- consensus node: rest, tendermint, grpc (this is the same as every other cosmos node)
+- DA node: jsonrpc (when running the light DA node the defualt port will be 26658)
