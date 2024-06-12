@@ -1,28 +1,28 @@
 ---
 slug: /sdk-integrations
-title: Library Integrations
+title: 库集成
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Integrations 🔌
+# 集成 🔌
 
-## Overview 🔎
+## 概览 🔎
 
-It is possible and even encouraged to use Lava with popular web3 development libraries such as [ethers.js](/ethersjs6), [web3.js](/web3js), [cosmjs](/cosmjs) and [viem](/viem). Lava integrations allow for developers to build decentralized applications (dApps) with their favorite development tools while harnessing Lava's decentralized peer-to-peer network of high quality RPC providers. There is no need to sacrifice the functionality of frequently used APIs, simply install and use the specified Lava integration while building! 
+可以甚至鼓励将Lava与流行的web3开发库一起使用，例如[ethers.js](/ethersjs6)， [web3.js](/web3js)， [cosmjs](/cosmjs)和[viem](/viem)。Lava集成允许开发人员使用他们最喜欢的开发工具构建分散的应用程序(dApps)，同时利用Lava的高质量RPC提供商的分散点对点网络。不需要牺牲常用api的功能，只需在构建时安装和使用指定的Lava集成!
 
-## Usage 🏗️
+## 使用 🏗️
 
-Taking advantage of integrations is an important way to multi-chain and decentralize your application. Due to differences in architecture, each Lava integration has its idiosyncracies. However, all of them follow the same general flow:
+利用集成是实现多链和去中心化应用的重要方式。由于架构的差异，每个 Lava 集成都有其特点。然而，它们都遵循相同的一般流程：
 
-1. Install the supported web3 development package (i.e. `npm i viem`) in your project.
-2. Install the Lava integration package into your project (i.e. `npm i @lavanet/lava-viem`)
-3. Initialize the respective SDK integration object using the proper [parameters](#parameters). A chart is provided below for your reference. You must provide either a subscribed *privateKey* or a valid *badge*, but not both.
+1. 在您的项目中安装支持的 web3 开发包（例如 `npm i viem`）。
+2. 在您的项目中安装 Lava 集成包（例如 `npm i @lavanet/lava-viem`）。
+3. 使用正确的 [参数](#parameters) 初始化相应的 SDK 集成对象。下面提供了一个图表供您参考。您必须提供已订阅的 *privateKey* 或有效的 *badge*，但不能同时提供两者。
 
-### ✔️ Required Parameters{#parameters}
+### ✔️ 必要参数{#parameters}
 
-The two primary fields that are necessary are a `badge`/`privateKey` to cover the cost of API calls and `chainIds` to let Lava know which chains to target. If you haven't already, you should sign up from the [Lava Gateway](https://gateway.lavanet.xyz/?utm_source=library-integrations&utm_medium=docs&utm_campaign=lava-phase-2), where you can acquire both of these with ease!
+必须填写的两个主要字段是：用于支付 API 调用费用的 `badge`/`privateKey`和用于让 Lava 知道目标链的`chainIds` 。如果您还没有注册，应从 [Lava Gateway](https://gateway.lavanet.xyz/?utm_source=library-integrations&utm_medium=docs&utm_campaign=lava-phase-2) 注册，在那里您可以轻松获得这两个信息！
 
 ```javascript
 badge: {
@@ -39,41 +39,41 @@ privateKey: process.env.PRIVATE_KEY
 chainIds: "ETH1"
 ```
 
-### 📋 All Options
+### 📋 所有选项
 
-There are numerous other options that can be configured while creating and initializing the Lava integration object. An exhaustive list follows:
+在创建和初始化 Lava 集成对象时，还可以配置许多其他选项。下面是一个详尽的列表：
 
 
-| Option                     | Required/Optional                           | Description                                                                                                      |
-| ---------------------------| --------------------------------------------| ---------------------------------------------------------------------------------------------------------------- |
-| `privateKey`               | **Required**                                | The private key with active subscription to be used in lieu of a `badge.`                                                                      |
-| `badge`                    | **Required**                                | Public URL of badge server and ID of the project you want to connect. Remove `privateKey` if badge is provided.  |
-| `chainIds`                 | **Required**                                | The ID of the chain you want to query or an array of chain IDs (e.g., "ETH1" or ["ETH1", "LAV1"])             |
-| `pairingListConfig`        | Optional                                    | The Lava pairing list config used for communicating with the Lava network. Default is [Lava-providers](https://github.com/lavanet/lava-providers)                                       |
-| `network`                  | Optional                                    | The network from pairingListConfig to be used (e.g., ["mainnet", "testnet"] )                                   |
-| `geolocation`              | Optional                                    | The geolocation to be used (e.g., "1" for North America, "2" for Europe -> "1" is default)                                         |
-| `lavaChainId`              | Optional                                    | The Lava chain ID (default value is `lava-testnet-2' for Lava Testnet)                                                              |
-| `secure`                   | Optional                                    | Communicates through HTTPS (temporary flag that will be disabled once the chain uses HTTPS by default)        |
-| `allowInsecureTransport`   | Optional                                    | Indicates to use an insecure transport when connecting the provider, for testing purposes only                  |
-| `logLevel`                 | Optional                                    | Log level settings (e.g., "debug", "info", "warn", "error", "success", "NoPrints")                              |
-| `transport`                | Optional                                    | Transport settings for changing the method of transport                                                     |
-| `providerOptimizerStrategy`| Optional                                    | The strategy to use to pick providers (default: balanced)                                                        |
-| `maxConcurrentProviders`   | Optional                                    | The maximum number of providers to use concurrently (default: 3)                                                 |
+| 选项                          | 必要/可选        | 说明                                                                                          |
+|-----------------------------|--------------|---------------------------------------------------------------------------------------------|
+| `privateKey`                | **Required** | 用于代替`badge`的有效订阅的私人密钥。                                                                      |
+| `badge`                     | **Required** | 徽章服务器的公共 URL 和要连接的项目 ID。如果提供了徽章，请移除 `privateKey`。                                           |
+| `chainIds`                  | **Required** | 要查询的链的 ID 或链 ID 数组 (e.g., "ETH1" or ["ETH1", "LAV1"])                                       |
+| `pairingListConfig`         | Optional     | 用于与 Lava 网络通信的 Lava 配对列表配置。默认为 [Lava-providers](https://github.com/lavanet/lava-providers)。 |
+| `network`                   | Optional     | 要使用的配对列表配置中的网络（例如，["mainnet", "testnet"] )                                                  |
+| `geolocation`               | Optional     | 使用的地理位置（例如，"1 "表示北美，"2 "表示欧洲-->"1 "为默认值）                                                    |
+| `lavaChainId`               | Optional     | Lava 链 ID（Lava Testnet 的默认值为 "lava-testnet-2"）。                                             |
+| `secure`                    | Optional     | 通过 HTTPS 通信（临时标记，一旦链默认使用 HTTPS，该标记将被禁用）                                                     |
+| `allowInsecureTransport`    | Optional     | 表示在连接提供商时使用不安全传输协议，仅供测试之用                                                                   |
+| `logLevel`                  | Optional     | 日志级别设置(e.g., "debug", "info", "warn", "error", "success", "NoPrints")          |
+| `transport`                 | Optional     | 用于更改传输方式的传输设置                                     |
+| `providerOptimizerStrategy` | Optional     | 用于选择提供商的策略（default: balanced）                                   |
+| `maxConcurrentProviders`    | Optional     | 同时使用的最大提供商数量（默认值：3）                            |
 
 
 :::tip
 
-You can optionally pull in an object containing all of these fields with the following code:
+您可以选择使用以下代码调入一个包含所有这些字段的对象：
 
 ```javascript
 import { LavaSDKOptions } from "@lavanet/lava-sdk"
 ```
 
-This will require installing `@lavanet/lava-sdk` as a dependency!
+这需要安装 `@lavanet/lava-sdk` 作为依赖项！
 
 :::
 
-## Repository 🛠️
+## 仓库 🛠️
 
 ![github](/img/github_favicon.ico) [github](https://github.com/lavanet/lava-sdk-providers/):
 

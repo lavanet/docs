@@ -1,17 +1,17 @@
 ---
 slug: /axelar-node
-title: Running an Axelar RPC Node
+title: 运行 Axelar RPC 节点
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 
-# Running an Axelar RPC Node
+# 运行 Axelar RPC 节点
 
-## Requirements 📄 
+## 配置要求 📄 
 
-Before you start, ensure that your machine meets the following [minimum requirements](https://docs.avax.network/nodes/build/set-up-node-with-installer#before-you-start):
+在开始之前，请确保您的机器满足以下[最低要求](https://docs.avax.network/nodes/build/set-up-node-with-installer#before-you-start):
 
 <Tabs>
 <TabItem value="min_req" label="Minimum">
@@ -36,22 +36,22 @@ OS: Ubuntu 18.04 or MacOS(x86)
 </TabItem>
 </Tabs>
 
-## Install 📥
+## 安装 📥
 
 :::caution
-Some users have reported issues with the Axelarate install script. If you encounter issues, please consider making an [issue](https://github.com/axelarnetwork/axelarate-community/issues) or trying to install manually.
+一些用户报告了Axelarate安装脚本的问题。如果您遇到问题，请考虑制作一个[issue](https://github.com/axelarnetwork/axelarate-community/issues)或尝试手动安装。
 :::
 
-Clone the Axelarate-Community Repo and then run the Node Setup Script.
+克隆Axelarate-Community仓库，然后运行Node安装脚本。
 ```bash
 git clone https://github.com/axelarnetwork/axelarate-community.git
 cd axelarate-community
 ./scripts/setup-node.sh -n [mainnet|testnet]
 ```
 
-### Start your Node! 🚀
+### 启动你的节点! 🚀
 
-Run the following command to initiate your node!
+运行以下命令来初始化你的节点!
 
 ```bash
 $AXELARD_HOME/bin/axelard start [moniker] --home $AXELARD_HOME >> $AXELARD_HOME/logs/axelard.log 2>&1 &
@@ -59,9 +59,9 @@ $AXELARD_HOME/bin/axelard start [moniker] --home $AXELARD_HOME >> $AXELARD_HOME/
 
 ## Axelar ipRPC 🪙
 
-Want to reach more developers and get more rewards as a node runner? Axelar pays providers who're interested. Axelar offers Incentivized Public RPC (ipRPC) endpoints to developers in its ecosystem. By signing up here, you can become one of our premier providers contributing to decentralized public goods. [Sign up now!](https://lavanet.typeform.com/to/qQ1x6WJs?utm_source=becoming-a-lava-provider-for-axelar&utm_medium=docs&utm_campaign=axelar-post-grant)
+想接触更多的开发人员并作为节点运运营商获得更多的奖励吗?Axelar向感兴趣的提供商付费。Axelar在其生态系统中为开发者提供激励公共RPC (ipRPC)端点。通过在这里注册，您可以成为我们的主要供应商之一，为去中心化的产品作出贡献。[现在报名吧!](https://lavanet.typeform.com/to/qQ1x6WJs?utm_source=becoming-a-lava-provider-for-axelar&utm_medium=docs&utm_campaign=axelar-post-grant)
 
 
-## Setup your Provider on Lava Network 🌋
+## 在Lava网络上设置你的提供商 🌋
 
-Once you’ve been accepted - to set up your provider on the Lava Network, you can refer to the [provider setup documentation](https://docs.lavanet.xyz/provider-setup?utm_source=running-a-axelar-rpc-node&utm_medium=docs&utm_campaign=axelar-post-grant) available elsewhere in our docs. This should provide you with the necessary information to configure and operate your provider node on the Lava Network.
+一旦您被接受-要在Lava网络上设置您的提供商，您可以参阅我们文档中其他地方的[提供商设置文档](https://docs.lavanet.xyz/provider-setup?utm_source=running-a-axelar-rpc-node&utm_medium=docs&utm_campaign=axelar-post-grant)。这将为您提供在Lava网络上配置和操作provider节点所需的信息。

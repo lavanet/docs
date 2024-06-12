@@ -96,4 +96,4 @@ const blockNumber = await ethersProvider.getBlockNumber();
 
 </Tabs>
 
-❓ Looking for more examples? Check out the [examples](https://github.com/lavanet/lava-sdk-providers/tree/main/ethersjs/v6/examples) folder on our repository.
+❓ 想要更多的例子吗?查看我们的仓库中的[examples](https://github.com/lavanet/lava-sdk-providers/tree/main/ethersjs/v6/examples)文件夹。

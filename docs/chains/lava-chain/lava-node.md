@@ -1,13 +1,13 @@
 ---
 slug: /lava-node
-title: Running a Lava RPC Node
+title: 运行 Lava RPC 节点
 ---
 
-# Running a Lava RPC Node
+# 运行 Lava RPC 节点
 
-## Requirements 📄 
+## 配置要求 📄 
 
-The current recommended [hardware prerequisites](/reqs) for running a Lava RPC node are the following: 
+当前推荐的运行Lava RPC节点的[硬件配置条件](/reqs)如下:
 
 ```
 16 GB RAM
@@ -15,9 +15,9 @@ The current recommended [hardware prerequisites](/reqs) for running a Lava RPC n
 x64 2.0 GHz 4v CPU 
 ```
 
-## Install Lava 🌋
+## 安装 Lava 🌋
 
-Using the [installation guide](/install-lava) , install all binaries, especially `lavad`:
+使用[安装指南](/install-lava)安装所有二进制文件，特别是`lavad`:
 
 ```bash
 git clone https://github.com/lavanet/lava.git
@@ -25,15 +25,15 @@ cd lava
 make install-all
 ```
 
-## Launch Your Node 🚀
+## 启动节点 🚀
 
-Set up and configure your node according to the [guides](/testnet) available.
-You may use `Cosmovisor` (Recommended) or setup the node manually.
+根据可用的[guides](/testnet)设置和配置您的节点。
+您可以使用`Cosmovisor`(推荐)或手动设置节点。
 
-## Apply to our Provider Incubation Program 📋
+## 申请我们的供应商孵化计划 📋
 
-In our current state of Testnet, there is an additional stage to pass through before you can become a provider on the Lava Network. Please fill out the [application form](https://lavanet.typeform.com/to/ORi3A13v?utm_source=becoming-a-lava-provider-for-lava&utm_medium=docs) for our Provider Incubation Program. Feel free to drop a line in our [Discord](https://discord.gg/UxujNZbW) once you’ve completed this step!
+在我们目前的Testnet状态中，在您可以成为Lava网络上的提供者之前，还需要通过一个额外的阶段。请填写[申请表格](https://lavanet.typeform.com/to/ORi3A13v?utm_source=becoming-a-lava-provider-for-lava&utm_medium=docs)。一旦你完成了这一步，请随时在我们的[Discord](https://discord.gg/UxujNZbW)中留言!
 
-## Setup your Provider on Lava Network 🌋
+## 在Lava网络上设置你的提供商 🌋
 
-Once you’ve been accepted - to set up your provider on the Lava Network, you can refer to the [provider setup documentation](https://docs.lavanet.xyz/provider-setup?utm_source=running-a-lava-rpc-node&utm_medium=docs) available elsewhere in our docs. This should provide you with the necessary information to configure and operate your provider node.
+一旦您被接受-要在Lava网络上设置您的提供商，您可以参阅我们文档中其他地方的[提供商设置文档](https://docs.lavanet.xyz/provider-setup?utm_source=running-a-lava-rpc-node&utm_medium=docs)。这将为您提供配置和操作provider节点所需的信息。

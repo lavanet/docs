@@ -1,46 +1,46 @@
 ---
 slug: /provider-tls
-title: TLS Setup
+title: 设置 TLS
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Provider TLS Setup Guide
+# 提供商 TLS 设置指南
 
 :::caution
-All providers on `lava-testnet-2` must use a domain name and TLS (1.3). You must have a domain name to continue. If you have not already, please take a moment to purchase one! You can find cheap top-level domains [here](https://www.namecheap.com/) or [here](https://tld-list.com/).
+`lava-testnet-2` 上的所有提供程序都必须使用域名和 TLS (1.3)。您必须拥有一个域名才能继续。如果还没有，请花点时间购买一个！您可以在 [此处](https://www.namecheap.com/) 或 [此处](https://tld-list.com/) 找到便宜的顶级域名。
 :::
 
-## 📊 Diagram
+## 📊 图表
 
 ![Provider TLS Diagram](/img/tutorial/provider/provider-tls-diagram.png)
 
-## 📋 Prerequisites
+## 📋 必备条件
 
-| Required Setup            |  ?  | 
-| --------------------------|-----|
-| acquired a domain name            | ✅  |
-| `lavap` is installed & configured | ✅  |
-| account with `ulava` balance      | ✅  |
+| 必要设置            |  ?  | 
+| -------------------------|-----|
+| 获得域名            | ✅  |
+| 已安装和配置 `lavap` | ✅  |
+| 有`ulava` 余额的账户 | ✅  |
 
 
-## 📝 Written Guide (~45m)
+## 📝 书面指南 (~45m)
 
 <br />
 
-### 🅰️ Change the A Record on your Domain
+### 🅰️ 更改域名的 A 记录
 
 
-The first step of establishing your Provider is to modify some of the DNS settings on the domain you purchased. In specific, you'll need to change the A Records on your domain. Changing your `A-Record` will create a subdomain that routes traffic to a specific provider process. Depending upon who you've purchased your domain through, A-Records may be visible under `Advanced DNS` or another label.
+建立 Provider 的第一步是修改您所购买域名的一些 DNS 设置。具体来说，您需要更改域名上的 A 记录。更改 "A-Record "将创建一个子域，将流量路由到特定的提供商进程。A-Record可能在 "Advanced DNS"（高级 DNS）或其他标签下可见，具体取决于您通过谁哪个域名供应商购买域名。
 
-<details> <summary> 🖧 Multiple Records (Recommended) </summary>
+<details> <summary> 🖧 多个记录 (Recommended) </summary>
 
 
-We recommend you create a separate `A-Record` for each one of the chains that you plan to support. This is more secure, as the default behavior is to refuse connection unless a consumer connects on the correct subdomain. 
+我们建议您为计划支持的每个链创建一个单独的 "A-Record"。这样会更安全，因为默认行为是拒绝连接，除非消费者在正确的子域上进行连接。
 
-For each chain you want to support, add an `A-Record` with the desired chain name as the `Host`, the `Value` will be your server IP.
-For example, if you wanted to support Ethereum & Lava Mainnets, Your DNS Settings should include the following :
+为您要支持的每个链添加一个`A-Record`，将所需的链名作为`Host`，`Value`将是您的服务器 IP。
+例如，如果您想支持以太坊和 Lava 主网，您的 DNS 设置应包括以下内容 ：
 
 | Record Type       |  Host | Value |
 | ------------------|-------| ----- |
@@ -49,9 +49,9 @@ For example, if you wanted to support Ethereum & Lava Mainnets, Your DNS Setting
 
 </details>
 
-<details> <summary> ⚀ Single Record </summary>
+<details> <summary> ⚀ 单个记录 </summary>
 
-Alternatively, you can create one `A-Record` that captures traffic to all sub-domains. If you are supporting a large number of chains that frequently changes, doing this may somewhat simplify your process.
+或者，您也可以创建一个 `A-Record` 来捕获所有子域的流量。如果您要支持大量经常变化的链，这样做可能会在一定程度上简化流程。
 
 | Record Type       | Host | Value |
 |-------------------|------|-------|
@@ -60,11 +60,11 @@ Alternatively, you can create one `A-Record` that captures traffic to all sub-do
 </details>
 <br />
 
-### 📂 Install Required Dependencies
+### 📂 安装所需的依赖项
 
-We will guide you on setting up and configuring Nginx to use a TLS certificate and handle connections to different provider processes. It is also possible to use alternative solutions for these two tasks, such as Caddy, Envoy or your preferred solution.
+我们将指导您设置和配置 Nginx，使其使用 TLS 证书并处理与不同提供商进程的连接。您也可以使用其他解决方案来完成这两项任务，如 Caddy、Envoy 或您喜欢的解决方案。
 
-Run the following commands to install the required packages:
+运行以下命令安装所需的软件包：
 
 ```bash
 sudo apt update
@@ -73,29 +73,29 @@ sudo apt install certbot net-tools nginx python3-certbot-nginx -y
 
 <br />
 
-### 📮 Generate Certificate 
+### 📮 创建证书
 
-Next, we need to actually create the `TLS certificate` via the certifying authority. This process is automated by `certbot`.
+接下来，我们需要通过认证机构实际创建`TLS certificate` 。这个过程由 `certbot` 自动完成。
 
 
-Use `certbot` to create a certificate:
+使用 `certbot` 创建证书：
 
 ```
 sudo certbot certonly -d you.xyz -d lava.you.xyz -d eth.you.xyz
 ```
 
-Note, you will need one `-d` flag for each subdomain you created as an `A-Record`. Even if you opted to create a Single Record, you still need to indicate a subdomain for each provider process you will run. We use the filler `you.xyz` as an example above.
+请注意，您将需要为作为`A-Record`创建的每个子域添加一个`-d` 标志。即使您选择创建单个记录，您仍需要为将要运行的每个提供程序指明一个子域。我们以上面的填充程序 `you.xyz` 为例。
 
-You may be met with several prompts. Use `nginx` or Nginx Web Server Plugin when asked. 
+你可能会遇到几个提示。在出现提示时，请使用 `nginx` 或 Nginx 网络服务器插件。
 <br />
 
-### 💻 Validate Certificate
+### 💻 验证证书
 
-Let's make sure your certificate successfully installed! ✅ Input the following command:
+确保证书安装成功！✅ 输入以下命令：
 
 ```sudo certbot certificates```
 
-Keep track of your output. If your certificate generation was successful, it should look as following:
+跟踪输出结果。如果证书生成成功，它应该如下所示：
 
 ```
 Found the following certs:
@@ -107,16 +107,16 @@ Found the following certs:
 
 ```
 
-You'll need both `Certificate Path` and `Private Key Path` for your next step.
+下一步需要`Certificate Path`和`Private Key Path` 。
 
 <br />
 
-### 🗃️ Add an Nginx Config for Each Domain
+### 🗃️ 为每个域添加 Nginx 配置
 
-Lava recommends running each chain under a separate provider process. This will separate error logs and protect against complete provider failure in the case of a problematic provider process. The first step of this is to create different nginx routes for each chain.
+Lava 建议在单独的提供程序进程下运行每个链。这将分离错误日志，并在提供程序出现问题时防止提供程序完全失效。第一步是为每个链创建不同的 nginx 路由。
 
-For each chain that you want to support, you will need to create a separate `nginx` config file. 
-`cd` into `/etc/nginx/sites-available/` and create a `server` file for each chain. You will need to select an open port for each chain. `Nginx` will use these config files to create your routes.
+对于要支持的每个链，都需要创建单独的 `nginx` 配置文件。
+`cd`到`/etc/nginx/sites-available/`，并为每个链创建一个`server`文件。你需要为每个链选择一个开放端口。Nginx会使用这些配置文件创建路由。
 
 <Tabs>
 <TabItem value="eth_ex" label="eth nginx server">
@@ -167,7 +167,7 @@ server {
 <TabItem value="Caddy" label="caddy example">
 
 :::warning
-The below caddy example is to provide guidance only. The recommended route is through `nginx`. Although making a provider functional with Caddy is possible you are proceeding at your own risk and with your own expertise.
+以下caddy示例仅供参考。推荐路线是通过 `nginx`。虽然可以使用 Caddy 实现提供商功能，但风险和专业知识需自行承担。
 :::
 
 
@@ -189,27 +189,27 @@ https://your-site.com:443 {
 
 </Tabs>
 
-In most cases, after creating a configuration file in accessible sites, you need to create a symbolic link to this file in the enabled sites directory. This can be done with a command like:
+大多数情况下，在可访问站点中创建配置文件后，需要在启用站点目录中创建该文件的符号链接。可以使用以下命令来完成
 ```
 sudo ln -s /etc/nginx/sites-available/lava_server /etc/nginx/sites-enabled/lava_server
 ```
 :::caution
 
-The above examples use ports `443` for external listening and `2223` / `2224` for internal comms, respectively. Using ports other than `443` for external listening means that some users will not be able to connect to your provider. This can result in less rewards and poorer quality of service. For internal listening, be aware that some ports on your OS may be used for internal communication and should be avoided. 
+上述示例分别使用端口 `443` 进行外部监听，使用端口 `2223` / `2224` 进行内部通信。将端口 `443` 以外的端口用于外部监听意味着一些用户将无法连接到您的提供商。这会导致奖励减少和服务质量下降。对于内部监听，请注意操作系统上的某些端口可能用于内部通信，应避免使用。
 
 :::
 
 <br />
 
-### 🧪 Test Nginx Configuration
+### 🧪 测试 Nginx 配置
 
-Now, ensure that your `nginx` setup is working! ✅
+现在，请确保您的 `nginx` 设置正常运行！ ✅
 
 ```bash
 sudo nginx -t
 ```
 
-🖳 Expected Output:
+🖳 预期输出：
 ```
 nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
 nginx: configuration file /etc/nginx/nginx.conf test is successful
@@ -217,23 +217,23 @@ nginx: configuration file /etc/nginx/nginx.conf test is successful
 
 <br />
 
-### ♻️ Restart Nginx
+### ♻️ 重启 Nginx
 
-You will need to refresh the Nginx server:
+您需要刷新 Nginx 服务器：
 
 ```bash
 sudo systemctl restart nginx
 ```
 <br />
 
-### ⚙️ Create the Provider Configuration
+### ⚙️ 创建提供商配置
 
 :::tip
-Need a template? A default `rpcprovider.yml` configuration is available in `~/lava/config`
+需要模板？默认的 `rpcprovider.yml` 配置位于 `~/lava/config` 中。
 :::
 
 
-Per earlier advisement, we'll create one `.yml` per chain we plan to support. Each one of these `.yml` files will function as the configuration for a distinct provider process. In case of our example, we'll create a `lava-provider.yml` and a `eth-provider.yml`.
+根据之前的建议，我们将为计划支持的每个链创建一个 `.yml`。每个 `.yml` 文件都将作为不同提供程序的配置文件。在我们的示例中，我们将创建一个 `lava-provider.yml` 和一个 `eth-provider.yml` 。
 
 
 <Tabs>
@@ -288,50 +288,50 @@ endpoints:
 </TabItem>
 </Tabs>
 
-Once we've created these files we can move onto starting the processes!
+创建完这些文件后，我们就可以开始启动进程了！
 <br />
 
-### 🏁 Start the Provider Process(es)
+### 🏁 启动提供商进程
 
-In this example, we use the built-in terminal multiplexer `screen` to run multiple provider processes. Begin by typing `screen`. But you can also use a different multiplexer, e.g. `tmux`.
+在这个例子中，我们使用内置的终端多路复用器`screen`来运行多个provider进程。首先输入`screen`。但是你也可以使用不同的多路复用器，例如 `tmux`。
 
-⏫ To start the Ethereum process
+⏫ 启动以太坊进程
 ```bash
 screen -S eth-provider
 
-# This will take us to a separate terminal where we can start the provider process:
+# 这将把我们带到一个单独的终端，在这里我们可以启动provider进程:
 
 lavap rpcprovider eth-provider.yml --from your_key_name_here --geolocation 1 --chain-id lava-testnet-2 --log_level debug
 ```
-Press `CTRL+ad` to detach from the `eth-provider` screen. <br />
-⏫ To start the Lava provider process
+按`CTRL+ad`从`eth-provider`Screen分离。 <br />
+⏫ 启动 Lava provider 进程
 ```bash
 screen -S lava-provider
 
-# This will take us to a separate terminal where we can start the provider process:
+# 这将把我们带到一个单独的终端，在这里我们可以启动provider进程:
 
 lavap rpcprovider lava-provider.yml --from your_key_name_here --geolocation 1 --chain-id lava-testnet-2 --log_level debug
 ```
 
-Some notes:
-* `--from` should be followed by the key name of your funded account that you will use to stake your provider
-* `--log_level debug` gives us verbose output so we can diagnose any issues that may arise
-* `--chain-id` may or may not be necessary, depending upon your setup, but we can default to `--lava-testnet-2`
-* `--node` may or may not be necessary
+一些注意事项:
+* `——from`后面应该跟着您的资金账户的名称，您将使用该名称来质押您的提供商
+* `——log_level debug`为我们提供详细的输出，以便我们可以诊断可能出现的任何问题
+* `——chain-id`可能是必要的，也可能不是，这取决于你的设置，但我们可以默认为`——lava-testnet-2`
+* `——node`可能是也可能不是必需的
 
 :::caution
-The syntax on your `.yml` files must be precise. Misplaced or invisible characters or inconsistent indentation can cause errors.
+您的 `.yml` 文件语法必须精确。错位、隐形字符或缩进不一致都可能导致错误。
 :::
 
 <br />
 
-### ☑️ Test the Provider Process!
+### ☑️ 测试提供商进程
 
-Run the following commands one at a time!
+逐次运行以下命令！
 
 `lavap test rpcprovider --from your_key_name_here --endpoints "your-site:443,LAV1"`
 
-🖳 Expected output:
+🖳 预期输出：
 
 ```
 📄----------------------------------------✨SUMMARY✨----------------------------------------📄
@@ -352,7 +352,7 @@ Run the following commands one at a time!
 
 `lavap test rpcprovider --from your_key_name_here --endpoints "your-site:443,ETH1"`
 
-🖳 Expected output:
+🖳 预期输出：
 
 ```
 📄----------------------------------------✨SUMMARY✨----------------------------------------📄
@@ -369,9 +369,9 @@ Run the following commands one at a time!
 ```
 
 
-### 🔗‍💥 Stake the Provider on Chain
+### 🔗‍💥 链上质押提供商
 
-Use a variation of the following command to stake on chain; the minimum stake is `50000000000ulava`
+使用以下命令对链进行质押；最小质押为 `50000000000ulava`
 
 ```bash
 lavap tx pairing stake-provider ETH1 "50000000000ulava" "eth.your-site:443,1" 1 validator -y --from your_key_name_here --provider-moniker your-provider-moniker-1 --delegate-limit "0ulava" --gas-adjustment "1.5" --gas "auto" --gas-prices "0.0001ulava"
@@ -382,18 +382,18 @@ lavap tx pairing stake-provider ETH1 "50000000000ulava" "eth.your-site:443,1" 1 
 lavap tx pairing stake-provider LAV1 "50000000000ulava" "lava.your-site:443,1" 1 validator -y --from your_key_name_here --provider-moniker your-provider-moniker-1 --delegate-limit "0ulava" --gas-adjustment "1.5" --gas "auto" --gas-prices "0.0001ulava"
 ```
 
-### ☑️ Test the Providers again! 
+### ☑️ 再次测试供应商！
 
 ```bash
 lavap test rpcprovider --from your_key_name_here --endpoints "lava.your-site:443,LAV1"
 
 lavap test rpcprovider --from your_key_name_here --endpoints "eth.your-site:443,ETH1"
 ```
-You can also get useful information on the setup using:
+您还可以通过以下方式获取有关设置的有用信息：
 
 ```bash
 lavap q pairing account-info --from your_key_name
 ```
 
 
-❗ If you have any further issues, do not hesitate to venture to our [discord](https://discord.com/invite/Tbk5NxTCdA) where you can get better assistance!
+❗ 如果您还有其他问题，请随时访问我们的 [discord](https://discord.com/invite/Tbk5NxTCdA)，在那里您可以获得更好的帮助！

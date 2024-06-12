@@ -16,7 +16,7 @@ import RoadmapItem from '@site/src/components/RoadmapItem'
 
 <center>
 
-## ⚙️ Supported APIs ⚙️
+## ⚙️ 支持的 APIs ⚙️
 
 </center>
 
@@ -25,7 +25,7 @@ import RoadmapItem from '@site/src/components/RoadmapItem'
 https://raw.githubusercontent.com/lavanet/lava/main/cookbook/specs/spec_add_celo.json
 
 
-### Protocols 🔗
+### 协议 🔗
 
 | Platform  |  jsonrpc/http | jsonrpc/wss 
 | --------- | -------- |---------------
@@ -33,15 +33,15 @@ https://raw.githubusercontent.com/lavanet/lava/main/cookbook/specs/spec_add_celo
 | SDK       | ✅       | 
 
 
-### Methods 🛠️
+### 方法 🛠️
 
-#### ⌨️ Command:
+#### ⌨️ 命令:
 
 ```bash
 lavad q spec show-chain-info CELO
 ```
 
-#### 📋 List :
+#### 📋 列表 :
 
 <details>
 <summary> JSONRPC </summary>

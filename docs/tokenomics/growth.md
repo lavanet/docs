@@ -3,26 +3,24 @@ slug: /growth
 title: 📈 Growth
 ---
 
-# 🪙 Growth
-Lava has a capped token supply which is managed by DAO governance. There are existing and future plans to stimulate ecosystem growth: 
+# 🪙 成长
+Lava 有一个由 DAO 治理管理的有限代币供应量。存在着现有和未来的计划来刺激生态系统的增长：
 
-## 🌋 Magma Points 
-Points are separate to LAVA tokens and can be used to reward loyal community members. Lava Foundation can distribute points to chains using Lava’s Incentivized RPC Pools; points distribution can be decided by the chain. Additionally, wallet-users can earn points by using Lava-powered RPC to access partner chains. 
+## 🌋 岩浆积分
+积分与 LAVA 代币分开，可用于奖励忠诚的社区成员。Lava 基金会可以通过 Lava 的激励 RPC 池将积分分发给链，积分的分发可以由链决定。此外，钱包用户可以通过使用 Lava 提供的 RPC 访问合作链来赚取积分。
 
-## 🌊 Incentivized RPC Pools
+## 🌊 激励 RPC 池
+链通过存入其原生代币在 Lava 上创建激励 RPC 池。此池用于激励提供者为链的 RPC 基础设施提供服务和扩展。随着越来越多的 Rollups 在 Lava 上部署，将会为提供者创建更多的池，以作为那些 Rollups 的奖励。代理人和重新质押者也可能作为这些池的一部分获得奖励。
 
-Chains create Incentivized RPC Pools on Lava by depositing their native token. This pool is used to incentivize Providers to serve and scale the chain’s RPC infrastructure. As more rollups deploy with Lava, more pools will be created for Providers to earn the tokens of those rollups as rewards. Delegators and restakers may also earn rewards as part of these pools.
+## 🎉 Lava 空投季节
+为了推动增长和参与度，可能会对网络参与者进行空投。
 
-## 🎉 Lava Drop Seasons
-To boost growth and engagement, airdrops to network participants may take place. 
+## 💧 提供者空投
+**LAVA** 总供应量的 **6.6%** 已分配用于引导网络的初始增长并吸引提供者。
+LAVA 代币将每月自动分发给链上的提供者，代币的数量将根据通过 Lava 支付的数据需求而变化。
 
-## 💧 Provider Drops
-**6.6%** of LAVA total supply has been allocated to bootstrap initial growth of the network and attract providers.
-LAVA tokens will be automatically distributed monthly to providers on-chain, and the amount of tokens will be variable depending on paid demand for data through Lava.
-
-## 🌐 Community Pool
-Lava has a community pool which accrues funds from block rewards, subscriptions and Incentivized RPC Pools. Funds can be used by the DAO to conduct future initiatives engaging the community. 
-- **2%** of block rewards 
-- **0.1%** of Subscription rewards
-- **0.1%** of Incentivized RPC Pool rewards 
-
+## 🌐 社区池
+Lava 有一个社区池，从区块奖励、订阅和激励 RPC 池中积累资金。这些资金可以由 DAO 用于开展未来的社区倡议。  
+- 区块奖励的 **2%**  
+- 订阅奖励的 **0.1%**  
+- 激励 RPC 池奖励的 **0.1%**

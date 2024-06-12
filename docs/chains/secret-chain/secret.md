@@ -11,31 +11,31 @@ import RoadmapItem from '@site/src/components/RoadmapItem'
 
 </center>
 
-[<RoadmapItem icon="🚀" title="Run an RPC Node" description="Become a part of Lava's network by running your own RPC node and accessing Web3 APIs seamlessly"/>](/secret-node)
+[<RoadmapItem icon="🚀" title="运行 RPC 节点" description="通过运行自己的 RPC 节点成为 Lava 网络的一部分，并无缝访问 Web3 API"/>](/secret-node)
 
 <hr />
 <br />
 
 <center>
 
-## ⚙️ Supported APIs ⚙️
+## ⚙️ 支持的 API ⚙️
 
 </center>
 
-### Specification 📑
+### 规范 📑
 
 https://raw.githubusercontent.com/lavanet/lava/main/cookbook/specs/spec_add_secret.json
 
 
-### Protocols 🔗
+### 协议 🔗
 
-| Platform  |  REST | gRPC  |
+| 平台  |  REST | gRPC  |
 | --------- | -------- | ---- |
-| Gateway   |    ❌   | ❌   |
+| 网关   |    ❌   | ❌   |
 | SDK       |    ❌   | ❌   | 
 
 
-### Methods 🛠️
+### 方法 🛠️
 <details>
 <summary> REST </summary>
 
@@ -77,4 +77,3 @@ https://raw.githubusercontent.com/lavanet/lava/main/cookbook/specs/spec_add_secr
 - secret.compute.v1beta1.Query/AddressByLabel
 
 </details>
-

@@ -1,13 +1,13 @@
 ---
 slug: /avalanche-node
-title: Running an Avalanche RPC Node
+title: 运行 Avalanche RPC 节点
 ---
 
-# Running an Avalanche RPC Node
+# 运行 Avalanche RPC 节点
 
-## Requirements 📄 
+## 配置要求 📄 
 
-Before you start, ensure that your machine meets the following [minimum requirements](https://docs.avax.network/nodes/build/set-up-node-with-installer#before-you-start):
+在开始之前，请确保您的机器满足以下[最低要求](https://docs.avax.network/nodes/build/set-up-node-with-installer#before-you-start):
 
     CPU: Equivalent of 8 AWS vCPU
     RAM: 16 GiB
@@ -16,34 +16,34 @@ Before you start, ensure that your machine meets the following [minimum requirem
     Network: sustained 5Mbps up/down bandwidth
     Go version >= 1.19.6
 
-## Install AvalancheGo 🚀
+## 安装 AvalancheGo 🚀
 
-AvalancheGo is a go implementation of an Avalanche node. This software is necessary to run a Avalanche RPC node. 
-AvalancheGo can be installed automatically on a local machine using a shell bash script or manually with some commands.There are detailed guides for both [automatic installation](https://docs.avax.network/nodes/build/set-up-node-with-installer) and [manual installation](https://docs.avax.network/nodes/build/run-avalanche-node-manually) available in the Avalanche docs.
+AvalancheGo是Avalanche节点的一个go实现。这个软件是运行雪崩RPC节点所必需的。
+AvalancheGo可以使用bash脚本在本地机器上自动安装，也可以使用一些命令手动安装。雪崩文档中有[自动安装](https://docs.avax.network/nodes/build/set-up-node-with-installer)和[手动安装](https://docs.avax.network/nodes/build/run-avalanche-node-manually)的详细指南。
 
 
 
-### Automated Script
+### 自动化脚本
 
-To do automated install using the AvalancheGo install script, input the following into a terminal:
+要使用AvalancheGo install脚本进行自动化安装，请在终端中输入以下命令:
 
 ```bash
 wget -nd -m https://raw.githubusercontent.com/ava-labs/avalanche-docs/master/scripts/avalanchego-installer.sh;\
 chmod 755 avalanchego-installer.sh;\
 
-# For Mainnet Installation, run the following command:
+# 安装主网时，运行以下命令:
 ./avalanchego-installer.sh
 
-# For Testnet Installation, run the following command:
+# 安装测试网时，运行以下命令:
 ./avalanchego-installer.sh --fuji
 ```
 
-This will begin an automated script install with prompts that allow you to configure your node. When you're asked whether the RPC port should be private or public- be sure to select `public` !
-The node will start once the script completes.
+这将开始一个自动化的脚本安装，并提示你配置你的节点。当你被问到RPC端口应该是private还是public时——确保选择`public` !
+该节点将在脚本完成后启动。
 
-### Manual Binary Build
+### 手动构建二进制文件
 
-To manually build and install AvalancheGo, input the following into a terminal:
+要手动构建和安装AvalancheGo，请在终端中输入以下命令:
 
 
 ```bash
@@ -51,22 +51,22 @@ git clone https://github.com/ava-labs/avalanchego.git
 cd avalanchego
 ./scripts/build.sh
 
-# To run your Node on the Mainnet, run the following command:
+# 要在主网上运行你的节点，运行以下命令:
 ./build/avalanchego
 
-# To run your Node on the Testnet, run the following command:
+# 要在Testnet上运行你的节点，请运行以下命令:
 ./build/avalanchego --network-id=fuji
 ```
 
-Your node will take time to sync after it has been started. Please allow it time to sync to the latest block.
+您的节点启动后需要一段时间才能同步。 请等待它同步到最新区块。
 
-# Configure your Provider
+# 配置提供商
 
 :::tip
-Avalanche has a specific use case for adding websockets to their Provider Endpoints. This is because only C chains support websocket endpoints whereas X/P chains do not. To read about the differences between different Avalanche chain types, inspect their [documentation](https://docs.avax.network/learn/avalanche/avalanche-platform#c-chain)/
+Avalanche有一个将websocket添加到提供商端点的特殊用例。这是因为只有C链支持websocket端点，而X/P链不支持。要了解不同雪崩链类型之间的差异，请查看他们的[文档](https://docs.avax.network/learn/avalanche/avalanche-platform#c-chain)/
 :::
 
-An example yaml is provided below. You can also find it in the Lava Monorepo [here](https://github.com/lavanet/lava/blob/main/config/provider_examples/avalanch_internal_paths_example.yml).
+下面提供了一个yaml示例。你也可以在LavaMonorepo[这里](https://github.com/lavanet/lava/blob/main/config/provider_examples/avalanch_internal_paths_example.yml)找到它。
 
 ```yaml
 endpoints:
@@ -84,10 +84,10 @@ endpoints:
           internal-path: "/P" # p chain like specified in the spec
 ```
 
-## Apply to our Provider Incubation Program 📋
+## 申请我们的提供商孵化计划 📋
 
-In our current state of Testnet, there is an additional stage to pass through before you can become a provider on the Lava Network. Please fill out the [application form](https://lavanet.typeform.com/to/ORi3A13v?utm_source=becoming-a-lava-provider-for-avalanche&utm_medium=docs&utm_campaign=avalanche-pre-grant) for our Provider Incubation Program. Feel free to drop a line in our [Discord](https://discord.gg/UxujNZbW) once you’ve completed this step!
+在我们目前的Testnet状态中，在您可以成为Lava网络上的提供商之前，还需要通过一个额外的阶段。请填写[申请表格](https://lavanet.typeform.com/to/ORi3A13v?utm_source=becoming-a-lava-provider-for-avalanche&utm_medium=docs&utm_campaign=avalanche-pre-grant)。一旦你完成了这一步，请随时在我们的[Discord](https://discord.gg/UxujNZbW)中留言!
 
-## Setup your Provider on Lava Network 🌋
+## 在Lava网络上设置你的提供商 🌋
 
-Once you’ve been accepted - to set up your provider on the Lava Network, you can refer to the [provider setup documentation](https://docs.lavanet.xyz/provider-setup?utm_source=running-a-avalanche-rpc-node&utm_medium=docs&utm_campaign=avalanche-pre-grant) available elsewhere in our docs. This should provide you with the necessary information to configure and operate your provider node on the Lava Network.
+一旦你被接受-在Lava网络上设置你的提供商，你可以参考[提供商设置文档](https://docs.lavanet.xyz/provider-setup?utm_source=running-a-avalanche-rpc-node&utm_medium=docs&utm_campaign=avalanche-pre-grant)可在我们的文档的其他地方。这将为您提供必要的信息，以便在Lava网络上配置和操作您的提供商节点。

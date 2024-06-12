@@ -1,32 +1,32 @@
 ---
 slug: /badge-server
-title: Badge Server
+title: 徽章服务器
 ---
 
-# Badge Server
+# 徽章服务器
 
-## Overview 🔎
+## 概览 🔎
 
-The badge server's primary function is to generate badges. Badges allow a user to make calls to any supported API without providing their private key. To do so, each badge server requires access to a valid private key associated with a project that is registered on-chain. This server is purposefully designed to be versatile, supporting multiple project configurations tailored for various decentralized applications (dApps). It achieves this flexibility through the use of several highly configurable environment variables. This approach ensures that the badge server can adapt to the specific needs of different dApps while maintaining a seamless and organized system for badge generation.
+徽章服务器的主要功能是生成徽章。徽章允许用户调用任何支持的 API 而无需提供其私钥。为此，每个徽章服务器都需要访问与链上注册的项目相关联的有效私钥。该服务器被专门设计为通用性强，支持多个专为不同去中心化应用（dApps）定制的项目配置。它通过使用几个高度可配置的环境变量来实现这种灵活性。这种方法确保了徽章服务器能够适应不同 dApps 的特定需求，同时保持了徽章生成的无缝和有序系统。
 
-When the badge server receives a request to generate a badge, it performs the following check: If the project specified in the request exists in the server's configuration, it uses the private key associated with that project to sign the badge. However, if the project is not found in the configuration, the server defaults to using a predefined default configuration for the badge signing process.
+当徽章服务器收到生成徽章的请求时，它执行以下检查：如果请求中指定的项目在服务器的配置中存在，则使用与该项目关联的私钥来签署徽章。但是，如果在配置中未找到该项目，则服务器将默认使用预定义的默认配置来进行徽章签名过程。
 
-## Lava Badge Server 🌋
+## Lava 徽章服务器 🌋
 
-Lava provides a hosted solution so that users do not have to spin up their own badge server! Lava's default badge server is reachable at `https://badges.lavanet.xyz`. A user can generate badges for use with Lava's badge server by creating projects on the [Lava Gateway](https://gateway.lavanet.xyz/?utm_source=badge-server&utm_medium=docs&utm_campaign=lava-phase-2).
+Lava提供了托管解决方案，使用户无需自行启动徽章服务器！Lava的默认徽章服务器可通过 `https://badges.lavanet.xyz` 访问。用户可以通过在[Lava网关](https://gateway.lavanet.xyz/?utm_source=badge-server&utm_medium=docs&utm_campaign=lava-phase-2)上创建项目来生成与Lava徽章服务器一起使用的徽章。
 
-## Running a Badge Server *(Experimental)* 🧪
+## 运行徽章服务器 *（实验性）* 🧪
 
 :::warning
 
-Running a badge server is advanced and requires a lot more setup than using Lava's default badge server. We recommend using the [Lava Gateway!](https://gateway.lavanet.xyz/?utm_source=sdk-frontend&utm_medium=docs&utm_campaign=docs-to-gateway) instead.
+运行徽章服务器比较复杂，需要比使用 Lava 默认徽章服务器更多的设置。我们建议使用 [Lava Gateway!](https://gateway.lavanet.xyz/?utm_source=sdk-frontend&utm_medium=docs&utm_campaign=docs-to-gateway)。
 
 :::
 
 
-### 📥 Install `lavap` 
+### 📥 下载 `lavap` 
 
-Follow instructions at the [install page](/install-lava) to setup `lavap`
+按照[安装页面](/install-lava) 的说明设置 `lavap
 
 ```bash
 git clone https://github.com/lavanet/lava.git
@@ -37,27 +37,27 @@ LAVA_BINARY=lavap make install
 <br/>
 
 
-### 🪛 Configure Environmental Variables 
-`lavap` uses a `badgegenerator` command to set up the badge server. `badgegenerator` command takes a series of inputs from environmental variables. Some of these variables have default values, but others will be required to be configured to successfully run a badge server. To get started, you'll need to configure the environmental variables properly.
+### 🪛 配置环境变量
+`lavap` 使用 `badgegenerator` 命令来设置徽章服务器。徽章生成器 "命令从环境变量中获取一系列输入。其中一些变量有默认值，但要成功运行徽章服务器，还需要对其他变量进行配置。要开始使用，你需要正确配置环境变量。
 
 <hr/>
 
 #### `PORT`
 
-This specifies the port that the badge server will run on. 
+指定徽章服务器运行的端口。
 
 ```bash
-#default value
+#默认端口
 PORT=8080
 ```
 <hr/>
 
 #### `METRICS_PORT`
 
-The Metrics Port is used by Prometheus to track three metrics:
- - Total Requests
- - Failed Requests
- - Successful Processed Requests
+指标端口用于Prometheus跟踪三个指标：
+- 总请求数
+- 失败请求
+- 成功处理的请求
 
 
 ```bash
@@ -70,7 +70,7 @@ METRICS_PORT=8081
 
 #### `USER_DATA`
 
-Within this variable, lies a mapping structure, where each entry connects a geolocation # to a project ID complete with the relevant keys and settings. It is in JSON format and used for the encryption mechanism of the badge server.
+在这个变量内，存在一个映射结构，其中每个条目将一个地理位置 # 与一个项目 ID 相连接，包含相关的密钥和设置。它采用 JSON 格式，并用于徽章服务器的加密机制。
 
 ```json
 {
@@ -100,7 +100,7 @@ Within this variable, lies a mapping structure, where each entry connects a geol
 
 #### `GRPC_URL`
 
-This specifies the URL of the node with exposed gRPC port. Badge servers require access to a node with gRPC in order to function correctly.
+这指定了具有暴露 gRPC 端口的节点的 URL。徽章服务器需要访问具有 gRPC 的节点才能正常运行。
 
 ```bash
 GRPC_URL=grpc-public-rpc.lavanet.xyz:443
@@ -108,7 +108,7 @@ GRPC_URL=grpc-public-rpc.lavanet.xyz:443
 <hr/>
 
 #### `CHAIN_ID`
-This specifies the chain that will be used for providing badges.
+这指定将用于提供徽章的链。
 
 ```bash
 #default value
@@ -118,7 +118,7 @@ CHAIN_ID=lava-tesnet-2
 <hr/>
 
 #### `DEFAULT_GEOLOCATION`
-This holds importance as it serves as a fallback mechanism in cases where the user's country of origin cannot be determined for any reason. In such instances, the system defaults to the value specified in this variable.
+这一点非常重要，因为它在用户的原籍国无法确定的情况下充当备用机制。在这种情况下，系统将默认使用该变量中指定的值。
 
 ```bash
 #default value
@@ -129,24 +129,24 @@ DEFAULT_GEOLOCATION=1
 
 #### `COUNTRIES_FILE_PATH`
 
-This is the path-to-file for a CSV (Comma-Separated Values) file containing essential data about various countries, along with their corresponding links to Lava-geolocation information. This file structure consists of four columns: `country-code`, `country-name`, `continent code`, and `lava-geolocation`. 
+这是一个 CSV（逗号分隔值）文件的路径，其中包含各个国家的基本数据，以及它们对应的 Lava 地理位置信息的链接。该文件结构包括四列：`country-code`、`country-name`、`continent code` 和 `lava-geolocation`。
 
-You can download the file needed [here](https://storage.googleapis.com/lavanet-public-asssets/countries.csv).
+您可以下载所需的文件 [此处](https://storage.googleapis.com/lavanet-public-asssets/countries.csv)。
 <hr/>
 
 
 #### `IP_FILE_PATH`
 
-This is the path-to-file for a TSV (Tab-Separated Values) document containing IP address ranges and their corresponding country codes. The file consists of five columns: `range_start`, `range_end`, `AS_number`, `country_code`, and `AS_description`. 
+这是一个包含 IP 地址范围及其对应国家代码的 TSV（制表符分隔值）文档的文件路径。该文件包括五列：`range_start`、`range_end`、`AS_number`、`country_code` 和 `AS_description`。
 
-It is available for download at the following location: [ip2asn-v4.tsv](https://iptoasn.com/)
+可从以下位置下载： [ip2asn-v4.tsv](https://iptoasn.com/)
 <hr/>
 
 <br/>
 
-### 🔨 Run the `badgegenerator` command
+### 🔨 运行 `badgegenerator` 命令
 
-Once you've taken the time to configure environmental variables, there is less need to use flags. The magic happens all with a single command:
+一旦你花时间配置了环境变量，就不再需要使用flags了。只需一条命令，就能实现神奇的效果：
 
 ```
 lavap badgegenerator --log_level debug
@@ -154,15 +154,15 @@ lavap badgegenerator --log_level debug
 
 :::tip
 
-`log_level` should be set to `debug`. Setting to `debug` ensures that errors are caught in this experimental phase!
+`log_level` 应设置为 `debug`。将其设置为 `debug` 可确保在这个实验阶段捕获错误！
 
 :::
 
 <br/>
 
-### 📏 Create and use a `badge` with LavaSDK
+### 📏 使用 LavaSDK 创建和使用 `badge`
 
-You can test the functionality of your badge server by asking it to sign a self-generated badge!
+您可以让徽章服务器签署一个自己生成的徽章，以此来测试徽章服务器的功能！
 
 ```javascript
 const lavaSDK = await LavaSDK.create({

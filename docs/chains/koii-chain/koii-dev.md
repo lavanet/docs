@@ -1,36 +1,36 @@
 ---
 slug: /koii-dev
-title: Getting Koii  RPC
+title: 获取 Koii  RPC
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Getting Koii RPC
+# 获取 Koii RPC
 
 ## [Gateway](https://gateway.lavanet.xyz/?utm_source=koii-dev&utm_medium=docs&utm_campaign=docs-to-gateway)
 
-To learn more about using the Lava Gateway visit the [Getting Started guide](https://docs.lavanet.xyz/gateway-getting-started?utm_source=koii-dev&utm_medium=docs&utm_campaign=docs-to-docs)
+要了解有关使用 Lava Gateway 的更多信息，请访问 [入门指南](https://docs.lavanet.xyz/gateway-getting-started?utm_source=koii-dev&utm_medium=docs&utm_campaign=docs-to-docs)
 
 <hr />
 
 ## [SDK](https://github.com/lavanet/lava-sdk)
 
-### Input 📥
+### 输入 📥
 
 <Tabs>
 
 <TabItem value="backend" label="BackEnd">
 
 ```jsx
-// Install lavaSDK with the following command:
+// 使用以下命令安装 lavaSDK：
 // npm i @lavanet/lava-sdk
 const { LavaSDK } = require("@lavanet/lava-sdk")
 
 async function useKoiiTestnet() {
 
     const koiiTestnet = await LavaSDK.create({
-      privateKey: process.env.PRIVATE_KEY, //hide your private key in an environmental variable
+      privateKey: process.env.PRIVATE_KEY, //将私钥隐藏在环境变量中
       chainIds: 'KOIIT',
     });
 
@@ -52,7 +52,7 @@ async function useKoiiTestnet() {
 <TabItem value="frontend" label="FrontEnd">
 
 ```jsx
-// Install lavaSDK with the following command:
+// 使用以下命令安装 lavaSDK：
 // npm i @lavanet/lava-sdk
 const { LavaSDK } = require("@lavanet/lava-sdk")
 
@@ -60,7 +60,7 @@ async function useKoiiTestnet() {
 
     const koiiTestnet = await LavaSDK.create({
       badge: {
-        badgeServerAddress: "https://badges.lavanet.xyz", // Or your own Badge-Server URL 
+        badgeServerAddress: "https://badges.lavanet.xyz", // 或您自己的徽章服务器 URL
         projectId: "enter_your_project_id_here" 
       },
       chainIds: 'KOIIT',
@@ -85,14 +85,14 @@ async function useKoiiTestnet() {
 </Tabs>
 
 
-### Output 📤
+### 输出 📤
 
 :::caution
-Certain features of Koii spec may not be currently enabled.
+目前可能无法启用 Koii spec 的某些功能。
 :::
 
 <iframe width="100%" src="/img/chains/koii_call.webm" frameborder="0" allow="autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-To learn more about our SDK visit the [Getting Started guide](https://docs.lavanet.xyz/sdk-getting-started?utm_source=getting-koii-rpc&utm_medium=docs&utm_campaign=docs-to-docs)
+要了解有关 SDK 的更多信息，请访问 [入门指南](https://docs.lavanet.xyz/sdk-getting-started?utm_source=getting-koii-rpc&utm_medium=docs&utm_campaign=docs-to-docs)
 
 <hr />

@@ -2,46 +2,46 @@
 slug: /lava-bazaar
 ---
 
-# 🔨 Building The Lava Bazaar: A P2P Cross-Chain Asset Checker
+# 🔨 构建Lava Bazaar： P2P 跨链资产检查器
 
 ![Lava Bazaar UI](/img/tutorial/sdk/demo_app/lava_bazaar_ui.png)
 
-**The Lava Bazaar** is a simple cross-chain asset checker. It works by leveraging the power of LavaSDK’s P2P RPC integration with viem ([`lava-viem`](/viem)) to provide users with a React frontend to check wallet balances across different blockchains. Under the hood, Lava replaces viem’s [`PublicClient`](https://viem.sh/docs/clients/public.html) with its entire decentralized network of RPC providers providing many benefits for dApp developers. The Lava Bazaar is a basic example that can be modified to interact with any blockchain that is supported by both LavaSDK and viem.
+**Lava Bazaar** 是一个简单的跨链资产检查器。它利用 LavaSDK 与 viem 的 P2P RPC 集成（[`lava-viem`](/viem)），为用户提供一个 React 前端来检查不同区块链上的钱包余额。在引擎盖下，Lava 将 viem 的 [`PublicClient`](https://viem.sh/docs/clients/public.html) 替换为其整个去中心化的 RPC 提供商网络，为 dApp 开发者带来了许多好处。Lava Bazaar 是一个基本示例，可以进行修改，以便与 LavaSDK 和 viem 支持的任何区块链进行交互。
 
 :::tip
 
-Check out the complete project on ![Github](/img/github_favicon.ico) [Github](https://github.com/KagemniKarimu/lava-bazaar)❗
+查看完整项目，请访问 ![Github](/img/github_favicon.ico) [Github](https://github.com/KagemniKarimu/lava-bazaar)❗
 
 :::
 
-## Overview 🔎
+## 概览 🔎
 
-The tutorial explores how to use `lava-viem` to build a fully decentralized cross-chain asset checker which works across all chains mutually supported by LavaSDK and viem. Being able to check balances across multiple chains with a single credential is a building block to many web3 tools including wallets, indexers, and exchanges. 
+这个教程探讨了如何使用 `lava-viem` 构建一个完全去中心化的跨链资产检查器，它可以在所有由 LavaSDK 和 viem 共同支持的链上运行。能够使用单个凭证跨多个链检查余额是许多 Web3 工具的基础，包括钱包、索引器和交易所。
 
-This tutorial will guide you through creating a simple app that can:
+本教程将引导你创建一个简单的应用程序，可以实现以下功能：
 
--  Fetch and display current wallet balances and transaction counts from Ethereum, Arbitrum, FileCoin, Avalanche, Celo, Optimism, and Polygon mainnets.
--  Dynamically add/remove support for new blockchains with the simple editing of two arrays!
--  Access P2P RPC on viem without a single RPC URL
+- 从以太坊、Arbitrum、FileCoin、Avalanche、Celo、Optimism 和 Polygon 主网获取并显示当前钱包余额和交易数量。
+- 通过简单编辑两个数组，动态添加/删除对新区块链的支持！
+- 在没有单个 RPC URL 的情况下访问 viem 上的 P2P RPC。
 
 
-## Prerequisites 📦
+## 必备条件 📦
 
-- Basic understanding of [Node.js](https://nodejs.org/en), [Express](https://expressjs.com/), and [React](https://react.dev/learn).
-- Node.js and npm installed.
-- Familiarity with using APIs / routing structures!
+- 基本了解 [Node.js](https://nodejs.org/en)、[Express](https://expressjs.com/) 和 [React](https://react.dev/learn)。
+- Node.js and npm 已下载。
+- 熟悉使用应用程序接口/路由结构！
 
-## Backend Setup 🔙
+## 后端设置 🔙
 
-We'll begin by setting up an Express.js server to interact with the blockchain networks via viem's client instances. In a normal dApp, we wouldn’t need to separate out a backend from a frontend, but due to network conditions at the time of this tutorial - this is a decent setup to avoid CORS issues with certain providers.
+首先，我们将设置一个 Express.js 服务器，通过 viem 的客户端实例与区块链网络交互。在普通的 dApp 中，我们不需要将后端与前端分开，但由于本教程编写时的网络条件，这是一个不错的设置，可以避免与某些提供商发生 CORS 问题。
 
-### 📥 Install dependencies
+### 📥 安装依赖项
 
 ```bash
 npm install @lavanet/lava-viem express viem
 ```
 
-### ⚒️ Build a Constructor
+### ⚒️ 构建构造器
 
 ```jsx
 // viemclient.js
@@ -82,9 +82,9 @@ module.exports = { createClientForChain, clientList };
 
 ```
 
-In `viemclient.js`, we define a function to create viem clients for various chains and store them in `clientList`. We’ll want to export this so that we incorporate this logic in our server. We’ll also write a small async function `getClient()` which allows us to select which chain to use for a given request! 🧠
+在 `viemclient.js` 中，我们定义了一个函数，用于为各种链创建 viem 客户端并将其存储在 `clientList` 中。我们需要导出该函数，以便将这一逻辑整合到服务器中。我们还将编写一个小的异步函数 `getClient()`，它允许我们为给定请求选择要使用的链！🧠
 
-### 🧭 Write Initialization Function
+### 🧭 写入初始化函数
 
 ```jsx
 // server.js
@@ -105,12 +105,12 @@ for (const chain of supportedChains) {
 
 ```
 
-In `server.js`, we import the functions from `viemclient.js` and use them to initialize clients and set up API endpoints. We pack this away in an anonymous asynchronous function… Later, we’ll put some API endpoints here!
+在 `server.js` 中，我们从 `viemclient.js` 中导入函数，用它们来初始化客户端并设置 API 端点。我们将这些功能打包到一个匿名异步函数中......稍后，我们将在这里放置一些 API 端点！
 
 
-### 🌐 Create APIs
+### 🌐 创建 APIs
 
-Before building routes, we need to revisit `viemclient.js`. We need to add functions that get the latest block number, get the wallet balance of a wallet in question, and get the number of transactions for a given address. All of these will use the `getClient()` function to determine which instance we will communicate to… In `viemclient.js` put the following:
+在构建路由之前，我们需要重新访问 `viemclient.js`。我们需要添加一些函数，用于获取最新的区块编号、获取相关钱包的钱包余额，以及获取给定地址的交易次数。所有这些都将使用 `getClient()` 函数来确定我们将与哪个实例通信...... 在 `viemclient.js` 中加入以下内容：
 
 ```jsx
 //viemclient.js (cont'd)
@@ -150,7 +150,7 @@ async function getWalletTxNumber(addressInput, chainInput) {
 };
 ```
 
-In `server.js` we’ll need to add some routes, so that these can be called from our frontend without issue. That means our `server.js` can include something like this:
+在 `server.js` 中，我们需要添加一些路由，这样就可以顺利地从前端调用这些路由。这意味着我们的 `server.js` 可以包含如下内容：
 
 ```jsx
 //server.js (cont'd)
@@ -219,17 +219,17 @@ app.listen(PORT, () => {
 });
 ```
 
-These 3 basic routes will form the basis of our application! Once you have constructed them correctly, go ahead and give them a test with `node server.js` . We should get something like the following (give or take a few lines ;) ✨
+这 3 个基本路由将构成我们应用程序的基础！正确构建后，请使用 `node server.js` 对其进行测试。我们应该会得到类似下面的结果（或多或少有几行；） ✨
 
 ![Lava Bazaar Backend Successful Launch](/img/tutorial/sdk/demo_app/lava_bazaar_be.png)
 
 <br />
 
-## Frontend Setup 🪟
+## 前端设置 🪟
 
-Now, we’re ready to move onto building our interfaces, if you’re familiar with React, this should be a breeze. If not, please ensure that you’ve setup your `index.js`, `index.html` , and `App.js` . We deliberately avoid using `create-react-app` because of a few configuration issues it has with common web3 dependencies. If you’re not used to it, setting up a React environment without using `create-react-app` is not trivial! So take your time and consult a separate [tutorial](https://react.dev/learn/add-react-to-an-existing-project) or [two](https://dev.to/underscorecode/creating-your-react-project-from-scratch-without-create-react-app-the-complete-guide-4kbc).
+现在，我们可以开始构建界面了，如果您熟悉 React，这应该是轻而易举的。如果不熟悉，请确保已设置好 `index.js`、`index.html` 和 `App.js`。我们特意避免使用 `create-react-app`，因为它与常见的 web3 依赖关系存在一些配置问题。如果你不习惯使用它，在不使用 `create-react-app` 的情况下设置 React 环境并非易事！因此，请慢慢来，并查阅单独的 [tutorial](https://react.dev/learn/add-react-to-an-existing-project) 或 [two](https://dev.to/underscorecode/creating-your-react-project-from-scratch-without-create-react-app-the-complete-guide-4kbc) 。
 
-You may use any of these dependencies or more, depending on your setup:
+您可以使用这些依赖项中的任何一个或更多，具体取决于您的设置：
 
  > Dependency Tree (`npm ls`)
  > 
@@ -246,7 +246,7 @@ You may use any of these dependencies or more, depending on your setup:
  > └── webpack@5.89.0 <br />
 
 
-### 💼 Set up a WalletInfo Component
+### 💼 设置 WalletInfo 组件
 
 ```jsx
 //WalletInfo.js
@@ -302,7 +302,7 @@ function WalletInfo() {
     };
 ```
 
-The basic logic of the `WalletInfo.js` component is above. We have `fetch` functions that call the APIs we created and grab the proper responses and set state with them; we also outlined our `chainOptions` for when we build our interface. Each time a button we’ll create is called, we’ll activate each of these functions so as to update the interface, hence `fetchWalletData()`. Before worrying about all that, we will also need to add a `return` statement detailing the layout of the component before closing our final bracket!
+上面是 `WalletInfo.js` 组件的基本逻辑。我们有 `fetch` 函数，用于调用我们创建的 API，获取适当的响应并设置状态；我们还概述了我们的 `chainOptions` 函数，用于在构建界面时使用。每次我们创建的按钮被调用时，我们都会激活这些函数，以便更新界面，这就是 `fetchWalletData()`。在担心这些之前，我们还需要在最后的括号中添加一个 `return` 语句，详细说明组件的布局！
 
 ```jsx
     //WalletInfo.js (cont'd)
@@ -363,7 +363,7 @@ The basic logic of the `WalletInfo.js` component is above. We have `fetch` funct
 export default WalletInfo;
 ```
 
-And we have a complete UI! Let’s be sure to add it to the `App.js` main `App()` function:
+这样我们就有了一个完整的用户界面！请务必将其添加到 `App.js` 主 `App()` 函数中：
 
 ```jsx
 //App.js
@@ -379,26 +379,26 @@ function App() {
 export default App;
 ```
 
-Once you’re certain you’ve plugged up all the holes in your frontend - go ahead and give your new Lava Bazaar application a spin with `npm start` command.  if all is well, you should get output similar to the following:
+如果一切正常，你应该会得到类似下面的输出结果：
 
 ![Lava Bazaar Successful FrontEnd Launch](/img/tutorial/sdk/demo_app/lava_bazaar_fe.png)
 
-## Test your might! 🗳️
+## 测试🗳️
 
-Give it a test! Does it work? Take a look at a final version here! 
+测试一下！能用吗？点击这里查看最终版本！
 
 ```
 https://github.com/KagemniKarimu/lava-bazaar
 ```
 
-## Challenges 🧩
+## 挑战 🧩
 
-Need a way to turn up the difficulty? Want to practice your web3 dev skills and learn more about the integration? Try the following:
+需要提高难度？想练习 web3 开发技能并了解更多集成知识？试试下面的方法：
 
-- ⛓️Add support for more chains
-- 🦜Parse the Balances to Make Them more Human Readable
-- 📏Add Validation for Address Input(s)
-- 🕐Implement Real-Time Balance Watching
-- 💾Cache Responses for More Speed
-- 🔃Parallelize the Initialization Process for all Chains
-- 🔎 Add Tx LookUp in Addition to Address Lookup on the same Text Input
+- ⛓️ 增加对更多链的支持
+- 🦜解析余额，使其更易于人阅读
+- 📏添加地址输入验证
+- 实施实时余额监控
+- 💾缓存响应以提高速度
+- 并行化所有链的初始化过程
+- 🔎在同一文本输入的地址查找之外增加 Tx 查找

@@ -16,7 +16,7 @@ import RoadmapItem from '@site/src/components/RoadmapItem'
 
 <center>
 
-## ⚙️ Supported APIs ⚙️
+## ⚙️ 支持的 APIs ⚙️
 
 </center>
 
@@ -25,22 +25,22 @@ import RoadmapItem from '@site/src/components/RoadmapItem'
 https://raw.githubusercontent.com/lavanet/lava/main/cookbook/specs/spec_add_axelar.json
 
 
-### Protocols 🔗
+### 协议 🔗
 
 | Platform  |  rest/http | uri/http | tendermint/http | tendermint/wss     | grpc | web-grpc|
 | --------- | -------- |------------| ------------- | ---------------------|------|---------|
 | Gateway   | ✅       | ✅         | ✅            | ✅                   |  ✅  | ✅     |
 | SDK       | ✅       |            | ✅            |                      |      |         |
 
-### Methods 🛠️
+### 方法 🛠️
 
-#### ⌨️ Command:
+#### ⌨️ 命令:
 
 ```bash
 lavad q spec show-chain-info AXELAR
 ```
 
-#### 📋 List :
+#### 📋 列表 :
 
 <details>
 <summary> REST </summary>

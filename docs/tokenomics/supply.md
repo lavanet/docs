@@ -3,50 +3,50 @@ slug: /supply
 title: 🏭 Supply
 ---
 
-# 🪙 Supply Details
+# 🪙 供应细节
 
 <center>
 
-| Property                | Details                                            |
-|-------------------------|----------------------------------------------------|
-| 🪙 Token                   | `LAVA`                                               |
-| 🔢 Token supply            | `1,000,000,000 LAVA`                                 |
-| 📉 Deflation schedule      | See section below on [“Lava Supply and Deflation”](#lava-supply-and-deflation-) |
-| 💱 Conversion              | `1 uLAVA` = `1 LAVA` x `10^-6`                           |
+| 属性                  | 详情                                               |
+|-----------------------|----------------------------------------------------|
+| 🪙 代币                | `LAVA`                                             |
+| 🔢 代币供应            | `1,000,000,000 LAVA`                               |
+| 📉 通缩计划           | 请参阅下文关于 [“Lava 供应和通缩”](#lava-supply-and-deflation-) 的部分 |
+| 💱 转换                | `1 uLAVA` = `1 LAVA` x `10^-6`                         |
 
 </center>
 
-## Economic Actors and Key Terms 👤
+## 经济角色和关键术语 👤
 
-- 🛒 **Consumers**  buy Subscription plans in `LAVA` on-chain to gain access to a diverse set of API ‘specs’ via the Lava Protocol.
-    -  💸 **Subscription** plans are priced by governance, offer a limited amount of compute units and vary by their specs.
-    -  🗜️ **Specifications** or ‘specs’ are governance defined modular objects that specify the types of APIs providers are required to support.
-- 🛎️ **Providers** stake tokens on individual specs, ensuring the integrity of their service. A minimum direct stake is required to accept delegations from others. Requests are routed to providers via a stake-weight mechanism.
-- ⚖️ **Validators** stake to secure the network. They create blocks, execute transactions and vote on blocks created by other validators.
-- 💰 **Token Holders** have the option of staking their tokens to validators, restaking with providers, and participating in on-chain governance.
-- 🏆 **Champions** create, develop and maintain RPC and API ‘specs’ and software for rewards. They can also contribute to the community by completing bounties.
-- 🔗 **Chains** deposit token incentives to Lava, rewarding Providers for offering specs to their developers and users.
+- 🛒 **消费者** 在链上用 `LAVA` 购买订阅计划，以获取通过 Lava 协议访问多样化 API '规格' 的权限。
+    -  💸 **订阅** 计划由治理定价，提供一定数量的计算单元，并根据其规格而变化。
+    -  🗜️ **规格** 或 'specs' 是由治理定义的模块化对象，指定提供者必须支持的 API 类型。
+- 🛎️ **提供者** 在个别规格上抵押代币，确保其服务的完整性。接受其他人委托需要一定的直接抵押。请求通过权重机制路由到提供者。
+- ⚖️ **验证者** 抵押资金来保障网络安全。他们创建区块，执行交易，并对其他验证者创建的区块进行投票。
+- 💰 **代币持有者** 可选择将其代币质押给验证者，与提供者再质押，并参与链上治理。
+- 🏆 **冠军** 创建、开发和维护 RPC 和 API '规格' 及软件以获取奖励。他们还可以通过完成悬赏任务为社区做出贡献。
+- 🔗 **链** 将代币激励存入 Lava，以奖励提供者为其开发者和用户提供规格。
 
 :::tip
 
- Providers and validators can be separate entities.
+提供者和验证者可以是不同的实体。
 
 :::
 
-## `LAVA` Supply and Deflation 💵
+## `LAVA` 供应和通缩 💵
 
-Lava has a fixed supply and no more tokens will be minted. Furthermore, Lava has developed a novel deflationary mechanism for attracting Providers in the initial stages of Mainnet.
+Lava 有一个固定的供应量，不会再铸造更多代币。此外，Lava 发展了一种新颖的通缩机制，用于吸引提供者参与 Mainnet 的初始阶段。
 
-6.6% of supply is devoted to “Provider Drops" which are a monthly-distributed reward mechanism for bootstrapping Provider participation. Monthly rewards vary depending on paid demand for services on Lava; higher paid demand generally results in more rewards for Providers who have joined Lava early.
+供应量的 6.6% 专门用于 “提供者空投”，这是一个月度分配的奖励机制，用于引导提供者参与。每月的奖励根据 Lava 上的服务需求而变化；更高的付费需求通常会为早期加入 Lava 的提供者带来更多奖励。
 
-As the network draws more and more consumers, the need for the Drops will decrease, as Providers will make the difference from subscription payments.
+随着网络吸引越来越多的消费者，空投的需求会减少，因为提供者将从订阅支付中获得差价。
 
-Additionally, validator rewards decrease as the percentage of staked LAVA increases, with a linear reduction between a 60-80% stake. At an 80% stake, rewards and half of the subscription fee taxes are burned, removing them from circulation and further controlling the token's inflation.
+此外，随着质押的 `LAVA` 百分比的增加，验证者奖励也会减少，在 60-80% 的质押之间线性减少。在 80% 的质押率下，奖励和一半的订阅费用税将被销毁，从而将其从流通中移除，并进一步控制代币的通货膨胀。
 
-At month's end, any undistributed Validator rewards are destroyed, aligning Validators' interests with the network's robustness and efficiency.
+月底，未分配的验证者奖励将被销毁，使验证者的利益与网络的强健性和效率保持一致。
 
 
-| Parameter                               | % of total `LAVA` supply |
-|-----------------------------------------|------------------------------------|
-| 🚀 **Provider Reward Boosts** (“Provider Drops”)| **6.6%**          |
-| 🔥 **Range of Burn Rate**                    | **0 - 6.6%**                    |
+| 参数                                   | 占总 `LAVA` 供应的百分比 |
+|----------------------------------------|-----------------------------------|
+| 🚀 **提供者奖励增加**（“提供者空投”）| **6.6%**          |
+| 🔥 **燃烧率范围**                           | **0 - 6.6%**                    |

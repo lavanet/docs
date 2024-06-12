@@ -1,23 +1,23 @@
 ---
 sidebar_position: 1
 slug: /reqs
-title: Hardware requirements
+title: 硬件要求
 ---
 
-## Deployment options
-- VPS instance (on any cloud provider) - recommended ⭐️
-- Shared compute instance (e.g. AWS EC2 instance)
-- Your personal station
+## 部署选项
+- VPS 实例（任何云提供商）--建议使用 ⭐️
+- 共享计算实例（如 AWS EC2 实例）
+- 您的个人工作站
 
-**Docker** container are available at [Lava's repository on GitHub](https://github.com/lavanet/lava/tree/main/docker)
+**Docker**容器可从[Lava 在 GitHub 上的存储库](https://github.com/lavanet/lava/tree/main/docker) 获取。
 
-## Hardware requirements
+## 硬件要求
 
-As the network grows, bandwidth, CPU, and memory requirements rise. Large hard drives are recommended for storing years of blockchain history, as well as significant RAM to process the increasing amount of transactions.
+随着网络的增长，带宽、CPU 和内存需求也会增加。建议使用大容量的硬盘来存储多年的区块链历史记录，并且需要足够的RAM来处理不断增加的交易量。
 
-Also, running on testnet and mainnet will feature different requirements.
+此外，在测试网和主网上运行将具有不同的要求。
 
-**Recommended for Testnet**
+**推荐用于测试网**
 
 | Node Type     | RAM                   | Storage       | CPU
 | -----------   | --------------------- | -----------   | ---
@@ -25,30 +25,30 @@ Also, running on testnet and mainnet will feature different requirements.
 | Full (Recommended)| 16GB              | 512GB SSD     | x64 2.0 GHz 4v CPU 
 
 <details>
-<summary>Running on AWS?</summary>
+<summary>AWS上运行？</summary>
 
-Settings:
+设置：
 
-- Minimum `Instance Type` - **`c4.xlarge`**
+- 最小`Instance Type` - **`c4.xlarge`**
 - `Configure storage` - **`GP2 drive`**
 
 </details>
 
-### Operating system
-- For using the prebuilt `lavad` - you need to run **`Ubuntu` - `20`** or newer.
-- sudo permissions on your machine (e.g. can run `sudo hostname`)
+### 操作系统
+- 对于使用预构建的 `lavad` - 您需要运行 **`Ubuntu` - `20`** 或更新版本。
+- 您的计算机需要具有 sudo 权限（例如，可以运行 `sudo hostname`）。
 
 :::info
-Need to run a different OS? Let us know in Discord.
+需要运行不同的操作系统？请在 Discord 告诉我们。
 :::
 
-## Network configurations
-- Outbound - allow all traffic
-- Inbound - open the following ports:
+## 网络配置
+- 出站流量 - 允许所有流量
+- 入站流量 - 打开以下端口：
     - 1317 - REST
     - 26657 - TENDERMINT_RPC
     - 26656 - Cosmos
-    - *Running as a Provider? Add these specific ports*:
-        - 22221 - provider port
-        - 22231 - provider port
-        - 22241 - provider port
+    - *作为提供者运行？添加以下特定端口*：
+        - 22221 - 提供者端口
+        - 22231 - 提供者端口
+        - 22241 - 提供者端口

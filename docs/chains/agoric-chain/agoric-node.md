@@ -1,103 +1,103 @@
 ---
 slug: /agoric-node
-title: Running a Agoric RPC Node
+title: 运行 Agoric RPC 节点
 ---
 
-# Running a Agoric RPC Node
+# 运行Agoric RPC节点
 
-## Requirements 📄 
+## 配置要求 📄 
 
 :::caution
-Users may experience issues when attempting to run instructions using versions >= 18.19.0 of `Node.js`. Node versions >=18.19 introduce a breaking change to AgoricSDK, and are not currently supported.
+用户在尝试使用版本大于等于 18.19.0 的 `Node.js` 运行指令时可能会遇到问题。Node 版本 >=18.19 引入了对 AgoricSDK 的破坏性更改，目前不支持该版本。
 :::
 
-There are notable minimum hardware requirements in order to run a Agoric RPC Nodes:
+运行 Agoric RPC 节点的最低硬件要求并不高：
 
     16 GB RAM
     4-Cores x86_64 CPU
     High Performance/NVMe SSD (w/ ~6 GB+/month for Full Node or ~12 GB+/month for Archive)
     1 GBPS up/down
 
-To get started with your node, be sure that you have Go 1.20.2 or higher installed.
+要开始运行节点，请确保已安装 Go 1.20.2 或更高版本。
 
-## Install & Run AgoricSDK 📥
+## 安装 & 运行 AgoricSDK 📥
 
-After you've gotten your requirements together you can proceed to installing!
+在你准备好运行节点所需要的服务器之后，就可以开始安装了!
 
-### 📦 Get Required Packages
+### 📦 获取所需的包
 
 ```bash
 sudo apt -qy install curl git jq lz4 build-essential nodejs=16.* yarn
 ```
 
 
-### 💾 Get the Agoric software
+### 💾 获取Agoric软件
 
-Run the following install script:
+运行下面的安装脚本:
 
 ```bash
-# clone the repo
+# 克隆仓库
 git clone https://github.com/Agoric/agoric-sdk -b <GIT-BRANCH>
 cd agoric-sdk
 
-# Install and build Agoric Javascript packages
+# 安装并构建Agoric Javascript包
 yarn install
 yarn build
 
-# Install and build Agoric Cosmos SDK support
+# 安装和构建Agoric Cosmos SDK支持
 (cd packages/cosmic-swingset && make)
 ```
 
-You'll need to select a `<GIT_BRANCH>` to use. You can see the latest branch [here](https://github.com/Agoric/agoric-sdk/releases).
+你需要选择一个`<GIT_BRANCH>`来使用。你可以在[这里](https://github.com/Agoric/agoric-sdk/releases)看到最新的分支。
 
-### 🛠️ Configure your node
+### 🛠️ 配置你的节点
 
-Configuration involves a few steps:
+配置包括以下几个步骤：
 
 ```bash
-# First, get the network config for the current network.
+# 首先，获取当前网络的网络配置
 curl https://main.agoric.net/network-config > chain.json
-# Set chain name to the correct value
+# 将chain name设置为正确的值
 chainName=`jq -r .chainName < chain.json`
-# Confirm value: should be something like agoricdev-N.
+# 确认值:应该类似于agoricdev-N。
 echo $chainName
-# Replace <your_moniker> with the public name of your node.
-# NOTE: The `--home` flag (or `AG_CHAIN_COSMOS_HOME` environment variable) determines where the chain state is stored.
-# By default, this is `$HOME/.agoric`.
+# 将<your_moniker>替换为您的节点的公共名称。
+# 注意:`--home` 标志(或`AG_CHAIN_COSMOS_HOME`环境变量)决定链状态存储在哪里。
+# 默认值是`$HOME/.agoric`。
 agd init --chain-id $chainName <your_moniker>
 ```
 
-### 🔧 Adjust your Config
+### 🔧 调整配置
 ```bash
-# Set peers variable to the correct value
+# 将peers变量设置为正确值
 peers=$(jq '.peers | join(",")' < chain.json)
-# Set seeds variable to the correct value.
+# 将seeds变量设置为正确的值。
 seeds=$(jq '.seeds | join(",")' < chain.json)
-# Confirm values, each should be something like "077c58e4b207d02bbbb1b68d6e7e1df08ce18a8a@178.62.245.23:26656,..."
+# 确认值，每个值应该类似于"077c58e4b207d02bbbb1b68d6e7e1df08ce18a8a@178.62.245.23:26656,..."
 echo $peers
 echo $seeds
-# Fix `Error: failed to parse log level`
+# 修复`Error: failed to parse log level`
 sed -i.bak 's/^log_level/# log_level/' $HOME/.agoric/config/config.toml
-# Replace the seeds and persistent_peers values
+# 替换seeds和persistent_peers值
 sed -i.bak -e "s/^seeds *=.*/seeds = $seeds/; s/^persistent_peers *=.*/persistent_peers = $peers/" $HOME/.agoric/config/config.toml
 ```
 
-### ⏳ Sync Your Node
+### ⏳ 同步节点
 
 ```bash
 agd start --log_level=warn
 ```
 
-If you want or need to use a genesis file - be aware that this includes [additional steps](https://github.com/Agoric/agoric-sdk/wiki/Validator-Guide-for-Devnet#apply-network-parameters). The official Agoric mainnet genesis file is available here: https://main.agoric.net/genesis.json
+如果您想要或需要使用创始文件-请注意，这包括[额外步骤](https://github.com/Agoric/agoric-sdk/wiki/Validator-Guide-for-Devnet#apply-network-parameters)。官方的Agoric主网生成文件在这里:https://main.agoric.net/genesis.json
 
-### 🔬 Check the Status of your Sync
+### 🔬 检查同步状态
 
 ```bash
 agd status | jq .SyncInfo
 ```
 
-Once you have fully synced, you're good to go.
+一旦完全同步，就可以开始了。
 
-## Setup your Provider on Lava Network 🌋
+## 在 Lava Network 设置提供商🌋
 
-To set up your provider on the Lava Network, you can refer to the [provider setup documentation](https://docs.lavanet.xyz/provider-setup?utm_source=running-a-solana-rpc-node&utm_medium=docs&utm_campaign=solana-pre-grant) available elsewhere in our docs. This should provide you with the necessary information to configure and operate your provider node.
+要在Lava网络上设置您的提供商，您可以参阅我们文档中其他地方的[提供商设置文档](https://docs.lavanet.xyz/provider-setup?utm_source=running-a-solana-rpc-node&utm_medium=docs&utm_campaign=solana-pre-grant)。这将为您提供配置和操作provider节点所需的信息。

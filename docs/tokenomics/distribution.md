@@ -5,11 +5,11 @@ title: 📊 Distribution
 
 
 
-# 🪙 Distribution Details
+# 🪙 分发细节
 
-## 🧮 Distribution Breakdown 
+## 🧮 分发分解 
 
-Lava will have `1,000,000,000` tokens at Genesis with no inflation to token supply. The following table and chart shows how the tokens are distributed at Genesis:
+Lava将在创世纪拥有“1,000,000,000”代币，代币供应没有通货膨胀。下面的表格显示了这些代币在《创世纪》中的分布情况:
 
 ![tokenomics](/img/tokenomics/piegraph.png)
 
@@ -18,35 +18,36 @@ Lava will have `1,000,000,000` tokens at Genesis with no inflation to token supp
 <br/>
 
 
-Max Supply: `1,000,000,000 LAVA` (**100%**)
+最大供应量: `1,000,000,000 LAVA` (**100%**)
 
 <br />
 
 ###
 
-| Category               |  Description | %    |
-|------------------------|--------------|------|
-| Public Allocation    |  Future initiatives and Rewards Reserve (Provider Drops and Validator rewards)       | 25%  |
-| R&D & Ecosystem      |  Protocol Maintenance & Development; Programs for Providers, Validators, and Champions     | 31%  |
-| Investors            |  Early Supporters of Lava                                    | 17%  |
-| Contributors         |  Early contributors, Core Team, Advisors, & Others           | 27%  |
-|                        |     **Total**         | **100%** |
+| 分类                   |  说明 | %                                                                                          |
+|------------------------|-------------------------------------------------------------------------------------------|-------|
+| 公共分配               |  未来计划和奖励储备(提供者空投和验证者奖励)                                                   | 25%   |
+| R&D & Ecosystem       |  Protocol Maintenance & Development; Programs for Providers, Validators, and Champions     | 31%   |
+| 投资者                | LAVA的早期支持者                                                                           | 17%     |
+| 贡献者                |  早期贡献者，核心团队，顾问和其他人                                                          | 27%     |
+|                       |     **Total**                                                                            | **100%** |
 
 </center>
 
-## ⏳ Unlock Schedule
+## ⏳ 解锁进度
 
 ![unlockchart](/img/tokenomics/linegraph.png)
 
-| Category                   | Unlock Schedule                                                                                                       |
+| 分类                       | 解锁进度                                                                                                       |
 |----------------------------|-----------------------------------------------------------------------------------------------------------------------|
-| Public Allocation          | Fully unlocked at Launch.  Except rewards reserve: unlocks continuously from launch to year 4.  |
-| R&D & Ecosystem            | 25% unlocked at launch. Remaining 75% unlocks continuously from year 1 to year 4. |
-| Investors                  | 33% unlocked at year 1. Remaining 67% unlocks continuously from year 1 to year 3.  |
-| Initial Core Contributors | 33% unlocked at year 1. Remaining 67% unlocks continuously from year 1 to year 3.   |
+| 公共分配                    | 在启动时完全解锁。除了奖励储备:从启动到第4年持续解锁。                                                            |
+| R&D & Ecosystem            | 25%在发射时解锁。剩下的75%从第1年到第4年持续解锁。 |
+| 投资者                     | 第一年解锁33%。剩余的67%从第1年到第3年连续解锁。  |
+| 最初的核心贡献者            | 第一年解锁33%。剩余的67%从第1年到第3年连续解锁。  |
 
 
-## 🏛️ Disclaimer
+## 🏛️ 免责声明
 
-THIS DOCUMENT IS NEITHER AN OFFER TO SELL NOR A SOLICITATION TO BUY ANY ASSETS, AND IT SHOULD NOT BE CONSIDERED AN OFFER, ADVERTISEMENT, INVITATION, CONFIRMATION, OR ANY FORM OF FINANCIAL PROMOTION MEANT TO ENCOURAGE OR INDUCE PARTICIPATION IN INVESTMENT ACTIVITIES. THE INFORMATION PROVIDED HEREIN SHOULD NOT BE VIEWED AS LEGAL, INVESTMENT, FINANCIAL, TAX, OR ANY OTHER TYPE OF PROFESSIONAL ADVICE AND IS NOT MEANT TO REPLACE PROFESSIONAL CONSULTATION.
-THE CONTENT INCLUDES FORWARD-LOOKING STATEMENTS, ESTIMATIONS, AND/OR HYPOTHETICAL FIGURES THAT ARE INHERENTLY SUBJECT TO UNCERTAINTY AND MAY UNDERGO ADJUSTMENTS; THEREFORE, ACTUAL OUTCOMES MAY DIFFER SIGNIFICANTLY. WE MAKE NO CLAIMS REGARDING THE RELIABILITY, ACCURACY, COMPLETENESS, OR VALIDITY OF THE INFORMATION CONTAINED WITHIN THIS DOCUMENT. BE AWARE THAT THIS MATERIAL MAY BE INACCURATE OR CONTAIN ERRORS. YOU SHOULD RECOGNIZE THAT INFORMATION HEREIN COULD BE UPDATED OR CHANGED WITHOUT NOTICE. ANY ADVICE OR INFORMATION RECEIVED FROM THE LAVA FOUNDATION, REGARDLESS OF HOW IT IS CONVEYED, SHOULD NOT BE SEEN AS CREATING ANY GUARANTEES OR REPRESENTATIONS NOT DIRECTLY STATED IN THIS DOCUMENT.
+这份文件既不是要约出售任何资产，也不是要约购买任何资产，不应被视为要约、广告、邀请、确认或任何形式的金融促销，旨在鼓励或诱导参与投资活动。此处提供的信息不应被视为法律、投资、金融、税务或任何其他类型的专业建议，并且不应取代专业咨询。
+
+内容包括前瞻性陈述、估计和/或假设数字，这些都天然受到不确定性的影响，并且可能会进行调整；因此，实际结果可能会有显著差异。我们对本文档中包含的信息的可靠性、准确性、完整性或有效性不作任何声明。请注意，此材料可能不准确或包含错误。您应该意识到，此处的信息可能会被更新或更改，而无需事先通知。从 LAVA 基金会获得的任何建议或信息，无论是通过何种方式传达，都不应被视为创造任何未在本文档直接声明的保证或陈述。

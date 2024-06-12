@@ -3,169 +3,158 @@ slug: /rewards-restaking
 title: 🛒 Rewards and Restaking
 ---
 
-# 🪙 Rewards and Restaking
-## 🌐 Role of `LAVA`
+# 🪙 奖励与再质押
+## 🌐 `LAVA` 的作用
 
-The `LAVA` token serves various purposes on the Lava Network:
-- `LAVA` is the asset denomination needed for paying the gas fees required to execute transactions or other operations on the Lava Network
-- Validators stake `LAVA` to secure the network and participate in governance 
-- Providers stake `LAVA`, affecting the frequency of their pairing to Consumers
-- Token holders delegate and can restake in `LAVA` to Validators and Providers
-- Initial bootstrapping rewards (“Provider Drops”) for Providers are distributed in `LAVA`
-- Consumers buy subscriptions in `LAVA`
-- Providers are rewarded in `LAVA` monthly, in direct proportion to `LAVA` used to buy subscriptions the previous month
+`LAVA` 代币在 Lava 网络上有多种用途：
+- `LAVA` 是支付在 Lava 网络上执行交易或其他操作所需的燃料费用的资产单位
+- 验证者质押 `LAVA` 来保护网络并参与治理
+- 提供者质押 `LAVA`，影响其与消费者配对的频率
+- 代币持有者可以委托和再质押 `LAVA` 给验证者和提供者
+- 初始启动奖励（“提供者空投”）以 `LAVA` 分发给提供者
+- 消费者用 `LAVA` 购买订阅
+- 提供者每月以 `LAVA` 获得奖励，比例直接取决于上个月用于购买订阅的 `LAVA` 量
 
-## 🏆 Reward Types
-There are **5 types of rewards** on Lava and each is distributed across different actors. All % are determined by and can be changed by DAO governance.
+## 🏆 奖励类型
+Lava 上有 **5 种类型的奖励**，每种奖励分配给不同的参与者。所有的百分比由 DAO 治理决定并可以更改。
 
 ![chart1](/img/tokenomics/chart1.png)
 
-
 :::info
 
-A few flows are missing from this diagram: (i) data accuracy slashing / rewards (ii) cosmos validator slashing for misbehavior (iii) Referral / affiliate fees (iv) staking, (iv) Incentivized RPC Pools, (v) validators rewards from subscription rewards.
+此图表中缺少一些流程：（i）数据准确性的削减/奖励 （ii）宇宙验证者对不当行为的削减 （iii）推荐/联盟费用 （iv）质押，（v）激励 RPC 池，（vi）订阅奖励的验证者奖励。
 
 :::
 
+### 订阅奖励 💼
+消费者用 `LAVA` 购买订阅。其中大部分的 `LAVA` 每月分配给提供者，与所提供计算服务的总量等因素相关。更多详情请参阅白皮书。奖励分配如下：
+- **95%** 分配给提供者及其代币持有者，其中冠军将获得 DAO 确定的一部分佣金
+- **4.9%** 分配给验证者及其代币持有者
+- **0.1%** 分配给社区池
 
-### Subscription Rewards 💼
- 
-Consumers purchase subscriptions with `LAVA`. The majority of this `LAVA` is distributed monthly to Providers, relative to factors such as total compute served. More details are available in the whitepaper. The rewards distribution is as follows:
-- **95%** to Providers and their Delegators, of which Champions will take a % commission determined by the DAO
-- **4.9%** to Validators and their Delegators 
-- **0.1%** to Community Pool 
+### 激励 RPC 池奖励 🛠️
+链通过存入其原生代币在 Lava 上创建激励 RPC 池。此池用于激励提供者为链的 RPC 基础设施提供服务和扩展。奖励分配如下：
+- **95%** 分配给提供者及其代币持有者，其中冠军将获得 DAO 确定的一部分佣金
+- **4.9%** 分配给验证者及其代币持有者
+- **0.1%** 分配给社区池
 
-### Incentivized RPC Pools 🛠️
+### 区块奖励 🥇
+区块奖励是总 `LAVA` 供应量的固定值，每月持续 4 年，可变销毁。奖励分配如下：
 
-Chains create Incentivized RPC Pools on Lava by depositing their native token. This pool is used to incentivize Providers to serve and scale the chain’s RPC infrastructure. The rewards distribution is as follows:
-- **95%** to Providers and their Delegators, of which Champions will take a % commission determined by the DAO
-- **4.9%** to Validators and their Delegators 
-- **0.1%** to Community Pool 
+- **98%** 分配给验证者及其代币持有者
+- **2%** 分配给社区池
 
-### Block Rewards 🥇
-    
-Block rewards are a fixed 3.4% of total `LAVA` supply, monthly over 4 years, with variable burn. The rewards distribution is as follows:
+### 提供者空投 💧
 
-- **98%** to Validators and their Delegators 
-- **2%** to Community Pool
+提供者空投是总 `LAVA` 供应量的固定值，每月持续 4 年，可变销毁。
 
+提供者空投是专门用于吸引提供者加入网络并在早期增长阶段提供服务的奖励储备。来自此储备的支付被安排在 4 年内分配，并根据对 Lava 的支付需求而变化：
+- **0-100%** 分配给提供者
+- **0-100%** 销毁
 
-### Provider drops 💧
+对于 Lava 订阅的支付需求越高，提供者空投的支付越高（每月限额）。
 
-Provider Drops are a fixed 6.6% of total `LAVA` supply, monthly over 4 years, with variable burn. 
+### 提供者和验证者佣金 💰
 
-Provider Drops are a rewards reserve dedicated to attracting Providers to join the network and offer service in the early growth stages. The payouts from this reserve are scheduled to be distributed across 4 years and are variable based on paid demand: 
-- **0-100%** to Providers
-- **0-100%** burn
+代币持有者获得奖励减去由提供者和验证者设置的佣金百分比。
 
-The higher the paid demand for Lava subscriptions, the higher the payouts of Provider Drops (up to a limit per month).
+提供者的 *默认佣金* 为 **50%**。
 
+提供者的佣金预计会更高，因为他们运营的业务比验证者更需要操作。
 
-### Provider and Validator Commissions 💰
+## 👤 经济参与者与奖励
 
-Delegators earn rewards minus a commission % Set by Providers and Validators. 
+### 链 🔗
+链支付燃料费用以在 `LAVA` 代币中部署激励 RPC 池。这些激励 RPC 池由该链的原生代币组成。代币用于吸引提供者为 RPC 提供服务。
 
-The *default commission *for Providers is **50%**.
-
-Commission is expected to be higher for Providers because they run a more operationally intensive business than Validators.
-
-
-
-
-## 👤 Economic Actors & Rewards
-
-### Chains 🔗
-Chains pay gas fees to deploy an Incentivized RPC Pool in `LAVA` tokens. These Incentivized RPC Pools consist of the native tokens of that chain. Tokens are used to attract Providers to serve RPC. 
-
-Each month, Pool rewards are distributed to Providers based on the amount of compute units served and the quality of that service. 
+每个月，池奖励根据提供的计算单位量和该服务的质量分配给提供者。
 
 <br />
 
-### Staking and Restaking 🔄
+### 质押和再质押 🔄
 
-Lava can be delegated to validators, who earn block rewards for securing the network. This delegation can then be restaked to Providers, who serve subscriptions defined by their spec. Restaking is to a chosen spec and Provider. 
+Lava 可以委托给验证者，他们会因保护网络而获得区块奖励。此委托可以再质押给提供者，提供者根据其规格提供服务。再质押是对选择的规格和提供者的。
 
-The following shows the different scenarios for delegating to Validators and Providers:
+以下是将代币委托给验证者和提供者的不同情况：
 
-| Scenario                      | Flow                                                    | Rationale                                                                              |
+| 情景                      | 流程                                                    | 理由                                                                              |
 |-------------------------------|---------------------------------------------------------|----------------------------------------------------------------------------------------|
-| I want to delegate to a Validator | Delegate to a Validator. Optionally restake to a chosen Provider and spec | Improves Quality of Service by allowing Validator delegators to contribute towards Provider selection. |
-| I want to delegate to a Provider | Delegate a Validator and then restake to a chosen Provider and spec. | Improves capital efficiency by requiring Provider delegators to contribute towards security |
-| I want to stake as a Validator | Stake as a Validator. Optionally restake to a chosen Provider and spec | Improves Quality of Service by allowing Validators to contribute towards Provider selection. |
-| I want to stake as a Provider | The tx to create a Provider first delegates to a Validator then restakes as a Provider | Improves capital efficiency by requiring Providers to contribute towards security |
+| 我想委托给验证者 | 委托给验证者。可选择再质押给选择的提供者和规格 | 通过允许验证者委托者参与提供者选择来改善服务质量。 |
+| 我想委托给提供者 | 委托给验证者，然后再质押给选择的提供者和规格。 | 通过要求
 
+提供者委托者参与安全性来提高资本效率。 |
+| 我想作为验证者质押 | 作为验证者质押。可选择再质押给选择的提供者和规格 | 通过允许验证者参与提供者选择来改善服务质量。 |
+| 我想作为提供者质押 | 创建提供者的交易首先委托给验证者，然后再质押给提供者 | 通过要求提供者参与安全性来提高资本效率 |
 
-<details><summary> Example </summary>
+<details><summary> 示例 </summary>
 
-Staking to a Validator Scenario #1: Validator has staked a minimum of 100 `LAVA` and a user wants to delegate. The Delegator can stake `LAVA` solely to the Validator, without obligation to restake to a Provider. 
+委托给验证者的情况 #1：验证者已质押了最低的 100 `LAVA`，用户想要委托。委托者可以将 `LAVA` 单独委托给验证者，无需再质押给提供者。
 
-Staking to a spec Scenario #2: Provider has staked a minimum of 100 `LAVA` and a user wants to delegate to the Provider’s Dymension RPC spec to earn a share of their rewards for serving Dymension RPC. Delegator is required to first delegate to a Validator. No additional capital is required but the delegation can be restaked to a spec, meaning greater risk but higher rewards (Provider rewards to Delegators). 
-
-</details>
-<br />
-
-### Validators ⚖️
-
-Validators earn block rewards, fees from subscriptions, and incentives from RPC pools.
-
-- **Block rewards**: for every successfully signed block, Validators and their delegators/restakers earn rewards from a reserve worth 3.4% of total supply 
-- **Commission on delegations**: Validators can set a commission on delegator rewards
-- **Provider subscription rewards**: 4.9% of subscription rewards go to Validators and their delegators
-- **Incentivized RPC Pool rewards**: 4.9% of the Pool rewards go to Validators and their delegators earn. Pools consist of the native token of a chain deployed on Lava
-
-
-<details><summary> Example </summary>
-
-Validator has staked a minimum of 100 `LAVA`. A user delegates 50 `LAVA` to the Validator i.e. Validator has 66.6% of stake and delegator has 33.3%. 
-Consider a scenario where the block reward is 1000 `LAVA` and commission is 5%. 
-
-98% (980 `LAVA`) of Block rewards go to Validators and delegators. 2% goes to the Community Pool (20 `LAVA`). 
-
-Of the 980 `LAVA`, the Validator gets (980*0.66) + (980*0.33*0.05) in rewards i.e. 668.85 `LAVA`. Delegators would get 311.15 `LAVA`. 
-
-Additionally, if there is an Incentivized RPC Pool of 1000 TOKEN or a Subscription pool of 1000 `LAVA`, Providers and their delegators would get 95%, Validators and their delegators would get 4.9% and the Community Pool would get 0.1%. 
-
-Of the 4.9% (49 TOKEN or `LAVA`), assuming the same 2:1 ratio in Validator:Delegator stake and a 5% commission, the Validator gets (49*0.66) + (49*0.33*0.05) in rewards i.e. 33.1485 TOKEN or `LAVA`. Delegators would get 15.8515 TOKEN or `LAVA`. 
+委托到规格的情况 #2：提供者已经质押了最低的 100 `LAVA`，用户想要委托给提供者的 Dymension RPC 规格以获得其提供的服务的一部分奖励。委托者需要首先委托给验证者。不需要额外的资本，但委托可以再质押到规格，意味着风险更高但收益更高（提供者奖励给委托者）。 
 
 </details>
 <br />
 
-### Data Providers 📊
-Providers earn rewards from subscriptions, commission on restaked `LAVA`, Incentivized RPC Pools and variable Provider Drops. 
+### 验证者 ⚖️
 
-- **Provider Subscription rewards**: Providers and their restakers earn 95% of subscription rewards. A subscription is not to an individual Provider, and this 95% is shared between all Providers who have served the relays under that subscription
-- **Commission on restaked `LAVA`**: Providers set a commission on delegator rewards
-- **Incentivized RPC Pool rewards**: Providers and their delegators earn 95% of the Pool rewards. Pools consist of the native token of a chain deployed on Lava
-- **Provider drops**: Lava has a rewards reserve designed to incentivize node runners to join in the initial phases of Mainnet
+验证者通过区块奖励、订阅费用和 RPC 池的激励获得奖励。
 
-<details><summary> Example </summary>
+- **区块奖励**：对每个成功签名的区块，验证者及其代币持有者/再质押者都会从总供应量中价值为 3.4% 的储备中获得奖励
+- **委托佣金**：验证者可以在委托者奖励上设置佣金
+- **提供者订阅奖励**：订阅奖励的 4.9% 分配给验证者及其代币持有者
+- **激励 RPC 池奖励**：池奖励的 4.9% 分配给验证者及其代币持有者。池由在 Lava 上部署的链的原生代币组成
 
-Provider has staked a minimum of 100 `LAVA`. A user delegates 50 `LAVA` to the Provider (which has also restaked to a Validator of their choice) i.e. Provider has 66.6% of stake and delegator has 33.3%. The Delegator would also restake the same 50 `LAVA` to a Validator, taking on extra risk but earning additional yield, as calculated in the previous section on Validator rewards.
+<details><summary> 示例 </summary>
 
-Consider a scenario where the monthly Subscriptions total to 1000 `LAVA` and Provider commission is 5%. This example assumes that there is 1 Provider and Champion commission is 0% - learn more in the next section.
+验证者已质押了最低的 100 `LAVA`。用户委托了 50 `LAVA` 给验证者，即验证者持有 66.6% 的份额，委托者持有 33.3%。假设区块奖励为 1000 `LAVA`，佣金为 5%。
 
-The Provider and their delegators would get 95%, Validators and their delegators would get 4.9% and the Community Pool would get 0.1%. 
-Of the 95% (950 `LAVA`), given that Provider stake is 2:1 of delegations and there is a 5% commission, the Provider gets (950*0.66) + (950*0.33*0.05) in rewards i.e. 642.675 `LAVA`. Delegators would get 307.325 `LAVA`. 
+98%（980 `LAVA`）的区块奖励分配给验证者及其委托者。2% 分配给社区池（20 `LAVA`）。
 
-If there are multiple Providers on the network, individual Subscription rewards are determined by factors including Quality of Service and compute served. More details are available in the whitepaper. 
+在 980 `LAVA` 中，验证者获得（980*0.66）+（980*0.33*0.05）的奖励，即 668.85 `LAVA`。委托者将获得 311.15 `LAVA`。
 
-Providers also receive Drops, a variable reward boost distributed monthly in direct proportion to paid demand for Lava. In cases where there are a few Providers or quality is low, Drop rewards may not be distributed. This is to prevent collusion between Consumers and Providers to earn rewards.
+此外，如果有 1000 TOKEN 的激励 RPC 池或 1000 `LAVA` 的订阅池，提供者及其代币持有者将获得 95% 的奖励，验证者及其代币持有者将获得 4.9%，社区池将获得 0.1%。
+
+在 4.9%（49 TOKEN 或 `LAVA`）中，假设验证者和委托者的比例仍为 2:1，佣金为 5%，验证者将获得（49*0.66）+（49*0.33*0.05）的奖励，即 33.1485 TOKEN 或 `LAVA`。委托者将获得 15.8515 TOKEN 或 `
+
+LAVA`。
+
+</details>
+<br />
+
+### 数据提供者 📊
+提供者通过订阅奖励、委托者奖励、激励 RPC 池和可变的提供者空投获得奖励。
+
+- **提供者订阅奖励**：提供者及其再质押者获得 95% 的订阅奖励。订阅不是给个人提供者的，这 95% 将在所有提供者之间共享，他们已经为该订阅提供了中继服务
+- **委托者奖励佣金**：提供者在委托者奖励上设置佣金
+- **激励 RPC 池奖励**：提供者及其委托者获得 95% 的池奖励。池由在 Lava 上部署的链的原生代币组成
+- **提供者空投**：Lava 设有一个奖励储备，旨在激励节点运营者在 Mainnet 的早期阶段加入网络
+
+<details><summary> 示例 </summary>
+
+提供者已质押了最低的 100 `LAVA`。用户委托了 50 `LAVA` 给提供者（并且也再质押到其选择的验证者），即提供者持有 66.6% 的份额，委托者持有 33.3%。委托者还将相同的 50 `LAVA` 再质押到验证者，承担了额外的风险，但获得了额外的收益，如前面对验证者奖励部分的计算所述。
+
+假设月度订阅总额为 1000 `LAVA`，提供者佣金为 5%。该示例假设网络上有 1 个提供者，而冠军佣金为 0% - 在下一节中了解更多信息。
+
+提供者及其委托者将获得 95%（950 `LAVA`）的订阅奖励，验证者及其委托者将获得 4.9%，社区池将获得 0.1%。
+在 950 `LAVA` 中，鉴于提供者质押是委托的两倍，还有 5% 的佣金，提供者将获得（950*0.66）+（950*0.33*0.05）的奖励，即 642.675 `LAVA`。委托者将获得 307.325 `LAVA`。
+
+如果网络上有多个提供者，个人订阅奖励将根据诸如服务质量和提供的计算量等因素确定。更多详情请参阅白皮书。
+
+提供者还会收到空投，这是一个根据对 Lava 的支付需求每月直接分配的可变奖励提升。在只有少数提供者或质量较低的情况下，可能不会分配空投奖励。这是为了防止消费者和提供者之间的串通来获取奖励。
 
 </details>
 <br/>
 
-### Spec Champions 🏅
-Champions create and maintain specs on Lava, adding new chains and APIs for Providers to serve. Champions earn a % of Subscription rewards after Validator and Community Pool commission has been subtracted, but before Providers and Delegators. This % commission is decided by DAO governance. 
+### 规格冠军 🏅
+冠军在 Lava 上创建和维护规格，为提供者提供新的链和 API。冠军会在验证者和社区池佣金扣除之后，但在提供者和委托者之前，获得订阅奖励的一部分百分比。此佣金百分比由 DAO 治理决定。 
 
+<details><summary> 示例 </summary>
 
+提供者已质押了最低的 100 `LAVA`。用户委托了 50 `LAVA` 给提供者（并且也再质押到其选择的验证者），即提供者持有 66.6% 的份额，委托者持有 33.3%。
 
-<details><summary> Example </summary>
+假设月度订阅总额为 1000 `LAVA`，提供者佣金为 5%。此示例假设冠军佣金为 1%。
+提供者和其委托者将在验证者和社区池奖励分配后（剩余的 5%）获得 95%（950 `LAVA`）的订阅奖励。从这 95% 中扣除冠军佣金。
 
-Provider has staked a minimum of 100 `LAVA`. A user delegates 50 `LAVA` to the Provider (which has also restaked to a Validator of their choice) i.e. Provider has 66.6% of stake and delegator has 33.3%.
-
-Consider a scenario where the monthly Subscriptions total to 1000 `LAVA` and Provider commission is 5%. This example assumes that the Champion commission is 1%. 
-Providers and their Delegators receive 95% (950 `LAVA`) of the Subscription rewards, after Validator and Community Pool rewards have been distributed (the remaining 5%). Champion commission is taken from this 95%.
-
-Of the 950 `LAVA`, assuming a Champion commission of 1%, Champions would receive 9.5 `LAVA` and the remaining 940.5 would be shared between Providers and their Delegators, as described in the Provider rewards section above. The 9.5 `LAVA` rewards are recalculated monthly, based on the amount of `LAVA` used to purchase subscriptions
+在 950 `LAVA` 中，假设冠军佣金为 1%，冠军将获得 9.5 `LAVA`，其余的 940.5 将在提供者和其委托者之间分享，如上文提供者奖励部分所述。这 9.5 `LAVA` 的奖励将根据用于购买订阅的 `LAVA` 量每月重新计算。
 
 </details>
