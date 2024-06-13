@@ -51,9 +51,12 @@ When staking as a provider, there are four main parameters used in the transacti
     GL = 65535; // Global
 ```
 3. **ChainID**: The identifier of the target blockchain network, such as Cosmos Mainnet, Ethereum Ropsten, etc.
-4. **Endpoints**: A list of endpoints, each defining an address and geolocation
+4. **Endpoints**: A list of endpoints, each defining an address and geolocation.
+5. **Vault address**: An additional address that can be used as a secure location for holding funds.
 
 Providers need to stake separately for each supported spec. For example, if you support both Cosmos and Ethereum, you will need two separate stakes. Once your request is verified and included in the chain state, you'll be included in the Pairing List starting from the next Epoch and can begin servicing consumer requests through your nodes.
+
+To enhance security, you can optionally define a vault address which will holds the provider's funds and rewards while operating the provider with a different address. This ensures the separation of private keys and lets users keep their vault private key on a different machine from the one running the provider process.
 
 ### **Supported APIs and Chain Specifications**
 
