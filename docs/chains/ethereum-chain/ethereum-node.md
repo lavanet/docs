@@ -10,7 +10,7 @@ import TabItem from '@theme/TabItem';
 
 ## Requirements 📄 
 
-Ethereum nodes have some basic hardware requirements that must be met in order to proceed with the install process:
+Ethereum nodes have some basic hardware requirements that must be met in order to proceed with the installation process:
 
 <Tabs>
 <TabItem value="manual_req" label="Manual">
@@ -37,7 +37,7 @@ Intel Core i5/i7
 
 ## Choose your Path 🛣️
 
-Current Ethereum recommended practice is to manage your node using DAppNode. You can follow along the very helpful guide provided by DAppNode [here](https://docs.dappnode.io/docs/user/getting-started/choose-your-path).
+The current Ethereum recommended practice is to manage your node using DAppNode. You can follow along the very helpful guide provided by DAppNode [here](https://docs.dappnode.io/docs/user/getting-started/choose-your-path).
 
 If you elect to go the more advanced route, you can setup your node using the command line or another recommended tool. A list of guided setups is available on the [Ethereum developer docs](https://ethereum.org/en/developers/docs/nodes-and-clients/run-a-node/#spinning-up-node).
 
