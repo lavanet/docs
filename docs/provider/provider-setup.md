@@ -202,6 +202,10 @@ lavap tx pairing stake-provider [chain-id] [amount] [endpoint endpoint ...] [geo
 Note that this TX can also be used to increase the provider's stake. To increase, the amount should be the sum of the current amount and the desired addition. For example, a provider is staked with `100ulava` and wants to increase its stake by `10ulava`. Then, the appropriate `amount` argument for the `stake-provider` command should be `110ulava`.
 :::
 
+:::info 
+Use the optional `--provider` flag to define a different address that will be used to operate the provider. This will make the address of the `--from` flag to be the provider's vault address, which will hold the provider's funds and will be able to perform stake or funds related transactions (like unstake, modify-stake and more).
+:::
+
 #### Parameters Description
 
 - **`chain-id`** - The ID of the serviced chain (e.g., **`COS4`** or **`FTM250`**). To get the full list of available chains use: `lavap query spec show-all-chains --node {LAVA_RPC_NODE}`.
@@ -233,6 +237,7 @@ Note that this TX can also be used to increase the provider's stake. To increase
 - **`--gas`** - The gas limit for the transaction (e.g., **`"auto"`**).
 - **`--gas-adjustment`** - The gas adjustment factor (e.g., **`"1.5"`**).
 - **`--node`** - A RPC node for Lava (e.g., **`https://public-rpc-testnet2.lavanet.xyz:443/rpc/`**).
+- **`--provider`** - The provider's operational address (address used to operate the provider process, default is vault address).
 
 ### Stake Examples
 
