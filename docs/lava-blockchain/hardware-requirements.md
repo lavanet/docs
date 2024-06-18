@@ -9,7 +9,7 @@ title: Hardware requirements
 - Shared compute instance (e.g. AWS EC2 instance)
 - Your personal station
 
-**Docker** container are available at [Lava's repository on GitHub](https://github.com/lavanet/lava/tree/main/docker)
+**Docker** containers are available at [Lava's repository on GitHub](https://github.com/lavanet/lava/tree/main/docker)
 
 ## Hardware requirements
 
