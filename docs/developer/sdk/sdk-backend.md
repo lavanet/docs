@@ -18,7 +18,7 @@ title: Backend Use 🛡️
 
 ## ↪️ Recommended Flow
 
-Although you can subscribe your private key from the commandline, the easiest way to get started is through Lava's Gateway. 
+Although you can subscribe your private key from the command line, the easiest way to get started is through Lava's Gateway. 
 1. Sign up to the Gateway. 👉🏿[Register now](https://gateway.lavanet.xyz/?utm_source=sdk-backend-page&utm_medium=docs&utm_campaign=docs-to-gateway) if you haven’t already!
 
 2. Create a Project and Select your APIs!
@@ -45,6 +45,6 @@ If you already have `lavad` installed - you can easily generate a lava address b
 
 <iframe width="100%" height="480" src="/img/tutorial/sdk/adding_lava_key.mp4" frameborder="0" allow="autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
- If you have an address that exists and no longer remember its private key, you can alwasy use `lavad keys export <key-name> --unarmored-hex --unsafe` to see your privatekey printed as a string. Do not share the output with anyone!
+ If you have an address that exists and no longer remembers its private key, you can always use `lavad keys export <key-name> --unarmored-hex --unsafe` to see your privatekey printed as a string. Do not share the output with anyone!
 
 🚀  Your private-key, public-key pair can be used for backend development provided you have a subscription!
