@@ -1,9 +1,9 @@
 ---
 slug: /agoric-node
-title: Running a Agoric RPC Node
+title: Running an Agoric RPC Node
 ---
 
-# Running a Agoric RPC Node
+# Running an Agoric RPC Node
 
 ## Requirements 📄 
 
@@ -11,7 +11,7 @@ title: Running a Agoric RPC Node
 Users may experience issues when attempting to run instructions using versions >= 18.19.0 of `Node.js`. Node versions >=18.19 introduce a breaking change to AgoricSDK, and are not currently supported.
 :::
 
-There are notable minimum hardware requirements in order to run a Agoric RPC Nodes:
+There are notable minimum hardware requirements in order to run Agoric RPC Nodes:
 
     16 GB RAM
     4-Cores x86_64 CPU
