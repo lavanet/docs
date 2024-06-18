@@ -20,7 +20,7 @@ Validators earn LAVA from the creation of new blocks and the transaction fees, a
 _Note_: This does not cover Delegating LAVA to validators
 
 
-:::tip Start a validators
+:::tip Start a validator
 
 [<RoadmapItem icon="🛠" title="Setup steps" description="Step by step guide on getting started"/>](/validator-manual)
 :::

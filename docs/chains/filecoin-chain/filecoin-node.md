@@ -23,7 +23,7 @@ The list above is specific to Debian/Ubuntu-based OSes. For a different configur
 
 ## Install Lotus Filecoin Node 🚀
 
-Filecoin is a divers ecosystem with different node implementations. Each node implementation has different ways to generate and manage authentication tokens. This guide uses [Lotus Filecoin](https://lotus.filecoin.io/lotus/get-started/what-is-lotus/), which is the reference node implementation for the Filecoin network.
+Filecoin is a diverse ecosystem with different node implementations. Each node implementation has different ways to generate and manage authentication tokens. This guide uses [Lotus Filecoin](https://lotus.filecoin.io/lotus/get-started/what-is-lotus/), which is the reference node implementation for the Filecoin network.
 
 ### Get Lotus
 To get started, input the following into the terminal:
@@ -47,7 +47,7 @@ make clean calibnet # Calibration with min 32GiB sectors
 ```
 
 ### Compile Lotus
-Finalize the install by inputting `sudo make install` in the terminal.
+Finalize the installation by inputting `sudo make install` in the terminal.
 You can run `lotus --version` to ensure that this process completed successfully.
 
 :::tip

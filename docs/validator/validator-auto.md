@@ -29,7 +29,7 @@ Running the script will:
 
 1. Install `lavad` (using Cosmovisor)
 2. Join the testnet
-3. Sync to latest block
+3. Sync to the latest block
 
 ```bash
 curl -s --location \

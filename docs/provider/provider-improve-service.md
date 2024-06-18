@@ -222,7 +222,7 @@ lavap test rpcprovider ${PUBLIC_ADDRESS}
 
 ### Errors ❌
 these mean the provider service connection was solid but all relays turned to be errors, might be caused by the following:
-* disabled chain - the provider doesnt have access to the node, or a verification does not pass, and the chain is disabled
+* disabled chain - the provider doesn't have access to the node, or verification does not pass, and the chain is disabled
 * unexpected errors
 * timeouts
 

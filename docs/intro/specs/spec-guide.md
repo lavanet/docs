@@ -134,7 +134,7 @@ This field defines the number of blocks that should be considered safe from chai
 
 <details><summary> `blocks_in_finalization_proof` </summary>
 
-This field defines the number of blocks that should be found in a finality proof; this will vary from chain to chain. Look to other similarly architected specs fo suggested values.
+This field defines the number of blocks that should be found in a finality proof; this will vary from chain to chain. Look to other similarly architected specs for suggested values.
 
 </details>
 
@@ -152,7 +152,7 @@ This is the maximum amount of blocks that can pass before the data a provider se
 
 <details><summary> `shares` </summary>
 
-The default is `1`. This is a bonus multiplier for rewards at the end of each month. There should be no reason to change this unless diected otherwise.
+The default is `1`. This is a bonus multiplier for rewards at the end of each month. There should be no reason to change this unless directed otherwise.
 
 </details>
 

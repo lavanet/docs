@@ -1,13 +1,13 @@
 ---
 slug: /base-node
-title: Running an Base RPC Node 
+title: Running a Base RPC Node 
 ---
 
 # Running a Base RPC Node
 
 ## Requirements 📄 
 
-Before you start, be sure to install [Docker](https://www.docker.com/get-started). Once you have docker installed, you can continue onto the next step.
+Before you start, be sure to install [Docker](https://www.docker.com/get-started). Once you have docker installed, you can continue to the next step.
 
     >16 GB RAM
     SSD, 2 TB free space
@@ -17,7 +17,7 @@ Before you start, be sure to install [Docker](https://www.docker.com/get-started
 
 ### 💿 Setup a L1 Full Node RPC 
 
-You need a Ethereum L1 Full Node running before you can use Base. Set `OP_NODE_L1_ETH_RPC` if you're using docker-compose.
+You need an Ethereum L1 Full Node running before you can use Base. Set `OP_NODE_L1_ETH_RPC` if you're using docker-compose.
 
 ### ✨ Clone the Repo 
 

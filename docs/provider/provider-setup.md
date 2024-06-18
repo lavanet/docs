@@ -33,7 +33,7 @@ In this guide, we'll create a configuration file that includes multiple chains (
 ## Step 1: Setup TLS
 As part of good security practice, Lava protocol communicates with end-to-end encryption between providers and consumers of RPC. This requires some additional configuration steps on a provider, namely, the setup of TLS certification with a certification authority.
 
-❗❗ If you already use a **TLS Certificate signed by a Certifiying Authority**, you can continue onto step 2. Otherwise, you may want to check out our guide on [setting up TLS for Lava Providers](/provider-tls).
+❗❗ If you already use a **TLS Certificate signed by a Certifying Authority**, you can continue onto step 2. Otherwise, you may want to check out our guide on [setting up TLS for Lava Providers](/provider-tls).
 
 ## Step 2: Run RPCProvider process
 

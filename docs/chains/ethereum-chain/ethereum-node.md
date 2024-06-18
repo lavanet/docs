@@ -10,7 +10,7 @@ import TabItem from '@theme/TabItem';
 
 ## Requirements 📄 
 
-Ethereum nodes have some basic hardware requirements that must be met in order to proceed with the install process:
+Ethereum nodes have some basic hardware requirements that must be met in order to proceed with the installation process:
 
 <Tabs>
 <TabItem value="manual_req" label="Manual">
