@@ -78,7 +78,7 @@ koii-validator \
 
 ### 🧪 Test Your Endpoints
 
-There maybe additional configurations necessary to complete your setup.
+There may be additional configurations necessary to complete your setup.
 You should consult the [Validator setup guide](https://docs.koii.network/run-a-node/k2-validators/validator-setup) for Koii and the [RPC Setup Guide](https://docs.solana.com/validator/get-started/setup-an-rpc-node) for Solana to ensure you've covered all necessary steps.
 
 
