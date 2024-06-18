@@ -9,10 +9,11 @@ title: Lava Public RPC 🌋
 
 | Service 🔌 | URL 🔗 | Protocol |
 |--------|-------|-------- |
-| 🟢 rpc | https://public-rpc-testnet2.lavanet.xyz:443    | HTTP/1.1 |
-| 🟢 rest | https://rest-public-rpc.lavanet.xyz:443    | HTTP/1.1 |
-| 🟢 grpc | grpc-public-rpc.lavanet.xyz:443 |    HTTP/2 |
-| 🟢 archive/rpc | https://lava-archive.lavanet.xyz:443 |    HTTP/1.1 |
+| 🟢 rpc | <https://lav1.tendermintrpc.lava.build:443>    | HTTP/1.1 |
+| 🟢 websocket | lav1.tendermintrpc.lava.build/websocket    | HTTP/1.1 |
+| 🟢 rest | <https://lav1.lava.build:443>    | HTTP/1.1 |
+| 🟢 grpc | lav1.grpc.lava.build:443 |    HTTP/2 |
+| 🟢 archive/rpc | <https://lava-archive.lavanet.xyz:443> |    HTTP/1.1 |
 
 ## Incentivized Public RPC 💫
 
