@@ -1,6 +1,6 @@
 ---
 slug: /celo-node
-title: Running an Celo RPC Node
+title: Running a Celo RPC Node
 ---
 
 # Running a Celo RPC Node
