@@ -27,6 +27,7 @@ https://lava.explorers.guru/
 - ✨[Stake Village](https://exp.stakevillage.net/Lava-testnet)
 - ✨[STAKEME](https://lava.exploreme.pro)
 - ✨[AKNodes](https://explorer.aknodes.com/LAVA-TESTNET)
+- ✨[CoinHunters](https://explorer.coinhunterstr.com/lava)
 
 
 ## Community Public RPC Explorer 🕵🏼
