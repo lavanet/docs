@@ -3,9 +3,9 @@ slug: /public-rpc
 title: Lava Public RPC 🌋
 ---
 
-# Lava Public RPC (Testnet-2)
+# Lava Public RPC
 
-## Official Endpoints ⭕
+## Official Testnet-2 Endpoints ⭕
 
 | Service 🔌 | URL 🔗 | Protocol |
 |--------|-------|-------- |
@@ -14,6 +14,12 @@ title: Lava Public RPC 🌋
 | 🟢 rest | <https://lav1.lava.build:443>    | HTTP/1.1 |
 | 🟢 grpc | lav1.grpc.lava.build:443 |    HTTP/2 |
 | 🟢 archive/rpc | <https://lava-archive.lavanet.xyz:443> |    HTTP/1.1 |
+
+## Official Mainnet Endpoints 🌎
+
+:::info
+Official endpoint with Lava over Lava coming soon
+:::
 
 ## Incentivized Public RPC 💫
 

@@ -18,6 +18,9 @@ https://lava.explorers.guru/
 </center>
 
 ## Community Block Explorers 🧑🏾‍🤝‍🧑🏾
+
+### TestNet Explorers
+
 - ✨[BCCNodes](https://explorer.bccnodes.com/lava-T/)
 - ✨[Kjnodes](https://explorer.kjnodes.com/lava-testnet)
 - ✨[Nodeist](https://exp.nodeist.net/Lava)
@@ -27,6 +30,10 @@ https://lava.explorers.guru/
 - ✨[Stake Village](https://exp.stakevillage.net/Lava-testnet)
 - ✨[STAKEME](https://lava.exploreme.pro)
 - ✨[AKNodes](https://explorer.aknodes.com/LAVA-TESTNET)
+
+### Mainnet Explorers
+
+Will be added soon
 
 
 ## Community Public RPC Explorer 🕵🏼
