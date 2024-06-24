@@ -1,6 +1,6 @@
 ---
 slug: /access-sdk
-title: SDK
+title: SDK on Lava Testnet
 ---
 
 # Lava SDK (Beta)

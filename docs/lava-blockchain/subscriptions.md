@@ -6,7 +6,7 @@ title: Subscription Plans
 # Subscription Plans
 
 :::info
-❗ Lava network offers various subscription plans for consumers to access its services. While the network remains in testnet, subscriptions should be used primarily for testing purposes.
+❗ “Subscriptions are only currently available on Lava Testnet and not yet available on Mainnet. This functionality needs to be passed through governance. Subscriptions are recommended for larger dapps that require higher usage and scale; the majority of dapps and users will find our free Incentivized Public RPC endpoints more than enough.”
 :::
 
 ## Overview 🔍

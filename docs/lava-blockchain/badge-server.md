@@ -1,6 +1,6 @@
 ---
 slug: /badge-server
-title: Badge Server
+title: Badge Server on Lava Testnet
 ---
 
 # Badge Server
