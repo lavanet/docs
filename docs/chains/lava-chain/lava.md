@@ -42,7 +42,11 @@ https://raw.githubusercontent.com/lavanet/lava/main/cookbook/specs/spec_add_lava
 ```bash
 lavad q spec show-chain-info LAV1
 ```
+#### ⌨️ Command for Mainnet:
 
+```bash
+lavad q spec show-chain-info lava-mainnet-1
+```
 #### 📋 List :
 
 

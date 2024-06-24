@@ -52,4 +52,4 @@ Lava documentation is intended to be the definitive reference for all technical 
 - [💬 Community Forum](https://community.lavanet.xyz/?utm_source=intro-page&utm_medium=docs) - Long-form Discussion
 - [🐦 Twitter/X Account](https://twitter.com/lavanetxyz) - Follow us on X!
 
-
+## Mainnet
