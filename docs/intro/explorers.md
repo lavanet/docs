@@ -35,3 +35,5 @@ One of our community members is providing an experimental service to see all exp
 ## Lava SDK Block Explorer 🌐 
 One of our team members has developed an [`allblocks`](/all-blocks-app) application which gets the latest block from Lava supported chains and reports latency information:
 > https://allblocks.vercel.app
+
+## Mainnet
