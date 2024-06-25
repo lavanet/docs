@@ -34,9 +34,15 @@ To ensure that a LavaVisor binary is created, navigate to your local `/lava` dir
 
 To configure your Lavavisor properly, you have two options to choose from:
 
-- [**Process Wrapper**](/lavavisor-wrap): This option offers advanced capabilities, including compatibility with keyring-based operating systems and enhanced control over your processes.
+- **Process Wrapper**: This option offers advanced capabilities, including compatibility with keyring-based operating systems and enhanced control over your processes.
 
-- [**Service Manager**](/lavavisor-services): If you are managing multiple services on a single machine, the service manager may be a suitable choice. It maintains a single Lavavisor instance, resulting in fewer queries.
+  - [**Testnet Process Wrapper**](/testnet-lavavisor-wrap)
+  - [**Mainnet Process Wrapper**](/mainnet-lavavisor-wrap)
+
+- **Service Manager**: If you are managing multiple services on a single machine, the service manager may be a suitable choice. It maintains a single Lavavisor instance, resulting in fewer queries.
+
+  - [**Testnet Service Manager**](/testnet-lavavisor-services)
+  - [**Mainnet Service Manager**](/mainnet-lavavisor-services)
 
 ### Recommended Route ⤵️
 

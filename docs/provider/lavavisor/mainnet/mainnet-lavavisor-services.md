@@ -1,13 +1,13 @@
 ---
-slug: /lavavisor-services
-title: Service Manager
+slug: /mainnet-lavavisor-services
+title: Mainnet Service Manager
 ---
 
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# **LavaVisor Service Manager**
+# **Mainnet LavaVisor Service Manager**
 
 ## 📄 Overview 
 Lavavisor Service Manager is a feature to enable the users to run one lavavisor service to manage multiple `lavap` services. 
@@ -15,7 +15,7 @@ The benefit of using this approach is that running only one lavavisor instance c
 that each lavavisor instance would query once every 30 seconds. 
 
 :::info 
-We improved the rpc calls intervals in recent patches so we recommend using the [`lavavisor wrap` or `pod` commands](/lavavisor-wrap#services) instead of the service manager command. This is still applicable even for multiple services.
+We improved the rpc calls intervals in recent patches so we recommend using the [`lavavisor wrap` or `pod` commands](/mainnet-lavavisor-wrap#services) instead of the service manager command. This is still applicable even for multiple services.
 
 :::
 
@@ -38,7 +38,7 @@ LavaVisor `init` command initializes the environment for LavaVisor. It is genera
 **Example usage:**
 
 ```bash
-lavavisor init --auto-download --chain-id lava-testnet-2
+lavavisor init --auto-download --chain-id lava-mainnet
 ```
 
 
@@ -78,11 +78,11 @@ LavaVisor starts the specified services using the linked binary. It also starts 
 
 3. Instead of creating service files manually, execute `lavavisor create-service` command to generate the service files. Let’s say we want to start one consumer and two provider processes, then we need to execute total of three commands like this:
 
-    - `lavavisor create-service consumer /home/ubuntu/config/consumer-ETH1.yml --geolocation 1 --from user1 --log_level info --keyring-backend test --chain-id lava-testnet-2 --node https://public-rpc-testnet2.lavanet.xyz:443/rpc/`
+    - `lavavisor create-service consumer /home/ubuntu/config/consumer-ETH1.yml --geolocation 1 --from user1 --log_level info --keyring-backend test --chain-id lava-mainnet --node https://public-rpc-mainnet.lavanet.xyz:443/rpc/`
 
-    - `lavavisor create-service provider /home/ubuntu/config/provider1-ETH1.yml --geolocation 1 --from servicer1 --log_level info --keyring-backend test --chain-id lava-testnet-2 --node https://public-rpc-testnet2.lavanet.xyz:443/rpc/`
+    - `lavavisor create-service provider /home/ubuntu/config/provider1-ETH1.yml --geolocation 1 --from servicer1 --log_level info --keyring-backend test --chain-id lava-mainnet --node https://public-rpc-mainnet.lavanet.xyz:443/rpc/`
     
-    - `lavavisor create-service provider /home/ubuntu/config/provider1-LAV1.yml --geolocation 1 --from servicer2 --log_level info --keyring-backend test --chain-id lava-testnet-2 --node https://public-rpc-testnet2.lavanet.xyz:443/rpc/`
+    - `lavavisor create-service provider /home/ubuntu/config/provider1-LAV1.yml --geolocation 1 --from servicer2 --log_level info --keyring-backend test --chain-id lava-mainnet --node https://public-rpc-mainnet.lavanet.xyz:443/rpc/`
 
 4. Check the `~/.lavavisor/` dir and validate `config.yml` . It should look like this (adjust the service names according to your process):
 

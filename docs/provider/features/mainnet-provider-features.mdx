@@ -1,0 +1,465 @@
+---
+sidebar_position: 2
+slug: /mainnet-provider-features
+title: Mainnet
+---
+
+# Mainnet Provider Features 🧰
+
+This page details the various features available to providers in the Lava network, along with instructions on how to operate them:
+
+- [💰 Rewards Tracking](#rewards-tracking)
+- [⚡ Caching](#caching)
+- [🔌 Addons and Extensions](#addonsextensions)
+- [🧊 Freeze and Unfreeze](#freeze)
+- [🔐 Advanced Auth Configuration](#config-auth)
+- [⏩ `ip-forwarding` Configuration](#config-ip-forwarding)
+- [⌛ `node-timeout` Configuration](#config-node-timeout)
+- [⚖️ Load Balancer Configuration](#config-stickyness)
+- [📈 Prometheus Metrics Configuration](#config-prometheus)
+
+--- 
+
+## 💰 Rewards Tracking{#rewards-tracking}
+
+Once a provider is up and running, consumers will request relay services from the provider. Once the provider provides the service, they will be eligible to get rewards from the consumer they served. The provider can receive rewards when a consumer's monthly plan expires.
+
+Providers can query the estimated amount they will receive with the query:
+
+```bash
+lavad q pairing provider-monthly-payout <lava-provider-address> 
+```
+
+Claimable rewards can be queried with:
+
+```bash
+lavad q dualstaking delegator-rewards <lava-provider-address>
+```
+
+and can be claimed to the provider balance with:
+
+```bash
+lavad tx dualstaking claim-rewards --from <provider-key>
+```
+
+<br />
+
+## ⚡ Caching{#caching}
+
+Lava's caching service is used to cut costs and improve the overall performance of the network. Both provider and consumer processes benefit from the caching service. Providers who enable caching may be able to return responses faster than providers who do not have caching enabled.
+
+In order to use the caching service, run the following process:
+
+```
+ListenAddress="127.0.0.1:7777"
+ListenMetricsAddress="127.0.0.1:5747"
+lavap cache $ListenAddress --metrics_address $ListenMetricsAddress --log_level debug
+```
+
+The cache service will run in the background. Plug in the caching service with the consumer or provider process as applicable:
+
+<details> <summary> rpcprovider </summary>
+
+```
+lavap rpcprovider <your-regular-cli-options> --cache-be $ListenAddress
+```
+</details>
+
+<details> <summary> rpcconsumer </summary>
+
+```
+lavap rpcconsumer <your-regular-cli-options> --cache-be $ListenAddress
+```
+
+</details>
+
+<br/>
+
+## 🔌 Addons and Extensions{#addonsextensions}
+
+Addons and Extensions are services that can be offered *in addition* to the basic spec on a provider service.
+**Addons** are APIs exposed in addition to existing APIs, while **Extensions** are changes to existing API responses.
+
+A few examples:
+- `"archive"` - an extension providing valid responses for older blocks than the current pruning definition in the basic spec
+- `"debug" `- an addon that offers debug apis in addition to basic rpc calls
+
+### Why Addons and Extensions  ❔
+
+Servicing Addons and Extensions can be a good way to generate additional traffic to your endpoints and higher rewards.
+
+#### ⛗ Additional Traffic 
+
+Consumers can easily use addons and extensions without any client configuration. They're included in the consumer subscription. The Lava Protocol automatically routes requests to providers that support desired services, which may result in increased traffic for those providers supporting specific addons, while providers without support won't receive such requests.
+
+#### 💱 Higher Rewards 
+
+Extensions can also provide a CU boost on the regular API, meaning modified calls may be more highly rewarded. `"archive"` calls, for example, will have a big multiplier on CU for each API request.
+Only API requests to the `"archive"` endpoint will award these additional CUs, and Lava knows which calls are `"archive"` or not according to the pruning of the regular spec defined by governance.
+
+### Set up Addons and Extensions ⚙️
+
+Addons and Extensions are configured both in the provider service config, and then staked for on chain. 💡 For simplicity's sake, both Addons and Extensions are defined using the `addons:` field. For a reference, please see this [example provider config file](https://raw.githubusercontent.com/lavanet/lava/main/config/provider_examples/evmos_provider_with_archive.yml).
+
+
+#### 🗒️ Addon (Config File)
+
+In order to add an addon to the service the yaml must be configured with the addon command:
+
+```yaml
+endpoints:
+    - api-interface: jsonrpc
+      chain-id: ETH1
+      network-address:
+        address: "127.0.0.1:2224"
+      node-urls:
+        - url: my-eth-node.com/eth-with-debug/ws
+          // highlight-start
+          addons:
+            - debug
+          // highlight-end
+```
+
+#### 🗒️ Extension (Config File)
+
+Since extensions must offer consumers the regular spec function and the possibility of extended functionality, both must be present.
+
+Therefore, extensions unlike addons, must be configured in a new url entry:
+
+```yaml
+endpoints:
+    - api-interface: jsonrpc
+      chain-id: ETH1
+      network-address:
+        address: "127.0.0.1:2224"
+      node-urls:
+        - url: my-eth-node.com/eth/ws/ # must keep this line
+        // highlight-start
+        - url: my-eth-node.com/eth-with-archive/ws
+          addons:
+            - archive
+        // highlight-end
+```
+
+
+Although this configuration offers you the chance to load balance different extension calls,
+if you run only a single archive node and do not want to automatically load balance archive calls to a pruned node,
+you can set both urls to point to the the archive node:
+
+```yaml
+endpoints:
+    - api-interface: jsonrpc
+      chain-id: ETH1
+      network-address:
+        address: "127.0.0.1:2224"
+      node-urls:
+      // highlight-start
+        - url: my-eth-node.com/eth-with-archive/ws
+        - url: my-eth-node.com/eth-with-archive/ws
+          addons:
+            - archive
+      // highlight-end
+```
+
+#### 🗒️ Multiple Extensions (Config File)
+
+Additional extensions must be defined with all possible combinations, for example compliance + archive will look like this:
+
+```yaml
+endpoints:
+    - api-interface: jsonrpc
+      chain-id: ETH1
+      network-address:
+        address: "127.0.0.1:2224"
+      node-urls:
+        - url: my-eth-node.com/eth/ws/
+        // highlight-start
+        - url: my-eth-node.com/eth-with-archive/ws
+          addons:
+            - archive
+        - url: my-eth-node.com/eth-with-compliance/ws
+          addons:
+            - compliance
+        - url: my-eth-node.com/eth-with-compliance-and-archive/ws
+          addons:
+            - compliance
+            - archive
+        // highlight-end
+```
+
+#### 🗒️ Combination (Config File)
+
+A combination of an extension and addons will look like this:
+```yaml
+endpoints:
+    - api-interface: jsonrpc
+      chain-id: ETH1
+      network-address:
+        address: "127.0.0.1:2224"
+      node-urls:
+        - url: my-eth-node.com/eth/ws/archive
+          addons:
+            - archive
+        - url: my-eth-node.com/eth-with-debug/ws
+          addons:
+            - debug
+```
+
+#### ⛏️ Staking
+
+Before staking, make sure your process works correctly. If addons or extensions fail to verify, the entire service for that spec and api interface will fail. Please use the `lavap test rpcprovider` command to verify that your setup is correct.
+
+Staking with an addon or an extensions is very similar to the normal staking command. Simply modify it by adding the list of addons and extensions separated by comma:
+
+**Staking Example: `stake-provider` ⌨️ **
+
+Ethereum Mainnet in US with archive and debug
+
+```bash
+lavap tx pairing stake-provider "ETH1" \
+    "50000000000ulava" \
+    "provider-host.com:443,USC,archive,debug" USC \
+    --from "my_account_name" \
+    --provider-moniker "your-moniker" \
+    --keyring-backend "mainnet" \
+    --chain-id "lava-mainnet" \
+    --gas="auto" \
+    --gas-adjustment "1.5" \
+    --node "https://public-rpc-mainnet.lavanet.xyz:443/rpc/"
+```
+
+Do note the required addition of **`,archive,debug`** in each of the endpoints that support it if several exist. Setting these in a transaction replaces any existing endpoints, so make sure to give the full list of endpoints.
+
+** Staking Example: `modify-provider` ⌨️ **
+
+
+It is also possible to add these to an existing entry with the `modify-provider` command:
+
+```bash
+lavap tx pairing modify-provider "ETH1" --endpoints "provider-host.com:443,USC,archive,debug" --geolocation "USC" ...
+```
+
+<br/>
+
+## 🧊 Freeze and Unfreeze{#freeze}
+
+The **`freeze`** command allows a provider to freeze its service, effective next epoch. This enables providers to pause their services without the impact of a bad QoS rating. While frozen, the provider won't be paired with consumers. To unfreeze, the provider must use the **`unfreeze`** transaction, effective next epoch. This feature can be useful in cases like a provider needing to halt its services during maintenance.
+
+### Usage 🔨
+
+#### ❄️ Freeze:
+
+```bash
+# required flags: --from alice. optional flags: --reason
+lavap tx pairing freeze [chain-ids] --from <provider_address>
+lavap tx pairing freeze [chain-ids] --from <provider_address> --reason <freeze_reason>
+lavap tx pairing freeze ETH1,COS3 --from alice --reason "maintenance"
+```
+The **`freeze`** command requires the **`--from`** flag to specify the provider address. Optionally, you can provide a **`--reason`** flag to give a reason for the freeze.
+
+
+#### 🌡️ Unfreeze:
+
+```bash
+# required flags: --from alice
+lavap tx pairing unfreeze [chain-ids] --from <provider_address>
+lavap tx pairing unfreeze ETH1,COS3 --from alice
+```
+
+The **`unfreeze`** command also requires the **`--from`** flag to specify the provider address.
+
+<br />
+
+## 🔐 Advanced Auth Configuration {#config-auth}
+In this example, COS3 tendermint URLs are using client authentication, assuming the node URL is capable of processing this authentication.
+
+### Auth using HTTP headers 🔑 {#auth-headers}
+
+The following RPCProvider Config Example demonstrated authentication using the "auth-headers" option:
+
+```yaml
+endpoints:
+  - api-interface: tendermintrpc
+    chain-id: COS3
+    network-address: 
+     address: 127.0.0.1:2221
+    node-urls:
+      - url: ws://127.0.0.1:26657/websocket
+        auth-config:
+          auth-headers:
+            WANTED_HEADER_NAME_1: xyz
+      - url: http://127.0.0.1:26657
+        auth-config:
+        // highlight-start
+          auth-headers:strings.Join(goodChains, "; ")
+            Authorization: 'Bearer xxyyzz'
+        // highlight-end
+```
+
+### Auth using Query Params󠁛 🔑 {#auth-query}
+
+The following RPCProvider Config Example demonstrated authentication using the "auth-query" option:
+
+```yaml
+endpoints:
+    - api-interface: tendermintrpc
+      chain-id: COS3
+      network-address: 
+        address: 127.0.0.1:2221
+      node-urls:
+        - url: ws://127.0.0.1:26657/websocket
+          // highlight-start
+          auth-config:
+            auth-query: auth=xxyyzz
+          // highlight-end
+        - url: http://127.0.0.1:26657
+          auth-config:
+            auth-query: auth=xyz
+```
+
+### gRPC TLS configuration 🔑 {#grpc-tls}
+
+If you want to add TLS authentication to your gRPC endpoint you have 3 options:
+
+#### 1. Dynamic certificate
+
+```yaml
+endpoints:
+    - api-interface: grpc
+      chain-id: LAV1
+      network-address: 
+        address: 127.0.0.1:2221
+      node-urls:
+        - url: 127.0.0.1:9090
+          // highlight-start
+          auth-config:
+            use-tls: true 
+          // highlight-end
+```
+
+#### 2. Provide a certificate and a key: 
+
+```yaml
+endpoints:
+    - api-interface: grpc
+      chain-id: LAV1
+      network-address: 
+        address: 127.0.0.1:2221
+      node-urls:
+        - url: 127.0.0.1:9090
+          // highlight-start
+          auth-config:
+            use-tls: true
+            key-pem: /home/user/key.pem
+            cert-pem: /home/user/cert.pem
+          // highlight-end
+```
+
+#### 3. Provide a root certificate:
+
+```yaml
+endpoints:
+    - api-interface: grpc
+      chain-id: LAV1
+      network-address: 
+        address: 127.0.0.1:2221
+      node-urls:
+        - url: 127.0.0.1:9090
+          // highlight-start
+          auth-config:
+            use-tls: true
+            cacert-pem: /home/user/cert.pem 
+          // highlight-end
+```
+
+<br />
+
+## ⏩ `ip-forwarding` Configuration {#config-ip-forwarding}
+
+If you want to IP load balance / throttle this is also supported by adding `ip-forwarding: true`.  
+The IP will be added to the following header: `X-Forwarded-For`
+
+```yaml
+endpoints:
+    - api-interface: jsonrpc
+      chain-id: ETH1
+      network-address: 
+        address: 127.0.0.1:2221
+      node-urls: 
+        - url: ws://your_node_url/
+          // highlight-start
+          ip-forwarding: true
+          // highlight-end
+```
+
+<br />
+
+## ⌛ `node-timeout` Configuration {#config-node-timeout}
+
+:::caution
+Overwriting the timeout time can result in inferior QoS for consumers. 
+:::
+
+If your node is too far from the `rpcprovider` or responds too slowly, and you still want your provider process to start without troubleshooting, you can overwrite the timeouts with custom values using a flag in the node-urls configuration:
+
+```yaml
+endpoints:
+    - api-interface: jsonrpc
+      chain-id: ETH1
+      network-address: 
+        address: 127.0.0.1:2221
+      node-urls: 
+        - url: ws://your_node_url/
+          // highlight-start
+          timeout: 1s
+          // highlight-end
+```
+<br />
+
+## ⚖️ Load Balancer Configuration {#config-stickyness}
+
+Running multiple nodes with a load balancer can have multiple setups:
+1. **Run a Provider on each node** - provider processes can coexist, if you loadbalance grpc before the process of the provider and run a provider service on each node machine (close proximity)
+2. **Run one Provider service and Loadbalance the nodes** - in this case all the nodes are used by one provider service, this setup is more likely to trigger consistency issues between the provider service and the nodes
+
+### Setting up Stickyness support for Loadbalanced nodes 🍯
+
+If you've set up the second option, meaning one provider service per multiple nodes, it is required to provide stickyness across the nodes by a header. The reason for this being the cryptographic proofs a provider signs, must be consistent and can't have the blocks progress backwards 
+
+In order to support stickyness headers lava adds by default a header called `X-Node-Sticky`, this header adds a consumer token consisting of several factors and are unique per consumer usage
+
+### Changing the Stickyness Header 🔀
+
+In order to support existing load balancer configs, it is possible to change the header name with a configuration in the config:
+```yaml
+endpoints:
+    - api-interface: jsonrpc
+      chain-id: ETH1
+      network-address: 
+        address: 127.0.0.1:2221
+      node-urls: 
+        - url: ws://your_node_url/
+// highlight-start
+sticky-header: <your-sticky-header-name>
+// highlight-end
+```
+
+<br />
+
+## 📈 Prometheus Metrics Configuration {#config-prometheus}
+
+Adding support for prometheus is a simple change. Set the `metrics-listening-address:` below.
+Please note that all Lava analytics start with `lava_`. Change the config below:
+
+```yaml
+endpoints:
+    - api-interface: jsonrpc
+      chain-id: ETH1
+      network-address: 
+        address: 127.0.0.1:2221
+      node-urls: 
+        - url: ws://your_node_url/
+// highlight-start
+metrics-listen-address: ":7780"
+// highlight-end
+```

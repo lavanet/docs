@@ -459,14 +459,52 @@ const sidebars = {
             id: 'provider/lavavisor/lavavisor',
           },
           items: [
-            'provider/lavavisor/lavavisor-wrap',
-            'provider/lavavisor/lavavisor-services',
-          ]
+            {
+              type: 'category',
+              label: 'Mainnet',
+              collapsible: true,
+              collapsed: true,
+              description: 'Mainnet Lavavisor',
+              items: [
+                'provider/lavavisor/mainnet/mainnet-lavavisor-wrap',
+                'provider/lavavisor/mainnet/mainnet-lavavisor-services',
+              ],
+            },
+            {
+              type: 'category',
+              label: 'Testnet',
+              collapsible: true,
+              collapsed: true,
+              description: 'Testnet Lavavisor',
+              items: [
+                'provider/lavavisor/testnet/testnet-lavavisor-wrap',
+                'provider/lavavisor/testnet/testnet-lavavisor-services',
+              ],
+            },
+          ],
         },
         'provider/provider-setup',
-        'provider/provider-features',
+        {
+          type: 'category',
+          label: 'Features',
+          collapsible: true,
+          collapsed: true,
+          items: [
+            'provider/features/mainnet-provider-features',
+            'provider/features/testnet-provider-features'
+          ],
+        },
         'provider/provider-tls',
-        'provider/provider-improve-service'
+        {
+          type: 'category',
+          label: 'Rewards / Service',
+          collapsible: true,
+          collapsed: true,
+          items: [
+            'provider/rewards-service/mainnet-provider-rewards-service',
+            'provider/rewards-service/testnet-provider-rewards-service'
+          ],
+        },
       ]
     },
     {

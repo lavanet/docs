@@ -1,13 +1,13 @@
 ---
-slug: /lavavisor-wrap
-title: Process Wrapper
+slug: /testnet-lavavisor-wrap
+title: Testnet Process Wrapper
 ---
 
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# **LavaVisor Process Wrapper**
+# **Testnet LavaVisor Process Wrapper**
 
 
 ## 📄 Overview 
