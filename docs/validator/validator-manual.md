@@ -5,8 +5,12 @@ slug: /validator-manual
 ---
 
 # Run Validator - Manual setup
+
 ### 1. Install node (`lavad`) & Join network {#lavad}
-Running as a validator requires a Lava Node running, Please refer to [our guide for joining **Testnet**](testnet) for details.
+
+Running as a validator requires a Lava Node running, Please refer to our guides for joining:
+- [**Testnet**](https://docs.lavanet.xyz/testnet)
+- [**Mainnet**](https://docs.lavanet.xyz/mainnet)
 
 ### 2. Prepare an account & Fund it {#account}
 If you don't have an account (wallet) on Lava yet, Refer to [creating new accounts](wallet#account) and the [faucet](faucet). 
