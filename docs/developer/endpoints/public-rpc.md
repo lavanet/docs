@@ -7,19 +7,64 @@ title: Lava Public RPC 🌋
 
 ## Official Testnet-2 Endpoints ⭕
 
-| Service 🔌 | URL 🔗 | Protocol |
-|--------|-------|-------- |
-| 🟢 rpc | <https://lav1.tendermintrpc.lava.build:443>    | HTTP/1.1 |
-| 🟢 websocket | lav1.tendermintrpc.lava.build/websocket    | HTTP/1.1 |
-| 🟢 rest | <https://lav1.lava.build:443>    | HTTP/1.1 |
-| 🟢 grpc | lav1.grpc.lava.build:443 |    HTTP/2 |
-| 🟢 archive/rpc | <https://lava-archive.lavanet.xyz:443> |    HTTP/1.1 |
+| Service 🔌      | URL 🔗                                         | Protocol |
+|-----------------|------------------------------------------------|----------|
+| 🌐 rpc          | <https://lav1.tendermintrpc.lava.build:443>    | HTTP/1.1 |
+| 📡 websocket    | lav1.tendermintrpc.lava.build/websocket        | HTTP/1.1 |
+| 🔗 rest         | <https://lav1.lava.build:443>                  | HTTP/1.1 |
+| ⚡ grpc          | lav1.grpc.lava.build:443                       | HTTP/2   |
+| 📦 archive/rpc  | <https://lava-archive.lavanet.xyz:443>         | HTTP/1.1 |
 
 ## Official Mainnet Endpoints 🌎
 
 :::info
 Official endpoint with Lava over Lava coming soon
 :::
+
+## Community Mainnet Endpoints 🧑🏾‍🤝‍🧑🏾
+
+| Provider              | Service 🔌 | URL 🔗                                       | Notes                          |
+|-----------------------|---------|-------------------------------------------------|--------------------------------|
+| ndnodes               | 🌐 RPC  | https://rpc.lava-mainnet.ndnodes.com/           |                                |
+| ndnodes               | 🔗 API  | https://api.lava-mainnet.ndnodes.com/           |                                |
+| Pathrock Network      | 🌐 RPC  | https://rpc.lava.pathrocknetwork.org/           | Not sure if mainnet or testnet |
+| Pathrock Network      | 🔗 API  | https://api.lava.pathrocknetwork.org/           | Not sure if mainnet or testnet |
+| Pathrock Network      | ⚡ gRPC  | grpc.lava.pathrocknetwork.org                   | Not sure if mainnet or testnet |
+| BlockPro              | 🔗 API  | https://lava-api.block-pro.net/                 |                                |
+| BlockPro              | 🌐 RPC  | https://lava-rpc.block-pro.net/                 |                                |
+| 0Base VC              | 🌐 RPC  | https://lava-rpc.0base.dev:443                  |                                |
+| 0Base VC              | 🔗 API  | https://lava-rest.0base.dev                     |                                |
+| Nodefleet             | ⚡ gRPC  | grpc.lava-mainnet.nodefleet.org:443             | Lava mainnet archival node     |
+| Nodefleet             | 🔗 REST | https://rest.lava-mainnet.nodefleet.org         | Lava mainnet archival node     |
+| Nodefleet             | 🌐 RPC  | https://tendermint.lava-mainnet.nodefleet.org   | Lava mainnet archival node     |
+| Bware Labs            | 📦 Archive LCD | https://lava-mainnet-archive-lcd.bwarelabs.com/ |                                |
+| Bware Labs            | 📦 Archive RPC | https://lava-mainnet-archive-rpc.bwarelabs.com/ |                                |
+| 5elements Nodes       | 🌐 Pruned RPC | https://rpclight-lava.5elementsnodes.com/       | Not sure if mainnet or testnet |
+| 5elements Nodes       | 📦 Archive RPC | https://rpc-lava.5elementsnodes.com/           | Not sure if mainnet or testnet |
+| Cosmos Spaces         | 🌐 Pruned RPC | https://rpc-lava.cosmos-spaces.cloud            | Not sure if mainnet or testnet |
+| Cosmos Spaces         | 🔗 Pruned API | https://api-lava.cosmos-spaces.cloud            | Not sure if mainnet or testnet |
+| Cosmos Spaces         | ⚡ Pruned GRPC | grpc-lava.cosmos-spaces.cloud:443              | Not sure if mainnet or testnet |
+| Cosmos Spaces         | 📦 Archive RPC | https://rpc-lava-archive.cosmos-spaces.cloud   | Not sure if mainnet or testnet |
+| Cosmos Spaces         | 📦 Archive API | https://api-lava-archive.cosmos-spaces.cloud   | Not sure if mainnet or testnet |
+| Cosmos Spaces         | ⚡ Archive GRPC | grpc-lava-archive.cosmos-spaces.cloud:443     | Not sure if mainnet or testnet |
+| Node101               | ⚡ gRPC  | https://mainnet-grpc-lava.rpc101.org            |                                |
+| Node101               | 🌐 RPC  | https://mainnet-lava.rpc101.org/                |                                |
+| Node101               | 🛤️ LCD  | https://mainnet-lcd-lava.rpc101.org             |                                |
+| Node101               | 🔗 Web API | https://mainnet-webapi-lava.rpc101.org         |                                |
+| Steakvillage          | 🌐 RPC  | https://lava.rpc.stakevillage.net:443           | Not sure if mainnet or testnet |
+| Steakvillage          | 📦 Archive RPC | https://lava.arc-rpc.stakevillage.net:443      | Not sure if mainnet or testnet |
+| Steakvillage          | 🔗 API  | https://lava.api.stakevillage.net               | Not sure if mainnet or testnet |
+| Steakvillage          | ⚡ GRPC | lava.grpc.stakevillage.net:443                  | Not sure if mainnet or testnet |
+| CryptoSJnet           | 📦 Archive RPC | https://lavamainnetarchiverpc.cryptosj.net     |                                |
+| CryptoSJnet           | 📦 Archive API | https://lavamainnetarchiveapi.cryptosj.net     |                                |
+| AviaOne               | 🌐 RPC  | https://rpc.lava-mainnet-1.lava.aviaone.com     | State Sync required            |
+| AviaOne               | 🔗 API  | https://api.lava-mainnet-1.lava.aviaone.com     | For explorer and other services |
+| AviaOne               | ⚡ GRPC | grpc.lava-mainnet-1.lava.aviaone.com:9092       |                                |
+| Chainbase             | 🌐 RPC  | https://lava-rpc-mainnet.s.chainbase.online     |                                |
+| itrocket              | 📦 Archive RPC | https://lava-mainnet-rpc.itrocket.net:443     | 15 calls/sec per IP            |
+| itrocket              | 🔗 API  | https://lava-mainnet-api.itrocket.net:443       |                                |
+| itrocket              | ⚡ GRPC | lava-mainnet-grpc.itrocket.net:443              |                                |
+| MH Ventures           | Various | https://lava.mhventures.io                      |                                |
 
 ## Incentivized Public RPC 💫
 
