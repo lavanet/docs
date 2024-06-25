@@ -1,6 +1,6 @@
 ---
 sidebar_position: 2
-slug: /testnet-manual
+slug: /mainnet-manual
 title: Option B - Without Cosmovisor
 ---
 import RoadmapItem from '@site/src/components/RoadmapItem';
@@ -8,11 +8,11 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 
-# Join testnet - Manual setup
+# Join mainnet - Manual setup
 
 This page will walk you through the manual installation of the node and joining the network.
 
-Note that it does **not** include the "Cosmovisor" tool, hence once you install the first genesis binary, you will need to incrementally upgrade your node, as described in [upgrades](#upgrades).
+Note that it does **not** include the "Cosmovisor" tool, hence once you install the first genesis binary, you will need to incrementally upgrade yo>
 
 ## Prerequisites
 
@@ -33,7 +33,7 @@ Note that it does **not** include the "Cosmovisor" tool, hence once you install 
         
         ```bash
         ### Configurations
-        go_package_url="https://go.dev/dl/go1.20.5.linux-amd64.tar.gz"
+        go_package_url="https://go.dev/dl/go1.22.1.linux-amd64.tar.gz"
         go_package_file_name=${go_package_url##*\/}
         # Download GO
         wget -q $go_package_url
@@ -68,7 +68,7 @@ Note that it does **not** include the "Cosmovisor" tool, hence once you install 
     ```bash
     # Download the installation setup configuration
     git clone https://github.com/lavanet/lava-config.git
-    cd lava-config/testnet-2
+    cd lava-config/mainnet-1
     # Read the configuration from the file
     # Note: you can take a look at the config file and verify configurations
     source setup_config/setup_config.sh
@@ -95,7 +95,7 @@ Note that it does **not** include the "Cosmovisor" tool, hence once you install 
     cp genesis_json/genesis.json $lava_config_folder/genesis.json
     ```
 
-## 2. Join the Lava Testnet
+## 2. Join the Lava Mainnet
 
 ### Copy the genesis binary
 
@@ -106,7 +106,7 @@ Note that it does **not** include the "Cosmovisor" tool, hence once you install 
     lavad_binary_path="$HOME/go/bin/"
     mkdir -p $lavad_binary_path
     # Download the genesis binary to the lava path
-    wget -O ./lavad "https://github.com/lavanet/lava/releases/download/v0.21.1.2/lavad-v0.21.1.2-linux-amd64"
+    wget -O ./lavad "https://github.com/lavanet/lava/releases/download/v0.33.0/lavad-v0.33.0-linux-amd64"
     chmod +x lavad
     # Lavad should now be accessible from PATH, to verify, try running
     cp lavad /usr/local/bin
@@ -135,13 +135,14 @@ Note that it does **not** include the "Cosmovisor" tool, hence once you install 
     sudo mv lavad.service /lib/systemd/system/lavad.service
     ```
 
-### Download the latest Lava data snapshot (_optional_) {#snapshots} 
+### Download the latest Lava data snapshot (_optional_) {#snapshots}
 
-- [KJNODES](https://services.kjnodes.com/testnet/lava/snapshot/)
-- [ITROCKET](https://itrocket.net/services/testnet/lava/)
-- [ND NODES](https://services.ndnodes.com/lava-network/snapshot)
-- [AVIAONE](https://aviaone.com/blockchains-service/lava-testnet-2-lava.html)
-- [AKNodes](https://services.aknodes.com/lava/sync)
+- [KJnodes](https://services.kjnodes.com/mainnet/lava/snapshot)
+- [NDnodes](https://services.ndnodes.com//lava-network/snapshot/)
+- [0base](https://snapshot.0base.dev/) (updated every 12h)
+- [Siriusnodes](https://lava.siriusnodes.org/snapshot) (updated every 3 days)
+- [BwareLabs](https://bwarelabs.com/snapshots/lava)
+- [AKNodes](https://services.aknodes.com/mainnet-networks/lava/sync)
 
 ### Service start and validation
 
@@ -174,7 +175,7 @@ Once you have joined the Lava testnet, and your node has started syncing, you ma
 panic: UPGRADE "XYZ" NEEDED at height: 12345
 ```
 
-This message specifies that it was agreed to upgrade to a new version at a certain height of the network. Note: When using a cosmovisor setup, the upgrade is being taken care of automatically for you.
+This message specifies that it was agreed to upgrade to a new version at a certain height of the network. Note: When using a cosmovisor setup, the >
 
 This situation requires a different binary (`lavad`) to work with, the process is as specified below:
 
@@ -186,40 +187,24 @@ This situation requires a different binary (`lavad`) to work with, the process i
 
 ### Upgrades list history
 
-Below, you can find tracking of the required upgrade for block height. 
-Versions are tracked in [Lava git](https://github.com/lavanet/lava) (build from source or use the release page). 
+Below, you can find tracking of the required upgrade for block height.
+Versions are tracked in [Lava git](https://github.com/lavanet/lava) (build from source or use the release page).
 
 <Tabs>
-<TabItem value="lava-testnet-2" label="lava-testnet-2">
+<TabItem value="lava-mainnet-1" label="lava-mainnet-1">
 
 | Version name | Block height
 | --- | --- |
-| v0.21.1.2 | 340778 |
-| v0.22.0 | 396595 |
-| v0.23.5 | 435889 |
+| v0.33.0 | (0) genesis |
+| v0.34.0 | 375000 |
+| v0.35.0 | 413000 |
 
 </TabItem>
-<TabItem value="lava-testnet-1" label="lava-testnet-1">
+<TabItem value="lava-mainnet-1" label="lava-mainnet-1">
 
 | Version name | Block height
 | --- | --- |
-| v0.3.0 | genesis |
-| v0.4.0 | 838 |
-| v0.4.3 | 22300 |
-| v0.4.4 | 41735 |
-| v0.5.2 | 63760 |
-| v0.6.0 ("RC3") | 82570 |
-| v0.7.0 | 102800 |
-| v0.8.1 | 133100 |
-| v0.9.8 | 163960 |
-| v0.10.1 | 184620 |
-| v0.11.2 | 208115 |
-| v0.12.1 | 227130 |
-| v0.12.1-hf | 233850 |
-| v0.13.1 | 247630 |
-| v0.14.0 | 254645 |
-| v0.15.1 | 266490 |
-| v0.16.0 | 286030 |
+|v1.0.1 | 451000 |
 
 </TabItem>
 
@@ -274,12 +259,12 @@ sudo journalctl -u lavad -f
 
 ## Welcome to Lava Testnet 🌋
 
-:::tip Joined Testnet? Be a validator!
-You are now running a Node in the Lava network 🎉🥳! 
+:::tip Joined Mainnet? Be a validator!
+You are now running a Node in the Lava network 🎉🥳!
 
 Congrats, happy to have you here 😻 Celebrate it with us on Discord.
 
 When you're ready, start putting the node to use **as a validator**:
-[<RoadmapItem icon="🧑‍⚖️" title="Power as a Validator" description="Validate blocks, secure the network, earn rewards"/>](/validator-manual#account)
+[<RoadmapItem icon="🧑⚖️" title="Power as a Validator" description="Validate blocks, secure the network, earn rewards"/>](/validator-manual#account)
 
 :::
