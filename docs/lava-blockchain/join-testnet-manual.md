@@ -137,7 +137,11 @@ Note that it does **not** include the "Cosmovisor" tool, hence once you install 
 
 ### Download the latest Lava data snapshot (_optional_) {#snapshots} 
 
-_Coming soon_
+- [KJNODES](https://services.kjnodes.com/testnet/lava/snapshot/)
+- [ITROCKET](https://itrocket.net/services/testnet/lava/)
+- [ND NODES](https://services.ndnodes.com/lava-network/snapshot)
+- [AVIAONE](https://aviaone.com/blockchains-service/lava-testnet-2-lava.html)
+- [AKNodes](https://services.aknodes.com/lava/sync)
 
 ### Service start and validation
 
