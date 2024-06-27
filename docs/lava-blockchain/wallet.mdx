@@ -8,6 +8,28 @@ Lava leverages the Cosmos SDK's bank and account modules for seamless integratio
 
 **Recommendation**: After setting up your wallet, it's crucial to test its functionality. Utilize the [faucet](/faucet#discord-faucet) to acquire testnet tokens. Then, execute a transaction by transferring these tokens to another account and back.
 
+## How to Switch to Lava Mainnet in Cosmos Wallets
+
+Switching to the Lava Mainnet in wallets such as Keplr involves adding the network settings manually. Follow these steps:
+
+### Keplr Wallet
+
+1. Open the Keplr extension in your browser.
+2. Click on the profile icon at the top right corner and select `Add Network`.
+3. Enter the following details in the network configuration:
+
+    - **Network Name**: Lava Mainnet
+    - **RPC URL**: [https://public-rpc.lavanet.xyz](https://public-rpc.lavanet.xyz)
+    - **Chain ID**: `lava-mainnet-1`
+    - **Currency Symbol**: `LAVA`
+    - **REST URL**: [https://public-rpc.lavanet.xyz/rest](https://public-rpc.lavanet.xyz/rest)
+    - **Explorer URL**: (if available)
+
+4. Save the settings.
+5. Select the Lava Mainnet from your network list to switch.
+
+**Note**: Ensure that you replace the RPC and REST URLs with the correct ones if they change.
+
 ## Choosing a Wallet
 
 For your convenience, here are some popular wallet options:
@@ -19,7 +41,7 @@ For your convenience, here are some popular wallet options:
 ### Keplr Usage {#keplr}
 
 :::info experimental 
-Keplr wallet support in Lava is currently experimental.
+Keplr wallet support in Lava Testnet is currently experimental.
 :::
 
 1. Download and install Keplr from [here](https://www.keplr.app/).
@@ -89,7 +111,7 @@ window.keplr.experimentalSuggestChain({
           padding: '10px 20px', // Adjust padding for size
           borderRadius: '5px', // Adjust border radius if needed
           fontSize: '16px', // Adjust font size
-        }} onClick={() => addKeplr()}>Add Lava to Keplr</button>
+        }} onClick={() => addKeplr()}>Add Lava Testnet to Keplr</button>
 </p>
 
 <p><img src="/img/wallet/keplr/keplr2.png" width="200"/></p>
@@ -99,15 +121,15 @@ window.keplr.experimentalSuggestChain({
 <p><img src="/img/wallet/keplr/keplr5.png" width="200"/></p>
 <p><img src="/img/wallet/keplr/keplr6.png" width="200"/></p>
 <p><img src="/img/wallet/keplr/keplr7.png" width="450"/></p>
-7. Return to the Keplr extension, copy the Lava testnet address.
+7. Return to the Keplr extension, copy the Lava Testnet address.
 <p><img src="/img/wallet/keplr/keplr8.png" width="200"/></p>
 <p><img src="/img/wallet/keplr/keplr9.png" width="200"/></p>
-8. You will now have a Lava address copied to your clipboard, resembling: `lava@11223344556677889900aabbccddeeff1122334`.
+8. You will now have a Lava Testnet address copied to your clipboard, resembling: `lava@11223344556677889900aabbccddeeff1122334`.
 
 ### Leap Wallet {#leap}
 
 :::info experimental 
-Lava's support for the Leap wallet is experimental.
+Lava's Testnet support for the Leap wallet is experimental.
 :::
 
 1. Download and install Leap from [here](https://www.leapwallet.io/).
@@ -178,13 +200,13 @@ window.leap.experimentalSuggestChain({
           padding: '10px 20px', // Adjust padding for size
           borderRadius: '5px', // Adjust border radius if needed
           fontSize: '16px', // Adjust font size
-        }} onClick={() => addLeap()}>Add Lava to Leap</button>
+        }} onClick={() => addLeap()}>Add Lava Testnet to Leap</button>
 </p>
 
 <p><img src="/img/wallet/leap/leap2.png" width="200"/></p>
 6. Open the extension and copy your wallet address.
 <p><img src="/img/wallet/leap/leap3.png" width="200"/></p>
-7. Your Lava address will be copied to the clipboard, looking like: `lava@11223344556677889900aabbccddeeff1122334`
+7. Your Lava Testnet address will be copied to the clipboard, looking like: `lava@11223344556677889900aabbccddeeff1122334`
 
 ## CLI Wallet {#cli}
 
