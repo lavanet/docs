@@ -435,7 +435,8 @@ const sidebars = {
           ]
         },
         'validator/validator-manual',
-        'validator/validator-rejoin'
+        'validator/validator-rejoin',
+        'validator/validator-delegation-policy',
       ]
     },
     {
