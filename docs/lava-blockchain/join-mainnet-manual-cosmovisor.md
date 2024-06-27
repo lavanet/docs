@@ -60,7 +60,7 @@ import RoadmapItem from '@site/src/components/RoadmapItem';
     ```bash
     # Download the installation setup configuration
     git clone https://github.com/lavanet/lava-config.git
-    cd lava-config/testnet-2
+    cd lava-config/mainnet
     # Read the configuration from the file
     # Note: you can take a look at the config file and verify configurations
     source setup_config/setup_config.sh
@@ -87,7 +87,7 @@ import RoadmapItem from '@site/src/components/RoadmapItem';
     cp genesis_json/genesis.json $lava_config_folder/genesis.json
     ```
 
-## 2. Join the Lava Testnet
+## 2. Join the Lava Mainnet
 
 The following sections will describe how to install Cosmovisor for automating the upgrades process.
 
@@ -101,7 +101,7 @@ The following sections will describe how to install Cosmovisor for automating th
     # Create the Cosmovisor folder and copy config files to it
     mkdir -p $lavad_home_folder/cosmovisor/genesis/bin/
     # Download the genesis binary
-    wget -O  $lavad_home_folder/cosmovisor/genesis/bin/lavad "https://github.com/lavanet/lava/releases/download/v0.21.1.2/lavad-v0.21.1.2-linux-amd64"
+    wget -O  $lavad_home_folder/cosmovisor/genesis/bin/lavad "https://github.com/lavanet/lava/releases/download/v2.2.0/lavad-v2.2.0-linux-amd64"
     chmod +x $lavad_home_folder/cosmovisor/genesis/bin/lavad
     ```
 
@@ -109,7 +109,7 @@ The following sections will describe how to install Cosmovisor for automating th
     # Set the environment variables
     echo "# Setup Cosmovisor" >> ~/.profile
     echo "export DAEMON_NAME=lavad" >> ~/.profile
-    echo "export CHAIN_ID=lava-testnet-2" >> ~/.profile
+    echo "export CHAIN_ID=lava-mainnet-1" >> ~/.profile
     echo "export DAEMON_HOME=$HOME/.lava" >> ~/.profile
     echo "export DAEMON_ALLOW_DOWNLOAD_BINARIES=true" >> ~/.profile
     echo "export DAEMON_LOG_BUFFER_SIZE=512" >> ~/.profile
@@ -122,7 +122,7 @@ The following sections will describe how to install Cosmovisor for automating th
     # Initialize the chain
     $lavad_home_folder/cosmovisor/genesis/bin/lavad init \
     my-node \
-    --chain-id lava-testnet-2 \
+    --chain-id lava-mainnet-1 \
     --home $lavad_home_folder \
     --overwrite
     cp genesis_json/genesis.json $lava_config_folder/genesis.json
@@ -205,9 +205,9 @@ Note the location of `lavad` now exists under `cosmovisor` path:
 $HOME/.lava/cosmovisor/current/bin/lavad status | jq .SyncInfo.catching_up
 ```
 
-## Welcome to Lava Testnet 🌋
+## Welcome to Lava Mainnet 🌋
 
-:::tip Joined Testnet? Be a validator!
+:::tip Joined Mainnet? Be a validator!
 You are now running a Node in the Lava network 🎉🥳! 
 
 Congrats, happy to have you here 😻 Celebrate it with us on Discord.
