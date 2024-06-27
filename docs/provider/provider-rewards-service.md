@@ -1,12 +1,12 @@
 ---
-slug: /testnet-provider-rewards-service
-title: Testnet
+slug: /provider-rewards-service
+title: Rewards / Service
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Testnet Provider Rewards
+# Provider Rewards
 
 ## 💰 Earning Rewards
 
