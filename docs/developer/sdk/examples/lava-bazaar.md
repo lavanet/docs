@@ -60,7 +60,7 @@ async function createClientForChain(chainID) {
             chainIds: chainID
         });
         if (client) {
-            console.log(`${chainID}  🔩 intialized: `, client.name, client.transport.name, client.uid);
+            console.log(`${chainID}  🔩 initialized: `, client.name, client.transport.name, client.uid);
             return client;
         } else {
             console.log(`${chainID} ❌ failed to initialize!`);
@@ -73,7 +73,7 @@ async function createClientForChain(chainID) {
 async function getClient(chainID) {
     const client = clientList[chainID];
     if (!client) {
-        throw new Error(` Unsupported or unitialized chain: ${chainID}`);
+        throw new Error(` Unsupported or uninitialized chain: ${chainID}`);
     }
     return client;
 };

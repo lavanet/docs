@@ -31,7 +31,7 @@ Please make sure you are using the right `chainId` this document was written dur
 
 ### > `lavavisor init`
 LavaVisor `init` command initializes the environment for LavaVisor. It is generally the first command run when using LavaVisor.
-If you're using [`lavavisor pod`](#-lavavisor-pod) this command is unnecesary and can be skipped.
+If you're using [`lavavisor pod`](#-lavavisor-pod) this command is unnecessary and can be skipped.
 
 **Optional Flags:**
     

@@ -119,7 +119,7 @@ This error means that you have used different geolocations when using  the `prov
 
 Lava easily integrates with other RPC clients. 
 
-1. **Gateway** - Simply create an account on the gateway, and replace your client's RPC URL with the appopriate one. Get started [immediately](/gateway-getting-started)!
+1. **Gateway** - Simply create an account on the gateway, and replace your client's RPC URL with the appropriate one. Get started [immediately](/gateway-getting-started)!
 2. **SDK** - You can also use the SDK library integrations to integrate with [viem](/viem), [cosmjs](/cosmjs), [web3.js](/web3js), or [ethers.js](/ethersjs5).
 
 ### 🟡 I'm already using another SDK. {#using-lava-with-other-sdks}
