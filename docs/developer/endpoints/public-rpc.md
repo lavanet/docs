@@ -41,9 +41,9 @@ Official endpoint with Lava over Lava coming soon
 | Bware Labs            | 📦 Archive RPC | https://lava-mainnet-archive-rpc.bwarelabs.com/ |                         |
 | 5elements Nodes       | 🌐 Pruned RPC | https://rpclight-lava.5elementsnodes.com/       |                          |
 | 5elements Nodes       | 📦 Archive RPC | https://rpc-lava.5elementsnodes.com/           |                          |
-| Impulse Expert        | 🌐 RPC  | https://m-rpc.lava.eu01.impulse.expert                |                          |
-| Impulse Expert        | 🔗 API  | https://m-api.lava.eu01.impulse.expert                |                          |
-| Impulse Expert        | ⚡ gRPC  | https://m-grpc.eu01.lava.impulse.expert               |                          |
+| Impulse Expert        | 🌐 RPC  | https://m-rpc.lava.eu01.impulse.expert                | Lava mainnet archival node |
+| Impulse Expert        | 🔗 API  | https://m-api.lava.eu01.impulse.expert                | Lava mainnet archival node |
+| Impulse Expert        | ⚡ gRPC  | https://m-grpc.eu01.lava.impulse.expert               | Lava mainnet archival node |
 | Impulse Expert        | 🌐 RPC  | https://m-rpc.lava.us01.impulse.expert                |                          |
 | Impulse Expert        | 🔗 API  | https://m-api.lava.us01.impulse.expert                |                          |
 | Impulse Expert        | ⚡ gRPC  | https://m-grpc.lava.us01.impulse.expert               |                          |
