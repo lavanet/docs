@@ -80,19 +80,22 @@ curl -X 'GET' \
 
 ### Querying Available APIs and Chains {#chains}
 
+:::caution
+Here and below ensure that you replace `{PUBLIC_RPC}` with the correct [endpoint](/public-rpc).
+:::
 
-To obtain a list of available APIs and chains, [query all chain specs](https://public-rpc-testnet2.lavanet.xyz/rest/lavanet/lava/spec/show_all_chains) or use the following CLI commands for a detailed list:
+To obtain a list of available **testnet-2** APIs and chains, [query all chain specs](https://public-rpc-testnet2.lavanet.xyz/rest/lavanet/lava/spec/show_all_chains) or use the following CLI commands for a detailed list:
 
 
 ```bash
 curl -X 'GET' \
-  'https://public-rpc-testnet2.lavanet.xyz/rest/lavanet/lava/spec/show_all_chains' \
+  '{PUBLIC_RPC}/rest/lavanet/lava/spec/show_all_chains' \
   -H 'accept: application/json' | jq
 ```
 
 Alternatively,
 ```bash
-lavap q spec list-spec --node https://public-rpc-testnet2.lavanet.xyz:443/rpc/
+lavap q spec list-spec --node {PUBLIC_RPC}
 ```
 
 

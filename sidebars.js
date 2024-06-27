@@ -16,6 +16,7 @@ const sidebars = {
         'intro/about',
         'intro/explorers',
         'intro/key-terms',
+        'intro/key-variables',
         {
           type: 'category', 
           label: '🗜️ Specifications',
