@@ -435,6 +435,20 @@ const sidebars = {
             'lava-blockchain/join-testnet-manual'
           ]
         },
+        {
+          type: 'category', 
+          label: 'Join mainnet',
+          collapsible: true,
+          collapsed: true,
+          link: {
+            type: 'doc',
+            id: 'lava-blockchain/join-mainnet'
+          },
+          items: [
+            'lava-blockchain/join-mainnet-manual-cosmovisor',
+            'lava-blockchain/join-mainnet-manual'
+          ]
+        },
         'validator/validator-manual',
         'validator/validator-rejoin',
         'validator/validator-delegation-policy',
