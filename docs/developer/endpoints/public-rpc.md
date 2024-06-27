@@ -43,10 +43,10 @@ Official endpoint with Lava over Lava coming soon
 | 5elements Nodes       | 📦 Archive RPC | https://rpc-lava.5elementsnodes.com/           |                          |
 | Impulse Expert        | 📦 Archive RPC  | https://m-rpc.lava.eu01.impulse.expert        | Lava mainnet archival node |
 | Impulse Expert        | 📦 Archive API  | https://m-api.lava.eu01.impulse.expert        | Lava mainnet archival node |
-| Impulse Expert        | 📦 Archive gRPC  | https://m-grpc.eu01.lava.impulse.expert      | Lava mainnet archival node |
+| Impulse Expert        | 📦 Archive gRPC  | m-grpc.eu01.lava.impulse.expert              | Lava mainnet archival node |
 | Impulse Expert        | 🌐 RPC  | https://m-rpc.lava.us01.impulse.expert                |                          |
 | Impulse Expert        | 🔗 API  | https://m-api.lava.us01.impulse.expert                |                          |
-| Impulse Expert        | ⚡ gRPC  | https://m-grpc.lava.us01.impulse.expert               |                          |
+| Impulse Expert        | ⚡ gRPC  | m-grpc.lava.us01.impulse.expert                       |                          |
 | Cosmos Spaces         | 🌐 Pruned RPC | https://rpc-lava.cosmos-spaces.cloud            |                          |
 | Cosmos Spaces         | 🔗 Pruned API | https://api-lava.cosmos-spaces.cloud            |                          |
 | Cosmos Spaces         | ⚡ Pruned GRPC | grpc-lava.cosmos-spaces.cloud:443               |                          |
