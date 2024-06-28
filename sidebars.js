@@ -256,6 +256,20 @@ const sidebars = {
         },
         {
           type: 'category',
+          label: '🔗 Secret',
+          collapsible: true,
+          collapsed: true,
+          description: 'SECRET, SECRETP',
+          link: {
+            type: 'doc',
+            id: 'chains/secret-chain/secret'
+          },
+          items: [
+            'chains/secret-chain/secret-node',
+          ]
+        },
+        {
+          type: 'category',
           label: '🔗 Solana',
           collapsible: true,
           collapsed: true,
@@ -282,6 +296,20 @@ const sidebars = {
           items: [
             'chains/starknet-chain/starknet-dev',
             'chains/starknet-chain/starknet-node'
+          ]
+        },
+        {
+          type: 'category',
+          label: '🔗 Celestia',
+          collapsible: true,
+          collapsed: true,
+          description: 'CELESTIA',
+          link: {
+            type: 'doc',
+            id: 'chains/celestia-chain/celestia'
+          },
+          items: [
+            'chains/celestia-chain/celestia-node'
           ]
         }
       ]
@@ -457,6 +485,22 @@ const sidebars = {
         'lava-blockchain/faucet',
         'lava-blockchain/subscriptions',
         'lava-blockchain/badge-server'
+      ]
+    },
+    {
+      type: 'category', 
+      label: 'Tokenomics 🪙',
+      link: {
+        type: 'doc',
+        id: 'tokenomics/token'
+      },
+      collapsible: true,
+      collapsed: true,
+      items: [
+        'tokenomics/supply',
+        'tokenomics/rewards-restaking',
+        'tokenomics/distribution',
+        'tokenomics/growth'
       ]
     },
     `tutorials`,
