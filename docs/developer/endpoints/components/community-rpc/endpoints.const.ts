@@ -271,7 +271,7 @@ export const communityMainnetEndpointsList = [
   },
   {
     provider: 'MH Ventures',
-    service: 'Various',
+    service: '🌐 RPC',
     url: 'https://lava.mhventures.io',
     notes: '',
   },
