@@ -87,19 +87,6 @@ import RoadmapItem from '@site/src/components/RoadmapItem';
     cp genesis_json/genesis.json $lava_config_folder/genesis.json
     ```
 
-### Lava node initialisation
-
-:::caution
-Here and below ensure that you replace `{CHAIN_ID}` with the appropriate value for your target network.
-See the [Chain ID](/key-variables#chain-id) section for details.
-:::
-
-- Initialisation lava node via lavad
-    
-    ```bash
-    lavad init $MONIKER --chain-id {CHAIN_ID}
-    ```
-
 ## 2. Join the Lava Testnet
 
 The following sections will describe how to install Cosmovisor for automating the upgrades process.
