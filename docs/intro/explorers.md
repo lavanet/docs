@@ -21,7 +21,7 @@ https://lava.explorers.guru/
 
 ### Mainnet Explorers
 
-- ✨[W3Coins](http://lava-explorer.w3coins.io/Lava)
+- ✨[W3Coins](https://lava-explorer.w3coins.io/Lava)
 - ✨[Coinhunters](https://lava.coinhunterstr.com/lava)
 - ✨[AviaOne](https://mainnet.explorer.aviaone.com/lava)
 
