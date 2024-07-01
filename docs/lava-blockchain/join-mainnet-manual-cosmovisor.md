@@ -113,7 +113,7 @@ The following sections will describe how to install Cosmovisor for automating th
     # Create the Cosmovisor folder and copy config files to it
     mkdir -p $lavad_home_folder/cosmovisor/genesis/bin/
     # Download the genesis binary
-    wget -O  $lavad_home_folder/cosmovisor/genesis/bin/lavad "https://github.com/lavanet/lava/releases/download/v2.2.0/lavad-v2.2.0-linux-amd64"
+    wget -O  $lavad_home_folder/cosmovisor/genesis/bin/lavad "https://github.com/lavanet/lava/releases/download/v0.33.0/lavad-v0.33.0-linux-amd64"
     chmod +x $lavad_home_folder/cosmovisor/genesis/bin/lavad
     ```
 
