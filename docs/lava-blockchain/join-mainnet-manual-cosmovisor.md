@@ -76,7 +76,6 @@ import RoadmapItem from '@site/src/components/RoadmapItem';
     mkdir -p $lava_config_folder
     cp default_lavad_config_files/* $lava_config_folder
     ```
-    
 
 ### Set the genesis file
 
@@ -85,6 +84,19 @@ import RoadmapItem from '@site/src/components/RoadmapItem';
     ```bash
     # Copy the genesis.json file to the Lava config folder
     cp genesis_json/genesis.json $lava_config_folder/genesis.json
+    ```
+
+### Lava node initialisation
+
+:::caution
+Here and below ensure that you replace `{CHAIN_ID}` with the appropriate value for your target network. 
+See the [Chain ID](/key-variables#chain-id) section for details. 
+:::
+
+- Initialisation lava node via lavad
+    
+    ```bash
+    lavad init $MONIKER --chain-id {CHAIN_ID}
     ```
 
 ## 2. Join the Lava Mainnet
