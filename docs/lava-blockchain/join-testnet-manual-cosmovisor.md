@@ -4,6 +4,7 @@ slug: /testnet-manual-cosmovisor
 title: Option A - With Cosmovisor
 ---
 import RoadmapItem from '@site/src/components/RoadmapItem';
+import Admonition from '@theme/Admonition';
 
 # Join testnet - Manual setup with Cosmovisor
 ## Prerequisites
@@ -16,7 +17,7 @@ import RoadmapItem from '@site/src/components/RoadmapItem';
         ```bash
         ### Packages installations
         sudo apt update # in case of permissions error, try running with sudo
-        sudo apt install -y unzip logrotate git jq sed wget curl coreutils systemd
+        sudo apt install -y unzip logrotate git jq lz4 sed wget curl coreutils systemd
         # Create the temp dir for the installation
         temp_folder=$(mktemp -d) && cd $temp_folder
         ```
@@ -49,48 +50,9 @@ import RoadmapItem from '@site/src/components/RoadmapItem';
         To verify PATH, run `echo $PATH`
         
 
-## 1. Set up a local node
-
-### Download app configurations
-
-- Download setup configuration
-    
-    Download the configuration files needed for the installation
-    
-    ```bash
-    # Download the installation setup configuration
-    git clone https://github.com/lavanet/lava-config.git
-    cd lava-config/testnet-2
-    # Read the configuration from the file
-    # Note: you can take a look at the config file and verify configurations
-    source setup_config/setup_config.sh
-    ```
-    
-- Set app configurations
-        
-    Copy lavad default config files to config Lava config folder
-    
-    ```bash
-    echo "Lava config file path: $lava_config_folder"
-    mkdir -p $lavad_home_folder
-    mkdir -p $lava_config_folder
-    cp default_lavad_config_files/* $lava_config_folder
-    ```
-    
-
-### Set the genesis file
-
-- Set the genesis file in the configuration folder
-    
-    ```bash
-    # Copy the genesis.json file to the Lava config folder
-    cp genesis_json/genesis.json $lava_config_folder/genesis.json
-    ```
-
-## 2. Join the Lava Testnet
+## 1. Set up the Lava node
 
 The following sections will describe how to install Cosmovisor for automating the upgrades process.
-
 
 ### Set up Cosmovisor {#cosmovisor}
 
@@ -99,10 +61,11 @@ The following sections will describe how to install Cosmovisor for automating th
     ```bash
     go install github.com/cosmos/cosmos-sdk/cosmovisor/cmd/cosmovisor@v1.0.0
     # Create the Cosmovisor folder and copy config files to it
-    mkdir -p $lavad_home_folder/cosmovisor/genesis/bin/
+    export lava_home_folder="$HOME/.lava"
+    mkdir -p $lava_home_folder/cosmovisor/genesis/bin/
     # Download the genesis binary
-    wget -O  $lavad_home_folder/cosmovisor/genesis/bin/lavad "https://github.com/lavanet/lava/releases/download/v0.21.1.2/lavad-v0.21.1.2-linux-amd64"
-    chmod +x $lavad_home_folder/cosmovisor/genesis/bin/lavad
+    wget -O  $lava_home_folder/cosmovisor/genesis/bin/lavad "https://github.com/lavanet/lava/releases/download/v0.21.1.2/lavad-v0.21.1.2-linux-amd64"
+    chmod +x $lava_home_folder/cosmovisor/genesis/bin/lavad
     ```
 
     ```bash
@@ -110,7 +73,7 @@ The following sections will describe how to install Cosmovisor for automating th
     echo "# Setup Cosmovisor" >> ~/.profile
     echo "export DAEMON_NAME=lavad" >> ~/.profile
     echo "export CHAIN_ID=lava-testnet-2" >> ~/.profile
-    echo "export DAEMON_HOME=$HOME/.lava" >> ~/.profile
+    echo "export DAEMON_HOME=$lava_home_folder" >> ~/.profile
     echo "export DAEMON_ALLOW_DOWNLOAD_BINARIES=true" >> ~/.profile
     echo "export DAEMON_LOG_BUFFER_SIZE=512" >> ~/.profile
     echo "export DAEMON_RESTART_AFTER_UPGRADE=true" >> ~/.profile
@@ -120,48 +83,100 @@ The following sections will describe how to install Cosmovisor for automating th
 
     ```bash
     # Initialize the chain
-    $lavad_home_folder/cosmovisor/genesis/bin/lavad init \
+    $lava_home_folder/cosmovisor/genesis/bin/lavad init \
     my-node \
     --chain-id lava-testnet-2 \
-    --home $lavad_home_folder \
-    --overwrite
-    cp genesis_json/genesis.json $lava_config_folder/genesis.json
+    --home $lava_home_folder
     ```
 
-    :::caution Please note that cosmovisor will throw an error ⚠️ This is ok.
-    The following error will be thrown,
-    lstat /home/ubuntu/.lava/cosmovisor/current/upgrade-info.json: no such file or directory
-    :::
+    <Admonition type="caution">
+        Please note that cosmovisor will throw an error ⚠️ This is ok. The following error will be thrown,
+        lstat /home/ubuntu/.lava/cosmovisor/current/upgrade-info.json: no such file or directory
+    </Admonition>
 
     ```bash
     cosmovisor version
     ```
     
-    Create the systemd unit file
+    Create the Cosmovisor systemd unit file
     
     ```bash
-    # Create Cosmovisor unit file
-
     echo "[Unit]
-    Description=Cosmovisor daemon
-    After=network-online.target
-    [Service]
-    Environment="DAEMON_NAME=lavad"
-    Environment="DAEMON_HOME=${HOME}/.lava"
-    Environment="DAEMON_RESTART_AFTER_UPGRADE=true"
-    Environment="DAEMON_ALLOW_DOWNLOAD_BINARIES=true"
-    Environment="DAEMON_LOG_BUFFER_SIZE=512"
-    Environment="UNSAFE_SKIP_BACKUP=true"
-    User=$USER
-    ExecStart=${HOME}/go/bin/cosmovisor start --home=$lavad_home_folder --p2p.seeds $seed_node
-    Restart=always
-    RestartSec=3
-    LimitNOFILE=infinity
-    LimitNPROC=infinity
-    [Install]
-    WantedBy=multi-user.target
-    " >cosmovisor.service
+        Description=Cosmovisor daemon
+        After=network-online.target
+        [Service]
+        Environment="DAEMON_NAME=lavad"
+        Environment="DAEMON_HOME=$lava_home_folder"
+        Environment="DAEMON_RESTART_AFTER_UPGRADE=true"
+        Environment="DAEMON_ALLOW_DOWNLOAD_BINARIES=true"
+        Environment="DAEMON_LOG_BUFFER_SIZE=512"
+        Environment="UNSAFE_SKIP_BACKUP=true"
+        User=$USER
+        ExecStart=${HOME}/go/bin/cosmovisor start --home=$lava_home_folder
+        Restart=always
+        RestartSec=3
+        LimitNOFILE=infinity
+        LimitNPROC=infinity
+        [Install]
+        WantedBy=multi-user.target
+    " > cosmovisor.service
+    
     sudo mv cosmovisor.service /lib/systemd/system/cosmovisor.service
+    ```
+
+### Download the genesis file
+
+- Set the genesis file in the configuration folder
+
+    ```bash
+    curl -Ls https://raw.githubusercontent.com/lavanet/lava-config/main/testnet-2/genesis_json/genesis.json > $lava_home_folder/config/genesis.json
+    ```
+
+- Set up configuration files
+
+    ```bash
+    # Assuming lava is installed in it's default folder
+    # Determine OS
+    os_name=$(uname)
+    case "$(uname)" in
+    Darwin)
+        SED_INLINE="-i ''" ;;
+    Linux)
+        SED_INLINE="-i" ;;
+    *)
+        echo "unknown system: $(uname)"
+        exit 1 ;;
+    esac
+
+    # Edit config.toml file
+    sed $SED_INLINE \
+    -e 's|^timeout_propose =.*|timeout_propose = "10s"|' \
+    -e 's|^timeout_propose_delta =.*|timeout_propose_delta = "500ms"|' \
+    -e 's|^timeout_prevote =.*|timeout_prevote = "1s"|' \
+    -e 's|^timeout_prevote_delta =.*|timeout_prevote_delta = "500ms"|' \
+    -e 's|^timeout_precommit =.*|timeout_precommit = "500ms"|' \
+    -e 's|^timeout_precommit_delta =.*|timeout_precommit_delta = "1s"|' \
+    -e 's|^timeout_commit =.*|timeout_commit = "15s"|' \
+    -e 's|^create_empty_blocks =.*|create_empty_blocks = true|' \
+    -e 's|^create_empty_blocks_interval =.*|create_empty_blocks_interval = "15s"|' \
+    -e 's|^timeout_broadcast_tx_commit =.*|timeout_broadcast_tx_commit = "151s"|' \
+    -e 's|^skip_timeout_commit =.*|skip_timeout_commit = false|' \
+    $lava_home_folder/config/config.toml
+
+    # Edit app.toml file
+    sed $SED_INLINE \
+    -e 's|^pruning = .*|pruning = "nothing"|' \
+    -e "s|enable = .*|enable = true|" \
+    -e 's|^minimum-gas-prices = .*|minimum-gas-prices = "0.000000001ulava"|' \
+    $lava_home_folder/config/app.toml
+    ```
+
+- Configure external seeds
+
+    ```bash
+    SEEDS="3a445bfdbe2d0c8ee82461633aa3af31bc2b4dc0@testnet2-seed-node.lavanet.xyz:26656,e593c7a9ca61f5616119d6beb5bd8ef5dd28d62d@testnet2-seed-node2.lavanet.xyz:26656"
+
+    sed -i -e "s|^seeds *=.*|seeds = \"$SEEDS\"|" $lava_home_folder/config/config.toml
     ```
 
 ### Download the latest Lava data snapshot (_optional_) {#snapshots}
