@@ -1,9 +1,9 @@
-import CommunityMainnetEndpointsTable from './components/community-rpc/public-rpc-table.jsx'
-
 ---
 slug: /public-rpc
 title: Lava Public RPC 🌋
 ---
+
+import CommunityMainnetEndpointsTable from './components/community-rpc/public-rpc-table.jsx'
 
 # Lava Public RPC
 
@@ -19,9 +19,11 @@ title: Lava Public RPC 🌋
 
 ## Official Mainnet Endpoints 🌎
 
-:::info
-Official endpoint with Lava over Lava coming soon
-:::
+Official endpoint with Lava over Lava:
+
+```bash
+curl -X GET -H "Content-Type: application/json" https://lava.rest.lava.build/cosmos/base/tendermint/v1beta1/blocks/latest
+```
 
 ## Community Mainnet Endpoints 🧑🏾‍🤝‍🧑🏾
 
