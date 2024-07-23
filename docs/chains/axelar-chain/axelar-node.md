@@ -39,7 +39,7 @@ OS: Ubuntu 18.04 or MacOS(x86)
 ## Install 📥
 
 :::caution
-Some users have reported issues with the Axelarate install script. If you encounter issues, please consider making an [issue](https://github.com/axelarnetwork/axelarate-community/issues) or trying to install manually.
+Some users have reported issues with the Axelarate install script. If you encounter issues, please consider making an [issue](https://github.com/axelarnetwork/axelarate-community/issues) or trying to install it manually.
 :::
 
 Clone the Axelarate-Community Repo and then run the Node Setup Script.
