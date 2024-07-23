@@ -444,6 +444,7 @@ const sidebars = {
         "provider/provider-features",
         "provider/provider-tls",
         "provider/provider-improve-service",
+        "provider/provider-load-balancing",
       ],
     },
     {
