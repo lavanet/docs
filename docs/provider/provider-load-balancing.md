@@ -17,7 +17,7 @@ When a client sends a request to the Lava RPC Provider service, it includes a cu
 This header contains a unique identifier for the request, which is used by the load balancer to determine which backend server should handle the request.
 
 :::warning
-Ignoring this header when load balancing providers on the same chain with under the same wallet account will lead to consistency issues, as the load balancer will not be able to route requests from the same session to the same RPC Provider instance. This will affect your RPC Provider QoS score, and data reliability.
+Ignoring this header when load balancing providers on the same chain with under the same wallet account will lead to consistency issues, as the load balancer will not be able to route requests from the same session to the same RPC Provider instance. This will affect your RPC Provider's QoS score, and data reliability.
 :::
 
 ## Recommended Setup
