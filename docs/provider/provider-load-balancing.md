@@ -5,9 +5,36 @@ title: Load Balancing
 
 # Load Balancing
 
-## Load Balancing in Lava's Protocol
+## Overview
 
-Providers that want to run multiple RPC Provider service for the same chain, under the same account are able to do so. The only thing that needs to be done is take into consideration the header `lava-lb-unique-id` in the request header.
+Load balancing is a technique used to distribute incoming network traffic across multiple servers to ensure that no single server is overwhelmed with requests. This helps to improve the performance, reliability, and scalability of a service by spreading the load across multiple servers.
+
+If you wish to run multiple instances of the Lava RPC Provider service for the same chain, you can use a load balancer to distribute incoming requests across these instances. This can help to improve the performance and reliability of your service and increase your QoS.
+
+## Load Balancing in Lava
+
+When a client sends a request to the Lava RPC Provider service, it includes a custom header called `lava-lb-unique-id` in the request header.
+This header contains a unique identifier for the request, which is used by the load balancer to determine which backend server should handle the request.
+
+:::warning
+Ignoring this header when load balancing providers on the same chain with under the same wallet account will lead to consistency issues, as the load balancer will not be able to route requests from the same session to the same RPC Provider instance. This will affect your RPC Provider score QoS.
+:::
+
+## Recommended Setup
+
+We recommend using a load balancer that supports consistent hashing based on a unique request ID. This will ensure that requests from the same session are always routed to the same backend server, which is important for maintaining consistency in the service.
+
+You can use a variety of load balancers to achieve this, such as Nginx, Envoy, or any other load balancer that supports routing using the request headers and gRPC. In this guide, we will provide an example configuration for Nginx, which is a popular open-source web server and reverse proxy server.
+
+You can see in the diagram below an example for a single chain setup with multiple instances of the Lava RPC Provider service running behind a load balancer. The load balancer receives incoming requests from clients and routes them to the backend servers based on the consistent hashing load balancing algorithm:
+
+![Provider Load Balancing Diagram](/img/tutorial/provider/provider-load-balancing-diagram.png)
+
+This setup is for a single chain only, and for a single provider wallet. You can multiply this setup for all the chains that you would like to provider. If you have multiple provider wallets, you will need to stake them separately.
+
+You can run your instances on the same machine or on different machines, as long as they are accessible to the load balancer, and that the ports that they are listening on are configured correctly in you load balancer configuration.
+
+### Nginx Configuration
 
 In Nginx for example, you can use the following configuration to pass the header to the upstream:
 
