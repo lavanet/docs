@@ -30,7 +30,7 @@ You can use a variety of load balancers to achieve this, such as Nginx, Envoy, o
 This is the official recommendation from Lava Foundation. You can use any load balancer that supports consistent hashing based on a unique request ID, but it will require a deep understanding of the load balancer configuration and the Lava RPC protocol, and therefore includes risk.
 :::
 
-You can see in the diagram below an example for a single chain setup with multiple instances of the Lava RPC Provider service running behind a load balancer. The load balancer receives incoming requests from clients and routes them to the backend servers based on the consistent hashing load balancing algorithm:
+You can see in the diagram below an example of a single chain setup with multiple instances of the Lava RPC Provider service running behind a load balancer. The load balancer receives incoming requests from clients and routes them to the backend servers based on the consistent hashing load balancing algorithm:
 
 ![Provider Load Balancing Diagram](/img/tutorial/provider/provider-load-balancing-diagram.png)
 
