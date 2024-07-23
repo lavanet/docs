@@ -34,7 +34,7 @@ You can see in the diagram below an example for a single chain setup with multip
 
 ![Provider Load Balancing Diagram](/img/tutorial/provider/provider-load-balancing-diagram.png)
 
-This setup is for a single chain only, and for a single provider wallet. You can multiply this setup for all the chains that you would like to provider. If you have multiple provider wallets, you will need to stake them separately.
+This setup is for a single chain only, and for a single provider wallet. You can multiply this setup for all the chains that you would like to provide. If you have multiple provider wallets, you will need to stake them separately.
 
 You can run your instances on the same machine or on different machines, as long as they are accessible to the load balancer, and that the ports that they are listening on are configured correctly in you load balancer configuration.
 
