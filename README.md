@@ -28,7 +28,7 @@ Contributing to the documentation of Lava is a rewarding way to give back to the
 [![Netlify Status](https://api.netlify.com/api/v1/badges/58c0a448-7af0-48d3-8e29-86fc4a6f4868/deploy-status)](https://app.netlify.com/sites/sage-swan-13ac7b/deploys)
 
 ### Process
-The `main` branch of this repository is automatically deployed to our docs site, and other branches and pull requests leverage Netlify deploy. Please note that unless you are a recognized contributor of this repository, each attempted PR generates a Netlify approval that will prevent your pull request from being merged. Once the request is approved and a Netlify deploy preview is generated, a Netlify deploy preview will appear in the body of your PR as `😎 Deploy Preview`. This deploy preview will be audited by a docs maintainer before merging your pull request.
+The `main` branch of this repository is automatically deployed to our docs site, and other branches and pull requests leverage Netlify deployment. Please note that unless you are a recognized contributor of this repository, each attempted PR generates a Netlify approval that will prevent your pull request from being merged. Once the request is approved and a Netlify deploy preview is generated, a Netlify deploy preview will appear in the body of your PR as `😎 Deploy Preview`. This deploy preview will be audited by a docs maintainer before merging your pull request.
 
 ## Local Development 🔧
 

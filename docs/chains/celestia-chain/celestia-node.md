@@ -1,9 +1,9 @@
 ---
 slug: /celestia-node
-title: Running a celestia RPC Node
+title: Running a Celestia RPC Node
 ---
 
-# Running a celestia RPC Node
+# Running a Celestia RPC Node
 
 ## Requirements 📄
 
@@ -17,8 +17,8 @@ title: Running a celestia RPC Node
 
 ##  Setup celestia consensus and DA node
 
-Follow celestia docs for instructions on how to setup and run the nodes:
-Data availabillity light node https://docs.celestia.org/nodes/light-node
+Follow Celestia docs for instructions on how to setup and run the nodes:
+Data availability light node https://docs.celestia.org/nodes/light-node
 Consensus node https://docs.celestia.org/nodes/full-consensus-node
 
 Important note:
@@ -39,7 +39,7 @@ To set up your provider on the Lava Network, you can refer to the [provider setu
 
 Celestia providers must supply endpoint for both consensus and DA node:
 - consensus node: rest, tendermint, grpc (this is the same as every other cosmos node)
-- DA node: jsonrpc (when running the light DA node the defualt port will be 26658)
+- DA node: jsonrpc (when running the light DA node the default port will be 26658)
 
 
 example for provider configuration file

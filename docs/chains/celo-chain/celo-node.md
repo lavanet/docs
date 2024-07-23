@@ -1,18 +1,18 @@
 ---
 slug: /celo-node
-title: Running an Celo RPC Node
+title: Running a Celo RPC Node
 ---
 
 # Running a Celo RPC Node
 
 ## Requirements 📄 
 
-Before you start, be sure to install [Docker](https://www.docker.com/get-started). Once you have docker installed, you can continue onto the next step.
+Before you start, be sure to install [Docker](https://www.docker.com/get-started). Once you have docker installed, you can continue to the next step.
 
 
 ## Install Celo Docker Image 📥
 
-Celo's node is built from a Docker image pulled using Docker CLI. This software is necessary to run a Celo RPC node. To get started, input the following in terminal:
+Celo's node is built from a Docker image pulled using Docker CLI. This software is necessary to run a Celo RPC node. To get started, input the following in the terminal:
 
 ```bash
 export CELO_IMAGE=us.gcr.io/celo-org/geth:mainnet
