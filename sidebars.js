@@ -436,8 +436,8 @@ const sidebars = {
           ]
         },
         {
-          type: 'category', 
-          label: 'Join mainnet',
+          type: 'category',
+          label: 'Join Mainnet',
           collapsible: true,
           collapsed: true,
           link: {

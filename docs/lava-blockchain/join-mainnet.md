@@ -1,12 +1,12 @@
 ---
 sidebar_position: 1
 slug: /mainnet
-title: Join mainnet
+title: Join Mainnet
 ---
 
 import RoadmapItem from '@site/src/components/RoadmapItem';
 
-# Join mainnet
+# Join Mainnet
 
 The next pages will cover how to join Lava's mainnet, manually or automatically. When you're done, you can continue to start your validator.
 

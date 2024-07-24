@@ -84,13 +84,12 @@ curl -X 'GET' \
 Here and below ensure that you replace `{PUBLIC_RPC}` with the correct [endpoint](/public-rpc).
 :::
 
-To obtain a list of available **testnet-2** APIs and chains, [query all chain specs](https://public-rpc-testnet2.lavanet.xyz/rest/lavanet/lava/spec/show_all_chains) or use the following CLI commands for a detailed list:
+To obtain a list of available **testnet-2** APIs and chains, [query all chain specs](https://lav1.lava.build/lavanet/lava/spec/show_all_chains) or use the following CLI commands for a detailed list:
 
 
 ```bash
-curl -X 'GET' \
-  '{PUBLIC_RPC}/rest/lavanet/lava/spec/show_all_chains' \
-  -H 'accept: application/json' | jq
+curl -X 'POST' -H 'Content-Type: application/json' {PUBLIC_RPC} \
+    --data '{"jsonrpc": "2.0", "id": 1, "method": "status", "params": []}' | jq
 ```
 
 Alternatively,
