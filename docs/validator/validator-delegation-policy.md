@@ -6,6 +6,9 @@ slug: /validator-delegation-policy
 
 # Lava Delegation Policy Overview
 
+:::info The next round of Foundation delegations toward Active Set Validators will open in October
+:::
+
 ## Objective
 
 Lava is committed to maintaining a robust and dynamic validator ecosystem. We initiate with a fully active set and plan to implement an ongoing delegation program. This program will evaluate and potentially rotate validators quarterly based on demand and performance metrics. This approach allows new validators the opportunity to join and contribute to the network, replacing others as needed to optimize network performance and engagement.

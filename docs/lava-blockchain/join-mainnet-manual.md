@@ -159,6 +159,13 @@ _Coming soon_
     sudo journalctl -u lavad -f
     ```
 
+- Check the latest block
+   
+    ```bash
+    curl -X GET -H "Content-Type: application/json" \
+    https://lava.rest.lava.build/cosmos/base/tendermint/v1beta1/blocks/latest
+    ```
+
 ## 3. Upgrades {#upgrades}
 Lava blockchain upgrades requires you to update `lavad`. This guide covers the manual steps for doing so, assuming you do not use Cosmovisor.
 
