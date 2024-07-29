@@ -496,7 +496,7 @@ const sidebars = {
       },
       items: [
         'lava-blockchain/install-lava',
-        'lava-blockchain/hardware-requirements',     
+        'lava-blockchain/hardware-requirements',
         'lava-blockchain/wallet',
         'lava-blockchain/faucet',
         'lava-blockchain/subscriptions',
