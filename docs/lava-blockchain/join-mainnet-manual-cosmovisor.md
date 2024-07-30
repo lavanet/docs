@@ -1,12 +1,12 @@
 ---
 sidebar_position: 2
-slug: /testnet-manual-cosmovisor
+slug: /mainnet-manual-cosmovisor
 title: Option A - With Cosmovisor
 ---
 import RoadmapItem from '@site/src/components/RoadmapItem';
 import Admonition from '@theme/Admonition';
 
-# Join testnet - Manual setup with Cosmovisor
+# Join mainnet - Manual setup with Cosmovisor
 ## Prerequisites
 
 1. Verify [hardware requirements](reqs) are met
@@ -64,7 +64,7 @@ The following sections will describe how to install Cosmovisor for automating th
     export lava_home_folder="$HOME/.lava"
     mkdir -p $lava_home_folder/cosmovisor/genesis/bin/
     # Download the genesis binary
-    wget -O  $lava_home_folder/cosmovisor/genesis/bin/lavad "https://github.com/lavanet/lava/releases/download/v0.21.1.2/lavad-v0.21.1.2-linux-amd64"
+    wget -O  $lava_home_folder/cosmovisor/genesis/bin/lavad "https://github.com/lavanet/lava/releases/download/v0.33.0/lavad-v0.33.0-linux-amd64"
     chmod +x $lava_home_folder/cosmovisor/genesis/bin/lavad
     ```
 
@@ -72,7 +72,7 @@ The following sections will describe how to install Cosmovisor for automating th
     # Set the environment variables
     echo "# Setup Cosmovisor" >> ~/.profile
     echo "export DAEMON_NAME=lavad" >> ~/.profile
-    echo "export CHAIN_ID=lava-testnet-2" >> ~/.profile
+    echo "export CHAIN_ID=lava-mainnet-1" >> ~/.profile
     echo "export DAEMON_HOME=$lava_home_folder" >> ~/.profile
     echo "export DAEMON_ALLOW_DOWNLOAD_BINARIES=true" >> ~/.profile
     echo "export DAEMON_LOG_BUFFER_SIZE=512" >> ~/.profile
@@ -85,7 +85,7 @@ The following sections will describe how to install Cosmovisor for automating th
     # Initialize the chain
     $lava_home_folder/cosmovisor/genesis/bin/lavad init \
     my-node \
-    --chain-id lava-testnet-2 \
+    --chain-id lava-mainnet-1 \
     --home $lava_home_folder
     ```
 
@@ -129,7 +129,7 @@ The following sections will describe how to install Cosmovisor for automating th
 - Set the genesis file in the configuration folder
 
     ```bash
-    curl -Ls https://raw.githubusercontent.com/lavanet/lava-config/main/testnet-2/genesis_json/genesis.json > $lava_home_folder/config/genesis.json
+    curl -Ls https://storage.googleapis.com/lavanet-public-asssets/tge/genesis.json > $lava_home_folder/config/genesis.json
     ```
 
 - Set up configuration files
@@ -174,7 +174,7 @@ The following sections will describe how to install Cosmovisor for automating th
 - Configure external seeds
 
     ```bash
-    SEEDS="3a445bfdbe2d0c8ee82461633aa3af31bc2b4dc0@testnet2-seed-node.lavanet.xyz:26656,e593c7a9ca61f5616119d6beb5bd8ef5dd28d62d@testnet2-seed-node2.lavanet.xyz:26656"
+    SEEDS="ebacd3e666003397fb685cd44956d33419219950@seed2.lava.chainlayer.net:26656,1105d3a3384edaa450f4f63c2b1ff08d366ee256@159.203.86.102:26656,f1caeaacfac32e4dd00916e8d912e1d834e94eb3@lava-seed.stakecito.com:26666,e4eb68c6fdfab1575b8794205caed47d4f737df4@lava-mainnet-seed.01node.com:26107,2d4db6b95804ea97e1f3655d043e6becf9bffc94@lava-seeds2.w3coins.io:11156,dcbfb490ea930fe9e8058089e3f6a14ca274c1c4@217.182.136.79:26656,e023c3892862744081360a99a2666e8111b196d3@38.242.213.53:26656,eafff29ec471bdd0985a9360b2c103997539c939@lava-seed.node.monster:26649,6a9a65d92b4820a5d198dd95743aa3059d0d3d4c@seed-lava.hashkey.cloud:26656"
 
     sed -i -e "s|^seeds *=.*|seeds = \"$SEEDS\"|" $lava_home_folder/config/config.toml
     ```
@@ -220,9 +220,9 @@ Note the location of `lavad` now exists under `cosmovisor` path:
 $HOME/.lava/cosmovisor/current/bin/lavad status | jq .SyncInfo.catching_up
 ```
 
-## Welcome to Lava Testnet 🌋
+## Welcome to Lava Mainnet 🌋
 
-:::tip Joined Testnet? Be a validator!
+:::tip Joined Mainnet? Be a validator!
 You are now running a Node in the Lava network 🎉🥳! 
 
 Congrats, happy to have you here 😻 Celebrate it with us on Discord.

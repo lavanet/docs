@@ -16,6 +16,7 @@ const sidebars = {
         'intro/about',
         'intro/explorers',
         'intro/key-terms',
+        'intro/key-variables',
         {
           type: 'category', 
           label: '🗜️ Specifications',
@@ -434,8 +435,22 @@ const sidebars = {
             'lava-blockchain/join-testnet-manual'
           ]
         },
+        {
+          type: 'category',
+          label: 'Join Mainnet',
+          collapsible: true,
+          collapsed: true,
+          link: {
+            type: 'doc',
+            id: 'lava-blockchain/join-mainnet'
+          },
+          items: [
+            'lava-blockchain/join-mainnet-manual-cosmovisor',
+            'lava-blockchain/join-mainnet-manual'
+          ]
+        },
         'validator/validator-manual',
-        'validator/validator-rejoin'
+        'validator/validator-delegation-policy',
       ]
     },
     {
@@ -461,12 +476,13 @@ const sidebars = {
           items: [
             'provider/lavavisor/lavavisor-wrap',
             'provider/lavavisor/lavavisor-services',
-          ]
+          ],
         },
         'provider/provider-setup',
         'provider/provider-features',
         'provider/provider-tls',
-        'provider/provider-improve-service'
+        'provider/provider-rewards-service',
+        'provider/provider-delegation',
       ]
     },
     {
@@ -480,7 +496,7 @@ const sidebars = {
       },
       items: [
         'lava-blockchain/install-lava',
-        'lava-blockchain/hardware-requirements',     
+        'lava-blockchain/hardware-requirements',
         'lava-blockchain/wallet',
         'lava-blockchain/faucet',
         'lava-blockchain/subscriptions',
