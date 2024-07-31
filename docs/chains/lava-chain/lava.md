@@ -37,7 +37,7 @@ https://raw.githubusercontent.com/lavanet/lava/main/cookbook/specs/spec_add_lava
 
 ### Methods 🛠️
 
-#### ⌨️ Command:
+#### ⌨️ Command (same for testnet and mainnet):
 
 ```bash
 lavad q spec show-chain-info LAV1
