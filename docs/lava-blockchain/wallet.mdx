@@ -4,28 +4,7 @@ title: Setting Up a Wallet
 slug: /wallet
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
 Lava leverages the Cosmos SDK's bank and account modules for seamless integration with existing Cosmos wallets.
-
-**Recommendation**: After setting up your wallet, it's crucial to test its functionality. Utilize the [faucet](/faucet#discord-faucet) to acquire testnet tokens. Then, execute a transaction by transferring these tokens to another account and back.
-
-## How to Switch to Lava Mainnet in Cosmos Wallets
-
-Switching to the Lava Mainnet in wallets such as Keplr involves adding the network settings manually. Follow these steps:
-
-### Keplr Wallet
-
-1. **Visit Keplr Chains**: Go to [Keplr Chains](https://chains.keplr.app).
-2. **Search for "Lava"**: Type "Lava" in the search bar and click on [Add to Keplr] to add Lava to your wallet.
-3. **Open Keplr Wallet**: Launch your Keplr wallet and navigate to the "Manage Chain Visibility" section in the menu.
-4. **Search and Select "Lava"**: Enter "Lava" in the search bar within the "Manage Chain Visibility" section and select it from the list.
-5. **Confirm Changes**: Click on [Save] to confirm the changes.
-
-
-
-## Choosing a Wallet
 
 For your convenience, here are some popular wallet options:
 * [Keplr](#keplr)
@@ -33,175 +12,34 @@ For your convenience, here are some popular wallet options:
 * For Advanced Users: [CLI Wallet](#cli)
 * For Advanced Users: [Other Wallets](#other)
 
-### Keplr Usage {#keplr}
+## Keplr Wallet {#keplr}
 
-:::info experimental 
-Keplr wallet support in Lava Testnet is currently experimental.
-:::
+1. Download and install Keplr for your platform from [here](https://www.keplr.app/get).
+<p><img src="/img/wallet/keplr/keplr1.png" width="600"/></p>
 
-1. Download and install Keplr from [here](https://www.keplr.app/).
-2. Follow the setup instructions in the Keplr extension. (Note: Hardware wallet support, tested with Ledger, is available.)
+2. Follow the setup instructions in the Keplr extension. (Note: Hardware wallet support, tested with Ledger, is available).
 3. Access the Keplr extension.
-<p><img src="/img/wallet/keplr/keplr1.png" width="200"/></p>
-4. **Refresh this page.**
-5. Click the button below and then select `Approve`.
 
-<p>
+4. If you create a new wallet it's possible to add Lava chain on the step "Select Chains":
+<p><img src="/img/wallet/keplr/keplr2.png" width="500"/></p>
+Otherwise, if you already have Keplr you can add Lava chain via search directly in the wallet:
 
-export function addKeplr(){
-window.keplr.experimentalSuggestChain({
-    chainId: "lava-testnet-2",
-    chainName: "Lava Testnet",
-    rpc: "https://public-rpc.lavanet.xyz",
-    rest: "https://public-rpc.lavanet.xyz/rest",
-    bip44: {
-        coinType: 118,
-    },
-    bech32Config: {
-        bech32PrefixAccAddr: "lava@",
-        bech32PrefixAccPub: "lava@" + "pub",
-        bech32PrefixValAddr: "lava@" + "valoper",
-        bech32PrefixValPub: "lava@" + "valoperpub",
-        bech32PrefixConsAddr: "lava@" + "valcons",
-        bech32PrefixConsPub: "lava@" + "valconspub",
-    },
-    currencies: [ 
-        { 
-            coinDenom: "LAVA", 
-            coinMinimalDenom: "ulava", 
-            coinDecimals: 6, 
-            coinGeckoId: "lava", 
-        }, 
-    ],
-    feeCurrencies: [
-        {
-            coinDenom: "LAVA",
-            coinMinimalDenom: "ulava",
-            coinDecimals: 6,
-            coinGeckoId: "lava",
-        },
-    ],
-    stakeCurrency: {
-        coinDenom: "LAVA",
-        coinMinimalDenom: "ulava",
-        coinDecimals: 6,
-        coinGeckoId: "lava",
-    },
-    coinType: 118,
-    gasPriceStep: {
-        low: 0.000001,
-        average: 0.025,
-        high: 0.03,
-    },
-});
-}
+- Type "lava", click "Manage":
+<p><img src="/img/wallet/keplr/keplr3.png" width="400"/></p>
 
-</p>
+- Click "Save" button:
+<p><img src="/img/wallet/keplr/keplr4.png" width="400"/></p>
 
+## Leap Wallet {#leap}
 
-<p>
-<button style={{
-          backgroundColor: 'linear-gradient(to right, red, orange)',
-          color: 'white',
-          padding: '10px 20px', // Adjust padding for size
-          borderRadius: '5px', // Adjust border radius if needed
-          fontSize: '16px', // Adjust font size
-        }} onClick={() => addKeplr()}>Add Lava Testnet to Keplr</button>
-</p>
-
-<p><img src="/img/wallet/keplr/keplr2.png" width="200"/></p>
-6. Navigate to `Settings` -> `General` -> `Manage Chain Visibility`. Search for `Lava Testnet`, enable it, and click `Save`.
-<p><img src="/img/wallet/keplr/keplr3.png" width="200"/></p>
-<p><img src="/img/wallet/keplr/keplr4.png" width="200"/></p>
-<p><img src="/img/wallet/keplr/keplr5.png" width="200"/></p>
-<p><img src="/img/wallet/keplr/keplr6.png" width="200"/></p>
-<p><img src="/img/wallet/keplr/keplr7.png" width="450"/></p>
-7. Return to the Keplr extension, copy the Lava Testnet address.
-<p><img src="/img/wallet/keplr/keplr8.png" width="200"/></p>
-<p><img src="/img/wallet/keplr/keplr9.png" width="200"/></p>
-8. You will now have a Lava Testnet address copied to your clipboard, resembling: `lava@11223344556677889900aabbccddeeff1122334`.
-
-### Leap Wallet {#leap}
-
-:::info experimental 
-Lava's Testnet support for the Leap wallet is experimental.
-:::
-
-1. Download and install Leap from [here](https://www.leapwallet.io/).
-2. Complete the setup instructions in the Leap extension. (Hardware wallet support, tested with Ledger, is available.)
+1. Download and install Leap from [here](https://www.leapwallet.io/download).
+2. Complete the setup instructions in the Leap extension (Hardware wallet support, tested with Ledger, is available).
 3. Open the Leap extension.
-<p><img src="/img/wallet/leap/leap1.png" width="200"/></p>
-4. **Refresh this page**
-5. Click the button below and then select `Approve`.
-
-
-<p>
-
-export function addLeap(){
-window.leap.experimentalSuggestChain({
-    chainId: "lava-testnet-2",
-    chainName: "Lava Testnet",
-    rpc: "https://public-rpc.lavanet.xyz",
-    rest: "https://public-rpc.lavanet.xyz/rest",
-    bip44: {
-        coinType: 118,
-    },
-    bech32Config: {
-        bech32PrefixAccAddr: "lava@",
-        bech32PrefixAccPub: "lava@" + "pub",
-        bech32PrefixValAddr: "lava@" + "valoper",
-        bech32PrefixValPub: "lava@" + "valoperpub",
-        bech32PrefixConsAddr: "lava@" + "valcons",
-        bech32PrefixConsPub: "lava@" + "valconspub",
-    },
-    currencies: [ 
-        { 
-            coinDenom: "LAVA", 
-            coinMinimalDenom: "ulava", 
-            coinDecimals: 6, 
-            coinGeckoId: "lava", 
-        }, 
-    ],
-    feeCurrencies: [
-        {
-            coinDenom: "LAVA",
-            coinMinimalDenom: "ulava",
-            coinDecimals: 6,
-            coinGeckoId: "lava",
-            gasPriceStep: {
-                low: 0.001,
-                average: 0.025,
-                high: 0.03,
-            },
-        },
-    ],
-    stakeCurrency: {
-        coinDenom: "LAVA",
-        coinMinimalDenom: "ulava",
-        coinDecimals: 6,
-        coinGeckoId: "lava",
-    },
-    features: []
-});
-}
-
-</p>
-
-
-<p>
-<button style={{
-          backgroundColor: 'linear-gradient(to right, red, orange)',
-          color: 'white',
-          padding: '10px 20px', // Adjust padding for size
-          borderRadius: '5px', // Adjust border radius if needed
-          fontSize: '16px', // Adjust font size
-        }} onClick={() => addLeap()}>Add Lava Testnet to Leap</button>
-</p>
-
-<p><img src="/img/wallet/leap/leap2.png" width="200"/></p>
-6. Open the extension and copy your wallet address.
-<p><img src="/img/wallet/leap/leap3.png" width="200"/></p>
-7. Your Lava Testnet address will be copied to the clipboard, looking like: `lava@11223344556677889900aabbccddeeff1122334`
+4. Click select chain button on the top menu:
+<p><img src="/img/wallet/leap/leap1.png" width="400"/></p>
+5. Type "lava" for filter or scroll to the chain and select it:
+<p><img src="/img/wallet/leap/leap2.png" width="400"/></p>
+6. The wallet will be switched to the Lava chain.
 
 ## CLI Wallet {#cli}
 
