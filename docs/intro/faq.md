@@ -42,8 +42,8 @@ Troubleshooting:
 
 ### 🟡 What is QoS (Passable Quality-of-Service)? {#qos}
 This score for providers per relay is based on the metrics of latency, sync, and availability. There are two different types of QoS: 
-- [Passable QoS](/provider-improve-service#passable-qos)
-- [QoS Excellence](/provider-improve-service#qos-excellence)
+- [Passable QoS](/provider-rewards-service#passable-qos)
+- [QoS Excellence](/provider-rewards-service#qos-excellence)
 
 
 ### 🟡 How can you improve your provider's QoS? {#improve-qos}
@@ -66,7 +66,7 @@ Lava uses dualstaking, when staking a provider, a validator is also specified.
 
 ### 🟡  How does slashing work for providers?
 Slashing has not yet been implemented for providers. It is planned to only be for fraudulent activity. A [freeze feature](/provider-features#freeze) has been implemented for service providers to avoid downtime or poor QoS. 
-Documentation is available for [jailing](/provider-improve-service#jailing).
+Documentation is available for [jailing](/provider-rewards-service#jailing).
 
 Here are some basic facts about jailing:
 - providers claim CUs serviced via relay payments;
