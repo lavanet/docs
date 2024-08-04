@@ -13,4 +13,4 @@ import RoadmapItem from '@site/src/components/RoadmapItem';
 
 [<RoadmapItem icon="🖥️" title="Learn more about Backend Use" description="use LavaSDK with dotenv for secure & performant API access"/>](/sdk-backend)
 
-[<RoadmapItem icon="📱" title="Learn more about Frontend Use" description="use LavaSDK with badge server for seemless frontend API access"/>](/sdk-frontend)
+[<RoadmapItem icon="📱" title="Learn more about Frontend Use" description="use LavaSDK with badge server for seamless frontend API access"/>](/sdk-frontend)
