@@ -24,6 +24,7 @@ https://lava.explorers.guru/
 - ✨[W3Coins](https://lava-explorer.w3coins.io/Lava)
 - ✨[Coinhunters](https://lava.coinhunterstr.com/lava)
 - ✨[AviaOne](https://mainnet.explorer.aviaone.com/lava)
+- ✨[MELLIFERA (with providers view support) ](https://lava-explorer.mellifera.network)
 
 ### TestNet Explorers
 
