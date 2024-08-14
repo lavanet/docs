@@ -18,6 +18,8 @@ In addition to our documentation, Lava has a growing selection of supportive lea
 - [Using Lava Gateway for Juno RPC](https://medium.com/lava-network/tutorial-using-lava-gateway-for-juno-rpc-junod-bfe866296023)
 - [Using Lava Gateway for Osmosis RPC](https://medium.com/lava-network/tutorial-using-lava-gateway-for-osmosis-rpc-osmosisd-f19bc30d0323)
 - [Using Lava Gateway with Ethers.js](https://medium.com/lava-network/tutorial-using-lava-gateway-for-ethereum-rpc-access-ethers-js-7ad82293e37d)
+- [Become a Lavanet Provider in 15 minutes 🌋](https://medium.com/@zafran/become-a-lavanet-provider-in-15-minutes-95781c00d49a)
+- [One-Click Solutions: Automating the Lava Project Deployment with Ansible and Docker](https://medium.com/devops-dev/one-click-solutions-automating-the-lava-project-deployment-with-ansible-and-docker-8eaf7beb7b39)
 
 ## ![](/img/cosmfavicon.ico) How-to Cosmos 
 
