@@ -18,6 +18,16 @@ https://lava.explorers.guru/
 </center>
 
 ## Community Block Explorers 🧑🏾‍🤝‍🧑🏾
+
+### Mainnet Explorers
+
+- ✨[W3Coins](https://lava-explorer.w3coins.io/Lava)
+- ✨[Coinhunters](https://lava.coinhunterstr.com/lava)
+- ✨[AviaOne](https://mainnet.explorer.aviaone.com/lava)
+- ✨[MELLIFERA (with providers view support) ](https://lava-explorer.mellifera.network)
+
+### TestNet Explorers
+
 - ✨[BCCNodes](https://explorer.bccnodes.com/lava-T/)
 - ✨[Kjnodes](https://explorer.kjnodes.com/lava-testnet)
 - ✨[Nodeist](https://exp.nodeist.net/Lava)
@@ -28,6 +38,7 @@ https://lava.explorers.guru/
 - ✨[STAKEME](https://lava.exploreme.pro)
 - ✨[AKNodes](https://explorer.aknodes.com/LAVA-TESTNET)
 - ✨[SbGid](https://exp.sbgid.com/lava-testnet)
+- ✨[CoinHunters](https://explorer.coinhunterstr.com/lava)
 
 ## Community Public RPC Explorer 🕵🏼
 One of our community members is providing an experimental service to see all exposed providers on the network:

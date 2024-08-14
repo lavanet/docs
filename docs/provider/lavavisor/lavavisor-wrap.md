@@ -19,9 +19,7 @@ Lavavisor's Process Wrapping commands were designed with Dockerized and Kubernet
 The key distinction between the two is that `lavavisor wrap` validates Golang installation and locally downloads and builds the Lavap codebase. Conversely, the `pod` command fetches the pre-compiled binary from the [official Lava Network repository](https://github.com/lavanet/lava/releases/latest), as it lacks the capability to compile binaries locally.
 
 :::tip
-
-Please make sure you are using the right `chainId` this document was written during testnet, and the active `chainId` was `lava-testnet-2` at time of composition.
-
+Please make sure you are using the right [`chainId`](/key-variables#chain-id)
 :::
 
 <br />
@@ -41,8 +39,12 @@ If you're using [`lavavisor pod`](#-lavavisor-pod) this command is unnecesary an
     
 **Example usage:**
 
+:::caution
+Here and below ensure that you replace `{CHAIN_ID}` with the appropriate value depending on your target network. See the [Chain ID](/key-variables#chain-id) section for details.
+:::
+
 ```bash
-lavavisor init --auto-download --chain-id lava-testnet-2
+lavavisor init --auto-download --chain-id {CHAIN_ID}
 ```
 
 <br />
@@ -54,7 +56,7 @@ The `wrap` command doesn't require a config for itself, it just takes the lavap 
 **Example usage:**
 
 ```bash
-lavavisor wrap --cmd 'lavap rpcprovider ./config/my_rpcprovider_config.yml --from <account> --log_level debug --geolocation 1 --chain-id lava-testnet-2' --auto-download
+lavavisor wrap --cmd 'lavap rpcprovider ./config/my_rpcprovider_config.yml --from <account> --log_level debug --geolocation 1 --chain-id {CHAIN_ID}' --auto-download
 ```
 
 <br />
@@ -72,7 +74,7 @@ When running this command in a lightweight pod environment that lacks Golang or 
 **Example usage:**
 
 ```bash
-lavavisor pod --cmd 'lavap rpcprovider ./config/my_rpcprovider_config.yml --from <account> --log_level debug --geolocation 1 --chain-id lava-testnet-2'
+lavavisor pod --cmd 'lavap rpcprovider ./config/my_rpcprovider_config.yml --from <account> --log_level debug --geolocation 1 --chain-id {CHAIN_ID}'
 ```
 
 <br />
@@ -97,5 +99,5 @@ Lavavisor doesn't check if the password is correct; it will try to use it when s
 ### Example Use ⚙️
 
 ```bash
-lavavisor wrap --cmd 'lavap rpcprovider ./config/my_rpcprovider_config.yml --geolocation 1 --log_level debug --from prod_client --chain-id lava-testnet-2 --keyring-backend os --node "<local/public node url>"' --auto-download --node "<local/public node url>" --chain-id lava-testnet-2 --enter-keyring-password
+lavavisor wrap --cmd 'lavap rpcprovider ./config/my_rpcprovider_config.yml --geolocation 1 --log_level debug --from prod_client --chain-id {CHAIN_ID} --keyring-backend os --node "<local/public node url>"' --auto-download --node "<local/public node url>" --chain-id {CHAIN_ID} --enter-keyring-password
 ```

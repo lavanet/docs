@@ -168,14 +168,6 @@ const config = {
       hotjar: {
         applicationId: 3059536,
       },
-      announcementBar: {
-        id: "no_token",
-        content:
-          '<a href="https://www.lavanet.xyz/roadmap?utm_source=announcement-bar&utm_medium=docs&utm_campaign=lava-phase-2">Lava Phase 2</a> is Live 🔥 Decentralized, Multi-chain RPC & APIs. <B>Mainnet Soon!</B>',
-        backgroundColor: "#AA0000",
-        textColor: "#FFFFFF",
-        isCloseable: true,
-      },
       image: "img/logo_black_background.png",
       algolia: {
         // The application ID provided by Algolia

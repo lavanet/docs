@@ -6,6 +6,7 @@ slug: /provider
 import RoadmapItem from '@site/src/components/RoadmapItem';
 
 # Become a Provider
+
 Welcome to the Lava network's provider introduction. In this page, you'll learn about the role of providers in the Lava network, as well as the necessary steps to get started as one.
 
 :::info want to be a testnet Provider? ✍️
@@ -39,7 +40,8 @@ When staking as a provider, there are four main parameters used in the transacti
 
 1. **Stake**: The amount of LAVA to stake for the service.
 2. **Geolocation**: The location of the provider's nodes. (Note that `0` is *only* assigned via policy/gov proposal)
-```javascript    
+
+```javascript
     GLS = 0; // Global-strict
     USC = 1; // US-Center
     EU = 2; // Europe
@@ -50,6 +52,7 @@ When staking as a provider, there are four main parameters used in the transacti
     AU = 64;  // (Australia, includes NZ)
     GL = 65535; // Global
 ```
+
 3. **ChainID**: The identifier of the target blockchain network, such as Cosmos Mainnet, Ethereum Ropsten, etc.
 4. **Endpoints**: A list of endpoints, each defining an address and geolocation.
 5. **Vault address**: An additional address that can be used as a secure location for holding funds.
@@ -74,27 +77,28 @@ To obtain information on a specific chain, run the following command, replacing 
 
 ```bash
 curl -X 'GET' \
-  'https://rest-public-rpc.lavanet.xyz/lavanet/lava/spec/show_chain_info/SPEC-ID' \
+  'https://lav1.rest.lava.build/lavanet/lava/spec/show_chain_info/SPEC-ID' \
   -H 'accept: application/json'
 ```
 
 ### Querying Available APIs and Chains {#chains}
 
+:::caution
+Here and below ensure that you replace `{PUBLIC_RPC}` with the correct [endpoint](/public-rpc).
+:::
 
-To obtain a list of available APIs and chains, [query all chain specs](https://public-rpc-testnet2.lavanet.xyz/rest/lavanet/lava/spec/show_all_chains) or use the following CLI commands for a detailed list:
-
+To obtain a list of available **testnet-2** APIs and chains, [query all chain specs](https://lav1.lava.build/lavanet/lava/spec/show_all_chains) or use the following CLI commands for a detailed list:
 
 ```bash
-curl -X 'GET' \
-  'https://public-rpc-testnet2.lavanet.xyz/rest/lavanet/lava/spec/show_all_chains' \
-  -H 'accept: application/json' | jq
+curl -X 'POST' -H 'Content-Type: application/json' {PUBLIC_RPC} \
+    --data '{"jsonrpc": "2.0", "id": 1, "method": "status", "params": []}' | jq
 ```
 
 Alternatively,
-```bash
-lavap q spec list-spec --node https://public-rpc-testnet2.lavanet.xyz:443/rpc/
-```
 
+```bash
+lavap q spec list-spec --node {PUBLIC_RPC}
+```
 
 ## Next step: Setup a Provider
 

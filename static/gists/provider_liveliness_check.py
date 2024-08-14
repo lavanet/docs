@@ -43,7 +43,7 @@ def check_provider(rpc_url, chain_id, moniker=None, address=None):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--rpc_url", default="https://public-rpc.lavanet.xyz/rest/")
+    parser.add_argument("--rpc_url", default="https://lav1.rest.lava.build")
     parser.add_argument("--chain_id", required=True)
     group = parser.add_mutually_exclusive_group(required=True)
     group.add_argument("--moniker")
