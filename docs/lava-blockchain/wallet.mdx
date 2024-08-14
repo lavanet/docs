@@ -186,12 +186,61 @@ lavad tx broadcast ms/tx_ms.json --chain-id lava-testnet-2
 :::warning experimental 
 This section is for advanced users.
 :::
-Use the following parameters to set up a wallet not described in this manual:
+Use the following parameters to set up a wallet not described in this manual (testnet):
 
-* **coinType** - 118 (standard cosmos wallet type)
-* **minimal denom** - ulava
-* **prefix** - lava@
-* **coinDecimals** - 6
-* **rpc** - "https://public-rpc.lavanet.xyz"
-* **rest** - "https://public-rpc.lavanet.xyz/rest"
+| Name               | Value                                               |
+| ------------------ | --------------------------------------------------- |
+| coinType           | 118 (standard cosmos wallet type)                   |
+| minimal denom      | ulava                                               |
+| prefix             | 6                                                   |
+| rpc                | https://public-rpc.lavanet.xyz                      |
+| rest               | https://public-rpc.lavanet.xyz/rest                  |
 
+chain-info.json - (testnet)
+```bash
+{
+  "chainId": "lava-testnet-2",
+  "chainName": "Lava Testnet",
+  "rpc": "https://public-rpc.lavanet.xyz",
+  "rest": "https://public-rpc.lavanet.xyz/rest",
+  "bip44": {
+    "coinType": 118
+  },
+  "bech32Config": {
+    "bech32PrefixAccAddr": "lava@",
+    "bech32PrefixAccPub": "lava@pub",
+    "bech32PrefixValAddr": "lava@valoper",
+    "bech32PrefixValPub": "lava@valoperpub",
+    "bech32PrefixConsAddr": "lava@valcons",
+    "bech32PrefixConsPub": "lava@valconspub"
+  },
+  "currencies": [
+    {
+      "coinDenom": "LAVA",
+      "coinMinimalDenom": "ulava",
+      "coinDecimals": 6,
+      "coinGeckoId": "lava"
+    }
+  ],
+  "feeCurrencies": [
+    {
+      "coinDenom": "LAVA",
+      "coinMinimalDenom": "ulava",
+      "coinDecimals": 6,
+      "coinGeckoId": "lava",
+      "gasPriceStep": {
+        "low": 0.000001,
+        "average": 0.025,
+        "high": 0.03
+      }
+    }
+  ],
+  "stakeCurrency": {
+    "coinDenom": "LAVA",
+    "coinMinimalDenom": "ulava",
+    "coinDecimals": 6,
+    "coinGeckoId": "lava"
+  },
+  "beta": true
+}
+```
