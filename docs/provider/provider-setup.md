@@ -29,6 +29,7 @@ In this guide, we'll create a configuration file that includes multiple chains (
 4. Know which chains you want to provide ([how to query the latest list](https://docs.lavanet.xyz/provider/#chains))
 
 ## Step 1: Setup TLS
+
 As part of good security practice, Lava protocol communicates with end-to-end encryption between providers and consumers of RPC. This requires some additional configuration steps on a provider, namely, the setup of TLS certification with a certification authority.
 
 ❗❗ If you already use a **TLS Certificate signed by a Certifiying Authority**, you can continue onto step 2. Otherwise, you may want to check out our guide on [setting up TLS for Lava Providers](/provider-tls).
@@ -44,16 +45,17 @@ lavap rpcprovider [config-file] || { {listen-host:listen-port spec-chain-id api-
 ```
 
 ### Configuration
+
 :::warning READ BEFORE CONTINUING
-Configuration varies per chain. Some chains have steeper configuration requirements than others. If you're unsure, please visit the [chain page](/chains) of the specific endpoints you're attempting to setup and view our `Run an RPC Node` guide for that chain. 
+Configuration varies per chain. Some chains have steeper configuration requirements than others. If you're unsure, please visit the [chain page](/chains) of the specific endpoints you're attempting to setup and view our `Run an RPC Node` guide for that chain.
 :::
-:::info 
+:::info
 For advanced configuration such as **authentication**, header **forwarding**, configurable **node-timeout**, see [Provider Features](/provider-features)
 :::
 
 You can either provide a single configuration file (YAML) or specify one or more endpoint configurations as command line arguments.
 
-The default configuration file is named **`rpcprovider.yml`**. If a single argument is provided, it is assumed to be the name of the configuration file (without the extension). 
+The default configuration file is named **`rpcprovider.yml`**. If a single argument is provided, it is assumed to be the name of the configuration file (without the extension).
 
 If no arguments are provided, the default configuration file is used. All configuration files should be located in the default node home directory (e.g., **`app.DefaultNodeHome/config`**) or the local running directory.
 
@@ -119,16 +121,19 @@ endpoints:
 ```
 
 :::tip
-If you're using `nginx` or another proxy as is recommended in our [TLS setup guide](/provider-tls), you will need to add `disable-tls: true` to each endpoint specified. This allows `nginx` to handle TLS directly. 
+If you're using `nginx` or another proxy as is recommended in our [TLS setup guide](/provider-tls), you will need to add `disable-tls: true` to each endpoint specified. This allows `nginx` to handle TLS directly.
 :::
+
 ### More Examples
 
 The team constantly adds configurations, you can check examples on our [github](https://github.com/lavanet/lava/tree/main/config/provider_examples).
 
 ## Step 3: Check Provider liveliness - before staking
+
 To ensure the provider is up and running correctly `lavap` provides a command to setup the necessary clients and verify all parameters are well defined.
 This command is used to test the basic flow for a provider is working, including stake and access, but with some additional arguments can be used prior to staking, as long as the rpcprovider process is up and running.
 since we haven't staked yet we need to provide the command with the endpoints we are using
+
 ### Usage
 
 <Tabs>
@@ -200,11 +205,11 @@ lavap tx pairing stake-provider [chain-id] [amount] [endpoint endpoint ...] [geo
 
 *Check the output for the status of the staking operation. A successful operation will have a code **`0`**.*
 
-:::info 
+:::info
 Note that this TX can also be used to increase the provider's stake. To increase, the amount should be the sum of the current amount and the desired addition. For example, a provider is staked with `100ulava` and wants to increase its stake by `10ulava`. Then, the appropriate `amount` argument for the `stake-provider` command should be `110ulava`.
 :::
 
-:::info 
+:::info
 Use the optional `--provider` flag to define a different address that will be used to operate the provider. This will make the address of the `--from` flag to be the provider's vault address, which will hold the provider's funds and will be able to perform stake or funds related transactions (like unstake, modify-stake and more).
 :::
 
@@ -216,9 +221,7 @@ Use the optional `--provider` flag to define a different address that will be us
 - **`geolocation`** - Indicates the geographical location where the process is located (e.g., **`1`** for US or **`2`** for EU). This argument must specify all the geolocations of the defined endpoints (see the "Ethereum Mainnet in US And Europe" below).
 - **`validator`** - Validator address for staking (optional). Validator address is required when staking due to the dualstaking mechanism. If no validator is specified, the highest stake validator will be picked automatically. Note that the validator address should be in a sdk.ValAddress format (`lava@valoper...`).
 
-#### Geolocations
-
-```javascript    
+```javascript
     USC = 1; // US-Center
     EU = 2; // Europe
     USE = 4; // US-East
@@ -228,7 +231,6 @@ Use the optional `--provider` flag to define a different address that will be us
     AU = 64;  // (Australia, includes NZ)
     GL = 65535; // Global
 ```
-
 
 #### Flags Details
 
@@ -240,6 +242,9 @@ Use the optional `--provider` flag to define a different address that will be us
 - **`--gas-adjustment`** - The gas adjustment factor (e.g., **`"1.5"`**).
 - **`--node`** - A RPC node for Lava (e.g., **[PUBLIC_RPC](/public-rpc)**).
 - **`--provider`** - The provider's operational address (address used to operate the provider process, default is vault address).
+- **`--delegate-limit`** - a mandatory flag to set the delegation limit of a provider. delegations can still be made but won't affect pairing or rewards. a value of 0ulava means blocking all delegations, increasing it allows delegators stake to be taken into account getting more pairings. reducing the limit is protected, allowing a 1% change every 24h. it is good practice to set a high value as long as your node isn't congested by too many requests, and play around with the commission instead.
+- **`--delegate-commission`** - the commission the provider will take from delegation rewards.
+- **`--description-details`** - the (optional) details of the provider, using the same format as standard cosmos validator details
 
 ### Stake Examples
 
@@ -260,6 +265,7 @@ lavap tx pairing stake-provider LAV1 \
 ```
 
 #### Ethereum Mainnet in US (without specified validator)
+
 Ethereum and other EVMs usually have only `jsonrpc` interface:
 
 ```bash
@@ -276,6 +282,7 @@ lavap tx pairing stake-provider "ETH1" \
 ```
 
 #### Ethereum Mainnet in US And Europe (multiple endpoints)
+
 ```bash
 lavap tx pairing stake-provider "ETH1" \
     "50000000000ulava" \
@@ -290,7 +297,9 @@ lavap tx pairing stake-provider "ETH1" \
 ```
 
 #### Ethereum Globally Load Balanced Array of Nodes
+
 To be used if your endpoint is DNS load balanced for all covered geolocations.
+
 ```bash
 lavap tx pairing stake-provider "ETH1" \
     "50000000000ulava" \
@@ -305,6 +314,7 @@ lavap tx pairing stake-provider "ETH1" \
 ```
 
 #### Cosmos Hub Testnet in US
+
 Cosmos's usually have `rest`, `tendermintrpc` & `grpc` interface, all mandatory:
 
 ```bash
@@ -359,13 +369,13 @@ lavap query pairing account-info \
 </TabItem>
 </Tabs>
 
-#### Parameter Descriptions (with examples):
+#### Parameter Descriptions (with examples)
 
 - **`provider_address`** - The public address of the provider beginning with the lava@ prefix. Examples: **`lava@1e4vghfjertxq25l2vv56egkfkvdjk90t0c667v`**
 - **`LAVA_RPC_NODE`** - An RPC node for Lava. This can be omitted if the current node has already joined the Lava network. Example: **[PUBLIC_RPC](/public-rpc)**
 
-
 Another useful command to check all providers for a specific chain:
+
 ```bash
 lavap query pairing providers \
 "{NETWORK_NAME}" \
@@ -380,12 +390,12 @@ lavap query pairing providers \
 # List of all providers, and your provider should be on of them
 ```
 
-#### Parameter Descriptions (with examples):
+#### Parameter Descriptions (with examples)
 
 - **`NETWORK_NAME`** - The ID of the chain. Examples: **`COS4`** or **`FTM250`**. To get the full list of available chains use: `lavap query spec show-all-chains --node {LAVA_RPC_NODE}`.
 - **`LAVA_RPC_NODE`** - An RPC node for Lava. This can be omitted if the current node has already joined the Lava network. Example: **[PUBLIC_RPC](/public-rpc)**
 
-:::info 
+:::info
 Note, a new provider stake is only applied on the start of the next epoch. Currently, an epoch is defined as 30 blocks. With block time of 30sec, in the worst case scenario the stake will be applied after 15min.
 :::
 
@@ -426,15 +436,14 @@ lavap test rpcprovider {PROVIDER_ADDRESS}
 # lavap test rpcprovider lava@myprovidersbech32pubaddress --node {PUBLIC_RPC}
 ```
 
-
 </TabItem>
 </Tabs>
 
 ## Step 7: Provider Info and more features
 
-You can track your Provider rewards and transactions via [https://info.lavanet.xyz/providers](https://info.lavanet.xyz/providers) 
+You can track your Provider rewards and transactions via [https://info.lavanet.xyz/providers](https://info.lavanet.xyz/providers)
 
-And review the Providers Features page for more capabilities. 
+And review the Providers Features page for more capabilities.
 
 ## Step 8: Create Provider Service
 
@@ -443,11 +452,13 @@ Please note that Lava has a dedicated binary in order to run and manage provider
 :::
 
 Assuming the following:
+
 - The `lavap` binary is located in ``/usr/bin``
 - The wallet responsible for the provider has a password
 - A configuration file was made for the provider
 
 First we need to set the following values:
+
 ```bash
 TMP_PASSWORD=<your wallet password if you have one>
 TMP_CONFIG_FILE_PATH=<path to your config file>
@@ -457,6 +468,7 @@ TMP_CHAIN_ID=<the lava chain id to run this on> # {CHAIN_ID}
 ```
 
 Run the following to create the service file:
+
 ```bash
 sudo tee <<EOF >/dev/null /etc/systemd/system/lava-provider.service
 [Unit]
@@ -480,6 +492,7 @@ EOF
 ```
 
 Finally enable and run the service:
+
 ```bash
 sudo systemctl daemon-reload
 sudo systemctl enable lava-provider.service
@@ -487,14 +500,17 @@ sudo systemctl start lava-provider.service
 ```
 
 View the logs:
+
 ```bash
 journalctl -f -u lava-provider.service -o cat
 ```
 
 ## Step 9: Unstake
+
 A provider can unstake to get its stake funds back to its wallet. The provider can unstake completely or partially. Note that the funds will be sent to the wallet after the Cosmos staking module's unbond period of time which is currently defined as 3 weeks. Also, if a provider fully unstakes, it's removed from the pairing list by the next epoch.
 
 ### Complete Unstake
+
 To unstake the full stake amount for a single service, use the following command:
 
 ```bash
@@ -545,6 +561,7 @@ lavap tx pairing unstake-provider LAV1 \
 ```
 
 ### Partial Unstake
+
 To unstake some of the stake amount for a single service, use the following command:
 
 ```bash
@@ -563,7 +580,6 @@ Note that the `unbond` command should be used because the proivder unbonds some 
 - **`provider`** - Provider lava address (of format `lava@...`).
 - **`chain-id`** - The ID of the serviced chain (e.g., **`COS4`** or **`FTM250`**). To get the full list of available chains use: `lavap query spec show-all-chains --node {LAVA_RPC_NODE}`.
 - **`amount`** - Amount to unstake (for example: "`2010ulava`").
-
 
 #### Flags Details
 
@@ -590,9 +606,11 @@ lavap tx dualstaking unbond "validator_lava_address" \
 ```
 
 ## Step 10: Modify stake entry
+
 A provider can modify different properties of its stake entry using the `modify-provider` TX. The properties that can be changed using this TX include its stake amount, moniker, available endpoints, delegation commission and more.
 
 ### Modify provider stake entry
+
 To modify the provider's stake entry for a single service, use the following command:
 
 ```bash
@@ -649,6 +667,7 @@ Make sure you downloaded/built the binary, and it is located in the path you use
 Try to wait for a block_time (current=30s) and then run the command again
 
 #### How do I make changes?
+
 It is possible for a provider to make changes in his on chain stake entry at any time, it is possible to do so by sending the same stake-provider tx we have used when first joining the network with the updated parameters.
 
 It is also possible to use a convenience cli command wrapping it:
