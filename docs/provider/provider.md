@@ -6,6 +6,7 @@ slug: /provider
 import RoadmapItem from '@site/src/components/RoadmapItem';
 
 # Become a Provider
+
 Welcome to the Lava network's provider introduction. In this page, you'll learn about the role of providers in the Lava network, as well as the necessary steps to get started as one.
 
 :::info want to be a testnet Provider? ✍️
@@ -39,7 +40,8 @@ When staking as a provider, there are four main parameters used in the transacti
 
 1. **Stake**: The amount of LAVA to stake for the service.
 2. **Geolocation**: The location of the provider's nodes. (Note that `0` is *only* assigned via policy/gov proposal)
-```javascript    
+
+```javascript
     GLS = 0; // Global-strict
     USC = 1; // US-Center
     EU = 2; // Europe
@@ -50,10 +52,22 @@ When staking as a provider, there are four main parameters used in the transacti
     AU = 64;  // (Australia, includes NZ)
     GL = 65535; // Global
 ```
+
 3. **ChainID**: The identifier of the target blockchain network, such as Cosmos Mainnet, Ethereum Ropsten, etc.
-4. **Endpoints**: A list of endpoints, each defining an address and geolocation
+4. **Endpoints**: A list of endpoints, each defining an address and geolocation.
+5. **Vault address**: An additional address that can be used as a secure location for holding funds.
 
 Providers need to stake separately for each supported spec. For example, if you support both Cosmos and Ethereum, you will need two separate stakes. Once your request is verified and included in the chain state, you'll be included in the Pairing List starting from the next Epoch and can begin servicing consumer requests through your nodes.
+
+### **Vault Address**
+
+Usually, the provider entity has a single lava address. This address is utilized for operating the provider process, such as participating in the pairing mechanism, and for aggregating rewards from relay payments or IPRPC.
+
+For enhanced security, users can optionally create a vault address. This address holds the provider's funds and rewards, while a separate address operates the provider. The rationale behind this is to allow users to use two private keys: one for provider operation and another for rewards aggregation and funds holdings. This setup enables users to store their vault private key on a machine separate from the one running the provider process. Consequently, if the machine operating the provider, which publicly shares its endpoints, were to be compromised, the users' wallet would remain secure.
+
+A vault address can be specified while staking a provider. When staking, use the `--provider` flag to define the provider's operational ("normal") address. The `--from` flag address is then used as the vault address.
+
+Since the vault address holds the provider's funds, it is the only one that can perform stake-related transactions. In simpler terms, the vault address can execute all transactions, while the operational address can carry out all transactions except for the following: `stake-provider`, `unstake-provider`, `claim-rewards`, and `modify-provider`. The latter cannot change certain provider traits, such as `stake`, `delegation-commission`, and `delegate-limit`.
 
 ### **Supported APIs and Chain Specifications**
 
@@ -63,27 +77,28 @@ To obtain information on a specific chain, run the following command, replacing 
 
 ```bash
 curl -X 'GET' \
-  'https://rest-public-rpc.lavanet.xyz/lavanet/lava/spec/show_chain_info/SPEC-ID' \
+  'https://lav1.rest.lava.build/lavanet/lava/spec/show_chain_info/SPEC-ID' \
   -H 'accept: application/json'
 ```
 
 ### Querying Available APIs and Chains {#chains}
 
+:::caution
+Here and below ensure that you replace `{PUBLIC_RPC}` with the correct [endpoint](/public-rpc).
+:::
 
-To obtain a list of available APIs and chains, [query all chain specs](https://public-rpc-testnet2.lavanet.xyz/rest/lavanet/lava/spec/show_all_chains) or use the following CLI commands for a detailed list:
-
+To obtain a list of available **testnet-2** APIs and chains, [query all chain specs](https://lav1.lava.build/lavanet/lava/spec/show_all_chains) or use the following CLI commands for a detailed list:
 
 ```bash
-curl -X 'GET' \
-  'https://public-rpc-testnet2.lavanet.xyz/rest/lavanet/lava/spec/show_all_chains' \
-  -H 'accept: application/json' | jq
+curl -X 'POST' -H 'Content-Type: application/json' {PUBLIC_RPC} \
+    --data '{"jsonrpc": "2.0", "id": 1, "method": "status", "params": []}' | jq
 ```
 
 Alternatively,
-```bash
-lavap q spec list-spec --node https://public-rpc-testnet2.lavanet.xyz:443/rpc/
-```
 
+```bash
+lavap q spec list-spec --node {PUBLIC_RPC}
+```
 
 ## Next step: Setup a Provider
 

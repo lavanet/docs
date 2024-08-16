@@ -6,7 +6,7 @@ slug: /validator-manual
 
 # Run Validator - Manual setup
 ### 1. Install node (`lavad`) & Join network {#lavad}
-Running as a validator requires a Lava Node running, Please refer to [our guide for joining **Testnet**](testnet) for details.
+Running as a validator requires a Lava Node running, Please refer to our guide for joining [**Testnet**](testnet) and [**Mainnet**](mainnet) for details.
 
 ### 2. Prepare an account & Fund it {#account}
 If you don't have an account (wallet) on Lava yet, Refer to [creating new accounts](wallet#account) and the [faucet](faucet). 
@@ -52,12 +52,16 @@ $current_lavad_binary query \
 Here's an example with Values which starts with a stake of `50000000ulava`.
 Replace `<<moniker_node>>` With a human readable name you choose for your validator.
 
+:::caution
+Please ensure that you replace `{CHAIN_ID}` with the appropriate value depending on your target network. See the [Chain ID](/key-variables#chain-id) section for details.
+:::
+
 ```bash
 $current_lavad_binary tx staking create-validator \
     --amount="50000000ulava" \
     --pubkey=$($current_lavad_binary tendermint show-validator --home "$HOME/.lava/") \
     --moniker="<<moniker_node>>" \
-    --chain-id=lava-testnet-2 \
+    --chain-id={CHAIN_ID} \
     --commission-rate="0.10" \
     --commission-max-rate="0.20" \
     --commission-max-change-rate="0.01" \

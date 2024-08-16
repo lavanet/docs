@@ -23,8 +23,7 @@ Running a badge server is advanced and requires a lot more setup than using Lava
 
 :::
 
-
-### 📥 Install `lavap` 
+### 📥 Install `lavap`
 
 Follow instructions at the [install page](/install-lava) to setup `lavap`
 
@@ -36,29 +35,30 @@ LAVA_BINARY=lavap make install
 
 <br/>
 
+### 🪛 Configure Environmental Variables
 
-### 🪛 Configure Environmental Variables 
 `lavap` uses a `badgegenerator` command to set up the badge server. `badgegenerator` command takes a series of inputs from environmental variables. Some of these variables have default values, but others will be required to be configured to successfully run a badge server. To get started, you'll need to configure the environmental variables properly.
 
 <hr/>
 
 #### `PORT`
 
-This specifies the port that the badge server will run on. 
+This specifies the port that the badge server will run on.
 
 ```bash
 #default value
 PORT=8080
 ```
+
 <hr/>
 
 #### `METRICS_PORT`
 
 The Metrics Port is used by Prometheus to track three metrics:
- - Total Requests
- - Failed Requests
- - Successful Processed Requests
 
+- Total Requests
+- Failed Requests
+- Successful Processed Requests
 
 ```bash
 #default value
@@ -66,7 +66,6 @@ METRICS_PORT=8081
 ```
 
 <hr/>
-
 
 #### `USER_DATA`
 
@@ -103,11 +102,13 @@ Within this variable, lies a mapping structure, where each entry connects a geol
 This specifies the URL of the node with exposed gRPC port. Badge servers require access to a node with gRPC in order to function correctly.
 
 ```bash
-GRPC_URL=public-rpc-testnet2.lavanet.xyz:9090
+GRPC_URL=lav1.grpc.lava.build:443
 ```
+
 <hr/>
 
 #### `CHAIN_ID`
+
 This specifies the chain that will be used for providing badges.
 
 ```bash
@@ -118,6 +119,7 @@ CHAIN_ID=lava-tesnet-2
 <hr/>
 
 #### `DEFAULT_GEOLOCATION`
+
 This holds importance as it serves as a fallback mechanism in cases where the user's country of origin cannot be determined for any reason. In such instances, the system defaults to the value specified in this variable.
 
 ```bash
@@ -129,15 +131,14 @@ DEFAULT_GEOLOCATION=1
 
 #### `COUNTRIES_FILE_PATH`
 
-This is the path-to-file for a CSV (Comma-Separated Values) file containing essential data about various countries, along with their corresponding links to Lava-geolocation information. This file structure consists of four columns: `country-code`, `country-name`, `continent code`, and `lava-geolocation`. 
+This is the path-to-file for a CSV (Comma-Separated Values) file containing essential data about various countries, along with their corresponding links to Lava-geolocation information. This file structure consists of four columns: `country-code`, `country-name`, `continent code`, and `lava-geolocation`.
 
 You can download the file needed [here](https://storage.googleapis.com/lavanet-public-asssets/countries.csv).
 <hr/>
 
-
 #### `IP_FILE_PATH`
 
-This is the path-to-file for a TSV (Tab-Separated Values) document containing IP address ranges and their corresponding country codes. The file consists of five columns: `range_start`, `range_end`, `AS_number`, `country_code`, and `AS_description`. 
+This is the path-to-file for a TSV (Tab-Separated Values) document containing IP address ranges and their corresponding country codes. The file consists of five columns: `range_start`, `range_end`, `AS_number`, `country_code`, and `AS_description`.
 
 It is available for download at the following location: [ip2asn-v4.tsv](https://iptoasn.com/)
 <hr/>

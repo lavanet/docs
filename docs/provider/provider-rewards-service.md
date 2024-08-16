@@ -1,5 +1,5 @@
 ---
-slug: /provider-improve-service
+slug: /provider-rewards-service
 title: Rewards / Service
 ---
 
@@ -17,7 +17,7 @@ import TabItem from '@theme/TabItem';
 
 <br/>
 
-## 📊 Passable QoS 
+## 📊 Passable QoS {#passable-qos}
 Passable Quality of Service is scored separately in each relay session. Lower scores mean lower rewards. Up to half the accumulated CU can be reduced for bad service. Passable QoS metrics can be viewed both in the [Lava Info explorer](https://info.lavanet.xyz/?utm_source=provider-rewards&utm_medium=docs&utm_campaign=docs-to-info) and [Prometheus metrics](/provider-features#config-prometheus).
 
 Passable QoS is binary, either it's good or bad there is no in-between. Scores in the range `0-1` are a result of averaging that binary score across relays. You can learn more about Passable QoS from our [📄 RSCH-1000](https://community.lavanet.xyz/t/rsch-1000-passable-quality-of-service/25) research paper.
@@ -103,8 +103,13 @@ The freshness proofs are updated by the provider service in a GET_BLOCKNUM reque
 It is possible to turn on debug logs and see the blocks advancing.
 The latest block is exported in prometheus, and also uploaded on chain. 
 You can compare the latest block on your provider to other providers, a useful way to do this is filter provider_latest_block_report and compare your results to others:
+
+:::caution
+Here and below ensure that you replace `{PUBLIC_RPC}` with the correct [endpoint](/public-rpc).
+:::
+
 ```bash
-lavap test events 2000 --event lava_provider_latest_block_report --node https://public-rpc-testnet2.lavanet.xyz:443/
+lavap test events 2000 --event lava_provider_latest_block_report --node {PUBLIC_RPC}
 ```
 
 ##### Low-Score Causes
@@ -120,7 +125,7 @@ lavap test events 2000 --event lava_provider_latest_block_report --node https://
 
 <br />
 
-## 📊 QoS Excellence
+## 📊 QoS Excellence {#qos-excellence}
 
 QoS Excellence is calculated very similarly to Passable QoS. QoS Excellence provides a range of scores that are time-weighted to take the latest information
 all the actions mentioned here to improve passable QoS affect excellence
@@ -133,7 +138,7 @@ Excellence Quality of score divides into 3 metrics:
 
 <br />
 
-## 🏛️ Jailing
+## 🏛️ Jailing {#jailing}
 
 ### How to Fix Getting Jailed 🔓
 Lava Protocol removes providers that are providing inferior service. The mechanism is detached from QoS measurements.
@@ -163,13 +168,13 @@ It is possible to monitor this event via info webpage or the following commands 
 
 ⌨️ `command` when being reported before getting jailed:
 ```bash
-lavap test events 2000 --event lava_provider_reported --node https://public-rpc-testnet2.lavanet.xyz:443/
+lavap test events 2000 --event lava_provider_reported --node {PUBLIC_RPC}
 ```
 a group of reports can lead to being jailed.
 
 ⌨️ `command` when the blockchain's criteria for jail are met:
 ```bash
-lavap test events 2000 --event lava_provider_jailed --node https://public-rpc-testnet2.lavanet.xyz:443/
+lavap test events 2000 --event lava_provider_jailed --node {PUBLIC_RPC}
 ```
 <br />
 
@@ -191,7 +196,7 @@ Jail reports contain additional info on the report reason and they can be either
 
 In addition, the reports contain an exact time tag, so the provider can check the events:
 ```bash
-lavap test events 2000 --event lava_provider_reported --node https://public-rpc-testnet2.lavanet.xyz:443/
+lavap test events 2000 --event lava_provider_reported --node {PUBLIC_RPC}
 ```
 <br />
 
