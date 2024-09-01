@@ -20,3 +20,6 @@ The **Lava Server Kit** is a GO language reference implementation that provides 
 1. Serve multiple blockchain RPC endpoints
 2. High throughput with multiple sessions
 3. Easy setup process
+
+### Guides
+- Community [guide](https://services.mellifera.network/testnets/lava-network/RPC_Consumer) from MELLIFERA validator
