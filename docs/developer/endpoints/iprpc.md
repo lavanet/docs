@@ -31,7 +31,7 @@ Lava works with various blockchains to establish **Incentivized Public RPC (ipRP
 We will add Lava endpoints soon
 :::
 
-## Axelar Endpoints 🌟
+## Axelar 🌟
 
 ### Mainnet 🌐 `AXELAR`
 
@@ -50,6 +50,22 @@ We will add Lava endpoints soon
 | 🟢 tendermint-rpc / websocket | wss://tm.axelar-testnet.lava.build/websocket |
 | 🟢 rest                      | https://rest.axelar-testnet.lava.build     |
 | 🟢 grpc                      | grpc.axelar-testnet.lava.build:443        |
+
+<br />
+
+## Cosmos Hub 🌟
+
+### Mainnet 🌐 `COSMOSHUB`
+
+
+| Service 🔌          | URL 🔗                                 |
+|---------------------|----------------------------------------|
+| 🟢 tendermint-rpc    | https://cosmoshub.tendermintrpc.lava.build  |
+| 🟢 tendermint-rpc / websocket | <wss://cosmoshub.tendermintrpc.lava.build/ws> <br /> <wss://cosmoshub.tendermintrpc.lava.build/websocket> |
+| 🟢 json-rpc          | https://cosmoshub.lava.build                                    |
+| 🟢 rest              | https://cosmoshub.rest.lava.build                               |
+| 🟢 web-gRPC          | https://cosmoshub.grpc.lava.build                               |
+| 🟢 grpc              | cosmoshub.grpc.lava.build:443                                   |
 
 <br />
 
