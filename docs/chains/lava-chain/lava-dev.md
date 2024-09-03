@@ -10,7 +10,7 @@ import TabItem from '@theme/TabItem';
 
 ## Public RPC
 
-Lava offers self-served RPC as well as  
+Lava offers self-served RPC as well as
 ⚠️ Use our [Official Endpoints](/public-rpc)!
 
 ## [Gateway](https://gateway.lavanet.xyz/?utm_source=lava-dev&utm_medium=docs&utm_campaign=docs-to-gateway)
