@@ -68,7 +68,7 @@ make release
 ```
 
 :::caution
-`make release` will cause the `nearcore` to compile. Compilation is a time-intensive process and can take ~30 minutes or longer on recommmended hardware.
+`make release` will cause the `nearcore` to compile. Compilation is a time-intensive process and can take ~30 minutes or longer on recommended hardware.
 :::
 
 ### Configure the release folder

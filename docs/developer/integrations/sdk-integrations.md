@@ -14,7 +14,7 @@ It is possible and even encouraged to use Lava with popular web3 development lib
 
 ## Usage 🏗️
 
-Taking advantage of integrations is an important way to multi-chain and decentralize your application. Due to differences in architecture, each Lava integration has its idiosyncracies. However, all of them follow the same general flow:
+Taking advantage of integrations is an important way to multi-chain and decentralize your application. Due to differences in architecture, each Lava integration has its idiosyncrasies. However, all of them follow the same general flow:
 
 1. Install the supported web3 development package (i.e. `npm i viem`) in your project.
 2. Install the Lava integration package into your project (i.e. `npm i @lavanet/lava-viem`)

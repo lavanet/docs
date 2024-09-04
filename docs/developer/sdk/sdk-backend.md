@@ -45,6 +45,6 @@ If you already have `lavad` installed - you can easily generate a lava address b
 
 <iframe width="100%" height="480" src="/img/tutorial/sdk/adding_lava_key.mp4" frameborder="0" allow="autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
- If you have an address that exists and no longer remember its private key, you can alwasy use `lavad keys export <key-name> --unarmored-hex --unsafe` to see your privatekey printed as a string. Do not share the output with anyone!
+ If you have an address that exists and no longer remember its private key, you can always use `lavad keys export <key-name> --unarmored-hex --unsafe` to see your privatekey printed as a string. Do not share the output with anyone!
 
 🚀  Your private-key, public-key pair can be used for backend development provided you have a subscription!
