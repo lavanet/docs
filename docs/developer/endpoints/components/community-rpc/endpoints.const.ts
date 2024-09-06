@@ -275,4 +275,22 @@ export const communityMainnetEndpointsList = [
     url: 'https://lava.mhventures.io',
     notes: 'Archive Node',
   },
+  {
+    provider: 'Data Nexus',
+    service: '🌐 RPC',
+    url: 'https://mainnet-archive.lavanet.datanexus.tech/',
+    notes: 'Archive Node',
+  },
+  {
+    provider: 'Data Nexus',
+    service: '⚡ gRPC',
+    url: 'https://grpc.mainnet-archive.lavanet.datanexus.tech/',
+    notes: 'Archive Node',
+  },
+  {
+    provider: 'Data Nexus',
+    service: '🔗 REST API',
+    url: 'https://lcd.mainnet-archive.lavanet.datanexus.tech/',
+    notes: 'Archive Node',
+  },
 ];
