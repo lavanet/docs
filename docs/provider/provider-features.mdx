@@ -232,12 +232,12 @@ lavap tx pairing stake-provider "ETH1" \
     --gas="auto" \
     --gas-adjustment "1.5" \
     --node {PUBLIC_RPC} \
-    --delegation-limit 0ulava
+    --delegation-limit 100000000000ulava
 ```
 
 The `delegation-limit` flag is mandatory (but will be removed in future versions). The delegation limit is the maximum amount of delegations the provider is willing to use for the pairing process.
 Larger delegations mean the provider will be paired more often with consumers. If a provider receives many delegations but can't handle the resulting consumer traffic, they can set the delegate limit lower than their actual total delegations. This reduces their pairing frequency and workload. The delegated tokens remain with the provider, but their influence is reduced by artificially lowering the provider's effective stake (composed of self-stake and delegations).
-Putting "0ulava" means there are no delegations restrictions.
+Putting "0ulava" means there is a strict restriction that no amount of delegations affect the pairing mechanism.
 
 Do note the required addition of **`,archive,debug`** in each of the endpoints that support it if several exist. Setting these in a transaction replaces any existing endpoints, so make sure to give the full list of endpoints.
 Also, the geolocation specified in the endpoints must match the geolocation argument (in the example, the endpoint is setup in USC and the example geolocation argument's value is USC, as expected).
