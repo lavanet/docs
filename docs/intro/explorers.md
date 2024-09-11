@@ -24,7 +24,7 @@ https://lava.explorers.guru/
 - ✨[W3Coins](https://lava-explorer.w3coins.io/Lava)
 - ✨[Coinhunters](https://lava.coinhunterstr.com/lava)
 - ✨[AviaOne](https://mainnet.explorer.aviaone.com/lava)
-- ✨[MELLIFERA (with providers view support) ](https://lava-explorer.mellifera.network)
+- ✨[MELLIFERA (Restaking feature support with Keplr, Leap, Ledger wallets) ](https://lava-explorer.mellifera.network)
 
 ### TestNet Explorers
 
@@ -38,6 +38,7 @@ https://lava.explorers.guru/
 - ✨[STAKEME](https://lava.exploreme.pro)
 - ✨[AKNodes](https://explorer.aknodes.com/LAVA-TESTNET)
 - ✨[CoinHunters](https://explorer.coinhunterstr.com/lava)
+- ✨[MELLIFERA (Restaking feature support with Keplr, Leap, Ledger wallets) ](https://lavatest.mellifera.network)
 
 ## Community Public RPC Explorer 🕵🏼
 One of our community members is providing an experimental service to see all exposed providers on the network:
