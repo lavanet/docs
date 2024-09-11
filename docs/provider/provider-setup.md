@@ -441,7 +441,7 @@ lavap test rpcprovider {PROVIDER_ADDRESS}
 
 ## Step 7: Provider Info and more features
 
-You can track your Provider rewards and transactions via [https://info.lavanet.xyz/providers](https://info.lavanet.xyz/providers)
+You can track your Provider rewards and transactions via [https://info.lavanet.xyz/#providers](https://info.lavanet.xyz/#providers)
 
 And review the Providers Features page for more capabilities.
 
