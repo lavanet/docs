@@ -33,6 +33,8 @@ In addition to our documentation, Lava has a growing selection of supportive lea
 - [Lava Deployment on AWS and other cloud providers](https://github.com/waelsy123/lava-net)
 - [Setup your Node on Lava: Setup Scripts](https://github.com/appieasahbie/lava)
 
+### 📚 Explorers & Dashboards
+- Open Source  [LAVA ping dashboard](https://github.com/MELLIFERA-Labs/lava-explorer) restaking feature support with Keplr, Leap, Ledger wallets
 --- 
 
 ## 💬 Discord Server
