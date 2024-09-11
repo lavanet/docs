@@ -13,28 +13,25 @@ Lava🌋 now offers incentivized public RPC for Axelar. Developers can get free,
 
 ### Mainnet 🌐
 
-| Service 🔌          | URL 🔗                                 |
-|---------------------|----------------------------------------|
-| 🟢 tendermint-rpc    | https://tm.axelar.lava.build            |
-| 🟢 tendermint-rpc / websocket | wss://tm.axelar.lava.build/websocket |
-| 🟢 rest              | https://rest.axelar.lava.build         |
-| 🟢 grpc              | grpc.axelar.lava.build:443             |
+| Service 🔌                    | URL 🔗                                        |
+|-------------------------------|-----------------------------------------------|
+| 🟢 tendermint-rpc             | https://axelar.tendermintrpc.lava.build       |
+| 🟢 tendermint-rpc / websocket | <wss://tm.axelar.lava.build/websocket>        |
+| 🟢 rest                       | https://axelar.lava.build                     |
+| 🟢 grpc                       | grpc.axelar.lava.build                        |
 
 ### Testnet 🧪
 
-| Service 🔌                  | URL 🔗                                    |
-|-----------------------------|-------------------------------------------|
-| 🟢 tendermint-rpc            | https://tm.axelar-testnet.lava.build       |
-| 🟢 tendermint-rpc / websocket | wss://tm.axelar-testnet.lava.build/websocket |
-| 🟢 rest                      | https://rest.axelar-testnet.lava.build     |
-| 🟢 grpc                      | grpc.axelar-testnet.lava.build:443        |
-
-
+| Service 🔌                    | URL 🔗                                          |
+|-------------------------------|-------------------------------------------------|
+| 🟢 tendermint-rpc             | https://tm.axelar-testnet.lava.build            |
+| 🟢 tendermint-rpc / websocket | <wss://tm.axelar-testnet.lava.build/websocket>  |
+| 🟢 rest                       | https://axelart.lava.build                      |
+| 🟢 grpc                       | grpc.axelar-testnet.lava.build                  |
 
 ## [Gateway](https://gateway.lavanet.xyz/?utm_source=axelar-dev&utm_medium=docs&utm_campaign=docs-to-gateway)
 
 To learn more about using the Lava Gateway visit the [Getting Started guide](https://docs.lavanet.xyz/gateway-getting-started?utm_source=axelar-dev&utm_medium=docs&utm_campaign=docs-to-docs)
-
 
 ## [SDK](https://github.com/lavanet/lava-sdk)
 

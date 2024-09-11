@@ -8,7 +8,25 @@ import TabItem from '@theme/TabItem';
 
 # Getting CosmosHub RPC
 
-<hr />
+## CosmosHub ipRPC 🪙
+
+### Mainnet 🌐
+
+| Service 🔌                    | URL 🔗                                                |
+|-------------------------------|-------------------------------------------------------|
+| 🟢 tendermint-rpc             | <https://cosmoshub.tendermintrpc.lava.build>           |
+| 🟢 tendermint-rpc / websocket | <wss://cosmoshub.tendermintrpc.lava.build/websocket> |
+| 🟢 rest                       | <https://cosmoshub.lava.build>                    |
+| 🟢 grpc                       | cosmoshub.grpc.lava.build                            |
+
+### Testnet 🧪
+
+| Service 🔌                    | URL 🔗                                                |
+|-------------------------------|-------------------------------------------------------|
+| 🟢 tendermint-rpc             | <https://cosmoshubt.tendermintrpc.lava.build>           |
+| 🟢 tendermint-rpc / websocket | <wss://cosmoshubt.tendermintrpc.lava.build/websocket> |
+| 🟢 rest                       | <https://cosmoshubt.lava.build>                    |
+| 🟢 grpc                       | cosmoshubt.grpc.lava.build                            |
 
 ## [Gateway](https://gateway.lavanet.xyz/?utm_source=cosmoshub-dev&utm_medium=docs&utm_campaign=docs-to-gateway)
 
@@ -81,5 +99,6 @@ async function useCosmoshubMainnet() {
     await useCosmoshubMainnet();
   })();
 ```
+
 </TabItem>
 </Tabs>
