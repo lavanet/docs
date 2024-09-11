@@ -25,7 +25,7 @@ import TabItem from '@theme/TabItem';
 |-------------------------------|-------------------------------------------------------|
 | 🟢 tendermint-rpc             | <https://cosmoshubt.tendermintrpc.lava.build>           |
 | 🟢 tendermint-rpc / websocket | <wss://cosmoshubt.tendermintrpc.lava.build/websocket> |
-| 🟢 rest                       | <https://cosmoshubt.rest.lava.build>                    |
+| 🟢 rest                       | <https://cosmoshubt.lava.build>                    |
 | 🟢 grpc                       | cosmoshubt.grpc.lava.build                            |
 
 ## [Gateway](https://gateway.lavanet.xyz/?utm_source=cosmoshub-dev&utm_medium=docs&utm_campaign=docs-to-gateway)
