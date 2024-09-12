@@ -13,29 +13,25 @@ Lava🌋 now offers incentivized public RPC for Evmos. Developers can get free, 
 
 ### Mainnet 🌐
 
-| Service 🔌          | URL 🔗                                 |
-|---------------------|----------------------------------------|
-| 🟢 tendermint-rpc    | https://tm.evmos.lava.build            |
-| 🟢 tendermint-rpc / websocket | wss://tm.evmos.lava.build/websocket |
-| 🟢 json-rpc          | https://evmos.lava.build               |
-| 🟢 json-rpc / websocket | wss://evmos.lava.build/websocket     |
-| 🟢 rest              | https://rest.evmos.lava.build          |
-| 🟢 grpc              | grpc.evmos.lava.build:443              |
-| 🟢 web-gRPC          | https://grpc.evmos.lava.build          |
-
+| Service 🔌                    | URL 🔗                                               |
+|--------------------------------|------------------------------------------------------|
+| 🟢 tendermint-rpc             | https://evmos.tendermintrpc.lava.build               |
+| 🟢 tendermint-rpc / websocket | <wss://tm.evmos.lava.build/websocket>                |
+| 🟢 json-rpc                   | https://evmos.lava.build                             |
+| 🟢 json-rpc / websocket       | <wss://evmos.lava.build/websocket>                   |
+| 🟢 rest                       | https://evmos.rest.lava.build                        |
+| 🟢 grpc                       | grpc.evmos.lava.build                                |
 
 ### Testnet 🧪
 
-| Service 🔌                  | URL 🔗                                    |
-|-----------------------------|-------------------------------------------|
-| 🟢 tendermint-rpc            | https://tm.evmos-testnet.lava.build       |
-| 🟢 tendermint-rpc / websocket | wss://tm.evmos-testnet.lava.build/websocket |
-| 🟢 json-rpc                  | https://evmos-testnet.lava.build          |
-| 🟢 json-rpc / websocket      | wss://evmos-testnet.lava.build/websocket  |
-| 🟢 rest                      | https://rest.evmos-testnet.lava.build     |
-| 🟢 grpc                      | grpc.evmos-testnet.lava.build:443         |
-| 🟢 web-gRPC                  | https://grpc.evmos-testnet.lava.build     |
-
+| Service 🔌                    | URL 🔗                                              |
+|--------------------------------|-----------------------------------------------------|
+| 🟢 tendermint-rpc             | https://tm.evmos-testnet.lava.build                 |
+| 🟢 tendermint-rpc / websocket | <wss://tm.evmos-testnet.lava.build/websocket>       |
+| 🟢 json-rpc                   | https://evmos-testnet.lava.build                    |
+| 🟢 json-rpc / websocket       | <wss://evmos-testnet.lava.build/websocket>          |
+| 🟢 rest                       | https://evmost.rest.lava.build                      |
+| 🟢 grpc                       | grpc.evmos-testnet.lava.build                       |
 
 <br />
 <hr />

@@ -35,21 +35,21 @@ We will add Lava endpoints soon
 
 ### Mainnet 🌐 `AXELAR`
 
-| Service 🔌          | URL 🔗                                 |
-|---------------------|----------------------------------------|
-| 🟢 tendermint-rpc    | https://tm.axelar.lava.build            |
-| 🟢 tendermint-rpc / websocket | wss://tm.axelar.lava.build/websocket |
-| 🟢 rest              | https://rest.axelar.lava.build         |
-| 🟢 grpc              | grpc.axelar.lava.build:443             |
+| Service 🔌                    | URL 🔗                                    |
+|-------------------------------|--------------------------------------------|
+| 🟢 tendermint-rpc             | https://tm.axelar.lava.build              |
+| 🟢 tendermint-rpc / websocket | <wss://tm.axelar.lava.build/websocket>    |
+| 🟢 rest                       | https://rest.axelar.lava.build            |
+| 🟢 grpc                       | grpc.axelar.lava.build                    |
 
 ### Testnet 🧪 `AXELART`
 
-| Service 🔌                  | URL 🔗                                    |
-|-----------------------------|-------------------------------------------|
-| 🟢 tendermint-rpc            | https://tm.axelar-testnet.lava.build       |
-| 🟢 tendermint-rpc / websocket | wss://tm.axelar-testnet.lava.build/websocket |
-| 🟢 rest                      | https://rest.axelar-testnet.lava.build     |
-| 🟢 grpc                      | grpc.axelar-testnet.lava.build:443        |
+| Service 🔌                    | URL 🔗                                            |
+|--------------------------------|--------------------------------------------------|
+| 🟢 tendermint-rpc             | https://tm.axelar-testnet.lava.build              |
+| 🟢 tendermint-rpc / websocket | <wss://tm.axelar-testnet.lava.build/websocket>    |
+| 🟢 rest                       | https://rest.axelar-testnet.lava.build            |
+| 🟢 grpc                       | grpc.axelar-testnet.lava.build                    |
 
 <br />
 
@@ -57,22 +57,18 @@ We will add Lava endpoints soon
 
 ### Mainnet 🌐 `COSMOSHUB`
 
-
-| Service 🔌          | URL 🔗                                 |
-|---------------------|----------------------------------------|
-| 🟢 tendermint-rpc    | https://cosmoshub.tendermintrpc.lava.build  |
-| 🟢 tendermint-rpc / websocket | <wss://cosmoshub.tendermintrpc.lava.build/ws> <br /> <wss://cosmoshub.tendermintrpc.lava.build/websocket> |
-| 🟢 json-rpc          | https://cosmoshub.lava.build                                    |
-| 🟢 rest              | https://cosmoshub.rest.lava.build                               |
-| 🟢 web-gRPC          | https://cosmoshub.grpc.lava.build                               |
-| 🟢 grpc              | cosmoshub.grpc.lava.build:443                                   |
+| Service 🔌                    | URL 🔗                                                |
+|--------------------------------|------------------------------------------------------|
+| 🟢 tendermint-rpc             | https://cosmoshub.tendermintrpc.lava.build            |
+| 🟢 tendermint-rpc / websocket |<wss://cosmoshub.tendermintrpc.lava.build/websocket>   |
+| 🟢 rest                       | https://cosmoshub.rest.lava.build                     |
+| 🟢 grpc                       | cosmoshub.grpc.lava.build                             |
 
 <br />
 
 ## Evmos Endpoints 🌟
 
 ### Mainnet 🌐 `EVMOS`
-
 
 | Service 🔌          | URL 🔗                                 |
 |---------------------|----------------------------------------|

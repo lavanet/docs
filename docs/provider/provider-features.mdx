@@ -231,10 +231,24 @@ lavap tx pairing stake-provider "ETH1" \
     --chain-id {CHAIN_ID} \
     --gas="auto" \
     --gas-adjustment "1.5" \
-    --node {PUBLIC_RPC}
+    --node {PUBLIC_RPC} \
+    --delegation-limit 100000000000ulava
 ```
 
+The `delegation-limit` flag is mandatory (but will be removed in future versions). The delegation limit is the maximum amount of delegations the provider is willing to use for the pairing process.
+Larger delegations mean the provider will be paired more often with consumers. If a provider receives many delegations but can't handle the resulting consumer traffic, they can set the delegate limit lower than their actual total delegations. This reduces their pairing frequency and workload. The delegated tokens remain with the provider, but their influence is reduced by artificially lowering the provider's effective stake (composed of self-stake and delegations).
+Putting "0ulava" means there is a strict restriction that no amount of delegations affect the pairing mechanism.
+
 Do note the required addition of **`,archive,debug`** in each of the endpoints that support it if several exist. Setting these in a transaction replaces any existing endpoints, so make sure to give the full list of endpoints.
+Also, the geolocation specified in the endpoints must match the geolocation argument (in the example, the endpoint is setup in USC and the example geolocation argument's value is USC, as expected).
+
+Finally, using the optional `--provider` flag allows defining another lava address as the provider's operational address. The address of the `--from` address will be considered as the provider's vault address.
+The vault address is utilized to hold the provider entity's funds and to receive rewards from the provider entity's service. Any other actions performed by the provider entity utilize the provider entity's provider 
+address. The provider address can perform all actions except for staking/unstaking, modifying stake-related fields in the provider entity's stake entry, and claiming rewards.
+
+To let the provider address use the vault's funds for gas fees, use the `--grant-provider-gas-fees-auth`. The only transactions that are funded by the vault are: `relay-payment`, `freeze`, `unfreeze`, `modify-provider`, 
+`detection` (conflict module), `conflict-vote-commit` and `conflict-vote-reveal`. When executing any of these transactions using the CLI with the provider entity, use the `--fee-granter` flag to specify the vault address 
+which will pay for the gas fees. It's important to note that once an provider address is registered through a provider entity's staking, it cannot stake on the same chain again.
 
 ** Staking Example: `modify-provider` ⌨️ **
 
