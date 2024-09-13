@@ -293,4 +293,22 @@ export const communityMainnetEndpointsList = [
     url: 'https://lcd.mainnet-archive.lavanet.datanexus.tech/',
     notes: 'Archive Node',
   },
+  {
+    provider: 'DTEAM',
+    service: '🌐 RPC',
+    url: 'https://rpc.lava.mainnet.dteam.tech',
+    notes: 'Archive Node',
+  },
+  {
+    provider: 'DTEAM',
+    service: '⚡ gRPC',
+    url: 'grpc.lava.mainnet.dteam.tech:32090',
+    notes: 'Archive Node',
+  },
+  {
+    provider: 'DTEAM',
+    service: '🔗 REST API',
+    url: 'https://api.lava.mainnet.dteam.tech',
+    notes: 'Archive Node',
+  }
 ];
