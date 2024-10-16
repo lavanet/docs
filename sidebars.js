@@ -459,7 +459,6 @@ const sidebars = {
         "provider/provider-features",
         "provider/provider-tls",
         "provider/provider-rewards-service",
-        "provider/provider-delegation",
         "provider/provider-load-balancing",
       ],
     },
