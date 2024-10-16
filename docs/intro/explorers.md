@@ -37,6 +37,7 @@ https://lava.explorers.guru/
 - ✨[Stake Village](https://exp.stakevillage.net/Lava-testnet)
 - ✨[STAKEME](https://lava.exploreme.pro)
 - ✨[AKNodes](https://explorer.aknodes.com/LAVA-TESTNET)
+- ✨[SbGid](https://exp.sbgid.com/lava-testnet)
 - ✨[CoinHunters](https://explorer.coinhunterstr.com/lava)
 - ✨[MELLIFERA (Restaking feature support with Keplr, Leap, Ledger wallets) ](https://lavatest.mellifera.network)
 
