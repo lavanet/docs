@@ -22,18 +22,17 @@ import RoadmapItem from '@site/src/components/RoadmapItem'
 
 ### Specification 📑
 
-https://raw.githubusercontent.com/lavanet/lava/main/cookbook/specs/spec_add_evmos.json
-
+https://raw.githubusercontent.com/lavanet/lava/main/cookbook/specs/evmos.json
 
 ### Protocols 🔗
 
-| Platform  |  rest/http | uri/http | tendermint/http | tendermint/wss | jsonrpc/http | jsonrpc/wss
-| --------- | -------- |------------| ------------- | ---------------------| ------------ | -----------------
-| Gateway   | ✅       | ✅         | ✅            | ✅                   | ✅           | ✅
-| SDK       | ✅       |            | ✅            |                      | ✅           | 
-
+| Platform | rest/http | uri/http | tendermint/http | tendermint/wss | jsonrpc/http | jsonrpc/wss |
+| -------- | --------- | -------- | --------------- | -------------- | ------------ | ----------- |
+| Gateway  | ✅        | ✅       | ✅              | ✅             | ✅           | ✅          |
+| SDK      | ✅        |          | ✅              |                | ✅           |
 
 ### Methods 🛠️
+
 <details>
 <summary> List </summary>
 
@@ -118,4 +117,3 @@ https://raw.githubusercontent.com/lavanet/lava/main/cookbook/specs/spec_add_evmo
 - evmos.vesting.v1.Query/Balances
 
 </details>
-
