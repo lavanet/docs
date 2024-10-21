@@ -266,6 +266,18 @@ const sidebars = {
         },
         {
           type: "category",
+          label: "🔗 Stargaze",
+          collapsible: true,
+          collapsed: true,
+          description: "STRGZ, STRGZT",
+          link: {
+            type: "doc",
+            id: "chains/stargaze-chain/stargaze",
+          },
+          items: ["chains/stargaze-chain/stargaze-dev"],
+        },
+        {
+          type: "category",
           label: "🔗 Starknet",
           collapsible: true,
           collapsed: true,

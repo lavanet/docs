@@ -24,14 +24,12 @@ import RoadmapItem from '@site/src/components/RoadmapItem'
 
 https://raw.githubusercontent.com/lavanet/lava/main/cookbook/specs/spec_add_cosmoshub.json
 
-
 ### Protocols 🔗
 
-| Platform  |  rest/http | uri/http | tendermint/http | tendermint/wss |    grpc | webgrpc |
-| --------- | -------- |------------| ------------- | -----------------|---------|---------|
-| Gateway   | ✅       | ✅         | ✅            | ✅               | ✅      |   ✅    |
-| SDK       | ✅       |            | ✅            |                  |         |    ✅   |
-
+| Platform | rest/http | uri/http | tendermint/http | tendermint/wss | grpc | webgrpc |
+| -------- | --------- | -------- | --------------- | -------------- | ---- | ------- |
+| Gateway  | ✅        | ✅       | ✅              | ✅             | ✅   | ✅      |
+| SDK      | ✅        |          | ✅              |                |      | ✅      |
 
 ### Methods 🛠️
 
@@ -272,40 +270,39 @@ lavad q spec show-chain-info COS5
 - /distribution/delegators/{delegatorAddr}/withdraw_address
 - /distribution/validators/{validatorAddr}/rewards
 
-
 </details>
 
 <details>
 <summary>TendermintRPC</summary>
 
-  - dump_consensus_state
-  - abci_info
-  - abci_query
-  - block
-  - block_by_hash
-  - block_results
-  - block_search
-  - blockchain
-  - broadcast_evidence
-  - broadcast_tx_async
-  - broadcast_tx_commit
-  - broadcast_tx_sync
-  - check_tx
-  - commit
-  - consensus_params
-  - consensus_state
-  - genesis
-  - genesis_chunked
-  - health
-  - net_info
-  - num_unconfirmed_txs
-  - status
-  - subscribe
-  - tx
-  - tx_search
-  - unconfirmed_txs
-  - unsubscribe
-  - unsubscribe_all
-  - validators
+- dump_consensus_state
+- abci_info
+- abci_query
+- block
+- block_by_hash
+- block_results
+- block_search
+- blockchain
+- broadcast_evidence
+- broadcast_tx_async
+- broadcast_tx_commit
+- broadcast_tx_sync
+- check_tx
+- commit
+- consensus_params
+- consensus_state
+- genesis
+- genesis_chunked
+- health
+- net_info
+- num_unconfirmed_txs
+- status
+- subscribe
+- tx
+- tx_search
+- unconfirmed_txs
+- unsubscribe
+- unsubscribe_all
+- validators
 
 </details>
