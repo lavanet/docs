@@ -15,18 +15,18 @@ import TabItem from '@theme/TabItem';
 | Service 🔌                    | URL 🔗                                              |
 | ----------------------------- | --------------------------------------------------- |
 | 🟢 tendermint-rpc             | <https://strgz.tendermintrpc.lava.build>         |
-| 🟢 tendermint-rpc / websocket | <wss://stargaze.tendermintrpc.lava.build/websocket> |
-| 🟢 rest                       | <https://stargaze.lava.build>                       |
-| 🟢 grpc                       | stargaze.grpc.lava.build                            |
+| 🟢 tendermint-rpc / websocket | <wss://strgz.tendermintrpc.lava.build/websocket> |
+| 🟢 rest                       | <https://strgz.lava.build>                       |
+| 🟢 grpc                       | strgz.grpc.lava.build                            |
 
 ### Testnet 🧪
 
 | Service 🔌                    | URL 🔗                                               |
 | ----------------------------- | ---------------------------------------------------- |
 | 🟢 tendermint-rpc             | <https://strgzt.tendermintrpc.lava.build>         |
-| 🟢 tendermint-rpc / websocket | <wss://stargazet.tendermintrpc.lava.build/websocket> |
-| 🟢 rest                       | <https://stargazet.lava.build>                       |
-| 🟢 grpc                       | stargazet.grpc.lava.build                            |
+| 🟢 tendermint-rpc / websocket | <wss://strgzt.tendermintrpc.lava.build/websocket> |
+| 🟢 rest                       | <https://strgzt.lava.build>                       |
+| 🟢 grpc                       | strgzt.grpc.lava.build                            |
 
 ## [Gateway](https://gateway.lavanet.xyz/?utm_source=stargaze-dev&utm_medium=docs&utm_campaign=docs-to-gateway)
 
