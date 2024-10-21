@@ -14,7 +14,7 @@ import TabItem from '@theme/TabItem';
 
 | Service 🔌                    | URL 🔗                                              |
 | ----------------------------- | --------------------------------------------------- |
-| 🟢 tendermint-rpc             | <https://stargaze.tendermintrpc.lava.build>         |
+| 🟢 tendermint-rpc             | <https://strgz.tendermintrpc.lava.build>         |
 | 🟢 tendermint-rpc / websocket | <wss://stargaze.tendermintrpc.lava.build/websocket> |
 | 🟢 rest                       | <https://stargaze.lava.build>                       |
 | 🟢 grpc                       | stargaze.grpc.lava.build                            |
@@ -23,7 +23,7 @@ import TabItem from '@theme/TabItem';
 
 | Service 🔌                    | URL 🔗                                               |
 | ----------------------------- | ---------------------------------------------------- |
-| 🟢 tendermint-rpc             | <https://stargazet.tendermintrpc.lava.build>         |
+| 🟢 tendermint-rpc             | <https://strgzt.tendermintrpc.lava.build>         |
 | 🟢 tendermint-rpc / websocket | <wss://stargazet.tendermintrpc.lava.build/websocket> |
 | 🟢 rest                       | <https://stargazet.lava.build>                       |
 | 🟢 grpc                       | stargazet.grpc.lava.build                            |
