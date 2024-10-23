@@ -9,29 +9,30 @@ import TabItem from '@theme/TabItem';
 # Getting Evmos RPC
 
 ## Evmos ipRPC 🪙
+
 Lava🌋 now offers incentivized public RPC for Evmos. Developers can get free, public endpoints for all.
 
 ### Mainnet 🌐
 
-| Service 🔌                    | URL 🔗                                               |
-|--------------------------------|------------------------------------------------------|
-| 🟢 tendermint-rpc             | https://evmos.tendermintrpc.lava.build               |
-| 🟢 tendermint-rpc / websocket | <wss://tm.evmos.lava.build/websocket>                |
-| 🟢 json-rpc                   | https://evmos.lava.build                             |
-| 🟢 json-rpc / websocket       | <wss://evmos.lava.build/websocket>                   |
-| 🟢 rest                       | https://evmos.rest.lava.build                        |
-| 🟢 grpc                       | grpc.evmos.lava.build                                |
+| Service 🔌                    | URL 🔗                                         |
+| ----------------------------- | ---------------------------------------------- |
+| 🟢 tendermint-rpc             | https://evmos.tendermintrpc.lava.build         |
+| 🟢 tendermint-rpc / websocket | wss://evmos.tendermintrpc.lava.build/websocket |
+| 🟢 json-rpc                   | https://evmos.lava.build                       |
+| 🟢 json-rpc / websocket       | wss://evmos.lava.build                         |
+| 🟢 rest                       | https://evmos.rest.lava.build                  |
+| 🟢 grpc                       | evmos.grpc.lava.build                          |
 
 ### Testnet 🧪
 
-| Service 🔌                    | URL 🔗                                              |
-|--------------------------------|-----------------------------------------------------|
-| 🟢 tendermint-rpc             | https://tm.evmos-testnet.lava.build                 |
-| 🟢 tendermint-rpc / websocket | <wss://tm.evmos-testnet.lava.build/websocket>       |
-| 🟢 json-rpc                   | https://evmos-testnet.lava.build                    |
-| 🟢 json-rpc / websocket       | <wss://evmos-testnet.lava.build/websocket>          |
-| 🟢 rest                       | https://evmost.rest.lava.build                      |
-| 🟢 grpc                       | grpc.evmos-testnet.lava.build                       |
+| Service 🔌                    | URL 🔗                                        |
+| ----------------------------- | --------------------------------------------- |
+| 🟢 tendermint-rpc             | https://tm.evmos-testnet.lava.build           |
+| 🟢 tendermint-rpc / websocket | <wss://tm.evmos-testnet.lava.build/websocket> |
+| 🟢 json-rpc                   | https://evmos-testnet.lava.build              |
+| 🟢 json-rpc / websocket       | <wss://evmos-testnet.lava.build/websocket>    |
+| 🟢 rest                       | https://evmost.rest.lava.build                |
+| 🟢 grpc                       | grpc.evmos-testnet.lava.build                 |
 
 <br />
 <hr />
@@ -53,16 +54,15 @@ To learn more about using the Lava Gateway visit the [Getting Started guide](htt
 ```jsx
 // Install lavaSDK with the following command:
 // npm i @lavanet/lava-sdk
-const { LavaSDK } = require("@lavanet/lava-sdk")
+const { LavaSDK } = require("@lavanet/lava-sdk");
 
 async function useEvmosTestnet() {
-
   const evmosTestnet = await LavaSDK.create({
     privateKey: process.env.PRIVATE_KEY, //hide your private key in an environmental variable
-    chainIds: 'EVMOST',
+    chainIds: "EVMOST",
   });
 
-  const evmosBlockResponse =  await evmosTestnet.sendRelay({
+  const evmosBlockResponse = await evmosTestnet.sendRelay({
     method: "block",
     params: ["15500000"],
   });
@@ -71,28 +71,28 @@ async function useEvmosTestnet() {
 }
 
 (async () => {
-    await useEvmosTestnet();
-  })();
+  await useEvmosTestnet();
+})();
 ```
+
 </TabItem>
 <TabItem value="frontend" label="FrontEnd">
 
 ```jsx
 // Install lavaSDK with the following command:
 // npm i @lavanet/lava-sdk
-const { LavaSDK } = require("@lavanet/lava-sdk")
+const { LavaSDK } = require("@lavanet/lava-sdk");
 
 async function useEvmosTestnet() {
-
   const evmosTestnet = await LavaSDK.create({
     badge: {
-      badgeServerAddress: "https://badges.lavanet.xyz", // Or your own Badge-Server URL 
-      projectId: "enter_your_project_id_here" 
+      badgeServerAddress: "https://badges.lavanet.xyz", // Or your own Badge-Server URL
+      projectId: "enter_your_project_id_here",
     },
-    chainIds: 'EVMOST',
+    chainIds: "EVMOST",
   });
 
-  const evmosBlockResponse =  await evmosTestnet.sendRelay({
+  const evmosBlockResponse = await evmosTestnet.sendRelay({
     method: "block",
     params: ["15500000"],
   });
@@ -101,8 +101,8 @@ async function useEvmosTestnet() {
 }
 
 (async () => {
-    await useEvmosTestnet();
-  })();
+  await useEvmosTestnet();
+})();
 ```
 
 </TabItem>
