@@ -293,4 +293,16 @@ export const communityMainnetEndpointsList = [
     url: 'https://lcd.mainnet-archive.lavanet.datanexus.tech/',
     notes: 'Archive Node',
   },
+  {
+    provider: 'kokos',
+    service: '🌐 RPC',
+    url: 'https://rpc-archive-lava.sbgid.com',
+    notes: 'Archive Node',
+  },
+  {
+    provider: 'kokos',
+    service: '🔗 REST API',
+    url: 'https://api-lava.sbgid.com',
+    notes: 'Archive Node',
+  },
 ];
