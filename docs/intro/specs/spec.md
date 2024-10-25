@@ -9,7 +9,7 @@ import RoadmapItem from '@site/src/components/RoadmapItem';
 
 ![Specs Banner](/img/banner/Specifications-8d88fb7fab996d996b8927b5a133c541.jpg)
 
-## 🔍 Overview 
+## 🔍 Overview
 
 Specifications (specs) are the foundational blueprints for Lava's multichain support. Presented in JSON format, they detail the bare minimum requirements for an API to run on Lava. Through these specs, Lava determines which chains and methods are supported and enabled, as well as establishes the costs, requirements, and verifications for them.
 
@@ -23,10 +23,10 @@ Whenever the ecosystem demands a new API, a new spec is integrated. This dynamic
 <br/>
 <hr />
 
-
-## 📖 Key Concepts 
+## 📖 Key Concepts
 
 ### Index 📑 {#index}
+
 An `index` is the name of the spec. Any time a spec is referenced it will be through its `index`.
 
 <details> <summary> Example </summary>
@@ -44,9 +44,11 @@ You can see the `EVMOS` spec live in production:
                 "name": "evmos mainnet",
                 "enabled": true,
 ```
+
 </details><br/>
 
 ### Imports ⬇️ {#imports}
+
 `imports` are references to borrowed functions from other sources. APIs/Chains of the same or similar architecture can import methods from an existing spec using its `index` and implementing any new logic. `imports` improve efficiency by eliminating the need to repeatedly integrate identical APIs.
 
 <details> <summary> Example </summary>
@@ -59,9 +61,11 @@ The following spec implements both Cosmos and Ethereum methods:
   "ETH1"
 ]
 ```
+
 </details><br/>
 
 ### API Collection 🛠️ {#api_collections}
+
 A specification always contains an `api_collection`. The `api_collection` contains the list of available methods or APIs that are activated and their respective `api_interfaces` (e.g. `"rest"`,`"grpc"`,`"jsonrpc"`,`"tendermintrpc"`, etc.). In other words, it outlines all the APIs or methods that must be active and operational to support a specific chain/API. Each method listed here must be served by providers and answerable to consumers.
 
 <details> <summary> Example </summary>
@@ -81,9 +85,11 @@ A specification always contains an `api_collection`. The `api_collection` contai
                             }
                         ]
 ```
+
 </details><br/>
 
 ### Compute Units (CU) 🔢 {#cu}
+
 Every API call has a computational overhead. To quantify this, Lava employs `"compute_units"` or CUs. They act as a metric, assigning a nominal "cost" to each API call. This ensures transparent resource allocation and utilization, allowing consumers to gauge the intensity of their calls, and providers, in turn, to be rewarded based upon the intensity of compute.
 
 <details> <summary> Example </summary>
@@ -143,13 +149,12 @@ The following is a snippet of the `debug` add-on for our `ETH1` spec:
 </details><br/>
 
 ### Extensions 〰️ {#extensions}
-`"extensions"` allow for the adjustment or enhancement of existing methods and APIs within a spec for special use cases. They provide the means to tweak, optimize, or expand current functions based on the needs of a subset of consumers who require more functionality from specified method calls. This allows for alternative functionalities to be outlined inside a spec, giving both providers and consumers flexibility to serve / request special functions.
 
+`"extensions"` allow for the adjustment or enhancement of existing methods and APIs within a spec for special use cases. They provide the means to tweak, optimize, or expand current functions based on the needs of a subset of consumers who require more functionality from specified method calls. This allows for alternative functionalities to be outlined inside a spec, giving both providers and consumers flexibility to serve / request special functions.
 
 <details><summary> Example </summary>
 
 The following is a snippet of the `"archive"` extension from our `ETH1` spec:
-
 
 ```json
                         "extensions": [
@@ -170,19 +175,17 @@ This example specifies archive nodes who receive a "`cu_multiplier`" (hence more
 
 <hr />
 
-## 💡 Examples 
+## 💡 Examples
 
 ### Blockchains ⛓️
 
-- [Lava](https://github.com/lavanet/lava/blob/main/cookbook/specs/spec_add_lava.json)
-- [Ethereum](https://github.com/lavanet/lava/blob/main/cookbook/specs/spec_add_ethereum.json)
-- [Axelar](https://github.com/lavanet/lava/blob/main/cookbook/specs/spec_add_axelar.json)
-- [Evmos](https://github.com/lavanet/lava/blob/main/cookbook/specs/spec_add_evmos.json)
+- [Lava](https://github.com/lavanet/lava/blob/main/cookbook lava.json)
+- [Ethereum](https://github.com/lavanet/lava/blob/main/cookbook ethereum.json)
+- [Axelar](https://github.com/lavanet/lava/blob/main/cookbook axelar.json)
+- [Evmos](https://github.com/lavanet/lava/blob/main/cookbook evmos.json)
 
 ### Rich APIs 🌟
 
-- [IBC](https://github.com/lavanet/lava/blob/main/cookbook/specs/spec_add_ibc.json)
-- [CosmWasm](https://github.com/lavanet/lava/blob/main/cookbook/specs/spec_add_cosmoswasm.json)
+- [IBC](https://github.com/lavanet/lava/blob/main/cookbook ibc.json)
+- [CosmWasm](https://github.com/lavanet/lava/blob/main/cookbook cosmoswasmjson)
 - [Web3 P2P DNS Resolution (Outdated)](https://github.com/lavanet/resolva/blob/main/spec.json)
-
-

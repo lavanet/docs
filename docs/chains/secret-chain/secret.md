@@ -24,18 +24,17 @@ import RoadmapItem from '@site/src/components/RoadmapItem'
 
 ### Specification 📑
 
-https://raw.githubusercontent.com/lavanet/lava/main/cookbook/specs/spec_add_secret.json
-
+https://raw.githubusercontent.com/lavanet/lava/main/cookbook/specs/secret.json
 
 ### Protocols 🔗
 
-| Platform  |  REST | gRPC  |
-| --------- | -------- | ---- |
-| Gateway   |    ❌   | ❌   |
-| SDK       |    ❌   | ❌   | 
-
+| Platform | REST | gRPC |
+| -------- | ---- | ---- |
+| Gateway  | ❌   | ❌   |
+| SDK      | ❌   | ❌   |
 
 ### Methods 🛠️
+
 <details>
 <summary> REST </summary>
 
@@ -77,4 +76,3 @@ https://raw.githubusercontent.com/lavanet/lava/main/cookbook/specs/spec_add_secr
 - secret.compute.v1beta1.Query/AddressByLabel
 
 </details>
-
