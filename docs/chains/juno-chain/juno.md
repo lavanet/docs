@@ -22,25 +22,22 @@ import RoadmapItem from '@site/src/components/RoadmapItem'
 
 ### Specification 📑
 
-https://raw.githubusercontent.com/lavanet/lava/main/cookbook/specs/spec_add_juno.json
-
+https://raw.githubusercontent.com/lavanet/lava/main/cookbook/specs/juno.json
 
 ### Protocols 🔗
 
-
-| Platform  |  rest/http | uri/http | tendermint/http | tendermint/wss |
-| --------- | -------- |------------| ------------- | ---------------------|
-| Gateway   | ✅       | ✅         | ✅            | ✅                   |
-| SDK       | ✅       |            | ✅            |                      | 
-
+| Platform | rest/http | uri/http | tendermint/http | tendermint/wss |
+| -------- | --------- | -------- | --------------- | -------------- |
+| Gateway  | ✅        | ✅       | ✅              | ✅             |
+| SDK      | ✅        |          | ✅              |                |
 
 ### Methods 🛠️
+
 <details>
 <summary> List </summary>
 
 - juno.mint.Query/AnnualProvisions
 - juno.mint.Query/Inflation
 - juno.mint.Query/Params
-
 
 </details>

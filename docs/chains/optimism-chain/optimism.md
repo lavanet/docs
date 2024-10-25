@@ -22,18 +22,17 @@ import RoadmapItem from '@site/src/components/RoadmapItem'
 
 ### Specification 📑
 
-https://raw.githubusercontent.com/lavanet/lava/main/cookbook/specs/spec_add_optimism.json
-
+https://raw.githubusercontent.com/lavanet/lava/main/cookbook/specs/optimism.json
 
 ### Protocols 🔗
 
-| Platform  |  jsonrpc/http | jsonrpc/wss
-| --------- | ------------- | ------------- | 
-| Gateway   | ✅            | ✅            |
-| SDK       | ✅            |               |
-
+| Platform | jsonrpc/http | jsonrpc/wss |
+| -------- | ------------ | ----------- |
+| Gateway  | ✅           | ✅          |
+| SDK      | ✅           |             |
 
 ### Methods 🛠️
+
 <details>
 <summary> List </summary>
 
