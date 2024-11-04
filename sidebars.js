@@ -5,7 +5,7 @@ const sidebars = {
   theSidebar: [
     {
       type: "category",
-      label: "Introduction 🎉",
+      label: "Getting Started 🎉",
       link: {
         type: "doc",
         id: "intro/intro",
@@ -14,6 +14,8 @@ const sidebars = {
       collapsed: true,
       items: [
         "intro/about",
+        "intro/key-roles",
+        "intro/how-lava-work",
         "intro/explorers",
         "intro/key-terms",
         "intro/key-variables",
