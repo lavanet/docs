@@ -496,6 +496,22 @@ const sidebars = {
     },
     {
       type: "category",
+      label: "Governance 🗳️",
+      link: {
+        type: "doc",
+        id: "governance/govern",
+      },
+      collapsible: true,
+      collapsed: true,
+      items: [
+        "governance/overview",
+        "governance/types",
+        "governance/parameters",
+        "governance/submit-proposal",
+      ],
+    },
+    {
+      type: "category",
       label: "Tokenomics 🪙",
       link: {
         type: "doc",
