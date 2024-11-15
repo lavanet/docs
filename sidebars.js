@@ -5,7 +5,7 @@ const sidebars = {
   theSidebar: [
     {
       type: "category",
-      label: "Introduction 🎉",
+      label: "Getting Started 🎉",
       link: {
         type: "doc",
         id: "intro/intro",
@@ -14,6 +14,8 @@ const sidebars = {
       collapsed: true,
       items: [
         "intro/about",
+        "intro/key-roles",
+        "intro/how-lava-work",
         "intro/explorers",
         "intro/key-terms",
         "intro/key-variables",
@@ -490,6 +492,22 @@ const sidebars = {
         "lava-blockchain/faucet",
         "lava-blockchain/subscriptions",
         "lava-blockchain/badge-server",
+      ],
+    },
+    {
+      type: "category",
+      label: "Governance 🗳️",
+      link: {
+        type: "doc",
+        id: "governance/govern",
+      },
+      collapsible: true,
+      collapsed: true,
+      items: [
+        "governance/overview",
+        "governance/types",
+        "governance/parameters",
+        "governance/submit-proposal",
       ],
     },
     {
