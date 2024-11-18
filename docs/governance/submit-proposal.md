@@ -1,3 +1,8 @@
+---
+slug: /submit-proposal
+title: Governance Proposals
+---
+
 # 📜 How To Submit and Vote on a Proposal
 
 The proposal life cycle on Lava Network involves several stages, starting from submission to final implementation. Each stage has specific requirements and parameters that ensure a transparent and efficient governance process. Let's dive into each phase with a clear, step-by-step guide and examples.
@@ -41,7 +46,7 @@ The first step in the governance process is to submit a proposal. Proposals can 
 }
 ```
 
-1.  **Submit the proposal** using the Lava CLI command:
+1. **Submit the proposal** using the Lava CLI command:
 
 ```shell
 lavad tx gov submit-proposal path/to/proposal.json --from <wallet_name> --chain-id lava-mainnet-1 --gas auto --gas-adjustment 1.2 --node https://lava.tendermintrpc.lava.build:443

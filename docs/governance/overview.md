@@ -1,8 +1,13 @@
+---
+slug: /overview
+title: Governance Overview
+---
+
 # 🗳️ Governance Overview
 
 ### 🌐 **Overview**
 
-Governance is at the heart of the Lava Network’s decentralized approach, enabling the community to shape the future of the protocol collaboratively. 
+Governance is at the heart of the Lava Network’s decentralized approach, enabling the community to shape the future of the protocol collaboratively.
 
 The governance model in Lava is **on-chain**, meaning that all voting and proposal mechanisms are conducted directly on the blockchain. This ensures a transparent and tamper-proof process, where every stakeholder’s input can be tracked and verified. With this approach, the community collectively decides on upgrades, changes to network parameters, specification updates, and more.
 
