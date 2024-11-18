@@ -1,3 +1,8 @@
+---
+slug: /types
+title: Proposals Types
+---
+
 # 📑 Types of Proposals
 
 In Lava Network, proposals are the primary mechanism for implementing changes, upgrades, and improvements. The community can submit different types of proposals depending on the nature of the change they want to make. These proposals are categorized into several types, each with its specific use case.

@@ -1,3 +1,8 @@
+---
+slug: /parameters
+title: Governance Parameters
+---
+
 # 🛠️ Governance Parameters
 
 The Lava Network’s governance is designed to be flexible and adaptive, with specific parameters governing the proposal and voting process. These parameters define the rules and thresholds required for proposals to progress through different stages, ensuring a fair and transparent decision-making process.
