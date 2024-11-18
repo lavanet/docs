@@ -9,11 +9,7 @@ Discover how Lava’s decentralized governance model empowers the community to s
 
 ## Governance Sections
 
-[<RoadmapItem
-  icon='🏛️'
-  title='Governance Overview'
-  description='Get a comprehensive look at the governance model of Lava Network, its purpose, and how it drives decentralized decision-making.'
-/>](./overview)
+[<RoadmapItem icon='🏛️' title='Governance Overview' description='Get a comprehensive look at the governance model of Lava Network, its purpose, and how it drives decentralized decision-making.'/>](/overview)
 
 [<RoadmapItem
   icon='📑'
