@@ -1,5 +1,5 @@
 ---
-slug: /govern
+slug: /types
 title: Proposals Types
 ---
 
