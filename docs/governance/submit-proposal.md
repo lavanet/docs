@@ -13,7 +13,9 @@ The proposal life cycle on Lava Network involves several stages, starting from s
 
 ### **Overview**
 
-The first step in the governance process is to submit a proposal. Proposals can be of different types, such as text proposals, parameter change proposals, software upgrade proposals, and spec proposals. To submit a proposal, users must meet the minimum deposit requirement and provide the necessary metadata.
+The first step in the governance process is to submit a proposal Before this, a community member may want to post the proposal for feedback in the [Lava Community Forum](https://community.lavanet.xyz). 
+
+Proposals can be of different types, such as text proposals, parameter change proposals, software upgrade proposals, and spec proposals. To submit a proposal, users must meet the minimum deposit requirement and provide the necessary metadata.
 
 ### **Requirements**
 
@@ -25,6 +27,8 @@ The first step in the governance process is to submit a proposal. Proposals can 
 - 📄 **Proposal JSON File**: Contains proposal details like title, summary, metadata, and deposit information.
 
 ### **How to Submit a Proposal**
+
+0. Community members are encouraged to post major proposals in the [Lava Community Forum](https://community.lavanet.xyz) for feedback, prior to onchain submission. 
 
 1. **Prepare a JSON file** with your proposal details. Example:
 
