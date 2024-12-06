@@ -8,6 +8,28 @@ import TabItem from '@theme/TabItem';
 
 # Getting Filecoin RPC
 
+## Filecoin ipRPC 🪙
+
+Lava🌋 now offers incentivized public RPC for Filecoin. Developers can get free, public endpoints for all.
+
+### Mainnet 🌐
+
+| Service 🔌                    | URL 🔗                                         |
+| ----------------------------- | ---------------------------------------------- |
+| 🟢 json-rpc                   | https://filecoin.lava.build                    |
+
+
+### Testnet 🧪
+
+| Service 🔌                    | URL 🔗                                        |
+| ----------------------------- | --------------------------------------------- |
+| 🟢 json-rpc                   | https://filecoin-testnet.lava.build           |
+
+
+
+<br />
+<hr />
+
 ## API Reference
 
 <Tabs>
