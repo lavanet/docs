@@ -19,6 +19,7 @@ import RoadmapItem from '@site/src/components/RoadmapItem'
 <center>
 
 ## ⚙️ Supported APIs ⚙️
+
 ```
 "/blob/v1/params"
 "/qgb/v1/attestations/requests/{nonce}"
@@ -82,5 +83,4 @@ import RoadmapItem from '@site/src/components/RoadmapItem'
 
 ### Specification 📑
 
-https://raw.githubusercontent.com/lavanet/lava/main/cookbook/specs/spec_add_celestia.json
-
+https://raw.githubusercontent.com/lavanet/lava/main/cookbook/specs/celestia.json

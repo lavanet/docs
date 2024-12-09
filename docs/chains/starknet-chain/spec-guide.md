@@ -374,7 +374,7 @@ Each API collection is composed of various pieces. These pieces collectively giv
 
 <details><summary> `internal_path`</summary>
 
-This field gives the internal path of the node for this specific ApiCollection. This is **most likely unneeded** unless the API sets vary on internal paths on teh node. The best example is the [AVAX specification](https://raw.githubusercontent.com/lavanet/lava/main/cookbook/specs/ avalanche.json) which uses internal paths to distinguish between subnets with distinct ApiCollections.
+This field gives the internal path of the node for this specific ApiCollection. This is **most likely unneeded** unless the API sets vary on internal paths on teh node. The best example is the [AVAX specification](https://raw.githubusercontent.com/lavanet/lava/main/cookbook avalanche.json) which uses internal paths to distinguish between subnets with distinct ApiCollections.
 
 </details>
 
@@ -717,7 +717,7 @@ Verifications for extensions are similarly simple. Within `verifications` , unde
 ### Run Command
 
 ```
-./scripts/test_spec_full.sh cookbook/specs/ X.json <interface> <rpc_url_for_index1> <interface> <rpc_url_for_index2>
+./scripts/test_spec_full.sh cookbook X.json <interface> <rpc_url_for_index1> <interface> <rpc_url_for_index2>
 ```
 
 It will scaffold a local block chain and create a test network of several providers running the spec! You can see errors in real-time which will alert you to where you need to debug. Once you have debugged all issues- go on to the next step!

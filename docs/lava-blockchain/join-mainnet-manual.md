@@ -135,9 +135,9 @@ Note that it does **not** include the "Cosmovisor" tool, hence once you install 
     sudo mv lavad.service /lib/systemd/system/lavad.service
     ```
 
-### Download the latest Lava data snapshot (_optional_) {#snapshots} 
+### State-Sync to latest Lava snapshot with KSYNC (_recommended_) {#snapshots}
 
-_Coming soon_
+Find the steps [here](/mainnet-manual-cosmovisor#snapshots) in order to state-sync to the latest available snapshot.
 
 ### Service start and validation
 
@@ -200,6 +200,8 @@ Versions are tracked in [Lava git](https://github.com/lavanet/lava) (build from 
 | v0.35.0      | 413000       |
 | v1.0.1       | 451000       |
 | v2.2.0       | 888500       |
+| v3.1.0       | 1308000	    |
+| v4.1.0       | 1663000      |
 
 ### Steps for upgrading your node
 

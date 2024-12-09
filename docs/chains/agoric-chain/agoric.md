@@ -26,7 +26,7 @@ import RoadmapItem from '@site/src/components/RoadmapItem'
 
 ### Specification 📑
 
-https://raw.githubusercontent.com/lavanet/lava/main/cookbook/specs/spec_add_agoric.json
+https://raw.githubusercontent.com/lavanet/lava/main/cookbook/specs/agoric.json
 
 
 ### Protocols 🔗

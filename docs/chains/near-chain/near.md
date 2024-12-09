@@ -22,16 +22,14 @@ import RoadmapItem from '@site/src/components/RoadmapItem'
 
 ### Specification 📑
 
-https://raw.githubusercontent.com/lavanet/lava/main/cookbook/specs/spec_add_near.json
-
+https://raw.githubusercontent.com/lavanet/lava/main/cookbook/specs/near.json
 
 ### Protocols 🔗
 
-| Platform  |  json-rpc |
-| --------- | ----------|
-| Gateway   | ✅        |
-| SDK       | ✅        | 
-
+| Platform | json-rpc |
+| -------- | -------- |
+| Gateway  | ✅       |
+| SDK      | ✅       |
 
 ### Methods 🛠️
 
@@ -46,22 +44,21 @@ lavad q spec show-chain-info NEAR
 <details>
 <summary> JSONRPC </summary>
 
-  - query
-  - EXPERIMENTAL_changes
-  - block
-  - EXPERIMENTAL_changes_in_block
-  - chunk
-  - gas_price
-  - EXPERIMENTAL_genesis_config
-  - EXPERIMENTAL_protocol_config
-  - status
-  - network_info
-  - validators
-  - broadcast_tx_async
-  - broadcast_tx_commit
-  - tx
-  - EXPERIMENTAL_tx_status
-  - EXPERIMENTAL_receipt
+- query
+- EXPERIMENTAL_changes
+- block
+- EXPERIMENTAL_changes_in_block
+- chunk
+- gas_price
+- EXPERIMENTAL_genesis_config
+- EXPERIMENTAL_protocol_config
+- status
+- network_info
+- validators
+- broadcast_tx_async
+- broadcast_tx_commit
+- tx
+- EXPERIMENTAL_tx_status
+- EXPERIMENTAL_receipt
 
 </details>
-

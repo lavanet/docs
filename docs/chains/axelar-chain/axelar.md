@@ -22,7 +22,7 @@ import RoadmapItem from '@site/src/components/RoadmapItem'
 
 ### Specification 📑
 
-https://raw.githubusercontent.com/lavanet/lava/main/cookbook/specs/spec_add_axelar.json
+https://raw.githubusercontent.com/lavanet/lava/main/cookbook/specs/axelar.json
 
 
 ### Protocols 🔗

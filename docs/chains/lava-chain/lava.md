@@ -22,18 +22,14 @@ import RoadmapItem from '@site/src/components/RoadmapItem'
 
 ### Specification 📑
 
-https://raw.githubusercontent.com/lavanet/lava/main/cookbook/specs/spec_add_lava.json
-
+https://raw.githubusercontent.com/lavanet/lava/main/cookbook/specs/lava.json
 
 ### Protocols 🔗
 
-| Platform  |  rest/http | uri/http | tendermint/http | tendermint/wss |    grpc | webgrpc |
-| --------- | -------- |------------| ------------- | -----------------|---------|---------|
-| Gateway   | ✅       | ✅         | ✅            | ✅               | ✅      |   ✅    |
-| SDK       | ✅       |            | ✅            |                  |         |    ✅   |
-
-
-
+| Platform | rest/http | uri/http | tendermint/http | tendermint/wss | grpc | webgrpc |
+| -------- | --------- | -------- | --------------- | -------------- | ---- | ------- |
+| Gateway  | ✅        | ✅       | ✅              | ✅             | ✅   | ✅      |
+| SDK      | ✅        |          | ✅              |                |      | ✅      |
 
 ### Methods 🛠️
 
@@ -44,7 +40,6 @@ lavad q spec show-chain-info LAV1
 ```
 
 #### 📋 List :
-
 
 <details> <summary> REST </summary>
 
@@ -403,4 +398,3 @@ lavad q spec show-chain-info LAV1
 - ibc.core.connection.v1.Query/Connections
 
 </details>
-

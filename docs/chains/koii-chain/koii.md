@@ -26,15 +26,14 @@ import RoadmapItem from '@site/src/components/RoadmapItem'
 
 ### Specification 📑
 
-https://raw.githubusercontent.com/lavanet/lava/main/cookbook/specs/spec_add_koii.json
-
+https://raw.githubusercontent.com/lavanet/lava/main/cookbook/specs/koii.json
 
 ### Protocols 🔗
 
-| Platform  |  jsonrpc/http | jsonrpc/wss 
-| --------- | ------------- | -----------
-| Gateway   | ✅            | ✅
-| SDK       | ✅            | 
+| Platform | jsonrpc/http | jsonrpc/wss |
+| -------- | ------------ | ----------- |
+| Gateway  | ✅           | ✅          |
+| SDK      | ✅           |
 
 ### Methods 🛠️
 
@@ -48,7 +47,6 @@ lavad q spec show-chain-info KOIIT
 
 <details>
 <summary> JSONRPC </summary>
-
 
 - getAccountInfo
 - getBalance
