@@ -18,7 +18,7 @@ Before you start, ensure that your machine meets the following [minimum requirem
 
 ## Install AvalancheGo 🚀
 
-AvalancheGo is a go implementation of an Avalanche node. This software is necessary to run a Avalanche RPC node. 
+AvalancheGo is a go implementation of an Avalanche node. This software is necessary to run an Avalanche RPC node. 
 AvalancheGo can be installed automatically on a local machine using a shell bash script or manually with some commands.There are detailed guides for both [automatic installation](https://docs.avax.network/nodes/build/set-up-node-with-installer) and [manual installation](https://docs.avax.network/nodes/build/run-avalanche-node-manually) available in the Avalanche docs.
 
 
