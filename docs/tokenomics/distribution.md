@@ -36,7 +36,7 @@ Max Supply: `1,000,000,000 LAVA` (**100%**)
 
 ## ⏳ Unlock Schedule
 
-![unlockchart](/img/tokenomics/linegraph.png)
+![unlockchart](/img/tokenomics/lava_token_unlock_distribution.png)
 
 | Category                   | Unlock Schedule                                                                                                       |
 |----------------------------|-----------------------------------------------------------------------------------------------------------------------|
