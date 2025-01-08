@@ -37,7 +37,7 @@ const sidebars = {
           ],
         },
         "intro/faq",
-        "tutorials",
+        "intro/tutorials",
       ],
     },
     {
