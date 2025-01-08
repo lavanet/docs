@@ -56,6 +56,6 @@ flowchart LR
 - Add support for new chains and services - you can create specifications and propose new chains to be added to Lava. See all existing specifications [here](https://github.com/lavanet/lava/tree/main/specs)
 
 ### **Get Started with Lava Network:**
-- Join our [Discord](discord.gg/lavanetxyz) and specific channels for developers and providers.
+- Join our [Discord](https://discord.gg/lavanetxyz) and specific channels for developers and providers.
 - Join our [Telegram](https://t.me/officiallavanetwork).
 - Read our [whitepaper](lavanet.xyz/whitepaper).
