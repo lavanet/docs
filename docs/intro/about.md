@@ -58,4 +58,4 @@ flowchart LR
 ### **Get Started with Lava Network:**
 - Join our [Discord](https://discord.gg/lavanetxyz) and specific channels for developers and providers.
 - Join our [Telegram](https://t.me/officiallavanetwork).
-- Read our [whitepaper](lavanet.xyz/whitepaper).
+- Read our [whitepaper](https://lavanet.xyz/whitepaper).
