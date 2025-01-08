@@ -5,7 +5,7 @@ const sidebars = {
   theSidebar: [
     {
       type: "category",
-      label: "Getting Started 🎉",
+      label: "Introduction 🎉",
       link: {
         type: "doc",
         id: "intro/intro",
@@ -16,6 +16,8 @@ const sidebars = {
         "intro/about",
         "intro/key-roles",
         "intro/how-lava-work",
+        "intro/how-to-bridge-lava",
+        "intro/how-to-stake-and-restake-lava",
         "intro/explorers",
         "intro/key-terms",
         "intro/key-variables",
@@ -35,6 +37,7 @@ const sidebars = {
           ],
         },
         "intro/faq",
+        "tutorials",
       ],
     },
     {
@@ -526,7 +529,6 @@ const sidebars = {
         "tokenomics/growth",
       ],
     },
-    `tutorials`,
     {
       type: "link",
       label: "Contribute to Docs",

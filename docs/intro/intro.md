@@ -1,6 +1,6 @@
 ---
 slug: /
-title: Getting Started ❕
+title: Introduction ❕
 ---
 
 import RoadmapItem from '@site/src/components/RoadmapItem';

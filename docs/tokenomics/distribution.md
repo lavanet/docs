@@ -26,24 +26,30 @@ Max Supply: `1,000,000,000 LAVA` (**100%**)
 
 | Category               |  Description | %    |
 |------------------------|--------------|------|
-| Public Allocation    |  Future initiatives and Rewards Reserve (Provider Drops and Validator rewards)       | 25%  |
+| Public Allocation    |  Future Initiatives (including airdrop)       | 15%  |
+| Public Allocation    |  Variable Rewards to Providers (Provider Drops)     | 6.6%  |
 | R&D & Ecosystem      |  Protocol Maintenance & Development; Programs for Providers, Validators, and Champions     | 31%  |
 | Investors            |  Early Supporters of Lava                                    | 17%  |
-| Contributors         |  Early contributors, Core Team, Advisors, & Others           | 27%  |
-|                        |     **Total**         | **100%** |
+| Contributors         |  Core Contributors         | 27%  |
+| Validators           |  24k lava/day validators (pre-minted)           | 3.4%  |
+|                      |     **Total**         | **100%** |
 
 </center>
 
 ## ⏳ Unlock Schedule
 
-![unlockchart](/img/tokenomics/linegraph.png)
+![unlockchart](/img/tokenomics/lava_token_unlock_distribution.png)
 
-| Category                   | Unlock Schedule                                                                                                       |
-|----------------------------|-----------------------------------------------------------------------------------------------------------------------|
-| Public Allocation          | Fully unlocked at Launch.  Except rewards reserve: unlocks continuously from launch to year 4.  |
-| R&D & Ecosystem            | 25% unlocked at launch. Remaining 75% unlocks continuously from year 1 to year 4. |
-| Investors                  | 33% unlocked at year 1. Remaining 67% unlocks continuously from year 1 to year 3.  |
-| Initial Core Contributors | 33% unlocked at year 1. Remaining 67% unlocks continuously from year 1 to year 3.   |
+
+| Category             | Description                                                                                                           | Unlock Schedule                                                                                              |
+|----------------------|-----------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------|
+| R&D & Ecosystem      | Protocol Maintenance & Development; Programs for Providers, Validators, and Champions                                 | 25% unlocked at launch. Remaining 75% unlocks continuously from year 1 to year 4.                            |
+| Backers              | Early Supporters of Lava                                                                                              | 33% unlocked at year 1. Remaining 67% unlocks continuously from year 1 to year 3.                            |
+| Future Initiatives   | Initial airdrop and any future programs to reward community contribution                                              | Fully unlocked at Launch. Except rewards reserve: unlocks continuously from launch to year 4.                |
+| Provider Drops       | Used to incentivize Providers to join the network in the early stages of adoption                                     | Fully unlocked at Launch. Except rewards reserve: unlocks continuously from launch to year 4.                |
+| Validator Rewards    | Used to reward Validators for creating blocks and securing the Lava blockchain                                        | Fully unlocked at Launch. Except rewards reserve: unlocks continuously from launch to year 4.                |
+| Core Contributors    | Early contributors, Core Team, Advisors, & Others                                                                     | 33% unlocked at year 1. Remaining 67% unlocks continuously from year 1 to year 3.                            |
+
 
 
 ## 🏛️ Disclaimer
