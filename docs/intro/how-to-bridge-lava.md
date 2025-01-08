@@ -18,7 +18,7 @@ Getting started with our Lava gateway is simple! You can access our Lava gateway
 
 ## 🎥 Video Demonstration pt2 (~6m) 
 
-<video width="100%" height="100%" controls><source src="/img/tutorial/how_to_bridge/how_to_bridge_lava_pt1.mp4" type="video/mp4"></source></video>
+<video width="100%" height="100%" controls><source src="/img/tutorial/how_to_bridge/how_to_bridge_lava_pt2.mp4" type="video/mp4"></source></video>
 
 <br /> <br />
 <hr />
