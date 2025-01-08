@@ -1,6 +1,6 @@
 ---
 slug: /how-to-stake-and-restake-lava
-title: How to stake and restake Lava
+title: 🏗 How to stake and restake Lava
 ---
 
 # **How Lava Works ⚙️**

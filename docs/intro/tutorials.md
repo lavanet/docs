@@ -1,8 +1,9 @@
 ---
 slug: /tutorials
+title: 📚 Tutorials & Resources 
 ---
 
-# Tutorials & Resources 📚
+# 📚 Tutorials & Resources 
 
 ![Tutorials & Resource Banner](/img/banner/Tutorials-&-Resources-6c1b0890b929c44e93ad1d6f43c4d1fa.jpg)
 

@@ -53,9 +53,9 @@ flowchart LR
 
 - Become an RPC provider - you can serve RPC requests as part of the Lava Network
 - Contributor open-source tooling - you can build block explorers, snapshots and other tooling for the Lava ecosystem
-- Add support for new chains and services - you can create specifications and propose new chains to be added to Lava. See all existing specifications [here](https://github.com/lavanet/lava/tree/main/specs)
+- Add support for new chains and services - you can create specifications and propose new chains to be added to Lava. See all existing specifications [here](https://github.com/lavanet/lava/tree/main/specs).
 
 ### **Get Started with Lava Network:**
-- Join our [Discord](https://discord.gg/lavanetxyz) and specific channels for developers and providers.
-- Join our [Telegram](https://t.me/officiallavanetwork).
-- Read our [whitepaper](https://lavanet.xyz/whitepaper).
+- Join our [Discord](https://discord.gg/lavanetxyz) and specific channels for developers and providers
+- Join our [Telegram](https://t.me/officiallavanetwork)
+- Read our [whitepaper](https://lavanet.xyz/whitepaper)
