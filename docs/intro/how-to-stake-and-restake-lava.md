@@ -3,62 +3,93 @@ slug: /how-to-stake-and-restake-lava
 title: 🏗 How to stake and restake Lava
 ---
 
-# **How Lava Works ⚙️**
+# **How to stake and restake LAVA 🏗 **
 
-The Lava Network facilitates seamless, decentralized data exchange across multiple blockchains, driven by key mechanisms and incentivized roles. Lava operates as both a blockchain and an off-chain protocol, with specifications as the essential blueprints defining how blockchain data is accessed, processed, and verified. These specifications outline everything from supported APIs to data handling rules, guiding the interactions among Data Providers, Consumers, Validators, Champions, and Delegators to maintain a secure and efficient data-sharing network.
+Lava is a Celestia is a proof-of-stake blockchain based on the Cosmos SDK. Staking LAVA helps secure the Lava blockchain. Restaking LAVA helps direct more traffic to top dData Providers on the network.
 
-### 🔍 **Specifications: Foundation of the Lava Network**
+The following instructions will walk you through how LAVA (Lava Mainnet tokens) can be staked and restaked. If your tokens were acquired on Bybit, Gate or MEXC, they are ERC-20 LAVA and you first need to bridge to Lava Mainnet. See [How to Bridge Lava](https://docs.lavanet.xyz/how-to-bridge-lava).
 
-At the heart of Lava are **specifications** 📜, JSON-based blueprints created by **Spec Champions**. Specifications define the requirements for each blockchain or API, including supported chain types, data transfer rules, Compute Units (CU) for API calls, and data validation checks. As blockchain technology evolves, Spec Champions update specifications to address new demands, ensuring Lava remains adaptable and reliable.
 
-Data Providers use these specifications to configure their services according to Lava's standards, ensuring accurate and consistent data delivery across the network. Consumers, in turn, rely on these specifications to understand available data and how to access it.
+## **Staking and Restaking LAVA:**
 
-### 🎁 **Incentive Pools: Extra Rewards for Providers & Restakers**
+### **Dashboards that support staking and restaking LAVA:**
+- Leap Wallet, Mellifera, StakingRewards, Polli, Keplr
 
-Lava **Incentive Pools** 💸 provide additional rewards funded by ecosystem stakeholders like DAOs, foundations, and major contributors. These pools incentivize Providers by offering extra rewards for delivering RPC data to Consumers. Here’s how they work:
+*Please Note: Keplr currently only supports LAVA staking and does not allow restaking.*
 
-- **Rewards**: Incentive pools are funded with LAVA tokens and other tokens, providing incentives for specific services or blockchains. For example, a NEAR RPC Provider on Lava could earn NEAR tokens.
-- **Distribution**: Providers serving data under relevant specifications receive rewards from both the incentive pools and the regular network incentives (e.g., LAVA).
+<br/>
 
-The pool structure follows a configurable emission schedule and maintains a minimum funding threshold to ensure quality service. This threshold ensures that token rewards meet a minimum value, preventing spam and incentivizing high-quality service.
+## **How to stake and restake LAVA on Leap:**
 
-### 🔄 **Restaking: Boosting Network Security and Capital Efficiency**
+**Step 1:** Open the Leap browser extension and navigate to the “Stake” section
+    ![Leap Wallet Dashboard](/img/tutorial/how_to_stake_and_restake/stake_restake_4.png)
 
-Lava’s **restaking** mechanism allows users to enhance Providers’ capabilities by staking tokens with Lava Validators and then restaking them with selected Data Providers. By restaking, Providers can increase their delegation and their stake-weight in the selection algorithm, allowing them to handle more RPC requests and earn more rewards.
+**Step 2:** Enter the amount of LAVA tokens you want to stake and open the Validator drop down. 
+    ![Leap Wallet Dashboard](/img/tutorial/how_to_stake_and_restake/stake_restake_5.png)
 
-Restaking also improves network security, reduces costs, and increases capital efficiency, as node runners must stake with a Validator before becoming a Provider.
+**Step 3:** Select the validator of your choice. Notice the commission shown - this shows the % the validator will deduct from your staking rewards. 
+    ![Leap Wallet Dashboard](/img/tutorial/how_to_stake_and_restake/stake_restake_6.png)
 
-**Restaking Benefits**:
+**Step 4:** If you wish to also restake your LAVA, you can select a Provider to delegate to. 
+    ![Leap Wallet Dashboarde](/img/tutorial/how_to_stake_and_restake/stake_restake_7.png)
 
-- **Capital Efficiency** 💼: Providers who have staked with Validators can restake to boost trusted Providers, enhancing the network's overall service quality.
-- **Reduced Security Costs** 🛡️: By enabling double-layered staking, restaking lowers the overall costs for securing the network while incentivizing high-performing Providers.
+**Step 5:** Select a Provider of your choice. Notice the amount of services a Provider offers. More services likely means a Provider is supporting more chains and may be earning tokens from multiple chains at once. LAVA restakers will receive tokens from those chains too. 
+    ![Leap Wallet Dashboard](/img/tutorial/how_to_stake_and_restake/stake_restake_8.png)
 
-In the future, Lava’s restaking mechanism could expand to support additional services beyond RPC, allowing contributors to participate in and elevate other critical functions across the network.
+**Step 6:** Check that you have selected your desired Validator and Provider.
+    ![Leap Wallet Dashboarde](/img/tutorial/how_to_stake_and_restake/stake_restake_9.png)
 
-### 🏗️ **Lava as a Blockchain and Off-Chain Protocol**
+**Step 7:** Click “Confirm stake”
+    ![Leap Wallet Dashboard](/img/tutorial/how_to_stake_and_restake/stake_restake_10.png)
 
-Node runners join Lava by restaking on the Lava blockchain, making them eligible to appear on **Pairing Lists** 📄.
+**Step 8:** Wait for your transaction to complete. You have now staked and restaked LAVA, and can claim rewards in your Leap dashboard on the 17th of each month. 
+    ![Leap Wallet Dashboard](/img/tutorial/how_to_stake_and_restake/stake_restake_11.png)
 
-The **Pairing List** serves as a dynamic directory, stored on the Lava blockchain, of available Providers ranked by metrics like stake, geographic proximity, response time, uptime, and data reliability. This list helps Consumers identify and connect with the best-performing Providers for their needs and is valid for a defined period called an **epoch**.
+<br/>
 
-The Lava protocol facilitates data exchange via off-chain, **peer-to-peer (P2P) connections** 🔗:
+## **How to stake LAVA via Keplr:** 
+*Please note: Keplr currently supports LAVA staking only, and does not support restaking.*
 
-1. **Pairing List Access** 📜: Consumers retrieve a pairing list from the blockchain to find the best-matching Providers based on their requirements.
-2. **Direct Connection** 🔌: Consumers initiate P2P connections with their chosen Providers for efficient data transfer.
-3. **Compute Units (CU)** 🖥️: Providers calculate CU based on the computational work involved in fulfilling requests. CU acts as a measure of resource use, helping Providers earn proportionate rewards.
+**Step 1:** Go to the Keplr dashboard, navigate to the Lava blockchain and select a Validator of your choice.  
+    ![Keplr Wallet Dashboard](/img/tutorial/how_to_stake_and_restake/stake_restake_1.png)
 
-This off-chain approach ensures fast data delivery while maintaining a reputation score for each Provider, reflecting their historical performance in latency, uptime, and accuracy. Over time, Consumers tend to select Providers with consistently high scores, reinforcing Lava’s focus on reliable service.
+**Step 2:** Once you’ve selected a Validator, click “Stake”
+    ![Keplr Wallet Dashboard](/img/tutorial/how_to_stake_and_restake/stake_restake_2.png)
 
-### 🌐 **Roles in the Lava Network**
+**Step 3:** On the following screen, enter the amount of LAVA tokens you wish to stake. Click “Stake”
+    ![Keplr Wallet Dashboard](/img/tutorial/how_to_stake_and_restake/stake_restake_3.png)
 
-The Lava ecosystem functions through the coordinated efforts of several roles, each contributing to data reliability and security.
+**Step 4:** After the transaction is confirmed, you will be able to see your staked LAVA in the Keplr Dashboard. This is where you can claim your rewards. 
+    ![Keplr Wallet Dashboard](/img/tutorial/how_to_stake_and_restake/stake_restake_3.1.png)
 
-- **Data Providers** 🌍: Use the **Provider Kit** to deliver data in line with Lava specifications. They stake LAVA tokens with Validators and set up nodes to serve requests. Providers are ranked in the pairing list and rewarded based on their performance and CU output.
-- **Data Consumers** 📲: Access blockchain data via **LavaSDK**, **incentivized endpoints**, or **Gateway Endpoints**. They spend LAVA tokens to retrieve data from Providers selected through the pairing list, setting up P2P connections for direct data exchange.
-- **Validators** 🔐: Maintain network security by validating transactions, proposing blocks, and achieving consensus. Validators are rewarded in LAVA tokens for contributing to network stability.
-- **Champions** 🛠️: As the creators and maintainers of specifications, Champions set the standards that govern data access and delivery on Lava. They update specifications as needed, adapting to the evolving blockchain landscape.
-- **Delegators** 💼: Support the network by staking and restaking LAVA tokens with high-performing Providers and Validators. Delegators share in the rewards based on the entities they back, contributing to Lava’s data reliability and service quality.
+<br/>
 
-### 🔄 **Revenue Switching in Lava**
+## **How to stake and restake LAVA on Polli:** 
 
-Lava’s revenue switching is a mechanism by which it can expand to additional services beyond RPC. By dynamically adjusting incentives to support diverse data services, Lava enables contributors and restakers to participate in multiple layers of the network. This adaptability ensures that Lava can evolve as blockchain and data-sharing demands grow over time.
+You can refer to this video walkthrough from Polli on how to stake and restake your LAVA: https://x.com/i/status/1874864969243845026 
+
+<br/>
+
+## **How to stake and restake LAVA on Mellifera:**
+
+**Step 1:** Navigate to the bottom of the “Dashboard” section and click “Delegate & Restake”
+    ![Mellifera Dashboard](/img/tutorial/how_to_stake_and_restake/stake_restake_12.png)
+
+**Step 2:** A popup will open allowing you to stake and restake your LAVA
+    ![Mellifera Dashboard](/img/tutorial/how_to_stake_and_restake/stake_restake_13.png)
+
+**Step 3:** Select the Validator of your choice
+    ![Mellifera Dashboard](/img/tutorial/how_to_stake_and_restake/stake_restake_14.png)
+
+**Step 4:** Select a Provider of your choice
+    ![Mellifera Dashboard](/img/tutorial/how_to_stake_and_restake/stake_restake_15.png)
+
+**Step 5:** Enter the amount of LAVA you want to stake and restake
+    ![Mellifera Dashboard](/img/tutorial/how_to_stake_and_restake/stake_restake_16.png)
+
+**Step 6:** Approve the transaction 
+    ![Mellifera Dashboard](/img/tutorial/how_to_stake_and_restake/stake_restake_17.png)
+
+**Step 7:** Wait for your delegation to be 100% submitted. You have now staked and restaked your LAVA and can claim rewards in your Mellifera dashboard on the 17th of each month.
+    ![Mellifera Dashboard](/img/tutorial/how_to_stake_and_restake/stake_restake_18.png)
+    
