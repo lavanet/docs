@@ -15,39 +15,37 @@ title: 🏭 Supply
 
 </center>
 
-## Economic Actors and Key Terms 👤
+## Economic actors and Key Terms 👤
 
-- 🛒 **Consumers** buy Subscription plans in `LAVA` on-chain to gain access to a diverse set of API ‘specs’ via the Lava Protocol.
-  - 💸 **Subscription** plans are priced by governance, offer a limited amount of compute units and vary by their specs.
-  - 🗜️ **Specifications** or ‘specs’ are governance defined modular objects that specify the types of APIs providers are required to support.
-- 🛎️ **Providers** stake tokens on individual specs, ensuring the integrity of their service. A minimum direct stake is required to accept delegations from others. Requests are routed to providers via a stake-weight mechanism.
-- ⚖️ **Validators** stake to secure the network. They create blocks, execute transactions and vote on blocks created by other validators.
-- 💰 **Token Holders** have the option of staking their tokens to validators, restaking with providers, and participating in on-chain governance.
-- 🏆 **Champions** create, develop and maintain RPC and API ‘specs’ and software for rewards. They can also contribute to the community by completing bounties.
-- 🔗 **Chains** deposit token incentives to Lava, rewarding Providers for offering specs to their developers and users.
+- **Network contributors** include Validators, LAVA stakers, Data Providers and LAVA restakers
+- **Blockchains** create onchain incentive pools to pay the network for services such as RPC
+- **Consumers e.g. dapps and wallets** purchase onchain subscriptions to pay the network for services such as RPC 
+- **Data Providers and LAVA restakers** offer services such as RPC 
+- **Validators and LAVA stakers** secure the Lava blockchain 
+- **Incentive Pools** are pools of tokens deposited on Lava, which usually contain the native token of a chain supported by Lava
+- **Revenue** on Lava = amount in incentive pools + LAVA amount of onchain subscriptions
 
-:::tip
+## LAVA prioritizes revenue, not inflation
 
-Providers and validators can be separate entities.
+Most other blockchains are hyper-inflationary. They reward Validators and LAVA stakers by inflating token supply. 
 
-:::
+LAVA has no supply inflation. Instead of minting new LAVA to reward network contributors, contributors share the network revenue. Contributors include: Validators, LAVA stakers, Data Providers and LAVA restakers. 
 
-## 💵 LAVA token has no inflation — Rewards are sourced directly from network revenue
+On Lava: 
 
-Lava has a **fixed supply of 1,000,000,000**. Furthermore, Lava has developed a novel mechanism for bootstrapping demand for the network’s service i.e. RPC and APIs.
+- Validators and LAVA stakers do NOT earn rewards by minting new tokens. 
+- Instead, blockchains and apps pay the network to provide services such as RPC. 
+- Blockchains often pay in that chain’s native token.
+- Majority of these rewards go to Providers and LAVA restakers.
 
-### 🔄 **Provider Drop Mechanism**
+This is why staking rewards are “relatively” low on Lava. Majority of rewards go to the Providers and LAVA restakers who delegate to Providers.
 
-- **6.6% of the total supply** is distributed on a monthly basis over 4 years to Providers as a reward boost called a Provider Drop.
-- This reserve is a **fixed allocation of rewards** used to incentivize Providers to join in the early stages of Lava.
+## Provider Drops & LAVA burn 
 
-- Depending on paid demand for Lava services, **monthly distribution is variable**; more paid demand generally results in more reward boosts being distributed.
+Many marketplaces, such as Lava, face an initial problem: demand does not come without high supply, but supply does not come without high demand. This is the “chicken and egg” or “cold start” problem. Lava has a novel solution for this. 
 
-  - Any unused allocation from the previous month is burned.
+44 million LAVA (4.4% of total supply) is distributed to attract Providers when there are fewer Data Consumers in the early stages of the protocol. This allocation is called Provider Drops. 
 
-As the network draws more and more consumers, the need for the Drops will decrease, as Providers will make the difference from subscription payments.
+Provider Drops are distributed across 4 years and vary on a monthly basis depending on how much paid demand there is for RPC via Lava. The higher the demand, the more Providers earn from the Provider Drop allocation. If there is less demand, the Provider Drop allocation is not as needed and therefore burned. 
 
-| Parameter                                        | % of total `LAVA` supply |
-| ------------------------------------------------ | ------------------------ |
-| 🚀 **Provider Reward Boosts** (“Provider Drops”) | **6.6%**                 |
-| 🔥 **Range of Burn Rate**                        | **0 - 6.6%**             |
+You can track Provider Drops, LAVA burn and revenue: burn.lavanet.xyz.

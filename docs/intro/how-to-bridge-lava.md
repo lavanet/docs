@@ -90,13 +90,13 @@ Note: If your tokens are on Kucoin, you should only transfer to a Cosmos wallet 
 
 2. In MetaMask, click **Import Tokens**, paste the contract address, and confirm.
 
-![MetaMask interface with the Lava (Arbitrum) token contract being manually imported. pt1](/img/tutorial/how_to_bridge/MetaMask_LavaImport.png)
+    ![MetaMask interface with the Lava (Arbitrum) token contract being manually imported. pt1](/img/tutorial/how_to_bridge/MetaMask_LavaImport.png)
 
-![MetaMask interface with the Lava (Arbitrum) token contract being manually imported. pt2](/img/tutorial/how_to_bridge/MetaMask_LavaImport2.png)
+    ![MetaMask interface with the Lava (Arbitrum) token contract being manually imported. pt2](/img/tutorial/how_to_bridge/MetaMask_LavaImport2.png)
 
 - Once imported, you should see your Lava (Arbitrum) tokens in your MetaMask wallet.
 
-![Updated MetaMask token list including Lava (Arbitrum) tokens.](/img/tutorial/how_to_bridge/MetaMask_ArbImport.png)
+    Updated MetaMask token list including Lava (Arbitrum) tokens.](/img/tutorial/how_to_bridge/MetaMask_ArbImport.png)
 
 <br/>
 
@@ -111,15 +111,15 @@ Because Lava Mainnet is a Cosmos chain, you need a **Cosmos-compatible wallet:**
 
 - **Leap wallet Chrome extension interface** 
 
-![Leap wallet opened with “Lava” selected as the chain, showing the user’s wallet address. pt1](/img/tutorial/how_to_bridge/Leap_1.png)
+    ![Leap wallet opened with “Lava” selected as the chain, showing the user’s wallet address. pt1](/img/tutorial/how_to_bridge/Leap_1.png)
 
-![Leap wallet opened with “Lava” selected as the chain, showing the user’s wallet address. pt2](/img/tutorial/how_to_bridge/Leap_2.png)
+    ![Leap wallet opened with “Lava” selected as the chain, showing the user’s wallet address. pt2](/img/tutorial/how_to_bridge/Leap_2.png)
 
 - **Keplr wallet Chrome extension interface**
 
-![Keplr wallet showing the Lava chain selection and the wallet address. pt1](/img/tutorial/how_to_bridge/Keplr_1.png)
+    ![Keplr wallet showing the Lava chain selection and the wallet address. pt1](/img/tutorial/how_to_bridge/Keplr_1.png)
 
-![Keplr wallet showing the Lava chain selection and the wallet address. pt2](/img/tutorial/how_to_bridge/Keplr_2.png)
+    ![Keplr wallet showing the Lava chain selection and the wallet address. pt2](/img/tutorial/how_to_bridge/Keplr_2.png)
 
 <br/>
 
@@ -128,7 +128,7 @@ Because Lava Mainnet is a Cosmos chain, you need a **Cosmos-compatible wallet:**
 1. Open Skip:Go [URL: https://go.skip.build/] and connect your MetaMask wallet
 - **Skip:Go homepage**
 
-![Skip:Go’s main dashboard, showing an option to connect MetaMasks.](/img/tutorial/how_to_bridge/SkipGo_2.png)
+    o’s main dashboard, showing an option to connect MetaMasks.](/img/tutorial/how_to_bridge/SkipGo_2.png)
 
 <br/>
 
@@ -138,7 +138,7 @@ Because Lava Mainnet is a Cosmos chain, you need a **Cosmos-compatible wallet:**
 - Choose **Lava** and **Lava Mainnet** as the destination chain and token.
 - **Skip:Go bridging interface**
 
-![Skip:Go user interface highlighting Arbitrum as the source and Lava Mainnet as the destination.](/img/tutorial/how_to_bridge/skipGo_1.png)
+    ![Skip:Go user interface highlighting Arbitrum as the source and Lava Mainnet as the destination.](/img/tutorial/how_to_bridge/skipGo_1.png)
 
 <br/>
 
@@ -147,12 +147,12 @@ Because Lava Mainnet is a Cosmos chain, you need a **Cosmos-compatible wallet:**
 2. Set your destination address: Keplr or Leap
 3. Confirm any prompts in MetaMask.
 
-![Skip:Go user interface highlighting Arbitrum as the source and Lava Mainnet as the destination.](/img/tutorial/how_to_bridge/SkipGo_Set_Destination.png)
+    ![Skip:Go user interface highlighting Arbitrum as the source and Lava Mainnet as the destination.](/img/tutorial/how_to_bridge/SkipGo_Set_Destination.png)
 
 4. Wait for cross-chain confirmation messages.
 - **Go with user inputting Lava amount**
 
-![User typing the desired number of Lava tokens to bridge, with a MetaMask pop-up for transaction approval.](/img/tutorial/how_to_bridge/SkipGo_Leap_Transfer_Wallet.png)
+    ![User typing the desired number of Lava tokens to bridge, with a MetaMask pop-up for transaction approval.](/img/tutorial/how_to_bridge/SkipGo_Leap_Transfer_Wallet.png)
 
 <br/>
 
@@ -160,7 +160,7 @@ Because Lava Mainnet is a Cosmos chain, you need a **Cosmos-compatible wallet:**
 - Once completed, **Skip:Go** will display a success message.
 - Check your Leap or Keplr wallet to confirm your new Lava Mainnet balance.
 
-![Skip:Go user interface](/img/tutorial/how_to_bridge/SkipGo_Amount.png)
+    ![Skip:Go user interface](/img/tutorial/how_to_bridge/SkipGo_Amount.png)
 
 <br/>
 
@@ -170,7 +170,7 @@ Because Lava Mainnet is a Cosmos chain, you need a **Cosmos-compatible wallet:**
 - Select **Swap** from the homepage or menu.
 - **Squid Router homepage**
 
-![Squid Router website main dashboard with a visible “Cross-Chain Swap” option.](/img/tutorial/how_to_bridge/Squid_Main.png)
+    ![Squid Router website main dashboard with a visible “Cross-Chain Swap” option.](/img/tutorial/how_to_bridge/Squid_Main.png)
 
 <br/>
 
@@ -180,9 +180,9 @@ Because Lava Mainnet is a Cosmos chain, you need a **Cosmos-compatible wallet:**
 - Choose **Lava (Arbitrum)** as the token you want to swap.
 - **Squid Router interface with Arbitrum selected as the source chain**
 
-![Squid Router bridging page highlighting Arbitrum as the source chain and Lava (Arbitrum) as the token.](/img/tutorial/how_to_bridge/Squid_Connect.png)
+    ![Squid Router bridging page highlighting Arbitrum as the source chain and Lava (Arbitrum) as the token.](/img/tutorial/how_to_bridge/Squid_Connect.png)
 
-![Squid Router bridging page highlighting Arbitrum as the source chain and Lava (Arbitrum) as the token.](/img/tutorial/how_to_bridge/Squid_Swap.png)
+    ![Squid Router bridging page highlighting Arbitrum as the source chain and Lava (Arbitrum) as the token.](/img/tutorial/how_to_bridge/Squid_Swap.png)
 
 <br/>
 
@@ -193,9 +193,9 @@ Because Lava Mainnet is a Cosmos chain, you need a **Cosmos-compatible wallet:**
 
 - **Squid Router’s “Add a recipient” dialog**
 
-![Squid Router step requesting connection to Leap or Keplr for Lava Mainnet, with MetaMask connected on the Arbitrum side.](/img/tutorial/how_to_bridge/Squid_Receive.png)
+    ![Squid Router step requesting connection to Leap or Keplr for Lava Mainnet, with MetaMask connected on the Arbitrum side.](/img/tutorial/how_to_bridge/Squid_Receive.png)
 
-![Squid Router step requesting connection to Leap or Keplr for Lava Mainnet, with MetaMask connected on the Arbitrum side.](/img/tutorial/how_to_bridge/Squid_Receive_Keplr.png)
+    ![Squid Router step requesting connection to Leap or Keplr for Lava Mainnet, with MetaMask connected on the Arbitrum side.](/img/tutorial/how_to_bridge/Squid_Receive_Keplr.png)
 
 <br/>
 
@@ -205,7 +205,7 @@ Because Lava Mainnet is a Cosmos chain, you need a **Cosmos-compatible wallet:**
 - Approve the transaction in MetaMask.
 - **Squid Router “Swap” confirmation**
 
-![Squid Router interface showing an amount of Lava (Arbitrum) to be swapped to Lava Mainnet, along with a MetaMask confirmation window.](/img/tutorial/how_to_bridge/Squid_Swap_Confirm.png)
+    ![Squid Router interface showing an amount of Lava (Arbitrum) to be swapped to Lava Mainnet, along with a MetaMask confirmation window.](/img/tutorial/how_to_bridge/Squid_Swap_Confirm.png)
 
 <br/>
 
@@ -214,7 +214,7 @@ Because Lava Mainnet is a Cosmos chain, you need a **Cosmos-compatible wallet:**
 - Check **Leap** or **Keplr** to confirm your new Lava Mainnet tokens have arrived.
 - **Leap or Keplr wallet with updated Lava Mainnet balance**
 
-![Keplr/ Leap wallet displaying a newly updated Lava token balance on Lava Mainnet, confirming a successful bridge](/img/tutorial/how_to_bridge/Squid_Swap_Confirm_Keplr.png)
+    ![Keplr/ Leap wallet displaying a newly updated Lava token balance on Lava Mainnet, confirming a successful bridge](/img/tutorial/how_to_bridge/Squid_Swap_Confirm_Keplr.png)
 
 <br/>
 
