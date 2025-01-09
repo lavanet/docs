@@ -9,9 +9,9 @@ title: 🌋 About Lava
 
 ### **AI agents and users depend on RPC** 🌐
 
-Lava enables 24/7 access to blockchain apps, with minimal downtime. 
+Lava's vision is to enable AI agents and anyone to use blockchain apps, 24/7, with no downtime.
 
-Lava is a protocol which manages dapp and AI agent traffic on every blockchain. Lava aggregates RPC providers, dynamically scaling to support demand and routing requests to the fastest, most reliable providers. 
+Lava is a protocol which coordinates dapp and AI agent traffic on every blockchain. Lava aggregates RPC providers, dynamically scaling to support demand and routing requests to the fastest, most reliable providers.
 
 Incentives are key to the protocol. For example, in the early stages of the network, an allocation of the total supply has been allocated to rewarding data providers. This is designed to bootstrap the supply side of the network, mitigating the cold start problem many networks face.
 
