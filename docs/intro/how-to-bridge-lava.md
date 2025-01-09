@@ -43,10 +43,20 @@ When blockchains use Lava to coordinate their RPC, they create incentive pools i
 
 ## **Step-by-Step: Bridging Your Lava on Arbitrum to Lava Mainnet**
 
+# 🎥 How to bridge Lava - Introduction (~3m)
+
+<video width="100%" height="100%" controls>
+<source src="/img/tutorial/how_to_bridge/how_to_bridge_1.mp4" type="video/mp4" />
+</video>
+
+<br/><br/>
+<hr/>
+<br/>
+
 # 🎥 How to bridge Lava (~6m)
 
 <video width="100%" height="100%" controls>
-<source src="/img/tutorial/how_to_bridge/how_to_bridge_lava_v3.mp4" type="video/mp4" />
+<source src="/img/tutorial/how_to_bridge/Bridgin_How_To_v4.mp4" type="video/mp4" />
 </video>
 
 <br/><br/>
@@ -96,7 +106,7 @@ Note: If your tokens are on Kucoin, you should only transfer to a Cosmos wallet 
 
 - Once imported, you should see your Lava (Arbitrum) tokens in your MetaMask wallet.
 
-    Updated MetaMask token list including Lava (Arbitrum) tokens.](/img/tutorial/how_to_bridge/MetaMask_ArbImport.png)
+    ![Updated MetaMask token list including Lava (Arbitrum) tokens.](/img/tutorial/how_to_bridge/MetaMask_ArbImport.png)
 
 <br/>
 
@@ -125,10 +135,10 @@ Because Lava Mainnet is a Cosmos chain, you need a **Cosmos-compatible wallet:**
 
 ## 2. **Using Skip:Go to Bridge**
 
-1. Open Skip:Go [URL: https://go.skip.build/] and connect your MetaMask wallet
+1. Open [Skip:Go](URL: https://go.skip.build/) and connect your MetaMask wallet
 - **Skip:Go homepage**
 
-    o’s main dashboard, showing an option to connect MetaMasks.](/img/tutorial/how_to_bridge/SkipGo_2.png)
+    ![Skip:Go's main dashboard, showing an option to connect MetaMasks.](/img/tutorial/how_to_bridge/SkipGo_2.png)
 
 <br/>
 

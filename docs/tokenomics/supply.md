@@ -48,4 +48,4 @@ Many marketplaces, such as Lava, face an initial problem: demand does not come w
 
 Provider Drops are distributed across 4 years and vary on a monthly basis depending on how much paid demand there is for RPC via Lava. The higher the demand, the more Providers earn from the Provider Drop allocation. If there is less demand, the Provider Drop allocation is not as needed and therefore burned. 
 
-You can track Provider Drops, LAVA burn and revenue: burn.lavanet.xyz.
+You can track Provider Drops, LAVA burn and revenue: [burn.lavanet.xyz](https://burn.lavanet.xyz/).
