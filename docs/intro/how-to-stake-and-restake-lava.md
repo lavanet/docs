@@ -22,28 +22,36 @@ The following instructions will walk you through how LAVA (Lava Mainnet tokens) 
 ## **How to stake and restake LAVA on Leap:**
 
 **Step 1:** Open the Leap browser extension and navigate to the “Stake” section
-    ![Leap Wallet Dashboard](/img/tutorial/how_to_stake_and_restake/stake_restake_4.png)
+
+![Leap Wallet Dashboard](/img/tutorial/how_to_stake_and_restake/stake_restake_4.png)
 
 **Step 2:** Enter the amount of LAVA tokens you want to stake and open the Validator drop down. 
-    ![Leap Wallet Dashboard](/img/tutorial/how_to_stake_and_restake/stake_restake_5.png)
+
+![Leap Wallet Dashboard](/img/tutorial/how_to_stake_and_restake/stake_restake_5.png)
 
 **Step 3:** Select the validator of your choice. Notice the commission shown - this shows the % the validator will deduct from your staking rewards. 
-    ![Leap Wallet Dashboard](/img/tutorial/how_to_stake_and_restake/stake_restake_6.png)
+
+![Leap Wallet Dashboard](/img/tutorial/how_to_stake_and_restake/stake_restake_6.png)
 
 **Step 4:** If you wish to also restake your LAVA, you can select a Provider to delegate to. 
-    ![Leap Wallet Dashboarde](/img/tutorial/how_to_stake_and_restake/stake_restake_7.png)
+
+![Leap Wallet Dashboarde](/img/tutorial/how_to_stake_and_restake/stake_restake_7.png)
 
 **Step 5:** Select a Provider of your choice. Notice the amount of services a Provider offers. More services likely means a Provider is supporting more chains and may be earning tokens from multiple chains at once. LAVA restakers will receive tokens from those chains too. 
-    ![Leap Wallet Dashboard](/img/tutorial/how_to_stake_and_restake/stake_restake_8.png)
+
+![Leap Wallet Dashboard](/img/tutorial/how_to_stake_and_restake/stake_restake_8.png)
 
 **Step 6:** Check that you have selected your desired Validator and Provider.
-    ![Leap Wallet Dashboarde](/img/tutorial/how_to_stake_and_restake/stake_restake_9.png)
+
+![Leap Wallet Dashboarde](/img/tutorial/how_to_stake_and_restake/stake_restake_9.png)
 
 **Step 7:** Click “Confirm stake”
-    ![Leap Wallet Dashboard](/img/tutorial/how_to_stake_and_restake/stake_restake_10.png)
+
+![Leap Wallet Dashboard](/img/tutorial/how_to_stake_and_restake/stake_restake_10.png)
 
 **Step 8:** Wait for your transaction to complete. You have now staked and restaked LAVA, and can claim rewards in your Leap dashboard on the 17th of each month. 
-    ![Leap Wallet Dashboard](/img/tutorial/how_to_stake_and_restake/stake_restake_11.png)
+
+![Leap Wallet Dashboard](/img/tutorial/how_to_stake_and_restake/stake_restake_11.png)
 
 <br/>
 
@@ -51,16 +59,20 @@ The following instructions will walk you through how LAVA (Lava Mainnet tokens) 
 *Please note: Keplr currently supports LAVA staking only, and does not support restaking.*
 
 **Step 1:** Go to the Keplr dashboard, navigate to the Lava blockchain and select a Validator of your choice.  
-    ![Keplr Wallet Dashboard](/img/tutorial/how_to_stake_and_restake/stake_restake_1.png)
+
+![Keplr Wallet Dashboard](/img/tutorial/how_to_stake_and_restake/stake_restake_1.png)
 
 **Step 2:** Once you’ve selected a Validator, click “Stake”
-    ![Keplr Wallet Dashboard](/img/tutorial/how_to_stake_and_restake/stake_restake_2.png)
+
+![Keplr Wallet Dashboard](/img/tutorial/how_to_stake_and_restake/stake_restake_2.png)
 
 **Step 3:** On the following screen, enter the amount of LAVA tokens you wish to stake. Click “Stake”
-    ![Keplr Wallet Dashboard](/img/tutorial/how_to_stake_and_restake/stake_restake_3.png)
+
+![Keplr Wallet Dashboard](/img/tutorial/how_to_stake_and_restake/stake_restake_3.png)
 
 **Step 4:** After the transaction is confirmed, you will be able to see your staked LAVA in the Keplr Dashboard. This is where you can claim your rewards. 
-    ![Keplr Wallet Dashboard](/img/tutorial/how_to_stake_and_restake/stake_restake_3.1.png)
+
+![Keplr Wallet Dashboard](/img/tutorial/how_to_stake_and_restake/stake_restake_3.1.png)
 
 <br/>
 
@@ -73,23 +85,30 @@ You can refer to this video walkthrough from Polli on how to stake and restake y
 ## **How to stake and restake LAVA on Mellifera:**
 
 **Step 1:** Navigate to the bottom of the “Dashboard” section and click “Delegate & Restake”
-    ![Mellifera Dashboard](/img/tutorial/how_to_stake_and_restake/stake_restake_12.png)
+
+![Mellifera Dashboard](/img/tutorial/how_to_stake_and_restake/stake_restake_12.png)
 
 **Step 2:** A popup will open allowing you to stake and restake your LAVA
-    ![Mellifera Dashboard](/img/tutorial/how_to_stake_and_restake/stake_restake_13.png)
+
+![Mellifera Dashboard](/img/tutorial/how_to_stake_and_restake/stake_restake_13.png)
 
 **Step 3:** Select the Validator of your choice
-    ![Mellifera Dashboard](/img/tutorial/how_to_stake_and_restake/stake_restake_14.png)
+
+![Mellifera Dashboard](/img/tutorial/how_to_stake_and_restake/stake_restake_14.png)
 
 **Step 4:** Select a Provider of your choice
-    ![Mellifera Dashboard](/img/tutorial/how_to_stake_and_restake/stake_restake_15.png)
+
+![Mellifera Dashboard](/img/tutorial/how_to_stake_and_restake/stake_restake_15.png)
 
 **Step 5:** Enter the amount of LAVA you want to stake and restake
-    ![Mellifera Dashboard](/img/tutorial/how_to_stake_and_restake/stake_restake_16.png)
+
+![Mellifera Dashboard](/img/tutorial/how_to_stake_and_restake/stake_restake_16.png)
 
 **Step 6:** Approve the transaction 
-    ![Mellifera Dashboard](/img/tutorial/how_to_stake_and_restake/stake_restake_17.png)
+
+![Mellifera Dashboard](/img/tutorial/how_to_stake_and_restake/stake_restake_17.png)
 
 **Step 7:** Wait for your delegation to be 100% submitted. You have now staked and restaked your LAVA and can claim rewards in your Mellifera dashboard on the 17th of each month.
-    ![Mellifera Dashboard](/img/tutorial/how_to_stake_and_restake/stake_restake_18.png)
+
+![Mellifera Dashboard](/img/tutorial/how_to_stake_and_restake/stake_restake_18.png)
     
