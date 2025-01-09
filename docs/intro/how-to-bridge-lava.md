@@ -24,10 +24,10 @@ Because LAVA exists both as an ERC20 token on **Arbitrum (an Ethereum Layer 2)**
 
 **_Please note:_** 
 LAVA is available on DEXs: Osmosis (Lava Mainnet), Uniswap (ERC-20 Arbitrum, ERC-20 Base) and Pancakeswap (ERC-20 BSC).
-- LAVA contract address on Base: `0x11e969e9B3f89cB16D686a03Cd8508C9fC0361AF`
 - LAVA contract address on Arbitrum: `0x11e969e9B3f89cB16D686a03Cd8508C9fC0361AF`
 - LAVA address on Binance Smart Chain: `0xFfeB8287dE7DC756067e171e9919c730f0636680`
-- LAVA on Base and BSC are not transferable to CEXs as they only support the Arbitrum or Lava Mainnet version of LAVA.
+- LAVA contract address on Base: `0x11e969e9B3f89cB16D686a03Cd8508C9fC0361AF`
+- LAVA on Base and BSC **is not transferable to CEXs** as they only support the Arbitrum or Lava Mainnet version of LAVA.
 
 If you purchased LAVA tokens on **KuCoin**, you already have Lava Mainnet tokens and do **not** need to bridge. These tokens can be staked or restaked immediately by transferring them to a Cosmos-compatible wallet, such as **Leap** or **Keplr**.
 
