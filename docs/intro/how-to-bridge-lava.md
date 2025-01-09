@@ -3,66 +3,207 @@ slug: /how-to-bridge-lava
 title: 🌉 How to bridge Lava
 ---
 
-# Getting Started with Lava Gateway 🔥
+# How to Bridge Lava on Arbitrum Tokens to Lava Mainnet Tokens 🌉
 
-Getting started with our Lava gateway is simple! You can access our Lava gateway at any time: [gateway.lavanet.xyz](https://accounts.lavanet.xyz/register?utm_source=getting-started-with-lava-gateway&utm_medium=docs&utm_campaign=docs-to-gateway). You are only a few clicks away from fast, available, and accountable RPC.
+## **Introduction to Lava**
 
-## 🎥 Video Demonstration pt1 (~3m) 
+Lava is a Cosmos-based protocol that coordinates traffic for the onchain world. When you use a blockchain app, you send a stream of traffic - transactions, data queries - to the underlying chain. Lava aggregates data providers to serve AI agent and dapp traffic, dynamically routing requests to the fastest, most reliable providers.
 
-<video width="100%" height="100%" controls><source src="/img/tutorial/how_to_bridge/how_to_bridge_lava_pt1.mp4" type="video/mp4"></source></video>
+Because LAVA exists both as an ERC20 token on **Arbitrum (an Ethereum Layer 2)** and as a native token on Lava Mainnet, some holders may have LAVA on Arbitrum, while others have Lava Mainnet tokens. To participate in staking or restaking on the Lava Network—and earn rewards from incentive pools—you need **Lava Mainnet tokens**. Bridging is therefore essential for anyone with Lava on Arbitrum.
+
+### **Why Are There Two Lava Tokens?**
+
+1. **LAVA on Arbitrum (ERC20 token):**
+    - Traded on centralized and decentralized exchanges (e.g., Bybit, Uniswap)
+    - Runs on Arbitrum, an Ethereum Layer 2
+    - Compatible with EVM dapps, DeFi protocols, and other use-cases
+2. **Lava Mainnet Token [native LAVA]:**
+    - Powers the Lava Network protocol
+    - Used for staking, restaking, and securing the network
+    - Required to earn incentives from Lava’s unique contributor rewards model
+
+**_Please note_**: 
+If you purchased LAVA tokens on **KuCoin**, you already have Lava Mainnet tokens and do **not** need to bridge. These tokens can be staked or restaked immediately by transferring them to a Cosmos-compatible wallet, such as **Leap** or **Keplr**.
+
+### **How Lava Works at a Glance**
+
+- **Validators** secure the Lava blockchain and validate blocks.
+- **Providers** register on Lava blockchain to offer high-quality RPC services.
+- **Stakers** delegate Lava Mainnet tokens to Validators to secure the Lava blockchain.
+- **Restakers** delegate Lava Mainnet tokens to top Providers to route traffic to them.
+
+When blockchains use Lava to coordinate their RPC, they create incentive pools in their native tokens. Contributors—Validators, Stakers, Providers, and Restakers—can earn rewards from these pools.
+
+### **Why Bridge Your Lava from Arbitrum to Mainnet?**
+
+- **Support and Secure the Lava Network:** Lava Mainnet tokens let you fully participate in the ecosystem—helping to secure the network, direct RPC traffic, and contribute to the protocol’s long-term success.
+- **Earn Staking & Restaking Rewards:** Lava Mainnet token holders who stake and restake their tokens are eligible for rewards. Staking of Lava Mainnet Tokens is also required as part of the Validator and Provider eligibility process.
+
+<br>
+
+## **Step-by-Step: Bridging Your Lava on Arbitrum to Lava Mainnet**
+
+
+# 🎥 How to bridge Lava (~6m) 
+
+<video width="100%" height="100%" controls><source src="/img/tutorial/how_to_bridge/how_to_bridge_lava_v3.mp4" type="video/mp4"></source></video>
 
 <br /> <br />
 <hr />
 <br />
 
 
-## 🎥 Video Demonstration pt2 (~6m) 
+Below is a guided process using two popular bridging routes: **Skip:Go and Squid Router**. You’ll need an **Ethereum-compatible wallet** (such as MetaMask), and a **Cosmos-compatible wallet** (Leap or Keplr) for Lava Mainnet.
 
-<video width="100%" height="100%" controls><source src="/img/tutorial/how_to_bridge/how_to_bridge_lava_pt2.mp4" type="video/mp4"></source></video>
+- Skip:Go: https://go.skip.build/
+- Squid Router: https://app.squidrouter.com/
+- MetaMask: https://metamask.io/
+- Leap: https://app.leapwallet.io/
+- Keplr: https://wallet.keplr.app/
 
-<br /> <br />
-<hr />
-<br />
+<br>
 
+# 1. **Prepare Your Wallets**
 
-## 📝 Written Guide (~5m)
+## 1.1 **Lava on Arbitrum**
+Transfer your ERC20 LAVA tokens from the CEX to your Arbitrum wallet e.g., MetaMask.
+Note: If your tokens are on Kucoin, you should only transfer to a Cosmos wallet because they are already native LAVA tokens.
 
-### Create an Account
+## 1.2 **Add Arbitrum Network in MetaMask**
+1. Open MetaMask and click the network selector (usually labeled "Ethereum Mainnet").
+2. Click "Add Network", then add/approve Arbitrum if it's not already in your list.
+3. You can verify the Arbitrum network details at (arbitrum-mainnet.infura.io).
 
-If you’re stumped about how to get started — don’t worry at all! It’s as simple as putting in your credentials or creating an account at [gateway.lavanet.xyz/](https://accounts.lavanet.xyz/register?utm_source=getting-started-with-lava-gateway&utm_medium=docs&utm_campaign=docs-to-gateway) . 
+   ![MetaMask settings for adding or switching to the Arbitrum network pt1](link-to-image)
 
-![CreateAccountScreenshot](/img/tutorial/gateway/create_account_screenshot.png)
+   ![MetaMask settings for adding or switching to the Arbitrum network pt2](link-to-image)
+   
+   ![MetaMask settings for adding or switching to the Arbitrum network pt3](link-to-image)
 
-### Create a Project
+---
 
-Once logged in you will be able to create a project! Here the gateway will prompt you to give a Project name for your project and select which APIs are to be used. You can select any and all that will be needed for RPC calls in your project.
+## 1.3 **Import the Lava (Arbitrum) Token Contract**
+1. Copy the official Lava on Arbitrum **ERC20 contract address** from a reliable source:
+- **Arbiscan:** https://arbiscan.io/token/0x11e969e9B3f89cB16D686a03Cd8508C9fC0361AF
+- **Copy & Paste:** `0x11e969e9B3f89cB16D686a03Cd8508C9fC0361AF`
+- **Lava Website:** https://www.lavanet.xyz/blog/eruption 
 
-![CreateProjectScreenshot](/img/tutorial/gateway/create_project_screenshot.png)
+2. In MetaMask, click **Import Tokens**, paste the contract address, and confirm.
 
+    ![MetaMask interface with the Lava (Arbitrum) token contract being manually imported. pt1](link-to-image)
 
-### Select your API Access (RPC)
+    ![MetaMask interface with the Lava (Arbitrum) token contract being manually imported. pt2](link-to-image)
 
-After filling in the Project Name and desired API access - your RPC node endpoints will be available for use on the respective networks you selected. As in the example below, you can see that new API access can be added at any time, or API access can be revoked by simply clicking the trashcan next to the one you want to get rid of - it’s that easy!
+<br>
 
-![APIAccessScreenshot](/img/tutorial/gateway/api_access_screenshot.png)
+## 1.4 **Set Up a Lava Mainnet Wallet**
 
-### Set your Security Controls
+Because Lava Mainnet is a Cosmos chain, you need a **Cosmos-compatible wallet:**
 
-Of course, safety first! Once you have access to the endpoints, it would be wise to secure them. You can select Settings at the top of the Project Management screen and enable a Secret Key or JWT Tokens to limit who can access your endpoints. This will ensure that they are not wrongly accessed or hit too many times. It should be noted that, because these endpoints are available for free, they are rate-limited.
+1. Install the **Leap** or **Keplr** Chrome extension.
+    - Leap: https://app.leapwallet.io/
+    - Keplr: https://wallet.keplr.app/
+2. Create or import your wallet, and keep your seed phrase secure.
+    - **Leap wallet Chrome extension interface** 
+    ![Leap wallet opened with “Lava” selected as the chain, showing the user’s wallet address. pt1](link-to-image)
 
-![SecurityControlsScreenshot](/img/tutorial/gateway/security_controls_screenshot.png)
+    ![Leap wallet opened with “Lava” selected as the chain, showing the user’s wallet address. pt2](link-to-image)
+    - **Keplr wallet Chrome extension interface**
+    ![Keplr wallet showing the Lava chain selection and the wallet address. pt1](link-to-image)
 
+    ![Keplr wallet showing the Lava chain selection and the wallet address. pt2](link-to-image)
 
-### Pull your Endpoint
+<br>
 
-By the way, each network has a different number of interfaces that can be queried. As seen below, the Ethereum RPC can accept calls from both JSONRPC through HTTP and JSONRPC through WebSockets, whereas Lava accepts REST, URI, Tendermint and Tendermint using Websockets. You will notice that on Lava gateway, no matter which chains you select, we support a multitude of interfaces.
+## 2. **Using Skip:Go to Bridge**
 
-![EthereumAccessScreenshot](/img/tutorial/gateway/eth_access_screenshot.png)
+1. Open Skip:Go [URL: https://go.skip.build/] and connect your MetaMask wallet
+    - **Skip:Go homepage**
+    ![Skip:Go’s main dashboard, showing an option to connect MetaMasks.](link-to-image)
+<br>
 
-![LavaAccessScreenshot](/img/tutorial/gateway/lava_access_screenshot.png)
+2. **Select Arbitrum → Lava Mainnet**
+    - Choose **Arbitrum** as the source chain.
+    - Select **Lava on Arbitrum** as the token you want to swap out.
+    - Choose **Lava** and **Lava Mainnet** as the destination chain and token.
+    - **Skip:Go bridging interface**
+    ![Skip:Go user interface highlighting Arbitrum as the source and Lava Mainnet as the destination.](link-to-image)
+<br>
 
-We even support Cosmos Hub on multiple interfaces!!🚀
+3. **Enter the Amount & Confirm**
+    1. Input the number of **Lava (Arbitrum)** tokens to bridge.
+    2. Set your destination address: Keplr or Leap
+    3. Confirm any prompts in MetaMask.
+    ![Skip:Go user interface highlighting Arbitrum as the source and Lava Mainnet as the destination.](link-to-image)
+    ![Skip:Go user interface highlighting Arbitrum as the source and Lava Mainnet as the destination.](link-to-image)
+    ![Skip:Go user interface highlighting Arbitrum as the source and Lava Mainnet as the destination.](link-to-image)
+    4. Wait for cross-chain confirmation messages.
+        - **Go with user inputting Lava amount**
+    ![User typing the desired number of Lava tokens to bridge, with a MetaMask pop-up for transaction approval.](link-to-image)
+<br>
 
-![CosmosAccessScreenshot](/img/tutorial/gateway/cosmoshub_access_screenshot.png)
+4. **Check Your Lava Mainnet Wallet**
+    - Once completed, **Skip:Go** will display a success message.
+    - Check your Leap or Keplr wallet to confirm your new Lava Mainnet balance.
+    ![Skip:Go user interface](link-to-image)
+<br>
 
-The magic is that all of these endpoint addresses are plug-and-play! You can take any address, plug it into Web3.js, Ether.js, and Gaia, and use it seamlessly. Enjoy fast and free RPC!
+## 3. **Using Squid Router to Bridge**
+1. **Open Squid Router**
+    - Go to (Insert Squid Router URL) in your browser.
+    - Select **Swap** from the homepage or menu.
+    - **Squid Router homepage**
+    ![Squid Router website main dashboard with a visible “Cross-Chain Swap” option.](link-to-image)
+<br>
+
+2. **Connect MetaMask and Select Arbitrum**
+    - Squid Router will prompt you to **Connect Wallet**.
+    - Confirm in MetaMask, ensuring **Arbitrum** is selected as the source chain.
+    - Choose **Lava (Arbitrum)** as the token you want to swap.
+    - **Squid Router interface with Arbitrum selected as the source chain**
+    ![Squid Router bridging page highlighting Arbitrum as the source chain and Lava (Arbitrum) as the token.](link-to-image)
+<br>
+
+3. **Choose Destination: Lava Mainnet**
+    - For the destination chain, pick **Lava** and select **Lava Mainnet** as the token to receive.
+    - Click **Add a recipient**. 
+    - Connect your Leap or Keplr wallet when prompted, and approve any prompts in MetaMask (such as token allowance).
+    - **Squid Router’s “Add a recipient” dialog**
+    ![Squid Router step requesting connection to Leap or Keplr for Lava Mainnet, with MetaMask connected on the Arbitrum side.](link-to-image)
+    ![Squid Router step requesting connection to Leap or Keplr for Lava Mainnet, with MetaMask connected on the Arbitrum side.](link-to-image)
+<br>
+
+4. **Confirm the Swap**
+    - Enter the **amount of Lava (Arbitrum)** you want to bridge
+    - Click **Swap.**
+    - Approve the transaction in MetaMask.
+    - **Squid Router “Swap” confirmation**
+    ![Squid Router interface showing an amount of Lava (Arbitrum) to be swapped to Lava Mainnet, along with a MetaMask confirmation window.](link-to-image)
+<br>
+
+5. **Verify in Your Lava Mainnet Wallet**
+    - Wait a few moments for cross-chain confirmations.
+    - Check **Leap** or **Keplr** to confirm your new Lava Mainnet tokens have arrived.
+    - **Leap or Keplr wallet with updated Lava Mainnet balance**
+    ![Keplr/ Leap wallet displaying a newly updated Lava token balance on Lava Mainnet, confirming a successful bridge](link-to-image)
+<br>
+
+## **Nest Step: Staking and Restaking**
+
+Now that you’ve bridged your Lava tokens from Arbitrum to Lava Mainnet, you can:
+
+- **Stake** to **Validators** to secure the network and validate blocks.
+- **Restake** to direct traffic to **Providers** who deliver high-quality RPC services for supported chains. 
+
+Both Stakers and Restakers earn additional incentives from the protocol.
+
+<br>
+
+## **Get Started & Learn More**
+
+- **Lava Documentation:** https://docs.lavanet.xyz/
+- **Join our Discord:** https://discord.gg/Tbk5NxTCdA
+- **Join our Telegram:** https://t.me/officiallavanetwork
+- **Read our Whitepaper:** http://lavanet.xyz/whitepaper
+
+By bridging your Lava on Arbitrum tokens to Lava Mainnet, you unlock the full utility of the Lava Network—securing the ecosystem, directing RPC traffic, and earning rewards alongside other contributors. If you have any questions or need help, jump into our community channels!
