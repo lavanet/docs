@@ -22,7 +22,13 @@ Because LAVA exists both as an ERC20 token on **Arbitrum (an Ethereum Layer 2)**
     - Used for staking, restaking, and securing the network
     - Required to earn incentives from Lava’s unique contributor rewards model
 
-**_Please note_**: 
+**_Please note:_** 
+LAVA is available on DEXs: Osmosis (Lava Mainnet), Uniswap (ERC-20 Arbitrum, ERC-20 Base) and Pancakeswap (ERC-20 BSC).
+- LAVA contract address on Arbitrum: `0x11e969e9B3f89cB16D686a03Cd8508C9fC0361AF`
+- LAVA address on Binance Smart Chain: `0xFfeB8287dE7DC756067e171e9919c730f0636680`
+- LAVA contract address on Base: `0x11e969e9B3f89cB16D686a03Cd8508C9fC0361AF`
+- LAVA on Base and BSC **is not transferable to CEXs** as they only support the Arbitrum or Lava Mainnet version of LAVA.
+
 If you purchased LAVA tokens on **KuCoin**, you already have Lava Mainnet tokens and do **not** need to bridge. These tokens can be staked or restaked immediately by transferring them to a Cosmos-compatible wallet, such as **Leap** or **Keplr**.
 
 ### **How Lava Works at a Glance**
@@ -77,18 +83,21 @@ Below is a guided process using two popular bridging routes: **Skip:Go and Squid
 
 ## 1.1 **Lava on Arbitrum**
 Transfer your ERC20 LAVA tokens from the CEX to your Arbitrum wallet e.g., MetaMask.
-Note: If your tokens are on Kucoin, you should only transfer to a Cosmos wallet because they are already native LAVA tokens.
+
+**_Note:_** If your tokens are on Kucoin, you should only transfer to a Cosmos wallet because they are already native LAVA tokens.
 
 ## 1.2 **Add Arbitrum Network in MetaMask**
 1. Open MetaMask and click the network selector (usually labeled "Ethereum Mainnet").
+
+![MetaMask settings for adding or switching to the Arbitrum network pt1](/img/tutorial/how_to_bridge/MetaMask1.png)
+
 2. Click "Add Network", then add/approve Arbitrum if it's not already in your list.
+
+![MetaMask settings for adding or switching to the Arbitrum network pt2](/img/tutorial/how_to_bridge/MetaMask_Arbitrum.png)
+
 3. You can verify the Arbitrum network details at (arbitrum-mainnet.infura.io).
 
-   ![MetaMask settings for adding or switching to the Arbitrum network pt1](/img/tutorial/how_to_bridge/MetaMask1.png)
-
-   ![MetaMask settings for adding or switching to the Arbitrum network pt2](/img/tutorial/how_to_bridge/MetaMask_Arbitrum.png)
-   
-   ![MetaMask settings for adding or switching to the Arbitrum network pt3](/img/tutorial/how_to_bridge/MetaMask_Arbitrum2.png)
+![MetaMask settings for adding or switching to the Arbitrum network pt3](/img/tutorial/how_to_bridge/MetaMask_Arbitrum2.png)
 
 ---
 
@@ -186,11 +195,12 @@ Because Lava Mainnet is a Cosmos chain, you need a **Cosmos-compatible wallet:**
 
 2. **Connect MetaMask and Select Arbitrum**
 - Squid Router will prompt you to **Connect Wallet**.
-- Confirm in MetaMask, ensuring **Arbitrum** is selected as the source chain.
-- Choose **Lava (Arbitrum)** as the token you want to swap.
-- **Squid Router interface with Arbitrum selected as the source chain**
 
     ![Squid Router bridging page highlighting Arbitrum as the source chain and Lava (Arbitrum) as the token.](/img/tutorial/how_to_bridge/Squid_Connect.png)
+
+- Confirm in MetaMask, ensuring **Arbitrum** is selected as the source chain.
+- Choose **Lava (Arbitrum)** as the token you want to swap.
+- **Squid Router interface with Arbitrum selected as the source chain**   
 
     ![Squid Router bridging page highlighting Arbitrum as the source chain and Lava (Arbitrum) as the token.](/img/tutorial/how_to_bridge/Squid_Swap.png)
 
