@@ -46,7 +46,7 @@ When blockchains use Lava to coordinate their RPC, they create incentive pools i
 # 🎥 How to bridge Lava (~6m)
 
 <video width="100%" height="100%" controls>
-<source src="/img/tutorial/how_to_bridge/how_to_bridge_lava_v3.mp4" type="video/mp4">
+<source src="/img/tutorial/how_to_bridge/how_to_bridge_lava_v3.mp4" type="video/mp4" />
 </video>
 
 <br/><br/>
