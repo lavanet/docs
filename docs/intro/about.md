@@ -7,7 +7,7 @@ title: 🌋 About Lava
 
 ## ** Introduction to Lava** 🌋
 
-### **The Challenge of Blockchain Infrastructure** 🌐
+### **AI agents and users depend on RPC** 🌐
 
 Lava enables 24/7 access to blockchain apps, with minimal downtime. 
 

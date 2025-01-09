@@ -17,8 +17,6 @@ The following instructions will walk you through how LAVA (Lava Mainnet tokens) 
 
 *Please Note: Keplr currently only supports LAVA staking and does not allow restaking.*
 
-<br/>
-
 ## **How to stake and restake LAVA on Leap:**
 
 **Step 1:** Open the Leap browser extension and navigate to the “Stake” section

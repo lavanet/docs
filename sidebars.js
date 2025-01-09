@@ -14,7 +14,6 @@ const sidebars = {
       collapsed: true,
       items: [
         "intro/about",
-        "intro/key-roles",
         "intro/how-lava-work",
         "intro/how-to-bridge-lava",
         "intro/how-to-stake-and-restake-lava",
