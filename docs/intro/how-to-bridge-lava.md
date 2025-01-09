@@ -109,7 +109,7 @@ Because Lava Mainnet is a Cosmos chain, you need a **Cosmos-compatible wallet:**
     - **Leap wallet Chrome extension interface** 
     ![Leap wallet opened with “Lava” selected as the chain, showing the user’s wallet address. pt1](/img/tutorial/how_to_bridge/Leap_1.png)
 
-    ![Leap wallet opened with “Lava” selected as the chain, showing the user’s wallet address. pt2](/img/tutorial/how_to_bridge/Leap_2.pnge)
+    ![Leap wallet opened with “Lava” selected as the chain, showing the user’s wallet address. pt2](/img/tutorial/how_to_bridge/Leap_2.png)
     - **Keplr wallet Chrome extension interface**
     ![Keplr wallet showing the Lava chain selection and the wallet address. pt1](/img/tutorial/how_to_bridge/Keplr_1.png)
 
