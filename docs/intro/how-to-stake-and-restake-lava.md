@@ -17,7 +17,7 @@ The following instructions will walk you through how LAVA (Lava Mainnet tokens) 
 # 🎥 How to stake and restake LAVA (~6m)
 
 <video width="100%" height="100%" controls>
-<source src="/img/tutorial/how_to_stake_and_restake/Staking_Restaking_v1.mp4" type="video/mp4" />
+<source src="/img/tutorial/how_to_stake_and_restake/Staking+Restaking_v3.mp4" type="video/mp4" />
 </video>
 
 <br/><br/>
