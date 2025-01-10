@@ -49,16 +49,6 @@ When blockchains use Lava to coordinate their RPC, they create incentive pools i
 
 ## **Step-by-Step: Bridging Your Lava on Arbitrum to Lava Mainnet**
 
-# 🎥 How to bridge Lava - Introduction (~3m)
-
-<video width="100%" height="100%" controls>
-<source src="/img/tutorial/how_to_bridge/how_to_bridge_1.mp4" type="video/mp4" />
-</video>
-
-<br/><br/>
-<hr/>
-<br/>
-
 # 🎥 How to bridge Lava (~6m)
 
 <video width="100%" height="100%" controls>

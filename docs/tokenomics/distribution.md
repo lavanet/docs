@@ -26,12 +26,12 @@ Max Supply: `1,000,000,000 LAVA` (**100%**)
 
 | Category               |  Description | %    |
 |------------------------|--------------|------|
-| Public Allocation    |  Future Initiatives (including airdrop)       | 15%  |
-| Public Allocation    |  Variable Rewards to Providers (Provider Drops)     | 6.6%  |
+| Future Initiatives   |  Future Initiatives (including airdrop)       | 15%  |
+| Provider Drops    |  Variable Rewards to Providers (Provider Drops)     | 6.6%  |
 | R&D & Ecosystem      |  Protocol Maintenance & Development; Programs for Providers, Validators, and Champions     | 31%  |
-| Investors            |  Early Supporters of Lava                                    | 17%  |
-| Contributors         |  Core Contributors         | 27%  |
-| Validators           |  24k lava/day validators (pre-minted)           | 3.4%  |
+| Backers            |  Early Supporters of Lava                                    | 17%  |
+| Core Contributors         |  Core Contributors         | 27%  |
+| Validator Rewards           |  24k lava/day validators (pre-minted)           | 3.4%  |
 |                      |     **Total**         | **100%** |
 
 </center>

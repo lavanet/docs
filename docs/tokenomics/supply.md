@@ -44,7 +44,7 @@ This is why staking rewards are “relatively” low on Lava. Majority of reward
 
 Many marketplaces, such as Lava, face an initial problem: demand does not come without high supply, but supply does not come without high demand. This is the “chicken and egg” or “cold start” problem. Lava has a novel solution for this. 
 
-44 million LAVA (4.4% of total supply) is distributed to attract Providers when there are fewer Data Consumers in the early stages of the protocol. This allocation is called Provider Drops. 
+44 million LAVA (6.6% of total supply) is distributed to attract Providers when there are fewer Data Consumers in the early stages of the protocol. This allocation is called Provider Drops. 
 
 Provider Drops are distributed across 4 years and vary on a monthly basis depending on how much paid demand there is for RPC via Lava. The higher the demand, the more Providers earn from the Provider Drop allocation. If there is less demand, the Provider Drop allocation is not as needed and therefore burned. 
 

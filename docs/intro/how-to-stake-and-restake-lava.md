@@ -5,19 +5,28 @@ title: 🏗 How to stake and restake Lava
 
 # **How to stake and restake LAVA 🏗 **
 
-Lava is a Celestia is a proof-of-stake blockchain based on the Cosmos SDK. Staking LAVA helps secure the Lava blockchain. Restaking LAVA helps direct more traffic to top dData Providers on the network.
+Lava's vision is to enable AI agents and anyone to use blockchain apps, 24/7, with no downtime.
+
+Lava is a protocol which coordinates dapp and AI agent traffic on every blockchain. Lava aggregates RPC providers, dynamically scaling to support demand and routing requests to the fastest, most reliable providers.
 
 The following instructions will walk you through how LAVA (Lava Mainnet tokens) can be staked and restaked. If your tokens were acquired on Bybit, Gate or MEXC, they are ERC-20 LAVA and you first need to bridge to Lava Mainnet. See [How to Bridge Lava](https://docs.lavanet.xyz/how-to-bridge-lava).
 
 
 ## **Staking and Restaking LAVA:**
 
+# 🎥 How to stake and restake LAVA (~6m)
+
+<video width="100%" height="100%" controls>
+<source src="/img/tutorial/how_to_stake_and_restake/Staking+Restaking_v3.mp4" type="video/mp4" />
+</video>
+
+<br/><br/>
+<hr/>
+<br/>
 ### **Dashboards that support staking and restaking LAVA:**
 - Leap Wallet, Mellifera, StakingRewards, Polli, Keplr
 
 *Please Note: Keplr currently only supports LAVA staking and does not allow restaking.*
-
-<br/>
 
 ## **How to stake and restake LAVA on Leap:**
 
