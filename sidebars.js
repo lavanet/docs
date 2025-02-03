@@ -66,6 +66,21 @@ const sidebars = {
         },
         {
           type: "category",
+          label: "🔗 Arbitrum",
+          collapsible: true,
+          collapsed: true,
+          description: "ARB1, ARBN, ARBS",
+          link: {
+            type: "doc",
+            id: "chains/arbitrum-chain/arbitrum",
+          },
+          items: [
+            "chains/arbitrum-chain/arbitrum-dev",
+            "chains/arbitrum-chain/arbitrum-node",
+          ],
+        },
+        {
+          type: "category",
           label: "🔗 Avalanche",
           collapsible: true,
           collapsed: true,
