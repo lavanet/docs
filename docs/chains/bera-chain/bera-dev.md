@@ -1,44 +1,12 @@
 ---
-slug: /arbitrum-dev
-title: Getting Arbitrum RPC
+slug: /bera-dev
+title: Getting Berachain RPC
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Getting Arbitrum RPC
-
-
-## Arbitrum ipRPC 🪙
-
-Lava🌋 now offers [incentivized public RPC](https://pools.lavanet.xyz/) for Arbitrum. Developers can get free, public endpoints for all.
-
-### Mainnet (Arbitrum One) 🌐
-
-| Service 🔌                    | URL 🔗                                         |
-| ----------------------------- | ---------------------------------------------- |
-| 🟢 json-rpc                   | https://arbitrum.lava.build                    |
-
-
-
-### Testnet (Arbitrum Nova) 🧪
-
-| Service 🔌                    | URL 🔗                                        |
-| ----------------------------- | --------------------------------------------- |
-| 🟢 json-rpc                   | https://arbn.lava.build           |
-
-
-
-### Testnet (Arbitrum Sepolia) 🧪
-
-| Service 🔌                    | URL 🔗                                        |
-| ----------------------------- | --------------------------------------------- |
-| 🟢 json-rpc                   | https://arbitrums.lava.build           |
-
-
-
-
-
+# Getting Berachain RPC
 
 ## API Reference
 
@@ -48,7 +16,7 @@ Lava🌋 now offers [incentivized public RPC](https://pools.lavanet.xyz/) for Ar
 <TabItems value="cURL" label="cURL">
 
 ```shell
-curl -X POST -H "Content-Type: application/json" -H "Authorization: Bearer e04c14f2-7735-4034-a458-dd1a39e75b39" https://g.w.lavanet.xyz:443/gateway/arb1/rpc-http/3dc655f970c930f1d3e78ee71beece18 --data '{"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id":1}'
+curl -X POST -H "Content-Type: application/json" -H "Authorization: Bearer e04c14f2-7735-4034-a458-dd1a39e75b39" https://g.w.lavanet.xyz:443/gateway/bera/rpc-http/3dc655f970c930f1d3e78ee71beece18 --data '{"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id":1}'
 ```
 
 </TabItems>
@@ -59,8 +27,8 @@ curl -X POST -H "Content-Type: application/json" -H "Authorization: Bearer e04c1
 import requests
 import json
 
-# URL for the Ethereum RPC HTTP endpoint
-url = "https://g.w.lavanet.xyz:443/gateway/arb1/rpc-http/3dc655f970c930f1d3e78ee71beece18"
+# URL for the Berachain RPC HTTP endpoint
+url = "https://g.w.lavanet.xyz:443/gateway/bera/rpc-http/3dc655f970c930f1d3e78ee71beece18"
 # JSON-RPC request payload
 request_payload = {
     "jsonrpc": "2.0",
@@ -89,9 +57,9 @@ except requests.exceptions.RequestException as e:
 //npm i axios
 const axios = require("axios");
 
-// URL for the Ethereum RPC HTTP endpoint
+// URL for the Berachain RPC HTTP endpoint
 const url =
-  "https://g.w.lavanet.xyz:443/gateway/arb1/rpc-http/3dc655f970c930f1d3e78ee71beece18";
+  "https://g.w.lavanet.xyz:443/gateway/bera/rpc-http/3dc655f970c930f1d3e78ee71beece18";
 // JSON-RPC request payload
 const requestPayload = {
   jsonrpc: "2.0",
@@ -127,8 +95,9 @@ fetchBlockNumber();
 <TabItems value="WSCAT" label="WSCAT">
 
 ```shell
-wscat -c wss://g.w.lavanet.xyz:443/gateway/arb1/rpc/3dc655f970c930f1d3e78ee71beece18?secret=null -x '{"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id":1}'
+wscat -c wss://g.w.lavanet.xyz:443/gateway/bera/rpc/3dc655f970c930f1d3e78ee71beece18 -x '{"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id":1}'
 ```
+
 
 </TabItems>
 <TabItems value="Python" label="Python">
@@ -140,7 +109,7 @@ import websockets
 import json
 
 # WebSocket URL and JSON-RPC request payload
-url = "wss://g.w.lavanet.xyz:443/gateway/arb1/rpc/3dc655f970c930f1d3e78ee71beece18?secret=null"
+url = "wss://g.w.lavanet.xyz:443/gateway/bera/rpc/3dc655f970c930f1d3e78ee71beece18?secret=null"
 request_payload = {
     "jsonrpc": "2.0",
     "method": "eth_blockNumber",
@@ -174,7 +143,7 @@ const WebSocket = require("ws");
 
 // WebSocket URL and JSON-RPC request payload
 const url =
-  "wss://g.w.lavanet.xyz:443/gateway/arb1/rpc/3dc655f970c930f1d3e78ee71beece18?secret=null";
+  "wss://g.w.lavanet.xyz:443/gateway/bera/rpc/3dc655f970c930f1d3e78ee71beece18?secret=null";
 const requestPayload = {
   jsonrpc: "2.0",
   method: "eth_blockNumber",
@@ -216,9 +185,9 @@ ws.on("close", () => {
 
 <hr/>
 
-## [Gateway](https://gateway.lavanet.xyz/?utm_source=ethereum-dev&utm_medium=docs&utm_campaign=docs-to-gateway)
+## [Gateway](https://gateway.lavanet.xyz)
 
-To learn more about using the Lava Gateway visit the [Getting Started guide](https://docs.lavanet.xyz/gateway-getting-started?utm_source=ethereum-dev&utm_medium=docs&utm_campaign=docs-to-docs)
+To learn more about using the Lava Gateway visit the [Getting Started guide](https://docs.lavanet.xyz/gateway-getting-started)
 
 <hr />
 <br />
@@ -235,22 +204,22 @@ To learn more about using the Lava Gateway visit the [Getting Started guide](htt
 // npm i @lavanet/lava-sdk
 const { LavaSDK } = require("@lavanet/lava-sdk");
 
-async function useArbitrumMainnet() {
-  const arbitrumMainnet = await LavaSDK.create({
+async function useBeraMainnet() {
+  const beraMainnet = await LavaSDK.create({
     privateKey: process.env.PRIVATE_KEY, //hide your private key in an environmental variable
-    chainIds: "ARB1",
+    chainIds: "BERA",
   });
 
-  const arbitrumBlockResponse = await arbitrumMainnet.sendRelay({
+  const beraBlockResponse = await beraMainnet.sendRelay({
     method: "eth_blockNumber",
     params: [],
   });
 
-  console.log(arbitrumBlockResponse);
+  console.log(beraBlockResponse);
 }
 
 (async () => {
-  await useArbitrumMainnet();
+  await useBeraMainnet();
 })();
 ```
 
@@ -262,25 +231,25 @@ async function useArbitrumMainnet() {
 // npm i @lavanet/lava-sdk
 const { LavaSDK } = require("@lavanet/lava-sdk");
 
-async function useArbitrumMainnet() {
-  const arbitrumMainnet = await LavaSDK.create({
+async function useBeraMainnet() {
+  const beraMainnet = await LavaSDK.create({
     badge: {
       badgeServerAddress: "https://badges.lavanet.xyz", // Or your own Badge-Server URL
       projectId: "enter_your_project_id_here",
     },
-    chainIds: "ARB1",
+    chainIds: "BERA",
   });
 
-  const arbitrumBlockResponse = await arbitrumMainnet.sendRelay({
+  const beraBlockResponse = await beraMainnet.sendRelay({
     method: "eth_blockNumber",
     params: [],
   });
 
-  console.log(arbitrumBlockResponse);
+  console.log(beraBlockResponse);
 }
 
 (async () => {
-  await useArbitrumMainnet();
+  await useBeraMainnet();
 })();
 ```
 

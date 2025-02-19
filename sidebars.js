@@ -123,6 +123,21 @@ const sidebars = {
         },
         {
           type: "category",
+          label: "🔗 Berachain",
+          collapsible: true,
+          collapsed: true,
+          description: "BERA, BERAT, BERAT2",
+          link: {
+            type: "doc",
+            id: "chains/bera-chain/bera",
+          },
+          items: [
+            "chains/bera-chain/bera-dev",
+            "chains/bera-chain/bera-node",
+          ],
+        },
+        {
+          type: "category",
           label: "🔗 Celo",
           collapsible: true,
           collapsed: true,
