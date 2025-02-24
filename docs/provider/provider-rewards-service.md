@@ -12,10 +12,17 @@ import TabItem from '@theme/TabItem';
 
  After staking on chain, providers serve consumers and get cryptographic proofs of relay service. These proofs are submitted on chain to accumulate CUs that lead to token rewards. The calculation for provider rewards is complex and contingent on the validity of submitted proofs. However, given valid proofs, rewards are mostly affected by 3 factors:
  - ☑️ **Passable Quality of Service** - The individual score of a relay session. Passable QoS directly alters rewards in a given session.
- - ⭐ **Quality of Service Excellence** - The reputational score of a provider. QoS Excellence affects provider selection both within a pairing and in the pairing probabilities.
+ - ⭐ **Reputation Score** - The reputational score of a provider. Reputation Score affects provider selection both within a pairing and in the pairing probabilities.
  - 🚨 **Jail** - The disabling mechanism for inferior/defunct providers. Jailing prevents a provider from giving service for a period of time.
 
 <br/>
+
+## Reputation
+The Lava Network places a strong emphasis on delivering exceptional Quality of Service (QoS) to its consumers. To ensure this, consumers actively participate in monitoring and customizing their QoS excellence metrics. They gauge provider performance by measuring latency in provider responses relative to a benchmark, assessing data freshness in comparison to the fastest provider, and evaluating the percentage of error or timeout responses in the availability metric. These scores are diligently recorded and sent on-chain alongside the relay proofs of service, creating a transparent and accountable system. The provider's performance metric is called "Reputation". Higher reputation indicates higher QoS scores.
+
+To further enhance the integrity of the QoS scores, updates are aggregated across all consumers in a manner that safeguards against false reports. Negative reports are weighted by usage, meaning that a consumer must actively use and pay a provider to diminish their QoS score. This mechanism discourages users from artificially lowering a provider's score.
+
+The Reputation metric only affect pairings and is aggregated over time with a decay function that favors the latest data, meaning providers can improve, and those providers that their service fails will be impacted to affect fewer users. This approach ensures that the reputation system remains dynamic and responsive, benefiting providers striving to enhance their services while minimizing the impact of service failures on a broader scale.
 
 ## 📊 Passable QoS {#passable-qos}
 Passable Quality of Service is scored separately in each relay session. Lower scores mean lower rewards. Up to half the accumulated CU can be reduced for bad service. Passable QoS metrics can be viewed both in the [Lava Info explorer](https://info.lavanet.xyz/?utm_source=provider-rewards&utm_medium=docs&utm_campaign=docs-to-info) and [Prometheus metrics](/provider-features#config-prometheus).
@@ -125,13 +132,13 @@ lavap test events 2000 --event lava_provider_latest_block_report --node {PUBLIC_
 
 <br />
 
-## 📊 QoS Excellence {#qos-excellence}
+## 📊 Reputation Score {#reputation-score}
 
-QoS Excellence is calculated very similarly to Passable QoS. QoS Excellence provides a range of scores that are time-weighted to take the latest information
-all the actions mentioned here to improve passable QoS affect excellence
+Reputation Socre is calculated very similarly to Passable QoS. QoS Excellence provides a range of scores that are time-weighted to take the latest information
+all the actions mentioned here to improve passable QoS affect Reputation 
 
 ### Metrics 📈
-Excellence Quality of score divides into 3 metrics:
+Reputation score divides into 3 metrics:
 * Availability - score in the range `0-1`
 * Sync/ Freshness of data - how much time behind other providers are we, lower is better, `0` means your sync is the best in the pairing
 * Latency - how many benchmark ticks passed during a relay in average (time taken / benchmark time). lower is better

@@ -53,7 +53,7 @@ title: 📝 Key Terms
 ## 📊 Quality of Service (QoS)
 
 <details>
-<summary>Excellence QoS</summary> 
+<summary>Reputation Score</summary> 
   A set of metrics designed to ensure a high Quality of Service (QoS) for consumers, enabling monitoring and customization of provider performance.
 </details>
 
