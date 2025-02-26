@@ -137,6 +137,23 @@ const sidebars = {
           ],
         },
         {
+            type: "category",
+            label: "🔗 Movement Chain",
+            collapsible: true,
+            collapsed: true,
+            description: "MOVEMENT, MOVEMENTT",
+            link: {
+              type: "doc",
+              id: "chains/movement-chain/movement",
+            },
+            items: [
+              "chains/movement-chain/movement-dev",
+              "chains/movement-chain/movement-node",
+              "chains/movement-chain/movement-node-genesis",
+              "chains/movement-chain/movement-node-bardock-archive",
+            ],
+          },
+        {
           type: "category",
           label: "🔗 Celo",
           collapsible: true,
