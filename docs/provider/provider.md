@@ -9,11 +9,8 @@ import RoadmapItem from '@site/src/components/RoadmapItem';
 
 Welcome to the Lava network's provider introduction. In this page, you'll learn about the role of providers in the Lava network, as well as the necessary steps to get started as one.
 
-:::info want to be a testnet Provider? ✍️
-To get the initial testnet LAVA stake, read the [Provider Incubation program details](https://lavanet.notion.site/Lava-Testnet-Providers-Incubation-Program-2d45589294b84976843fd55569f8be87) 📖
-:::
 
-## **Providers in Lava's Protocol**
+## Providers in Lava's Protocol
 
 Providers are the backbone of the Lava network, servicing relay requests by staking on the network and operating RPC nodes on Relay Chains queried by Consumers (e.g., Cosmos, Ethereum, Osmosis, Polygon, etc.). In return, they earn fees in the form of LAVA tokens from the Consumers for servicing these requests.
 
@@ -23,7 +20,7 @@ graph LR
   B --> |Private Address| C[Relayed Nodes]
 ```
 
-### **Becoming a Provider**
+### Becoming a Provider
 
 To join the Lava network as a provider, follow these steps:
 
@@ -34,7 +31,7 @@ To join the Lava network as a provider, follow these steps:
 Learn more by reading our [litepaper](https://lavanet.xyz)
 :::
 
-### **Provider Parameters**
+### Provider Parameters
 
 When staking as a provider, there are four main parameters used in the transaction:
 
@@ -59,7 +56,7 @@ When staking as a provider, there are four main parameters used in the transacti
 
 Providers need to stake separately for each supported spec. For example, if you support both Cosmos and Ethereum, you will need two separate stakes. Once your request is verified and included in the chain state, you'll be included in the Pairing List starting from the next Epoch and can begin servicing consumer requests through your nodes.
 
-### **Vault Address**
+### Vault Address
 
 Usually, the provider entity has a single lava address. This address is utilized for operating the provider process, such as participating in the pairing mechanism, and for aggregating rewards from relay payments or IPRPC.
 
@@ -69,7 +66,7 @@ A vault address can be specified while staking a provider. When staking, use the
 
 Since the vault address holds the provider's funds, it is the only one that can perform stake-related transactions. In simpler terms, the vault address can execute all transactions, while the operational address can carry out all transactions except for the following: `stake-provider`, `unstake-provider`, `claim-rewards`, and `modify-provider`. The latter cannot change certain provider traits, such as `stake`, `delegation-commission`, and `delegate-limit`.
 
-### **Supported APIs and Chain Specifications**
+### Supported APIs and Chain Specifications
 
 Lava's protocol expands its support to new RPCs by adding Specifications ("specs") via governance. Each spec describes the schema needed for the RPC and aligns the different actors on the provided interface.
 
@@ -100,7 +97,3 @@ Alternatively,
 lavap q spec list-spec --node {PUBLIC_RPC}
 ```
 
-## Next step: Setup a Provider
-
-When you're ready, join **as a provider**:
-[<RoadmapItem icon="🧑‍⚖️" title="Power as a Provider" description="Provide node data, earn rewards"/>](/provider-setup)
