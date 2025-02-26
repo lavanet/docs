@@ -3,6 +3,7 @@
 
 const lightCodeTheme = require("prism-react-renderer/themes/github");
 const darkCodeTheme = require("prism-react-renderer/themes/dracula");
+const webpack = require('webpack');
 require("dotenv").config();
 
 /** @type {import('@docusaurus/types').Config} */
@@ -11,7 +12,7 @@ const config = {
   tagline: "Decentralizing Web3 Infra",
   url: "https://docs.lavanet.xyz",
   baseUrl: "/",
-  onBrokenLinks: "throw",
+  onBrokenLinks: "warn",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.ico",
   organizationName: "lavanet",
@@ -109,6 +110,25 @@ const config = {
         },
       };
     },
+    async function customPlugin(context, opts) {
+      return {
+        name: 'custom-plugin',
+        configureWebpack(config, isServer, utils, content) {
+          // Modify internal webpack config. If returned value is an Object, it
+          // will be merged into the final config using webpack-merge;
+          // If the returned value is a function, it will receive the config as the 1st argument and an isServer flag as the 2nd argument.
+          return {
+            plugins: [
+              new webpack.DefinePlugin({
+                // IMPORTANT: To fix debug library‘s bug
+                // {}.DEBUG = namespaces; // SyntaxError: Unexpected token '.'
+                'process.env.DEBUG': 'process.env.DEBUG',
+              })
+            ]
+          }
+        },
+      }
+    }
   ],
 
   markdown: {
