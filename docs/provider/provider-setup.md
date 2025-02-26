@@ -7,6 +7,10 @@ title: Setup
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+
+Note: this guide needs to be simplified. Potentially, examples can be included into each chain's node setup page. This page could then focus on reference for starting the provider service, testing the endpoints, staking.
+
+
 :::warning
 Please make sure you are using the right [`chainId`](/key-variables#chain-id). TLS Certificates are now a required part of Provider setup. [Lavavisor](/lavavisor) is now the recommended route for running the provider process.
 :::

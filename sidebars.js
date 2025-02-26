@@ -164,7 +164,7 @@ const sidebars = {
                 },
                 {
                   type: "doc",
-                  label: "Use Lava Gateway",
+                  label: "Use Magma Gateway",
                   id: "developer/endpoints/gateway-endpoints"
                 },
               ],
@@ -356,7 +356,7 @@ const sidebars = {
           items: [
             {
               type: "category",
-              label: "1. Run a node",
+              label: "1. Run an RPC node",
               collapsible: true,
               collapsed: true,
               link: {type: "doc", id: "provider/running-nodes/run-nodes"},
@@ -409,7 +409,7 @@ const sidebars = {
             },
             {
               type: "doc",
-              label: "4. Setup the provider",
+              label: "4. Configure provider service",
               id: "provider/provider-setup"
             }
           ],
