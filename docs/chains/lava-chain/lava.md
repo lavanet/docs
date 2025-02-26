@@ -41,7 +41,8 @@ lavad q spec show-chain-info LAV1
 
 #### 📋 List :
 
-<details> <summary> REST </summary>
+<details>
+<summary> REST </summary>
 
 - /lavanet/lava/conflict/conflict_vote
 - /lavanet/lava/conflict/conflict_vote/{index}
@@ -218,10 +219,10 @@ lavad q spec show-chain-info LAV1
 - /cosmos/tx/v1beta1/encode/amino
 - /cosmos/tx/v1beta1/simulate
 - /cosmos/tx/v1beta1/txs
-
 </details>
 
-<details> <summary> TendermintRPC </summary>
+<details>
+<summary> TendermintRPC </summary>
 
 - dump_consensus_state
 - abci_info
@@ -252,10 +253,10 @@ lavad q spec show-chain-info LAV1
 - unsubscribe
 - unsubscribe_all
 - validators
-
 </details>
 
-<details> <summary> gRPC </summary>
+<details>
+<summary> gRPC </summary>
 
 - lavanet.lava.conflict.Query/ConflictVote
 - lavanet.lava.conflict.Query/ConflictVoteAll
@@ -396,5 +397,4 @@ lavad q spec show-chain-info LAV1
 - ibc.core.connection.v1.Query/ConnectionClientState
 - ibc.core.connection.v1.Query/ConnectionConsensusState
 - ibc.core.connection.v1.Query/Connections
-
 </details>

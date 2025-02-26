@@ -245,10 +245,10 @@ lavad q spec show-chain-info AGR
   - /distribution/validators/{validatorAddr}/rewards
   - /distribution/community_pool
   - /distribution/parameters
-
 </details>
 
-<details><summary>gRPC</summary>
+<details>
+<summary>gRPC</summary>
 
   - agoric.swingset.Query/Egress
   - agoric.swingset.Query/Mailbox
@@ -370,10 +370,10 @@ lavad q spec show-chain-info AGR
   - ibc.core.connection.v1.Query/ConnectionClientState
   - ibc.core.connection.v1.Query/ConnectionConsensusState
   - ibc.core.connection.v1.Query/Connections
-
 </details>
 
-<details><summary> TendermintRPC </summary>
+<details>
+<summary> TendermintRPC </summary>
 
  - dump_consensus_state
  - abci_info
@@ -404,10 +404,10 @@ lavad q spec show-chain-info AGR
  - unsubscribe
  - unsubscribe_all
  - validators
-
 </details>
 
-<details><summary> REST </summary>
+<details>
+<summary> REST </summary>
 
   - /cosmos/tx/v1beta1/decode
   - /cosmos/tx/v1beta1/encode
@@ -427,5 +427,4 @@ lavad q spec show-chain-info AGR
   - /distribution/delegators/{delegatorAddr}/rewards/{validatorAddr}
   - /distribution/delegators/{delegatorAddr}/withdraw_address
   - /distribution/validators/{validatorAddr}/rewards
-
 </details>

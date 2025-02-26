@@ -16,13 +16,13 @@ Lava🌋 offers incentivized public RPC for NEAR. Developers can get free, publi
 
 | Service 🔌  | URL 🔗                    |
 | ----------- | ------------------------- |
-| 🟢 json-rpc | <https://near.lava.build> |
+| 🟢 json-rpc | https://near.lava.build |
 
 ### Testnet 🧪
 
 | Service 🔌  | URL 🔗                            |
 | ----------- | --------------------------------- |
-| 🟢 json-rpc | <https://near-testnet.lava.build> |
+| 🟢 json-rpc | https://near-testnet.lava.build |
 
 <hr />
 

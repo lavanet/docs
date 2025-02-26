@@ -16,17 +16,17 @@ Lava🌋 offers incentivized public RPC for Agoric. Developers can get free, pub
 
 | Service 🔌       | URL 🔗                              |
 | ---------------- | ----------------------------------- |
-| 🟢 rest          | <https://agr.rest.lava.build>       |
-| 🟢 grpc          | <https://agr.grpc.lava.build>       |
-| 🟢 tendermintrpc | <https://agr.tendermint.lava.build> |
+| 🟢 rest          |  https://agr.rest.lava.build       |
+| 🟢 grpc          |  https://agr.grpc.lava.build       |
+| 🟢 tendermintrpc |  https://agr.tendermint.lava.build |
 
 ### Testnet 🧪
 
 | Service 🔌       | URL 🔗                               |
 | ---------------- | ------------------------------------ |
-| 🟢 rest          | <https://agrt.rest.lava.build>       |
-| 🟢 grpc          | <https://agrt.grpc.lava.build>       |
-| 🟢 tendermintrpc | <https://agrt.tendermint.lava.build> |
+| 🟢 rest          |  https://agrt.rest.lava.build        |
+| 🟢 grpc          |  https://agrt.grpc.lava.build        |
+| 🟢 tendermintrpc |  https://agrt.tendermint.lava.build  |
 
 ## API Reference
 

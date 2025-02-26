@@ -28,9 +28,9 @@ Lava🌋 now offers incentivized public RPC for Evmos. Developers can get free, 
 | Service 🔌                    | URL 🔗                                        |
 | ----------------------------- | --------------------------------------------- |
 | 🟢 tendermint-rpc             | https://tm.evmos-testnet.lava.build           |
-| 🟢 tendermint-rpc / websocket | <wss://tm.evmos-testnet.lava.build/websocket> |
+| 🟢 tendermint-rpc / websocket | wss://tm.evmos-testnet.lava.build/websocket |
 | 🟢 json-rpc                   | https://evmos-testnet.lava.build              |
-| 🟢 json-rpc / websocket       | <wss://evmos-testnet.lava.build/websocket>    |
+| 🟢 json-rpc / websocket       | wss://evmos-testnet.lava.build/websocket    |
 | 🟢 rest                       | https://evmost.rest.lava.build                |
 | 🟢 grpc                       | grpc.evmos-testnet.lava.build                 |
 

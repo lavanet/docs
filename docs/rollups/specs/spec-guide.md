@@ -90,72 +90,72 @@ These fields combined with others make the first section of a spec:
 
 🔍 Let’s investigate these fields one-by-one:
 
-<details> <summary> `index` </summary>
+<details>
+<summary> `index` </summary>
 
 The index is the universal identifier for a spec. The index must not be shared by any other spec. It is what will be referenced anywhere else the spec is referenced or imported. The naming convention method for an index is to use all caps, no spaces. Shorter/more abbreviated indexes are preferred. Optionally, to truncate long indexes, many specs employ the strategy of dropping vowels or shortening words (e.g. `OPTM` for Optimism, `STRK` for Starknet, or`AGR` for Agoric) .
-
 </details>
 
-<details> <summary> `name` </summary>
+<details>
+<summary> `name` </summary>
 
 The name is the longform descriptive identifier for a spec. The name should indicate what exactly the spec is/distinguish from specs which serve similar data. If it is a testnet or mainnet of a specific blockchain it should say so.
-
 </details>
 
-<details> <summary> `enabled` </summary>
+<details>
+<summary> `enabled` </summary>
 
 The enabled field describes whether the spec is active. There are times when a spec is defined but not used - or when a spec is to be deactivated temporarily. In our case, this should default to `true`.
-
 </details>
 
-<details> <summary> `reliability threshhold` </summary>
+<details>
+<summary> `reliability threshhold` </summary>
 
 Reliability threshold sets the frequency of reliability related messages. By default, we set this to `268435455` which is the minimum and efficient choice. If you’d like to set it higher - there are more details that can be learned here. [/spec-reference#terms]
-
 </details>
 
-<details> <summary> `data_reliability_enabled` </summary>
+<details>
+<summary> `data_reliability_enabled` </summary>
 
 Data reliability should be enabled unless there is a compelling reason to disable it! The default value here is `true`. This means Lava protocol will work to ensure data is accurate by doing data reliability checks. Note that if you are creating a spec for something other than a blockchain - you will want to set this to `false`.
 
 ⚠️ As of `lava-testnet-2` support for data reliability on diverse APIs is work-in-progress.
-
 </details>
 
-<details><summary> `block_distance_for_finalized_data` </summary>
+<details>
+<summary> `block_distance_for_finalized_data` </summary>
 
 This field defines the number of blocks that should be considered safe from chain reorganization; it varies from chain to chain. Look to other similarly architected specs for suggested values.
-
 </details>
 
-<details><summary> `blocks_in_finalization_proof` </summary>
+<details>
+<summary> `blocks_in_finalization_proof` </summary>
 
 This field defines the number of blocks that should be found in a finality proof; this will vary from chain to chain. Look to other similarly architected specs fo suggested values.
-
 </details>
 
-<details><summary> `average_block_time` </summary>
+<details>
+<summary> `average_block_time` </summary>
 
 The amount of time, on average, that a block passes in milliseconds. This field is used in several algorithms by the protocol to ensure provider quality of service.
-
 </details>
 
-<details><summary> `allowed_block_lag_for_qos_sync` </summary>
+<details>
+<summary> `allowed_block_lag_for_qos_sync` </summary>
 
 This is the maximum amount of blocks that can pass before the data a provider serves is considered stale. For faster blockchains/data sources, more blocks will be allowed. For slower blockchains/data sources, less blocks is suitable. Look to other similarly architected specs for values.
-
 </details>
 
-<details><summary> `shares` </summary>
+<details>
+<summary> `shares` </summary>
 
 The default is `1`. This is a bonus multiplier for rewards at the end of each month. There should be no reason to change this unless diected otherwise.
-
 </details>
 
-<details><summary> `min_stake_provider` </summary>
+<details>
+<summary> `min_stake_provider` </summary>
 
 This field defines the minimum amount that a provider must have staked to serve this API. This value can remain identical with default values supplied by all other specs during our testnet. As of `lava-testnet-2` ,the amount is `5000000` in denom `ulava`.
-
 </details>
 
 🔖REFERENCE: [`specs`](/spec-reference#specs)
@@ -360,7 +360,8 @@ Each API collection is composed of various pieces. These pieces collectively giv
 
 ### Collection Data
 
-<details><summary> `api_interface`</summary>
+<details>
+<summary> `api_interface`</summary>
 
 ```bash
 # pick one of the following:
@@ -369,16 +370,16 @@ Each API collection is composed of various pieces. These pieces collectively giv
 "jsonrpc"
 "rest"
 ```
-
 </details>
 
-<details><summary> `internal_path`</summary>
+<details>
+<summary> `internal_path`</summary>
 
 This field gives the internal path of the node for this specific ApiCollection. This is **most likely unneeded** unless the API sets vary on internal paths on teh node. The best example is the [AVAX specification](https://raw.githubusercontent.com/lavanet/lava/main/cookbook/specs/ avalanche.json) which uses internal paths to distinguish between subnets with distinct ApiCollections.
-
 </details>
 
-<details><summary> `type`</summary>
+<details>
+<summary> `type`</summary>
 
 ```bash
 # pick one of the following:
@@ -390,13 +391,12 @@ This field gives the internal path of the node for this specific ApiCollection. 
 "DELETE"
 
 ```
-
 </details>
 
-<details><summary> `add_on` </summary>
+<details>
+<summary> `add_on` </summary>
 
 Leaving this field as a blank string(`""`) is the default and expected input. If you add anything to the string, the API Collection will be processed as an addon with the name provided in the string. Under that condition, the collection will be treated as optional to providers. We cover addons in more detail in a [later section](/spec-guide#step-6-addonsextensions-optional-apis) of this guide.
-
 </details>
 
 <br />
@@ -415,7 +415,8 @@ It is possible to specify headers to be used in the API using this array. Leave 
 
 Each Header is composed of a `name` and a `kind` , optionally a `function_tag`.
 
-<details><summary>An Example Header </summary>
+<details>
+<summary>An Example Header </summary>
 
 ```json
 {
@@ -423,7 +424,6 @@ Each Header is composed of a `name` and a `kind` , optionally a `function_tag`.
   "kind": "pass_reply"
 }
 ```
-
 </details>
 
 ##### Kinds of Headers
@@ -474,15 +474,18 @@ If a spec is imported, then this is most likely already handled for you and does
 
 ```
 
-<details><summary> `function_tag` </summary>
+<details>
+<summary> `function_tag` </summary>
  This is the global name and identification of the parse_directive. Anywhere else that a parse_directive is referenced it will be referenced by this name.
 </details>
 
-<details><summary> `function_template` </summary>
+<details>
+<summary> `function_template` </summary>
 This is the (JSON) template from which the response will be parsed. It is used to identify the standard format of responses.
 </details>
 
-<details><summary> `api_name` </summary>
+<details>
+<summary> `api_name` </summary>
 The `api_name`` refers to the specific API that will be parsed by the parse_directive. It should correlate to a defined api in the `api_collections` or one inherited.
 </details>
 
@@ -538,24 +541,28 @@ There are a minimum of 10 CU per call - this should be sufficient for most calls
 
 ### Category
 
-<details><summary> `deterministic` </summary>
+<details>
+<summary> `deterministic` </summary>
 <b>true</b> if deterministic responses from API <i>(default)</i><br />
  <b>false</b> disables data reliability for non-deterministic responses. 
 </details>
 
-<details><summary> `local` </summary>
+<details>
+<summary> `local` </summary>
 <b>true</b> if local information from the node is returned through the API.<br />
 <b>false</b> if the local information on the node is irrelevant to response. <i>(default)</i>
 </details>
 
-<details><summary> 🚧 `subscription` </summary>
+<details>
+<summary> 🚧 `subscription` </summary>
 
 UNDER CONSTRUCTION => mark <b>false</b> <br />
 subscription indicates when to open up a streaming API with the provider (wss is currently disabled.
 
 </details>
 
-<details><summary> `stateful` </summary>
+<details>
+<summary> `stateful` </summary>
 
 Manages nonce consistency. Use <b>1</b> to propagate information to all providers, <b>0</b> for no propagation.
 

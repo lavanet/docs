@@ -14,18 +14,18 @@ import TabItem from '@theme/TabItem';
 
 | Service 🔌                    | URL 🔗                                           |
 | ----------------------------- | ------------------------------------------------ |
-| 🟢 tendermint-rpc             | <https://strgz.tendermintrpc.lava.build>         |
-| 🟢 tendermint-rpc / websocket | <wss://strgz.tendermintrpc.lava.build/websocket> |
-| 🟢 rest                       | <https://strgz.lava.build>                       |
+| 🟢 tendermint-rpc             | https://strgz.tendermintrpc.lava.build        |
+| 🟢 tendermint-rpc / websocket | wss://strgz.tendermintrpc.lava.build/websocket |
+| 🟢 rest                       | https://strgz.lava.build                       |
 | 🟢 grpc                       | strgz.grpc.lava.build                            |
 
 ### Testnet 🧪
 
 | Service 🔌                    | URL 🔗                                            |
 | ----------------------------- | ------------------------------------------------- |
-| 🟢 tendermint-rpc             | <https://strgzt.tendermintrpc.lava.build>         |
-| 🟢 tendermint-rpc / websocket | <wss://strgzt.tendermintrpc.lava.build/websocket> |
-| 🟢 rest                       | <https://strgzt.lava.build>                       |
+| 🟢 tendermint-rpc             | https://strgzt.tendermintrpc.lava.build         |
+| 🟢 tendermint-rpc / websocket | wss://strgzt.tendermintrpc.lava.build/websocket |
+| 🟢 rest                       | https://strgzt.lava.build                       |
 | 🟢 grpc                       | strgzt.grpc.lava.build                            |
 
 ## API Reference

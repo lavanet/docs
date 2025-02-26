@@ -95,13 +95,14 @@ The following shows the different scenarios for delegating to Validators and Pro
 | I want to stake as a Provider | The tx to create a Provider first delegates to a Validator then restakes as a Provider | Improves capital efficiency by requiring Providers to contribute towards security |
 
 
-<details><summary> Example </summary>
+<details>
+<summary> Example </summary>
 
 Staking to a Validator Scenario #1: Validator has staked a minimum of 100 `LAVA` and a user wants to delegate. The Delegator can stake `LAVA` solely to the Validator, without obligation to restake to a Provider. 
 
 Staking to a spec Scenario #2: Provider has staked a minimum of 100 `LAVA` and a user wants to delegate to the Provider’s Dymension RPC spec to earn a share of their rewards for serving Dymension RPC. Delegator is required to first delegate to a Validator. No additional capital is required but the delegation can be restaked to a spec, meaning greater risk but higher rewards (Provider rewards to Delegators). 
-
 </details>
+
 <br />
 
 ### Validators ⚖️
@@ -114,7 +115,8 @@ Validators earn block rewards, fees from subscriptions, and incentives from RPC 
 - **Incentivized RPC Pool rewards**: 4.9% of the Pool rewards go to Validators and their delegators earn. Pools consist of the native token of a chain deployed on Lava
 
 
-<details><summary> Example </summary>
+<details>
+<summary> Example </summary>
 
 Validator has staked a minimum of 100 `LAVA`. A user delegates 50 `LAVA` to the Validator i.e. Validator has 66.6% of stake and delegator has 33.3%. 
 Consider a scenario where the block reward is 1000 `LAVA` and commission is 5%. 
@@ -126,8 +128,8 @@ Of the 980 `LAVA`, the Validator gets (980*0.66) + (980*0.33*0.05) in rewards i.
 Additionally, if there is an Incentivized RPC Pool of 1000 TOKEN or a Subscription pool of 1000 `LAVA`, Providers and their delegators would get 95%, Validators and their delegators would get 4.9% and the Community Pool would get 0.1%. 
 
 Of the 4.9% (49 TOKEN or `LAVA`), assuming the same 2:1 ratio in Validator:Delegator stake and a 5% commission, the Validator gets (49*0.66) + (49*0.33*0.05) in rewards i.e. 33.1485 TOKEN or `LAVA`. Delegators would get 15.8515 TOKEN or `LAVA`. 
-
 </details>
+
 <br />
 
 ### Data Providers 📊
@@ -138,7 +140,8 @@ Providers earn rewards from subscriptions, commission on restaked `LAVA`, Incent
 - **Incentivized RPC Pool rewards**: Providers and their delegators earn 95% of the Pool rewards. Pools consist of the native token of a chain deployed on Lava
 - **Provider drops**: Lava has a rewards reserve designed to incentivize node runners to join in the initial phases of Mainnet
 
-<details><summary> Example </summary>
+<details>
+<summary> Example </summary>
 
 Provider has staked a minimum of 100 `LAVA`. A user delegates 50 `LAVA` to the Provider (which has also restaked to a Validator of their choice) i.e. Provider has 66.6% of stake and delegator has 33.3%. The Delegator would also restake the same 50 `LAVA` to a Validator, taking on extra risk but earning additional yield, as calculated in the previous section on Validator rewards.
 
@@ -150,7 +153,6 @@ Of the 95% (950 `LAVA`), given that Provider stake is 2:1 of delegations and the
 If there are multiple Providers on the network, individual Subscription rewards are determined by factors including Quality of Service and compute served. More details are available in the whitepaper. 
 
 Providers also receive Drops, a variable reward boost distributed monthly in direct proportion to paid demand for Lava. In cases where there are a few Providers or quality is low, Drop rewards may not be distributed. This is to prevent collusion between Consumers and Providers to earn rewards.
-
 </details>
 <br/>
 
@@ -159,7 +161,8 @@ Champions create and maintain specs on Lava, adding new chains and APIs for Prov
 
 
 
-<details><summary> Example </summary>
+<details>
+<summary> Example </summary>
 
 Provider has staked a minimum of 100 `LAVA`. A user delegates 50 `LAVA` to the Provider (which has also restaked to a Validator of their choice) i.e. Provider has 66.6% of stake and delegator has 33.3%.
 
@@ -167,5 +170,4 @@ Consider a scenario where the monthly Subscriptions total to 1000 `LAVA` and Pro
 Providers and their Delegators receive 95% (950 `LAVA`) of the Subscription rewards, after Validator and Community Pool rewards have been distributed (the remaining 5%). Champion commission is taken from this 95%.
 
 Of the 950 `LAVA`, assuming a Champion commission of 1%, Champions would receive 9.5 `LAVA` and the remaining 940.5 would be shared between Providers and their Delegators, as described in the Provider rewards section above. The 9.5 `LAVA` rewards are recalculated monthly, based on the amount of `LAVA` used to purchase subscriptions
-
 </details>

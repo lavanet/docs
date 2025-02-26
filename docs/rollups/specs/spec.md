@@ -29,7 +29,8 @@ Whenever the ecosystem demands a new API, a new spec is integrated. This dynamic
 
 An `index` is the name of the spec. Any time a spec is referenced it will be through its `index`.
 
-<details> <summary> Example </summary>
+<details>
+<summary> Example </summary>
 
 You can see the `EVMOS` spec live in production:
 
@@ -44,14 +45,14 @@ You can see the `EVMOS` spec live in production:
                 "name": "evmos mainnet",
                 "enabled": true,
 ```
-
 </details><br/>
 
 ### Imports ⬇️ {#imports}
 
 `imports` are references to borrowed functions from other sources. APIs/Chains of the same or similar architecture can import methods from an existing spec using its `index` and implementing any new logic. `imports` improve efficiency by eliminating the need to repeatedly integrate identical APIs.
 
-<details> <summary> Example </summary>
+<details>
+<summary> Example </summary>
 
 The following spec implements both Cosmos and Ethereum methods:
 
@@ -61,14 +62,14 @@ The following spec implements both Cosmos and Ethereum methods:
   "ETH1"
 ]
 ```
-
 </details><br/>
 
 ### API Collection 🛠️ {#api_collections}
 
 A specification always contains an `api_collection`. The `api_collection` contains the list of available methods or APIs that are activated and their respective `api_interfaces` (e.g. `"rest"`,`"grpc"`,`"jsonrpc"`,`"tendermintrpc"`, etc.). In other words, it outlines all the APIs or methods that must be active and operational to support a specific chain/API. Each method listed here must be served by providers and answerable to consumers.
 
-<details> <summary> Example </summary>
+<details>
+<summary> Example </summary>
 
 ```json
   "api_collections": [
@@ -85,14 +86,14 @@ A specification always contains an `api_collection`. The `api_collection` contai
                             }
                         ]
 ```
-
 </details><br/>
 
 ### Compute Units (CU) 🔢 {#cu}
 
 Every API call has a computational overhead. To quantify this, Lava employs `"compute_units"` or CUs. They act as a metric, assigning a nominal "cost" to each API call. This ensures transparent resource allocation and utilization, allowing consumers to gauge the intensity of their calls, and providers, in turn, to be rewarded based upon the intensity of compute.
 
-<details> <summary> Example </summary>
+<details>
+<summary> Example </summary>
 
 ```json
  "apis": [
@@ -115,14 +116,14 @@ Every API call has a computational overhead. To quantify this, Lava employs `"co
                                 "extra_compute_units": 0
                             }
 ```
-
 </details><br/>
 
 ### Add-Ons ➕ {#addons}
 
 Add-Ons (`"add-on"`) introduce optional new methods and APIs which are beyond the basic requirements for a chain/API. They are akin to plugins or modules that specific consumers may time-to-time request and providers may choose to serve for additional rewards. This allows for supplementary functionalities to be outlined inside a spec, giving both providers and consumers flexibility in customizing their experiences.
 
-<details> <summary> Example </summary>
+<details>
+<summary> Example </summary>
 
 The following is a snippet of the `debug` add-on for our `ETH1` spec:
 
@@ -145,14 +146,14 @@ The following is a snippet of the `debug` add-on for our `ETH1` spec:
                                 },
 
 ```
-
 </details><br/>
 
 ### Extensions 〰️ {#extensions}
 
 `"extensions"` allow for the adjustment or enhancement of existing methods and APIs within a spec for special use cases. They provide the means to tweak, optimize, or expand current functions based on the needs of a subset of consumers who require more functionality from specified method calls. This allows for alternative functionalities to be outlined inside a spec, giving both providers and consumers flexibility to serve / request special functions.
 
-<details><summary> Example </summary>
+<details>
+<summary> Example </summary>
 
 The following is a snippet of the `"archive"` extension from our `ETH1` spec:
 
@@ -170,7 +171,6 @@ The following is a snippet of the `"archive"` extension from our `ETH1` spec:
 ```
 
 This example specifies archive nodes who receive a "`cu_multiplier`" (hence more rewards) for returning earlier blocks.
-
 </details><br/>
 
 <hr />

@@ -14,13 +14,13 @@ import TabItem from '@theme/TabItem';
 
 | Service 🔌  | URL 🔗                            |
 | ----------- | --------------------------------- |
-| 🟢 json-rpc | <https://rpc.starknet.lava.build> |
+| 🟢 json-rpc | https://rpc.starknet.lava.build |
 
 ### Testnet 🧪
 
 | Service 🔌  | URL 🔗                                    |
 | ----------- | ----------------------------------------- |
-| 🟢 json-rpc | <https://rpc.starknet-testnet.lava.build> |
+| 🟢 json-rpc | https://rpc.starknet-testnet.lava.build |
 
 ## API Reference
 

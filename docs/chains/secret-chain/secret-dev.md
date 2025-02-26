@@ -14,13 +14,13 @@ import TabItem from '@theme/TabItem';
 
 | Service 🔌          | URL 🔗                                 |
 |---------------------|----------------------------------------|
-| 🟢  json-rpc  | <https://rpc.secret.lava.build> |
+| 🟢  json-rpc  | https://rpc.secret.lava.build |
 
 ### Testnet 🧪
 
 | Service 🔌          | URL 🔗                                 |
 |---------------------|----------------------------------------|
-| 🟢  json-rpc  | <https://rpc.secret-testnet.lava.build> |
+| 🟢  json-rpc  | https://rpc.secret-testnet.lava.build |
 
 ## [Gateway](https://gateway.lavanet.xyz/?utm_source=secret-dev&utm_medium=docs&utm_campaign=docs-to-gateway)
 

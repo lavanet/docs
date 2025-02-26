@@ -34,7 +34,8 @@ Please make sure you are using the right [`chainId`](/key-variables#chain-id). A
 
 The first step of establishing your Provider is to modify some of the DNS settings on the domain you purchased. In specific, you'll need to change the A Records on your domain. Changing your `A-Record` will create a subdomain that routes traffic to a specific provider process. Depending upon who you've purchased your domain through, A-Records may be visible under `Advanced DNS` or another label.
 
-<details> <summary> 🖧 Multiple Records (Recommended) </summary>
+<details>
+<summary> 🖧 Multiple Records (Recommended) </summary>
 
 
 We recommend you create a separate `A-Record` for each one of the chains that you plan to support. This is more secure, as the default behavior is to refuse connection unless a consumer connects on the correct subdomain. 
@@ -46,17 +47,16 @@ For example, if you wanted to support Ethereum & Lava Mainnets, Your DNS Setting
 | ------------------|-------| ----- |
 | A-Record          |   eth |   Your-Server-Public-IP-Address-Here   |
 | A-Record          |  lava |   Your-Server-Public-IP-Address-Here   |
-
 </details>
 
-<details> <summary> ⚀ Single Record </summary>
+<details>
+<summary> ⚀ Single Record </summary>
 
 Alternatively, you can create one `A-Record` that captures traffic to all sub-domains. If you are supporting a large number of chains that frequently changes, doing this may somewhat simplify your process.
 
 | Record Type       | Host | Value |
 |-------------------|------|-------|
 | A-Record          | *    | Your-Server-Public-IP-Address-Here |
-
 </details>
 <br />
 

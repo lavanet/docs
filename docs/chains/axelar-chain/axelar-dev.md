@@ -17,7 +17,7 @@ Lava🌋 now offers incentivized public RPC for Axelar. Developers can get free,
 | Service 🔌                    | URL 🔗                                  |
 | ----------------------------- | --------------------------------------- |
 | 🟢 tendermint-rpc             | https://axelar.tendermintrpc.lava.build |
-| 🟢 tendermint-rpc / websocket | <wss://tm.axelar.lava.build/websocket>  |
+| 🟢 tendermint-rpc / websocket | wss://tm.axelar.lava.build/websocket  |
 | 🟢 rest                       | https://axelar.lava.build               |
 | 🟢 grpc                       | grpc.axelar.lava.build                  |
 
@@ -26,7 +26,7 @@ Lava🌋 now offers incentivized public RPC for Axelar. Developers can get free,
 | Service 🔌                    | URL 🔗                                         |
 | ----------------------------- | ---------------------------------------------- |
 | 🟢 tendermint-rpc             | https://tm.axelar-testnet.lava.build           |
-| 🟢 tendermint-rpc / websocket | <wss://tm.axelar-testnet.lava.build/websocket> |
+| 🟢 tendermint-rpc / websocket | wss://tm.axelar-testnet.lava.build/websocket |
 | 🟢 rest                       | https://axelart.lava.build                     |
 | 🟢 grpc                       | grpc.axelar-testnet.lava.build                 |
 
