@@ -18,9 +18,3 @@ LAVA holders are incentivized to stake their tokens to secure Lava while receivi
 Validators earn LAVA from the creation of new blocks and the transaction fees, and on the other hand - slashing may occur to punish bad actors, all facilitated by Tendermint's consensus protocol. 
 
 _Note_: This does not cover Delegating LAVA to validators
-
-
-:::tip Start a validators
-
-[<RoadmapItem icon="🛠" title="Setup steps" description="Step by step guide on getting started"/>](/validator-manual)
-:::

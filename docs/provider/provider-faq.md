@@ -1,19 +1,7 @@
 ---
-slug: /faq
-title: ❓ FAQs 
+slug: /provider-faq
+title: Provider FAQ
 ---
-
-# FAQs
-
-![FAQs Banner](/img/banner/FAQs.jpg)
-
-:::info
-There is an additional channel called #FAQ on our Discord. If you need further help hop on to our support channels there.
-:::
-
-<hr />
-
-## Nodes, Validators and Providers ⏫ {#nodes-validators-providers}
 
 ### 🟡  What is a specification and what does it let me do? {#specs}
 A specification (“spec”) is a module which you can add to Lava, extending the range of data services the network of providers can serve. RPC specs are the first to be added to Lava, and we will offer subgraph specs soon.
