@@ -2,33 +2,176 @@
 @tailwind components;
 @tailwind utilities;
 
-/**
- * Any CSS included here will be global. The classic template
- * bundles Infima by default. Infima is a CSS framework designed to
- * work well for content-centric websites.
- */
+@import url('https://fonts.googleapis.com/css2?family=Magnum+Sans:wght@300;400;600;700&display=swap');
 
-/* You can override the default Infima variables here. */
+/* Light Mode */
 :root {
-  --ifm-color-primary: #852e2e;
-  --ifm-color-primary-dark: #782929;
-  --ifm-color-primary-darker: #712727;
-  --ifm-color-primary-darkest: #5d2020;
-  --ifm-color-primary-light: #923333;
-  --ifm-color-primary-lighter: #993535;
-  --ifm-color-primary-lightest: #ad3c3c;
-  --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(255, 246, 3, 0.803);
+  --ifm-font-family-base: "Inter", sans-serif;
+  --ifm-font-size-base: 16px;
+  --ifm-background-color: #ffffff;
+  --ifm-heading-font-family: "Inter", sans-serif;
+  --ifm-color-primary: #cc5500; /* GitBook's primary orange */
+  --ifm-color-primary-dark: #9c3f00;
+  --ifm-color-primary-light: #ff7733;
+  --ifm-navbar-background-color: #ffffff;
+  --ifm-navbar-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  --ifm-menu-color: #333;
+  --ifm-menu-background-color: #ffffff;
+  --ifm-navbar-link-color: #333;
+  --ifm-table-border-color: #ddd;
+  --ifm-table-header-background: #f4f6f8;
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
+/* Dark Mode */
 [data-theme='dark'] {
-  --ifm-color-primary: #fdb4b4;
-  --ifm-color-primary-dark: #fc8a8a;
-  --ifm-color-primary-darker: #fb7575;
-  --ifm-color-primary-darkest: #fa3535;
-  --ifm-color-primary-light: #fedede;
-  --ifm-color-primary-lighter: #fff3f3;
-  --ifm-color-primary-lightest: #ffffff;
-  --docusaurus-highlighted-code-line-bg: rgba(239, 233, 109, 0.252);
+  --ifm-background-color: #121212;
+  --ifm-color-primary: #ff7733;
+  --ifm-color-primary-dark: #cc5500;
+  --ifm-color-primary-light: #ff9966;
+  --ifm-navbar-background-color: #1a1a1a;
+  --ifm-navbar-shadow: 0 2px 10px rgba(255, 255, 255, 0.08);
+  --ifm-menu-color: #dddddd;
+  --ifm-menu-background-color: #1a1a1a;
+  --ifm-navbar-link-color: #ffffff;
+  --ifm-table-border-color: #444;
+  --ifm-table-header-background: #222;
+}
+
+/* Navbar */
+.navbar {
+  box-shadow: var(--ifm-navbar-shadow);
+  background: var(--ifm-navbar-background-color);
+}
+
+.navbar__brand {
+  font-weight: bold;
+  font-size: 18px;
+  color: var(--ifm-color-primary);
+}
+
+.navbar__link {
+  color: var(--ifm-navbar-link-color);
+}
+
+/* Sidebar */
+.menu {
+  background: var(--ifm-menu-background-color);
+  padding-top: 16px;
+}
+
+.menu__link {
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--ifm-menu-color);
+  padding: 8px 20px;
+  border-radius: 5px;
+  letter-spacing: 0.5px !important; 
+  transition: background 0.2s ease-in-out;
+}
+
+.menu__link--active,
+.menu__list-item:hover > .menu__link {
+  background: rgba(255, 119, 51, 0.2); /* Highlight effect */
+  color: var(--ifm-color-primary);
+}
+
+/* Content */
+.markdown h1 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.markdown h2 {
+  font-size: 22px;
+  font-weight: 600;
+  margin-top: 20px;
+}
+
+.markdown p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--ifm-menu-color);
+}
+
+/* Code Blocks */
+pre code {
+  background-color: #f5f7fb !important;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 14px;
+}
+
+[data-theme='dark'] pre code {
+  background-color: #222 !important;
+  color: #ddd !important;
+}
+
+/* Inline Code */
+code {
+  background-color: rgba(27, 31, 35, 0.05);
+  padding: 3px 6px;
+  border-radius: 4px;
+}
+
+[data-theme='dark'] code {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ff9966;
+}
+
+/* Links */
+a {
+  color: var(--ifm-color-primary);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+th,
+td {
+  border: 1px solid var(--ifm-table-border-color);
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background: var(--ifm-table-header-background);
+  font-weight: 600;
+}
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 768px) {
+  .menu {
+    background: var(--ifm-menu-background-color);
+  }
+  .menu__list {
+    padding-left: 10px;
+  }
+}
+
+.navbar {
+  height: 70px !important;
+  background-color: var(--ifm-navbar-background-color) !important;
+  border-bottom: 1px solid var(--ifm-table-border-color) !important;
+  padding: 10px 30px !important;
+}
+
+.navbar__link {
+  font-size: 15px !important;
+  font-weight: 400 !important;
+  padding: 8px 18px !important;
+  text-decoration: none !important;
+}
+
+.custom-sidebar-spacing {
+  margin-bottom: 30px; /* Adjust spacing as needed */
 }
