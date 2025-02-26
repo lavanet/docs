@@ -3,6 +3,9 @@ slug: /daveloper-faq
 title: Developer FAQ
 ---
 
+### 🟡 What rate limits do public endpoints have? {#lava-rate-limits}
+Public Lava endpoints have 3 requests/s. To access other limits go x, contact y.
+
 
 ### 🟡 Using Lava with Other RPC Clients {#using-lava-with-other-rpcs}
 

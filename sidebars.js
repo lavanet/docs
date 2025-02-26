@@ -159,13 +159,13 @@ const sidebars = {
                 },
                 {
                   type: "doc",
-                  label: "Use Lava Gateway",
-                  id: "developer/endpoints/gateway-endpoints"
+                  label: "Use Public Community Endpoints",
+                  id: "developer/endpoints/public-rpc"
                 },
                 {
                   type: "doc",
-                  label: "Use Public Community Endpoints",
-                  id: "developer/endpoints/public-rpc"
+                  label: "Use Lava Gateway",
+                  id: "developer/endpoints/gateway-endpoints"
                 },
               ],
             },
