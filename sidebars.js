@@ -54,15 +54,6 @@ const sidebars = {
           label: "How to bridge Lava",
           id: "intro/how-to-bridge-lava",
         },
-      ],
-    },
-    {
-      type: "category",
-      label: "Lava token",
-      collapsible: false,
-      className: "custom-sidebar-spacing", // Add a custom class
-      collapsed: false,
-      items: [
         {
           type: "doc",
           label: "Staking and Restaking Lava",
@@ -492,8 +483,5 @@ const sidebars = {
     },
   ]
 };
-
-module.exports = sidebars;
-
 
 module.exports = sidebars;

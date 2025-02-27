@@ -9,9 +9,7 @@ import Admonition from '@theme/Admonition';
 # Join testnet - Manual setup with Cosmovisor
 ## Prerequisites
 
-
 TODO: add hardware requirements here directly + simplify the guide
-
 
 
 1. Verify [hardware requirements](reqs) are met

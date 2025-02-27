@@ -3,7 +3,7 @@ slug: /gateway-endpoints
 title: Gateway Endpoints
 ---
 
-Gateway
+# Magma Gateway
 
 TODO: Update this page with relevant info about Gateway + subscriptions
 
@@ -11,7 +11,6 @@ TODO: Update this page with relevant info about Gateway + subscriptions
 # Create your Gateway account
 
 To access endpoints through Gateway first create an account using the following [link](https://gateway.lavanet.xyz/login?utm_source=gateway-access-page&utm_medium=docs&utm_campaign=docs-to-gateway).
-
 
 ![Gateway Chains](/img/supportedchains.png)
 
