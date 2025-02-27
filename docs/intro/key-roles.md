@@ -2,7 +2,7 @@
 slug: /key-roles
 title: Key Roles
 ---
-# **Key Roles in Lava Network** 🌋
+# **Key Roles in Lava Network** 
 
 The Lava Network thrives through the collaboration of five essential roles, each contributing uniquely to create a robust and efficient blockchain data ecosystem. 
 

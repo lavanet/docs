@@ -3,21 +3,21 @@ slug: /block-explorer
 title: 🔭 Explorers
 ---
 
-# Lava Blockchain Explorers 🔭
+# Lava Blockchain Explorers 
 
 ![Explorers Banner](/img/banner/Explorers-b802a6190fe349c4b6181d3971f81da9.jpg)
 
 <center>
 
-## ⭕ Official Explorer {#official-explorer} 
+## ⭕ Official Lava Explorer {#official-explorer} 
 
 ![Nodes Guru](/img/explorer/nodes_guru.svg) <br />
-Our **official block explorer** is brought to you by Nodes.Guru: <br />
+Lava **official block explorer** is brought to you by Nodes.Guru: <br />
 https://lava.explorers.guru/
 
 </center>
 
-## Community Block Explorers 🧑🏾‍🤝‍🧑🏾
+## Community Block Explorers 🧑🏾‍🤝
 
 ### Mainnet Explorers
 
@@ -40,10 +40,7 @@ https://lava.explorers.guru/
 - ✨[CoinHunters](https://explorer.coinhunterstr.com/lava)
 - ✨[MELLIFERA (Restaking feature support with Keplr, Leap, Ledger wallets) ](https://lavatest.mellifera.network)
 
-## Community Public RPC Explorer 🕵🏼
-One of our community members is providing an experimental service to see all exposed providers on the network:
+## Community Public RPC Explorer 
+One of Lava community members is providing an experimental service to see all exposed providers on the network:
 > https://services.kjnodes.com/testnet/lava/public-rpc/
 
-## Lava SDK Block Explorer 🌐 
-One of our team members has developed an [`allblocks`](/all-blocks-app) application which gets the latest block from Lava supported chains and reports latency information:
-> https://allblocks.vercel.app

@@ -2,12 +2,11 @@
 slug: /subscriptions
 title: Subscriptions
 ---
-# 
-Lava RPC
+# Lava RPC
 
-Rate Limits
-For iprpc endpoints; for gateway
+TODO: Add up-to-date info 
+- What endpoints are available
+- What are the rate limits for each method
+- When / why / how consumers would get subscriptions
+- What are subscriptions
 
-
-Subscriptions
-How to get different specific limits, who to contact.

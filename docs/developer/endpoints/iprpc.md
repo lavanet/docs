@@ -7,6 +7,8 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 # Use Incentivized Public RPC (ipRPC) Edpoints
+TODO: add API endpoints to all of the chains
+Note: once endpoints site is available, this page can be updated to automatically pull info from the same jsinfo api source or host info about available API endpoints. 
 
 Public endpoints and available API methods for each supported chain that has incentivized pools.
 

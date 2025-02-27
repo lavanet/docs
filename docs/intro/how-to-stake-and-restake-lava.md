@@ -3,16 +3,16 @@ slug: /how-to-stake-and-restake-lava
 title: 🏗 How to stake and restake Lava
 ---
 
-# **How to stake and restake LAVA 🏗 **
+# How to stake and restake LAVA 
 
 Lava's vision is to enable AI agents and anyone to use blockchain apps, 24/7, with no downtime.
 
 Lava is a protocol which coordinates dapp and AI agent traffic on every blockchain. Lava aggregates RPC providers, dynamically scaling to support demand and routing requests to the fastest, most reliable providers.
 
-The following instructions will walk you through how LAVA (Lava Mainnet tokens) can be staked and restaked. If your tokens were acquired on Bybit, Gate or MEXC, they are ERC-20 LAVA and you first need to bridge to Lava Mainnet. See [How to Bridge Lava](https://docs.lavanet.xyz/how-to-bridge-lava).
+The following instructions will walk you through how LAVA (Lava Mainnet tokens) can be staked and restaked. If your tokens were acquired on Bybit, Gate or MEXC, they are ERC-20 LAVA and you first need to bridge to Lava Mainnet. See [How to Bridge Lava](how-to-bridge-lava).
 
 
-## **Staking and Restaking LAVA:**
+## Staking and Restaking LAVA
 
 # 🎥 How to stake and restake LAVA (~6m)
 
@@ -23,12 +23,12 @@ The following instructions will walk you through how LAVA (Lava Mainnet tokens) 
 <br/><br/>
 <hr/>
 <br/>
-### **Dashboards that support staking and restaking LAVA:**
+### Dashboards that support staking and restaking LAVA
 - Leap Wallet, Mellifera, StakingRewards, Polli, Keplr
 
 *Please Note: Keplr currently only supports LAVA staking and does not allow restaking.*
 
-## **How to stake and restake LAVA on Leap:**
+## How to stake and restake LAVA on Leap
 
 **Step 1:** Open the Leap browser extension and navigate to the “Stake” section
 
@@ -64,7 +64,7 @@ The following instructions will walk you through how LAVA (Lava Mainnet tokens) 
 
 <br/>
 
-## **How to stake LAVA via Keplr:** 
+## How to stake LAVA via Keplr
 *Please note: Keplr currently supports LAVA staking only, and does not support restaking.*
 
 **Step 1:** Go to the Keplr dashboard, navigate to the Lava blockchain and select a Validator of your choice.  
@@ -85,13 +85,13 @@ The following instructions will walk you through how LAVA (Lava Mainnet tokens) 
 
 <br/>
 
-## **How to stake and restake LAVA on Polli:** 
+## How to stake and restake LAVA on Polli
 
 You can refer to this video walkthrough from Polli on how to stake and restake your LAVA: https://x.com/i/status/1874864969243845026 
 
 <br/>
 
-## **How to stake and restake LAVA on Mellifera:**
+## How to stake and restake LAVA on Mellifera
 
 **Step 1:** Navigate to the bottom of the “Dashboard” section and click “Delegate & Restake”
 

@@ -11,7 +11,7 @@ In this section, we will cover the governance parameters for both the **Mainnet*
 
 ---
 
-## 🌐 **Mainnet Governance Parameters**
+## Mainnet Governance Parameters
 
 | **Parameter**                                        | **Description**                                                                                                   | **Value**       |
 | ---------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- | --------------- |
@@ -30,7 +30,7 @@ In this section, we will cover the governance parameters for both the **Mainnet*
 
 ---
 
-## 🧪 **Testnet Governance Parameters**
+## Testnet Governance Parameters
 
 The testnet governance parameters are designed to enable faster iterations and experimentation, helping the community to test and refine proposals before they are submitted on the mainnet.
 
@@ -47,6 +47,6 @@ The testnet governance parameters are designed to enable faster iterations and e
 
 ---
 
-### 🔄 **Modifiable Parameters**
+### Modifiable Parameters
 
 The governance parameters listed above are **modifiable by governance**, meaning that the community can propose changes to these values if necessary. This flexibility ensures that the governance model can adapt to changing network conditions, scaling requirements, and user feedback.

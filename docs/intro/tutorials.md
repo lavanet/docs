@@ -3,14 +3,10 @@ slug: /tutorials
 title: 📚 Tutorials & Resources 
 ---
 
-# 📚 Tutorials & Resources 
+# Tutorials & Resources 
 
-![Tutorials & Resource Banner](/img/banner/Tutorials-&-Resources-6c1b0890b929c44e93ad1d6f43c4d1fa.jpg)
+A selection of learning resources and example projects created by Lava community that can assist you in experienced with Lava and web3.  
 
-In addition to our documentation, Lava has a growing selection of supportive learning resources that can assist you in your journey to master Web3.  
-
-
----
 
 ## ![](/img/favicon.ico) Lava Tutorials 
 
@@ -39,10 +35,3 @@ In addition to our documentation, Lava has a growing selection of supportive lea
 
 ### 📚 Explorers & Dashboards
 - Open Source  [LAVA ping dashboard](https://github.com/MELLIFERA-Labs/lava-explorer) restaking feature support with Keplr, Leap, Ledger wallets
---- 
-
-## 💬 Discord Server
-
-Still stuck? Our Discord Server channels are a premier way to get and receive help! We have an excellent community full of helpful providers and developers experienced in using Lava. Most inquiries receive a satisfactory response within minutes to hours!
-
-<iframe src="https://discordapp.com/widget?id=963778337904427018&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>

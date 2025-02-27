@@ -5,7 +5,7 @@ title: Gateway Endpoints
 
 # Magma Gateway
 
-Notes: this page should clearly explain who Gateway belongs to (is it Lava product or not) and why users could go to Gateway and use Gateway endpoints vs public ones.
+TODO: Update this page with relevant info about Gateway + subscriptions
 
 
 # Create your Gateway account

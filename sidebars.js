@@ -132,10 +132,6 @@ const sidebars = {
           label: "Build with Lava RPC",
           collapsible: false,
           collapsed: false,
-          link: {
-            type: "doc",
-            id: "developer/developer",
-          },
           items: [
             {
               type: "doc",
@@ -308,7 +304,7 @@ const sidebars = {
             },
             {
               type: "doc",
-              label: "2. Configure a Validator",
+              label: "2. Configure a Validator process",
               id: "validator/validator-manual",
             },
           ],

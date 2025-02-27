@@ -3,7 +3,11 @@ slug: /lava-token
 title: The Lava Token
 ---
 
-# **The Lava Token ⚙️**
+# The Lava Token 
+
+The Lava token coordinates all network participants to provide fast, reliable, permissionless data services. 
+
+LAVA is staked to secure the network and restaked to direct data traffic to top Providers.
 
 # 🎥 LAVA token introduction (~3m)
 
@@ -15,8 +19,5 @@ title: The Lava Token
 <hr/>
 <br/>
 
-The Lava token coordinates all network participants to provide fast, reliable, permissionless data services. 
-
-LAVA is staked to secure the network and restaked to direct data traffic to top Providers.
 
 You can read more about LAVA in the [tokenomics section](../tokenomics/supply.md) of this documentation.

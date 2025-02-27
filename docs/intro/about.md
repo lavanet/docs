@@ -8,7 +8,7 @@ title: 🌋 About Lava
 Lava is a decentralized protocol that provides ultra-reliable RPC (Remote Procedure Call) services for blockchain networks. It works by coordinating and aggregating RPC providers, automatically routing traffic to the most efficient and reliable nodes. The protocol uses economic incentives, including provider rewards and reputation systems, to ensure high-quality service delivery. This infrastructure is crucial for AI agents, dapps, and users who need consistent, uninterrupted access to blockchain data and services.
 
 
-### **AI agents and users depend on RPC** 🌐
+### AI agents and users depend on RPC
 
 Lava's vision is to enable AI agents and anyone to use blockchain apps, 24/7, with no downtime.
 
@@ -17,7 +17,7 @@ Lava is a protocol which coordinates dapp and AI agent traffic on every blockcha
 Incentives are key to the protocol. For example, in the early stages of the network, an allocation of the total supply has been allocated to rewarding data providers. This is designed to bootstrap the supply side of the network, mitigating the cold start problem many networks face.
 
 
-### **Key components of the protocol**
+### Key components of the protocol
 
 Lava Network has many different participants. 
 
@@ -50,10 +50,10 @@ flowchart LR
 For detailed implementation of specific features, please refer to the [Lava Whitepaper](https://lavanet.xyz/whitepaper).
 :::
 
-### **Join Lava ecosystem**
+### Join Lava ecosystem
 
 There are lots of different ways to contirnute to Lava ecosystem. Check out the ecosystem roles [here](./key-roles).
 
-### **Join Lava Community**
+### Join Lava Community
 - Join Lava [Discord](https://discord.gg/lavanetxyz) and specific channels for developers and providers
 - Join Lava [Telegram](https://t.me/officiallavanetwork)

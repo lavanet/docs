@@ -9,7 +9,7 @@ In Lava Network, proposals are the primary mechanism for implementing changes, u
 
 ---
 
-### **1. Text Proposals 📝**
+### 1. Text Proposals 
 
 **Purpose**: Text proposals are non-binding and are primarily used for signaling or gathering feedback from the community. They do not directly result in changes to the protocol but can influence future decisions or provide clarity on community preferences.
 
@@ -22,7 +22,7 @@ In Lava Network, proposals are the primary mechanism for implementing changes, u
 
 ---
 
-### **2. Parameter Change Proposals 🔧**
+### 2. Parameter Change Proposals 
 
 **Purpose**: Parameter change proposals are used to modify the configuration of the Lava Network without requiring a software upgrade. These proposals enable the community to adjust various protocol parameters to optimize performance, security, and incentives.
 
@@ -36,7 +36,7 @@ In Lava Network, proposals are the primary mechanism for implementing changes, u
 
 ---
 
-### **3. Software Upgrade Proposals 🛠️**
+### 3. Software Upgrade Proposals 
 
 **Purpose**: Software upgrade proposals are used to introduce new features, patches, or improvements that require changes to the Lava blockchain’s underlying software. These proposals are critical for implementing significant upgrades and fixing bugs.
 
@@ -50,7 +50,7 @@ In Lava Network, proposals are the primary mechanism for implementing changes, u
 
 ---
 
-### **4. Specification Proposals 🧩**
+### 4. Specification Proposals 
 
 **Purpose**: Specification proposals are unique to the Lava Network. They are used to add, update, or modify API specifications (specs) for different blockchains and services supported by Lava. These proposals ensure that the Lava protocol can adapt to new chains and evolving API requirements.
 
@@ -64,7 +64,7 @@ In Lava Network, proposals are the primary mechanism for implementing changes, u
 
 ---
 
-### **5. Community Pool Spend Proposals 💰**
+### 5. Community Pool Spend Proposals 
 
 **Purpose**: Community pool spend proposals are designed to allocate funds from the community pool to support projects, initiatives, or contributions that benefit the Lava ecosystem.
 

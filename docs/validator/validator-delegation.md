@@ -1,0 +1,1 @@
+TODO: add details about validator delegation program
