@@ -90,6 +90,7 @@ These fields combined with others make the first section of a spec:
 
 🔍 Let’s investigate these fields one-by-one:
 
+
 <details>
 <summary> `index` </summary>
 
@@ -117,9 +118,11 @@ Reliability threshold sets the frequency of reliability related messages. By def
 <details>
 <summary> `data_reliability_enabled` </summary>
 
+
 Data reliability should be enabled unless there is a compelling reason to disable it! The default value here is `true`. This means Lava protocol will work to ensure data is accurate by doing data reliability checks. Note that if you are creating a spec for something other than a blockchain - you will want to set this to `false`.
 
 ⚠️ As of `lava-testnet-2` support for data reliability on diverse APIs is work-in-progress.
+
 </details>
 
 <details>
@@ -156,6 +159,7 @@ The default is `1`. This is a bonus multiplier for rewards at the end of each mo
 <summary> `min_stake_provider` </summary>
 
 This field defines the minimum amount that a provider must have staked to serve this API. This value can remain identical with default values supplied by all other specs during our testnet. As of `lava-testnet-2` ,the amount is `5000000` in denom `ulava`.
+
 </details>
 
 🔖REFERENCE: [`specs`](/spec-reference#specs)
@@ -360,8 +364,10 @@ Each API collection is composed of various pieces. These pieces collectively giv
 
 ### Collection Data
 
+
 <details>
 <summary> `api_interface`</summary>
+
 
 ```bash
 # pick one of the following:
@@ -370,6 +376,7 @@ Each API collection is composed of various pieces. These pieces collectively giv
 "jsonrpc"
 "rest"
 ```
+
 </details>
 
 <details>
@@ -380,6 +387,7 @@ This field gives the internal path of the node for this specific ApiCollection. 
 
 <details>
 <summary> `type`</summary>
+
 
 ```bash
 # pick one of the following:
@@ -397,6 +405,7 @@ This field gives the internal path of the node for this specific ApiCollection. 
 <summary> `add_on` </summary>
 
 Leaving this field as a blank string(`""`) is the default and expected input. If you add anything to the string, the API Collection will be processed as an addon with the name provided in the string. Under that condition, the collection will be treated as optional to providers. We cover addons in more detail in a [later section](/spec-guide#step-6-addonsextensions-optional-apis) of this guide.
+
 </details>
 
 <br />
@@ -415,8 +424,10 @@ It is possible to specify headers to be used in the API using this array. Leave 
 
 Each Header is composed of a `name` and a `kind` , optionally a `function_tag`.
 
+
 <details>
 <summary>An Example Header </summary>
+
 
 ```json
 {
@@ -424,6 +435,7 @@ Each Header is composed of a `name` and a `kind` , optionally a `function_tag`.
   "kind": "pass_reply"
 }
 ```
+
 </details>
 
 ##### Kinds of Headers
@@ -474,6 +486,7 @@ If a spec is imported, then this is most likely already handled for you and does
 
 ```
 
+
 <details>
 <summary> `function_tag` </summary>
  This is the global name and identification of the parse_directive. Anywhere else that a parse_directive is referenced it will be referenced by this name.
@@ -486,6 +499,7 @@ This is the (JSON) template from which the response will be parsed. It is used t
 
 <details>
 <summary> `api_name` </summary>
+
 The `api_name`` refers to the specific API that will be parsed by the parse_directive. It should correlate to a defined api in the `api_collections` or one inherited.
 </details>
 
@@ -541,28 +555,36 @@ There are a minimum of 10 CU per call - this should be sufficient for most calls
 
 ### Category
 
+
 <details>
 <summary> `deterministic` </summary>
+
 <b>true</b> if deterministic responses from API <i>(default)</i><br />
  <b>false</b> disables data reliability for non-deterministic responses. 
 </details>
 
+
 <details>
 <summary> `local` </summary>
+
 <b>true</b> if local information from the node is returned through the API.<br />
 <b>false</b> if the local information on the node is irrelevant to response. <i>(default)</i>
 </details>
 
+
 <details>
 <summary> 🚧 `subscription` </summary>
+
 
 UNDER CONSTRUCTION => mark <b>false</b> <br />
 subscription indicates when to open up a streaming API with the provider (wss is currently disabled.
 
 </details>
 
+
 <details>
 <summary> `stateful` </summary>
+
 
 Manages nonce consistency. Use <b>1</b> to propagate information to all providers, <b>0</b> for no propagation.
 
