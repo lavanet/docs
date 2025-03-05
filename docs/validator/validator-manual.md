@@ -15,6 +15,20 @@ If you don't have an account (wallet) on Lava yet, Refer to [creating new accoun
 
 Once your account is funded, run this to stake and start validating.
 
+0. Set the temporary variable `$current_lavad_binary` for the following operation.
+
+With Option A - With Cosmovisor
+
+```bash
+current_lavad_binary=$HOME/.lava/cosmovisor/current/bin/lavad
+```
+
+With Option B - Without Cosmovisor
+
+```bash
+current_lavad_binary=lavad
+```
+
 1. Verify that your node has finished synching and it is caught up with the network
 
 ```bash
