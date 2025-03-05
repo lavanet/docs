@@ -13,7 +13,7 @@ The proposal life cycle on Lava Network involves several stages, starting from s
 
 ### Overview
 
-The first step in the governance process is to submit a proposal Before this, a community member may want to post the proposal for feedback in the [Lava Community Forum](https://community.lavanet.xyz). 
+The first step in the governance process is to submit a proposal.
 
 Proposals can be of different types, such as text proposals, parameter change proposals, software upgrade proposals, and spec proposals. To submit a proposal, users must meet the minimum deposit requirement and provide the necessary metadata.
 

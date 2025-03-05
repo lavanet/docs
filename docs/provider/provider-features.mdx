@@ -8,7 +8,6 @@ title: Features
 
 This page details the various features available to providers in the Lava network, along with instructions on how to operate them:
 
-- [💰 Rewards Tracking](#rewards-tracking)
 - [⚡ Caching](#caching)
 - [🔌 Addons and Extensions](#addonsextensions)
 - [🧊 Freeze and Unfreeze](#freeze)
@@ -19,30 +18,6 @@ This page details the various features available to providers in the Lava networ
 - [📈 Prometheus Metrics Configuration](#config-prometheus)
 
 --- 
-
-## 💰 Rewards Tracking{#rewards-tracking}
-
-Once a provider is up and running, consumers will request relay services from the provider. Once the provider provides the service, they will be eligible to get rewards from the consumer they served. The provider can receive rewards when a consumer's monthly plan expires.
-
-Providers can query the estimated amount they will receive with the query:
-
-```bash
-lavad q pairing provider-monthly-payout <lava-provider-address> 
-```
-
-Claimable rewards can be queried with:
-
-```bash
-lavad q dualstaking delegator-rewards <lava-provider-address>
-```
-
-and can be claimed to the provider balance with:
-
-```bash
-lavad tx dualstaking claim-rewards --from <provider-key>
-```
-
-<br />
 
 ## ⚡ Caching{#caching}
 

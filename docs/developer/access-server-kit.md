@@ -20,4 +20,4 @@ The **Lava Server Kit** is a GO language reference implementation that provides 
 3. Easy setup process
 
 ### Guides
-- Community [guide](https://services.mellifera.network/testnets/lava-network/RPC_Consumer) from MELLIFERA validator
+- A [guide](https://services.mellifera.network/testnets/lava-network/RPC_Consumer) for creating a custom gateway. Created by Lava community member, MELLIFERA.

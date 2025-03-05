@@ -4,7 +4,7 @@ title: Endpoints
 ---
 
 # Ways to access Lava RPC
-TODO: update info, especially gateway
+
 ## Incentivized Public Endpoints
 
 Lava works with various blockchains to establish **Incentivized Public RPC (ipRPC) endpoints**. ipRPC endpoints are given unified URLs serviced by diverse providers of each chain's ecosystem. Providers are paid by those respective ecosystems to offer their services and developers benefit from the availability of highly-serviced endpoints unified through a single URL.
@@ -35,9 +35,5 @@ Community endpoints are RPC endpoints provided by various community members and 
 
 ## Gateway
 
-The **Lava Gateway** is a simplified web interface that gives developers instant access to blockchain data. The Gateway uses Lava Server Kit to provide a hosted point of access for developers looking for RPC through the Lava Network. This allows users to manage and configure Web3 APIs through an intuitive controls directly from the browser.
+The **Lava Gateway**, developed by Magma team, is a simplified web interface that gives developers instant access to blockchain data. The Gateway uses Lava Server Kit to provide a hosted point of access for developers looking for RPC through the Lava Network. This allows users to manage and configure Web3 APIs through an intuitive controls directly from the browser. Through gateway, consumers get a very easy and intuitive interface for API access as well as example calls for each supported chain.
 
-**Features**
-
-1. Easy and intuitive interface for API access
-2. Example calls for each supported chain

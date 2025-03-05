@@ -3,15 +3,13 @@ slug: /gateway-endpoints
 title: Gateway Endpoints
 ---
 
-# Magma Gateway
+# Lava Gateway
 
-TODO: Update this page with relevant info about Gateway + subscriptions
+The **Lava Gateway**, developed and managed by Magma team, is a simplified web interface that gives developers instant access to blockchain data. The Gateway uses Lava Server Kit to provide a hosted point of access for developers looking for RPC through the Lava Network. This allows users to manage and configure Web3 APIs through an intuitive controls directly from the browser and find example calls for the supported cahins.
 
+## Create your Gateway account
 
-# Create your Gateway account
-
-To access endpoints through Gateway first create an account using the following [link](https://gateway.lavanet.xyz/login?utm_source=gateway-access-page&utm_medium=docs&utm_campaign=docs-to-gateway).
-
+To access endpoints through Gateway first create an account using the following [link](https://gateway.lavanet.xyz/login?utm_source=gateway-access-page&utm_medium=docs&utm_campaign=docs-to-gateway). Once registered you will see the following UI which displays the chains currently supported on the gateway.
 ![Gateway Chains](/img/supportedchains.png)
 
 

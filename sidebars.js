@@ -51,12 +51,17 @@ const sidebars = {
         },
         {
           type: "doc",
+          label: "Restaking Lava",
+          id: "intro/restaking"
+        },
+        {
+          type: "doc",
           label: "How to bridge Lava",
           id: "intro/how-to-bridge-lava",
         },
         {
           type: "doc",
-          label: "Staking and Restaking Lava",
+          label: "How to stake and restake Lava",
           id: "intro/how-to-stake-and-restake-lava",
         },
         {
