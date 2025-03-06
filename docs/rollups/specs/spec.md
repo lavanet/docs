@@ -7,7 +7,6 @@ title: Specifications
 
 import RoadmapItem from '@site/src/components/RoadmapItem';
 
-![Specs Banner](/img/banner/Specifications-8d88fb7fab996d996b8927b5a133c541.jpg)
 
 ## 🔍 Overview
 

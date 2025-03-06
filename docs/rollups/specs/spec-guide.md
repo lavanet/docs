@@ -8,12 +8,6 @@ import TabItem from '@theme/TabItem';
 
 # Spec Proposal Guide (Walk-thru)
 
-:::caution UNDER CONSTRUCTION
-
-This guide is a work-in-progress! Please forgive errors, inconsistencies, or incompleteness.
-
-:::
-
 ## Overview 🔎 {#overview}
 
 This guide is intended to assist someone with the process of writing and designing a spec proposal in a step-by-step way. The process of creating or maintaining a spec can seem overwhelming initially, but is actually a straightforward process once you understand the fundamentals. Follow along below to get through the entire process of making a specification.
@@ -28,7 +22,7 @@ Creating a specification involves multiple steps and can be an involved process.
 
 There are three ways to start in the creation of a spec
 
-1. 📒**Cookbook** - All of the specs which are currently live on Lava can be found here - in [the Lava cookbook](https://github.com/lavanet/lava/tree/main/cookbook/specs). Use one of them to get started, changing fields as needed.
+1. 📒**Cookbook** - All of the specs which are currently live on Lava can be found here - in [the Lava example library](https://github.com/lavanet/lava/blob/main/config/provider_examples). Use one of them to get started, changing fields as needed.
 2. 📄**Template -** A blank template is available, right [here](/spec-reference#-file-structure) from the docs. Simply fill in the blanks as you progress.
 3. ✏️**From Scratch -** Writing a spec completely from scratch gives the opportunity to avoid unnecessary messiness and superfluous fields.
 
@@ -375,7 +369,7 @@ Each API collection is composed of various pieces. These pieces collectively giv
 <details>
 <summary> `internal_path`</summary>
 
-This field gives the internal path of the node for this specific ApiCollection. This is **most likely unneeded** unless the API sets vary on internal paths on teh node. The best example is the [AVAX specification](https://raw.githubusercontent.com/lavanet/lava/main/cookbook/specs/ avalanche.json) which uses internal paths to distinguish between subnets with distinct ApiCollections.
+This field gives the internal path of the node for this specific ApiCollection. This is **most likely unneeded** unless the API sets vary on internal paths on teh node. The best example is the [AVAX specification](https://github.com/lavanet/lava/blob/main/config/provider_examples/avalanch_internal_paths_example.yml) which uses internal paths to distinguish between subnets with distinct ApiCollections.
 </details>
 
 <details>

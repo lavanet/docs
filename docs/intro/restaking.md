@@ -1,34 +1,62 @@
 ---
 slug: /restaking-lava
-title: Restaking Lava
+title: Staking and Restaking Lava
 ---
 
-## Restaking
+# Staking and Restaking Lava Tokens
 
-Lava token holders can stake their tokens to validators which helps secure the network and enables token holders to earn yield on their delegation. 
+Lava token holders can utilize their tokens through staking and restaking. This allows them to earn yield on their tokens while simultaneously helping secure the network and directing RPC traffic to high-quality providers.
 
-Restaking allows delegators (token holders who stake to validators) to maximize rewards while enhancing network security. It enables token holders to delegate tokens to a selected provider and claim a portion of the provider’s rewards.
+---
 
-Key restaking benefits:
-- Helps delegators select high-performing providers.
-- Increases yield for validator delegators.
-- Reduces network security fees.
+# Staking
 
+Lava validators are responsible for securing the chain, producing blocks, and validating transactions. Lava token holders can stake a specific amount (delegation) to a selected provider and earn yield.
 
-The credit mechanism in Lava ensures fair reward distribution to delegators based on both the amount and duration of their delegation. It calculates rewards proportionally to the effective stake over time.
+### Where does staking yield come from?
 
-## How Restaking Works
+By staking to a provider, a staker expresses trust in the provider, which boosts the provider's capacity to contribute to the network and increases their rewards. As validators get paid for their service, a portion of that payment goes to the staker.
 
-Restaking is eanbled using Lava's [dualstaking mechanism](https://github.com/lavanet/lava/tree/main/x/dualstaking#provider-delegation). Here's how it works:
+### How to pick a validator to stake with?
 
+The amount each staker earns is directly influenced by the validator's performance and the commission set by the validator. When choosing a validator, consider the following factors:
 
-- Validator Delegations → Restake to Providers: LAVA delegations to validators can be restaked to providers without requiring additional collateral, increasing rewards but also risks.
+- **Estimated APR** – Directly impacts the amount of yield you receive.
+- **Commission** – Affects the net yield you earn.
+- **Voting power** – Indicates how many other stakers trust a particular provider.
 
-- Provider Delegations → Restake to Validators: When a provider stakes tokens, an equal amount is restaked to a validator. This, in turn, makes the provider's stake a self-stake as well as the delegation for a validator.
+### Is it possible to move a delegation to a different validator?
 
+You can always change the validator you are staking with. To do this, you must first unstake from the selected validator and then stake your Lava tokens with a different validator of your choice. Keep in mind that Lava follows the standard Cosmos unstaking timeframe, which is **21 full days**.
 
-## How to stake and restake Lava
-Lava staking and restaking for token holders is support on a few major wallet and staking platforms. Head to [How to stake and restake Lava](./how-to-stake-and-restake-lava.md) for a detailed overview and a guide on how to do it.
+### How to stake Lava tokens?
 
-You are a provider, you will have an option to choose the validator you'd like to delegate to during the provider setup process.
+Staking and restaking are supported by several popular Web3 platforms. A detailed guide for staking and restaking can be found [here](./how-to-stake-and-restake-lava.md).
 
+---
+
+# Restaking
+
+Lava token holders can take their stake one step further by restaking to selected Lava RPC providers. By doing so, restakers (Lava token holders who stake with validators and restake with providers) express their trust in specific Lava RPC providers, boosting their stake weight and helping direct RPC traffic toward high-quality providers. In return, they earn yield on their restaked tokens.
+
+### Where does restaking yield come from?
+
+Providers compete among themselves to serve incoming RPC requests. Lava Network distributes traffic to the most eligible providers based on their stake weight (self-stake and delegations from restakers) and the quality of service they provide (speed, data freshness, and service availability). Restakers express their trust in a provider by restaking with them, increasing the provider’s chances of receiving more RPC traffic. As providers earn revenue from the RPC requests they handle, a portion of that revenue is distributed to restakers as yield.
+
+### How to pick a provider to restake with?
+
+The yield you receive is directly influenced by the provider's performance and the commission they set. To choose a well-performing provider, consider the following:
+
+- **Reputation Score** – Represents the provider’s quality of service.
+- **Delegation** – Reflects how much other restakers have delegated to a provider.
+- **Provider APR** and **Commission** – Impact the yield you earn.
+
+You can see the estimated APR for specific providers on the Lava [staker's page](https://www.lavanet.xyz/stakers).
+
+### Is it possible to move a delegation to a different provider?
+
+You can always change the provider you are restaking with. When switching providers, the change takes effect immediately.
+
+### How to restake Lava tokens?
+
+Staking and restaking are supported by several popular Web3 platforms. A detailed guide for staking and restaking can be found [here](./how-to-stake-and-restake-lava.md).

@@ -4,7 +4,7 @@ title: Add Lava to your chain
 ---
 
 # Add Lava to your chain 
-
+## Why add Lava to your chain
 Lava eliminates the need for bootstrapping and managing public RPC endpoints. By leveraging Lava, blockchain networks can deploy incentive pools to attract a community of top-tier node runners, ensuring a high-quality, decentralized infrastructure.
 
 - Blockchains and rollups can bootstrap infrastructure seamlessly, with service quality enforced by the Lava protocol.
@@ -17,28 +17,30 @@ Lava eliminates the need for bootstrapping and managing public RPC endpoints. By
 
 ## How does the process of adding Lava to your chain looks like
 
-1. Creating an Incentive Pool
+1. **Creating an Incentive Pool**
 
-Blockchain developers can establish an incentive pool using any token, including:
-- Native blockchain tokens
-- Stablecoins
-- Memecoins
+    Blockchain developers can establish an incentive pool using any token, including:
+        - Native blockchain tokens
+        - Stablecoins
+        - Memecoins
 
-This incentive pool rewards node operators for contributing infrastructure to the Lava ecosystem. If you would like to create an Incentive Pool for your chain, reach out to the Lava team.
+   Incentive pools reward node operators for contributing infrastructure to the Lava ecosystem. If you would like to create an Incentive Pool for your chain, reach out to the Lava team.
 
-2. Adding a specification for the chain
+2. **Adding a specification for the chain**
 
-Chains define the infrastructure services as specifications (”specs”). Those sepcifications can be created either by Lava team or by ecosystem contributors (champions), in coordnation with the team of the chain for clear configuration and optimal setup.
+    Chains define the infrastructure services as specifications (”specs”). Those sepcifications can be created either by Lava team or by ecosystem contributors (champions), in coordnation with the team of the chain for clear configuration and optimal setup.
 
-3. Attracting RPC Node Runners
+3. **Attracting RPC Node Runners**
 
-Lava enables small and medium-sized node runners to provide RPC services for chains and earn rewards from the incentive pool. This broadens participation beyond major node providers, which typically support only a limited number of chains.
+    Lava enables small and medium-sized node runners to provide RPC services for chains and earn rewards from the incentive pool. This broadens participation beyond major node providers, which typically support only a limited number of chains.
 
-4. Enhancing Decentralized Infrastructure
+4. **Enhancing Decentralized Infrastructure**
 
-By utilizing Lava, developers can:
-- Reduce fragmentation of RPC endpoints.
-- Improve reliability and uptime of their ecosystem’s infrastructure.
-- Scale RPC and API provisioning seamlessly.
+    By utilizing Lava, developers can:
+    - Reduce fragmentation of RPC endpoints.
+    - Improve reliability and uptime of their ecosystem’s infrastructure.
+    - Scale RPC and API provisioning seamlessly.
 
+## Next steps
+If you'd like to add your chain to Lava, reach out to the Lava team and learn. You can also learn more about the specifications [here](./specs/spec.md).
 

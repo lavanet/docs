@@ -51,7 +51,7 @@ const sidebars = {
         },
         {
           type: "doc",
-          label: "Restaking Lava",
+          label: "Staking and Restaking Lava",
           id: "intro/restaking"
         },
         {
