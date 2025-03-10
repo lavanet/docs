@@ -47,7 +47,7 @@ Access AWS Console via [AWS login](https://console.aws.amazon.com/console/home?n
 3. **Database Restoration**  
    First, we need to use the Restoration script to restore DB. Verify the `$HOME` variable is correctly defined and points to the folder where the `.movement` folder is installed.
 
-   Create a new script file called `restore.sh` in your Home directory and add the following content using `nano` or `vi`:
+   Create a new script & RUN file called `restore.sh` in your Home directory and add the following content using `nano` or `vi`:
 
    ```bash
    #!/bin/bash -e
