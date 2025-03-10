@@ -11,7 +11,7 @@ const config = {
   tagline: "Decentralizing Web3 Infra",
   url: "https://docs.lavanet.xyz",
   baseUrl: "/",
-  onBrokenLinks: "throw",
+  onBrokenLinks: "warn",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.ico",
   organizationName: "lavanet",
