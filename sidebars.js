@@ -149,8 +149,6 @@ const sidebars = {
             items: [
               "chains/movement-chain/movement-dev",
               "chains/movement-chain/movement-node",
-              "chains/movement-chain/movement-node-genesis",
-              "chains/movement-chain/movement-node-bardock-archive",
             ],
           },
         {
