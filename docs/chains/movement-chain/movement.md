@@ -23,20 +23,41 @@ import RoadmapItem from '@site/src/components/RoadmapItem'
 
 ### Specification 📑
 
-```shell
-TO BE ADDED
+https://github.com/lavanet/lava/blob/main/specs/mainnet-1/specs/movement.json
+
+### Methods 🛠️
+
+```bash
+lavad q spec show-chain-info MOVEMENT
 ```
 
-### Protocols 🔗
-
-| Platform | jsonrpc/http |
-| -------- | ------------ |
-| Gateway  | ✅           |
-| SDK      | ✅           |  
 
 #### 📋 List :
 
 <details>
-<summary> JSONRPC </summary>
+<summary> REST </summary>
+
+
+- healthy
+- accounts/{address}
+- accounts/{address}/events/{creation_number}
+- accounts/{address}/events/{event_handle}/{field_name}
+- accounts/{address}/module/{module_name}
+- accounts/{address}/modules
+- accounts/{address}/resource/{resource_type}
+- accounts/{address}/resources
+- accounts/{address}/transactions
+- blocks/by_height/{block_height}
+- blocks/by_version/{version}
+- estimate_gas_price
+- events/{event_key}
+- spec
+- transactions/by_hash/{txn_hash}
+- transactions/wait_by_hash/{txn_hash}
+- transactions/by_version/{txn_version}
+- transactions/encode_submission
+- transactions
+
 
 </details>
+

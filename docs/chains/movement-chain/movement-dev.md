@@ -8,8 +8,10 @@ import TabItem from '@theme/TabItem';
 
 # Getting Movement RPC
 
-## API Reference
+### Mainnet 🌐
 
-```shell
-TO BE ADDED
-```
+| Service 🔌                    | URL 🔗                                           |
+| ----------------------------- | ------------------------------------------------ |
+| 🟢 rest                       | <https://movement.lava.build>                       |
+
+

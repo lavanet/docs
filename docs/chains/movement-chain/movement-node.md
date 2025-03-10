@@ -301,3 +301,9 @@ This method is recommended for deploying on cloud platforms like AWS or other VP
      ```
 
    Compare with Mainnet endpoint: https://mainnet.movementnetwork.xyz/v1
+
+---
+
+## Configure the RPC provider process
+
+Once your Movement node is up and running, configure the provider process by following [the steps here](https://docs.lavanet.xyz/provider-setup). 
