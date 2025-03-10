@@ -53,7 +53,7 @@ Access AWS Console via [AWS login](https://console.aws.amazon.com/console/home?n
    #!/bin/bash -e
 
    export DOT_MOVEMENT_PATH=$HOME/movement/.movement
-   export CONTAINER_REV=0.1.0
+   export CONTAINER_REV=d963665
    export AWS_DEFAULT_REGION=us-west-1
    export AWS_REGION=us-west-1
    export MAPTOS_CHAIN_ID=126
