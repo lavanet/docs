@@ -7,7 +7,7 @@ title: Endpoints
 
 ## Incentivized Public Endpoints
 
-Lava works with various blockchains to establish **Incentivized Public RPC (ipRPC) endpoints**. ipRPC endpoints are given unified URLs serviced by diverse providers of each chain's ecosystem. Providers are paid by those respective ecosystems to offer their services and developers benefit from the availability of highly-serviced endpoints unified through a single URL.
+Lava works with various blockchains to establish **Incentivized Public RPC (ipRPC) endpoints**. ipRPC endpoints are given unified URLs serviced by diverse providers within each chain's ecosystem. Providers are compensated by their respective ecosystems to offer services, while developers benefit from highly reliable endpoints unified under a single URL.
 
 <center> 
 
@@ -30,10 +30,12 @@ Lava works with various blockchains to establish **Incentivized Public RPC (ipRP
 
 ## Public Community Endpoints
 
-Community endpoints are RPC endpoints provided by various community members and organizations. These endpoints offer free access to blockchain data, though availability and performance may vary as they are maintained by different providers.
+Community endpoints are RPC services offered by various community members and organizations. These endpoints provide free access to blockchain data, though availability and performance may vary as they are maintained by different providers.
 
 
 ## Gateway
 
-The **Lava Gateway**, developed by Magma team, is a simplified web interface that gives developers instant access to blockchain data. The Gateway uses Lava Server Kit to provide a hosted point of access for developers looking for RPC through the Lava Network. This allows users to manage and configure Web3 APIs through an intuitive controls directly from the browser. Through gateway, consumers get a very easy and intuitive interface for API access as well as example calls for each supported chain.
+The **Lava Gateway**, developed by the Magma team, is a simplified web interface that gives developers instant access to blockchain data. The Gateway uses the Lava Server Kit to provide a hosted access point for developers seeking RPC services through the Lava Network.
+
+This allows users to manage and configure Web3 APIs through intuitive controls directly from the browser. Through the Gateway, consumers gain an intuitive interface for API access, along with example calls for each supported chain.
 

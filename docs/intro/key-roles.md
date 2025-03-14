@@ -9,7 +9,7 @@ The Lava Network thrives through the collaboration of five essential roles, each
 ## 🔌 Data Providers
 RPC Providers as the backbone of Lava Network. They:
 - Run nodes and deliver RPC data across chains
-- Stake LAVA tokens to participate
+- Stake LAVA tokens to participate in the network
 - Earn performance-based rewards
 - Follow strict specifications to maintain quality
 

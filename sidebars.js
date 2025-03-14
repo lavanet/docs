@@ -39,35 +39,30 @@ const sidebars = {
     },
     {
       type: "category",
-      label: "Lava token",
+      label: "LAVA token",
       collapsible: false,
       className: "custom-sidebar-spacing", // Add a custom class
       collapsed: false,
       items: [
         {
           type: "doc",
-          label: "The Lava Token",
+          label: "The LAVA Token",
           id: "intro/lava-token",
         },
         {
           type: "doc",
-          label: "Staking and Restaking Lava",
+          label: "Staking and Restaking LAVA",
           id: "intro/restaking"
         },
         {
           type: "doc",
-          label: "How to bridge Lava",
+          label: "How to bridge LAVA",
           id: "intro/how-to-bridge-lava",
         },
         {
           type: "doc",
-          label: "How to stake and restake Lava",
+          label: "How to stake and restake LAVA",
           id: "intro/how-to-stake-and-restake-lava",
-        },
-        {
-          type: "doc",
-          label: "Explorers",
-          id: "intro/explorers",
         },
         {
           type: "category",
@@ -99,6 +94,35 @@ const sidebars = {
         },
 
       ],
+    },
+    {
+      type: "category",
+      label: "Using Lava Network",
+      collapsible: false,
+      className: "custom-sidebar-spacing", // Add a custom class
+      collapsed: false,
+      items: [
+        {
+          type: "doc",
+          label: "Connect to Lava",
+          id: "intro/wallet",
+        },
+        {
+          type: "doc",
+          label: "Install Lava Binaries",
+          id: "intro/install-lava",
+        },
+        {
+          type: "doc",
+          label: "Faucet",
+          id: "intro/faucet",
+        },
+        {
+          type: "doc",
+          label: "Explorers",
+          id: "intro/explorers",
+        }
+      ]
     },
     {
       type: "category",
@@ -165,7 +189,7 @@ const sidebars = {
                 },
                 {
                   type: "doc",
-                  label: "Use Magma Gateway",
+                  label: "Use Gateway",
                   id: "developer/endpoints/gateway-endpoints"
                 },
               ],
@@ -290,6 +314,11 @@ const sidebars = {
           collapsed: true,
           items:[
             {
+              type: "doc",
+              label: "Hardware Requirements",
+              id: "validator/hardware-requirements"
+            },
+            {
               type: "category",
               label: "1. Run Lava Node",
               collapsible: true,
@@ -297,13 +326,13 @@ const sidebars = {
               items: [
                 {
                   type: "doc",
-                  label: "Testnet",
-                  id: "validator/lava-nodes/testnet/join-testnet-manual-cosmovisor"
+                  label: "Mainnet",
+                  id: "validator/lava-nodes/mainnet/join-mainnet-manual-cosmovisor"
                 },
                 {
                   type: "doc",
-                  label: "Mainnet",
-                  id: "validator/lava-nodes/mainnet/join-mainnet-manual-cosmovisor"
+                  label: "Testnet",
+                  id: "validator/lava-nodes/testnet/join-testnet-manual-cosmovisor"
                 },
               ],
             },
@@ -328,11 +357,6 @@ const sidebars = {
           type: "doc",
           label: "Lavad Reference",
           id: "validator/lavad-reference"
-        },
-        {
-          type: "doc",
-          label: "FAQ",
-          id: "validator/validator-faq"
         },
       ],
     },

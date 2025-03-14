@@ -9,7 +9,7 @@ Lava Network is a decentralized protocol designed to provide fast, reliable, and
 
 Lava Blockchain serves as the settlement layer for off-chain Remote Procedure Calls (RPCs), ensuring finalization proofs and reward claims are securely processed on-chain.
 
-An image below represents a simplified view of the Lava Network architecture:
+The image below provides a simplified view of the Lava Network architecture:
 
 ![Lava Architecture](/img/protocol/architecture.png)
 
@@ -19,7 +19,7 @@ Lava is governed through on-chain governance. Specifications define modular coll
 
 ### Consumers
 
-Consumers (e.g., AI agents, dApps, wallets, and indexers) request blockchain data through supported APIs. They can interact with Lava through multiple interfaces (using public endpoints, Lava Gateway, Lava SDK).  
+Consumers—such as AI agents, dApps, wallets, and indexers—request blockchain data through supported APIs.. They can interact with Lava through multiple interfaces (using public endpoints, Lava Gateway, Lava SDK).  
 They can increase their usage limits by purchasing LAVA subscriptions. The Lava protocol connects consumers and providers through peer-to-peer connections via pairing lists.
 
 ### RPC Providers
@@ -31,6 +31,6 @@ These APIs are serviced by RPC providers who deliver blockchain data through sup
 Lava uses **PairingLists (PL)** to connect consumers with the best providers:
 
 - Consumers receive a ranked list of providers based on performance and stake (epoch-based).  
-- Consumers select and establish peer-to-peer connections with an optimal provider.  
+- Consumers select and establish peer-to-peer connections with the optimal provider.  
 - Data is exchanged securely between the consumer and provider.  
 - At epoch completion, consumers report provider performance metrics, which are recorded on-chain, and providers accumulate Compute Units (CU) and claim distributed rewards relative to their workload.

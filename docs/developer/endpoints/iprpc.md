@@ -7,10 +7,48 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 # Use Incentivized Public RPC (ipRPC) Edpoints
-TODO: add API endpoints to all of the chains
-Note: once endpoints site is available, this page can be updated to automatically pull info from the same jsinfo api source or host info about available API endpoints. 
+ 
+Public endpoints and available API methods for each supported chain with incentivized pools.
 
-Public endpoints and available API methods for each supported chain that has incentivized pools.
+## Movement
+<Tabs>
+  <TabItem value="mainnet" label="Mainnet">
+
+  | Service           | URL                                        |
+  |---------------------|---------------------------------------------|
+  | 🟢 rest            | https://movement.lava.build:443                 |
+
+  </TabItem>
+</Tabs>
+
+#### Available API methods
+
+<details>
+<summary> REST </summary>
+
+- `healthy`
+- `accounts/{address}`
+- `accounts/{address}/events/{creation_number}`
+- `accounts/{address}/events/{event_handle}/{field_name}`
+- `accounts/{address}/module/{module_name}`
+- `accounts/{address}/modules`
+- `accounts/{address}/resource/{resource_type}`
+- `accounts/{address}/resources`
+- `accounts/{address}/transactions`
+- `blocks/by_height/{block_height}`
+- `blocks/by_version/{version}`
+- `estimate_gas_price`
+- `events/{event_key}`
+- `spec`
+- `transactions/by_hash/{txn_hash}`
+- `transactions/wait_by_hash/{txn_hash}`
+- `transactions/by_version/{txn_version}`
+- `transactions/encode_submission`
+- `transactions`
+
+
+</details>
+
 
 ## Lava 
 
@@ -254,9 +292,7 @@ Public endpoints and available API methods for each supported chain that has inc
 
 </TabItem>
 </Tabs>
-
 <br />
-
 
 
 ## Near 

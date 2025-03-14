@@ -1,46 +1,49 @@
 ---
 sidebar_position: 2
 slug: /mainnet-manual-cosmovisor
-title: Option A - With Cosmovisor
+title: Run mainnet nodes
 ---
 import RoadmapItem from '@site/src/components/RoadmapItem';
 import Admonition from '@theme/Admonition';
 
 # Join mainnet - Manual setup with Cosmovisor
-## Prerequisites
+## 1. Setup working environment
 
-TODO: add hardware requirements here directly + simplify the guide
 
 1. Verify [hardware requirements](reqs) are met
-2. Install package dependencies
-    - Note: You may need to run as `sudo`
-    - Required packages installation
+2. Update the system and install dependencies
+
+    :::note
+    You may need to run as `sudo`
+    :::
+    - Install required packages
         
         ```bash
         ### Packages installations
-        sudo apt update # in case of permissions error, try running with sudo
-        sudo apt install -y unzip logrotate git jq lz4 sed wget curl coreutils systemd
-        # Create the temp dir for the installation
-        temp_folder=$(mktemp -d) && cd $temp_folder
-        ```
+
+        sudo apt update 
+        sudo apt install -y unzip logrotate git jq lz4 sed wget curl coreutils 
+        sudo apt -qy upgrade
         
-    - Go installation
+    - Install Go
         
         ```bash
         ### Configurations
-        go_package_url="https://go.dev/dl/go1.20.5.linux-amd64.tar.gz"
+        go_package_url="https://go.dev/dl/go1.22.12.linux-amd64.tar.gz"
         go_package_file_name=${go_package_url##*\/}
-        # Download GO
+
+        # Download Go
         wget -q $go_package_url
-        # Unpack the GO installation file
+        # Unpack the Go installation file
         sudo tar -C /usr/local -xzf $go_package_file_name
+
         # Environment adjustments
         echo "export PATH=\$PATH:/usr/local/go/bin" >>~/.profile
         echo "export PATH=\$PATH:\$(go env GOPATH)/bin" >>~/.profile
         source ~/.profile
         ```
         
-    - Installation verifications
+    - Verify installation
         
         
         1. You can verify the installed go version by running: `go version`
@@ -52,11 +55,40 @@ TODO: add hardware requirements here directly + simplify the guide
         To verify PATH, run `echo $PATH`
         
 
-## 1. Set up the Lava node
+## 2. Set your moniker
 
-The following sections will describe how to install Cosmovisor for automating the upgrades process.
+Set your moniker name. You can change your moniker in the future.
 
-### Set up Cosmovisor {#cosmovisor}
+```
+MONIKER="YOUR_MONIKER_NAME"
+```
+
+## 3. Install Lava binaries
+
+To run the Lava mainnet node, you will need a `lavad` binary installed on your machinne:
+
+```
+#Download lavad
+cd $HOME
+git clone https://github.com/lavanet/lava.git
+cd lava
+git checkout v5.2.0
+
+# Build binaries
+export LAVA_BINARY=lavad
+make build
+
+# Prepare binaries for Cosmovisor
+mkdir -p $HOME/.lava/cosmovisor/genesis/bin
+mv build/lavad $HOME/.lava/cosmovisor/genesis/bin/
+rm -rf build
+
+
+# Create application symlinks
+ln -s $HOME/.lava/cosmovisor/genesis $HOME/.lava/cosmovisor/current -f
+sudo ln -s $HOME/.lava/cosmovisor/current/bin/lavad /usr/local/bin/lavad -f
+```
+## 4. Set up Cosmovisor {#cosmovisor}
 
 - Set up cosmovisor to ensure any future upgrades happen flawlessly. To install Cosmovisor:
     
