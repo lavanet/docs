@@ -52,7 +52,7 @@ For detailed implementation of specific features, please refer to the [Lava Whit
 
 ### Join Lava ecosystem
 
-There are lots of different ways to contirnute to Lava ecosystem. Check out the ecosystem roles [here](./key-roles).
+There are lots of different ways to contribute to Lava ecosystem. Check out the [ecosystem roles](./key-roles).
 
 ### Join Lava Community
 - Join Lava [Discord](https://discord.gg/lavanetxyz) and specific channels for developers and providers

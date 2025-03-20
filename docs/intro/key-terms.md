@@ -43,19 +43,8 @@ title: 📝 Key Terms
 <details>
   <summary> Subscription </summary> 
 
-  Commitments made by consumers to access Lava Network's services, which include pricing, resource allocation, and usage rules.
-</details>
-
-<details>
-  <summary> Plans </summary> 
-
-  Frameworks for defining various subscription offerings that consumers can purchase, including pricing and resource limits.
-</details>
-
-<details>
-  <summary> Projects </summary> 
-
-  Segmented environments within a subscription, allowing consumers to customize service provisioning and management for specific use cases.
+  Commitments made by consumers to access Lava Network's services, which include pricing, resource allocation, and usage rules. Cosumers can buy 
+  subscriptions by reaching out to the Lava team.
 </details>
 
 
@@ -105,18 +94,12 @@ title: 📝 Key Terms
   Members of the network who create and maintain RPC and API specifications and software, while also participating in the community through bounties and contributions.
 </details>
 
-## 🔌 SDK and Integrations
-
-<details>
-  <summary> Lava SDK (Beta) </summary> 
-
-  A JavaScript/TypeScript package that simplifies the process of sending data relays to providers, offering compatibility with various development environments. Currently in experimental phase.
-</details>
+## 🔌 Web3 API Integrations
 
 <details>
   <summary> Integrations </summary> 
 
-  Compatibility of the SDK with well-known libraries like CosmJS, Web3JS, EthersJS, and viem, making it easier for developers to interact with the Lava Network.
+  Compatibility with well-known libraries like CosmJS, Web3JS, EthersJS, and viem, making it easier for developers to interact with the Lava Network.
 </details>
 
 ## 🏅 Product Offerings
@@ -138,7 +121,13 @@ title: 📝 Key Terms
  <details>
   <summary> Gateway </summary> 
 
-  A management system, developed by Magma team, that empowers consumers to purchase subscriptions, create projects, and manage policies without the need for running nodes or consumers themselves.
+  A management system, developed by MagmaDevs team, that empowers consumers to  access endpoints at a higher rate, and manage policies without the need for running nodes or consumers themselves.
+</details>
+
+<details>
+  <summary> Infra Manager (Server Kit) </summary> 
+
+  An open source smart router that load balances the nodes, optimizing for 100% uptime and maximum speed.
 </details>
 
 

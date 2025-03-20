@@ -13,7 +13,7 @@ Lava token holders can utilize their tokens through staking and restaking. This 
 
 Lava validators are responsible for securing the chain, producing blocks, and validating transactions. Lava token holders can stake a specific amount (delegation) to a selected provider and earn yield.
 
-### Where does staking yield come from?
+### Where does the staking yield come from?
 
 By staking to a provider, a staker expresses trust in the provider, which boosts the provider's capacity to contribute to the network and increases their rewards. As validators get paid for their service, a portion of that payment goes to the staker.
 
@@ -31,7 +31,7 @@ You can always change the validator you are staking with. To do this, you must f
 
 ### How to stake Lava tokens?
 
-Staking and restaking are supported by several popular Web3 platforms. A detailed guide for staking and restaking can be found [here](./how-to-stake-and-restake-lava.md).
+Staking and restaking are supported by several popular Web3 platforms. Check out [a detailed guide](./how-to-stake-and-restake-lava.md) for staking and restaking.
 
 ---
 
@@ -39,7 +39,7 @@ Staking and restaking are supported by several popular Web3 platforms. A detaile
 
 Lava token holders can take their stake one step further by restaking to selected Lava RPC providers. By doing so, restakers (Lava token holders who stake with validators and restake with providers) express their trust in specific Lava RPC providers, boosting their stake weight and helping direct RPC traffic toward high-quality providers. In return, they earn yield on their restaked tokens.
 
-### Where does restaking yield come from?
+### Where does the restaking yield come from?
 
 Providers compete among themselves to serve incoming RPC requests. Lava Network distributes traffic to the most eligible providers based on their stake weight (self-stake and delegations from restakers) and the quality of service they provide (speed, data freshness, and service availability). Restakers express their trust in a provider by restaking with them, increasing the provider’s chances of receiving more RPC traffic. As providers earn revenue from the RPC requests they handle, a portion of that revenue is distributed to restakers as yield.
 
@@ -59,4 +59,4 @@ You can always change the provider you are restaking with. When switching provid
 
 ### How to restake Lava tokens?
 
-Staking and restaking are supported by several popular Web3 platforms. A detailed guide for staking and restaking can be found [here](./how-to-stake-and-restake-lava.md).
+Staking and restaking are supported by several popular Web3 platforms. Check out a [detailed guide](./how-to-stake-and-restake-lava.md) for staking and restaking.

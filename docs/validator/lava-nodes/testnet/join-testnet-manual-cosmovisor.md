@@ -6,42 +6,44 @@ title: Option A - With Cosmovisor
 import RoadmapItem from '@site/src/components/RoadmapItem';
 import Admonition from '@theme/Admonition';
 
-# Join testnet - Manual setup with Cosmovisor
-## Prerequisites
+# Join Lava Testnet
 
-TODO: add hardware requirements here directly + simplify the guide
-
+## 1. Setup working environment
 
 1. Verify [hardware requirements](reqs) are met
-2. Install package dependencies
-    - Note: You may need to run as `sudo`
-    - Required packages installation
+2. Update the system and install dependencies
+
+    :::note
+    You may need to run as `sudo`
+    :::
+    - Install required packages
         
         ```bash
         ### Packages installations
-        sudo apt update # in case of permissions error, try running with sudo
-        sudo apt install -y unzip logrotate git jq lz4 sed wget curl coreutils systemd
-        # Create the temp dir for the installation
-        temp_folder=$(mktemp -d) && cd $temp_folder
-        ```
+
+        sudo apt update 
+        sudo apt install -y unzip logrotate git jq lz4 sed wget curl coreutils 
+        sudo apt -qy upgrade
         
-    - Go installation
+    - Install Go
         
         ```bash
         ### Configurations
-        go_package_url="https://go.dev/dl/go1.20.5.linux-amd64.tar.gz"
+        go_package_url="https://go.dev/dl/go1.22.12.linux-amd64.tar.gz"
         go_package_file_name=${go_package_url##*\/}
-        # Download GO
+
+        # Download Go
         wget -q $go_package_url
-        # Unpack the GO installation file
+        # Unpack the Go installation file
         sudo tar -C /usr/local -xzf $go_package_file_name
+
         # Environment adjustments
         echo "export PATH=\$PATH:/usr/local/go/bin" >>~/.profile
         echo "export PATH=\$PATH:\$(go env GOPATH)/bin" >>~/.profile
         source ~/.profile
         ```
         
-    - Installation verifications
+    - Verify installation
         
         
         1. You can verify the installed go version by running: `go version`
@@ -53,184 +55,167 @@ TODO: add hardware requirements here directly + simplify the guide
         To verify PATH, run `echo $PATH`
         
 
-## 1. Set up the Lava node
+## 2. Set your moniker
 
-The following sections will describe how to install Cosmovisor for automating the upgrades process.
+Set your moniker name. You can change your moniker in the future.
 
-### Set up Cosmovisor {#cosmovisor}
+```
+MONIKER="YOUR_MONIKER_NAME"
+```
 
-- Set up cosmovisor to ensure any future upgrades happen flawlessly. To install Cosmovisor:
-    
-    ```bash
-    go install github.com/cosmos/cosmos-sdk/cosmovisor/cmd/cosmovisor@v1.0.0
-    # Create the Cosmovisor folder and copy config files to it
-    export lava_home_folder="$HOME/.lava"
-    mkdir -p $lava_home_folder/cosmovisor/genesis/bin/
-    # Download the genesis binary
-    wget -O  $lava_home_folder/cosmovisor/genesis/bin/lavad "https://github.com/lavanet/lava/releases/download/v0.21.1.2/lavad-v0.21.1.2-linux-amd64"
-    chmod +x $lava_home_folder/cosmovisor/genesis/bin/lavad
-    ```
+## 3. Install Lava binaries
 
-    ```bash
-    # Set the environment variables
-    echo "# Setup Cosmovisor" >> ~/.profile
-    echo "export DAEMON_NAME=lavad" >> ~/.profile
-    echo "export CHAIN_ID=lava-testnet-2" >> ~/.profile
-    echo "export DAEMON_HOME=$lava_home_folder" >> ~/.profile
-    echo "export DAEMON_ALLOW_DOWNLOAD_BINARIES=true" >> ~/.profile
-    echo "export DAEMON_LOG_BUFFER_SIZE=512" >> ~/.profile
-    echo "export DAEMON_RESTART_AFTER_UPGRADE=true" >> ~/.profile
-    echo "export UNSAFE_SKIP_BACKUP=true" >> ~/.profile
-    source ~/.profile
-    ```
+To run the Lava mainnet node, you will need a `lavad` binary installed on your machinne:
 
-    ```bash
-    # Initialize the chain
-    $lava_home_folder/cosmovisor/genesis/bin/lavad init \
-    my-node \
-    --chain-id lava-testnet-2 \
-    --home $lava_home_folder
-    ```
+```
+#Download lavad
+cd $HOME
+git clone https://github.com/lavanet/lava.git
+cd lava
+git checkout v5.2.0
 
-    <Admonition type="caution">
-        Please note that cosmovisor will throw an error ⚠️ This is ok. The following error will be thrown,
-        lstat /home/ubuntu/.lava/cosmovisor/current/upgrade-info.json: no such file or directory
-    </Admonition>
+# Build binaries
+export LAVA_BINARY=lavad
+make build
 
-    ```bash
-    cosmovisor version
-    ```
-    
-    Create the Cosmovisor systemd unit file
-    
-    ```bash
-    echo "[Unit]
-        Description=Cosmovisor daemon
-        After=network-online.target
-        [Service]
-        Environment="DAEMON_NAME=lavad"
-        Environment="DAEMON_HOME=$lava_home_folder"
-        Environment="DAEMON_RESTART_AFTER_UPGRADE=true"
-        Environment="DAEMON_ALLOW_DOWNLOAD_BINARIES=true"
-        Environment="DAEMON_LOG_BUFFER_SIZE=512"
-        Environment="UNSAFE_SKIP_BACKUP=true"
-        User=$USER
-        ExecStart=${HOME}/go/bin/cosmovisor start --home=$lava_home_folder
-        Restart=always
-        RestartSec=3
-        LimitNOFILE=infinity
-        LimitNPROC=infinity
-        [Install]
-        WantedBy=multi-user.target
-    " > cosmovisor.service
-    
-    sudo mv cosmovisor.service /lib/systemd/system/cosmovisor.service
-    ```
+# Prepare binaries for Cosmovisor
+mkdir -p $HOME/.lava/cosmovisor/genesis/bin
+mv build/lavad $HOME/.lava/cosmovisor/genesis/bin/
+rm -rf build
 
-### Download the genesis file
 
-- Set the genesis file in the configuration folder
+# Create application symlinks
+ln -s $HOME/.lava/cosmovisor/genesis $HOME/.lava/cosmovisor/current -f
+sudo ln -s $HOME/.lava/cosmovisor/current/bin/lavad /usr/local/bin/lavad -f
+```
+## 4. Set up Cosmovisor service 
 
-    ```bash
-    curl -Ls https://raw.githubusercontent.com/lavanet/lava-config/main/testnet-2/genesis_json/genesis.json > $lava_home_folder/config/genesis.json
-    ```
+Install cosmovisor to ensure any future upgrades happen flawlessly. To install Cosmovisor:
 
-- Set up configuration files
+```bash
+go install github.com/cosmos/cosmos-sdk/cosmovisor/cmd/cosmovisor@v1.6.0
 
-    ```bash
-    # Assuming lava is installed in it's default folder
-    # Determine OS
-    os_name=$(uname)
-    case "$(uname)" in
-    Darwin)
-        SED_INLINE="-i ''" ;;
-    Linux)
-        SED_INLINE="-i" ;;
-    *)
-        echo "unknown system: $(uname)"
-        exit 1 ;;
-    esac
+```
 
-    # Edit config.toml file
-    sed $SED_INLINE \
-    -e 's|^timeout_propose =.*|timeout_propose = "10s"|' \
-    -e 's|^timeout_propose_delta =.*|timeout_propose_delta = "500ms"|' \
-    -e 's|^timeout_prevote =.*|timeout_prevote = "1s"|' \
-    -e 's|^timeout_prevote_delta =.*|timeout_prevote_delta = "500ms"|' \
-    -e 's|^timeout_precommit =.*|timeout_precommit = "500ms"|' \
-    -e 's|^timeout_precommit_delta =.*|timeout_precommit_delta = "1s"|' \
-    -e 's|^timeout_commit =.*|timeout_commit = "15s"|' \
-    -e 's|^create_empty_blocks =.*|create_empty_blocks = true|' \
-    -e 's|^create_empty_blocks_interval =.*|create_empty_blocks_interval = "15s"|' \
-    -e 's|^timeout_broadcast_tx_commit =.*|timeout_broadcast_tx_commit = "151s"|' \
-    -e 's|^skip_timeout_commit =.*|skip_timeout_commit = false|' \
-    $lava_home_folder/config/config.toml
+Create the service
 
-    # Edit app.toml file
-    sed $SED_INLINE \
-    -e 's|^pruning = .*|pruning = "nothing"|' \
-    -e "s|enable = .*|enable = true|" \
-    -e 's|^minimum-gas-prices = .*|minimum-gas-prices = "0.000000001ulava"|' \
-    $lava_home_folder/config/app.toml
-    ```
+```bash
+sudo tee /etc/systemd/system/lava.service > /dev/null << EOF
+[Unit]
+Description=lava node service
+After=network-online.target
 
-- Configure external seeds
+[Service]
+User=$USER
+ExecStart=$(which cosmovisor) run start
+Restart=on-failure
+RestartSec=10
+LimitNOFILE=65535
+Environment="DAEMON_HOME=$HOME/.lava"
+Environment="DAEMON_NAME=lavad"
+Environment="UNSAFE_SKIP_BACKUP=true"
 
-    ```bash
-    SEEDS="3a445bfdbe2d0c8ee82461633aa3af31bc2b4dc0@testnet2-seed-node.lavanet.xyz:26656,e593c7a9ca61f5616119d6beb5bd8ef5dd28d62d@testnet2-seed-node2.lavanet.xyz:26656"
+[Install]
+WantedBy=multi-user.target
+EOF
+sudo systemctl daemon-reload
+sudo systemctl enable lava.service
+```
 
-    sed -i -e "s|^seeds *=.*|seeds = \"$SEEDS\"|" $lava_home_folder/config/config.toml
-    ```
+## 5. Initialize the chain
 
-### Download the latest Lava data snapshot (_optional_) {#snapshots}
+#### Initialize the chain setup:
+```bash
+lavad init $MONIKER --chain-id lava-testnet-2
+```
 
-_Coming soon_
 
-### Enable and start the Cosmovisor service
-    
-- Configure the Cosmovisor service to run on boot, and start it
-    ```bash
-    # Enable the cosmovisor service so that it will start automatically when the system boots
-    sudo systemctl daemon-reload
-    sudo systemctl enable cosmovisor.service
-    sudo systemctl restart systemd-journald
-    sudo systemctl start cosmovisor
-    ```
-    
+#### Download genesis and addrbook
+```
+curl -Ls https://snapshots.kjnodes.com/lava-testnet/genesis.json > $HOME/.lava/config/genesis.json
+curl -Ls https://snapshots.kjnodes.com/lava-testnet/addrbook.json > $HOME/.lava/config/addrbook.json
+```
 
-## 3. Verify
+#### Configure external seeds
+```bash
+sed -i -e "s|^seeds *=.*|seeds = \"3f472746f46493309650e5a033076689996c8881@lava-testnet.rpc.kjnodes.com:14459\"|" $HOME/.lava/config/config.toml
+```
 
-### Verify `cosmovisor` setup
+#### Set minimum gas price
+```bash
+sed -i -e "s|^minimum-gas-prices *=.*|minimum-gas-prices = \"0ulava\"|" $HOME/.lava/config/app.toml
+```
 
-Make sure `cosmovisor` is running by checking the state of the cosmovisor service:
+#### Set pruning
+```bash
+sed -i \
+  -e 's|^pruning *=.*|pruning = "custom"|' \
+  -e 's|^pruning-keep-recent *=.*|pruning-keep-recent = "100"|' \
+  -e 's|^pruning-keep-every *=.*|pruning-keep-every = "0"|' \
+  -e 's|^pruning-interval *=.*|pruning-interval = "19"|' \
+  $HOME/.lava/config/app.toml
+```
 
-- Check the status of the service
-    ```bash
-    sudo systemctl status cosmovisor
-    ```
-- To view the service logs - to escape, hit CTRL+C
+#### Update chain specific configuration
+```bash
+sed -i \
+  -e 's/timeout_commit = ".*"/timeout_commit = "30s"/g' \
+  -e 's/timeout_propose = ".*"/timeout_propose = "1s"/g' \
+  -e 's/timeout_precommit = ".*"/timeout_precommit = "1s"/g' \
+  -e 's/timeout_precommit_delta = ".*"/timeout_precommit_delta = "500ms"/g' \
+  -e 's/timeout_prevote = ".*"/timeout_prevote = "1s"/g' \
+  -e 's/timeout_prevote_delta = ".*"/timeout_prevote_delta = "500ms"/g' \
+  -e 's/timeout_propose_delta = ".*"/timeout_propose_delta = "500ms"/g' \
+  -e 's/skip_timeout_commit = ".*"/skip_timeout_commit = false/g' \
+  $HOME/.lava/config/config.toml
+```
 
-    ```bash
-    sudo journalctl -u cosmovisor -f
-    ```
 
-### Verify node status
+## 6. Download the latest snapshot
+```bash
+curl -L https://snapshots.kjnodes.com/lava-testnet/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.lava
+[[ -f $HOME/.lava/data/upgrade-info.json ]] && cp $HOME/.lava/data/upgrade-info.json $HOME/.lava/cosmovisor/genesis/upgrade-info.json
+```
+
+## 7. Start the service and check the logs
+```sudo systemctl start lava-testnet.service && sudo journalctl -u lava-testnet.service -f --no-hostname -o cat
+```
+
+## 8. Verify
+
+#### Verify service setup
+
+Make sure `cosmovisor` is running by checking the state of the service:
+
+Check the status of the service
+```bash
+sudo systemctl status lava.testnet
+```
+To view the service logs - to escape, hit CTRL+C
+
+```bash
+sudo journalctl -u lava.testnet -f
+```
+
+#### Verify node status
 
 Note the location of `lavad` now exists under `cosmovisor` path:
 
 ```bash
 # Check if the node is currently in the process of catching up
-$HOME/.lava/cosmovisor/current/bin/lavad status | jq .SyncInfo.catching_up
+lavad status | jq .SyncInfo.catching_up
 ```
 
-## Welcome to Lava Testnet 🌋
+## Welcome to Lava Mainnet 🌋
 
-:::tip Joined Testnet? Be a validator!
+:::tip Joined Mainnet? Be a validator!
 You are now running a Node in the Lava network 🎉🥳! 
-
-Congrats, happy to have you here 😻 Celebrate it with us on Discord.
 
 When you're ready, start putting the node to use **as a validator**:
 [<RoadmapItem icon="🧑‍⚖️" title="Power as a Validator" description="Validate blocks, secure the network, earn rewards"/>](/validator-manual#account)
 
 :::
+
+
+
+

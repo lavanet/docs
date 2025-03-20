@@ -34,7 +34,7 @@ Settings:
 
 </details>
 
-### Operating system
+## Operating system
 - For using the prebuilt `lavad` - you need to run **`Ubuntu` - `20`** or newer.
 - sudo permissions on your machine (e.g. can run `sudo hostname`)
 
@@ -48,7 +48,13 @@ Need to run a different OS? Let us know in Discord.
     - 1317 - REST
     - 26657 - TENDERMINT_RPC
     - 26656 - Cosmos
-    - *Running as a Provider? Add these specific ports*:
+
+<details>
+<summary>Running as an RPC Provider?</summary>
+
+Add these specific ports*:
         - 22221 - provider port
         - 22231 - provider port
         - 22241 - provider port
+
+</details>

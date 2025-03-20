@@ -21,7 +21,7 @@ In this section, we will cover the governance parameters for both the **Mainnet*
 | 💵 **Expedited Min Deposit to Enter Deposit Period** | 25% of the expedited Min Deposit amount.                                                                          | **3,500 LAVA**  |
 | ⏳ **Max Deposit Period**                            | The maximum time allowed to reach the required deposit amount for both regular and expedited proposals.           | **2 days**      |
 | 🗳️ **Voting Period**                                 | The duration for which voting is open on a standard proposal.                                                     | **4 days**      |
-| 🕐 **Expedited Voting Period**                       | The duration for which voting is open on an expedited proposal.                                                   | **1 hour**      |
+| 🕐 **Expedited Voting Period**                       | The duration for which voting is open on an expedited proposal.                                                   | **3 hour**      |
 | 📊 **Quorum**                                        | The minimum percentage of total staked tokens that must participate in the vote for it to be valid.               | **33.4%**       |
 | ✅ **Threshold**                                     | The minimum percentage of "Yes" votes (excluding Abstain votes) required for the proposal to pass.                | **50%**         |
 | 🚫 **Veto Threshold**                                | The maximum percentage of "No with Veto" votes allowed before the proposal is rejected and the deposit is burned. | **33.4%**       |

@@ -4,6 +4,9 @@ title: Lava Public RPC 🌋
 ---
 
 import CommunityMainnetEndpointsTable from './components/community-rpc/public-rpc-table.jsx'
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 
 # Lava Public RPC (Community Endpoints)
 
@@ -11,23 +14,37 @@ A list of publicly available Lava RPC endpoints provided by the Lava community.
 Official Lava endpoints are constantly updated and monitored by the core Lava team. Other available
 endpoints are managed and updated by independent community members.
 
-## Official Lava Mainnet Endpoints 
 
-| Service 🔌      | URL 🔗                                         | Protocol | Notes |
-|-----------------|------------------------------------------------|----------|-------- |
-| 🌐 RPC          | https://lava.tendermintrpc.lava.build:443    | HTTP/1.1 | Archive |
-| 📡 WebSocket    | wss://lava.tendermintrpc.lava.build/websocket  | HTTP/1.1 | Archive |
-| 🔗 REST API     | https://lava.rest.lava.build:443             | HTTP/1.1 | Archive |
-| ⚡ gRPC         | lava.grpc.lava.build:443                       | HTTP/2   | Archive |
+## Official Lava Endpoints
 
-## Official Lava Testnet Endpoints 
+<Tabs>
+  <TabItem value="mainnet" label="Mainnet">
 
-| Service 🔌      | URL 🔗                                         | Protocol | Notes |
-|-----------------|------------------------------------------------|----------|-------- |
-| 🌐 RPC          | https://lav1.tendermintrpc.lava.build:443    | HTTP/1.1 | Archive |
-| 📡 WebSocket    | wss://lav1.tendermintrpc.lava.build/websocket  | HTTP/1.1 | Archive |
-| 🔗 REST API     | https://lav1.lava.build:443                  | HTTP/1.1 | Archive |
-| ⚡ gRPC         | lav1.grpc.lava.build:443                       | HTTP/2   | Archive |
+  | Service 🔌      | URL 🔗                                         | Protocol | Notes |
+  |-----------------|------------------------------------------------|----------|-------- |
+  | 🌐 RPC          | https://lava.tendermintrpc.lava.build:443    | HTTP/1.1 | Archive |
+  | 📡 WebSocket    | wss://lava.tendermintrpc.lava.build/websocket  | HTTP/1.1 | Archive |
+  | 🔗 REST API     | https://lava.rest.lava.build:443             | HTTP/1.1 | Archive |
+  | ⚡ gRPC         | lava.grpc.lava.build:443                       | HTTP/2   | Archive |
+
+
+  </TabItem>
+
+  <TabItem value="testnet" label="Testnet">
+
+  | Service 🔌      | URL 🔗                                         | Protocol | Notes |
+  |-----------------|------------------------------------------------|----------|-------- |
+  | 🌐 RPC          | https://lav1.tendermintrpc.lava.build:443    | HTTP/1.1 | Archive |
+  | 📡 WebSocket    | wss://lav1.tendermintrpc.lava.build/websocket  | HTTP/1.1 | Archive |
+  | 🔗 REST API     | https://lav1.lava.build:443                  | HTTP/1.1 | Archive |
+  | ⚡ gRPC         | lav1.grpc.lava.build:443                       | HTTP/2   | Archive |
+
+  </TabItem>
+</Tabs>
+
+
+
+
 
 
 ## Community Mainnet Endpoints 

@@ -17,4 +17,5 @@ Lava blockchain uses Proof-of-stake (PoS) as the consensus mechanism, based on [
 LAVA holders are incentivized to stake their tokens to secure Lava while receiving a reward in return.
 Validators earn LAVA from the creation of new blocks and the transaction fees, and on the other hand - slashing may occur to punish bad actors, all facilitated by Tendermint's consensus protocol. 
 
-_Note_: This does not cover Delegating LAVA to validators
+## Become a Validator
+Become a Lava validator by following the guides in the 

@@ -19,7 +19,7 @@ Lava is governed through on-chain governance. Specifications define modular coll
 
 ### Consumers
 
-Consumers—such as AI agents, dApps, wallets, and indexers—request blockchain data through supported APIs.. They can interact with Lava through multiple interfaces (using public endpoints, Lava Gateway, Lava SDK).  
+Consumers—such as AI agents, dApps, wallets, and indexers—request blockchain data through supported APIs. They can interact with Lava through multiple interfaces (using public endpoints, Lava Gateway, Lava SDK).  
 They can increase their usage limits by purchasing LAVA subscriptions. The Lava protocol connects consumers and providers through peer-to-peer connections via pairing lists.
 
 ### RPC Providers

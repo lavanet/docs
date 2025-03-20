@@ -4,17 +4,17 @@ title: The LAVA Token
 ---
 
 # The LAVA Token 
-## The LAVA Token Utility
+
 The LAVA Token, **$LAVA**, is the native asset of the Lava Network. The token serves multiple purposes, helping coordinate all network participants to provide fast, reliable, and permissionless data services. The LAVA token is used for:
 
 - Rewards for RPC providers, validators, and contributors  
 - Gas fee payments  
 - Governance (as a governance token), allowing token holders to participate in network decisions  
-- Staking with validators to help secure the network and **restaking** to direct data traffic to top providers  
+- Staking with validators to help secure the network and restaking to direct data traffic to top providers  
 
-Lava has a fixed supply of tokens with no inflation. The total number of coins will never exceed **1,000,000,000 LAVA**.  
+Lava has a fixed supply of tokens with no inflation. The total number of coins will never exceed 1,000,000,000 LAVA.  
 
-LAVA token is compatible with Cosmos wallets. **µLAVA (or uLAVA)** is frequently used as a smaller unit (0.000001 LAVA) of the same denomination.
+LAVA token is compatible with Cosmos wallets. µLAVA (or uLAVA) is frequently used as a smaller unit (0.000001 LAVA) of the same denomination.
 
 
 

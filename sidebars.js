@@ -17,7 +17,7 @@ const sidebars = {
         },
         {
           type: "doc",
-          label: "Roles in Lava ecosystem",
+          label: "Lava Ecosystem Roles",
           id: "intro/key-roles",
         },
         {
@@ -39,7 +39,7 @@ const sidebars = {
     },
     {
       type: "category",
-      label: "LAVA token",
+      label: "LAVA Token",
       collapsible: false,
       className: "custom-sidebar-spacing", // Add a custom class
       collapsed: false,
@@ -56,12 +56,12 @@ const sidebars = {
         },
         {
           type: "doc",
-          label: "How to bridge LAVA",
+          label: "How to Bridge LAVA",
           id: "intro/how-to-bridge-lava",
         },
         {
           type: "doc",
-          label: "How to stake and restake LAVA",
+          label: "How to Stake and Restake LAVA",
           id: "intro/how-to-stake-and-restake-lava",
         },
         {
@@ -163,11 +163,6 @@ const sidebars = {
           collapsed: false,
           items: [
             {
-              type: "doc",
-              label: "About Lava RPC",
-              id: "developer/subscriptions"
-            },
-            {
               type: "category",
               label: "Access RPC",
               collapsible: true,
@@ -196,64 +191,11 @@ const sidebars = {
             },
             {
               type: "doc",
-              label: "Server Kit (Beta)",
+              label: "Infra Manager (Server Kit)",
               id: "developer/access-server-kit"
             },
-            {
-              type: "category",
-              label: "Lava SDK (Beta)",
-              collapsible: true,
-              collapsed: true,
-              link: {
-                type: "doc",
-                id: "developer/sdk/access-sdk",
-              },
-              items: [
-                {
-                  type: "doc",
-                  label: "Backend",
-                  id: "developer/sdk/sdk-backend"
-                },
-                {
-                  type: "doc",
-                  label: "Frontend",
-                  id: "developer/sdk/sdk-frontend"
-                },
-                {
-                  type: "category",
-                  label: "Examples",
-                  collapsible: true,
-                  collapsed: true,
-                  link: {
-                    type: "generated-index",
-                  },
-                  items: [
-                    {
-                      type: "doc",
-                      label: "All Blocks App",
-                      id: "developer/sdk/examples/all-blocks-app"
-                    },
-                    {
-                      type: "doc",
-                      label: "Lava Bazaar",
-                      id: "developer/sdk/examples/lava-bazaar"
-                    },
-                    {
-                      type: "doc",
-                      label: "Lava SDK Gallery",
-                      id: "developer/sdk/examples/lava-sdk-gallery"
-                    },
-                    {
-                      type: "doc",
-                      label: "Multichain Example",
-                      id: "developer/sdk/examples/sdk-multichain-example"
-                    },
-                  ],
-                }
-              ],
-            },
             {type: "category",
-              label: "Web3 APIs",
+              label: "Integrations with Web3 APIs",
               collapsible: true,
               collapsed: true,
               link: {
@@ -333,6 +275,11 @@ const sidebars = {
                   type: "doc",
                   label: "Testnet",
                   id: "validator/lava-nodes/testnet/join-testnet-manual-cosmovisor"
+                },
+                {
+                  type: "doc",
+                  label: "State-Sync",
+                  id: "validator/lava-nodes/state-sync"
                 },
               ],
             },
