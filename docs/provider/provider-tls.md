@@ -8,9 +8,7 @@ import TabItem from '@theme/TabItem';
 
 # Provider TLS Setup Guide
 
-:::caution
-Please make sure you are using the right [`chainId`](/key-variables#chain-id). All providers must use a domain name and TLS (1.3). You must have a domain name to continue. If you have not already, please take a moment to purchase one! You can find cheap top-level domains [here](https://www.namecheap.com/) or [here](https://tld-list.com/).
-:::
+ All providers must use a domain name and TLS. If you already own a domain, you can continue to the next steps. Otherwise, make sure to acquire one using a domain registrar of your choice.
 
 ## 📊 Diagram
 
@@ -20,14 +18,10 @@ Please make sure you are using the right [`chainId`](/key-variables#chain-id). A
 
 | Required Setup            |  ?  | 
 | --------------------------|-----|
-| acquired a domain name            | ✅  |
-| `lavap` is installed & configured | ✅  |
-| account with `ulava` balance      | ✅  |
+| A domain name            | ✅  |
+| `lavap` is [installed & configured](../intro/install-lava.md#install-a-specific-binary-) | ✅  |
+| [Account](../intro/wallet.mdx#cli) with `ulava` balance      | ✅  |
 
-
-## 📝 Written Guide (~45m)
-
-<br />
 
 ### 🅰️ Change the A Record on your Domain
 
@@ -35,7 +29,7 @@ Please make sure you are using the right [`chainId`](/key-variables#chain-id). A
 The first step of establishing your Provider is to modify some of the DNS settings on the domain you purchased. In specific, you'll need to change the A Records on your domain. Changing your `A-Record` will create a subdomain that routes traffic to a specific provider process. Depending upon who you've purchased your domain through, A-Records may be visible under `Advanced DNS` or another label.
 
 <details>
-<summary> 🖧 Multiple Records (Recommended) </summary>
+<summary> Multiple Records (Recommended) </summary>
 
 
 We recommend you create a separate `A-Record` for each one of the chains that you plan to support. This is more secure, as the default behavior is to refuse connection unless a consumer connects on the correct subdomain. 
@@ -50,7 +44,7 @@ For example, if you wanted to support Ethereum & Lava Mainnets, Your DNS Setting
 </details>
 
 <details>
-<summary> ⚀ Single Record </summary>
+<summary> Single Record </summary>
 
 Alternatively, you can create one `A-Record` that captures traffic to all sub-domains. If you are supporting a large number of chains that frequently changes, doing this may somewhat simplify your process.
 
@@ -115,15 +109,32 @@ You'll need both `Certificate Path` and `Private Key Path` for your next step.
 
 Lava recommends running each chain under a separate provider process. This will separate error logs and protect against complete provider failure in the case of a problematic provider process. The first step of this is to create different nginx routes for each chain.
 
-For each chain that you want to support, you will need to create a separate `nginx` config file. 
-`cd` into `/etc/nginx/sites-available/` and create a `server` file for each chain. You will need to select an open port for each chain. `Nginx` will use these config files to create your routes.
+For each chain that you want to support, you will need to create a separate `nginx` config file. Create a `server` file for each chain. Example below shows how to create a `server` file for Ethereum and Lava chains:
+
+1. Navigate to the nginx configuration directory:
+
+```bash
+`cd /etc/nginx/sites-available/
+```
+
+2. Create a `server` files:
+
+```bash
+touch eth_server
+touch lava_server
+```
+
+3. Configure nginx. You will need to select an open port for each chain. `Nginx` will use these config files to create your routes.
 
 <Tabs>
 <TabItem value="eth_ex" label="eth nginx server">
 
-🟢 ```sudo nano eth_server``` 
+Open the server file:
+```bash
+sudo nano eth_server
+``` 
 
-
+Set the configuration:
 ```
 server {
     listen 443 ssl http2;
@@ -143,8 +154,12 @@ server {
 </TabItem>
 <TabItem value="lav_ex" label="lava nginx server">
 
-🟢 ```sudo nano lava_server```
+Open the server file:
+```bash
+sudo nano lava_server
+```
 
+Add the configuration:
 ```
 server {
     listen 443 ssl http2;
@@ -189,7 +204,7 @@ https://your-site.com:443 {
 
 </Tabs>
 
-In most cases, after creating a configuration file in accessible sites, you need to create a symbolic link to this file in the enabled sites directory. This can be done with a command like:
+3. In most cases, after creating a configuration file in accessible sites, you need to create a symbolic link to this file in the enabled sites directory. This can be done with a command like:
 ```
 sudo ln -s /etc/nginx/sites-available/lava_server /etc/nginx/sites-enabled/lava_server
 ```
@@ -209,7 +224,7 @@ Now, ensure that your `nginx` setup is working! ✅
 sudo nginx -t
 ```
 
-🖳 Expected Output:
+Expected Output:
 ```
 nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
 nginx: configuration file /etc/nginx/nginx.conf test is successful
@@ -226,177 +241,5 @@ sudo systemctl restart nginx
 ```
 <br />
 
-### ⚙️ Create the Provider Configuration
-
-:::tip
-Need a template? A default `rpcprovider.yml` configuration is available in `~/lava/config`
-:::
-
-
-Per earlier advisement, we'll create one `.yml` per chain we plan to support. Each one of these `.yml` files will function as the configuration for a distinct provider process. In case of our example, we'll create a `lava-provider.yml` and a `eth-provider.yml`.
-
-
-<Tabs>
-<TabItem value="lava_yml" label="lava-provider">
-
-`nano lava-provider.yml`
-
-```yaml
-
-endpoints:
-    - api-interface: tendermintrpc
-      chain-id: LAV1
-      network-address:
-        address: 127.0.0.1:2224
-        disable-tls: true
-      node-urls:
-        - url: ws://127.0.0.1:26657/websocket
-        - url: http://127.0.0.1:26657
-    - api-interface: grpc
-      chain-id: LAV1
-      network-address:
-        address: 127.0.0.1:2224
-        disable-tls: true
-      node-urls: 
-        url: 127.0.0.1:9090
-    - api-interface: rest
-      chain-id: LAV1
-      network-address:
-        address: 127.0.0.1:2224
-        disable-tls: true
-      node-urls: 
-        url: http://127.0.0.1:1317
-```
-
-</TabItem>
-<TabItem value="eth_yml" label="eth-provider">
-
-`nano eth-provider.yml`
-
-```yaml
-
-endpoints:
-    - api-interface: jsonrpc
-      chain-id: ETH1
-      network-address:
-        address: 127.0.0.1:2223
-        disable-tls: true
-      node-urls: 
-        url: wss://ethereum-rpc.com/ws/
-```
-
-</TabItem>
-</Tabs>
-
-Once we've created these files we can move onto starting the processes!
-<br />
-
-### 🏁 Start the Provider Process(es)
-
-In this example, we use the built-in terminal multiplexer `screen` to run multiple provider processes. Begin by typing `screen`. But you can also use a different multiplexer, e.g. `tmux`.
-
-:::caution
-Here and below ensure that you replace `{CHAIN_ID}` with the appropriate value depending on your target network. See the [Chain ID](/key-variables#chain-id) section for details.
-:::
-
-⏫ To start the Ethereum process
-```bash
-screen -S eth-provider
-
-# This will take us to a separate terminal where we can start the provider process:
-
-lavap rpcprovider eth-provider.yml --from your_key_name_here --geolocation 1 --chain-id {CHAIN_ID} --log_level debug
-```
-Press `CTRL+ad` to detach from the `eth-provider` screen. <br />
-⏫ To start the Lava provider process
-```bash
-screen -S lava-provider
-
-# This will take us to a separate terminal where we can start the provider process:
-
-lavap rpcprovider lava-provider.yml --from your_key_name_here --geolocation 1 --chain-id {CHAIN_ID} --log_level debug
-```
-
-Some notes:
-* `--from` should be followed by the key name of your funded account that you will use to stake your provider
-* `--log_level debug` gives us verbose output so we can diagnose any issues that may arise
-* `--node` may or may not be necessary
-
-:::caution
-The syntax on your `.yml` files must be precise. Misplaced or invisible characters or inconsistent indentation can cause errors.
-:::
-
-<br />
-
-### ☑️ Test the Provider Process!
-
-Run the following commands one at a time!
-
-`lavap test rpcprovider --from your_key_name_here --endpoints "your-site:443,LAV1"`
-
-🖳 Expected output:
-
-```
-📄----------------------------------------✨SUMMARY✨----------------------------------------📄
-
-🔵 Tests Passed:
-🔹LAV1-grpclatest block: 0x4ca8c
-🔹LAV1-restlatest block: 0x4ca8c
-🔹LAV1-tendermintrpclatest block: 0x4ca8c
-
-🔵 Tests Failed:
-🔹None 🎉! all tests passed ✅
-
-🔵 Provider Port Validation:
-🔹✅ All Ports are valid! ✅
-
-```
-
-
-`lavap test rpcprovider --from your_key_name_here --endpoints "your-site:443,ETH1"`
-
-🖳 Expected output:
-
-```
-📄----------------------------------------✨SUMMARY✨----------------------------------------📄
-
-🔵 Tests Passed:
-🔹ETH1-jsonrpclatest block: 0x1115fe9
-
-🔵 Tests Failed:
-🔹None 🎉! all tests passed ✅
-
-🔵 Provider Port Validation:
-🔹✅ All Ports are valid! ✅
-
-```
-
-
-### 🔗‍💥 Stake the Provider on Chain
-
-Use a variation of the following command to stake on chain; the minimum stake is `50000000000ulava`
-
-```bash
-lavap tx pairing stake-provider ETH1 "50000000000ulava" "eth.your-site:443,1" 1 validator -y --from your_key_name_here --provider-moniker your-provider-moniker-1 --delegate-limit "0ulava" --gas-adjustment "1.5" --gas "auto" --gas-prices "0.0001ulava"
-```
-* validator - active validator address
-
-```bash
-lavap tx pairing stake-provider LAV1 "50000000000ulava" "lava.your-site:443,1" 1 validator -y --from your_key_name_here --provider-moniker your-provider-moniker-1 --delegate-limit "0ulava" --gas-adjustment "1.5" --gas "auto" --gas-prices "0.0001ulava"
-```
-
-### ☑️ Test the Providers again! 
-
-```bash
-lavap test rpcprovider --from your_key_name_here --endpoints "lava.your-site:443,LAV1"
-
-lavap test rpcprovider --from your_key_name_here --endpoints "eth.your-site:443,ETH1"
-```
-You can also get useful information on the setup using:
-
-```bash
-lavap q pairing account-info --from your_key_name
-```
-
-
-❗ If you have any further issues, do not hesitate to venture to our [discord](https://discord.com/invite/Tbk5NxTCdA) where you can get better assistance!
+### Start RPC provider service
+Now that you have Nginx configured you can move to the next step of starting the RPC provider service. Head to the [provider setup](./provider-setup.md) page for a detailed guide.

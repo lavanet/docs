@@ -4,6 +4,8 @@ slug: /provider
 ---
 
 import RoadmapItem from '@site/src/components/RoadmapItem';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 # Become a Provider
 
@@ -22,14 +24,75 @@ graph LR
 
 ### Becoming a Provider
 
-To join the Lava network as a provider, follow these steps:
+To join the Lava network as a provider, you'll need to follow two key steps:
 
-1. Ensure your Relay Chain RPC Nodes are operational and meet the required specifications.
+1. Run the relay chain RPC nodes and ensure they are operational and meet the required specifications.
 2. Stake LAVA and run Lava’s lightweight Provider process, as detailed in our **[Provider Setup](docs/provider/provider-setup.md)** guide.
 
-:::info Want to learn more?
-Learn more by reading our [litepaper](https://lavanet.xyz)
-:::
+
+
+### Querying a list of supported Chains {#chains}
+
+Lava supports a number of blockchains on Lava testnet and Lava mainnet. You cah see a full list of supported chains using the API URL or a CLI function `lavap`:
+
+
+**Chains supported on Lava Mainnet:**
+
+<Tabs>
+  <TabItem value="URL" label="URL">
+
+  https://lava.lava.build/lavanet/lava/spec/show_all_chains       
+
+  </TabItem>
+
+  <TabItem value="lavap" label="lavap">
+
+  ```bash
+   lavap q spec list-spec --node https://lava.tendermintrpc.lava.build:443 
+   ```          
+
+  </TabItem>
+</Tabs>
+
+**Chains supported on Lava Testnet:**
+
+<Tabs>
+  <TabItem value="URL" label="URL">
+
+ 
+
+  https://lav1.lava.build/lavanet/lava/spec/show_all_chains       
+
+  </TabItem>
+
+  <TabItem value="lavap" label="lavap">
+
+  ```bash
+   lavap q spec list-spec --node https://lav1.tendermintrpc.lava.build:443 
+   ```          
+
+  </TabItem>
+</Tabs>
+
+
+
+### Querying Chain Specifications
+
+Lava's protocol expands its support to new RPCs by adding Specifications ("specs") via governance. Each spec describes the schema needed for the RPC and aligns the different actors on the provided interface.
+
+To obtain information on a specific chain, run the following command, replacing `SPEC-ID`:
+
+```bash
+curl -X 'GET' \
+  'https://lav1.rest.lava.build/lavanet/lava/spec/show_chain_info/SPEC-ID' \
+  -H 'accept: application/json'
+```
+
+
+
+
+
+
 
 ### Provider Parameters
 
@@ -54,7 +117,7 @@ When staking as a provider, there are four main parameters used in the transacti
 4. **Endpoints**: A list of endpoints, each defining an address and geolocation.
 5. **Vault address**: An additional address that can be used as a secure location for holding funds.
 
-Providers need to stake separately for each supported spec. For example, if you support both Cosmos and Ethereum, you will need two separate stakes. Once your request is verified and included in the chain state, you'll be included in the Pairing List starting from the next Epoch and can begin servicing consumer requests through your nodes.
+Providers need to stake separately for each supported chain (specification). For example, if you support both Cosmos and Ethereum, you will need two separate stakes. Once your request is verified and included in the chain state, you'll be included in the Pairing List starting from the next Epoch and can begin servicing consumer requests through your nodes.
 
 ### Vault Address
 
@@ -65,35 +128,4 @@ For enhanced security, users can optionally create a vault address. This address
 A vault address can be specified while staking a provider. When staking, use the `--provider` flag to define the provider's operational ("normal") address. The `--from` flag address is then used as the vault address.
 
 Since the vault address holds the provider's funds, it is the only one that can perform stake-related transactions. In simpler terms, the vault address can execute all transactions, while the operational address can carry out all transactions except for the following: `stake-provider`, `unstake-provider`, `claim-rewards`, and `modify-provider`. The latter cannot change certain provider traits, such as `stake`, `delegation-commission`, and `delegate-limit`.
-
-### Supported APIs and Chain Specifications
-
-Lava's protocol expands its support to new RPCs by adding Specifications ("specs") via governance. Each spec describes the schema needed for the RPC and aligns the different actors on the provided interface.
-
-To obtain information on a specific chain, run the following command, replacing `SPEC-ID`:
-
-```bash
-curl -X 'GET' \
-  'https://lav1.rest.lava.build/lavanet/lava/spec/show_chain_info/SPEC-ID' \
-  -H 'accept: application/json'
-```
-
-### Querying Available APIs and Chains {#chains}
-
-:::caution
-Here and below ensure that you replace `{PUBLIC_RPC}` with the correct [endpoint](/public-rpc).
-:::
-
-To obtain a list of available **testnet-2** APIs and chains, [query all chain specs](https://lav1.lava.build/lavanet/lava/spec/show_all_chains) or use the following CLI commands for a detailed list:
-
-```bash
-curl -X 'POST' -H 'Content-Type: application/json' {PUBLIC_RPC} \
-    --data '{"jsonrpc": "2.0", "id": 1, "method": "status", "params": []}' | jq
-```
-
-Alternatively,
-
-```bash
-lavap q spec list-spec --node {PUBLIC_RPC}
-```
 

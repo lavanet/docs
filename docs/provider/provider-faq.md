@@ -3,6 +3,76 @@ slug: /provider-faq
 title: Provider FAQ
 ---
 
+## **FAQ** ❓
+
+### 🟡  Received error `account sequence mismatch`
+
+Try to wait for a block_time (current=30s) and then run the command again
+
+### 🟡  How do I make changes to my provider?
+
+It is possible for a provider to make changes in his on chain stake entry at any time, it is possible to do so by sending the same stake-provider tx we have used when first joining the network with the updated parameters.
+
+It is also possible to use a convenience cli command wrapping it:
+
+```bash
+lavad tx pairing modify-provider {SpecID} --from {WALLET}
+
+# flags:
+# --endpoints "my-provider-africa.com:443,AF my-provider-europe.com:443,EU" # must come with --geolocation if the new endpoints change/add a geolocation
+# --amount 1000000000000ulava # when wanting to increase stake, decreasing can be done only by unstaking
+# --provider-moniker "my-new-nickname"
+```
+
+### 🟡  How do I unstake? {#unstake}
+
+Run the following command:
+
+```
+lavap tx pairing unstake-provider "{NETWORK_NAME}" \\
+--from "{ACCOUNT_NAME}" \\
+--keyring-backend "{KEYRING_BACKEND}" \\
+--chain-id {CHAIN_ID} \\
+--node "{LAVA_RPC_NODE}"
+
+# For example, unstake a provider for the ETH1 network,
+# lavap tx pairing unstake-provider ETH1 \\
+# --from my_account_name \\
+# --keyring-backend "test" \\
+# --chain-id {CHAIN_ID} \\
+# --node {PUBLIC_RPC}
+
+# Expected output:
+# INF Server listening Address=[::]:LISTEN_PORT
+
+```
+
+### 🟡  Received error `dial tcp 127.0.0.1:26657: connect: connection refused`
+
+In case you got the following error:
+
+```
+Error: post failed: Post "<http://localhost:26657>": dial tcp 127.0.0.1:26657: connect: connection refused
+
+```
+
+It is likely that your node is not running, or has not joined the network, you can either join the network,
+or run the command with the `--node` flag to use an external Lava RPC node
+
+### 🟡  Received error `sentry init failure to initialize error="provider stake verification mismatch`
+
+In case you got the following error:
+
+```
+ERR sentry init failure to initialize error="provider stake verification mismatch -- &map[ChainID:NETWORK_NAME spec name:NETWORK_FULL_NAME]" ChainID=CHAIN_ID apiInterface=PROTOCOL
+
+```
+
+It is likely that the stake-provider command was not taken into effect yet, if running the `lavap server` option, please wait a few minutes and try running the command again.
+
+
+
+
 ### 🟡  What is a specification and what does it let me do? {#specs}
 A specification (“spec”) is a module which you can add to Lava, extending the range of data services the network of providers can serve. RPC specs are the first to be added to Lava, and we will offer subgraph specs soon.
 
@@ -42,8 +112,6 @@ You can check all providers on [Lava Info](https://info.lavanet.xyz). For your o
 
 You can also track your own performance using the CLI: `lavad test rpcprovider...`.
 
-### 🟡 How do I earn Magma points with a provider? {#provider-points}
-At the moment, providers are not connected to Magma and you cannot earn any points. However, you can already test the performance of providers, evaluate your CU, QoS...
 
 ### 🟡  What is the difference between a provider who uses Lavavisor and one who does not? {#lavavisor}
 There is no difference. LavaVisor updates the binary automatically. Without it you have to do it manually. [LavaVisor](/lavavisor) is based on [Cosmovisor](https://docs.cosmos.network/main/build/tooling/cosmovisor)
@@ -62,9 +130,6 @@ Here are some basic facts about jailing:
 - every epoch (15m) the chain checks unresponsiveness claims, against the CU serviced over the last 5 epochs;
 - if the ratio of complaints per relay is greater than the ratio of service claimed (if you want the full equation lmk) if more than 0.5 AND the number of providers available in the specification is greater than 5 per geolocation, then the provider is jailed and gets all its funds back after 25 hours.
 
-### 🟡  How much do providers earn now? {#providers-earn}
-Providers earn fees in the form of lava tokens from consumers for servicing requests. Accordingly, testnet providers are currently earning lava tokens on the testnet.
-Remember that Testnet tokens have no value!
 
 ### 🟡  How quickly do new providers receive relay requests? {#new-providers}
 It can take up to 15m to get relays again.
@@ -75,16 +140,9 @@ Yes, you can, it's allowed.
 ### 🟡 What is Incentivized Public RPC (ipRPC)? {#provider-iprpc}
 
 These are incentivized programs where providers earn for servicing specific chains. Chains reward node operators for joining Lava and serving infrastructure in their native token.
-The following ipRPCs are currently supported:
-- [Evmos](https://www.lavanet.xyz/blog/providers-guide-to-evmos-iprpc?utm_source=provider-faq&utm_medium=docs)
-- [Axelar](https://www.lavanet.xyz/blog/providers-guide-to-axelar-iprpc?utm_source=provider-faq&utm_medium=docs)
-- [NEAR](https://www.lavanet.xyz/blog/onboarding-guide-get-paid-to-run-a-near-rpc-node?utm_source=provider-faq&utm_medium=docs)
 
 ### 🟡  Who can join the Incentivized Public RPC? {#join-iprpc}
-Anyone can join the ipRPC. It requires [setting up a provider](https://docs.lavanet.xyz/provider-setup) for the appropriate service. Then sign up to receive lava testnet tokens using the appropriate forms:
-- [Evmos ipRPC](https://lavanet.typeform.com/to/qQ1x6WJs)
-- [Axelar ipRPC](https://lavanet.typeform.com/to/iW8rynWg)
-- [NEAR ipRPC](https://lavanet.typeform.com/to/plCaDdVM)
+Anyone can join the ipRPC. It requires [setting up a provider](https://docs.lavanet.xyz/provider-setup) for the appropriate service.
 
 ### 🟡  How can I update/edit my provider information? {#provider-info}
 To update your provider information on chain, send the `lavad tx pairing modify-provider...` transaction with the updated information and an additional stake of minimum 1 ulava.

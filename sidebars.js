@@ -327,33 +327,9 @@ const sidebars = {
           collapsed: true,
           items: [
             {
-              type: "category",
+              type: "doc",
               label: "1. Run an RPC node",
-              collapsible: true,
-              collapsed: true,
-              link: {type: "doc", id: "provider/running-nodes/run-nodes"},
-              items: [
-                {
-                  type: "doc",
-                  label: "Lava",
-                  id: "provider/running-nodes/lava"
-                },
-                {
-                  type: "doc",
-                  label: "Near",
-                  id: "provider/running-nodes/near"
-                },
-                {
-                  type: "doc",
-                  label: "Ethereum",
-                  id: "provider/running-nodes/ethereum"
-                },
-                {
-                  type: "doc",
-                  label: "Avalanche",
-                  id: "provider/running-nodes/avalanche"
-                },
-              ]
+              id: "provider/running-nodes/run-nodes",
             },
             {
               type: "category",
