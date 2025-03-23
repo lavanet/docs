@@ -39,7 +39,7 @@ To set up your provider on the Lava Network, you can refer to the [provider setu
 
 Celestia providers must supply endpoint for both consensus and DA node:
 - consensus node: rest, tendermint, grpc (this is the same as every other cosmos node)
-- DA node: jsonrpc (when running the light DA node the defualt port will be 26658)
+- DA node: jsonrpc (when running the light DA node the default port will be 26658)
 
 
 example for provider configuration file
