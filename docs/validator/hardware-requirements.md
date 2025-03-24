@@ -5,19 +5,18 @@ title: Hardware requirements
 ---
 
 ## Deployment options
-- VPS instance (on any cloud provider) - recommended ⭐️
+
+- VPS instance (on any cloud provider) - recommended 
 - Shared compute instance (e.g. AWS EC2 instance)
 - Your personal station
 
-**Docker** container are available at [Lava's repository on GitHub](https://github.com/lavanet/lava/tree/main/docker)
+If you prefer running **Docker**, Docker containers are available at [Lava's repository on GitHub](https://github.com/lavanet/lava/tree/main/docker).
 
 ## Hardware requirements
 
 As the network grows, bandwidth, CPU, and memory requirements rise. Large hard drives are recommended for storing years of blockchain history, as well as significant RAM to process the increasing amount of transactions.
 
-Also, running on testnet and mainnet will feature different requirements.
-
-**Recommended for Testnet**
+**Recommended settings to get started**
 
 | Node Type     | RAM                   | Storage       | CPU
 | -----------   | --------------------- | -----------   | ---
@@ -38,10 +37,6 @@ Settings:
 - For using the prebuilt `lavad` - you need to run **`Ubuntu` - `20`** or newer.
 - sudo permissions on your machine (e.g. can run `sudo hostname`)
 
-:::info
-Need to run a different OS? Let us know in Discord.
-:::
-
 ## Network configurations
 - Outbound - allow all traffic
 - Inbound - open the following ports:
@@ -50,11 +45,11 @@ Need to run a different OS? Let us know in Discord.
     - 26656 - Cosmos
 
 <details>
-<summary>Running as an RPC Provider?</summary>
+<summary>Planning to run as an [RPC Provider](../provider/provider.md)?</summary>
 
-Add these specific ports*:
-        - 22221 - provider port
-        - 22231 - provider port
-        - 22241 - provider port
+Add these specific ports:
+        - 22221 
+        - 22231 
+        - 22241 
 
 </details>

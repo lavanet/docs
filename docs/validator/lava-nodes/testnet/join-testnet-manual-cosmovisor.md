@@ -10,8 +10,8 @@ import Admonition from '@theme/Admonition';
 
 ## 1. Setup working environment
 
-1. Verify [hardware requirements](reqs) are met
-2. Update the system and install dependencies
+1. Verify [hardware requirements](reqs) are met.
+2. Update the system and install dependencies:
 
     :::note
     You may need to run as `sudo`
@@ -22,14 +22,14 @@ import Admonition from '@theme/Admonition';
         ### Packages installations
 
         sudo apt update 
-        sudo apt install -y unzip logrotate git jq lz4 sed wget curl coreutils 
+        sudo apt install -y unzip logrotate git jq lz4 sed wget curl coreutils  make gcc 
         sudo apt -qy upgrade
         
-    - Install Go
+    - Install Go:
         
         ```bash
         ### Configurations
-        go_package_url="https://go.dev/dl/go1.22.12.linux-amd64.tar.gz"
+        go_package_url="https://go.dev/dl/go1.23.3.linux-amd64.tar.gz"
         go_package_file_name=${go_package_url##*\/}
 
         # Download Go
@@ -43,16 +43,30 @@ import Admonition from '@theme/Admonition';
         source ~/.profile
         ```
         
-    - Verify installation
+    - Verify installation:
         
         
-        1. You can verify the installed go version by running: `go version`
+        1. You can verify the installed go version by running: 
+
+            ```bash
+            go version
+            ```
         
-        2. The command `go env GOPATH` should include `$HOME/go`
-        If not, then, `export GOPATH=$HOME/go`
+        2. Verify that `GOPATH` includes `$HOME/go`:
+            ```bash
+            go env GOPATH
+            ```
+
+            If `$HOME/go` isn't included, add it by running:
+
+            ```bash
+            export GOPATH=$HOME/go
+            ```
         
-        3. PATH should include `$HOME/go/bin`
-        To verify PATH, run `echo $PATH`
+        3. Verify that your PATH include `$HOME/go/bin`:
+            ```bash
+            echo $PATH
+            ```
         
 
 ## 2. Set your moniker
@@ -74,9 +88,11 @@ git clone https://github.com/lavanet/lava.git
 cd lava
 git checkout v5.2.0
 
+
 # Build binaries
 export LAVA_BINARY=lavad
 make build
+
 
 # Prepare binaries for Cosmovisor
 mkdir -p $HOME/.lava/cosmovisor/genesis/bin
@@ -93,7 +109,7 @@ sudo ln -s $HOME/.lava/cosmovisor/current/bin/lavad /usr/local/bin/lavad -f
 Install cosmovisor to ensure any future upgrades happen flawlessly. To install Cosmovisor:
 
 ```bash
-go install github.com/cosmos/cosmos-sdk/cosmovisor/cmd/cosmovisor@v1.6.0
+go install cosmossdk.io/tools/cosmovisor/cmd/cosmovisor@v1.6.0
 
 ```
 
@@ -170,6 +186,10 @@ sed -i \
   $HOME/.lava/config/config.toml
 ```
 
+:::note
+At any moment you can edit the values in the configuration files by navigatin to `$HOME/.lava/config/app.toml` and `$HOME/.lava/config/config.toml`.
+:::
+
 
 ## 6. Download the latest snapshot
 ```bash
@@ -178,7 +198,8 @@ curl -L https://snapshots.kjnodes.com/lava-testnet/snapshot_latest.tar.lz4 | tar
 ```
 
 ## 7. Start the service and check the logs
-```sudo systemctl start lava-testnet.service && sudo journalctl -u lava-testnet.service -f --no-hostname -o cat
+```bash
+sudo systemctl start lava-testnet.service && sudo journalctl -u lava-testnet.service -f --no-hostname -o cat
 ```
 
 ## 8. Verify
@@ -213,7 +234,6 @@ You are now running a Node in the Lava network 🎉🥳!
 
 When you're ready, start putting the node to use **as a validator**:
 [<RoadmapItem icon="🧑‍⚖️" title="Power as a Validator" description="Validate blocks, secure the network, earn rewards"/>](/validator-manual#account)
-
 :::
 
 

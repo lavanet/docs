@@ -230,3 +230,16 @@ these mean the provider service connection was solid but all relays turned to be
 
 Errors can be identified by looking at the provider service logs, it is recommended to run with debug if repeatedly getting jailed.
 
+
+
+### Metrics
+
+Lava allows providers to monitor their services through a set of different metrics available. The easiest way to access the provider metrics is through the Lava info page which gives providers a comprehensive look into their overall performance metrics as well as specific details over time.
+
+High level metrics available to providers:
+- Total CU - a numerical representation of the computational difficulty of executing a specific API calls. It is used to calculate provider rewards. 
+- Total Relays - number of data exchange events between providers and consumers.
+- Total self-stake - an amount Lava tokens bonded by the provider
+- Delegation stake - total stake from delegators
+- Total stake - self stake + delegations
+- Commission - percentage of delegation rewards retained by the provider
