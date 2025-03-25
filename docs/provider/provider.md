@@ -26,8 +26,9 @@ graph LR
 
 To join the Lava network as a provider, you'll need to follow two key steps:
 
-1. Run the relay chain RPC nodes and ensure they are operational and meet the required specifications.
-2. Stake LAVA and run Lava’s lightweight Provider process, as detailed in our **[Provider Setup](docs/provider/provider-setup.md)** guide.
+1. Decide which chains you would like to support. You can see access the list of supported chains by using the methods described in the [next paragraph](#querying-a-list-of-supported-chains-chains).
+2. Run the [relay chain RPC nodes](./running-nodes/run-nodes.mdx) for selected chains and ensure they are operational and meet the required specifications.
+3. Stake LAVA and run Lava’s lightweight Provider process, as detailed in our **[Provider Setup](docs/provider/provider-setup.md)** guide.
 
 
 
@@ -40,8 +41,11 @@ Lava supports a number of blockchains on Lava testnet and Lava mainnet. You cah 
 
 <Tabs>
   <TabItem value="URL" label="URL">
-
-  https://lava.lava.build/lavanet/lava/spec/show_all_chains       
+  ```bash
+  curl -X 'GET' \
+  'https://lava.lava.build/lavanet/lava/spec/show_all_chains' \
+  -H 'accept: application/json' 
+  ```     
 
   </TabItem>
 
@@ -58,10 +62,11 @@ Lava supports a number of blockchains on Lava testnet and Lava mainnet. You cah 
 
 <Tabs>
   <TabItem value="URL" label="URL">
-
- 
-
-  https://lav1.lava.build/lavanet/lava/spec/show_all_chains       
+  ```bash
+  curl -X 'GET' \
+  'https://lav1.lava.build/lavanet/lava/spec/show_all_chains' \
+  -H 'accept: application/json'
+  ```      
 
   </TabItem>
 
@@ -74,6 +79,7 @@ Lava supports a number of blockchains on Lava testnet and Lava mainnet. You cah 
   </TabItem>
 </Tabs>
 
+You can also check the available supported chain specifications on [Lava GitHub](https://github.com/lavanet/lava/tree/main/specs).
 
 
 ### Querying Chain Specifications

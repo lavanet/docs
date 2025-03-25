@@ -8,13 +8,13 @@ import TabItem from '@theme/TabItem';
 
 # Provider TLS Setup Guide
 
- All providers must use a domain name and TLS. If you already own a domain, you can continue to the next steps. Otherwise, make sure to acquire one using a domain registrar of your choice.
+ All providers must use a domain name and TLS. Make sure to acquire one using a domain registrar of your choice before following this guide.
 
-## 📊 Diagram
+## Diagram
 
 ![Provider TLS Diagram](/img/tutorial/provider/provider-tls-diagram.png)
 
-## 📋 Prerequisites
+## Prerequisites
 
 | Required Setup            |  ?  | 
 | --------------------------|-----|
@@ -23,7 +23,7 @@ import TabItem from '@theme/TabItem';
 | [Account](../intro/wallet.mdx#cli) with `ulava` balance      | ✅  |
 
 
-### 🅰️ Change the A Record on your Domain
+## Step 1: Change the A Record on your Domain
 
 
 The first step of establishing your Provider is to modify some of the DNS settings on the domain you purchased. In specific, you'll need to change the A Records on your domain. Changing your `A-Record` will create a subdomain that routes traffic to a specific provider process. Depending upon who you've purchased your domain through, A-Records may be visible under `Advanced DNS` or another label.
@@ -54,7 +54,7 @@ Alternatively, you can create one `A-Record` that captures traffic to all sub-do
 </details>
 <br />
 
-### 📂 Install Required Dependencies
+## Step 2: Install Required Dependencies
 
 We will guide you on setting up and configuring Nginx to use a TLS certificate and handle connections to different provider processes. It is also possible to use alternative solutions for these two tasks, such as Caddy, Envoy or your preferred solution.
 
@@ -67,7 +67,7 @@ sudo apt install certbot net-tools nginx python3-certbot-nginx -y
 
 <br />
 
-### 📮 Generate Certificate 
+## Step 3: Generate Certificate 
 
 Next, we need to actually create the `TLS certificate` via the certifying authority. This process is automated by `certbot`.
 
@@ -83,7 +83,7 @@ Note, you will need one `-d` flag for each subdomain you created as an `A-Record
 You may be met with several prompts. Use `nginx` or Nginx Web Server Plugin when asked. 
 <br />
 
-### 💻 Validate Certificate
+## Step 4: Validate Certificate
 
 Let's make sure your certificate successfully installed! ✅ Input the following command:
 
@@ -105,7 +105,7 @@ You'll need both `Certificate Path` and `Private Key Path` for your next step.
 
 <br />
 
-### 🗃️ Add an Nginx Config for Each Domain
+## Step 5: Add an Nginx Config for Each Domain
 
 Lava recommends running each chain under a separate provider process. This will separate error logs and protect against complete provider failure in the case of a problematic provider process. The first step of this is to create different nginx routes for each chain.
 
@@ -216,7 +216,7 @@ The above examples use ports `443` for external listening and `2223` / `2224` fo
 
 <br />
 
-### 🧪 Test Nginx Configuration
+## Step 6: Test Nginx Configuration
 
 Now, ensure that your `nginx` setup is working! ✅
 
@@ -232,7 +232,7 @@ nginx: configuration file /etc/nginx/nginx.conf test is successful
 
 <br />
 
-### ♻️ Restart Nginx
+## Step 7: Restart Nginx
 
 You will need to refresh the Nginx server:
 
@@ -241,5 +241,5 @@ sudo systemctl restart nginx
 ```
 <br />
 
-### Start RPC provider service
+## Step 8: Start RPC provider service
 Now that you have Nginx configured you can move to the next step of starting the RPC provider service. Head to the [provider setup](./provider-setup.md) page for a detailed guide.

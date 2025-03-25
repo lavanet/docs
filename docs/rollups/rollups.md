@@ -4,6 +4,25 @@ title: Add Lava to your chain
 ---
 
 # Add Lava to your chain 
+Incentivized Public RPC Pools (ipRPC) allow sponsors—such as DAOs, foundations, or blockchain ecosystem teams—to fund public RPC access for their users, while ensuring high-quality service from Lava’s decentralized provider network.
+
+By creating an ipRPC pool, sponsors can:
+
+✅ Guarantee reliable, fast RPC access for end users without requiring them to stake or pay individually
+
+✅ Onboard developers and apps faster by removing the friction of setting up RPC infrastructure
+
+✅ Maintain quality of service by directly incentivizing providers to serve your chain
+
+✅ Use any IBC-compatible token (plus a minimal amount of LAVA) to fund the pool and shape reward emissions
+
+✅ Customize rewards with flexible emission schedules and distribution parameters
+
+✅ Preserve token value by setting a minimum-cost floor, ensuring providers are compensated meaningfully
+
+ipRPC pools work through a Server Kit / gateway interface, allowing authenticated consumers to act on behalf of users. These consumers have special subscriptions tied to your funded pool, and every time users interact with your chain, providers earn rewards from your pool in addition to their regular Lava earnings.
+
+
 ## Why add Lava to your chain
 Lava eliminates the need for bootstrapping and managing public RPC endpoints. By leveraging Lava, blockchain networks can deploy incentive pools to attract a community of top-tier node runners, ensuring a high-quality, decentralized infrastructure.
 

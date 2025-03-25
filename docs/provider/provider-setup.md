@@ -9,32 +9,34 @@ import TabItem from '@theme/TabItem';
 
 
 
-## **Overview**
+## Overview
 
-A multi-chain network provider allows you to manage and interact with multiple blockchain networks using a single entry point. By supporting various API interfaces, the provider can accommodate the specific needs and preferences of different blockchain networks.
+This guide walks you through setting up an RPC provider for Lava, from configuration to staking and beyond.
 
-This page will cover all the steps and all the available configurations requred to run RPC provider on Lava. 
+## Prerequisites
 
-## **Prerequisites**
+Make sure you have:
 
-1. A node configured and fully synced for the [chain you want to provide](provider.md#querying-a-list-of-supported-chains-chains)
-2. [Lavavisor](./lavavisor/lavavisor.md) configured (recommened)
-Go 1.20.5 or higher
-3. [TLS Configured](./provider-tls.md)
-2. [`lavap`](../intro/install-lava.md#install-a-specific-binary-) installed 
-3. Account with enough LAVA for staking (learn about [creating Accounts](../intro/wallet.mdx))
+- ✅ A synced node for your target chain ([supported chains](provider.md#querying-a-list-of-supported-chains-chains))
+- ✅ [`lavap`](../intro/install-lava.md#install-a-specific-binary-) installed
+- ✅ [TLS configured](./provider-tls.md) (optional but recommended)
+- ✅ [Lavavisor](./lavavisor/lavavisor.md) setup (optional)
+- ✅ A wallet funded with LAVA tokens
 
 
-## Step 1: Create RPC provider configuration file
-To define the RPC provider provider configuration, create .yml file. Inside of this file you have to define the endpoints your provider will expose and how they interact with the blockchain network.
+## Step 1: Create a Provider Config File
+Inside of the default node home directory create a YAML config file (e.g., `lava-provider.yml`) that defines your endpoints.
 
-Each endpoint configuration consists of:
-- `api-interface`: Defines the type of API service (tendermintrpc, grpc, or rest).
-- `chain-id`: The blockchain network identifier. This corresponds to the blockchain your provider is going to service.
-- `network-address`: Specifies where the provider listens for requests.
-- `node-urls`: Defines the backend node(s) the provider communicates with.
+### Endpoint Schema
 
-#### Configuration examples
+| Field             | Description                                      |
+|------------------|--------------------------------------------------|
+| `api-interface`   | API type (`tendermintrpc`, `jsonrpc`, etc.)      |
+| `chain-id`        | Chain ID to provide service for                 |
+| `network-address` | Host/port where your provider listens           |
+| `node-urls`       | One or more backend node URLs                   |
+
+### Examples
 
 To illustrate, below you can see two provider configuration files - one for running a provider service for Lava testnet (`lava-provider.yml`) and one for running Ethereum provider service (`eth-provider.yml`):
 
@@ -94,47 +96,27 @@ If your server has a TLS configured, you should set the flag `disable-tls:true` 
 
 If you are unsure which endpoints you should include in your provider configuration, make sure to [reference the specification](./provider.md#querying-chain-specifications) for the chain you are setting up your provider for to see supported endpoints and API interfaces. 
 
-:::note
-Lava team has a set of configuration examples available for providers. Examples include multi-chain configuration, archival node configuration, and much more. [Explore the library of availalbe examples](https://github.com/lavanet/lava/tree/main/config/provider_examples).
+
+:::tip
+See [provider config examples](https://github.com/lavanet/lava/tree/main/config/provider_examples) for more templates.
 :::
 
 
 
 ## Step 2: Run RPCProvider process
 
-Once you have the provider configuration file ready, you can start the RPC provider proces.
-
-**`rpcprovider`** is a command line tool for setting up an RPC server that listens for requests from Lava protocol RPC consumers, forwards them to a configured node, and responds with the reply. The configuration can be provided via a YAML configuration file or as command line arguments.
-
-**`rpcprovider`** is part of `lavap` and can run using the following syntax:
+Once you have the provider configuration file ready, you can start the RPC provider proces using the **rpcprovider** command available through `lavap`:
 
 ```bash
 lavap rpcprovider [config-file] || { {listen-host:listen-port spec-chain-id api-interface node-url} ... }
 ```
 
-#### Configuration
-Configuration varies per chain. Some chains have steeper configuration requirements than others.
-
-
-
 :::info
-For advanced configuration such as **authentication**, header **forwarding**, configurable **node-timeout**, see [Provider Features](/provider-features)
+For advanced configuration such as **authentication**, header **forwarding**, configurable **node-timeout**, see [Provider Features.](/provider-features)
 :::
-
-You can either provide a single configuration file (YAML) or specify one or more endpoint configurations as command line arguments.
-
-The default configuration file is named **`rpcprovider.yml`**. If a single argument is provided, it is assumed to be the name of the configuration file (without the extension).
-
-If no arguments are provided, the default configuration file is used. All configuration files should be located in the default node home directory (e.g., **`app.DefaultNodeHome/config`**) or the local running directory.
 
 <details>
 <summary> Command Flags </summary>
-
-:::caution
-Ensure that you replace `{CHAIN_ID}` with the appropriate value for your target network. See the [Chain ID](/key-variables#chain-id) section for details. Additionally, replace `{PUBLIC_RPC}` with the correct [endpoint](/public-rpc).
-:::
-
-**`rpcprovider`** accepts the following flags:
 
 - **`--geolocation`** (required): Geolocation to run from (e.g., **`1`**). Use the [geolocation reference](./provider.md#provider-parameters) for configuring the geolocation correctly.
 - **`--from`** (required): Account name to use (e.g., **`alice`**)
@@ -147,30 +129,39 @@ Ensure that you replace `{CHAIN_ID}` with the appropriate value for your target 
 
 </details>
 
-#### Examples for starting RPC provider process
+### Examples
 
-To illustrate, we'll start the RPC provider processes for Lava testnet and Ethereum mainnet, referencing the configuration files defined in the [previous step](#configuration-examples). We'll configure these processes to run on Lava testnet.
+Examples below show the commands for starting RPC provider process for Lava Testnet and Ethereum Mainnet, both on a Lava testnet:
 
-In this example, we use the built-in terminal multiplexer `screen` to run multiple provider processes. Begin by typing `screen`. But you can also use a different multiplexer, e.g. `tmux`.
+<Tabs>
+<TabItem value="Lava Testnet" label="lava-provider">
 
-
-⏫ To start the Ethereum process
 ```bash
-screen -S eth-provider
-
 # This will take us to a separate terminal where we can start the provider process:
-
-lavap rpcprovider eth-provider.yml --from your_key_name_here --geolocation 1 --chain-id lava-testnet-2 --log_level debug
-```
-Press `CTRL+ad` to detach from the `eth-provider` screen. <br />
-⏫ To start the Lava provider process
-```bash
 screen -S lava-provider
 
-# This will take us to a separate terminal where we can start the provider process:
 
+# Start the provider process on Lava testnet.
 lavap rpcprovider lava-provider.yml --from your_key_name_here --geolocation 1 --chain-id lava-testnet-2 --log_level debug
 ```
+
+</TabItem>
+<TabItem value="Ethereum provider" label="eth-provider">
+
+```bash
+# This will take us to a separate terminal where we can start the provider process:
+
+screen -S eth-provider
+
+
+# Start the provider process on Lava testnet.
+lavap rpcprovider eth-provider.yml --from your_key_name_here --geolocation 1 --chain-id lava-testnet-2 --log_level debug
+```
+
+</TabItem>
+</Tabs>
+
+
 
 You can also provide endpoint configurations as command line arguments. For example:
 ```bash
@@ -245,8 +236,10 @@ lavap test rpcprovider {PROVIDER_ADDRESS} --endpoints "{ENDPOINTS}"
 </TabItem>
 </Tabs>
 
-#### Examples
-To illustrate, we are going to run tests for Lava Testnet and Ethereum Mainnet provider services configured [in the previous step](#examples-for-starting-rpc-provider-process).
+### Examples
+
+<Tabs>
+<TabItem value="Lava Testnet" label="lava-provider">
 
 `lavap test rpcprovider --from your_key_name_here --endpoints "your-site:443,LAV1"`
 
@@ -268,6 +261,8 @@ Expected output:
 
 ```
 
+</TabItem>
+<TabItem value="Ethereum provider" label="eth-provider">
 
 `lavap test rpcprovider --from your_key_name_here --endpoints "your-site:443,ETH1"`
 
@@ -287,9 +282,13 @@ Expected output:
 
 ```
 
-## Step 4: Stake as Provider
+</TabItem>
+</Tabs>
 
-Before you can expose your provider to rpc consumers, you need to stake a provider. The amount you will have to stake is determined in the [specificiation of the chain](./provider.md#querying-chain-specifications) under the `min_stake_provider` parameter.
+
+## Step 4: Stake Your Provider
+
+To make your provider publicly available, you have to stake it. The amount you will have to stake is determined in the [specificiation of the chain](./provider.md#querying-chain-specifications) under the `min_stake_provider` parameter.
 
 To stake a single service, use the following command:
 
@@ -324,9 +323,11 @@ lavap tx pairing stake-provider [chain-id] [amount] [endpoint endpoint ...] [geo
 - **`--delegate-commission`** - the commission the provider will take from delegation rewards.
 - **`--description-details`** - the (optional) details of the provider, using the same format as standard cosmos validator details
 </details>
-#### Stake Examples
+### Examples
 
-Stake Lava Testnet RPC provider:
+
+<Tabs>
+<TabItem value="Lava Testnet" label="lava-provider">
 
 ```bash
 lavap tx pairing stake-provider LAV1 \
@@ -341,24 +342,8 @@ lavap tx pairing stake-provider LAV1 \
   --gas-prices "0.0001ulava"
 ```
 
-Stake Ethereum Mainnet RPC provider:
-
-```bash
-lavap tx pairing stake-provider ETH1 \ 
-  "50000000000ulava" \
-  "eth.your-site:443,1" 1 \
-  validator -y \
-  --from your_key_name_here \
-  --provider-moniker your-provider-moniker-1 \
-  --delegate-limit "0ulava" \
-  --gas-adjustment "1.5" \
-  --gas "auto" \
-  --gas-prices "0.0001ulava"
-```
-
-
-<details>
-<summary> Lava Testnet in US (with specified validator) </summary>
+</TabItem>
+<TabItem value="Ethereum provider" label="eth-provider">
 
 ```bash
 lavap tx pairing stake-provider LAV1 \
@@ -373,29 +358,10 @@ lavap tx pairing stake-provider LAV1 \
     --gas-adjustment "1.5" \
     --node {PUBLIC_RPC}
 ```
-</details>
 
-<details>
-<summary> Ethereum Mainnet in US (without specified validator) </summary>
+</TabItem>
 
-Ethereum and other EVMs usually have only `jsonrpc` interface:
-
-```bash
-lavap tx pairing stake-provider "ETH1" \
-    "50000000000ulava" \
-    "provider-host.com:443,USC" USC \
-    --from "my_account_name" \
-    --provider-moniker "your-moniker" \
-    --keyring-backend "test" \
-    --chain-id {CHAIN_ID} \
-    --gas="auto" \
-    --gas-adjustment "1.5" \
-    --node {PUBLIC_RPC}
-```
-</details>
-
-<details>
-<summary> Ethereum Mainnet in US And Europe (multiple endpoints) </summary>
+<TabItem value="Ethereum provider multiple locations" label="eth-provider for multiple geolocations">
 
 ```bash
 lavap tx pairing stake-provider "ETH1" \
@@ -409,47 +375,14 @@ lavap tx pairing stake-provider "ETH1" \
     --gas-adjustment "1.5" \
     --node {PUBLIC_RPC}
 ```
-</details>
+</TabItem>
 
-<details>
-<summary> Ethereum Globally Load Balanced Array of Nodes </summary>
 
-To be used if your endpoint is DNS load balanced for all covered geolocations.
+</Tabs>
 
-```bash
-lavap tx pairing stake-provider "ETH1" \
-    "50000000000ulava" \
-    "provider-host-gl.com:443,GL" "GL" \
-    --from "my_account_name" \
-    --provider-moniker "your-moniker" \
-    --keyring-backend "test" \
-    --chain-id {CHAIN_ID} \
-    --gas="auto" \
-    --gas-adjustment "1.5" \
-    --node {PUBLIC_RPC}
-```
-</details>
 
-<details>
-<summary> Cosmos Hub Testnet in US </summary>
 
-Cosmos's usually have `rest`, `tendermintrpc` & `grpc` interface, all mandatory:
-
-```bash
-lavap tx pairing stake-provider "COS5T" \
-    "50000000000ulava" \
-    "provider-host.com:1986,1" 1 \
-    --from "my_account_name" \
-    --provider-moniker "your-moniker" \
-    --keyring-backend "test" \
-    --chain-id {CHAIN_ID} \
-    --gas="auto" \
-    --gas-adjustment "1.5" \
-    --node {PUBLIC_RPC}
-```
-</details>
-
-:::info
+:::tip
 Note that this TX can also be used to increase the provider's stake. To increase, the amount should be the sum of the current amount and the desired addition. For example, a provider is staked with `100ulava` and wants to increase its stake by `10ulava`. Then, the appropriate `amount` argument for the `stake-provider` command should be `110ulava`.
 :::
 
@@ -496,10 +429,13 @@ lavap query pairing account-info \
 </TabItem>
 </Tabs>
 
-#### Parameter Descriptions (with examples)
+<details>
+<summary> Parameter Descriptions </summary>
 
-- **`provider_address`** - The public address of the provider beginning with the lava@ prefix. Examples: **`lava@1e4vghfjertxq25l2vv56egkfkvdjk90t0c667v`**
-- **`LAVA_RPC_NODE`** - An RPC node for Lava. This can be omitted if the current node has already joined the Lava network. Example: **[PUBLIC_RPC](/public-rpc)**
+- `provider_address` - The public address of the provider beginning with the lava@ prefix.
+- `LAVA_RPC_NODE` - An RPC node for Lava. This can be omitted if the current node has already joined the Lava network. Example: [PUBLIC_RPC](/public-rpc)
+
+</details>
 
 Another useful command to check all providers for a specific chain:
 
@@ -517,10 +453,13 @@ lavap query pairing providers \
 # List of all providers, and your provider should be on of them
 ```
 
-#### Parameter Descriptions (with examples)
+<details>
+<summary> Parameter Descriptions </summary>
 
-- **`NETWORK_NAME`** - The ID of the chain. Examples: **`COS4`** or **`FTM250`**. To get the full list of available chains use: `lavap query spec show-all-chains --node {LAVA_RPC_NODE}`.
-- **`LAVA_RPC_NODE`** - An RPC node for Lava. This can be omitted if the current node has already joined the Lava network. Example: **[PUBLIC_RPC](/public-rpc)**
+- `NETWORK_NAME` - The ID of the chain. Examples: `COS4` or `FTM250`.
+- `LAVA_RPC_NODE` - An RPC node for Lava. This can be omitted if the current node has already joined the Lava network. Example: [PUBLIC_RPC](/public-rpc)
+
+</details>
 
 :::info
 Note, a new provider stake is only applied on the start of the next epoch. Currently, an epoch is defined as 30 blocks. With block time of 30sec, in the worst case scenario the stake will be applied after 15min.
