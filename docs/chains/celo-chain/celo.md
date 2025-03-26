@@ -22,14 +22,13 @@ import RoadmapItem from '@site/src/components/RoadmapItem'
 
 ### Specification 📑
 
-https://raw.githubusercontent.com/lavanet/lava/main/cookbook/specs/celo.json
+https://raw.githubusercontent.com/lavanet/lava/refs/heads/main/specs/mainnet-1/specs/celo.json
 
 ### Protocols 🔗
 
 | Platform | jsonrpc/http | jsonrpc/wss |
 | -------- | ------------ | ----------- |
 | Gateway  | ✅           | ✅          |
-| SDK      | ✅           |
 
 ### Methods 🛠️
 
