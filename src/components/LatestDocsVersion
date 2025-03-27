@@ -12,18 +12,23 @@ const LatestDocsVersion = () => {
         'X-GitHub-Api-Version': '2022-11-28',
       },
     })
-      .then(response => response.json())
-      .then(data => {
-        setVersion(data.tag_name);
-      })
-      .catch(error => {
-        console.error('Error fetching version:', error);
-        setVersion('Failed to load version');
-      });
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      return response.json();
+    })
+    .then(data => {
+      setVersion(data.tag_name);
+    })
+    .catch(error => {
+      console.error('Error fetching version:', error);
+      setVersion('Failed to load version');
+    });
   }, []);
 
   return (
-    version || "N/A"
+    <span>{version}</span> // Wrapped in a span for potential styling or semantic purposes
   );
 };
 
