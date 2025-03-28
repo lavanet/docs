@@ -97,7 +97,7 @@ const config = {
       {
         redirects: [
           {
-            from: '/',
+            from: '/docs/intro/about',
             to: '/about',
           },
         ],
