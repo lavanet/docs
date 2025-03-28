@@ -1,23 +1,47 @@
 ---
-slug: /access-server-kit
-title: Server Kit
+slug: /infra-manager
+title: Infra Manager
 ---
-# Lava Server Kit
-
-:::note 
-🧪
-The Lava Server Kit (referenced in code as `RPCConsumer`) is currently in an experimental phase. There may be major and breaking changes during this phase. If you are looking for simple RPC access, consider using the Gateway. If you're looking to tinker, source code is available on our [Github repository](https://github.com/lavanet/lava/tree/main/protocol/rpcconsumer)). 
-:::
-
-The **Lava Server Kit** is a GO language reference implementation that provides self-hosted gateway access to blockchain APIs, designed as a solution for running as a backend server. It is capable of accepting raw RPC queries, wrapping them up with the protocol layer, and sending them directly to providers on our network in a decentralized manner. The Lava Server Kit is highly concurrent and performant and is used in enterprise-grade applications which require high throughput and efficiency in scaling. 
+# Infra Manager
 
 
+The **Infra Manager** is an open source smart router that supports any RPC (Lava, Alchemy, self-hosted etc.) and chooses the best nodes for you with automatic failover, error recovery, smart caching, fast TXs and more.
 
 ### Features
 
-1. Serve multiple blockchain RPC endpoints
-2. High throughput with multiple sessions
-3. Easy setup process
+1. Routes requests to the best nodes based on reliability, speed, and sync
+2. Automatically retries and fallbacks when providers face errors or downtime
+3. Delivers faster transaction propagation by broadcasting to all providers at once
+4. Has two layers of smart caching
+5. Samples and checks data accuracy
 
-### Guides
-- A [guide](https://services.mellifera.network/testnets/lava-network/RPC_Consumer) for creating a custom gateway. Created by Lava community member, MELLIFERA.
+### Get Started
+Follow the steps to get started with Infra Manager:
+1. Clone the repository:
+```bash 
+git clone https://github.com/lavanet/lava.git
+```
+2. Navigate to the Infra Manager directory:
+```bash
+cd lava/protocol/rpcconsumer
+```
+3. Install all dependencies:
+```bash
+make install-all
+```
+4. Create a configuration file with the following format:
+```bash
+endpoints:
+  - network-address: <network-address>
+    chain-id: <chain-id>
+    api-interface: <api-interface>
+  - network-address: <network-address>
+    chain-id: <chain-id>
+    api-interface: <api-interface>
+```
+The `network-address` specifies the IP address and port number of the node, `chain-id` specifies the unique identifier of the blockchain, and `api-interface` specifies the API interface used by the node.
+
+5. Start the consumer using the command:
+```bash
+rpcconsumer --config <path/to/config/file>
+```

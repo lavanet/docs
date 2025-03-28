@@ -5,7 +5,7 @@ const sidebars = {
   aboutLavaSidebar: [
     {
       type: "category",
-      label: "About Lava",
+      label: "📖 About Lava",
       collapsible: false,
       className: "custom-sidebar-spacing", // Add a custom class
       collapsed: false,
@@ -179,11 +179,6 @@ const sidebars = {
                 },
                 {
                   type: "doc",
-                  label: "Use Public Community Endpoints",
-                  id: "developer/endpoints/public-rpc"
-                },
-                {
-                  type: "doc",
                   label: "Use Gateway",
                   id: "developer/endpoints/gateway-endpoints"
                 },
@@ -191,7 +186,7 @@ const sidebars = {
             },
             {
               type: "doc",
-              label: "Infra Manager (Server Kit)",
+              label: "Infra Manager",
               id: "developer/access-server-kit"
             },
             {type: "category",
@@ -381,11 +376,6 @@ const sidebars = {
           type: "doc",
           label: "Provider Rewards",
           id: "provider/provider-rewards-service"
-        },
-        {
-          type: "doc",
-          label: "lavap reference",
-          id: "provider/lavap-reference"
         },
         {
           type: "doc",

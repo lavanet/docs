@@ -93,6 +93,17 @@ const config = {
   plugins: [
     "docusaurus-plugin-clarity",
     [
+      '@docusaurus/plugin-client-redirects',
+      {
+        redirects: [
+          {
+            from: '/',
+            to: '/about',
+          },
+        ],
+      },
+    ],
+    [
       "docusaurus-plugin-segment",
       {
         apiKey: "DQPhWiY1Diy8ywBu7fXgqLyii8HR3cXD",

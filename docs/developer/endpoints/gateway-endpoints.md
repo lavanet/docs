@@ -5,7 +5,7 @@ title: Gateway Endpoints
 
 # Lava Gateway
 
-The **Lava Gateway**, developed and managed by the MagmaDevs team, is a simplified web interface that gives developers instant access to blockchain data. The Gateway uses the [Lava Infra Manager](../access-server-kit.md) to provide a hosted point of access for developers looking for RPC through the Lava Network. This allows users to manage and configure Web3 APIs through intuitive controls directly from the browser and find example calls for the supported chains.
+The **Lava Gateway**, developed and managed by the MagmaDevs team, is a simplified web interface that gives developers instant access to blockchain data. The Gateway uses the [Infra Manager](../access-server-kit.md) to provide a hosted point of access for developers looking for RPC through the Lava Network. This allows users to manage and configure Web3 APIs through intuitive controls directly from the browser and find example calls for the supported chains.
 
 ## Create your Gateway account
 

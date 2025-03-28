@@ -32,10 +32,6 @@ Lava works with various blockchains to establish [**Incentivized Public RPC (ipR
 
 These endpoints are completely free and open to all consumers. Public incencitized endpoints provide data access to all supported chains at 3 req/s.
 
-### Public Community Endpoints
-
-[**Community endpoints**](./public-rpc.mdx) are RPC services offered by various community members and organizations. These endpoints provide free access to blockchain data, though availability and performance may vary as they are maintained by community members.
-
 
 ### Gateway
 
