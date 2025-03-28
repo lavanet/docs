@@ -166,6 +166,7 @@ const config = {
         logo: {
           alt: "Lava Docs Logo",
           src: "img/lava_logo.svg",
+          href: '/about',
         },
         items: [
           { 
