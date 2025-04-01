@@ -11,7 +11,7 @@ In this section, we will cover the governance parameters for both the **Mainnet*
 
 ---
 
-## 🌐 **Mainnet Governance Parameters**
+## Mainnet Governance Parameters
 
 | **Parameter**                                        | **Description**                                                                                                   | **Value**       |
 | ---------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- | --------------- |
@@ -21,7 +21,7 @@ In this section, we will cover the governance parameters for both the **Mainnet*
 | 💵 **Expedited Min Deposit to Enter Deposit Period** | 25% of the expedited Min Deposit amount.                                                                          | **3,500 LAVA**  |
 | ⏳ **Max Deposit Period**                            | The maximum time allowed to reach the required deposit amount for both regular and expedited proposals.           | **2 days**      |
 | 🗳️ **Voting Period**                                 | The duration for which voting is open on a standard proposal.                                                     | **4 days**      |
-| 🕐 **Expedited Voting Period**                       | The duration for which voting is open on an expedited proposal.                                                   | **1 hour**      |
+| 🕐 **Expedited Voting Period**                       | The duration for which voting is open on an expedited proposal.                                                   | **3 hour**      |
 | 📊 **Quorum**                                        | The minimum percentage of total staked tokens that must participate in the vote for it to be valid.               | **33.4%**       |
 | ✅ **Threshold**                                     | The minimum percentage of "Yes" votes (excluding Abstain votes) required for the proposal to pass.                | **50%**         |
 | 🚫 **Veto Threshold**                                | The maximum percentage of "No with Veto" votes allowed before the proposal is rejected and the deposit is burned. | **33.4%**       |
@@ -30,7 +30,7 @@ In this section, we will cover the governance parameters for both the **Mainnet*
 
 ---
 
-## 🧪 **Testnet Governance Parameters**
+## Testnet Governance Parameters
 
 The testnet governance parameters are designed to enable faster iterations and experimentation, helping the community to test and refine proposals before they are submitted on the mainnet.
 
@@ -47,6 +47,6 @@ The testnet governance parameters are designed to enable faster iterations and e
 
 ---
 
-### 🔄 **Modifiable Parameters**
+### Modifiable Parameters
 
 The governance parameters listed above are **modifiable by governance**, meaning that the community can propose changes to these values if necessary. This flexibility ensures that the governance model can adapt to changing network conditions, scaling requirements, and user feedback.

@@ -3,6 +3,7 @@
 
 const lightCodeTheme = require("prism-react-renderer/themes/github");
 const darkCodeTheme = require("prism-react-renderer/themes/dracula");
+const webpack = require('webpack');
 require("dotenv").config();
 
 /** @type {import('@docusaurus/types').Config} */
@@ -92,6 +93,17 @@ const config = {
   plugins: [
     "docusaurus-plugin-clarity",
     [
+      '@docusaurus/plugin-client-redirects',
+      {
+        redirects: [
+          {
+            from: '/docs/intro/about',
+            to: '/about',
+          },
+        ],
+      },
+    ],
+    [
       "docusaurus-plugin-segment",
       {
         apiKey: "DQPhWiY1Diy8ywBu7fXgqLyii8HR3cXD",
@@ -109,6 +121,25 @@ const config = {
         },
       };
     },
+    async function customPlugin(context, opts) {
+      return {
+        name: 'custom-plugin',
+        configureWebpack(config, isServer, utils, content) {
+          // Modify internal webpack config. If returned value is an Object, it
+          // will be merged into the final config using webpack-merge;
+          // If the returned value is a function, it will receive the config as the 1st argument and an isServer flag as the 2nd argument.
+          return {
+            plugins: [
+              new webpack.DefinePlugin({
+                // IMPORTANT: To fix debug library‘s bug
+                // {}.DEBUG = namespaces; // SyntaxError: Unexpected token '.'
+                'process.env.DEBUG': 'process.env.DEBUG',
+              })
+            ]
+          }
+        },
+      }
+    }
   ],
 
   markdown: {
@@ -123,44 +154,112 @@ const config = {
       colorMode: {
         defaultMode: "dark",
       },
+      toc: {
+        minHeadingLevel: 2, // Minimum heading level to track
+        maxHeadingLevel: 5, // Maximum heading level to track
+      },
+      sidebar: {
+        style: 'wide', // Make it appear like GitBook
+      },
       navbar: {
         title: "Lava Docs",
         logo: {
           alt: "Lava Docs Logo",
           src: "img/lava_logo.svg",
+          href: '/about',
         },
         items: [
-          {
-            label: "Web3 APIs ⚡️",
+          { 
+            type: 'docSidebar',
+            sidebarId: 'aboutLavaSidebar',
+            label: "About Lava",
             position: "left",
             to: "developer",
           },
           {
-            label: "Lava Protocol 🌋",
+            type: 'docSidebar',
+            sidebarId: 'getRPCSidebar',
+            label: "Use Lava RPC",
             position: "left",
             to: "power-lava",
           },
           {
-            href: "https://lavanet.xyz",
-            label: "Lava Home",
-            position: "right",
+            type: 'docSidebar',
+            sidebarId: 'validatorsSidebar',
+            label: "Validators",
+            position: "left",
+            to: "validator",
+          },
+          {
+            type: 'docSidebar',
+            sidebarId: 'providerSidebar',
+            label: "RPC Providers",
+            position: "left",
+            to: "power-lava",
+          },
+          {
+            type: 'docSidebar',
+            sidebarId: 'rollupSidebar',
+            label: "RPC Pools",
+            position: "left",
+            to: "power-lava",
           },
           {
             href: "https://github.com/lavanet/docs",
-            label: "GitHub",
             position: "right",
-          },
-          {
-            href: "https://discord.gg/Tbk5NxTCdA",
-            label: "Discord",
-            position: "right",
+            className: "header-github-link", // Custom CSS class
+            'aria-label': "GitHub repository",
           },
         ],
       },
       footer: {
         style: "dark",
-        copyright: `Copyright © ${new Date().getFullYear()} Lava. Docs built with Docusaurus.`,
-      },
+        links: [
+          {
+            title: "Lava Network",
+            items: [
+              {
+                label: "Lava Home",
+                href: "https://lavanet.xyz",
+              },
+              {
+                label: "Lava Whitepaper",
+                href: "https://cdn.prod.website-files.com/642c9c8327126062770bfdd0/66fd507cdd54cabe7496d478_LavaNetwork-AccessingBlockchains.pdf",
+              },
+              {
+                label: "Blog",
+                href: "https://blog.lavanet.xyz",
+              },
+            ],
+          },
+          {
+            title: "Community",
+            items: [
+              {
+                label: "Discord",
+                href: "https://discord.gg/lava",
+              },
+              {
+                label: "Twitter",
+                href: "https://twitter.com/lavanetxyz",
+              },
+            ],
+          },
+          {
+            title: "More",
+            items: [
+              {
+                label: "GitHub",
+                to: "https://github.com/lavanet",
+              },
+              {
+                label: "Youtube",
+                href: "https://www.youtube.com/@lavanetxyz",
+              },
+            ],
+          },
+        ],
+      },      
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,

@@ -38,7 +38,11 @@ LavaVisor `init` command initializes the environment for LavaVisor. It is genera
 **Example usage:**
 
 :::caution
-Ensure that you replace `{CHAIN_ID}` with the appropriate value for your target network. See the [Chain ID](/key-variables#chain-id) section for details. Additionally, replace `{PUBLIC_RPC}` with the correct [endpoint](/public-rpc).
+Ensure that you replace `{CHAIN_ID}` with the appropriate value for your target network:
+- Lava Mainnet: `lava-mainnet-1`
+- Lava Testnet: `lava-testnet-2`
+
+ Additionally, replace `{PUBLIC_RPC}` with the correct [endpoint](/public-rpc).
 :::
 
 ```bash

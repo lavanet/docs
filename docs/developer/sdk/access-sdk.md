@@ -5,6 +5,10 @@ title: SDK
 
 # Lava SDK (Beta)
 
+:::note 
+Lava SDK is currently in an experimental phase. There may be major and breaking changes during this phase. If you are looking for simple RPC access, consider using the Gateway. If you're looking to tinker, source code is available on our [Github repository](https://github.com/lavanet/lava/tree/main/ecosystem/lava-sdk).
+:::
+
 ## Overview 🔎
 
 The **Lava-SDK** is a powerful JavaScript/TypeScript library designed for developers. It enables decentralized access to all chains supported by the Lava ecosystem and can be used both in server and browser environments. By importing Lava-SDK into a project, developers can easily interact with multiple blockchains and build decentralized applications.
@@ -41,4 +45,4 @@ Lava SDK setup requires additional steps at the moment, but we're working on min
 
 📦 [Lava-SDK-providers](https://github.com/lavanet/lava-sdk-providers/tree/feature/implement_ethersjs_provider): contains implementations of providers for various third-party libraries used for accessing blockchains using Lava SDK's underlying functionality. Lava-SDK-providers currently supports ethers.js, web3.js, cosmjs, and viem integrations and we plan to add support for even more blockchain libraries and web3 APIs in the future.
 
-📦 [Lava-providers](https://github.com/lavanet/lava-providers): contains `sdkSeedProviders.json`, a resource for LavaSDK to discover the first providers to connect to access initial Pairing data.
+📦 [Lava-providers](https://github.com/lavanet/lava-providers): contains `sdkSeedProviders.json`, a resource for LavaSDK to discover the first providers to connect to access initial Pairing data.

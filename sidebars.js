@@ -2,458 +2,243 @@
 
 /** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
 const sidebars = {
-  theSidebar: [
+  aboutLavaSidebar: [
     {
       type: "category",
-      label: "Introduction 🎉",
-      link: {
-        type: "doc",
-        id: "intro/intro",
-      },
-      collapsible: true,
-      collapsed: true,
+      label: "📖 About Lava",
+      collapsible: false,
+      className: "custom-sidebar-spacing", // Add a custom class
+      collapsed: false,
       items: [
-        "intro/about",
-        "intro/how-lava-work",
-        "intro/how-to-bridge-lava",
-        "intro/how-to-stake-and-restake-lava",
-        "intro/explorers",
-        "intro/key-terms",
-        "intro/key-variables",
         {
-          type: "category",
-          label: "🗜️ Specifications",
-          collapsible: true,
-          collapsed: true,
-          link: {
-            type: "doc",
-            id: "intro/specs/spec",
-          },
-          items: [
-            "intro/specs/add-spec",
-            "intro/specs/spec-reference",
-            "intro/specs/spec-guide",
-          ],
+          type: "doc",
+          label: "Lava Overview",
+          id: "intro/about",
         },
-        "intro/faq",
-        "intro/tutorials",
+        {
+          type: "doc",
+          label: "Lava Ecosystem Roles",
+          id: "intro/key-roles",
+        },
+        {
+          type: "doc",
+          label: "Lava Architecture",
+          id: "intro/how-lava-work",
+        },
+        {
+          type: "doc",
+          label: "Key Terms",
+          id: "intro/key-terms",
+        },
+        {
+          type: "doc",
+          label: "Tutorials",
+          id: "intro/tutorials",
+        },
       ],
     },
     {
       type: "category",
-      label: "Chains ⛓️",
-      link: {
-        type: "doc",
-        id: "chains/chains",
-      },
-      collapsible: true,
-      collapsed: true,
+      label: "LAVA Token",
+      collapsible: false,
+      className: "custom-sidebar-spacing", // Add a custom class
+      collapsed: false,
       items: [
         {
+          type: "doc",
+          label: "The LAVA Token",
+          id: "intro/lava-token",
+        },
+        {
+          type: "doc",
+          label: "Staking and Restaking LAVA",
+          id: "intro/restaking"
+        },
+        {
+          type: "doc",
+          label: "How to Bridge LAVA",
+          id: "intro/how-to-bridge-lava",
+        },
+        {
+          type: "doc",
+          label: "How to Stake and Restake LAVA",
+          id: "intro/how-to-stake-and-restake-lava",
+        },
+        {
           type: "category",
-          label: "🔗 Agoric",
+          label: "Tokenomics",
           collapsible: true,
           collapsed: true,
-          description: "AGR, AGRT",
-          link: {
-            type: "doc",
-            id: "chains/agoric-chain/agoric",
-          },
           items: [
-            "chains/agoric-chain/agoric-dev",
-            "chains/agoric-chain/agoric-node",
-          ],
-        },
-        {
-          type: "category",
-          label: "🔗 Arbitrum",
-          collapsible: true,
-          collapsed: true,
-          description: "ARB1, ARBN, ARBS",
-          link: {
-            type: "doc",
-            id: "chains/arbitrum-chain/arbitrum",
-          },
-          items: [
-            "chains/arbitrum-chain/arbitrum-dev",
-            "chains/arbitrum-chain/arbitrum-node",
-          ],
-        },
-        {
-          type: "category",
-          label: "🔗 Avalanche",
-          collapsible: true,
-          collapsed: true,
-          description: "AVAX, AVAXT",
-          link: {
-            type: "doc",
-            id: "chains/avalanche-chain/avalanche",
-          },
-          items: [
-            "chains/avalanche-chain/avalanche-dev",
-            "chains/avalanche-chain/avalanche-node",
-          ],
-        },
-        {
-          type: "category",
-          label: "🔗 Axelar",
-          collapsible: true,
-          collapsed: true,
-          description: "AXELAR, AXELART",
-          link: {
-            type: "doc",
-            id: "chains/axelar-chain/axelar",
-          },
-          items: [
-            "chains/axelar-chain/axelar-dev",
-            "chains/axelar-chain/axelar-node",
-          ],
-        },
-        {
-          type: "category",
-          label: "🔗 Base",
-          collapsible: true,
-          collapsed: true,
-          description: "BASE, BASET",
-          link: {
-            type: "doc",
-            id: "chains/base-chain/base",
-          },
-          items: ["chains/base-chain/base-dev", "chains/base-chain/base-node"],
-        },
-        {
-          type: "category",
-          label: "🔗 Berachain",
-          collapsible: true,
-          collapsed: true,
-          description: "BERA, BERAT, BERAT2",
-          link: {
-            type: "doc",
-            id: "chains/bera-chain/bera",
-          },
-          items: [
-            "chains/bera-chain/bera-dev",
-            "chains/bera-chain/bera-node",
-          ],
-        },
-        {
-            type: "category",
-            label: "🔗 Movement Chain",
-            collapsible: true,
-            collapsed: true,
-            description: "MOVEMENT, MOVEMENTT",
-            link: {
+            {
               type: "doc",
-              id: "chains/movement-chain/movement",
+              label: "Supply",
+              id: "tokenomics/supply"
             },
-            items: [
-              "chains/movement-chain/movement-dev",
-              "chains/movement-chain/movement-node",
-            ],
-          },
-        {
-          type: "category",
-          label: "🔗 Celo",
-          collapsible: true,
-          collapsed: true,
-          description: "CELO, ALFAJORES",
-          link: {
-            type: "doc",
-            id: "chains/celo-chain/celo",
-          },
-          items: ["chains/celo-chain/celo-dev", "chains/celo-chain/celo-node"],
-        },
-        {
-          type: "category",
-          label: "🔗 CosmosHub",
-          collapsible: true,
-          collapsed: true,
-          description: "COS5, COS5T",
-          link: {
-            type: "doc",
-            id: "chains/cosmoshub-chain/cosmoshub",
-          },
-          items: [
-            "chains/cosmoshub-chain/cosmoshub-dev",
-            "chains/cosmoshub-chain/cosmoshub-node",
+            {
+              type: "doc",
+              label: "Rewards and Restaking",
+              id: "tokenomics/rewards-restaking"
+            },
+            {
+              type: "doc",
+              label: "Distribution",
+              id: "tokenomics/distribution"
+            },
+            {
+              type: "doc",
+              label: "Growth",
+              id: "tokenomics/growth"
+            },
           ],
         },
-        {
-          type: "category",
-          label: "🔗 Evmos",
-          collapsible: true,
-          collapsed: true,
-          description: "EVMOS, EVMOST",
-          link: {
-            type: "doc",
-            id: "chains/evmos-chain/evmos",
-          },
-          items: [
-            "chains/evmos-chain/evmos-dev",
-            "chains/evmos-chain/evmos-node",
-          ],
-        },
-        {
-          type: "category",
-          label: "🔗 Ethereum",
-          collapsible: true,
-          collapsed: true,
-          description: "ETH1, GTH1",
-          link: {
-            type: "doc",
-            id: "chains/ethereum-chain/ethereum",
-          },
-          items: [
-            "chains/ethereum-chain/ethereum-dev",
-            "chains/ethereum-chain/ethereum-node",
-          ],
-        },
-        {
-          type: "category",
-          label: "🔗 Filecoin",
-          collapsible: true,
-          collapsed: true,
-          description: "FVM",
-          link: {
-            type: "doc",
-            id: "chains/filecoin-chain/filecoin",
-          },
-          items: [
-            "chains/filecoin-chain/filecoin-dev",
-            "chains/filecoin-chain/filecoin-node",
-          ],
-        },
-        {
-          type: "category",
-          label: "🔗 Juno",
-          collapsible: true,
-          collapsed: true,
-          description: "JUN1, JUNT1",
-          link: {
-            type: "doc",
-            id: "chains/juno-chain/juno",
-          },
-          items: ["chains/juno-chain/juno-dev", "chains/juno-chain/juno-node"],
-        },
-        {
-          type: "category",
-          label: "🔗 Koii",
-          collapsible: true,
-          collapsed: true,
-          description: "KOII, KOIIT",
-          link: {
-            type: "doc",
-            id: "chains/koii-chain/koii",
-          },
-          items: ["chains/koii-chain/koii-dev", "chains/koii-chain/koii-node"],
-        },
-        {
-          type: "category",
-          label: "🔗 Lava",
-          description: "LAV1",
-          collapsible: true,
-          collapsed: true,
-          link: {
-            type: "doc",
-            id: "chains/lava-chain/lava",
-          },
-          items: ["chains/lava-chain/lava-dev", "chains/lava-chain/lava-node"],
-        },
-        {
-          type: "category",
-          label: "🔗 NEAR",
-          description: "NEAR, NEART",
-          collapsible: true,
-          collapsed: true,
-          link: {
-            type: "doc",
-            id: "chains/near-chain/near",
-          },
-          items: ["chains/near-chain/near-dev", "chains/near-chain/near-node"],
-        },
-        {
-          type: "category",
-          label: "🔗 Optimism",
-          collapsible: true,
-          collapsed: true,
-          description: "OPTM, OPTMT",
-          link: {
-            type: "doc",
-            id: "chains/optimism-chain/optimism",
-          },
-          items: [
-            "chains/optimism-chain/optimism-dev",
-            "chains/optimism-chain/optimism-node",
-          ],
-        },
-        {
-          type: "category",
-          label: "🔗 Secret",
-          collapsible: true,
-          collapsed: true,
-          description: "SECRET, SECRETP",
-          link: {
-            type: "doc",
-            id: "chains/secret-chain/secret",
-          },
-          items: ["chains/secret-chain/secret-node"],
-        },
-        {
-          type: "category",
-          label: "🔗 Solana",
-          collapsible: true,
-          collapsed: true,
-          description: "SOL, SOLT",
-          link: {
-            type: "doc",
-            id: "chains/solana-chain/solana",
-          },
-          items: [
-            "chains/solana-chain/solana-dev",
-            "chains/solana-chain/solana-node",
-          ],
-        },
-        {
-          type: "category",
-          label: "🔗 Stargaze",
-          collapsible: true,
-          collapsed: true,
-          description: "STRGZ, STRGZT",
-          link: {
-            type: "doc",
-            id: "chains/stargaze-chain/stargaze",
-          },
-          items: ["chains/stargaze-chain/stargaze-dev"],
-        },
-        {
-          type: "category",
-          label: "🔗 Starknet",
-          collapsible: true,
-          collapsed: true,
-          description: "STRK, STRKT",
-          link: {
-            type: "doc",
-            id: "chains/starknet-chain/starknet",
-          },
-          items: [
-            "chains/starknet-chain/starknet-dev",
-            "chains/starknet-chain/starknet-node",
-          ],
-        },
-        {
-          type: "category",
-          label: "🔗 Celestia",
-          collapsible: true,
-          collapsed: true,
-          description: "CELESTIA",
-          link: {
-            type: "doc",
-            id: "chains/celestia-chain/celestia",
-          },
-          items: ["chains/celestia-chain/celestia-node"],
-        },
+
       ],
     },
     {
       type: "category",
-      label: "Developers 💻",
-      link: {
-        type: "doc",
-        id: "developer/developer",
-      },
-      collapsible: true,
-      collapsed: true,
+      label: "Using Lava Network",
+      collapsible: false,
+      className: "custom-sidebar-spacing", // Add a custom class
+      collapsed: false,
       items: [
         {
-          type: "category",
-          label: "🌀 Gateway ",
-          collapsible: true,
-          collapsed: true,
-          link: {
-            type: "doc",
-            id: "developer/gateway/gateway-access",
-          },
-          items: ["developer/gateway/gateway-getting-started"],
+          type: "doc",
+          label: "Connect to Lava",
+          id: "intro/wallet",
         },
         {
-          type: "category",
-          label: "🛠️ Server Kit ",
-          collapsible: true,
-          collapsed: true,
-          link: {
-            type: "doc",
-            id: "developer/server-kit/access-server-kit",
-          },
-          items: [],
+          type: "doc",
+          label: "Install Lava Binaries",
+          id: "intro/install-lava",
         },
         {
+          type: "doc",
+          label: "Faucet",
+          id: "intro/faucet",
+        },
+        {
+          type: "doc",
+          label: "Explorers",
+          id: "intro/explorers",
+        }
+      ]
+    },
+    {
+      type: "category",
+      label: "Governance",
+      collapsible: false,
+      className: "custom-sidebar-spacing", // Add a custom class
+      collapsed: false,
+      items: [
+        {
+          type: "doc",
+          label: "Governance Overview",
+          id: "governance/overview",
+        },
+        {
+          type: "doc",
+          label: "Proposal Types",
+          id: "governance/types",
+        },
+        {
+          type: "doc",
+          label: "Governance Parameters",
+          id: "governance/parameters",
+        },
+        {
+          type: "doc",
+          label: "Governance Proposals",
+          id: "governance/submit-proposal",
+        },
+
+      ],
+    },
+  ],
+  getRPCSidebar: [
+        {
           type: "category",
-          label: "📦 SDK",
-          collapsible: true,
-          collapsed: true,
-          link: {
-            type: "doc",
-            id: "developer/sdk/access-sdk",
-          },
+          label: "Build with Lava RPC",
+          collapsible: false,
+          collapsed: false,
           items: [
-            "developer/sdk/sdk-getting-started",
-            "developer/sdk/sdk-backend",
-            "developer/sdk/sdk-frontend",
             {
               type: "category",
-              label: "Examples 💡",
+              label: "Access RPC",
               collapsible: true,
               collapsed: true,
               link: {
-                type: "generated-index",
+                type: "doc",
+                id: "developer/endpoints/endpoints-overview",
               },
               items: [
-                "developer/sdk/examples/sdk-multichain-example",
-                "developer/sdk/examples/lava-sdk-gallery",
-                "developer/sdk/examples/lava-bazaar",
-                "developer/sdk/examples/all-blocks-app",
+                {
+                  type: "doc",
+                  label: "Use Public Endpoints",
+                  id: "developer/endpoints/iprpc"
+                },
+                {
+                  type: "doc",
+                  label: "Use Gateway",
+                  id: "developer/endpoints/gateway-endpoints"
+                },
               ],
             },
-          ],
-        },
-        {
-          type: "category",
-          label: "🔌 Integrations",
-          collapsible: true,
-          collapsed: true,
-          link: {
-            type: "doc",
-            id: "developer/integrations/sdk-integrations",
-          },
-          items: [
-            "developer/integrations/cosmjs",
-            "developer/integrations/ethersjs5",
-            "developer/integrations/ethersjs6",
-            "developer/integrations/viem",
-            "developer/integrations/web3js",
-          ],
-        },
-        {
-          type: "category",
-          label: "💫 Endpoints",
-          collapsible: true,
-          collapsed: true,
-          link: {
-            type: "doc",
-            id: "developer/endpoints/iprpc",
-          },
-          items: [
-            "developer/endpoints/public-rpc",
-            "developer/endpoints/iprpc",
-          ],
+            {
+              type: "doc",
+              label: "Infra Manager",
+              id: "developer/access-server-kit"
+            },
+            {type: "category",
+              label: "Integrations with Web3 APIs",
+              collapsible: true,
+              collapsed: true,
+              link: {
+                type: "doc",
+                id: "developer/integrations/sdk-integrations",
+              },
+              items: [
+                {
+                  type: "doc",
+                  label: "cosmjs",
+                  id: "developer/integrations/cosmjs"
+                },
+                {
+                  type: "doc",
+                  label: "ethersjs5",
+                  id: "developer/integrations/ethersjs5"
+                },
+                {
+                  type: "doc",
+                  label: "ethersjs6",
+                  id: "developer/integrations/ethersjs6"
+                },
+                {
+                  type: "doc",
+                  label: "viem",
+                  id: "developer/integrations/viem"
+                },
+                {
+                  type: "doc",
+                  label: "web3js",
+                  id: "developer/integrations/web3js"
+                }
+              ]
+            },
+            {
+              type: "doc",
+              label: "FAQs",
+              id: "developer/developer-faq"
+            }
+          ]
         },
       ],
-    },
+  validatorsSidebar: [
     {
       type: "category",
-      label: "Validators ⚖️",
-      collapsible: true,
-      collapsed: true,
+      label: "Validators",
+      collapsible: false,
+      collapsed: false,
       link: {
         type: "doc",
         id: "validator/validator",
@@ -461,124 +246,184 @@ const sidebars = {
       items: [
         {
           type: "category",
-          label: "Join testnet",
+          label: "Become a validator",
           collapsible: true,
           collapsed: true,
-          link: {
-            type: "doc",
-            id: "lava-blockchain/join-testnet",
-          },
-          items: [
-            "lava-blockchain/join-testnet-manual-cosmovisor",
-            "lava-blockchain/join-testnet-manual",
+          items:[
+            {
+              type: "doc",
+              label: "Hardware Requirements",
+              id: "validator/hardware-requirements"
+            },
+            {
+              type: "category",
+              label: "1. Run Lava Node",
+              collapsible: true,
+              collapsed: true,
+              items: [
+                {
+                  type: "doc",
+                  label: "Mainnet",
+                  id: "validator/lava-nodes/mainnet/join-mainnet-manual-cosmovisor"
+                },
+                {
+                  type: "doc",
+                  label: "Testnet",
+                  id: "validator/lava-nodes/testnet/join-testnet-manual-cosmovisor"
+                },
+                {
+                  type: "doc",
+                  label: "State-Sync",
+                  id: "validator/lava-nodes/state-sync"
+                },
+              ],
+            },
+            {
+              type: "doc",
+              label: "2. Configure a Validator process",
+              id: "validator/validator-manual",
+            },
           ],
         },
         {
-          type: "category",
-          label: "Join Mainnet",
-          collapsible: true,
-          collapsed: true,
-          link: {
-            type: "doc",
-            id: "lava-blockchain/join-mainnet",
-          },
-          items: [
-            "lava-blockchain/join-mainnet-manual-cosmovisor",
-            "lava-blockchain/join-mainnet-manual",
-          ],
+          type: "doc",
+          label: "Validator Rewards",
+          id: "validator/validator-rewards"
         },
-        "validator/validator-manual",
-        "validator/validator-delegation-policy",
-      ],
-    },
-    {
-      type: "category",
-      label: "Providers 📡",
-      collapsible: true,
-      collapsed: true,
-      link: {
-        type: "doc",
-        id: "provider/provider",
-      },
-      items: [
         {
-          type: "category",
-          label: "Lavavisor",
-          collapsible: true,
-          collapsed: true,
-          description: "lavavisor",
-          link: {
-            type: "doc",
-            id: "provider/lavavisor/lavavisor",
-          },
-          items: [
-            "provider/lavavisor/lavavisor-wrap",
-            "provider/lavavisor/lavavisor-services",
-          ],
+          type: "doc",
+          label: "Validator Delegation program",
+          id: "validator/validator-delegation"
         },
-        "provider/provider-setup",
-        "provider/provider-features",
-        "provider/provider-tls",
-        "provider/provider-rewards-service",
-        "provider/provider-load-balancing",
+        {
+          type: "doc",
+          label: "Lavad Reference",
+          id: "validator/lavad-reference"
+        },
       ],
-    },
-    {
-      type: "category",
-      label: "Lava Protocol 🌋",
-      collapsible: true,
-      collapsed: true,
-      link: {
-        type: "doc",
-        id: "power-lava-intro",
-      },
-      items: [
-        "lava-blockchain/install-lava",
-        "lava-blockchain/hardware-requirements",
-        "lava-blockchain/wallet",
-        "lava-blockchain/faucet",
-        "lava-blockchain/subscriptions",
-        "lava-blockchain/badge-server",
-      ],
-    },
-    {
-      type: "category",
-      label: "Governance 🗳️",
-      link: {
-        type: "doc",
-        id: "governance/govern",
-      },
-      collapsible: true,
-      collapsed: true,
-      items: [
-        "governance/overview",
-        "governance/types",
-        "governance/parameters",
-        "governance/submit-proposal",
-      ],
-    },
-    {
-      type: "category",
-      label: "Tokenomics 🪙",
-      link: {
-        type: "doc",
-        id: "tokenomics/token",
-      },
-      collapsible: true,
-      collapsed: true,
-      items: [
-        "tokenomics/supply",
-        "tokenomics/rewards-restaking",
-        "tokenomics/distribution",
-        "tokenomics/growth",
-      ],
-    },
-    {
-      type: "link",
-      label: "Contribute to Docs",
-      href: "https://github.com/lavanet/docs",
     },
   ],
+  providerSidebar: [
+    {
+      type: "category",
+      label: "RPC Providers",
+      collapsible: false,
+      collapsed: false,
+      items: [
+        {
+          type: "doc",
+          label: "Lava RPC provider role",
+          id: "provider/provider"
+        },
+        {
+          type: "category",
+          label: "Become a Lava RPC provider",
+          collapsible: true,
+          collapsed: true,
+          items: [
+            {
+              type: "doc",
+              label: "1. Run an RPC node",
+              id: "provider/running-nodes/run-nodes",
+            },
+            {
+              type: "category",
+              label: "2. Configure Lavavisor (recommended)",
+              collapsible: true,
+              collapsed: true,
+              link: {type: "doc", id: "provider/lavavisor/lavavisor"},
+              items: [
+                {
+                  type: "doc",
+                  label: "Process Wrapper",
+                  id: "provider/lavavisor/lavavisor-wrap"
+                },
+                {
+                  type: "doc",
+                  label: "Service Manager",
+                  id: "provider/lavavisor/lavavisor-services"
+                },
+              ],
+            },
+            {
+              type: "doc",
+              label: "3. Configure TLS",
+              id:"provider/provider-tls"
+            },
+            {
+              type: "doc",
+              label: "4. Configure provider service",
+              id: "provider/provider-setup"
+            }
+          ],
+        },
+        {
+          type: "doc",
+          label: "Load Balancing",
+          id: "provider/provider-load-balancing"
+        },
+        {
+          type: "doc",
+          label: "Advanced configurations",
+          id: "provider/provider-features"
+        },
+        {
+          type: "doc",
+          label: "Provider Reputation",
+          id: "provider/improving-provider-service"
+        },
+        {
+          type: "doc",
+          label: "Provider Rewards",
+          id: "provider/provider-rewards-service"
+        },
+        {
+          type: "doc",
+          label: "FAQ",
+          id: "provider/provider-faq"
+        },
+      ]
+    },
+  ],
+  rollupSidebar: [
+    {
+      type: "category",
+      label: "RPC Pools",
+      collapsible: false,
+      collapsed: false,
+      items: [
+        {
+          type: "doc",
+          label: "Power up your chain with Lava",
+          id: "rollups/rollups"
+        },
+        {
+          type: "category",
+          label: "Specifications",
+          collapsible: true,
+          collapsed: false,
+          link: {type: "doc", id: "rollups/specs/spec"},
+          items: [
+            {
+              type: "doc",
+              label: "Add a specification to your chain",
+              id: "rollups/specs/add-spec"
+            },
+            {
+              type: "doc",
+              label: "Reference Guide",
+              id: "rollups/specs/spec-reference"
+            },
+            {
+              type: "doc",
+              label: "Spec Proposal Guide",
+              id: "rollups/specs/spec-guide"
+            },
+          ],
+        },
+      ]
+    },
+  ]
 };
 
 module.exports = sidebars;
