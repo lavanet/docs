@@ -28,25 +28,25 @@ Public endpoints and available API methods for each supported chain with incenti
 <details>
 <summary> REST </summary>
 
-- `healthy`
-- `accounts/{address}`
-- `accounts/{address}/events/{creation_number}`
-- `accounts/{address}/events/{event_handle}/{field_name}`
-- `accounts/{address}/module/{module_name}`
-- `accounts/{address}/modules`
-- `accounts/{address}/resource/{resource_type}`
-- `accounts/{address}/resources`
-- `accounts/{address}/transactions`
-- `blocks/by_height/{block_height}`
-- `blocks/by_version/{version}`
-- `estimate_gas_price`
-- `events/{event_key}`
-- `spec`
-- `transactions/by_hash/{txn_hash}`
-- `transactions/wait_by_hash/{txn_hash}`
-- `transactions/by_version/{txn_version}`
-- `transactions/encode_submission`
-- `transactions`
+- `/-/healthy`
+- `/accounts/{address}`
+- `/accounts/{address}/events/{creation_number}`
+- `/accounts/{address}/events/{event_handle}/{field_name}`
+- `/accounts/{address}/module/{module_name}`
+- `/accounts/{address}/modules`
+- `/accounts/{address}/resource/{resource_type}`
+- `/accounts/{address}/resources`
+- `/accounts/{address}/transactions`
+- `/blocks/by_height/{block_height}`
+- `/blocks/by_version/{version}`
+- `/estimate_gas_price`
+- `/events/{event_key}`
+- `/spec`
+- `/transactions/by_hash/{txn_hash}`
+- `/transactions/wait_by_hash/{txn_hash}`
+- `/transactions/by_version/{txn_version}`
+- `/transactions/encode_submission`
+- `/transactions`
 
 
 </details>
@@ -577,10 +577,8 @@ Public endpoints and available API methods for each supported chain with incenti
 
 | Service           | URL                                       |
 |---------------------|------------------------------------------|
-| 🟢 rest            | https://near.lava.build:443            |
-| 🟢 tendermintrpc   | https://near.tendermintrpc.lava.build:443 |
-| 🟢 tendermintrpc/ws | wss://near.tendermintrpc.lava.build/websocket |
-| 🟢 grpc            | near.grpc.lava.build:443                |
+| 🟢 jsonrpc            | https://near.lava.build:443            |
+             
 
 </TabItem>
 <TabItem value="testnet" label=" Testnet">
@@ -589,10 +587,7 @@ Public endpoints and available API methods for each supported chain with incenti
 
 | Service           | URL                                        |
 |---------------------|---------------------------------------------|
-| 🟢 rest            | https://neart.lava.build:443              |
-| 🟢 tendermintrpc   | https://neart.tendermintrpc.lava.build:443 |
-| 🟢 tendermintrpc/ws | wss://neart.tendermintrpc.lava.build/websocket |
-| 🟢 grpc            | neart.grpc.lava.build:443                 |
+| 🟢 jsonrpc            | https://neart.lava.build:443              |
 
 </TabItem>
 </Tabs>
@@ -1738,10 +1733,8 @@ Public endpoints and available API methods for each supported chain with incenti
 
 | Service           | URL                                          |
 |---------------------|-----------------------------------------------|
-| 🟢 rest            | https://arbitrum.lava.build:443              |
-| 🟢 tendermintrpc   | https://arbitrum.tendermintrpc.lava.build:443|
-| 🟢 tendermintrpc/ws | wss://arbitrum.tendermintrpc.lava.build/websocket |
-| 🟢 grpc            | arbitrum.grpc.lava.build:443                 |
+| 🟢 jsonrpc            | https://arbitrum.lava.build:443              |
+
 
 </TabItem>
 <TabItem value="testnet" label=" Testnet">
@@ -1750,10 +1743,8 @@ Public endpoints and available API methods for each supported chain with incenti
 
 | Service           | URL                                           |
 |---------------------|-----------------------------------------------|
-| 🟢 rest            |https://arbn.lava.build:443                  |
-| 🟢 tendermintrpc   | https://arbn.tendermintrpc.lava.build:443     |
-| 🟢 tendermintrpc/ws | wss://arbn.tendermintrpc.lava.build/websocket |
-| 🟢 grpc            | arbn.grpc.lava.build:443                      |
+| 🟢 jsonrpc           |https://arbn.lava.build:443                  |
+
 
 </TabItem>
 <TabItem value="sepolia-testnet" label=" Sepolia-Testnet">
@@ -1762,10 +1753,7 @@ Public endpoints and available API methods for each supported chain with incenti
 
 | Service           | URL                                               |
 |---------------------|----------------------------------------------------|
-| 🟢 rest            | https://arbitrums.lava.build:443                |
-| 🟢 tendermintrpc   | https://arbitrums.tendermintrpc.lava.build:443     |
-| 🟢 tendermintrpc/ws | wss://arbitrums.tendermintrpc.lava.build/websocket |
-| 🟢 grpc            | arbitrums.grpc.lava.build:443                      |
+| 🟢 jsonrpc            | https://arbitrums.lava.build:443                |
 
 </TabItem>
 </Tabs>
@@ -1859,10 +1847,8 @@ Public endpoints and available API methods for each supported chain with incenti
 
 | Service           | URL                                       |
 |---------------------|--------------------------------------------|
-| 🟢 rest            | https://blast.lava.build:443             |
-| 🟢 tendermintrpc   | https://blast.tendermintrpc.lava.build:443 |
-| 🟢 tendermintrpc/ws | wss://blast.tendermintrpc.lava.build/websocket |
-| 🟢 grpc            | blast.grpc.lava.build:443                 |
+| 🟢 jsonrpc            | https://blast.lava.build:443             |
+
 
 </TabItem>
 </Tabs>
@@ -1939,10 +1925,7 @@ Public endpoints and available API methods for each supported chain with incenti
 
 | Service           | URL                                           |
 |---------------------|------------------------------------------------|
-| 🟢 rest            | https://optimism.lava.build:443             |
-| 🟢 tendermintrpc   | https://optimism.tendermintrpc.lava.build:443 |
-| 🟢 tendermintrpc/ws | wss://optimism.tendermintrpc.lava.build/websocket |
-| 🟢 grpc            | optimism.grpc.lava.build:443                 |
+| 🟢 jsonrpc            | https://optimism.lava.build:443             |
 
 </TabItem>
 </Tabs>
@@ -1973,10 +1956,8 @@ Public endpoints and available API methods for each supported chain with incenti
 
 | Service           | URL                                          |
 |---------------------|-----------------------------------------------|
-| 🟢 rest            | https://polygon.lava.build:443               |
-| 🟢 tendermintrpc   | https://polygon.tendermintrpc.lava.build:443 |
-| 🟢 tendermintrpc/ws | wss://polygon.tendermintrpc.lava.build/websocket |
-| 🟢 grpc            | polygon.grpc.lava.build:443                 |
+| 🟢 jsonrpc            | https://polygon.lava.build:443               |
+
 </TabItem>
 </Tabs>
 <br />
@@ -2068,10 +2049,8 @@ Public endpoints and available API methods for each supported chain with incenti
 
 | Service           | URL                                            |
 |---------------------|-------------------------------------------------|
-| 🟢 rest            | https://solana.lava.build:443                   |
-| 🟢 tendermintrpc   | https://solana.tendermintrpc.lava.build:443     |
-| 🟢 tendermintrpc/ws | wss://solana.tendermintrpc.lava.build/websocket |
-| 🟢 grpc            | solana.grpc.lava.build:443                      |
+| 🟢 jsonrpc            | https://solana.lava.build:443                   |
+
 </TabItem>
 </Tabs>
 <br />
@@ -2155,10 +2134,8 @@ Public endpoints and available API methods for each supported chain with incenti
 
 | Service           | URL                                            |
 |---------------------|-------------------------------------------------|
-| 🟢 rest            | https://filecoin.lava.build:443             |
-| 🟢 tendermintrpc   | https://filecoin.tendermintrpc.lava.build:443  |
-| 🟢 tendermintrpc/ws | wss://filecoin.tendermintrpc.lava.build/websocket |
-| 🟢 grpc            | filecoin.grpc.lava.build:443                   |
+| 🟢 jsonrpc            | https://filecoin.lava.build:443             |
+
 
 </TabItem>
 <TabItem value="testnet" label=" Testnet">
@@ -2167,10 +2144,8 @@ Public endpoints and available API methods for each supported chain with incenti
 
 | Service           | URL                                                    |
 |---------------------|---------------------------------------------------------|
-| 🟢 rest            | https://filecoin-testnet.lava.build:443                |
-| 🟢 tendermintrpc   | https://filecoin-testnet.tendermintrpc.lava.build:443   |
-| 🟢 tendermintrpc/ws | wss://filecoin-testnet.tendermintrpc.lava.build/websocket |
-| 🟢 grpc            | filecoin-testnet.grpc.lava.build:443                    |
+| 🟢 jsonrpc            | https://filecoin-testnet.lava.build:443                |
+
 
 </TabItem>
 </Tabs>
@@ -2287,7 +2262,7 @@ Public endpoints and available API methods for each supported chain with incenti
 
 | Service           | URL                                     |
 |---------------------|------------------------------------------|
-| 🟢 rest            | https://rpc.starknet.lava.build:443 |
+| 🟢 jsonrpc            | https://rpc.starknet.lava.build:443 |
 
 </TabItem>
 <TabItem value="testnet" label=" Sepolia-Testnet">
@@ -2296,7 +2271,7 @@ Public endpoints and available API methods for each supported chain with incenti
 
 | Service           | URL                                     |
 |---------------------|------------------------------------------|
-| 🟢 rest            | https://rpc.starknet-testnet.lava.build:443 |
+| 🟢 jsonrpc            | https://rpc.starknet-testnet.lava.build:443 |
 
 </TabItem>
 </Tabs>
@@ -2342,9 +2317,7 @@ Public endpoints and available API methods for each supported chain with incenti
 | Service           | URL                                           |
 |---------------------|-----------------------------------------------|
 | 🟢 rest            | https://apt1.lava.build:443                   |
-| 🟢 tendermintrpc   | https://apt1.tendermintrpc.lava.build:443     |
-| 🟢 tendermintrpc/ws | wss://apt1.tendermintrpc.lava.build/websocket |
-| 🟢 grpc            | apt1.grpc.lava.build:443                      |
+
 </TabItem>
 </Tabs>
 <br />
@@ -2386,7 +2359,7 @@ Public endpoints and available API methods for each supported chain with incenti
 
 | Service           | URL                                 |
 |---------------------|--------------------------------------|
-| 🟢 rest            | https://eth1.jsonrpc.lava.build:443 |
+| 🟢 jsonrpc            | https://eth1.jsonrpc.lava.build:443 |
 </TabItem>
 </Tabs>
 <br />
@@ -3031,35 +3004,6 @@ Public endpoints and available API methods for each supported chain with incenti
 
 </details>
 
-## Celestia 
-
-<Tabs>
-<TabItem value="mainnet" label=" Mainnet">
-
-`TIA`
-
-| Service           | URL                                             |
-|---------------------|--------------------------------------------------|
-| 🟢 rest            | https://celestia.rest.lava.build:443            |
-| 🟢 tendermintrpc   | https://celestia.tendermintrpc.lava.build:443   |
-| 🟢 tendermintrpc/ws | wss://celestia.tendermintrpc.lava.build/websocket |
-| 🟢 grpc            | https://celestia.grpc.lava.build:443                    |
-
-</TabItem>
-<TabItem value="testnet" label=" Testnet">
-
-`TIAT`
-
-| Service           | URL                                             |
-|---------------------|--------------------------------------------------|
-| 🟢 rest            | https://celestiatm.rest.lava.build:443          |
-| 🟢 tendermintrpc   | https://celestiatm.tendermintrpc.lava.build:443  |
-| 🟢 tendermintrpc/ws | wss://celestiatm.tendermintrpc.lava.build/websocket |
-| 🟢 grpc            | https://celestiatm.grpc.lava.build:443                  |
-
-</TabItem>
-</Tabs>
-<br />
 
 ## Base 
 
@@ -3070,7 +3014,7 @@ Public endpoints and available API methods for each supported chain with incenti
 
 | Service           | URL                                     |
 |---------------------|------------------------------------------|
-| 🟢 rest            | https://base.jsonrpc.lava.build:443     |
+| 🟢 jsonrpc            | https://base.jsonrpc.lava.build:443     |
 
 </TabItem>
 </Tabs>
@@ -3157,7 +3101,7 @@ Public endpoints and available API methods for each supported chain with incenti
 
 | Service           | URL                                     |
 |---------------------|------------------------------------------|
-| 🟢 rest            | https://avax.jsonrpc.lava.build:443     |
+| 🟢 jsonrpc            | https://avax.jsonrpc.lava.build:443     |
 
 </TabItem>
 </Tabs>
@@ -3222,82 +3166,5 @@ Public endpoints and available API methods for each supported chain with incenti
   - rpc_modules
   - web3_clientVersion
   - web3_sha3
-
-</details>
-
-## BNB Smart Chain
-
-<Tabs>
-<TabItem value="mainnet" label=" Mainnet">
-
-`BSC`
-
-| Service           | URL                                     |
-|---------------------|------------------------------------------|
-| 🟢 rest            | https://bsc.jsonrpc.lava.build:443      |
-
-</TabItem>
-</Tabs>
-<br />
-
-#### Supported APIs
-
-<details>
-<summary> JSONRPC </summary>
- - eth_accounts
-  - eth_blockNumber
-  - eth_call
-  - eth_chainId
-  - eth_coinbase
-  - eth_compileLLL
-  - eth_createAccessList
-  - eth_estimateGas
-  - eth_feeHistory
-  - eth_gasPrice
-  - eth_getBalance
-  - eth_getBlockByHash
-  - eth_getBlockByNumber
-  - eth_getBlockReceipts
-  - eth_getBlockTransactionCountByHash
-  - eth_getBlockTransactionCountByNumber
-  - eth_getCode
-  - eth_getCompilers
-  - eth_getFilterChanges
-  - eth_getFilterLogs
-  - eth_getLogs
-  - eth_getProof
-  - eth_getStorageAt
-  - eth_getTransactionByBlockHashAndIndex
-  - eth_getTransactionByBlockNumberAndIndex
-  - eth_getTransactionByHash
-  - eth_getTransactionCount
-  - eth_getTransactionReceipt
-  - eth_getUncleByBlockHashAndIndex
-  - eth_getUncleByBlockNumberAndIndex
-  - eth_getUncleCountByBlockHash
-  - eth_getUncleCountByBlockNumber
-  - eth_getWork
-  - eth_hashrate
-  - eth_maxPriorityFeePerGas
-  - eth_mining
-  - eth_newBlockFilter
-  - eth_newFilter
-  - eth_newPendingTransactionFilter
-  - eth_protocolVersion
-  - eth_sendRawTransaction
-  - eth_sendTransaction
-  - eth_sign
-  - eth_signTransaction
-  - eth_subscribe
-  - eth_syncing
-  - eth_uninstallFilter
-  - eth_unsubscribe
-  - net_listening
-  - net_peerCount
-  - net_version
-  - rpc_modules
-  - web3_clientVersion
-  - web3_sha3
-
 
 </details>
