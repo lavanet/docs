@@ -17,7 +17,7 @@ This guide walks you through setting up an RPC provider for Lava, from configura
 
 Make sure you have:
 
-- ✅ A synced node for your target chain ([supported chains](provider.md#querying-a-list-of-supported-chains-chains))
+- ✅ A synced node for your target chain ([supported chains](provider.md#chains))
 - ✅ [`lavap`](../intro/install-lava.md#install-a-specific-binary-) installed
 - ✅ [TLS configured](./provider-tls.md) (optional but recommended)
 - ✅ [Lavavisor](./lavavisor/lavavisor.md) setup (optional)
@@ -314,10 +314,10 @@ lavap tx pairing stake-provider [chain-id] [amount] [endpoint endpoint ...] [geo
 - **`--from`** - The account to be used for the provider staking (e.g., **`my_account`**).
 - **`--provider-moniker`** - Provider’s public name
 - **`--keyring-backend`** - A keyring-backend of your choosing (e.g., **`test`**).
-- **`--chain-id`** - The chain_id of the network (e.g., **[CHAIN_ID](/key-variables#chain-id)**).
+- **`--chain-id`** - The chain_id of the network.
 - **`--gas`** - The gas limit for the transaction (e.g., **`"auto"`**).
 - **`--gas-adjustment`** - The gas adjustment factor (e.g., **`"1.5"`**).
-- **`--node`** - A RPC node for Lava (e.g., **[PUBLIC_RPC](/public-rpc)**).
+- **`--node`** - A RPC node for Lava.
 - **`--provider`** - The provider's operational address (address used to operate the provider process, default is vault address).
 - **`--delegate-limit`** - a mandatory flag to set the delegation limit of a provider. delegations can still be made but won't affect pairing or rewards. a value of 0ulava means blocking all delegations, increasing it allows delegators stake to be taken into account getting more pairings. reducing the limit is protected, allowing a 1% change every 24h. it is good practice to set a high value as long as your node isn't congested by too many requests, and play around with the commission instead.
 - **`--delegate-commission`** - the commission the provider will take from delegation rewards.
@@ -433,7 +433,7 @@ lavap query pairing account-info \
 <summary> Parameter Descriptions </summary>
 
 - `provider_address` - The public address of the provider beginning with the lava@ prefix.
-- `LAVA_RPC_NODE` - An RPC node for Lava. This can be omitted if the current node has already joined the Lava network. Example: [PUBLIC_RPC](/public-rpc)
+- `LAVA_RPC_NODE` - An RPC node for Lava. This can be omitted if the current node has already joined the Lava network.
 
 </details>
 
@@ -457,7 +457,7 @@ lavap query pairing providers \
 <summary> Parameter Descriptions </summary>
 
 - `NETWORK_NAME` - The ID of the chain. Examples: `COS4` or `FTM250`.
-- `LAVA_RPC_NODE` - An RPC node for Lava. This can be omitted if the current node has already joined the Lava network. Example: [PUBLIC_RPC](/public-rpc)
+- `LAVA_RPC_NODE` - An RPC node for Lava. This can be omitted if the current node has already joined the Lava network.
 
 </details>
 
@@ -598,10 +598,10 @@ lavap tx pairing unstake-provider [chain-id] {validator} [flags]
 
 - **`--from`** - The account to be used for the provider staking (e.g., **`my_account`**).
 - **`--keyring-backend`** - A keyring-backend of your choosing (e.g., **`test`**).
-- **`--chain-id`** - The chain_id of the network (e.g., **[CHAIN_ID](/key-variables#chain-id)**).
+- **`--chain-id`** - The chain_id of the network.
 - **`--gas`** - The gas limit for the transaction (e.g., **`"auto"`**).
 - **`--gas-adjustment`** - The gas adjustment factor (e.g., **`"1.5"`**).
-- **`--node`** - A RPC node for Lava (e.g., **[PUBLIC_RPC](/public-rpc)**).
+- **`--node`** - A RPC node for Lava.
 </details>
 #### Unstake Examples
 
@@ -662,10 +662,10 @@ Note that the `unbond` command should be used because the proivder unbonds some 
 
 - **`--from`** - The account to be used for the provider staking (e.g., **`my_account`**).
 - **`--keyring-backend`** - A keyring-backend of your choosing (e.g., **`test`**).
-- **`--chain-id`** - The chain_id of the network (e.g., **[CHAIN_ID](/key-variables#chain-id)**).
+- **`--chain-id`** - The chain_id of the network.
 - **`--gas`** - The gas limit for the transaction (e.g., **`"auto"`**).
 - **`--gas-adjustment`** - The gas adjustment factor (e.g., **`"1.5"`**).
-- **`--node`** - A RPC node for Lava (e.g., **[PUBLIC_RPC](/public-rpc)**).
+- **`--node`** - A RPC node for Lava.
 </details>
 
 #### Unbond Examples
@@ -708,10 +708,10 @@ lavap tx pairing modify-provider [chain-id] [flags]
 
 - **`--from`** - The account to be used for the provider staking (e.g., **`my_account`**).
 - **`--keyring-backend`** - A keyring-backend of your choosing (e.g., **`test`**).
-- **`--chain-id`** - The chain_id of the network (e.g., **[CHAIN_ID](/key-variables#chain-id)**).
+- **`--chain-id`** - The chain_id of the network.
 - **`--gas`** - The gas limit for the transaction (e.g., **`"auto"`**).
 - **`--gas-adjustment`** - The gas adjustment factor (e.g., **`"1.5"`**).
-- **`--node`** - A RPC node for Lava (e.g., **[PUBLIC_RPC](/public-rpc)**).
+- **`--node`** - A RPC node for Lava.
 - **`--amount`** - Provider stake amount. This is equivalent to the stake modifications TXs, so the `--validator` flag should be considered.
 - **`--delegate-commission`** - Provider delegation commission (optional).
 - **`--delegate-limit`** - Provider delegation limit (optional).

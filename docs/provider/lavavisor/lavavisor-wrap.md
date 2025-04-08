@@ -18,9 +18,6 @@ Lavavisor's Process Wrapping commands were designed with Dockerized and Kubernet
 
 The key distinction between the two is that `lavavisor wrap` validates Golang installation and locally downloads and builds the Lavap codebase. Conversely, the `pod` command fetches the pre-compiled binary from the [official Lava Network repository](https://github.com/lavanet/lava/releases/latest), as it lacks the capability to compile binaries locally.
 
-:::tip
-Please make sure you are using the right [`chainId`](/key-variables#chain-id)
-:::
 
 <br />
 <hr />
@@ -40,7 +37,7 @@ If you're using [`lavavisor pod`](#-lavavisor-pod) this command is unnecesary an
 **Example usage:**
 
 :::caution
-Here and below ensure that you replace `{CHAIN_ID}` with the appropriate value depending on your target network. See the [Chain ID](/key-variables#chain-id) section for details.
+Here and below ensure that you replace `{CHAIN_ID}` with the appropriate value depending on your target network. 
 :::
 
 ```bash

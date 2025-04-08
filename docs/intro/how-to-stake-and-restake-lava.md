@@ -87,7 +87,7 @@ The following instructions will walk you through how LAVA (Lava Mainnet tokens) 
 
 ## How to stake and restake LAVA on Polli
 
-You can refer to this video walkthrough from Polli on how to stake and restake your LAVA: https://x.com/i/status/1874864969243845026 
+You can refer to this video walkthrough from Polli on how to stake and restake your LAVA: https://x.com/ThePolliCo/status/1874864969243845026 
 
 <br/>
 

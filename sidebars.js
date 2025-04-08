@@ -39,7 +39,7 @@ const sidebars = {
     },
     {
       type: "category",
-      label: "LAVA Token",
+      label: "🌋 LAVA Token",
       collapsible: false,
       className: "custom-sidebar-spacing", // Add a custom class
       collapsed: false,
@@ -97,7 +97,7 @@ const sidebars = {
     },
     {
       type: "category",
-      label: "Using Lava Network",
+      label: "🧰 Using Lava Network",
       collapsible: false,
       className: "custom-sidebar-spacing", // Add a custom class
       collapsed: false,
@@ -126,7 +126,7 @@ const sidebars = {
     },
     {
       type: "category",
-      label: "Governance",
+      label: "🏛️ Governance",
       collapsible: false,
       className: "custom-sidebar-spacing", // Add a custom class
       collapsed: false,

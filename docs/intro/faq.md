@@ -40,12 +40,6 @@ Troubleshooting:
 
 ## Providers 🖥️ {#providers}
 
-### 🟡 What is QoS (Passable Quality-of-Service)? {#qos}
-This score for providers per relay is based on the metrics of latency, sync, and availability. There are two different types of QoS: 
-- [Passable QoS](/provider-rewards-service#passable-qos)
-- [QoS Excellence](/provider-rewards-service#qos-excellence)
-
-
 ### 🟡 How can you improve your provider's QoS? {#improve-qos}
 Providers are rated based on response time, availability and freshness. It is also important to maintain high performance on your nodes and to have powerful servers. For more details, see [RSCH-1000](https://community.lavanet.xyz/t/rsch-1000-passable-quality-of-service/25)
 
@@ -65,8 +59,8 @@ No, there is only one token - `LAVA`. It is used as a governance token, as gas f
 Lava uses dualstaking, when staking a provider, a validator is also specified.
 
 ### 🟡  How does slashing work for providers?
-Slashing has not yet been implemented for providers. It is planned to only be for fraudulent activity. A [freeze feature](/provider-features#freeze) has been implemented for service providers to avoid downtime or poor QoS. 
-Documentation is available for [jailing](/provider-rewards-service#jailing).
+Slashing has not yet been implemented for providers. It is planned to only be for fraudulent activity. A freeze feature has been implemented for service providers to avoid downtime or poor QoS. 
+Documentation is available for jailing.
 
 Here are some basic facts about jailing:
 - providers claim CUs serviced via relay payments;

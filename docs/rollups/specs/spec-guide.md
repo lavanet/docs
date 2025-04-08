@@ -390,7 +390,7 @@ This field gives the internal path of the node for this specific ApiCollection. 
 <details>
 <summary> `add_on` </summary>
 
-Leaving this field as a blank string(`""`) is the default and expected input. If you add anything to the string, the API Collection will be processed as an addon with the name provided in the string. Under that condition, the collection will be treated as optional to providers. We cover addons in more detail in a [later section](/spec-guide#step-6-addonsextensions-optional-apis) of this guide.
+Leaving this field as a blank string(`""`) is the default and expected input. If you add anything to the string, the API Collection will be processed as an addon with the name provided in the string. Under that condition, the collection will be treated as optional to providers. We cover addons in more detail in a [later section](/spec-guide#addons-extensions) of this guide.
 </details>
 
 <br />
@@ -436,7 +436,7 @@ It is possible to use a `function_tag` to parse the header's response. The `func
 
 Because every API returns data in a different format, Lava protocol establishes a standardized way to deal with data parsing. These standards are called `parse directives`. Parse directives are a critical part of how API responses are handled. Please take a moment to familiarize yourself with Lava parsing functions before continuing:
 
-🔖REFERENCE: [Parsing](/spec-reference#parsing)
+🔖REFERENCE: [Parsing](/spec-reference#parsing-)
 
 If a spec is imported, then this is most likely already handled for you and does not require definition. However, in case it is not, there is a need for
 
@@ -521,7 +521,7 @@ Get_BlockNum and Get_Block_by_Num must be defined for Lava data reliability chec
 
 This area is used to describe how to extract the block number from the API request. Make sure to review the parsing reference and several spec examples to ensure it's defined correctly.
 
-🔖REFERENCE: [`Block Parsing`](/spec-reference#block-parsing), [`Parsing`](/spec-reference#parsing-)
+🔖REFERENCE: [`Block Parsing`](/spec-reference#block_parsing), [`Parsing`](/spec-reference#parsing-)
 
 ### Compute Units
 
@@ -632,7 +632,7 @@ Making an Addon is very similar to making any other API Collection. The sole dif
                         },
 ```
 
-🔖REFERENCE: [`Addons`](/spec#addon)
+🔖REFERENCE: [`Addons`](/spec#addons)
 
 ### Creating Extensions
 

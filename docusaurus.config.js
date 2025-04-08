@@ -228,7 +228,7 @@ const config = {
               },
               {
                 label: "Blog",
-                href: "https://blog.lavanet.xyz",
+                href: "https://www.lavanet.xyz/blog",
               },
             ],
           },
@@ -241,7 +241,7 @@ const config = {
               },
               {
                 label: "Twitter",
-                href: "https://twitter.com/lavanetxyz",
+                href: "https://x.com/lavanetxyz",
               },
             ],
           },
