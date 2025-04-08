@@ -26,7 +26,7 @@ graph LR
 
 To join the Lava network as a provider, you'll need to follow two key steps:
 
-1. Decide which chains you would like to support. You can see access the list of supported chains by using the methods described in the [next paragraph](#querying-a-list-of-supported-chains-chains).
+1. Decide which chains you would like to support. You can see access the list of supported chains by using the methods described in the [next paragraph](#chains).
 2. Run the [relay chain RPC nodes](./running-nodes/run-nodes.mdx) for selected chains and ensure they are operational and meet the required specifications.
 3. Stake LAVA and run Lava’s lightweight Provider process, as detailed in our **[Provider Setup](docs/provider/provider-setup.md)** guide.
 
