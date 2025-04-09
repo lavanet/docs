@@ -1,6 +1,9 @@
 ---
 slug: /about
-title: 🌋 About Lava
+title: 🌋 About Lava | Lava Docs
+description: Lava is a decentralized protocol that provides ultra-reliable RPC services for any blockchain — built for AI agents, dapps, and users.
+image: /img/logo_black_background.png
+keywords: [Lava, Web3, RPC, Decentralized Infrastructure]
 ---
 
 # Permissionless and ultra-reliable RPC for any Blockchain
