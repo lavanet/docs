@@ -1,11 +1,11 @@
 ---
-slug: /infra-manager
-title: Infra Manager
+slug: /smart-router
+title: Smart Router
 ---
-# Infra Manager
+# Smart Router
 
 
-The **Infra Manager** is an open source smart router that supports any RPC (Lava, Alchemy, self-hosted etc.) and chooses the best nodes for you with automatic failover, error recovery, smart caching, fast TXs and more.
+The **Smart Router** is an open source infrastructure layer that supports any RPC (Lava, Alchemy, self-hosted etc.) and chooses the best nodes for you with automatic failover, error recovery, smart caching, fast TXs and more.
 
 ### Features
 
@@ -16,12 +16,12 @@ The **Infra Manager** is an open source smart router that supports any RPC (Lava
 5. Samples and checks data accuracy
 
 ### Get Started
-Follow the steps to get started with Infra Manager:
+Follow the steps to get started with Smart Router:
 1. Clone the repository:
 ```bash 
 git clone https://github.com/lavanet/lava.git
 ```
-2. Navigate to the Infra Manager directory:
+2. Navigate to the Smart Router directory:
 ```bash
 cd lava/protocol/rpcconsumer
 ```

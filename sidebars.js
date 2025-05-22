@@ -186,7 +186,7 @@ const sidebars = {
             },
             {
               type: "doc",
-              label: "Infra Manager",
+              label: "Smart Router",
               id: "developer/access-server-kit"
             },
             {type: "category",
