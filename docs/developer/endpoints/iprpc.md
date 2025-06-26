@@ -8,7 +8,7 @@ import TabItem from '@theme/TabItem';
 
 # Use Incentivized Public RPC (ipRPC) Edpoints
  
-Public endpoints and available API methods for each supported chain with incentivized pools, sponsored by a specific chain. These public endpoints are completely free and rate-limited at 3 req/s. 
+Public endpoints and available API methods for each supported chain with incentivized pools, sponsored by a specific chain. These public endpoints are completely free and rate-limited at 30 req/s. 
 
 :::tip
 Don't see the chain you would like to get RPC access to? Check out the [Lava Gateway](gateway-endpoints.md) for more supported chains.
