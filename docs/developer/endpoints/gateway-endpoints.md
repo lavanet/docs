@@ -5,26 +5,71 @@ title: Gateway Endpoints
 
 # Lava Gateway
 
-The **Lava Gateway**, developed and managed by the MagmaDevs team, is a simplified web interface that gives developers instant access to blockchain data. The Gateway uses the [Infra Manager](../access-server-kit.md) to provide a hosted point of access for developers looking for RPC through the Lava Network. This allows users to manage and configure Web3 APIs through intuitive controls directly from the browser and find example calls for the supported chains.
+## Easy-to-use access to free RPC across 15+ networks
 
-## Create your Gateway account
-
-To access endpoints through Gateway first create an account using the following [link](https://gateway.lavanet.xyz/login?utm_source=gateway-access-page&utm_medium=docs&utm_campaign=docs-to-gateway). Once registered, you will see the following UI, which displays the chains currently supported on the Gateway.
-![Gateway Chains](/img/supportedchains.png)
+The Lava Gateway, developed and managed by the Magma Devs team, is a simple web interface that gives developers free and instant RPC endpoints for leading blockchains. 
 
 
+Gateway registrants can select plug-and-play mainnet and testnet endpoints for:
+
+- Arbitrum
+- Axelar
+- Base
+- BSC
+- Cosmos Hub
+- Ethereum
+- Filecoin
+- Hyperliquid
+- Lava
+- Near
+- Optimism
+- Polygon
+- Starknet
+- Solana
+- ...and more
 
 
 
 
+### Step 1: Create your Gateway account
 
-### Pull your Endpoint
+To access endpoints through the Gateway, first create an account using the following link: 
 
-Each network has a different number of interfaces that can be queried. As seen below, the Ethereum RPC can accept calls from both JSON-RPC through HTTP and JSON-RPC through WebSockets, whereas Lava accepts REST, URI, Tendermint, and Tendermint using WebSockets.
-
-![EthereumAccessScreenshot](/img/tutorial/gateway/eth_access_screenshot.png)
-
-![LavaAccessScreenshot](/img/tutorial/gateway/lava_access_screenshot.png)
+**URL:** [`https://gateway.lavanet.xyz/`](https://gateway.lavanet.xyz/)
 
 
-All of the Gateway endpoint addresses are plug-and-play. You can take any address, plug it into Web3.js, Ether.js, Gaia or any other [Web3 API](../integrations/sdk-integrations.md) and use it seamlessly.
+<br/>
+
+### Step 2: Select the chain that you’re building on
+
+Once registered, you will see the following UI, which displays the chains currently supported on the Gateway:
+
+![GatewatChainsScreenshot](/img/tutorial/gateway/gateway-chains.png)
+
+Simply select the chain you’re building on and you will be presented with the endpoint options for the selected chain:
+
+![GatewayHyperliquidChain](/img/tutorial/gateway/gateway-hyperliquid.png)
+
+![GatewayHyperliquidNetwork](/img/tutorial/gateway/gateway-endpoint.png)
+
+
+<br/>
+### Step 3: Select your mainnet or testnet endpoint
+
+Lava provides mainnet and testnet endpoints for each chain.
+
+Use the toggle to select the appropriate endpoint for your needs. 
+
+Your dedicated chain endpoint and corresponding code snippet will be provided below:
+
+![GatewayHyperliquidNetwork](/img/tutorial/gateway/gateway-network.png)
+
+<br />
+:::note
+RPC endpoints are provided through HTTP as standard. 
+Certain chains - such as the Ethereum example below - have additional RPC interfaces including WEBSOCKET.
+:::
+<br />
+![GatewayInerfaces](/img/tutorial/gateway/gateway-interfaces.png)
+
+
