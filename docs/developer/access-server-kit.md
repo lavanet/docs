@@ -9,7 +9,7 @@ Smart Router is an enterprise-grade RPC (Remote Procedure Call) aggregation and 
 
 Enterprises leverage Smart Router to optimize their blockchain infrastructure’s reliability, performance, and cost efficiency while significantly improving their on-chain user experience.
 
-
+<br/>
 ## Architecture Overview
 ```
 ┌────────────────────────────────────────────────────────────────────────────┐
@@ -33,9 +33,10 @@ Enterprises leverage Smart Router to optimize their blockchain infrastructure’
 │                                                                            │
 ├────────────────────────────────────────────────────────────────────────────┤
 ```
+
 ---
 
-## Key Features
+## **Key Features**
 
 ### Monitoring and Routing
 
@@ -85,7 +86,8 @@ When a quorum can’t be reached, a detailed report including all provider respo
 
 ---
 
-## Architecture Components
+
+## **Architecture Components**
 
 Smart Router wraps together Lava Protocol’s core components - the RPC Consumer and RPC Provider, to create a robust RPC management platform:
 
@@ -97,9 +99,10 @@ The [routing engine](https://github.com/lavanet/lava/tree/main/protocol/rpcconsu
 
 The connection layer that interfaces with underlying RPC nodes, processes user requests, and monitors health and performance metrics in real-time.
 
+
 ---
 
-## Platform Characteristics
+## **Platform Characteristics**
 
 
 ### Off-Chain Operation
