@@ -83,7 +83,13 @@
 }
 
 .markdown h2 {
-  font-size: 22px;
+  font-size: 24px;
+  font-weight: 600;
+  margin-top: 20px;
+}
+
+.markdown h3 {
+  font-size: 20px;
   font-weight: 600;
   margin-top: 20px;
 }
