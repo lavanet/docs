@@ -83,7 +83,13 @@
 }
 
 .markdown h2 {
-  font-size: 22px;
+  font-size: 24px;
+  font-weight: 600;
+  margin-top: 20px;
+}
+
+.markdown h3 {
+  font-size: 20px;
   font-weight: 600;
   margin-top: 20px;
 }
@@ -92,6 +98,11 @@
   font-size: 16px;
   line-height: 1.7;
   color: var(--ifm-menu-color);
+}
+
+.markdown hr {
+  border: none;
+  border-top: 0.5px solid rgba(0, 0, 0, 0.05);
 }
 
 /* Code Blocks */
