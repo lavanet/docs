@@ -185,10 +185,33 @@ const sidebars = {
               ],
             },
             {
-              type: "doc",
+              type: "category",
               label: "Smart Router",
-              id: "developer/access-server-kit"
+              collapsible: true,
+              collapsed: true,
+              link: {
+                type: "doc",
+                id: "developer/smart-router/smart-router",
+              },
+              items: [
+                {
+                  type: "doc",
+                  label: "Key Features",
+                  id: "developer/smart-router/key-features"
+                },
+                {
+                  type: "doc",
+                  label: "Architecture Components",
+                  id: "developer/smart-router/architecture-components"
+                },
+                {
+                  type: "doc",
+                  label: "Platform Characteristics",
+                  id: "developer/smart-router/platform-characteristics"
+                },
+              ],
             },
+            
             {type: "category",
               label: "Integrations with Web3 APIs",
               collapsible: true,
