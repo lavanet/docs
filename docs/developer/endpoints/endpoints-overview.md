@@ -30,7 +30,7 @@ Lava works with various blockchains to establish [**Incentivized Public RPC (ipR
 
 <br/>
 
-These endpoints are completely free and open to all consumers. Public incencitized endpoints provide data access to all supported chains at 30 req/s.
+These endpoints are completely free and open to all consumers.
 
 
 ### Gateway
