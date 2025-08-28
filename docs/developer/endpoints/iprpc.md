@@ -30,6 +30,62 @@ Don't see the chain you would like to get RPC access to? Check out the [Lava Gat
 </Tabs>
 <br />
 
+## Movement 
+
+<Tabs>
+ 
+<TabItem value="mainnet" label=" Mainnet">
+
+`MOVEMENT`
+
+| Service           | URL                                          |
+|---------------------|-----------------------------------------------|
+| 🟢 rest            | https://movement.lava.build              |
+
+
+</TabItem>
+<TabItem value="testnet" label="Testnet">
+
+`MOVEMENTT`
+
+| Service           | URL                                          |
+|---------------------|-----------------------------------------------|
+| 🟢 rest            | https://movementt.lava.build              |
+
+
+</TabItem>
+</Tabs>
+
+
+#### Available API methods
+
+<details>
+<summary> REST </summary>
+
+- `/-/healthy`
+- `/accounts/{address}`
+- `/accounts/{address}/events/{creation_number}`
+- `/accounts/{address}/events/{event_handle}/{field_name}`
+- `/accounts/{address}/module/{module_name}`
+- `/accounts/{address}/modules`
+- `/accounts/{address}/resource/{resource_type}`
+- `/accounts/{address}/resources`
+- `/accounts/{address}/transactions`
+- `/blocks/by_height/{block_height}`
+- `/blocks/by_version/{version}`
+- `/estimate_gas_price`
+- `/events/{event_key}`
+- `/spec`
+- `/transactions/by_hash/{txn_hash}`
+- `/transactions/wait_by_hash/{txn_hash}`
+- `/transactions/by_version/{txn_version}`
+- `/transactions/encode_submission`
+- `/transactions`
+
+
+</details>
+<br />
+
 ## Lava 
 
 <Tabs>
