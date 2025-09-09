@@ -23,7 +23,16 @@ Don't see the chain you would like to get RPC access to? Check out the [Lava Gat
 
 | Service           | URL                                          |
 |---------------------|-----------------------------------------------|
-| 🟢 jsonrpc, rest            | https://hedera.lava.build              |
+| 🟢 jsonrpc            | https://hedera.lava.build              |
+
+
+</TabItem><TabItem value="testnet" label=" Testnet">
+
+`HEDERAT`
+
+| Service           | URL                                          |
+|---------------------|-----------------------------------------------|
+| 🟢 jsonrpc            | https://hederat.lava.build              |
 
 
 </TabItem>
