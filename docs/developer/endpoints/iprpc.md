@@ -14,6 +14,36 @@ Public endpoints and available API methods for each supported chain with pools, 
 Don't see the chain you would like to get RPC access to? Check out the [Lava Gateway](gateway-endpoints.md) for more supported chains.
 :::
 
+## Union 
+
+<Tabs>
+  <TabItem value="mainnet" label="Mainnet">
+   
+   `UNION`
+
+  | Service           | URL                                        |
+  |---------------------|---------------------------------------------|
+  | 🟢 rest            | https://union.lava.build                 |
+  | 🟢 tendermintrpc   | https://union.tendermintrpc.lava.build:443   |
+  | 🟢 tendermintrpc/ws | wss://union.tendermintrpc.lava.build/websocket |
+  | 🟢 grpc            | union.grpc.lava.build:443                    |
+
+  </TabItem>
+
+  <TabItem value="testnet" label="Testnet">
+   
+   `UNIONT`
+
+  | Service           | URL                                           |
+  |---------------------|-----------------------------------------------|
+  | 🟢 rest            | https://uniont.lava.build                     |
+  | 🟢 tendermintrpc   | https://uniont.tendermintrpc.lava.build:443     |
+  | 🟢 tendermintrpc/ws | wss://uniont.tendermintrpc.lava.build/websocket |
+  | 🟢 grpc            | uniont.grpc.lava.build:443                      |
+
+  </TabItem>
+</Tabs>
+
 ## Hedera 
 
 <Tabs>
