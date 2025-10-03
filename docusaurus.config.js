@@ -100,6 +100,11 @@ const config = {
             from: '/docs/intro/about',
             to: '/about',
           },
+          {
+            from: '/iprpc',
+            to: '/public-rpc-endpoints',
+          },
+
         ],
       },
     ],
