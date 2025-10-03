@@ -100,7 +100,7 @@ The latest block is exported in prometheus, and also uploaded on chain.
 You can compare the latest block on your provider to other providers, a useful way to do this is filter provider_latest_block_report and compare your results to others:
 
 :::caution
-Here and below ensure that you replace `{PUBLIC_RPC}` with the correct [endpoint](../developer/endpoints/iprpc.md).
+Here and below ensure that you replace `{PUBLIC_RPC}` with the correct [endpoint](../developer/endpoints/public-rpc-endpoints.md).
 :::
 
 ```bash

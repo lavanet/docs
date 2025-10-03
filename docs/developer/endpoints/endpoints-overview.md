@@ -10,14 +10,14 @@ RPC is essential for interacting with blockchains — every interaction, such as
 
 ### Incentivized Public Endpoints
 
-Lava works with various blockchains to establish [**Incentivized Public RPC (ipRPC) endpoints**](./iprpc.md). ipRPC endpoints are given unified URLs serviced by diverse providers within each chain's ecosystem. Providers are compensated by their respective ecosystems to offer services, while developers benefit from highly reliable endpoints unified under a single URL.
+Lava works with various blockchains to establish [**Lava Public RPC endpoints**](./public-rpc-endpoints.md). These endpoints are given unified URLs serviced by diverse providers within each chain's ecosystem. Providers are compensated by their respective ecosystems to offer services, while developers benefit from highly reliable endpoints unified under a single URL.
 
 <center> 
 
 ```mermaid
 
  flowchart LR
-    A[dApp in the US] --> B(ipRPC URL)
+    A[dApp in the US] --> B(Lava Public RPC URL)
     B --> C{Lava Network}
     C -->|US, 100ms| D[Provider1]
     C -->|US, 200ms| E[Provider2]

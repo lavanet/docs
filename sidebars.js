@@ -175,7 +175,7 @@ const sidebars = {
                 {
                   type: "doc",
                   label: "Use Public Endpoints",
-                  id: "developer/endpoints/iprpc"
+                  id: "developer/endpoints/public-rpc-endpoints"
                 },
                 {
                   type: "doc",
