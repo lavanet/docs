@@ -76,11 +76,11 @@
 }
 
 /* === Mintlify/VitePress-style category headings & spacing === */
-/* Wrap the whole category block with breathing room + divider */
+/* Breathing room WITHOUT divider line */
 .theme-doc-sidebar-item-category.custom-sidebar-spacing {
-  margin: 0 0 18px 0;             /* space after the whole block */
-  padding-bottom: 10px;           /* space above the divider line */
-  border-bottom: 1px solid hsl(0 0% / 0.14);
+  margin: 0 0 18px 0;     /* space after the whole block */
+  padding-bottom: 10px;   /* keep a little air below the label */
+  border-bottom: none !important; /* <-- remove divider */
 }
 
 /* Category label row: bold, slightly larger, crisp spacing */
@@ -137,10 +137,7 @@
   background: hsl(0 0% 0% / 0.04);
 }
 
-/* Dark mode polish for the category divider + hovers */
-[data-theme='dark'] .theme-doc-sidebar-item-category.custom-sidebar-spacing {
-  border-bottom-color: hsl(0 0% 100% / 0.14);
-}
+/* Dark mode polish (no divider necessary) */
 [data-theme='dark']
   .theme-doc-sidebar-item-category.custom-sidebar-spacing
   .menu__list .menu__link:hover {
@@ -263,7 +260,7 @@ th {
 }
 
 /* Keep for global spacing if needed (category block spacing).
-   The detailed spacing/divider is now handled above. */
+   The detailed spacing is handled above (no divider). */
 .custom-sidebar-spacing {
   margin-bottom: 30px; /* Adjust spacing as needed */
 }
