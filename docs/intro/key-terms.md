@@ -1,6 +1,7 @@
 ---
 slug: /key-terms
 title: 📝 Key Terms
+draft: true
 ---
 
 # Key Terminology 

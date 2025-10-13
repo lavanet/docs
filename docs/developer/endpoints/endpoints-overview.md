@@ -1,6 +1,7 @@
 ---
 slug: /endpoints-overview
 title: Endpoints 
+draft: true
 ---
 
 # Access Lava RPC

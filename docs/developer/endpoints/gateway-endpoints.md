@@ -1,6 +1,7 @@
 ---
 slug: /gateway-endpoints
 title: Gateway Endpoints
+draft: true
 ---
 
 # Lava Gateway

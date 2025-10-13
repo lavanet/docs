@@ -1,6 +1,7 @@
 ---
 slug: /daveloper-faq
 title: Developer FAQ
+draft: true
 ---
 
 ### 🟡 What rate limits do public endpoints have? {#lava-rate-limits}

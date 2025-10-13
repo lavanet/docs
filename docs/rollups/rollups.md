@@ -1,6 +1,7 @@
 ---
 slug: /add-lava
 title: Add Lava to your chain
+draft: true
 ---
 
 # Add Lava to your chain 
