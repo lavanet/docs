@@ -19,7 +19,7 @@ If you're considering creating a specification for Lava, here's the simplified f
 
 - Create a Specification File 🖊️: Begin by creating a JSON file that meets Lava's specification standards. You can get a sense of what fields are required from our [reference guide](/spec-reference) or [example specifications](https://github.com/lavanet/lava/blob/main/config/provider_examples/test_spec_template.yml).
 - Detail the Functions 📝: Within your spec file, specify any Imports, Add-Ons, and Extensions relevant to the chain or API you're considering.
-- Submit a Proposal 📜: Once your spec is ready, submit it as a [governance proposal](../../governance/submit-proposal.md) to the Lava community.
+- Submit a Proposal 📜: Once your spec is ready, submit it as a [governance proposal](/governance/submit-proposal.md) to the Lava community.
 - Community Decision 👩🏼‍⚖️🧑🏿‍⚖️ : If your proposal garners enough support, it will be accepted on-chain through a vote of validators. You can continue to provide support by submitting a [pull request (PR)](https://github.com/lavanet/lava/pulls) so your spec can be added to the Lava cookbook before any further updates.
 
 ## Command to submit a proposal

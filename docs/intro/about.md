@@ -6,57 +6,69 @@ image: /img/logo_black_background.png
 keywords: [Lava, Web3, RPC, Decentralized Infrastructure]
 ---
 
-# Permissionless and ultra-reliable RPC for any Blockchain
+# Decentralized and Permissionless RPC for Any Blockchain
 
-Lava is a decentralized protocol that provides ultra-reliable RPC (Remote Procedure Call) services for blockchain networks. It works by coordinating and aggregating RPC providers, automatically routing traffic to the most efficient and reliable nodes. The protocol uses economic incentives, including provider rewards and reputation systems, to ensure high-quality service delivery. This infrastructure is crucial for AI agents, dapps, and users who need consistent, uninterrupted access to blockchain data and services.
+Every blockchain interaction - from making a trade, to debugging a smart contract, to checking your account balance - relies on Remote Procedure Calls (RPC). RPC is the universal language of blockchain, enabling users to read and write data in real-time across networks. Yet the way we access blockchain data today remains fragmented and unreliable:
+- **No single provider covers all chains**, making multi-chain application development complex and resource-intensive.
+- **Developers face a trade-off:** run their own nodes (costly and operationally complex) or rely on centralized RPC providers (introducing single points of failure, downtime risk, and privacy concerns).
+- **New chains struggle to bootstrap infrastructure**, often depending on a small set of community node providers with limited incentives or guarantees for high operational standards.
 
-
-### AI agents and users depend on RPC
-
-Lava's vision is to enable AI agents and anyone to use blockchain apps, 24/7, with no downtime.
-
-Lava is a protocol which coordinates dapp and AI agent traffic on every blockchain. Lava aggregates RPC providers, dynamically scaling to support demand and routing requests to the fastest, most reliable providers.
-
-Incentives are key to the protocol. For example, in the early stages of the network, an allocation of the total supply has been allocated to rewarding data providers. This is designed to bootstrap the supply side of the network, mitigating the cold start problem many networks face.
+Lava Network is building out a new industry standard for blockchain data access. By coordinating an ecosystem of independent RPC Node Providers, Lava Network delivers permissionless and decentralized RPC API that delivers high-performance services. Each request is routed to the fastest and most reliable nodes - ensuring censorship-resistant, secure, and scalable access to blockchain data.
 
 
-### Key components of the protocol
 
-Lava Network has many different participants. 
+## For Developers of Blockchain Applications: Lava RPC API
 
-Together, the network provides fast, reliable RPC and data services to AI agents and anyone using blockchain apps. 
+Lava RPC API delivers access to permissionless, decentralized blockchain RPC data access, designed for dapps, wallets, AI agents, and any application requiring blockchain data.
 
-1. **Data Providers** e.g. RPC node runners, indexers are entities which join the Lava Network to offer services and earn rewards from different blockchains
-2. **Data Consumers** e.g. wallets, dapps, AI agents are entities which use the Lava Network for permissionless, 24/7 access to blockchains, with minimal downtime
-4. **Validators** secure the Lava blockchain.
-3. **Restaking** allows LAVA holders to direct RPC requests to top providers so consumers benefit from high quality service 
-4. **Staking** secures the Lava blockchain. Stakers earn a share of Validator rewards
-5. **Slashing and jailing** creates cryptoeconomic incentives for providers to deliver high quality service
-6. **Quality of Service** scores are given to providers by consumers, after a RPC requests is handled
-7. **Provider Reputation** is an aggregated score which takes into account all historical Quality of Service scores. It measures providers across latency, uptime and accuracy
-8. **Incentive Pools** are pools which blockchains create on the Lava blockchain, consisting of rewards for Lava Network contributors. These rewards are often in the native token of the partner chain e.g. NEAR
+Powered by Lava Network’s RPC Routing Engine, the API abstracts away infrastructure complexity while ensuring:
 
-<center>
+- Maximum uptime
+- Optimized latency and performance
+- Data freshness and integrity
 
-```mermaid
-flowchart LR
-    p1[Contributor] --spec --> lava[[Lava Protocol]]
-    lava ---> |rewards| p2((API Providers Pool))
-    lava <---> |relays| p2
-    lava <--- |compute cost| p3([Consumer])
-    lava <--> |relays| p3
-```
+The API exposes the standard low-level RPC interface for accessing the data for the blockchain of your choice. Developers can get started quickly with a free tier, while paid plans provide higher rate limits and advanced controls for scaling.
 
-</center>
+Ready to start building? Check out the [Quickstart Guide](../lava-rpc-api/quickstart.md).
 
-:::info
-For detailed implementation of specific features, please refer to the [Lava Whitepaper](https://lavanet.xyz/whitepaper).
-:::
+## For Blockchains & Rollups: Lava Public RPC
 
-### Join Lava ecosystem
+Every blockchain and rollup requires reliable, permissionless RPC to onboard developers and scale its ecosystem. Lava Public RPC enables projects to quickly launch decentralized RPC infrastructure through an automated on-chain RPC budget management solution. 
 
-There are lots of different ways to contribute to Lava ecosystem. Check out the [ecosystem roles](./key-roles).
+Powered by the RPC Routing Engine, Lava Public RPC allows chains to leverage the Lava Network’s community of RPC Node Providers to launch a public RPC endpoint for developers.
 
-### Join Lava Community
-- Join Lava [Discord](https://discord.gg/lavanetxyz) and specific channels for developers and providers
-- Join Lava [Telegram](https://t.me/officiallavanetwork)
+
+Integrating with Lava Network involves:
+- **Spec definition** – define supported APIs and RPC methods in a simple JSON specification. This step is typically completed by Lava Ecosystem contributors.
+
+- **Funding Lava Public RPC** – the LAVA Tokens are utilized to compensate RPC Node Providers that serve requests for your chain.
+
+- **Scaling your ecosystem with public RPC endpoints** – share open RPC endpoints with your developer community to enable frictionless onboarding from day one.
+
+Learn how you can bootstrap your ecosystem with [Lava Public RPC](../lava-public-rpc/lava-public-rpc-overview.md).
+
+
+## For Enterprises & Infrastructure Teams: Enterprise RPC Smart Router
+
+Enterprises often rely on multiple RPC providers (e.g., Alchemy, Infura) to support mission-critical blockchain applications. The RPC Smart Router is an enterprise-grade blockchain RPC orchestration solution, powered by the Lava RPC Routing Engine, and built to unify and optimize these complex setups while ensuring maximum reliability and performance. 
+
+The RPC Smart Router enables:
+- **Unified control plane** for managing nodes across multiple RPC providers and chains
+- **Optimal request routing** to the fastest and healthiest RPC providers, ensuring low latency and consistent performance
+- **Built-in failover and caching** to guarantee maximum uptime and minimize downtime risk
+- **Cross-validated security** to protect applications from inaccurate or malicious data
+- **Full observability and real-time metrics** for monitoring, auditing, and performance tuning
+
+The RPC Smart Router is ideal for organizations that demand high availability, multi-chain support, and vendor flexibility - without sacrificing performance or security.
+
+Learn more about the [Enterprise RPC Smart Router](../smart-router/smart-router.md).
+
+
+## Permissionless Decentralized RPC & API access to 30+ chains
+
+Lava Network currently provides RPC access to **30+ blockchains and rollups** (mainnets and testnets), all powered by a community of RPC Node Providers who permissionlessly join the Lava Network to service the data requests.
+
+Beyond standard RPC, Lava RPC Node Providers also support **archival requests** and advanced **add-ons** like `debug` and `trace`. Lava RPC Node Providers are globally distributed across **Europe, Asia, and various regions of the US**, minimizing latency and ensuring high uptime for developers everywhere.
+
+Check out the [Lava Info dashboard](https://info.lavanet.xyz/chains) for the full list of supported chains on Lava Network. 
+

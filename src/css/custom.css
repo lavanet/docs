@@ -10,7 +10,7 @@
   --ifm-font-size-base: 16px;
   --ifm-background-color: #ffffff;
   --ifm-heading-font-family: "Inter", sans-serif;
-  --ifm-color-primary: #cc5500; /* GitBook's primary orange */
+  --ifm-color-primary: #cc5500; /* Brand primary */
   --ifm-color-primary-dark: #9c3f00;
   --ifm-color-primary-light: #ff7733;
   --ifm-navbar-background-color: #ffffff;
@@ -66,13 +66,92 @@
   padding: 8px 20px;
   border-radius: 5px;
   letter-spacing: 0.5px !important; 
-  transition: background 0.2s ease-in-out;
+  transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
 }
 
 .menu__link--active,
 .menu__list-item:hover > .menu__link {
   background: rgba(255, 119, 51, 0.2); /* Highlight effect */
   color: var(--ifm-color-primary);
+}
+
+/* === Mintlify/VitePress-style category headings & spacing === */
+/* Wrap the whole category block with breathing room + divider */
+.theme-doc-sidebar-item-category.custom-sidebar-spacing {
+  margin: 0 0 18px 0;             /* space after the whole block */
+  padding-bottom: 10px;           /* space above the divider line */
+  border-bottom: 1px solid hsl(0 0% / 0.14);
+}
+
+/* Category label row: bold, slightly larger, crisp spacing */
+.theme-doc-sidebar-item-category.custom-sidebar-spacing
+  > .menu__list-item-collapsible > .menu__link {
+  font-weight: 800;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  padding: 6px 14px;
+  color: var(--ifm-color-emphasis-900, var(--ifm-menu-color));
+  background: transparent;
+}
+
+/* Optional: uncomment to go for all-caps section headers */
+/*
+.theme-doc-sidebar-item-category.custom-sidebar-spacing
+  > .menu__list-item-collapsible > .menu__link {
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.86rem;
+}
+*/
+
+/* Subtle hover/focus on the category label (no heavy bg) */
+.theme-doc-sidebar-item-category.custom-sidebar-spacing
+  > .menu__list-item-collapsible > .menu__link:hover,
+.theme-doc-sidebar-item-category.custom-sidebar-spacing
+  > .menu__list-item-collapsible > .menu__link:focus {
+  color: var(--ifm-color-primary);
+  background: transparent;
+  text-decoration: none;
+}
+
+/* Space between the bold label and its child items */
+.theme-doc-sidebar-item-category.custom-sidebar-spacing > .menu__list {
+  margin-top: 8px;
+}
+
+/* Tidy up caret spacing for a more aligned look */
+.theme-doc-sidebar-item-category.custom-sidebar-spacing .menu__caret {
+  margin-left: 4px;
+  opacity: 0.8;
+}
+
+/* Child links inside categories: calmer weight & compact padding */
+.theme-doc-sidebar-item-category.custom-sidebar-spacing .menu__list .menu__link {
+  font-weight: 500;
+  font-size: 0.92rem;
+  padding: 6px 16px;
+}
+
+/* Modern hover for child links */
+.theme-doc-sidebar-item-category.custom-sidebar-spacing .menu__list .menu__link:hover {
+  background: hsl(0 0% 0% / 0.04);
+}
+
+/* Dark mode polish for the category divider + hovers */
+[data-theme='dark'] .theme-doc-sidebar-item-category.custom-sidebar-spacing {
+  border-bottom-color: hsl(0 0% 100% / 0.14);
+}
+[data-theme='dark']
+  .theme-doc-sidebar-item-category.custom-sidebar-spacing
+  .menu__list .menu__link:hover {
+  background: hsl(0 0% 100% / 0.06);
+}
+
+/* Slightly rounder, subtle active state that matches brand */
+.theme-doc-sidebar-menu .menu__link--active:not(.menu__link--sublist) {
+  background: color-mix(in srgb, var(--ifm-color-primary) 16%, transparent);
+  font-weight: 600;
+  border-radius: 8px;
 }
 
 /* Content */
@@ -183,7 +262,8 @@ th {
   text-decoration: none !important;
 }
 
+/* Keep for global spacing if needed (category block spacing).
+   The detailed spacing/divider is now handled above. */
 .custom-sidebar-spacing {
   margin-bottom: 30px; /* Adjust spacing as needed */
 }
-

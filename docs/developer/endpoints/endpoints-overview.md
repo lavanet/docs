@@ -10,7 +10,7 @@ RPC is essential for interacting with blockchains — every interaction, such as
 
 ### Incentivized Public Endpoints
 
-Lava works with various blockchains to establish [**Lava Public RPC endpoints**](./public-rpc-endpoints.md). These endpoints are given unified URLs serviced by diverse providers within each chain's ecosystem. Providers are compensated by their respective ecosystems to offer services, while developers benefit from highly reliable endpoints unified under a single URL.
+Lava works with various blockchains to establish **Lava Public RPC endpoints**. These endpoints are given unified URLs serviced by diverse providers within each chain's ecosystem. Providers are compensated by their respective ecosystems to offer services, while developers benefit from highly reliable endpoints unified under a single URL.
 
 <center> 
 

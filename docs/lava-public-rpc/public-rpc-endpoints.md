@@ -1,6 +1,6 @@
 ---
 slug: /public-rpc-endpoints
-title: ipRPC 🔥
+title: Lava Public RPC endpoints
 ---
 
 import Tabs from '@theme/Tabs';

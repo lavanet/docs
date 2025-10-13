@@ -7,7 +7,7 @@ title: Key Features
 
 ## Monitoring and Routing
 
-**Dynamic QoS Scoring**: Smart Router maintains real-time Quality of Service (QoS) scores for each RPC provider across every supported blockchain. These scores determine optimal routing for incoming requests.
+**Dynamic QoS Scoring**: Enterprise RPC Smart Router maintains real-time Quality of Service (QoS) scores for each RPC provider across every supported blockchain. These scores determine optimal routing for incoming requests.
 
 
 **Performance-Based Routing**: The system continuously probes RPC nodes, monitoring their health, performance metrics, and block synchronization status. Nodes with superior uptime, lower latency, and better synchronization receive higher priority for serving requests.
@@ -15,7 +15,7 @@ title: Key Features
 
 ## Automatic Failover and Error Recovery
 
-**Failover**: When a node becomes unavailable, Smart Router automatically routes traffic to healthy alternatives without service interruption.
+**Failover**: When a node becomes unavailable, RPC Smart Router automatically routes traffic to healthy alternatives without service interruption.
 
 **Error recovery**: Requests that encounter errors are automatically retried on alternative nodes to ensure successful completion.
 <br/>
@@ -32,14 +32,14 @@ title: Key Features
 
 ## Transaction Acceleration
 
-**Simultaneous Broadcasting**: When transactions are submitted, Smart Router broadcasts them to all available providers simultaneously. This ensures transactions reach the network as quickly as possible, maximizing speed and success rates.
+**Simultaneous Broadcasting**: When transactions are submitted, RPC Smart Router broadcasts them to all available providers simultaneously. This ensures transactions reach the network as quickly as possible, maximizing speed and success rates.
 <br/>
 
 ## Data Consistency
 
-**Block Tracking**: Smart Router maintains awareness of the latest block on each blockchain to ensure data consistency.
+**Block Tracking**: Enterprise RPC Smart Router maintains awareness of the latest block on each blockchain to ensure data consistency.
 
-**Chronological Validation**: Responses containing outdated block information are automatically rejected and retried on alternative nodes. Nodes providing stale data receive lower QoS scores, reducing their selection priority.
+**Chronological Validation**: Chronological Validation: Responses containing outdated block information are automatically rejected and retried on alternative nodes. Nodes providing stale data receive lower QoS scores, reducing their selection priority.
 <br/>
 
 ## Session Stickiness
@@ -56,11 +56,11 @@ When a quorum can’t be reached, a detailed report including all provider respo
 
 ## Deployment Optimization
 
-**Geographic Distribution**: Smart Router can be deployed across multiple geolocations to minimize latency for users across the globe.
+**Geographic Distribution**: RPC Smart Router can be deployed across multiple geolocations to minimize latency for users across the globe.
 
-**Automatic Geographic Failover**: If one Smart Router instance experiences issues, requests are automatically routed to healthy instances in the closest location, maintaining continuous service availability.
+**Automatic Geographic Failover**: If one RPC Smart Router instance experiences issues, requests are automatically routed to healthy instances in the closest location, maintaining continuous service availability.
 
-**Auto-Scaling**: Smart Router automatically scales to handle any traffic volume without affecting performance.
+**Auto-Scaling**: RPC Smart Router automatically scales to handle any traffic volume without affecting performance.
 <br/>
 
 ## Comprehensive Metrics and Monitoring
