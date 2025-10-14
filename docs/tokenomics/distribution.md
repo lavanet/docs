@@ -1,6 +1,7 @@
 ---
 slug: /distribution
 title: 📊 Distribution
+draft: true
 ---
 
 

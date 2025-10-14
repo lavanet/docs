@@ -1,6 +1,7 @@
 ---
 slug: /add-lava
 title: Add Lava to your chain
+draft: true
 ---
 
 # Add Lava to your chain 
@@ -61,5 +62,5 @@ Lava eliminates the need for bootstrapping and managing public RPC endpoints. By
     - Scale RPC and API provisioning seamlessly.
 
 ## Next steps
-If you'd like to add your chain to Lava, reach out to the Lava team and learn. You can also learn more about the specifications [here](./specs/spec.md).
+If you'd like to add your chain to Lava, reach out to the Lava team and learn. You can also learn more about the specifications.
 

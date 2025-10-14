@@ -1,6 +1,6 @@
 ---
 slug: /public-rpc-endpoints
-title: ipRPC 🔥
+title: Lava Public RPC endpoints
 ---
 
 import Tabs from '@theme/Tabs';
@@ -18,7 +18,7 @@ Simply copy an endpoint into your application, script, or wallet configuration a
 
 
 :::note
-Don't see the chain you would like to get RPC access to? Check out [Lava RPC API](/gateway-endpoints/)  for more supported chains.
+Don't see the chain you would like to get RPC access to? Check out [Lava RPC API](../lava-rpc-api/public-rpc-api-overview.md)  for more supported chains.
 :::
 
 <br />

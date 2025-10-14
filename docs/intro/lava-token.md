@@ -1,6 +1,7 @@
 ---
 slug: /lava-token
 title: The LAVA Token
+draft: true
 ---
 
 # The LAVA Token 

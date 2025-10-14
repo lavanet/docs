@@ -1,6 +1,7 @@
 ---
 slug: /growth
 title: 📈 Growth
+draft: true
 ---
 
 # 🪙 Growth

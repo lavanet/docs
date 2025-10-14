@@ -18,7 +18,7 @@ Simple deployment process with intuitive configuration and management interfaces
 Available as both an on-prem and managed solution.
 
 ## Off-Chain Operation
-Smart Router operates entirely off-chain, ensuring no dependency on Lava’s blockchain.
+The Enterprise RPC Smart Router operates entirely off-chain, ensuring no dependency on Lava’s blockchain.
 
 ## Visibility & Observability
 Full visibility into your system’s health and performance through real-time metrics.

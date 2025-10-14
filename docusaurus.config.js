@@ -26,7 +26,7 @@ const config = {
       src: "https://widget.kapa.ai/kapa-widget.bundle.js",
       "data-website-id": "7a6c07b5-14a4-47c9-819f-ffc0d86aee42",
       "data-project-name": "Lava",
-      "data-project-color": "#4B1112",
+      "data-project-color": "#3b82f6", // matches modern blue CSS
       "data-project-logo":
         "https://avatars.githubusercontent.com/u/100386277?s=280&v=4",
       async: true,
@@ -35,7 +35,6 @@ const config = {
   presets: [
     [
       "classic",
-      /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
           routeBasePath: "/",
@@ -56,34 +55,17 @@ const config = {
     ],
     [
       "redocusaurus",
-      /** @type {import('redocusaurus').PresetEntry} */
       {
         debug: Boolean(process.env.DEBUG || process.env.CI),
         specs: [
-          {
-            id: "lava-api",
-            spec: "lava-api/openapi.yml",
-            route: "lava-api",
-          },
+          { id: "lava-api", spec: "lava-api/openapi.yml", route: "lava-api" },
         ],
         theme: {
-          /**
-           * Highlight color for docs
-           */
-          primaryColor: "#1890ff",
-          /**
-           * Options to pass to redoc
-           * @see https://github.com/redocly/redoc#redoc-options-object
-           */
+          primaryColor: "#3b82f6",
           options: { disableSearch: true },
-          /**
-           * Options to pass to override RedocThemeObject
-           * @see https://github.com/Redocly/redoc#redoc-theme-object
-           */
           theme: {
             scrollYOffset: 100,
             sideNavStyle: "id-only",
-            // nativeScrollbars: false
           },
         },
       },
@@ -96,48 +78,49 @@ const config = {
       '@docusaurus/plugin-client-redirects',
       {
         redirects: [
-          {
-            from: '/docs/intro/about',
-            to: '/about',
-          },
-          {
-            from: '/iprpc',
-            to: '/public-rpc-endpoints',
-          },
-
+          { from: '/docs/intro/about', to: '/about' },
+          { from: '/iprpc', to: '/public-rpc-endpoints' },
+          { from: '/endpoints-overview', to: '/lava-rpc-api-overview'},
+          { from: '/gateway-endpoints', to: '/quickstart'},
+          { from: '/key-roles', to: '/about'},
+          { from: '/key-terms', to: '/about'},
+          { from: '/tutorials', to: '/about'},
+          { from: '/lava-token', to: '/about'},
+          { from: '/restaking-lava', to: '/about'},
+          { from: '/how-to-bridge-lava', to: '/about'},
+          { from: '/how-to-stake-and-restake-lava', to: '/about'},
+          { from: '/supply', to: '/about'},
+          { from: '/rewards-restaking', to: '/about'},
+          { from: '/distribution', to: '/about'},
+          { from: '/growth', to: '/about'},
+          { from: '/developer-faq', to: '/lava-public-rpc'},
+          { from: '/sdk-integrations', to: '/lava-public-rpc'},
+          { from: '/add-lava', to: '/lava-public-rpc'}, 
         ],
       },
     ],
     [
       "docusaurus-plugin-segment",
-      {
-        apiKey: "DQPhWiY1Diy8ywBu7fXgqLyii8HR3cXD",
-      },
+      { apiKey: "DQPhWiY1Diy8ywBu7fXgqLyii8HR3cXD" },
     ],
     "docusaurus-plugin-hotjar",
-    async function myPlugin(context, options) {
+    async function myPlugin() {
       return {
         name: "docusaurus-tailwindcss",
         configurePostCss(postcssOptions) {
-          // Appends TailwindCSS and AutoPrefixer.
           postcssOptions.plugins.push(require("tailwindcss"));
           postcssOptions.plugins.push(require("autoprefixer"));
           return postcssOptions;
         },
       };
     },
-    async function customPlugin(context, opts) {
+    async function customPlugin() {
       return {
         name: 'custom-plugin',
-        configureWebpack(config, isServer, utils, content) {
-          // Modify internal webpack config. If returned value is an Object, it
-          // will be merged into the final config using webpack-merge;
-          // If the returned value is a function, it will receive the config as the 1st argument and an isServer flag as the 2nd argument.
+        configureWebpack() {
           return {
             plugins: [
               new webpack.DefinePlugin({
-                // IMPORTANT: To fix debug library‘s bug
-                // {}.DEBUG = namespaces; // SyntaxError: Unexpected token '.'
                 'process.env.DEBUG': 'process.env.DEBUG',
               })
             ]
@@ -147,72 +130,32 @@ const config = {
     }
   ],
 
-  markdown: {
-    mermaid: true,
-  },
-
+  markdown: { mermaid: true },
   themes: ["@docusaurus/theme-mermaid"],
 
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       colorMode: {
-        defaultMode: "dark",
+        defaultMode: "light",
+        respectPrefersColorScheme: true,
       },
-      toc: {
-        minHeadingLevel: 2, // Minimum heading level to track
-        maxHeadingLevel: 5, // Maximum heading level to track
-      },
-      sidebar: {
-        style: 'wide', // Make it appear like GitBook
-      },
+      toc: { minHeadingLevel: 2, maxHeadingLevel: 5 },
+      sidebar: { style: 'wide' },
       navbar: {
         title: "Lava Docs",
-        logo: {
-          alt: "Lava Docs Logo",
-          src: "img/lava_logo.svg",
-          href: '/about',
-        },
+        logo: { alt: "Lava Docs Logo", src: "img/lava_logo.svg", href: '/about' },
         items: [
-          { 
+          {
             type: 'docSidebar',
             sidebarId: 'aboutLavaSidebar',
-            label: "About Lava",
+            label: "Docs",
             position: "left",
-            to: "developer",
-          },
-          {
-            type: 'docSidebar',
-            sidebarId: 'getRPCSidebar',
-            label: "Use Lava RPC",
-            position: "left",
-            to: "power-lava",
-          },
-          {
-            type: 'docSidebar',
-            sidebarId: 'validatorsSidebar',
-            label: "Validators",
-            position: "left",
-            to: "validator",
-          },
-          {
-            type: 'docSidebar',
-            sidebarId: 'providerSidebar',
-            label: "RPC Providers",
-            position: "left",
-            to: "power-lava",
-          },
-          {
-            type: 'docSidebar',
-            sidebarId: 'rollupSidebar',
-            label: "RPC Pools",
-            position: "left",
-            to: "power-lava",
           },
           {
             href: "https://github.com/lavanet/docs",
             position: "right",
-            className: "header-github-link", // Custom CSS class
+            className: "header-github-link",
             'aria-label': "GitHub repository",
           },
         ],
@@ -223,71 +166,40 @@ const config = {
           {
             title: "Lava Network",
             items: [
-              {
-                label: "Lava Home",
-                href: "https://lavanet.xyz",
-              },
+              { label: "Lava Home", href: "https://lavanet.xyz" },
               {
                 label: "Lava Whitepaper",
                 href: "https://cdn.prod.website-files.com/642c9c8327126062770bfdd0/66fd507cdd54cabe7496d478_LavaNetwork-AccessingBlockchains.pdf",
               },
-              {
-                label: "Blog",
-                href: "https://www.lavanet.xyz/blog",
-              },
+              { label: "Blog", href: "https://www.lavanet.xyz/blog" },
             ],
           },
           {
             title: "Community",
             items: [
-              {
-                label: "Discord",
-                href: "https://discord.gg/lava",
-              },
-              {
-                label: "Twitter",
-                href: "https://x.com/lavanetxyz",
-              },
+              { label: "Discord", href: "https://discord.gg/lava" },
+              { label: "Twitter", href: "https://x.com/lavanetxyz" },
             ],
           },
           {
             title: "More",
             items: [
-              {
-                label: "GitHub",
-                to: "https://github.com/lavanet",
-              },
-              {
-                label: "Youtube",
-                href: "https://www.youtube.com/@lavanetxyz",
-              },
+              { label: "GitHub", to: "https://github.com/lavanet" },
+              { label: "Youtube", href: "https://www.youtube.com/@lavanetxyz" },
             ],
           },
         ],
-      },      
-      prism: {
-        theme: lightCodeTheme,
-        darkTheme: darkCodeTheme,
       },
-      hotjar: {
-        applicationId: 3059536,
-      },
+      prism: { theme: lightCodeTheme, darkTheme: darkCodeTheme },
+      hotjar: { applicationId: 3059536 },
       image: "img/logo_black_background.png",
       algolia: {
-        // The application ID provided by Algolia
         appId: process.env.ALGOLIA_APP_ID,
-
-        // Public API key: it is safe to commit it
         apiKey: process.env.ALGOLIA_API_KEY,
-
         indexName: process.env.ALGOLIA_INDEX_NAME,
-
-        // Optional: see doc section below
         contextualSearch: true,
       },
-      clarity: {
-        ID: "iy35qq8h9v", // Instructions below
-      }
+      clarity: { ID: "iy35qq8h9v" }
     }),
 };
 

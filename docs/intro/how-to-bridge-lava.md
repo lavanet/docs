@@ -1,6 +1,7 @@
 ---
 slug: /how-to-bridge-lava
 title: 🌉 How to bridge Lava
+draft: true
 ---
 
 # How to Bridge Lava on Arbitrum Tokens to Lava Mainnet Tokens 

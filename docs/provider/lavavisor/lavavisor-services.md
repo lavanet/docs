@@ -42,7 +42,7 @@ Ensure that you replace `{CHAIN_ID}` with the appropriate value for your target 
 - Lava Mainnet: `lava-mainnet-1`
 - Lava Testnet: `lava-testnet-2`
 
- Additionally, replace `{PUBLIC_RPC}` with the correct [endpoint](../../developer/endpoints/public-rpc-endpoints.md).
+ Additionally, replace `{PUBLIC_RPC}` with the correct [endpoint](../../lava-public-rpc/public-rpc-endpoints.md).
 :::
 
 ```bash
