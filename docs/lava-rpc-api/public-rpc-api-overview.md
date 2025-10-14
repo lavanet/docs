@@ -23,10 +23,10 @@ The API exposes the standard low-level RPC interface for your chain of choice. G
 
 - Free access to 28+ supported chains  
 - Dedicated endpoints that allow you to scale your RPC access as your application grows
-- 25–100 RPS, depending on usage  
+- 25 RPS
 - No lock-in, no infra to manage - perfect for early development
 
-Ready to scale? See [Access Plans](rpc-access-plans.md) for higher throughput, predictable performance, SLAs, and priority support.
+Ready to scale? See [Access Plans](rpc-access-plans.md) for higher throughput and priority support.
 
 
 ## Get started
