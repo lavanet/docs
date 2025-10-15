@@ -39,6 +39,34 @@ const sidebars = {
         { type: "doc", label: "Quickstart", id: "lava-rpc-api/quickstart" },
         { type: "doc", label: "Access Plans", id: "lava-rpc-api/rpc-access-plans" },
         { type: "doc", label: "Supported Chains", id: "lava-rpc-api/supported-chains" },
+        {
+          type: "category",
+          label: "API methods",
+          collapsible: true,
+          collapsed: true,
+          items: [
+            { type: "doc", label: "Arbitrum API", id: "lava-rpc-api/api-methods/arbitrum" },
+            { type: "doc", label: "Axelar API", id: "lava-rpc-api/api-methods/axelar" },
+            { type: "doc", label: "Base API", id: "lava-rpc-api/api-methods/base" },
+            { type: "doc", label: "Binance Smart Chain API", id: "lava-rpc-api/api-methods/bsc" },
+            { type: "doc", label: "CosmosHub API", id: "lava-rpc-api/api-methods/cosmoshub" },
+            { type: "doc", label: "Ethereum API", id: "lava-rpc-api/api-methods/ethereum" },
+            { type: "doc", label: "Filecoin API", id: "lava-rpc-api/api-methods/filecoin" },
+            { type: "doc", label: "Hedera API", id: "lava-rpc-api/api-methods/hedera" },
+            { type: "doc", label: "Hyperliquid API", id: "lava-rpc-api/api-methods/hyperliquid" },
+            { type: "doc", label: "Lava API", id: "lava-rpc-api/api-methods/lava" },
+            { type: "doc", label: "Movement API", id: "lava-rpc-api/api-methods/movement" },
+            { type: "doc", label: "Near API", id: "lava-rpc-api/api-methods/near" },
+            { type: "doc", label: "Optimism API", id: "lava-rpc-api/api-methods/optimism" },
+            { type: "doc", label: "Polygon API", id: "lava-rpc-api/api-methods/polygon" },
+            { type: "doc", label: "Solana API", id: "lava-rpc-api/api-methods/solana" },
+            { type: "doc", label: "Starkent API", id: "lava-rpc-api/api-methods/starknet" },
+            { type: "doc", label: "Union API", id: "lava-rpc-api/api-methods/union" },
+            
+            
+          ]
+
+        },
       ],
     },
     {

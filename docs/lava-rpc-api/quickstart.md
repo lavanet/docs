@@ -60,7 +60,7 @@ Copy your endpoint, put it in your code or wallet configuration and start buildi
 
 ![GatewayInerfaces](/img/tutorial/gateway/start-building.png)
 
-For a full list of supported methods, check out the Lava RPC API Methods page.
+For a full list of supported methods, check out the API Methods section of the documentation.
 
 
 
