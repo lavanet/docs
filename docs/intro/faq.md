@@ -1,6 +1,6 @@
 ---
 slug: /faq
-title: ❓ FAQs 
+title: FAQs 
 ---
 
 # FAQs

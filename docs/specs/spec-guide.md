@@ -1,6 +1,6 @@
 ---
 slug: /spec-guide
-title: Spec Proposal Guide 📜
+title: Spec Proposal Guide
 ---
 
 import Tabs from '@theme/Tabs';

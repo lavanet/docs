@@ -41,7 +41,7 @@ const sidebars = {
         { type: "doc", label: "Supported Chains", id: "lava-rpc-api/supported-chains" },
         {
           type: "category",
-          label: "API methods",
+          label: "API Methods",
           collapsible: true,
           collapsed: true,
           items: [
