@@ -8,7 +8,7 @@ import TabItem from '@theme/TabItem';
 
 # Spec Proposal Guide (Walk-thru)
 
-## Overview 🔎 {#overview}
+## Overview  {#overview}
 
 This guide is intended to assist someone with the process of writing and designing a spec proposal in a step-by-step way. The process of creating or maintaining a spec can seem overwhelming initially, but is actually a straightforward process once you understand the fundamentals. Follow along below to get through the entire process of making a specification.
 
@@ -531,7 +531,6 @@ There are a minimum of 10 CU per call - this should be sufficient for most calls
 
 🚧 Note that `extra_compute_units` is presently not used, but will be useful for varying cost based upon consumer arguments.
 
-🔖REFERENCE: [`Compute Units`](/spec#cu)
 
 ### Category
 
@@ -632,7 +631,6 @@ Making an Addon is very similar to making any other API Collection. The sole dif
                         },
 ```
 
-🔖REFERENCE: [`Addons`](/spec#addons)
 
 ### Creating Extensions
 
