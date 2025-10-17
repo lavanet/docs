@@ -7,14 +7,9 @@ import RoadmapItem from '@site/src/components/RoadmapItem';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Become a Provider
+# Become a Lava RPC Node Provider
 
-Welcome to the Lava network's provider introduction. In this page, you'll learn about the role of providers in the Lava network, as well as the necessary steps to get started as one.
-
-
-## Providers in Lava's Protocol
-
-Providers are the backbone of the Lava network, servicing relay requests by staking on the network and operating RPC nodes on Relay Chains queried by Consumers (e.g., Cosmos, Ethereum, Osmosis, Polygon, etc.). In return, they earn fees in the form of LAVA tokens from the Consumers for servicing these requests.
+RPC Node Providers are the backbone of the Lava Network, who stake LAVA and joing the Network to service relay requests through their RPC Nodes for various chains (e.g., Cosmos, Ethereum, Osmosis, Polygon, etc.). In return, they earn fees in the form of LAVA tokens from the consumers for servicing these requests.
 
 ```mermaid
 graph LR
@@ -22,19 +17,19 @@ graph LR
   B --> |Private Address| C[Relayed Nodes]
 ```
 
-### Becoming a Provider
+### Becoming an RPC NOde Provider
 
-To join the Lava network as a provider, you'll need to follow two key steps:
+To join the Lava Network as an RPC Node Provider, you'll need to follow two key steps:
 
 1. Decide which chains you would like to support. You can see access the list of supported chains by using the methods described in the [next paragraph](#chains).
 2. Run the [relay chain RPC nodes](./running-nodes/run-nodes.mdx) for selected chains and ensure they are operational and meet the required specifications.
-3. Stake LAVA and run Lava’s lightweight Provider process, as detailed in our **[Provider Setup](docs/provider/provider-setup.md)** guide.
+3. Stake LAVA and run lightweight Provider process, as detailed in our **[Provider Setup](docs/provider/provider-setup.md)** guide.
 
 
 
 ### Querying a list of supported Chains {#chains}
 
-Lava supports a number of blockchains on Lava testnet and Lava mainnet. You cah see a full list of supported chains using the API URL or a CLI function `lavap`:
+Lava Network supports a number of blockchains on Lava Testnet and Lava Mainnet. You cah see a full list of supported chains using the API URL or a CLI function `lavap`:
 
 
 **Chains supported on Lava Mainnet:**
@@ -79,12 +74,12 @@ Lava supports a number of blockchains on Lava testnet and Lava mainnet. You cah 
   </TabItem>
 </Tabs>
 
-You can also check the available supported chain specifications on [Lava GitHub](https://github.com/lavanet/lava/tree/main/specs).
+You can also check the available supported chain specifications on [Lava Network GitHub repository](https://github.com/lavanet/lava/tree/main/specs).
 
 
 ### Querying Chain Specifications
 
-Lava's protocol expands its support to new RPCs by adding Specifications ("specs") via governance. Each spec describes the schema needed for the RPC and aligns the different actors on the provided interface.
+Lava Network's protocol expands its support to new chains by adding Specifications ("specs") via governance. Each spec describes the schema needed for the RPC and aligns the different actors on the provided interface.
 
 To obtain information on a specific chain, run the following command, replacing `SPEC-ID`:
 
@@ -100,9 +95,9 @@ curl -X 'GET' \
 
 
 
-### Provider Parameters
+### RPC Node Provider Parameters
 
-When staking as a provider, there are four main parameters used in the transaction:
+When staking as an RPC Node provider, there are four main parameters used in the transaction:
 
 1. **Stake**: The amount of LAVA to stake for the service.
 2. **Geolocation**: The location of the provider's nodes. (Note that `0` is *only* assigned via policy/gov proposal)
