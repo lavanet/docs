@@ -1,29 +1,32 @@
 ---
 slug: /supply
-title: 🏭 Supply
-draft: true
+title: Supply
 ---
 
-# 🪙 Supply Details
+# Supply Details
 
 <center>
 
 | Property        | Details                        |
 | --------------- | ------------------------------ |
-| 🪙 Token        | `LAVA`                         |
-| 🔢 Token supply | `1,000,000,000 LAVA`           |
-| 💱 Conversion   | `1 uLAVA` = `1 LAVA` x `10^-6` |
+|  Token        | `LAVA`                         |
+|  Token supply | `1,000,000,000 LAVA`           |
+|  Conversion   | `1 uLAVA` = `1 LAVA` x `10^-6` |
 
 </center>
 
-## Economic actors and Key Terms 👤
+:::note
+You can reference the following [API endpoint](https://jsinfo.mainnet.lavanet.xyz/supply/circulating) to check the circulating supply.
+::: 
+
+## Economic actors and Key Terms 
 
 - **Network contributors** include Validators, LAVA stakers, Data Providers and LAVA restakers
-- **Blockchains** create onchain incentive pools to pay the network for services such as RPC
+- **Blockchains** create onchain Pools to pay the network for services such as Public Lava RPC
 - **Consumers e.g. dapps and wallets** purchase onchain subscriptions to pay the network for services such as RPC 
 - **Data Providers and LAVA restakers** offer services such as RPC 
 - **Validators and LAVA stakers** secure the Lava blockchain 
-- **Incentive Pools** are pools of tokens deposited on Lava, which usually contain the native token of a chain supported by Lava
+- **Public Lava RPC Pools** are pools of tokens deposited on Lava, which usually contain the native token of a chain supported by Lava
 - **Revenue** on Lava = amount in incentive pools + LAVA amount of onchain subscriptions
 
 ## LAVA prioritizes revenue, not inflation
@@ -32,7 +35,7 @@ Most other blockchains are hyper-inflationary. They reward Validators and LAVA s
 
 LAVA has no supply inflation. Instead of minting new LAVA to reward network contributors, contributors share the network revenue. Contributors include: Validators, LAVA stakers, Data Providers and LAVA restakers. 
 
-On Lava: 
+On Lava Network: 
 
 - Validators and LAVA stakers do NOT earn rewards by minting new tokens. 
 - Instead, blockchains and apps pay the network to provide services such as RPC. 

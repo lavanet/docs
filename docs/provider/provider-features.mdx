@@ -4,9 +4,9 @@ slug: /provider-features
 title: Features
 ---
 
-# Provider Features 🧰
+# RPC Node Provider Features
 
-This page details the various features available to providers in the Lava network, along with instructions on how to operate them:
+This page details the various features available to RPC Node Providers in the Lava Network, along with instructions on how to operate them:
 
 - [⚡ Caching](#caching)
 - [🔌 Addons and Extensions](#addonsextensions)
@@ -21,7 +21,7 @@ This page details the various features available to providers in the Lava networ
 
 ## ⚡ Caching{#caching}
 
-Lava's caching service is used to cut costs and improve the overall performance of the network. Both provider and consumer processes benefit from the caching service. Providers who enable caching may be able to return responses faster than providers who do not have caching enabled.
+Lava Network's caching service is used to cut costs and improve the overall performance of the network. Both Provider and consumer processes benefit from the caching service. Providers who enable caching may be able to return responses faster than Providers who do not have caching enabled.
 
 In order to use the caching service, run the following process:
 
@@ -52,7 +52,7 @@ lavap rpcconsumer <your-regular-cli-options> --cache-be $ListenAddress
 
 <br/>
 
-## 🔌 Addons and Extensions{#addonsextensions}
+##  Addons and Extensions{#addonsextensions}
 
 Addons and Extensions are services that can be offered *in addition* to the basic spec on a provider service.
 **Addons** are APIs exposed in addition to existing APIs, while **Extensions** are changes to existing API responses.
@@ -76,10 +76,10 @@ Only API requests to the `"archive"` endpoint will award these additional CUs, a
 
 ### Set up Addons and Extensions ⚙️
 
-Addons and Extensions are configured both in the provider service config, and then staked for on chain. 💡 For simplicity's sake, both Addons and Extensions are defined using the `addons:` field. For a reference, please see this [example provider config file](https://raw.githubusercontent.com/lavanet/lava/main/config/provider_examples/evmos_provider_with_archive.yml).
+Addons and Extensions are configured both in the Provider service config, and then staked for on chain. 💡 For simplicity's sake, both Addons and Extensions are defined using the `addons:` field. For a reference, please see this [example provider config file](https://raw.githubusercontent.com/lavanet/lava/main/config/provider_examples/evmos_provider_with_archive.yml).
 
 
-#### 🗒️ Addon (Config File)
+####  Addon (Config File)
 
 In order to add an addon to the service the yaml must be configured with the addon command:
 
@@ -97,7 +97,7 @@ endpoints:
           // highlight-end
 ```
 
-#### 🗒️ Extension (Config File)
+####  Extension (Config File)
 
 Since extensions must offer consumers the regular spec function and the possibility of extended functionality, both must be present.
 
@@ -138,7 +138,7 @@ endpoints:
       // highlight-end
 ```
 
-#### 🗒️ Multiple Extensions (Config File)
+####  Multiple Extensions (Config File)
 
 Additional extensions must be defined with all possible combinations, for example compliance + archive will look like this:
 
@@ -164,7 +164,7 @@ endpoints:
         // highlight-end
 ```
 
-#### 🗒️ Combination (Config File)
+####  Combination (Config File)
 
 A combination of an extension and addons will look like this:
 ```yaml
@@ -207,20 +207,20 @@ lavap tx pairing stake-provider "ETH1" \
     --delegation-limit 100000000000ulava
 ```
 
-The `delegation-limit` flag is mandatory (but will be removed in future versions). The delegation limit is the maximum amount of delegations the provider is willing to use for the pairing process.
-Larger delegations mean the provider will be paired more often with consumers. If a provider receives many delegations but can't handle the resulting consumer traffic, they can set the delegate limit lower than their actual total delegations. This reduces their pairing frequency and workload. The delegated tokens remain with the provider, but their influence is reduced by artificially lowering the provider's effective stake (composed of self-stake and delegations).
+The `delegation-limit` flag is mandatory (but will be removed in future versions). The delegation limit is the maximum amount of delegations the Provider is willing to use for the pairing process.
+Larger delegations mean the Provider will be paired more often with consumers. If a Provider receives many delegations but can't handle the resulting consumer traffic, they can set the delegate limit lower than their actual total delegations. This reduces their pairing frequency and workload. The delegated tokens remain with the Provider, but their influence is reduced by artificially lowering the Provider's effective stake (composed of self-stake and delegations).
 Putting "0ulava" means there is a strict restriction that no amount of delegations affect the pairing mechanism.
 
 Do note the required addition of **`,archive,debug`** in each of the endpoints that support it if several exist. Setting these in a transaction replaces any existing endpoints, so make sure to give the full list of endpoints.
 Also, the geolocation specified in the endpoints must match the geolocation argument (in the example, the endpoint is setup in USC and the example geolocation argument's value is USC, as expected).
 
-Finally, using the optional `--provider` flag allows defining another lava address as the provider's operational address. The address of the `--from` address will be considered as the provider's vault address.
-The vault address is utilized to hold the provider entity's funds and to receive rewards from the provider entity's service. Any other actions performed by the provider entity utilize the provider entity's provider 
-address. The provider address can perform all actions except for staking/unstaking, modifying stake-related fields in the provider entity's stake entry, and claiming rewards.
+Finally, using the optional `--provider` flag allows defining another lava address as the Provider's operational address. The address of the `--from` address will be considered as the Provider's vault address.
+The vault address is utilized to hold the Provider entity's funds and to receive rewards from the Provider entity's service. Any other actions performed by the Provider entity utilize the Provider entity's Provider 
+address. The Provider address can perform all actions except for staking/unstaking, modifying stake-related fields in the Provider entity's stake entry, and claiming rewards.
 
-To let the provider address use the vault's funds for gas fees, use the `--grant-provider-gas-fees-auth`. The only transactions that are funded by the vault are: `relay-payment`, `freeze`, `unfreeze`, `modify-provider`, 
-`detection` (conflict module), `conflict-vote-commit` and `conflict-vote-reveal`. When executing any of these transactions using the CLI with the provider entity, use the `--fee-granter` flag to specify the vault address 
-which will pay for the gas fees. It's important to note that once an provider address is registered through a provider entity's staking, it cannot stake on the same chain again.
+To let the Provider address use the vault's funds for gas fees, use the `--grant-provider-gas-fees-auth`. The only transactions that are funded by the vault are: `relay-payment`, `freeze`, `unfreeze`, `modify-provider`, 
+`detection` (conflict module), `conflict-vote-commit` and `conflict-vote-reveal`. When executing any of these transactions using the CLI with the Provider entity, use the `--fee-granter` flag to specify the vault address 
+which will pay for the gas fees. It's important to note that once an Provider address is registered through a Provider entity's staking, it cannot stake on the same chain again.
 
 ** Staking Example: `modify-provider` ⌨️ **
 
@@ -233,9 +233,9 @@ lavap tx pairing modify-provider "ETH1" --endpoints "provider-host.com:443,USC,a
 
 <br/>
 
-## 🧊 Freeze and Unfreeze{#freeze}
+##  Freeze and Unfreeze{#freeze}
 
-The **`freeze`** command allows a provider to freeze its service, effective next epoch. This enables providers to pause their services without the impact of a bad QoS rating. While frozen, the provider won't be paired with consumers. To unfreeze, the provider must use the **`unfreeze`** transaction, effective next epoch. This feature can be useful in cases like a provider needing to halt its services during maintenance.
+The **`freeze`** command allows a Provider to freeze its service, effective next epoch. This enables Providers to pause their services without the impact of a bad QoS rating. While frozen, the Provider won't be paired with consumers. To unfreeze, the Provider must use the **`unfreeze`** transaction, effective next epoch. This feature can be useful in cases like a Provider needing to halt its services during maintenance.
 
 ### Usage 🔨
 
@@ -247,10 +247,10 @@ lavap tx pairing freeze [chain-ids] --from <provider_address>
 lavap tx pairing freeze [chain-ids] --from <provider_address> --reason <freeze_reason>
 lavap tx pairing freeze ETH1,COS3 --from alice --reason "maintenance"
 ```
-The **`freeze`** command requires the **`--from`** flag to specify the provider address. Optionally, you can provide a **`--reason`** flag to give a reason for the freeze.
+The **`freeze`** command requires the **`--from`** flag to specify the Provider address. Optionally, you can provide a **`--reason`** flag to give a reason for the freeze.
 
 
-#### 🌡️ Unfreeze:
+#### Unfreeze:
 
 ```bash
 # required flags: --from alice
@@ -258,14 +258,14 @@ lavap tx pairing unfreeze [chain-ids] --from <provider_address>
 lavap tx pairing unfreeze ETH1,COS3 --from alice
 ```
 
-The **`unfreeze`** command also requires the **`--from`** flag to specify the provider address.
+The **`unfreeze`** command also requires the **`--from`** flag to specify the Provider address.
 
 <br />
 
-## 🔐 Advanced Auth Configuration {#config-auth}
+##  Advanced Auth Configuration {#config-auth}
 In this example, COS3 tendermint URLs are using client authentication, assuming the node URL is capable of processing this authentication.
 
-### Auth using HTTP headers 🔑 {#auth-headers}
+### Auth using HTTP headers  {#auth-headers}
 
 The following RPCProvider Config Example demonstrated authentication using the "auth-headers" option:
 

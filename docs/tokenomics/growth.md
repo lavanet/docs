@@ -1,10 +1,10 @@
 ---
 slug: /growth
-title: 📈 Growth
+title: Growth
 draft: true
 ---
 
-# 🪙 Growth
+# Growth
 Lava has a capped token supply which is managed by DAO governance. There are existing and future plans to stimulate ecosystem growth: 
 
 ## 🌋 Magma Points 

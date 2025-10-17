@@ -6,9 +6,9 @@ title: TLS Setup
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Provider TLS Setup Guide
+# TLS Setup Guide
 
- All providers must use a domain name and TLS. Make sure to acquire one using a domain registrar of your choice before following this guide.
+ All RPC Node Providers must use a domain name and TLS. Make sure to acquire one using a domain registrar of your choice before following this guide.
 
 ## Diagram
 
@@ -56,7 +56,7 @@ Alternatively, you can create one `A-Record` that captures traffic to all sub-do
 
 ## Step 2: Install Required Dependencies
 
-We will guide you on setting up and configuring Nginx to use a TLS certificate and handle connections to different provider processes. It is also possible to use alternative solutions for these two tasks, such as Caddy, Envoy or your preferred solution.
+We will guide you on setting up and configuring Nginx to use a TLS certificate and handle connections to different Provider processes. It is also possible to use alternative solutions for these two tasks, such as Caddy, Envoy or your preferred solution.
 
 Run the following commands to install the required packages:
 
@@ -78,7 +78,7 @@ Use `certbot` to create a certificate:
 sudo certbot certonly -d you.xyz -d lava.you.xyz -d eth.you.xyz
 ```
 
-Note, you will need one `-d` flag for each subdomain you created as an `A-Record`. Even if you opted to create a Single Record, you still need to indicate a subdomain for each provider process you will run. We use the filler `you.xyz` as an example above.
+Note, you will need one `-d` flag for each subdomain you created as an `A-Record`. Even if you opted to create a Single Record, you still need to indicate a subdomain for each Provider process you will run. We use the filler `you.xyz` as an example above.
 
 You may be met with several prompts. Use `nginx` or Nginx Web Server Plugin when asked. 
 <br />
@@ -107,9 +107,9 @@ You'll need both `Certificate Path` and `Private Key Path` for your next step.
 
 ## Step 5: Add an Nginx Config for Each Domain
 
-Lava recommends running each chain under a separate provider process. This will separate error logs and protect against complete provider failure in the case of a problematic provider process. The first step of this is to create different nginx routes for each chain.
+It is recommended running each chain under a separate Provider process. This will separate error logs and protect against complete Provider failure in the case of a problematic Provider process. The first step of this is to create different nginx routes for each chain.
 
-For each chain that you want to support, you will need to create a separate `nginx` config file. Create a `server` file for each chain. Example below shows how to create a `server` file for Ethereum and Lava chains:
+For each chain that you want to support, you will need to create a separate `nginx` config file. Create a `server` file for each chain. Example below shows how to create a `server` file for Ethereum and Lava Network chains:
 
 1. Navigate to the nginx configuration directory:
 
@@ -182,7 +182,7 @@ server {
 <TabItem value="Caddy" label="caddy example">
 
 :::warning
-The below caddy example is to provide guidance only. The recommended route is through `nginx`. Although making a provider functional with Caddy is possible you are proceeding at your own risk and with your own expertise.
+The below caddy example is to provide guidance only. The recommended route is through `nginx`. Although making a Provider functional with Caddy is possible you are proceeding at your own risk and with your own expertise.
 :::
 
 
@@ -210,7 +210,7 @@ sudo ln -s /etc/nginx/sites-available/lava_server /etc/nginx/sites-enabled/lava_
 ```
 :::caution
 
-The above examples use ports `443` for external listening and `2223` / `2224` for internal comms, respectively. Using ports other than `443` for external listening means that some users will not be able to connect to your provider. This can result in less rewards and poorer quality of service. For internal listening, be aware that some ports on your OS may be used for internal communication and should be avoided. 
+The above examples use ports `443` for external listening and `2223` / `2224` for internal comms, respectively. Using ports other than `443` for external listening means that some users will not be able to connect to your RPC Provider. This can result in less rewards and poorer quality of service. For internal listening, be aware that some ports on your OS may be used for internal communication and should be avoided. 
 
 :::
 
@@ -241,5 +241,5 @@ sudo systemctl restart nginx
 ```
 <br />
 
-## Step 8: Start RPC provider service
-Now that you have Nginx configured you can move to the next step of starting the RPC provider service. Head to the [provider setup](./provider-setup.md) page for a detailed guide.
+## Step 8: Start the RPC Node Provider service
+Now that you have Nginx configured you can move to the next step of starting the RPC Node Provider service. Head to the [provider setup](./provider-setup.md) page for a detailed guide.

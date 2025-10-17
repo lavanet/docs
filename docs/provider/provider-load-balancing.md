@@ -9,15 +9,15 @@ title: Load Balancing
 
 Load balancing is a technique used to distribute incoming network traffic across multiple servers to ensure that no single server is overwhelmed with requests. This helps to improve the performance, reliability, and scalability of a service by spreading the load across multiple servers.
 
-If you wish to run multiple instances of the Lava RPC Provider service for the same chain, you can use a load balancer to distribute incoming requests across these instances. This can help to improve the performance and reliability of your service and increase your QoS.
+If you wish to run multiple instances of the Lava RPC Node Provider service for the same chain, you can use a load balancer to distribute incoming requests across these instances. This can help to improve the performance and reliability of your service and increase your QoS.
 
-## Load Balancing in Lava
+## Load Balancing in Lava Network
 
-When a client sends a request to the Lava RPC Provider service, it includes a custom header called `lava-lb-unique-id` in the request header.
+When a client sends a request to the Lava RPC Node Provider service, it includes a custom header called `lava-lb-unique-id` in the request header.
 This header contains a unique identifier for the request, which is used by the load balancer to determine which backend server should handle the request.
 
 :::warning
-Ignoring this header when load balancing providers on the same chain with under the same wallet account will lead to consistency issues, as the load balancer will not be able to route requests from the same session to the same RPC Provider instance. This will affect your RPC Provider's QoS score, and data reliability.
+Ignoring this header when load balancing Providers on the same chain with under the same wallet account will lead to consistency issues, as the load balancer will not be able to route requests from the same session to the same RPC Node Provider instance. This will affect your RPC Node Provider's QoS score, and data reliability.
 :::
 
 ## Recommended Setup
@@ -34,7 +34,7 @@ You can see in the diagram below an example of a single chain setup with multipl
 
 ![Provider Load Balancing Diagram](/img/tutorial/provider/provider-load-balancing-diagram.png)
 
-This setup is for a single chain only, and for a single provider wallet. You can multiply this setup for all the chains that you would like to provide. If you have multiple provider wallets, you will need to stake them separately.
+This setup is for a single chain only, and for a single Provider wallet. You can multiply this setup for all the chains that you would like to provide. If you have multiple Provider wallets, you will need to stake them separately.
 
 You can run your instances on the same machine or different machines, as long as they are accessible to the load balancer, and the ports that they are listening on are configured correctly in your load balancer configuration.
 
