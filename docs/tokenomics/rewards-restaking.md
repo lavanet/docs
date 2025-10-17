@@ -1,6 +1,7 @@
 ---
 slug: /rewards-restaking
 title: Rewards and Restaking
+darft : true
 ---
 
 # Rewards and Restaking

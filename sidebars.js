@@ -189,7 +189,6 @@ const sidebars = {
       items: [
         { type: "doc", label: "Overview", id: "tokenomics/token" },
         { type: "doc", label: "Supply", id: "tokenomics/supply" },
-        { type: "doc", label: "Rewards and Restaking", id: "tokenomics/rewards-restaking" },
         { type: "doc", label: "Distribution", id: "tokenomics/distribution" },
       ],
     },

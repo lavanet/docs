@@ -15,6 +15,10 @@ title: Supply
 
 </center>
 
+:::note
+You can reference the following [API endpoint](https://jsinfo.mainnet.lavanet.xyz/supply/circulating) to check the circulating supply.
+::: 
+
 ## Economic actors and Key Terms 
 
 - **Network contributors** include Validators, LAVA stakers, Data Providers and LAVA restakers
