@@ -187,9 +187,9 @@ const sidebars = {
       className: "custom-sidebar-spacing",
       collapsed: false,
       items: [
-        { type: "doc", label: "Overview", id: "tokenomics/token" },
-        { type: "doc", label: "Supply", id: "tokenomics/supply" },
-        { type: "doc", label: "Distribution", id: "tokenomics/distribution" },
+        { type: "doc", label: "Overview", id: "tokenomics/token"},
+        { type: "doc", label: "Supply", id: "tokenomics/supply"},
+        { type: "doc", label: "Distribution", id: "tokenomics/distribution"},
       ],
     },
     {

@@ -5,7 +5,7 @@ darft : true
 ---
 
 # Rewards and Restaking
-##  Role of LAVA
+##  Role of LAVA Token
 
 The `LAVA` token serves various purposes on the Lava Network:
 - `LAVA` is the asset denomination needed for paying the gas fees required to execute transactions or other operations on the Lava Network
