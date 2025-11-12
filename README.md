@@ -4,6 +4,13 @@
 
 [![Website](https://img.shields.io/badge/WEBSITE-https%3A%2F%2Fdocs.lavanet.xyz-green?style=for-the-badge)](https://docs.lavanet.xyz) &emsp;  [![Discord](https://img.shields.io/discord/963778337904427018?color=green&logo=discord&logoColor=white&style=for-the-badge)](https://discord.gg/EKzbc6bx)
 
+## What is Lava? 🌋
+Lava is the first modular data access layer for blockchains. It introduces specs: a modular primitive that lets contributors permissionlessly add support for new chains and data services to the base protocol. RPC is the first service supported by the protocol but we are soon bringing further choice by integrating with indexing and API partners, such as Subsquid.
+
+Data consumers send requests to Lava’s network of data providers (node operators), who join Lava to meet demand for data. Lava creates dynamic, scalable markets around any blockchain data service. The protocol also creates crypto-economic guarantees around the quality of service, across speed, uptime and data accuracy.
+
+By leveraging modular architecture and a peer-to-peer network of node operators, Lava creates a unified platform for accessing the multi-chain world.
+
 
 ## Overview 🔎
 
