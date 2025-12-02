@@ -1,7 +1,6 @@
 ---
 slug: /restaking-lava
 title: Staking and Restaking Lava
-draft: true
 ---
 
 # Staking and Restaking Lava Tokens
