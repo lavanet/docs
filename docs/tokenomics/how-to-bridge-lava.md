@@ -1,14 +1,13 @@
 ---
 slug: /how-to-bridge-lava
-title: 🌉 How to bridge Lava
-draft: true
+title:  How to bridge Lava
 ---
 
-# How to Bridge Lava on Arbitrum Tokens to Lava Mainnet Tokens 
+# How to Bridge LAVA on Arbitrum Tokens to LAVA Mainnet Tokens 
 
-## Introduction to Lava
+## Introduction to LAVA
 
-Lava is a Cosmos-based protocol that coordinates traffic for the onchain world. When you use a blockchain app, you send a stream of traffic - transactions, data queries - to the underlying chain. Lava aggregates data providers to serve AI agent and dapp traffic, dynamically routing requests to the fastest, most reliable providers.
+Lava Network is a Cosmos-based protocol that coordinates traffic for the onchain world. When you use a blockchain app, you send a stream of traffic - transactions, data queries - to the underlying chain. Lava Network aggregates data providers to serve AI agent and dapp traffic, dynamically routing requests to the fastest, most reliable RPC Node Providers.
 
 Because LAVA exists both as an ERC20 token on **Arbitrum (an Ethereum Layer 2)** and as a native token on Lava Mainnet, some holders may have LAVA on Arbitrum, while others have Lava Mainnet tokens. To participate in staking or restaking on the Lava Network—and earn rewards from incentive pools—you need **Lava Mainnet tokens**. Bridging is therefore essential for anyone with Lava on Arbitrum.
 
@@ -18,10 +17,10 @@ Because LAVA exists both as an ERC20 token on **Arbitrum (an Ethereum Layer 2)**
     - Traded on centralized and decentralized exchanges (e.g., Bybit, Uniswap)
     - Runs on Arbitrum, an Ethereum Layer 2
     - Compatible with EVM dapps, DeFi protocols, and other use-cases
-2. **Lava Mainnet Token [native LAVA]:**
+2. **Lava Mainnet Token (native LAVA):**
     - Powers the Lava Network protocol
     - Used for staking, restaking, and securing the network
-    - Required to earn incentives from Lava’s unique contributor rewards model
+    - Required to earn incentives from Lava Network’s unique contributor rewards model
 
 **_Note:_** 
 LAVA is available on DEXs: Osmosis (Lava Mainnet), Uniswap (ERC-20 Arbitrum, ERC-20 Base) and Pancakeswap (ERC-20 BSC).
@@ -35,11 +34,11 @@ If you purchased LAVA tokens on **KuCoin**, you already have Lava Mainnet tokens
 ### How Lava Works at a Glance
 
 - **Validators** secure the Lava blockchain and validate blocks.
-- **Providers** register on Lava blockchain to offer high-quality RPC services.
+- **RPC Node Providers** register on Lava blockchain to offer high-quality RPC services.
 - **Stakers** delegate Lava Mainnet tokens to Validators to secure the Lava blockchain.
 - **Restakers** delegate Lava Mainnet tokens to top Providers to route traffic to them.
 
-When blockchains use Lava to coordinate their RPC, they create incentive pools in their native tokens. Contributors—Validators, Stakers, Providers, and Restakers—can earn rewards from these pools.
+When blockchains use Lava Network to coordinate their RPC, they create incentive pools in their native tokens. Contributors, Validators, Stakers, RPC Node Providers, and Restakers can earn rewards from these pools.
 
 ### Why Bridge Your Lava from Arbitrum to Mainnet?
 
@@ -50,7 +49,7 @@ When blockchains use Lava to coordinate their RPC, they create incentive pools i
 
 ## Step-by-Step: Bridging Your Lava on Arbitrum to Lava Mainnet
 
-# 🎥 How to bridge Lava (~6m)
+# How to bridge Lava (~6m)
 
 <video width="100%" height="100%" controls>
 <source src="/img/tutorial/how_to_bridge/Bridgin_How_To_v4.mp4" type="video/mp4" />
@@ -60,7 +59,7 @@ When blockchains use Lava to coordinate their RPC, they create incentive pools i
 <hr/>
 <br/>
 
-Below is a guided process using two popular bridging routes: **Skip:Go and Squid Router**. You’ll need an **Ethereum-compatible wallet** (such as MetaMask), and a **Cosmos-compatible wallet** (Leap or Keplr) for Lava Mainnet.
+Below is a guided process using two popular bridging routes: **Skip:Go** and **Squid Router**. You’ll need an **Ethereum-compatible wallet** (such as MetaMask), and a **Cosmos-compatible wallet** (Leap or Keplr) for Lava Mainnet.
 
 - Skip:Go: https://go.skip.build/
 - Squid Router: https://app.squidrouter.com/
@@ -135,7 +134,7 @@ Because Lava Mainnet is a Cosmos chain, you need a **Cosmos-compatible wallet:**
 
 ## 2. Using Skip:Go to Bridge
 
-1. Open [Skip:Go](URL: https://go.skip.build/) and connect your MetaMask wallet
+1. Open [Skip:Go](https://go.skip.build/) and connect your MetaMask wallet
 - **Skip:Go homepage**
 
     ![Skip:Go's main dashboard, showing an option to connect MetaMasks.](/img/tutorial/how_to_bridge/SkipGo_2.png)
@@ -152,9 +151,9 @@ Because Lava Mainnet is a Cosmos chain, you need a **Cosmos-compatible wallet:**
 
 <br/>
 
-3. **Enter the Amount & Confirm**
+3. Enter the Amount & Confirm
 1. Input the number of **Lava (Arbitrum)** tokens to bridge.
-2. Set your destination address: Keplr or Leap
+2. Set your destination address: Keplr or Leap.
 3. Confirm any prompts in MetaMask.
 
     ![Skip:Go user interface highlighting Arbitrum as the source and Lava Mainnet as the destination.](/img/tutorial/how_to_bridge/SkipGo_Set_Destination.png)
@@ -176,9 +175,8 @@ Because Lava Mainnet is a Cosmos chain, you need a **Cosmos-compatible wallet:**
 
 ## 3. Using Squid Router to Bridge
 1. **Open Squid Router**
-- Go to (Insert Squid Router URL) in your browser.
-- Select **Swap** from the homepage or menu.
-- **Squid Router homepage**
+- Open [Squid Router](https://app.squidrouter.com/) in your browser.
+- Select **Swap** from the homepage or menu:
 
     ![Squid Router website main dashboard with a visible “Cross-Chain Swap” option.](/img/tutorial/how_to_bridge/Squid_Main.png)
 
@@ -231,13 +229,13 @@ Because Lava Mainnet is a Cosmos chain, you need a **Cosmos-compatible wallet:**
 
 ## Next Step: Staking and Restaking
 
-Now that you’ve bridged your Lava tokens from Arbitrum to Lava Mainnet, you can:
+Now that you’ve bridged your LAVA tokens from Arbitrum to Lava Mainnet, you can:
 
 - **Stake** to **Validators** to secure the network and validate blocks.
-- **Restake** to direct traffic to **Providers** who deliver high-quality RPC services for supported chains. 
+- **Restake** to direct traffic to **RPC Node Providers** who deliver high-quality RPC services for supported chains. 
 
 Both Stakers and Restakers earn additional incentives from the protocol.
 
 <br/>
 
-By bridging your Lava on Arbitrum tokens to Lava Mainnet, you unlock the full utility of the Lava Network—securing the ecosystem, directing RPC traffic, and earning rewards alongside other contributors. 
+By bridging your Lava on Arbitrum tokens to Lava Mainnet, you unlock the full utility of the Lava Network - securing the ecosystem, directing RPC traffic, and earning rewards alongside other contributors. 

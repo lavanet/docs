@@ -163,7 +163,6 @@ const sidebars = {
           ],
         },
         { type: "doc", label: "Validator Rewards", id: "validator/validator-rewards" },
-        { type: "doc", label: "Validator Delegation program", id: "validator/validator-delegation" },
         { type: "doc", label: "Lavad Reference", id: "validator/lavad-reference" },
       ],
     },
@@ -190,6 +189,9 @@ const sidebars = {
         { type: "doc", label: "Overview", id: "tokenomics/token"},
         { type: "doc", label: "Supply", id: "tokenomics/supply"},
         { type: "doc", label: "Distribution", id: "tokenomics/distribution"},
+        { type: "doc", label: "How to Bridge LAVA", id: "tokenomics/how-to-bridge-lava"},
+        { type: "doc", label: "Staking and Restaking LAVA", id: "tokenomics/restaking"},
+        { type: "doc", label: "How to Stake and Restake LAVA", id: "tokenomics/how-to-stake-and-restake-lava"},
       ],
     },
     {
