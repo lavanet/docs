@@ -101,7 +101,7 @@ Troubleshooting:
 ### 🟡 What is QoS (Passable Quality-of-Service)? {#qos}
 This score for RPC Node Providers per relay is based on the metrics of latency, sync, and availability. There are two different types of QoS: 
 - [Passable QoS](/improving-provider-service#passable-qos)
-- [Reputation Score](/improving-provider-service#reputation-score)
+
 
 
 ### 🟡 How can you improve your RPC Node Provider's QoS? {#improve-qos}
