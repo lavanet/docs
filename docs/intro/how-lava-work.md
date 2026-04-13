@@ -24,7 +24,7 @@ RPC execution in Lava Network follows a request → relay → proof → settleme
 
 1. **Request initiation** – Consumers (wallets, dApps, indexers, AI agents) request blockchain data or transaction submission via supported APIs. They access Lava RPC API through different interfaces (Gateway, Public Endpoints, or Smart Router), but under the hood, all connect to the same Lava Protocol.
 
-2. **RPC Node Provider selection** – Consumers are matched to RPC Node Providers using PairingLists (see below). These lists ensure a pool of eligible Providers that meet latency, stake, and compliance requirements.
+2. **RPC Node Provider selection** – Consumers are matched to RPC Node Providers using pairing lists (see below). These lists ensure a pool of eligible Providers that meet latency, stake, and compliance requirements.
 
 3. **Off-chain relay** – The consumer establishes a direct peer-to-peer connection with a chosen RPC Node Provider. The Provider executes the RPC call against its full node infrastructure and returns the result.
 
@@ -51,30 +51,66 @@ Specifications can be added, updated, or extended via on-chain governance, allow
 
 ## Pairing
 
-Lava Network connects consumers to RPC Node Providers using **PairingLists**: algorithmically generated sets of RPC Node Providers optimized for performance and reliability.
+Lava Network connects consumers to RPC Node Providers using **pairing lists**: algorithmically generated sets of RPC Node Providers optimized for performance and reliability.
 
 ### How Pairing Works
 
-1. **Pairing request** – A consumer sends a GetPairing query to the Lava blockchain (via any Lava RPC Node Provider).
+1. **Pairing request** 
+    
+    A consumer sends a GetPairing query to the Lava blockchain (via any Lava RPC Node Provider).
 
-2. **Eligibility check** – RPC Node Providers must have staked LAVA, be in good standing (not jailed), and support the required specification and add-ons.
+2. **Eligibility check** 
 
-3. **Filtering** – RPC Node Providers are filtered based on consumer-defined policies (e.g., preferred geolocation or project allowlists).
+    RPC Node Providers must have staked LAVA, be in good standing (not jailed), and support the required specification and add-ons.
 
-4. **Randomization** – Eligible RPC Node Providers are pseudorandomly shuffled using a consumer-specific seed derived from the blockchain state.
+3. **Filtering** 
+    
+    RPC Node Providers are filtered based on consumer-defined policies like:
+    - Spec compatibility (chain + API support)
+    - Request type (e.g., archival support)
+    - Active status & pairing eligibility
+    - Other protocol-level filters
 
-5. **Scoring** – RPC Node Providers are weighted by stake and continuously measured Quality of Service (QoS) metrics (latency, availability, freshness).
+4. **Randomization** 
+    
+    Eligible RPC Node Providers are pseudorandomly shuffled using a consumer-specific seed derived from the blockchain state.
 
-6. **PairingList delivery** – The resulting list is valid for one epoch and used by the consumer to establish connections.
+5. **Scoring (Weighted Random Selection)** 
+    
+    Each eligible Provider receives a composite score between 0 and 1. The score combines four weighted components:
 
-### Consumer - Provider Interaction
+    | Metric| Description| 
+    |-------|-------|
+    | Availability      | % of successful responses over time (higher is better)  |
+    | Latency           | Request - response time (lower is better) |
+    | Sync / Freshness  | How up-to-date the node is (lower lag is better) |
+    | Stake | Relative stake weight   |
 
-- Consumers establish peer-to-peer connections with the most optimal RPC Node Provider from their PairingList.
-- Requests are sent, and responses are received through this RPC Node Provider.
-- At the end of each epoch, RPC Node Providers accumulate compute units (CUs) based on serviced demand.
-- Monthly, RPC Node Providers claim rewards proportional to their CU usage and subscription allocations.
+    :::note
+    The actual weights are governance-adjustable and may evolve over time to optimize network outcomes.
+    :::
 
-## Quality of Service and Reputation
+    The final individual provider score is computed as a weighted sum of all scores.
+
+
+6. **Pairing list delivery** 
+    
+    The resulting list is valid for one epoch and used by the consumer to establish connections.
+
+    A provider from the list is chosen using continuous probability draw. Once all Providers are scored:
+    - All composite scores are summed.
+    - A random value is generated between 0 and total score.
+    - Providers are iterated cumulatively until the sum exceeds the random value.
+    - The Provider at that point is selected.
+
+7. **Consumer - Provider Interaction**
+
+    - Consumers establish peer-to-peer connections with the most optimal RPC Node Provider from the pairing list.
+    - Requests are sent, and responses are received through this RPC Node Provider.
+    - At the end of each epoch, RPC Node Providers accumulate compute units (CUs) based on serviced demand.
+    - Monthly, RPC Node Providers claim rewards proportional to their CU usage and subscription allocations.
+
+## Quality of Service
 
 RPC Node Provider performance is tracked and scored using transparent, on-chain reputation metrics. Key signals include:
 

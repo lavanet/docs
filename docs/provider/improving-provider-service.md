@@ -3,14 +3,14 @@ slug: /improving-provider-service
 title: Imroving Provider Service
 ---
 
-# Improving RPC Node Provider Service
+# Improving RPC Node Provider Performance
 
-## Reputation
-The Lava Network places a strong emphasis on delivering exceptional Quality of Service (QoS) to its consumers. To ensure this, consumers actively participate in monitoring and customizing their QoS excellence metrics. They gauge RPC Node provider's performance by measuring latency in Provider responses relative to a benchmark, assessing data freshness in comparison to the fastest Provider, and evaluating the percentage of error or timeout responses in the availability metric. These scores are diligently recorded and sent on-chain alongside the relay proofs of service, creating a transparent and accountable system. The Provider's performance metric is called "Reputation". Higher reputation indicates higher QoS scores.
+## Provider Performance
+The Lava Network places a strong emphasis on delivering exceptional Quality of Service (QoS) to its consumers. To ensure this, consumers actively participate in monitoring and customizing their QoS excellence metrics. They gauge RPC Node provider's performance by measuring latency in Provider responses relative to a benchmark, assessing data freshness in comparison to the fastest Provider, and evaluating the percentage of error or timeout responses in the availability metric. These scores are diligently recorded and sent on-chain alongside the relay proofs of service, creating a transparent and accountable system. 
 
 To further enhance the integrity of the QoS scores, updates are aggregated across all consumers in a manner that safeguards against false reports. Negative reports are weighted by usage, meaning that a consumer must actively use and pay a Provider to diminish their QoS score. This mechanism discourages users from artificially lowering a Provider's score.
 
-The Reputation metric only affect pairings and is aggregated over time with a decay function that favors the latest data, meaning Providers can improve, and those Providers that their service fails will be impacted to affect fewer users. This approach ensures that the reputation system remains dynamic and responsive, benefiting Providers striving to enhance their services while minimizing the impact of service failures on a broader scale.
+QoS metrics only affect pairings and is aggregated over time with a decay function that favors the latest data, meaning Providers can improve, and those Providers that their service fails will be impacted to affect fewer users. This approach ensures that the provider evaluation system remains dynamic and responsive, benefiting Providers striving to enhance their services while minimizing the impact of service failures on a broader scale.
 
 ## 📊 Passable QoS {#passable-qos}
 Passable Quality of Service is scored separately in each relay session. Lower scores mean lower rewards. Up to half the accumulated CU can be reduced for bad service. Passable QoS metrics can be viewed both in the [Lava Info explorer](https://info.lavanet.xyz/?utm_source=provider-rewards&utm_medium=docs&utm_campaign=docs-to-info) and [Prometheus metrics](/provider-features#config-prometheus).
@@ -120,13 +120,9 @@ lavap test events 2000 --event lava_provider_latest_block_report --node {PUBLIC_
 
 <br />
 
-## 📊 Reputation Score {#reputation-score}
-
-Reputation Socre is calculated very similarly to Passable QoS. QoS Excellence provides a range of scores that are time-weighted to take the latest information
-all the actions mentioned here to improve passable QoS affect Reputation 
 
 ### Metrics 📈
-Reputation score divides into 3 metrics:
+Quality of Service score divides into 3 metrics:
 * Availability - score in the range `0-1`
 * Sync/ Freshness of data - how much time behind other Providers are we, lower is better, `0` means your sync is the best in the pairing
 * Latency - how many benchmark ticks passed during a relay in average (time taken / benchmark time). lower is better

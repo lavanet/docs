@@ -20,7 +20,6 @@ RPC Node Providers earn rewards from subscriptions, commission on restaked LAVA,
 
  After staking on chain, RPC Node Providers serve consumers and get cryptographic proofs of relay service. These proofs are submitted on chain to accumulate CUs that lead to token rewards. The calculation for Provider rewards is complex and contingent on the validity of submitted proofs. However, given valid proofs, rewards are mostly affected by 3 factors:
  - ☑️ **Passable Quality of Service** - The individual score of a relay session. Passable QoS directly alters rewards in a given session.
- - ⭐ **Reputation Score** - The reputational score of a Provider. Reputation Score affects Provider selection both within a pairing and in the pairing probabilities.
  - 🚨 **Jail** - The disabling mechanism for inferior/defunct Providers. Jailing prevents a Provider from giving service for a period of time.
 
 <br/>
