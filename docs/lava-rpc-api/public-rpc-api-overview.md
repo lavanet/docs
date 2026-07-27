@@ -21,7 +21,7 @@ The API exposes the standard low-level RPC interface for your chain of choice. G
 
 ## What you get (Freemium)
 
-- Free access to 28+ supported chains  
+- Free access to documented Lava and Starknet endpoints
 - Dedicated endpoints that allow you to scale your RPC access as your application grows
 - 25 RPS
 - No lock-in, no infra to manage - perfect for early development

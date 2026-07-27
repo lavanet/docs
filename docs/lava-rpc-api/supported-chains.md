@@ -5,26 +5,23 @@ title: Supported Chains
 
 # Supported Chains on Lava Network
 
-The Lava RPC API supports a broad and growing list of leading blockchains. Each chain is backed by a globally distributed node infrastructure that ensures high reliability, low latency, and consistent performance across both mainnet and testnet environments.
+The Lava RPC API documentation currently exposes Lava and Starknet endpoints. Each chain is backed by globally distributed node infrastructure that ensures high reliability, low latency, and consistent performance.
 
 This page provides an overview of the supported chains, available add-ons, and geolocation coverage.
 
 ## Chain Coverage
-Lava Network currently provides RPC access to 28+ major networks, including:
+The currently documented chains are:
 
-- Ethereum & EVM-compatible chains (Hyperliquid, Polygon, Arbitrum, etc.)
-- Cosmos ecosystem chains
-- Solana
-- Near
-- Other high-demand L1 and L2 networks
+- Lava
+- Starknet
 
-See the full chain list in the [Lava RPC API UI](https://gateway.lavanet.xyz/).
+See the available chain list in the [Lava RPC API UI](https://gateway.lavanet.xyz/).
 
 ## Networks
-For each supported chain, Lava Network provides endpoints for:
+For each documented chain, Lava Network provides endpoints for:
 
 - **Mainnet** - for production-ready applications.
-- **Testnet(s)** - for development, testing, and staging environments.
+- **Testnet(s)** - for development, testing, and staging environments where available.
 
 You can switch between environments directly in the Lava RPC API UI or via the API endpoint selector.
 
@@ -51,5 +48,4 @@ Lava Network’s RPC nodes are globally distributed across multiple regions to m
 - Australia
 
 Developers are automatically routed to their nearest geographical region for optimal performance. Enterprise plans can configure region pinning for strict latency or compliance requirements.
-
 

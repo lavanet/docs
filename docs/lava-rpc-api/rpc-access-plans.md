@@ -19,7 +19,7 @@ Lava Network offers multiple access tiers so teams can start small and seamlessl
 
 ![RPCAPIAccessPlans](/img/lava-rpc-api/api-access-plans.png)
 
-Lava Network provides RPC endpoints for 30+ leading blockchains, with both mainnet and testnet support. 
+Lava Network provides RPC endpoints for the documented Lava and Starknet networks.
 
 ![SupportedChainsList](/img/lava-rpc-api/supported-chains.png)
 
@@ -51,11 +51,11 @@ We recommend:
   <tbody>
     <tr>
       <td><strong>Networks</strong></td>
-      <td align="center">16+</td>
-      <td align="center">28+</td>
-      <td align="center">28+</td>
-      <td align="center">28+</td>
-      <td align="center">28+</td>
+      <td align="center">Lava, Starknet</td>
+      <td align="center">Lava, Starknet</td>
+      <td align="center">Lava, Starknet</td>
+      <td align="center">Lava, Starknet</td>
+      <td align="center">Lava, Starknet</td>
     </tr>
     <tr>
       <td><strong>Unique Endpoint</strong></td>

@@ -16,7 +16,7 @@ This guide walks you through creating an account, selecting an endpoint, and mak
 
 ## Step 2: Choose your chain
 
-Once logged in, you’ll see a dashboard of supported blockchains.
+Once logged in, you’ll see a dashboard of available blockchains.
 
 ![GatewatChainsScreenshot](/img/tutorial/gateway/gateway-chains.png)
 
@@ -38,7 +38,7 @@ Use the toggle in the UI to choose the network appropriate for your project.
 ## Step 4: Pick an API interface
 
 By default, Lava provides HTTP RPC endpoints.
-Some chains - like Ethereum - also support additional interfaces such as WebSocket (WS).
+Some chains also support additional interfaces such as WebSocket (WS).
 
 Click the API method dropdown to view and select from all supported interfaces.
 
@@ -61,7 +61,6 @@ Copy your endpoint, put it in your code or wallet configuration and start buildi
 ![GatewayInerfaces](/img/tutorial/gateway/start-building.png)
 
 For a full list of supported methods, check out the API Methods section of the documentation.
-
 
 
 

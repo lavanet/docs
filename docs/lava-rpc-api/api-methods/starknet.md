@@ -1,15 +1,14 @@
 ---
 id: starknet
 slug: /api-methods/starknet
-title: StarkNet JSON-RPC (Mainnet & Sepolia)
+title: Starknet JSON-RPC (Mainnet)
 ---
 
 # Starknet API Methods 
 
 **Supported Networks:**
 
-- **Starkent Mainnet** (`STRK`)
-- **Starkent Sepolia Testnet** (`STRKS`)
+- **Starknet Mainnet** (`STRK`)
 
 **Supported Inerfaces:**
 
