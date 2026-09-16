@@ -29,8 +29,6 @@ LAVA is available on DEXs: Osmosis (Lava Mainnet), Uniswap (ERC-20 Arbitrum, ERC
 - LAVA contract address on Base: `0x11e969e9B3f89cB16D686a03Cd8508C9fC0361AF`
 - LAVA on Base and BSC **is not transferable to CEXs** as they only support the Arbitrum or Lava Mainnet version of LAVA.
 
-If you purchased LAVA tokens on **KuCoin**, you already have Lava Mainnet tokens and do **not** need to bridge. These tokens can be staked or restaked immediately by transferring them to a Cosmos-compatible wallet, such as **Leap** or **Keplr**.
-
 ### How Lava Works at a Glance
 
 - **Validators** secure the Lava blockchain and validate blocks.
@@ -73,8 +71,6 @@ Below is a guided process using two popular bridging routes: **Skip:Go** and **S
 
 ## 1.1 Lava on Arbitrum
 Transfer your ERC20 LAVA tokens from the CEX to your Arbitrum wallet e.g., MetaMask.
-
-**_Note:_** If your tokens are on Kucoin, you should only transfer to a Cosmos wallet because they are already native LAVA tokens.
 
 ## 1.2 Add Arbitrum Network in MetaMask
 1. Open MetaMask and click the network selector (usually labeled "Ethereum Mainnet").
