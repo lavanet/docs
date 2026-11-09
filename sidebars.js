@@ -137,7 +137,6 @@ const sidebars = {
               collapsed: true,
               items: [
                 { type: "doc", label: "Mainnet", id: "validator/lava-nodes/mainnet/join-mainnet-manual-cosmovisor" },
-                { type: "doc", label: "Testnet", id: "validator/lava-nodes/testnet/join-testnet-manual-cosmovisor" },
                 { type: "doc", label: "State-Sync", id: "validator/lava-nodes/state-sync" },
               ],
             },

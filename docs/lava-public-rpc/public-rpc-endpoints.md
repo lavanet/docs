@@ -38,19 +38,6 @@ Need a dedicated endpoint? Check out [Lava RPC API](../lava-rpc-api/public-rpc-a
   | 🟢 grpc            | lava.grpc.lava.build:443                    |
 
   </TabItem>
-
-  <TabItem value="testnet" label="Testnet">
-   
-   `LAV1`
-
-  | Service           | URL                                           |
-  |---------------------|-----------------------------------------------|
-  | 🟢 rest            | https://lav1.lava.build                     |
-  | 🟢 tendermintrpc   | https://lav1.tendermintrpc.lava.build:443     |
-  | 🟢 tendermintrpc/ws | wss://lav1.tendermintrpc.lava.build/websocket |
-  | 🟢 grpc            | lav1.grpc.lava.build:443                      |
-
-  </TabItem>
 </Tabs>
 
 #### Available API methods:

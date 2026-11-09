@@ -37,8 +37,8 @@ async function getAbciInfo() {
             badgeServerAddress: "https://badges.lavanet.xyz",
             projectId: "//" //login to gateway.lavanet.xyz to get a projectId!
         },
-        chainIds: "LAV1",
-        lavaChainId: "lava-testnet-2",
+        chainIds: "LAVA",
+        lavaChainId: "lava-mainnet-1",
         geolocation: "1", //optional
     })
 
@@ -66,8 +66,8 @@ async function getAbciInfo() {
             badgeServerAddress: "https://badges.lavanet.xyz",
             projectId: "//" //login to gateway.lavanet.xyz to get a projectId!
         },
-        chainIds: "LAV1",
-        lavaChainId: "lava-testnet-2",
+        chainIds: "LAVA",
+        lavaChainId: "lava-mainnet-1",
         geolocation: "1", //optional
     })
 
@@ -97,8 +97,8 @@ async function getAbciInfo() {
             badgeServerAddress: "https://badges.lavanet.xyz",
             projectId: "//" //login to gateway.lavanet.xyz to get a projectId!
         },
-        chainIds: "LAV1",
-        lavaChainId: "lava-testnet-2",
+        chainIds: "LAVA",
+        lavaChainId: "lava-mainnet-1",
         geolocation: "1", //optional
     })
 

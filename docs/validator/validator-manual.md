@@ -6,7 +6,7 @@ slug: /validator-manual
 
 # Run Validator - Manual setup
 ### 1. Run a Lava Node {#lavad}
-Running as a validator requires a Lava Node running. Refer to guides for joining [**Testnet**](./lava-nodes/testnet/join-testnet-manual-cosmovisor.md) and [**Mainnet**](./lava-nodes/mainnet/join-mainnet-manual-cosmovisor.md) for details.
+Running as a validator requires a Lava Node running. Refer to the guide for joining [**Mainnet**](./lava-nodes/mainnet/join-mainnet-manual-cosmovisor.md) for details.
 
 ### 2. Prepare an account & Fund it {#account}
 To run a validator process you will need a CLI wallet set up and funded. If you don't have an account (wallet) on Lava yet, refer to [creating new accounts](../intro/wallet.mdx) to create one.
@@ -55,7 +55,6 @@ Replace `<<moniker_node>>` with a human readable name you choose for your valida
 :::caution
 Please ensure that you replace `{CHAIN_ID}` with the appropriate value depending on your target network:
 
-- For Lava Testnet: `lava-testnet-2`
 - For Lava Mainnet: `lava-mainnet-1`
 :::
 

@@ -40,7 +40,6 @@ LavaVisor `init` command initializes the environment for LavaVisor. It is genera
 :::caution
 Ensure that you replace `{CHAIN_ID}` with the appropriate value for your target network:
 - Lava Mainnet: `lava-mainnet-1`
-- Lava Testnet: `lava-testnet-2`
 
  Additionally, replace `{PUBLIC_RPC}` with the correct [endpoint](../../lava-public-rpc/public-rpc-endpoints.md).
 :::
@@ -90,7 +89,7 @@ LavaVisor starts the specified services using the linked binary. It also starts 
 
     - `lavavisor create-service provider /home/ubuntu/config/provider1-ETH1.yml --geolocation 1 --from servicer1 --log_level info --keyring-backend test --chain-id {CHAIN_ID} --node {PUBLIC_RPC}`
     
-    - `lavavisor create-service provider /home/ubuntu/config/provider1-LAV1.yml --geolocation 1 --from servicer2 --log_level info --keyring-backend test --chain-id {CHAIN_ID} --node {PUBLIC_RPC}`
+    - `lavavisor create-service provider /home/ubuntu/config/provider1-LAVA.yml --geolocation 1 --from servicer2 --log_level info --keyring-backend test --chain-id {CHAIN_ID} --node {PUBLIC_RPC}`
 
 4. Check the `~/.lavavisor/` dir and validate `config.yml` . It should look like this (adjust the service names according to your process):
 
@@ -99,7 +98,7 @@ LavaVisor starts the specified services using the linked binary. It also starts 
 services:
   - consumer-ETH1
   - provider1-ETH1
-  - provider1-LAV1
+  - provider1-LAVA
 ```
 
 5. The `create-service` command should also create a `service_configs` folder within the `.lavavisor/services` directory and copy the configuration files provided as command arguments (e.g., provider1-ETH1.yml). Ensure the directory and configuration files exist.

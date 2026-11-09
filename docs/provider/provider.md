@@ -29,7 +29,7 @@ To join the Lava Network as an RPC Node Provider, you'll need to follow two key 
 
 ### Querying a list of supported Chains {#chains}
 
-Lava Network supports a number of blockchains on Lava Testnet and Lava Mainnet. You cah see a full list of supported chains using the API URL or a CLI function `lavap`:
+Lava Network supports a number of blockchains on Lava Mainnet. You cah see a full list of supported chains using the API URL or a CLI function `lavap`:
 
 
 **Chains supported on Lava Mainnet:**
@@ -53,27 +53,6 @@ Lava Network supports a number of blockchains on Lava Testnet and Lava Mainnet. 
   </TabItem>
 </Tabs>
 
-**Chains supported on Lava Testnet:**
-
-<Tabs>
-  <TabItem value="URL" label="URL">
-  ```bash
-  curl -X 'GET' \
-  'https://lav1.lava.build/lavanet/lava/spec/show_all_chains' \
-  -H 'accept: application/json'
-  ```      
-
-  </TabItem>
-
-  <TabItem value="lavap" label="lavap">
-
-  ```bash
-   lavap q spec list-spec --node https://lav1.tendermintrpc.lava.build:443 
-   ```          
-
-  </TabItem>
-</Tabs>
-
 You can also check the available supported chain specifications on [Lava Network GitHub repository](https://github.com/lavanet/lava/tree/main/specs).
 
 
@@ -85,7 +64,7 @@ To obtain information on a specific chain, run the following command, replacing 
 
 ```bash
 curl -X 'GET' \
-  'https://lav1.rest.lava.build/lavanet/lava/spec/show_chain_info/SPEC-ID' \
+  'https://lava.lava.build/lavanet/lava/spec/show_chain_info/SPEC-ID' \
   -H 'accept: application/json'
 ```
 

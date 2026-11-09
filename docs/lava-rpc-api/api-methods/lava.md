@@ -8,7 +8,6 @@ title: Lava Network APIs (Mainnet)
 
 **Supported Networks**:
 - Lava Mainnet (`LAVA`)
-- Lava Testnet (`LAV1`)
 
 **Supported Interfaces**:
 - **[REST](#rest)**

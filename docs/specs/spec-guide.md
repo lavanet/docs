@@ -112,8 +112,6 @@ Reliability threshold sets the frequency of reliability related messages. By def
 <summary> `data_reliability_enabled` </summary>
 
 Data reliability should be enabled unless there is a compelling reason to disable it! The default value here is `true`. This means Lava protocol will work to ensure data is accurate by doing data reliability checks. Note that if you are creating a spec for something other than a blockchain - you will want to set this to `false`.
-
-⚠️ As of `lava-testnet-2` support for data reliability on diverse APIs is work-in-progress.
 </details>
 
 <details>
@@ -149,7 +147,7 @@ The default is `1`. This is a bonus multiplier for rewards at the end of each mo
 <details>
 <summary> `min_stake_provider` </summary>
 
-This field defines the minimum amount that a provider must have staked to serve this API. This value can remain identical with default values supplied by all other specs during our testnet. As of `lava-testnet-2` ,the amount is `5000000` in denom `ulava`.
+This field defines the minimum amount that a provider must have staked to serve this API. This value can remain identical with default values supplied by all other specs.
 </details>
 
 🔖REFERENCE: [`specs`](/spec-reference#specs)
