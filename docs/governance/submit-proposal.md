@@ -128,7 +128,7 @@ lavad tx gov vote 15 yes --from mywallet --chain-id lava-mainnet-1 --gas auto --
 
 ### How to Vote via Explorer
 
-1. 🌐 **Open the Explorer**: Visit the [Mallifera Lava Explorer](https://lava-explorer.mellifera.network/lava).
+1. 🌐 **Open the Explorer**: Visit the [LavaCenter explorer](https://lavacenter.xyz/lava).
 2. 📂 **Navigate to Governance**: Click on the **Governance** tab to see all active proposals.
 
    ![governance](/img/governance/governance.png)

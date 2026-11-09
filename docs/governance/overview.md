@@ -27,8 +27,8 @@ The governance process typically follows a structured **proposal lifecycle**, wh
 ### How to Participate in Governance
 
 - **Discuss Proposals**: To discuss major proposals prior to the onchain voting process, go to the [Lava Community Forum](https://community.lavanet.xyz). Here, you can browse key discussion points which may become onchain votes e.g. update to the protocol that changes Provider requirements. 
-- **Review Proposals**: To view and follow ongoing proposals, visit the [Lava Governance Explorer on Explorer Guru](https://lava.explorers.guru/proposals). Here, you can read the proposal details and track its current status.
-- **Vote on Proposals**: If you’re a LAVA token holder, you can cast your vote directly on the [Lava Voting Dashboard on Mellifera Network](https://lava-explorer.mellifera.network/lava/gov). This platform allows you to participate in governance decisions and make your voice heard.
+- **Review Proposals**: To view and follow ongoing proposals, visit the [LavaCenter Governance dashboard](https://lavacenter.xyz/lava/gov). Here, you can read the proposal details and track its current status.
+- **Vote on Proposals**: If you’re a LAVA token holder, you can cast your vote directly on the [LavaCenter Governance dashboard](https://lavacenter.xyz/lava/gov). This platform allows you to participate in governance decisions and make your voice heard.
 
 These explorer links provide a user-friendly way for the community to engage with live governance proposals, ensuring transparency and ease of participation.
 
