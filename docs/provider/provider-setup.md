@@ -305,7 +305,7 @@ lavap tx pairing stake-provider [chain-id] [amount] [endpoint endpoint ...] [geo
 - **`amount`** - Stake amount for the specific chain (e.g., **`2010ulava`**).
 - **`endpoint`** - Provider host listener, composed of `provider-host:provider-port,geolocation`. To define multiple endpoints do: `"host:port,geolocation host2:port2,geolocation2"`. To define advanced endpoint features like `trace`, `debug`, and more, ask the Lava team.
 - **`geolocation`** - Indicates the geographical location where the process is located (e.g., **`1`** for US or **`2`** for EU). This argument must specify all the geolocations of the defined endpoints (see the "Ethereum Mainnet in US And Europe" below).
-- **`validator`** - Validator address for staking (optional). Validator address is required when staking due to the dualstaking mechanism. If no validator is specified, the highest stake validator will be picked automatically. Note that the validator address should be in a sdk.ValAddress format (`lava@valoper...`). You can find a list of active validators on [official Lava block explorer](https://lava.explorers.guru/validators). 
+- **`validator`** - Validator address for staking (optional). Validator address is required when staking due to the dualstaking mechanism. If no validator is specified, the highest stake validator will be picked automatically. Note that the validator address should be in a sdk.ValAddress format (`lava@valoper...`). You can find a list of active validators on [LavaCenter explorer](https://lavacenter.xyz/lava/staking).
 </details>
 
 <details>

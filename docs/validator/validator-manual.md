@@ -50,7 +50,7 @@ A consensus key is stored as a json file in `$HOME/.lava/config/priv_validator_k
 4. **Stake your validator**
 
 Here's an example with values which starts with a stake of `50000000ulava`.
-Replace `<<moniker_node>>` with a human readable name you choose for your validator. The amount you will have to stake to become an active provider has to be more than the [last bonded validator](https://lava.explorers.guru/validators).
+Replace `<<moniker_node>>` with a human readable name you choose for your validator. The amount you will have to stake to become an active provider has to be more than the [last bonded validator](https://lavacenter.xyz/lava/staking).
 
 :::caution
 Please ensure that you replace `{CHAIN_ID}` with the appropriate value depending on your target network:
