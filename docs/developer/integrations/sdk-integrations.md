@@ -49,11 +49,11 @@ There are numerous other options that can be configured while creating and initi
 | ---------------------------| --------------------------------------------| ---------------------------------------------------------------------------------------------------------------- |
 | `privateKey`               | **Required**                                | The private key with active subscription to be used in lieu of a `badge.`                                                                      |
 | `badge`                    | **Required**                                | Public URL of badge server and ID of the project you want to connect. Remove `privateKey` if badge is provided.  |
-| `chainIds`                 | **Required**                                | The ID of the chain you want to query or an array of chain IDs (e.g., "ETH1" or ["ETH1", "LAV1"])             |
+| `chainIds`                 | **Required**                                | The ID of the chain you want to query or an array of chain IDs (e.g., "ETH1" or ["ETH1", "LAVA"])             |
 | `pairingListConfig`        | Optional                                    | The Lava pairing list config used for communicating with the Lava network. Default is [Lava-providers](https://github.com/lavanet/lava-providers)                                       |
-| `network`                  | Optional                                    | The network from pairingListConfig to be used (e.g., ["mainnet", "testnet"] )                                   |
+| `network`                  | Optional                                    | The network from pairingListConfig to be used (e.g., "mainnet")                                   |
 | `geolocation`              | Optional                                    | The geolocation to be used (e.g., "1" for North America, "2" for Europe -> "1" is default)                                         |
-| `lavaChainId`              | Optional                                    | The Lava chain ID (default value is `lava-testnet-2' for Lava Testnet)                                                              |
+| `lavaChainId`              | Optional                                    | The Lava chain ID (e.g., `lava-mainnet-1` for Lava Mainnet)                                                              |
 | `secure`                   | Optional                                    | Communicates through HTTPS (temporary flag that will be disabled once the chain uses HTTPS by default)        |
 | `allowInsecureTransport`   | Optional                                    | Indicates to use an insecure transport when connecting the provider, for testing purposes only                  |
 | `logLevel`                 | Optional                                    | Log level settings (e.g., "debug", "info", "warn", "error", "success", "NoPrints")                              |

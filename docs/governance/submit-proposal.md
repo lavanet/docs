@@ -23,7 +23,6 @@ Proposals can be of different types, such as text proposals, parameter change pr
 - **Mainnet**: 7,000 LAVA
 - **Note**: Users can initiate the proposal with **only 25% of the minimum deposit** (1,750 LAVA).
 - If the full deposit is not reached within the deposit period, the proposal is **withdrawn**, and the initial deposit is refunded.
-- **Testnet**: 1,500 LAVA
 - 📄 **Proposal JSON File**: Contains proposal details like title, summary, metadata, and deposit information.
 
 ### How to Submit a Proposal
@@ -69,10 +68,8 @@ The Deposit Period is the time frame during which users can contribute additiona
 ### Requirements
 
 - **Mainnet Minimum Deposit**: 7,000 LAVA
-- **Testnet Minimum Deposit**: 1,500 LAVA
 - **Max Deposit Period**:
   - **Mainnet**: 2 days
-  - **Testnet**: 2 days
 
 If the required deposit is not met, the proposal is rejected, and the deposit may be returned.
 
@@ -108,7 +105,6 @@ The Voting Period is when users cast their votes. Only staked LAVA tokens can be
 ### Voting Duration
 
 - **Mainnet**: 4 days
-- **Testnet**: 12 hours
 
 ### How to Vote - Via CLI
 
@@ -150,11 +146,11 @@ lavad tx gov vote 15 yes --from mywallet --chain-id lava-mainnet-1 --gas auto --
 At the end of the Voting Period, votes are tallied based on:
 
 - 📊 **Quorum**: Minimum participation required.
-  - **Mainnet & Testnet**: 33.4%
+  - **Mainnet**: 33.4%
 - ✅ **Threshold**: Minimum "Yes" votes required.
-  - **Mainnet & Testnet**: 50%
+  - **Mainnet**: 50%
 - 🚫 **Veto Threshold**: Maximum "No with Veto" votes allowed.
-  - **Mainnet & Testnet**: 33.4%
+  - **Mainnet**: 33.4%
 
 ### Outcome
 
@@ -179,4 +175,3 @@ For a **software upgrade proposal**, validators must update their nodes to the n
 - **Mainnet**: 7,000 LAVA
   - **Note**: Users can start the proposal with **only 25% of the minimum deposit** (1,750 LAVA).
   - If the full deposit is not met during the deposit period, the proposal is **withdrawn**, and the initial deposit is refunded. If vetoed, the entire deposit is **burned**.
-- **Testnet**: 1,500 LAVA

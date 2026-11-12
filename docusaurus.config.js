@@ -90,6 +90,7 @@ const config = {
           { from: '/developer-faq', to: '/lava-public-rpc'},
           { from: '/sdk-integrations', to: '/lava-public-rpc'},
           { from: '/add-lava', to: '/lava-public-rpc'}, 
+          { from: '/testnet-manual-cosmovisor', to: '/mainnet-manual-cosmovisor'},
         ],
       },
     ],

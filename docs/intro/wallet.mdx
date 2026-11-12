@@ -160,15 +160,15 @@ For multisig transactions, each signer independently signs the transaction offli
 #### Transaction Generation
 Create a multisig transaction on a shared machine:
 ```bash
-$current_lavad_binary tx bank send $(lavad keys show alice-bob-multisig -a) lava@destination-address 10000000ulava  --generate-only --chain-id lava-testnet-2 > tx_bank.json
+$current_lavad_binary tx bank send $(lavad keys show alice-bob-multisig -a) lava@destination-address 10000000ulava  --generate-only --chain-id lava-mainnet-1 > tx_bank.json
 ```
 
 #### Signing the Transaction
 Each signer signs the transaction in their environment:
 ```bash
-lavad tx sign --from $(lavad keys show -a alice-ledger) --multisig lava@multisig-address tx.json --sign-mode amino-json --chain-id lava-testnet-2 >> tx-signed-alice.json
+lavad tx sign --from $(lavad keys show -a alice-ledger) --multisig lava@multisig-address tx.json --sign-mode amino-json --chain-id lava-mainnet-1 >> tx-signed-alice.json
 or
-lavad tx sign --from $(lavad keys show -a alice-ledger) --multisig lava@multisig-address tx.json --sign-mode amino-json --chain-id lava-testnet-2 --account-number X --sequence X >> tx-signed-alice.json
+lavad tx sign --from $(lavad keys show -a alice-ledger) --multisig lava@multisig-address tx.json --sign-mode amino-json --chain-id lava-mainnet-1 --account-number X --sequence X >> tx-signed-alice.json
 ```
 A second signer follows a similar process.
 
@@ -176,8 +176,8 @@ A second signer follows a similar process.
 1. Create the signed multisig transaction.
 2. Broadcast the transaction.
 ```bash
-lavad tx multisign --from alice-bob-multisig tx.json alice-bob-multisig tx-signed-alice.json tx-signed-bob.json --chain-id lava-testnet-2 > tx_ms.json
-lavad tx broadcast ms/tx_ms.json --chain-id lava-testnet-2
+lavad tx multisign --from alice-bob-multisig tx.json alice-bob-multisig tx-signed-alice.json tx-signed-bob.json --chain-id lava-mainnet-1 > tx_ms.json
+lavad tx broadcast ms/tx_ms.json --chain-id lava-mainnet-1
 ```
 
 ### Other Wallets {#other}
@@ -191,6 +191,6 @@ Use the following parameters to set up a wallet not described in this manual:
 * **minimal denom** - ulava
 * **prefix** - lava@
 * **coinDecimals** - 6
-* **rpc** - "https://lav1.tendermintrpc.lava.build"
-* **rest** - "https://lav1.rest.lava.build"
+* **rpc** - "https://lava.tendermintrpc.lava.build"
+* **rest** - "https://lava.lava.build"
 

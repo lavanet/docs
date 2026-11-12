@@ -38,7 +38,7 @@ Inside of the default node home directory create a YAML config file (e.g., `lava
 
 ### Examples
 
-To illustrate, below you can see two Provider configuration files - one for running a Provider service for Lava Testnet (`lava-provider.yml`) and one for running Ethereum Provider service (`eth-provider.yml`):
+To illustrate, below you can see two Provider configuration files - one for running a Provider service for Lava Mainnet (`lava-provider.yml`) and one for running Ethereum Provider service (`eth-provider.yml`):
 
 <Tabs>
 <TabItem value="lava_yml" label="lava-provider">
@@ -49,7 +49,7 @@ To illustrate, below you can see two Provider configuration files - one for runn
 
 endpoints:
     - api-interface: tendermintrpc
-      chain-id: LAV1
+      chain-id: LAVA
       network-address:
         address: 127.0.0.1:2224
         disable-tls: true
@@ -57,14 +57,14 @@ endpoints:
         - url: ws://127.0.0.1:26657/websocket
         - url: http://127.0.0.1:26657
     - api-interface: grpc
-      chain-id: LAV1
+      chain-id: LAVA
       network-address:
         address: 127.0.0.1:2224
         disable-tls: true
       node-urls: 
         url: 127.0.0.1:9090
     - api-interface: rest
-      chain-id: LAV1
+      chain-id: LAVA
       network-address:
         address: 127.0.0.1:2224
         disable-tls: true
@@ -120,7 +120,7 @@ For advanced configuration such as **authentication**, header **forwarding**, co
 
 - **`--geolocation`** (required): Geolocation to run from (e.g., **`1`**).
 - **`--from`** (required): Account name to use (e.g., **`alice`**)
-- **`--chain-id`**: Lava Network chain ID (`lava-testnet-2` for Lava testnet and `lava-mainnet-1` for Lava mainnet)
+- **`--chain-id`**: Lava Network chain ID (`lava-mainnet-1` for Lava mainnet)
 - **`--pprof-address`**: pprof server address, used for code profiling (default: **`""`**)
 - **`--cache`**: Address for a cache server to improve performance (default: **`""`**)
 - **`--parallel-connections`**: Number of parallel connections (default: **`chainproxy.NumberOfParallelConnections`**)
@@ -131,18 +131,18 @@ For advanced configuration such as **authentication**, header **forwarding**, co
 
 ### Examples
 
-Examples below show the commands for starting RPC Node Provider process for Lava Testnet and Ethereum Mainnet, both on a Lava testnet:
+Examples below show the commands for starting RPC Node Provider process for Lava Mainnet and Ethereum Mainnet, both on Lava Mainnet:
 
 <Tabs>
-<TabItem value="Lava Testnet" label="lava-provider">
+<TabItem value="Lava Mainnet" label="lava-provider">
 
 ```bash
 # This will take us to a separate terminal where we can start the provider process:
 screen -S lava-provider
 
 
-# Start the provider process on Lava testnet.
-lavap rpcprovider lava-provider.yml --from your_key_name_here --geolocation 1 --chain-id lava-testnet-2 --log_level debug
+# Start the provider process on Lava mainnet.
+lavap rpcprovider lava-provider.yml --from your_key_name_here --geolocation 1 --chain-id lava-mainnet-1 --log_level debug
 ```
 
 </TabItem>
@@ -154,8 +154,8 @@ lavap rpcprovider lava-provider.yml --from your_key_name_here --geolocation 1 --
 screen -S eth-provider
 
 
-# Start the provider process on Lava testnet.
-lavap rpcprovider eth-provider.yml --from your_key_name_here --geolocation 1 --chain-id lava-testnet-2 --log_level debug
+# Start the provider process on Lava mainnet.
+lavap rpcprovider eth-provider.yml --from your_key_name_here --geolocation 1 --chain-id lava-mainnet-1 --log_level debug
 ```
 
 </TabItem>
@@ -206,14 +206,14 @@ lavap test rpcprovider --from {WALLET} --endpoints "{ENDPOINTS}"
 lavap test rpcprovider --from {WALLET} --endpoints "{ENDPOINTS}"`
 
 # Example: checking your provider that is not staked yet, or when you want to add a new chain support
-# lavap test rpcprovider --from provider1_us --endpoints "provider-public-grpc:port,jsonrpc,ETH1 provider-public-grpc:port,rest,LAV1" --node {PUBLIC_RPC}
+# lavap test rpcprovider --from provider1_us --endpoints "provider-public-grpc:port,jsonrpc,ETH1 provider-public-grpc:port,rest,LAVA" --node {PUBLIC_RPC}
 
 # Expected output:
 # ...logs...
 # ----------------------------------------SUMMARY----------------------------------------
 
 # Tests Passed:
-# LAV1-rest; ETH1-jsonrpc
+# LAVA-rest; ETH1-jsonrpc
 
 # Tests Failed:
 #
@@ -239,9 +239,9 @@ lavap test rpcprovider {PROVIDER_ADDRESS} --endpoints "{ENDPOINTS}"
 ### Examples
 
 <Tabs>
-<TabItem value="Lava Testnet" label="lava-provider">
+<TabItem value="Lava Mainnet" label="lava-provider">
 
-`lavap test rpcprovider --from your_key_name_here --endpoints "your-site:443,LAV1"`
+`lavap test rpcprovider --from your_key_name_here --endpoints "your-site:443,LAVA"`
 
 Expected output:
 
@@ -249,9 +249,9 @@ Expected output:
 📄----------------------------------------✨SUMMARY✨----------------------------------------📄
 
 🔵 Tests Passed:
-🔹LAV1-grpclatest block: 0x4ca8c
-🔹LAV1-restlatest block: 0x4ca8c
-🔹LAV1-tendermintrpclatest block: 0x4ca8c
+🔹LAVA-grpclatest block: 0x4ca8c
+🔹LAVA-restlatest block: 0x4ca8c
+🔹LAVA-tendermintrpclatest block: 0x4ca8c
 
 🔵 Tests Failed:
 🔹None 🎉! all tests passed ✅
@@ -327,10 +327,10 @@ lavap tx pairing stake-provider [chain-id] [amount] [endpoint endpoint ...] [geo
 
 
 <Tabs>
-<TabItem value="Lava Testnet" label="lava-provider">
+<TabItem value="Lava Mainnet" label="lava-provider">
 
 ```bash
-lavap tx pairing stake-provider LAV1 \
+lavap tx pairing stake-provider LAVA \
   "50000000000ulava" \
   "lava.your-site:443,1" 1 \
   validator -y 
@@ -346,7 +346,7 @@ lavap tx pairing stake-provider LAV1 \
 <TabItem value="Ethereum provider" label="eth-provider">
 
 ```bash
-lavap tx pairing stake-provider LAV1 \
+lavap tx pairing stake-provider ETH1 \
   "50000000000ulava" \
    "lava.your-site.com:443,USC" USC \
    "validator_lava_address" \
@@ -609,7 +609,7 @@ lavap tx pairing unstake-provider [chain-id] {validator} [flags]
 <summary> Unstake with specified validator </summary>
 
 ```bash
-lavap tx pairing unstake-provider LAV1 \
+lavap tx pairing unstake-provider LAVA \
    "validator_lava_address" \
     --from "my_account_name" \
     --keyring-backend "test" \
@@ -624,7 +624,7 @@ lavap tx pairing unstake-provider LAV1 \
 <summary> Unstake with unspecified validator </summary>
 
 ```bash
-lavap tx pairing unstake-provider LAV1 \
+lavap tx pairing unstake-provider LAVA \
     --from "my_account_name" \
     --keyring-backend "test" \
     --chain-id {CHAIN_ID} \
@@ -673,7 +673,7 @@ Note that the `unbond` command should be used because the proivder unbonds some 
 ```bash
 lavap tx dualstaking unbond "validator_lava_address" \ 
     "provider_lava_address" \
-    LAV1 \
+    LAVA \
     2010ulava \ 
     --from "my_account_name" \
     --keyring-backend "test" \
