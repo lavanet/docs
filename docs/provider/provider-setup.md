@@ -422,7 +422,7 @@ lavap query pairing account-info \
 # Active Provider Chains
 # --------------------------------------------
 # ChainID: ALFAJORES
-#  {Stake:1000000000000ulava Address:lava@1e4vghfjertxq25l2vv56egkfkvdjk90t0c667v StakeAppliedBlock:164042 Endpoints:[{IPPORT:providers-eu-1.lavanet-zarak.xyz:19907 UseType:jsonrpc Geolocation:2}] Geolocation:2 # Chain:ALFAJORES Vrfpk: Moniker:testnet-lava-2-provider1-ALFAJORES}
+#  {Stake:1000000000000ulava Address:lava@1e4vghfjertxq25l2vv56egkfkvdjk90t0c667v StakeAppliedBlock:164042 Endpoints:[{IPPORT:provider.your-site.com:19907 UseType:jsonrpc Geolocation:2}] Geolocation:2 # Chain:ALFAJORES Vrfpk: Moniker:testnet-lava-2-provider1-ALFAJORES}
 #...
 ```
 
